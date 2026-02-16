@@ -19,13 +19,10 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Base Body */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  overflow-x: hidden;
-  font-family: sans-serif;
+  background: black;
 }
+
 
 /* ============================= */
 /* Animated Gradient Background  */

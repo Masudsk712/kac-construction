@@ -1,16 +1,26 @@
 "use client"
+import { motion } from "framer-motion"
 
 export default function CTASection() {
   return (
-    <section className="py-24 bg-cyan-500 text-black text-center">
+    <section className="py-24 relative bg-gradient-to-r from-cyan-600/20 to-blue-600/20 backdrop-blur-xl text-center">
 
-      <h2 className="text-4xl font-bold">
+      <motion.h2
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-4xl font-bold text-white mb-8"
+      >
         Ready To Power The Next Grid?
-      </h2>
+      </motion.h2>
 
-      <button className="mt-10 px-10 py-4 bg-black text-white rounded-xl hover:scale-110 transition">
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-semibold shadow-xl"
+      >
         Contact Our Team
-      </button>
+      </motion.button>
 
     </section>
   )

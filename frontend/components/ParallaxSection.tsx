@@ -17,7 +17,7 @@ export default function ParallaxSection() {
 
       <motion.div
         style={{ y }}
-        className="absolute inset-0 bg-[url('/tower-pic1.jpg')] bg-cover bg-center"
+        className="absolute inset-0 bg-[url('/tower-pic1.webp')] bg-cover bg-center"
       />
 
       <div className="absolute inset-0 bg-black/70" />

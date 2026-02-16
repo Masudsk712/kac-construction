@@ -1,70 +1,40 @@
-"use client";
-
-import { motion } from "framer-motion";
+"use client"
+import { TypeAnimation } from "react-type-animation"
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 bg-black">
 
-      {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute w-full h-full object-cover scale-110"
-      >
-        <source src="/tower-video5.mp4" type="video/mp4" />
-      </video>
+      <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+        Powering India's Future
+      </h1>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/70 backdrop-sm"></div>
+      <TypeAnimation
+        sequence={[
+          "765kV Transmission Excellence",
+          2000,
+          "Ultra High Voltage Precision",
+          2000,
+        ]}
+        speed={50}
+        repeat={Infinity}
+        className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
+      />
 
-      <div className="relative z-10 max-w-6xl px-6">
+      <p className="mt-6 text-gray-400 max-w-2xl">
+        Delivering world-class erection, foundation & stringing services
+        for India's largest power corporations.
+      </p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 80 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-6xl md:text-8xl font-extrabold leading-tight tracking-tight"
-        >
-          Powering India's Future
-        </motion.h1>
+      <div className="mt-8 flex gap-6">
+        <button className="px-6 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-semibold hover:scale-110 transition">
+          View Projects
+        </button>
 
-        <motion.h2
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 1 }}
-          className="mt-6 text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-500 bg-clip-text text-transparent"
-        >
-          765kV Transmission Excellence
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mt-8 text-gray-300 text-lg max-w-3xl mx-auto"
-        >
-          Delivering world-class Erection, Foundation & Stringing
-          services for India's largest power corporations.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="mt-12 flex justify-center gap-6"
-        >
-          <button className="px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl hover:scale-110 transition shadow-[0_0_50px_rgba(0,255,255,0.5)]">
-            View Projects
-          </button>
-
-          <button className="px-10 py-4 border border-white/40 rounded-2xl hover:bg-white/10 transition">
-            Contact Us
-          </button>
-        </motion.div>
+        <button className="px-6 py-3 rounded-full border border-gray-600 text-white hover:bg-white hover:text-black transition">
+          Contact Us
+        </button>
       </div>
     </section>
-  );
+  )
 }
