@@ -36,7 +36,7 @@ export default function AboutSection() {
           className="relative"
         >
           <img
-            src="/tower-pic1.jpg"
+            src="/tower-pic1.webp"
             alt="Transmission Tower"
             className="rounded-3xl shadow-2xl border border-white/10"
           />
