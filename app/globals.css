@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+/* ============================= */
+/* Root Theme */
+/* ============================= */
+
+:root {
+  --background: #020617;
+  --foreground: #e2e8f0;
+  --primary: #22d3ee;
+}
+
+/* ============================= */
+/* Base Styles */
+/* ============================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+/* ============================= */
+/* Scrollbar */
+/* ============================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#22d3ee, #3b82f6);
+  border-radius: 10px;
+}
+
+/* ============================= */
+/* Selection */
+/* ============================= */
+
+::selection {
+  background: #22d3ee;
+  color: black;
+}
+
+/* ============================= */
+/* Section */
+/* ============================= */
+
+section {
+  position: relative;
+}
+
+/* ============================= */
+/* Image */
+/* ============================= */
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================= */
+/* Button */
+/* ============================= */
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* ============================= */
+/* Glass Effect */
+/* ============================= */
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================= */
+/* Gradient Text */
+/* ============================= */
+
+.gradient-text {
+  background: linear-gradient(to right, #22d3ee, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================= */
+/* Glow Animation */
+/* ============================= */
+
+@keyframes glow {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.glow {
+  animation: glow 3s ease-in-out infinite;
+}
+.btn-primary {
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #22d3ee, #3b82f6);
+  color: black;
+  font-weight: 600;
+}
+
+.btn-outline {
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 1px solid #444;
+}
