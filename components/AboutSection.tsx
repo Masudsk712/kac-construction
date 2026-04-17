@@ -21,7 +21,7 @@ export default function AboutSection() {
 
       <Reveal>
         <img
-          src="/about.jpg"
+          src="/placeholder.jpg"
           className="rounded-xl shadow-lg"
         />
       </Reveal>

@@ -26,7 +26,7 @@ export default function PageLoader() {
         transition={{ duration: 1 }}
         className="text-4xl md:text-6xl font-bold text-cyan-400"
       >
-        KAC CONSTRUCTION
+        KAC
       </motion.h1>
 
       {/* Line Animation */}

@@ -5,15 +5,15 @@ import Reveal from "./Reveal"
 const projects = [
   {
     title: "Bongaigaon NER",
-    img: "/p1.jpg",
+    img: "/placeholder.jpg",
   },
   {
     title: "Adani Power Corridor",
-    img: "/p2.jpg",
+    img: "/placeholder.jpg",
   },
   {
     title: "NTPC Expansion",
-    img: "/p3.jpg",
+    img: "/placeholder.jpg",
   },
 ]
 
