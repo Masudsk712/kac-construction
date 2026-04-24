@@ -20,7 +20,10 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-24 text-center">
+    <section className="py-24 text-center relative overflow-hidden">
+
+      {/* Glow */}
+      <div className="absolute inset-0 -z-10 opacity-20 blur-3xl bg-gradient-to-r from-cyan-500 to-blue-500" />
 
       <Reveal>
         <h2 className="text-4xl font-bold gradient-text">
@@ -32,8 +35,14 @@ export default function ServicesSection() {
 
         {services.map((item, i) => (
           <ThreeDCard key={i}>
-            <div className="glass p-8 rounded-2xl border border-white/10 hover:scale-105 transition">
-
+            <div
+              className="
+                glass p-8 rounded-2xl
+                border border-white/10
+                hover:scale-105 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)]
+                transition duration-500
+              "
+            >
               <h3 className="text-xl font-semibold text-cyan-400">
                 {item.title}
               </h3>
@@ -41,7 +50,6 @@ export default function ServicesSection() {
               <p className="mt-4 text-gray-400">
                 {item.desc}
               </p>
-
             </div>
           </ThreeDCard>
         ))}

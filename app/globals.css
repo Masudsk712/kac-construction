@@ -129,3 +129,31 @@ button:hover {
   border-radius: 999px;
   border: 1px solid #444;
 }
+.btn-primary {
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #22d3ee, #3b82f6);
+  color: black;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.7);
+}
+
+.btn-outline {
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 1px solid #444;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-snap-type: y proximity;
+}
+section {
+  scroll-snap-align: start;
+}
