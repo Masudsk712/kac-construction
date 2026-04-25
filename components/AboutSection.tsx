@@ -4,20 +4,16 @@ import Reveal from "./Reveal"
 
 export default function AboutSection() {
   return (
-    <section className="py-24 relative overflow-hidden px-6 grid md:grid-cols-2 gap-12 items-center">
-
-      {/* Glow */}
-      <div className="absolute inset-0 -z-10 opacity-20 blur-3xl bg-gradient-to-r from-blue-500 to-cyan-500" />
+    <section className="py-20 px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
       <Reveal>
         <div>
-          <h2 className="text-4xl font-bold gradient-text">
+          <h2 className="text-3xl md:text-4xl font-bold gradient-text">
             Building India's Energy Backbone
           </h2>
 
-          <p className="mt-6 text-gray-400 leading-relaxed">
-            KAC Construction delivers high-voltage transmission
-            infrastructure with precision, safety, and unmatched reliability.
+          <p className="mt-4 text-gray-400">
+            KAC Construction delivers high-voltage transmission infrastructure with precision and reliability.
           </p>
         </div>
       </Reveal>
@@ -25,7 +21,7 @@ export default function AboutSection() {
       <Reveal>
         <img
           src="/placeholder.jpg"
-          className="rounded-xl shadow-xl hover:scale-105 transition duration-500"
+          className="w-full rounded-xl"
         />
       </Reveal>
 

@@ -1,4 +1,5 @@
 "use client"
+
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 
@@ -32,63 +33,68 @@ export default function Hero({ startAnimation }: { startAnimation: boolean }) {
   }, [startAnimation])
 
   return (
-    <section className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+    <section className="relative w-full h-[100dvh] flex items-center justify-center text-center text-white overflow-hidden px-4">
 
-      {/* 🎥 VIDEO */}
+      {/* 🎥 Background Video */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
-        className="absolute w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover"
       >
         <source src="/videos/myhero.mp4" type="video/mp4" />
       </video>
 
-      {/* 🔥 Cinematic Overlay (NO EXTRA BLUR) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80" />
+      {/* 🔥 Dark Overlay */}
+      <div className="absolute inset-0 bg-black/60" />
 
-      {/* CONTENT */}
-      <div className="relative z-10 px-6">
+      {/* ✨ Content */}
+      <div className="relative z-10 max-w-4xl w-full">
 
-        {/* Heading */}
+        {/* 🔥 Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 80 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: startAnimation ? 1 : 0, y: startAnimation ? 0 : 80 }}
           transition={{ duration: 1 }}
-          className="text-5xl md:text-7xl font-bold leading-tight"
+          className="text-3xl sm:text-5xl md:text-7xl font-bold leading-tight"
         >
           {displayText}
           {showCursor && <span className="animate-pulse">|</span>}
         </motion.h1>
 
-        {/* Paragraph */}
+        {/* 📄 Paragraph */}
         {showContent && (
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mt-6 text-gray-300 max-w-xl mx-auto"
+            className="mt-4 text-gray-300 text-sm sm:text-base md:text-lg max-w-xl mx-auto"
           >
             765kV transmission, tower erection & infrastructure experts.
           </motion.p>
         )}
 
-        {/* Buttons */}
+        {/* 🔘 Buttons */}
         {showContent && (
           <motion.div
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mt-8 flex gap-6 justify-center flex-wrap"
+            className="mt-6 flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <button className="btn-primary">View Projects</button>
-            <button className="btn-outline">Contact Us</button>
+            <button className="btn-primary">
+              View Projects
+            </button>
+
+            <button className="btn-outline">
+              Contact Us
+            </button>
           </motion.div>
         )}
 
       </div>
+
     </section>
   )
 }
