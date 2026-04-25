@@ -10,7 +10,7 @@ export default function VideoSection() {
         loop
         className="absolute w-full h-full object-cover"
       >
-        <source src="/videos/Hero.mp4" />
+        <source src="/videos/myhero.mp4" />
       </video>
 
       <div className="absolute inset-0 bg-black/60 flex items-center justify-center text-center px-4">

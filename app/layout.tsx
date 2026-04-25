@@ -3,16 +3,14 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const geist = Geist({
-  subsets: ["latin"],
-});
+const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "KAC Construction | Transmission Experts",
-  description:
-    "KAC Construction specializes in tower erection, foundation and stringing work across India.",
+  title: "KAC Construction",
+  description: "Transmission Experts",
 };
 
 export default function RootLayout({
@@ -22,11 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geist.className} antialiased`}>
+      <body className={geist.className}>
 
         <Navbar />
 
-        {children}
+        {children}   {/* 🔥 MAIN PAGE */}
+
+        <Footer />
 
         <WhatsAppButton />
 
