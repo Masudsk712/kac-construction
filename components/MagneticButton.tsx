@@ -1,31 +1,48 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { motion } from "framer-motion"
+import { useRef } from "react";
+import gsap from "gsap";
 
-export default function MagneticButton({ children }: any) {
-  const ref = useRef<HTMLButtonElement>(null)
+export default function MagneticButton({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const btnRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = (e: any) => {
-    const rect = ref.current!.getBoundingClientRect()
-    const x = e.clientX - rect.left - rect.width / 2
-    const y = e.clientY - rect.top - rect.height / 2
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const btn = btnRef.current;
+    if (!btn) return;
 
-    ref.current!.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`
-  }
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
 
-  const reset = () => {
-    ref.current!.style.transform = `translate(0px,0px)`
-  }
+    gsap.to(btn, {
+      x: x * 0.3,
+      y: y * 0.3,
+      duration: 0.3,
+      ease: "power2.out",
+    });
+  };
+
+  const handleLeave = () => {
+    gsap.to(btnRef.current, {
+      x: 0,
+      y: 0,
+      duration: 0.5,
+      ease: "elastic.out(1, 0.3)",
+    });
+  };
 
   return (
-    <motion.button
-      ref={ref}
+    <div
+      ref={btnRef}
       onMouseMove={handleMouseMove}
-      onMouseLeave={reset}
-      className="btn-primary"
+      onMouseLeave={handleLeave}
+      className="px-6 py-3 bg-cyan-500 rounded-lg cursor-pointer inline-block text-white font-semibold hover:bg-cyan-600 transition"
     >
       {children}
-    </motion.button>
-  )
+    </div>
+  );
 }
