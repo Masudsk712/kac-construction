@@ -11,14 +11,14 @@ import CTASection from "@/components/CTASection"
 import PageLoader from "@/components/PageLoader"
 import ScrollZoom from "@/components/ScrollZoom"
 
-// 🔥 NEW PREMIUM SECTIONS
 import StatsBar from "@/components/StatsBar"
 import WhyChooseUs from "@/components/WhyChooseUs"
 import IndiaMapSection from "@/components/IndiaMapSection"
 import FAQSection from "@/components/FAQSection"
 import ProcessSection from "@/components/ProcessSection"
 
-export default function Home() {
+export default function HomePage() {
+
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -31,55 +31,55 @@ export default function Home() {
   return (
     <main className="overflow-x-hidden">
 
-      {/* 🔥 HERO (NO ZOOM) */}
-      <Hero startAnimation={!loading} />
+      {/* HERO */}
+      <Hero />
 
-      {/* 🔥 TRUST FIRST */}
+      {/* STATS */}
       <ScrollZoom>
         <StatsBar />
       </ScrollZoom>
 
-      {/* 🔥 ABOUT */}
+      {/* ABOUT */}
       <ScrollZoom>
         <AboutSection />
       </ScrollZoom>
 
-      {/* 🔥 WHY CHOOSE US */}
+      {/* WHY */}
       <ScrollZoom>
         <WhyChooseUs />
       </ScrollZoom>
 
-      {/* 🔥 SERVICES */}
+      {/* SERVICES */}
       <ScrollZoom>
         <ServicesSection />
       </ScrollZoom>
 
-      {/* 🔥 PROCESS */}
+      {/* PROCESS */}
       <ScrollZoom>
         <ProcessSection />
       </ScrollZoom>
 
-      {/* 🔥 PROJECTS */}
+      {/* PROJECTS */}
       <ScrollZoom>
         <ProjectsSection />
       </ScrollZoom>
 
-      {/* 🔥 INDIA MAP */}
+      {/* MAP */}
       <ScrollZoom>
         <IndiaMapSection />
       </ScrollZoom>
 
-      {/* 🔥 VIDEO */}
+      {/* VIDEO */}
       <ScrollZoom>
         <VideoSection />
       </ScrollZoom>
 
-      {/* 🔥 FAQ */}
+      {/* FAQ */}
       <ScrollZoom>
         <FAQSection />
       </ScrollZoom>
 
-      {/* 🔥 CTA */}
+      {/* CTA */}
       <ScrollZoom>
         <CTASection />
       </ScrollZoom>
