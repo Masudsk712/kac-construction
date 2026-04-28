@@ -11,6 +11,9 @@ const geist = Geist({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "KAC Construction",
   description: "Transmission Experts",
+   icons: {
+    icon: "/LOGO 1.png",   // 👈 IMPORTANT
+  },
 };
 
 export default function RootLayout({

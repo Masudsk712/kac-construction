@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  // 🔥 scroll detect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 80)
@@ -20,17 +20,49 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled
-          ? "bg-white text-black shadow-lg"
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-md text-black shadow-lg"
           : "bg-transparent text-white"
-        }`}
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
 
-        {/* Logo */}
-        <h1 className={`text-xl font-bold ${scrolled ? "text-black" : "text-cyan-400"}`}>
-          KAC Construction
-        </h1>
+        {/* 🔥 LOGO + NAME */}
+        <div className="flex items-center gap-3">
+
+          {/* ✅ BIGGER + GLOWING LOGO */}
+          <Image
+            src="/LOGO 1.png"   // better: /logo.png
+            alt="KAC Logo"
+            width={60}
+            height={60}
+            className="transition duration-300 hover:scale-110 
+            drop-shadow-[0_0_15px_rgba(34,211,238,0.8)] 
+            hover:drop-shadow-[0_0_25px_rgba(34,211,238,1)]"
+          />
+
+          {/* ✅ TEXT */}
+          <div className="leading-tight">
+            <h1
+              className={`text-xl font-bold ${
+                scrolled ? "text-black" : "text-cyan-400"
+              }`}
+            >
+              KAC
+            </h1>
+
+            {/* 🔥 DEEP BLUE COLOR */}
+            <h1
+              className={`text-xl font-bold ${
+                scrolled ? "text-black" : "text-cyan-400"
+              }`}
+            >
+              CONSTRUCTION
+            </h1>
+          </div>
+
+        </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
