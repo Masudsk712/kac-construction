@@ -1,44 +1,87 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { useEffect, useRef, useState } from "react";
+
+import {
+  FaBroadcastTower,
+  FaTools,
+  FaMapMarkedAlt,
+  FaBolt,
+} from "react-icons/fa";
 
 const stats = [
-  { value: 150, suffix: "+", label: "Towers Completed" },
-  { value: 50, suffix: "+", label: "Ongoing Projects" },
-  { value: 10, suffix: "+", label: "States Covered" },
-  { value: 765, suffix: "kV", label: "Transmission Capacity" },
+  {
+    value: 150,
+    suffix: "+",
+    label: "Towers Completed",
+    icon: <FaBroadcastTower />,
+  },
+  {
+    value: 50,
+    suffix: "+",
+    label: "Ongoing Projects",
+    icon: <FaTools />,
+  },
+  {
+    value: 10,
+    suffix: "+",
+    label: "States Covered",
+    icon: <FaMapMarkedAlt />,
+  },
+  {
+    value: 765,
+    suffix: "kV",
+    label: "Transmission Capacity",
+    icon: <FaBolt />,
+  },
 ];
 
-export default function StatsBar() {
-  const statsRef = useRef<HTMLDivElement>(null);
+// 🔥 PRO HOOK
+function useCountUpOnView(end: number, duration = 1500) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement | null>(null);
+  const [started, setStarted] = useState(false);
 
-  // 🔥 Count Up Animation
   useEffect(() => {
-    if (!statsRef.current) return;
+    if (!ref.current) return;
 
-    const numbers = statsRef.current.querySelectorAll(".count");
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started) {
+          setStarted(true);
 
-    numbers.forEach((num: any) => {
-      const final = parseInt(num.getAttribute("data-value"));
+          let start = 0;
+          const increment = end / (duration / 16);
 
-      gsap.fromTo(
-        num,
-        { innerText: 0 },
-        {
-          innerText: final,
-          duration: 1.5,
-          snap: { innerText: 1 },
-          ease: "power2.out",
+          const animate = () => {
+            start += increment;
+            if (start < end) {
+              setCount(Math.floor(start));
+              requestAnimationFrame(animate);
+            } else {
+              setCount(end);
+            }
+          };
+
+          animate();
         }
-      );
-    });
-  }, []);
+      },
+      { threshold: 0.5 }
+    );
 
+    observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, [end, duration, started]);
+
+  return { count, ref };
+}
+
+export default function StatsBar() {
   return (
     <section className="py-28 bg-[#020617] text-white">
-      
+
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
@@ -49,42 +92,45 @@ export default function StatsBar() {
         Our Impact
       </motion.h2>
 
-      {/* Stats Grid */}
-      <div
-        ref={statsRef}
-        className="grid md:grid-cols-4 gap-8 w-[90%] max-w-6xl mx-auto"
-      >
-        {stats.map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ delay: i * 0.2, duration: 0.6 }}
-            className="group relative p-10 rounded-2xl bg-[#111827] border border-white/10 text-center overflow-hidden"
-          >
+      {/* Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-[90%] max-w-6xl mx-auto">
+        {stats.map((item, i) => {
+          const { count, ref } = useCountUpOnView(item.value);
 
-            {/* Glow Effect */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 blur-xl" />
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.07 }}
+              transition={{ delay: i * 0.15, duration: 0.5 }}
+              className="group relative p-8 rounded-2xl bg-[#111827] border border-white/10 text-center overflow-hidden"
+            >
 
-            {/* Number */}
-            <h2 className="text-5xl font-bold text-cyan-400 mb-3">
-              <span
-                className="count"
-                data-value={item.value}
-              >
-                0
-              </span>
-              {item.suffix}
-            </h2>
+              {/* Glow */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 blur-xl" />
 
-            {/* Label */}
-            <p className="text-gray-400 text-sm uppercase tracking-wide">
-              {item.label}
-            </p>
+              {/* Icon */}
+              <div className="text-3xl text-cyan-400 mb-4 group-hover:scale-110 transition">
+                {item.icon}
+              </div>
 
-          </motion.div>
-        ))}
+              {/* Number */}
+              <h2 className="text-4xl font-bold text-white">
+                <span ref={ref} className="text-cyan-400">
+                  {count}
+                </span>
+                {item.suffix}
+              </h2>
+
+              {/* Label */}
+              <p className="text-gray-400 text-sm mt-2 uppercase tracking-wide">
+                {item.label}
+              </p>
+
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
