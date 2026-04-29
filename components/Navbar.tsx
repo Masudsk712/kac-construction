@@ -41,27 +41,6 @@ export default function Navbar() {
             drop-shadow-[0_0_15px_rgba(34,211,238,0.8)] 
             hover:drop-shadow-[0_0_25px_rgba(34,211,238,1)]"
           />
-
-          {/* ✅ TEXT */}
-          <div className="leading-tight">
-            <h1
-              className={`text-xl font-bold ${
-                scrolled ? "text-black" : "text-cyan-400"
-              }`}
-            >
-              KAC
-            </h1>
-
-            {/* 🔥 DEEP BLUE COLOR */}
-            <h1
-              className={`text-xl font-bold ${
-                scrolled ? "text-black" : "text-cyan-400"
-              }`}
-            >
-              CONSTRUCTION
-            </h1>
-          </div>
-
         </div>
 
         {/* Desktop Menu */}

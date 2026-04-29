@@ -1,75 +1,64 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function CTASection() {
   return (
-    <section className="py-28 bg-[#020617] text-white">
+    <section className="relative py-32 bg-[#020617] text-white overflow-hidden">
 
-      {/* Heading */}
-      <motion.h2
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-center text-4xl md:text-5xl font-bold text-cyan-400 mb-16"
-      >
-        Ready to Work With Us?
-      </motion.h2>
+      {/* 🔥 Subtle Glow Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/10 blur-3xl opacity-40" />
 
-      <div className="grid md:grid-cols-2 gap-12 w-[90%] mx-auto items-center">
+      <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
 
-        {/* LEFT CONTACT INFO */}
-        <div className="space-y-6">
+        {/* 🔥 Headline */}
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-6xl font-bold leading-tight"
+        >
+          Let’s Build the Future Together
+        </motion.h2>
 
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-4 p-5 bg-[#111827] rounded-xl border border-white/10"
-          >
-            <FaPhoneAlt className="text-cyan-400 text-xl" />
-            <p>+91 9330758804</p>
-          </motion.div>
+        {/* 🔥 Subtext */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="mt-6 text-gray-400 text-lg max-w-2xl mx-auto"
+        >
+          From transmission lines to large-scale infrastructure —  
+          we deliver reliable, high-quality construction solutions across India.
+        </motion.p>
 
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-4 p-5 bg-[#111827] rounded-xl border border-white/10"
-          >
-            <FaEnvelope className="text-cyan-400 text-xl" />
-            <p>kacconstruction@gmail.com</p>
-          </motion.div>
+        {/* 🔥 Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="mt-10 flex flex-col sm:flex-row gap-5 justify-center"
+        >
 
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-4 p-5 bg-[#111827] rounded-xl border border-white/10"
-          >
-            <FaMapMarkerAlt className="text-cyan-400 text-xl" />
-            <p>Malda, West Bengal, India</p>
-          </motion.div>
-
-          {/* WhatsApp Button */}
+          {/* Primary CTA */}
           <a
             href="https://wa.me/919330758804"
             target="_blank"
-            className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 rounded-lg hover:bg-green-600 transition mt-6"
+            className="flex items-center justify-center gap-3 px-8 py-4 bg-cyan-500 hover:bg-cyan-600 rounded-full text-lg font-medium transition shadow-[0_0_20px_rgba(34,211,238,0.4)]"
           >
             <FaWhatsapp />
-            Chat on WhatsApp
+            Start a Project
           </a>
 
-        </div>
+          {/* Secondary CTA */}
+          <a
+            href="mailto:kacconstruction@gmail.com"
+            className="px-8 py-4 border border-white/20 rounded-full text-lg hover:bg-white/10 transition"
+          >
+            Contact Us
+          </a>
 
-        {/* RIGHT GOOGLE MAP */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="w-full h-[350px] rounded-xl overflow-hidden border border-white/10"
-        >
-          <iframe
-            src="https://www.google.com/maps?q=Malda,West Bengal&output=embed"
-            className="w-full h-full"
-            loading="lazy"
-          />
         </motion.div>
 
       </div>

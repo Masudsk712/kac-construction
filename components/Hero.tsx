@@ -23,10 +23,15 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 px-6 flex flex-col items-center">
 
-        <h1 className="text-5xl md:text-7xl font-bold gradient-text">
-          Powering India's Future
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wide bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 text-transparent bg-clip-text drop-shadow-[0_0_25px_rgba(34,211,238,0.5)] leading-tight"
+          style={{ fontFamily: "Times New Roman, serif" }}
+        >
+          KAC CONSTRUCTION
         </h1>
 
+        <h4 className="mt-3 sm:mt-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white/90">
+          Powering India's Future
+        </h4>
         <p className="mt-6 text-gray-300 max-w-xl mx-auto">
           Experts in Transmission Line, Tower Erection & Infrastructure Projects
         </p>
