@@ -20,11 +20,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/90 backdrop-blur-md text-black shadow-lg"
-          : "bg-transparent text-white"
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled
+        ? "bg-black/50 backdrop-blur-md text-white shadow-lg border-b border-white/10"
+        : "bg-transparent text-white"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
 
@@ -55,9 +54,9 @@ export default function Navbar() {
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
             <div className="space-y-1">
-              <span className={`block w-6 h-0.5 ${scrolled ? "bg-black" : "bg-white"}`}></span>
-              <span className={`block w-6 h-0.5 ${scrolled ? "bg-black" : "bg-white"}`}></span>
-              <span className={`block w-6 h-0.5 ${scrolled ? "bg-black" : "bg-white"}`}></span>
+              <span className="block w-6 h-0.5 bg-white"></span>
+              <span className="block w-6 h-0.5 bg-white"></span>
+              <span className="block w-6 h-0.5 bg-white"></span>
             </div>
           </button>
         </div>

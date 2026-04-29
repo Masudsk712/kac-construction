@@ -10,39 +10,34 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative text-gray-400 pt-20 pb-10 overflow-hidden">
+    <footer className="relative text-gray-400 overflow-hidden">
 
-      {/* 🔥 BACKGROUND IMAGE */}
+      {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/tower-pic1.webp')" }} //
+        style={{ backgroundImage: "url('/tower-pic1.webp')" }}
       />
 
-      {/* 🔥 DARK OVERLAY */}
-      <div className="absolute inset-0 bg-[#020617]/90 backdrop-sm" />
+      <div className="absolute inset-0 bg-[#020617]/90" />
 
-      {/* 🔥 CONTENT */}
-      <div className="relative z-10 w-[90%] mx-auto grid md:grid-cols-5 gap-10">
+      <div className="container-custom relative z-10 grid md:grid-cols-5 gap-10 pt-20 pb-10">
 
-        {/* LOGO / ABOUT */}
+        {/* ABOUT */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           className="md:col-span-2"
         >
-          <h2 className="text-cyan-400 text-2xl font-bold mb-4 tracking-wide">
+          <h2 className="text-cyan-400 text-xl font-bold mb-4">
             KAC Construction
           </h2>
 
-          <p className="text-sm leading-relaxed max-w-sm">
-            Experts in transmission line, tower erection and power grid
-            infrastructure across India — delivering reliable and scalable
-            engineering solutions.
+          <p className="text-sm max-w-sm">
+            Transmission line, tower erection and power infrastructure experts across India.
           </p>
 
-          {/* 🔥 SQUARE MAP */}
-          <div className="mt-6 w-[200px] h-[200px] rounded-xl overflow-hidden border border-white/10">
+          {/* MAP */}
+          <div className="mt-6 w-[180px] h-[180px] rounded-xl overflow-hidden border border-white/10">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d432.17565475395367!2d88.10431903451729!3d25.081620092933274!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDA0JzUzLjYiTiA4OMKwMDYnMTUuOCJF!5e1!3m2!1sen!2sus!4v1777467118026!5m2!1sen!2sus"
               className="w-full h-full"
@@ -51,80 +46,65 @@ export default function Footer() {
           </div>
         </motion.div>
 
-        {/* QUICK LINKS */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          <h3 className="text-white mb-4 font-semibold">Quick Links</h3>
-
+        {/* LINKS */}
+        <div>
+          <h3 className="text-white mb-3 font-semibold">Links</h3>
           <ul className="space-y-2 text-sm">
-            <li className="hover:text-cyan-400 transition cursor-pointer">Home</li>
-            <li className="hover:text-cyan-400 transition cursor-pointer">Services</li>
-            <li className="hover:text-cyan-400 transition cursor-pointer">Projects</li>
-            <li className="hover:text-cyan-400 transition cursor-pointer">Contact</li>
+            <li className="hover:text-cyan-400 cursor-pointer">Home</li>
+            <li className="hover:text-cyan-400 cursor-pointer">Services</li>
+            <li className="hover:text-cyan-400 cursor-pointer">Projects</li>
+            <li className="hover:text-cyan-400 cursor-pointer">Contact</li>
           </ul>
-        </motion.div>
+        </div>
 
         {/* SERVICES */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <h3 className="text-white mb-4 font-semibold">Services</h3>
-
-          <ul className="space-y-2 text-sm text-gray-400">
-            <li className="hover:text-white transition">Tower Foundation</li>
-            <li className="hover:text-white transition">Tower Erection</li>
-            <li className="hover:text-white transition">Stringing Work</li>
-            <li className="hover:text-white transition">Power Grid Projects</li>
+        <div>
+          <h3 className="text-white mb-3 font-semibold">Services</h3>
+          <ul className="space-y-2 text-sm">
+            <li>Tower Foundation</li>
+            <li>Tower Erection</li>
+            <li>Stringing Work</li>
+            <li>Power Grid</li>
           </ul>
-        </motion.div>
+        </div>
 
         {/* CONTACT */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-        >
-          <h3 className="text-white mb-4 font-semibold">Contact</h3>
+        <div>
+          <h3 className="text-white mb-3 font-semibold">Contact</h3>
 
-          <div className="space-y-3 text-sm">
+          <div className="space-y-2 text-sm">
 
-            <div className="flex items-center gap-3">
+            <div className="flex gap-2 items-center">
               <FaPhoneAlt className="text-cyan-400" />
-              <span>+91 9330758804</span>
+              +91 9330758804
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex gap-2 items-center">
               <FaEnvelope className="text-cyan-400" />
-              <span>kacconstruction@gmail.com</span>
+              kacconstruction@gmail.com
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex gap-2 items-center">
               <FaMapMarkerAlt className="text-cyan-400" />
-              <span>Malda, West Bengal</span>
+              Malda, WB
             </div>
 
-            {/* WhatsApp */}
             <a
               href="https://wa.me/919330758804"
               target="_blank"
-              className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full bg-green-500/10 text-green-400 hover:bg-green-500/20 transition"
+              className="inline-flex items-center gap-2 mt-2 text-green-400"
             >
-              <FaWhatsapp />
-              Chat
+              <FaWhatsapp /> WhatsApp
             </a>
 
           </div>
-        </motion.div>
+        </div>
+
       </div>
 
-      {/* 🔥 BOTTOM */}
-      <div className="relative z-10 mt-14 border-t border-white/10 pt-6 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} KAC Construction. All rights reserved.
+      {/* Bottom */}
+      <div className="relative z-10 text-center text-sm border-t border-white/10 py-4">
+        © {new Date().getFullYear()} KAC Construction
       </div>
     </footer>
   );

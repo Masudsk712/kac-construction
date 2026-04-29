@@ -5,56 +5,53 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export default function CTASection() {
   return (
-    <section className="relative py-32 bg-[#020617] text-white overflow-hidden">
+    <section className="bg-[#020617] text-white relative overflow-hidden">
 
-      {/* 🔥 Subtle Glow Background */}
+      {/* Glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/10 blur-3xl opacity-40" />
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
+      <div className="container-custom text-center max-w-4xl relative z-10">
 
-        {/* 🔥 Headline */}
+        {/* Heading */}
         <motion.h2
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-bold leading-tight"
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold"
         >
           Let’s Build the Future Together
         </motion.h2>
 
-        {/* 🔥 Subtext */}
+        {/* Subtext */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="mt-6 text-gray-400 text-lg max-w-2xl mx-auto"
+          transition={{ delay: 0.2 }}
+          className="mt-5 text-gray-400 max-w-2xl mx-auto"
         >
-          From transmission lines to large-scale infrastructure —  
-          we deliver reliable, high-quality construction solutions across India.
+          Reliable transmission infrastructure with precision, quality, and trust.
         </motion.p>
 
-        {/* 🔥 Buttons */}
+        {/* Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="mt-10 flex flex-col sm:flex-row gap-5 justify-center"
+          transition={{ delay: 0.4 }}
+          className="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
         >
 
-          {/* Primary CTA */}
           <a
             href="https://wa.me/919330758804"
             target="_blank"
-            className="flex items-center justify-center gap-3 px-8 py-4 bg-cyan-500 hover:bg-cyan-600 rounded-full text-lg font-medium transition shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+            className="flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-cyan-500 hover:bg-cyan-600 transition"
           >
             <FaWhatsapp />
             Start a Project
           </a>
 
-          {/* Secondary CTA */}
           <a
             href="mailto:kacconstruction@gmail.com"
-            className="px-8 py-4 border border-white/20 rounded-full text-lg hover:bg-white/10 transition"
+            className="px-7 py-3 rounded-full border border-white/20 hover:bg-white/10 transition"
           >
             Contact Us
           </a>

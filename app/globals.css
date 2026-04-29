@@ -5,6 +5,7 @@
 /* ============================= */
 :root {
   --bg: #020617;
+  --bg-soft: #060d1f;
   --text: #e2e8f0;
   --primary: #22d3ee;
 }
@@ -17,7 +18,7 @@ html {
 }
 
 body {
-  background: radial-gradient(circle at top, #0a0f1c, #020617);
+  background: radial-gradient(circle at top, #0a0f1c 0%, #020617 60%);
   color: var(--text);
   font-family: sans-serif;
   overflow-x: hidden;
@@ -35,11 +36,33 @@ body {
 }
 
 /* ============================= */
-/* SECTION SPACING */
+/* 🔥 PREMIUM SECTION SPACING */
 /* ============================= */
 section {
   position: relative;
   padding: 6rem 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 8rem 0; /* desktop pe premium spacing */
+  }
+}
+
+/* section separator glow */
+section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(34, 211, 238, 0.2),
+    transparent
+  );
 }
 
 /* ============================= */
@@ -61,35 +84,37 @@ section {
 .btn-outline {
   padding: 12px 28px;
   border-radius: 999px;
-  border: 1px solid #444;
+  border: 1px solid rgba(255,255,255,0.15);
   transition: 0.3s;
 }
 .btn-outline:hover {
   background: rgba(255,255,255,0.05);
+  border-color: rgba(34, 211, 238, 0.4);
 }
 
 /* ============================= */
 /* GLASS + CARD */
 /* ============================= */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* premium hover */
 .card-hover {
-  transition: 0.4s;
+  transition: 0.4s ease;
 }
 .card-hover:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
 }
 
 /* ============================= */
 /* GLOW */
 /* ============================= */
 .glow {
-  box-shadow: 0 0 40px rgba(34, 211, 238, 0.2);
+  box-shadow: 0 0 60px rgba(34, 211, 238, 0.25);
 }
 
 /* ============================= */
@@ -99,4 +124,20 @@ section {
   background: linear-gradient(to right, #22d3ee, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* ============================= */
+/* 🔥 PREMIUM CONTAINER */
+/* ============================= */
+.container-custom {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ============================= */
+/* 🔥 SOFT BACKGROUND VARIATION */
+/* ============================= */
+.bg-soft {
+  background: linear-gradient(to bottom, #020617, #060d1f);
 }
