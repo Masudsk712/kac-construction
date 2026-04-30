@@ -16,6 +16,7 @@ import WhyChooseUs from "@/components/WhyChooseUs"
 import IndiaMapSection from "@/components/IndiaMapSection"
 import FAQSection from "@/components/FAQSection"
 import ProcessSection from "@/components/ProcessSection"
+import ClientsSection from "@/components/ClientsSection"
 
 export default function HomePage() {
 
@@ -62,6 +63,11 @@ export default function HomePage() {
       {/* PROJECTS */}
       <ScrollZoom>
         <ProjectsSection />
+      </ScrollZoom>
+
+      {/* CLIENTS */}
+      <ScrollZoom>
+        <ClientsSection />
       </ScrollZoom>
 
       {/* MAP */}
