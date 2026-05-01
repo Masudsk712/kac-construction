@@ -3,7 +3,7 @@
 import Image from "next/image"
 
 const clients = [
-  "/clients/Adani.jpg",
+  "/clients/Adani.webp",
   "/clients/APAR.webp",
   "/clients/Bajel.webp",
   "/clients/Jsk.webp",
@@ -18,11 +18,13 @@ const clients = [
   "/clients/sterlight.webp",
   "/clients/tataproject.webp",
   "/clients/Transrail.webp",
+  "/clients/skipper.webp",
+  "/clients/Grilll.webp",
 ]
 
 export default function ClientsSection() {
   return (
-    <section className="relative py-28 bg-[#020617] text-white overflow-hidden">
+    <section className="relative py-24 bg-[#020617] text-white overflow-hidden">
 
       {/* Background */}
       <div
@@ -34,13 +36,13 @@ export default function ClientsSection() {
       <div className="relative z-10">
 
         {/* Heading */}
-        <h2 className="text-center text-4xl md:text-5xl font-bold text-cyan-400 mb-16">
+        <h2 className="text-center text-4xl md:text-5xl font-bold text-cyan-400 mb-14">
           Our Clients
         </h2>
 
         {/* ROW 1 */}
-        <div className="overflow-hidden group mb-12">
-          <div className="flex gap-10 w-max animate-scrollLeft group-hover:[animation-play-state:paused]">
+        <div className="overflow-hidden mb-10">
+          <div className="scroll-left flex gap-8 w-max">
             {[...clients, ...clients].map((logo, i) => (
               <ClientCard key={i} logo={logo} />
             ))}
@@ -48,8 +50,8 @@ export default function ClientsSection() {
         </div>
 
         {/* ROW 2 */}
-        <div className="overflow-hidden group">
-          <div className="flex gap-10 w-max animate-scrollRight group-hover:[animation-play-state:paused]">
+        <div className="overflow-hidden">
+          <div className="scroll-right flex gap-8 w-max">
             {[...clients, ...clients].reverse().map((logo, i) => (
               <ClientCard key={i} logo={logo} />
             ))}
@@ -61,27 +63,24 @@ export default function ClientsSection() {
   )
 }
 
-/* 🔥 WHITE PREMIUM CARD */
+/* 🔥 FULL IMAGE CARD */
 function ClientCard({ logo }: { logo: string }) {
   return (
     <div
       className="
-      min-w-[140px] h-[140px] 
-      flex items-center justify-center 
-      rounded-2xl 
-      bg-white/90 backdrop-blur-sm
-      border border-gray-200
+      relative min-w-[150px] h-[150px] 
+      rounded-2xl overflow-hidden
+      bg-white shadow-md
       transition duration-500
       hover:scale-110
-      hover:shadow-[0_0_30px_rgba(34,211,238,0.5)]
+      hover:shadow-[0_0_40px_rgba(34,211,238,0.6)]
     "
     >
       <Image
         src={logo}
         alt="client"
-        width={90}
-        height={90}
-        className="object-contain"
+        fill
+        className="object-contain p-4"
       />
     </div>
   )
