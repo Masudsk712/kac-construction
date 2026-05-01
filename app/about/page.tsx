@@ -1,15 +1,25 @@
+"use client"
+
+import Hero from "@/components/about/Hero"
+import Overview from "@/components/about/Overview"
+import Leadership from "@/components/about/Leadership"
+import Vision from "@/components/about/Vision"
+import Values from "@/components/about/Values"
+import MDMessage from "@/components/about/MDMessage"
+import Journey from "@/components/about/Journey"
+import Awards from "@/components/about/Awards"
+
 export default function AboutPage() {
   return (
-    <div className="h-screen flex flex-col items-center justify-center text-center bg-[#020617] text-white px-6">
-
-      <h1 className="text-4xl md:text-5xl font-bold text-cyan-400">
-        About KAC Construction
-      </h1>
-
-      <p className="mt-4 text-gray-400 max-w-xl">
-        We specialize in high-voltage transmission line infrastructure, delivering reliable engineering solutions across India.
-      </p>
-
-    </div>
+    <main className="bg-[#020617] text-white overflow-hidden">
+      <Hero />
+      <Overview />
+      <Vision />
+      <MDMessage />
+      <Leadership />
+      <Values />
+      <Journey />
+      <Awards />
+    </main>
   )
 }
