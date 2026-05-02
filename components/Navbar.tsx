@@ -9,7 +9,8 @@ import { usePathname } from "next/navigation"
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const pathname = usePathname() // 🔥 active route detect
+  const [aboutOpen, setAboutOpen] = useState(false) // 🔥 NEW
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +28,17 @@ export default function Navbar() {
         ? "text-cyan-400 font-semibold"
         : "hover:text-cyan-300"
     }`
+
+  // 🔥 ABOUT SUBMENU ITEMS
+  const aboutLinks = [
+    { name: "Overview", href: "/about#overview" },
+    { name: "Vision", href: "/about#vision" },
+    { name: "MD Message", href: "/about#md" },
+    { name: "Leadership", href: "/about#leadership" },
+    { name: "Values", href: "/about#values" },
+    { name: "Journey", href: "/about#journey" },
+    { name: "Awards", href: "/about#awards" },
+  ]
 
   return (
     <nav
@@ -52,9 +64,48 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-8 items-center">
+
           <Link href="/" className={linkStyle("/")}>Home</Link>
-          <Link href="/about" className={linkStyle("/about")}>About</Link>
+
+          {/* 🔥 PREMIUM ABOUT DROPDOWN */}
+          <div
+            className="relative"
+            onMouseEnter={() => setAboutOpen(true)}
+            onMouseLeave={() => setAboutOpen(false)}
+          >
+            <Link href="/about" className={linkStyle("/about")}>
+              About ▾
+            </Link>
+
+            <AnimatePresence>
+              {aboutOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 15 }}
+                  transition={{ duration: 0.25 }}
+                  className="absolute top-10 left-0 
+                  w-64 bg-black/80 backdrop-blur-xl 
+                  border border-white/10 rounded-xl 
+                  shadow-xl p-4 space-y-2"
+                >
+                  {aboutLinks.map((item, i) => (
+                    <Link
+                      key={i}
+                      href={item.href}
+                      className="block px-3 py-2 rounded-md 
+                      hover:bg-cyan-500/20 hover:text-cyan-300 
+                      transition"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <Link href="/service" className={linkStyle("/service")}>Services</Link>
           <Link href="/projects" className={linkStyle("/projects")}>Projects</Link>
           <Link href="/media" className={linkStyle("/media")}>Media</Link>
@@ -75,7 +126,7 @@ export default function Navbar() {
 
       </div>
 
-      {/* 🔥 MOBILE MENU UPGRADED */}
+      {/* 🔥 MOBILE MENU */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -92,9 +143,25 @@ export default function Navbar() {
               Home
             </Link>
 
-            <Link href="/about" onClick={() => setIsOpen(false)} className={linkStyle("/about")}>
-              About
-            </Link>
+            {/* 🔥 MOBILE ABOUT EXPANDED */}
+            <div>
+              <Link href="/about" onClick={() => setIsOpen(false)} className={linkStyle("/about")}>
+                About
+              </Link>
+
+              <div className="ml-4 mt-2 space-y-2 text-sm text-gray-300">
+                {aboutLinks.map((item, i) => (
+                  <Link
+                    key={i}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block hover:text-cyan-300"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
 
             <Link href="/service" onClick={() => setIsOpen(false)} className={linkStyle("/service")}>
               Services

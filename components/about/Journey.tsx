@@ -1,14 +1,37 @@
 "use client"
 
-export default function Journey() {
-  return (
-    <section className="min-h-screen px-6">
-      <h2 className="text-4xl text-cyan-400 text-center mb-10">Journey</h2>
+import { useEffect, useRef } from "react"
+import gsap from "gsap"
 
-      <div className="border-l-2 border-cyan-400 pl-6 space-y-6">
-        <div>2015 - Started Company</div>
-        <div>2018 - First Big Project</div>
-        <div>2023 - Expansion</div>
+export default function Journey() {
+  const lineRef = useRef(null)
+
+  useEffect(() => {
+    gsap.fromTo(lineRef.current,
+      { height: 0 },
+      {
+        height: "100%",
+        duration: 2,
+        scrollTrigger: {
+          trigger: lineRef.current,
+          start: "top 80%",
+        },
+      }
+    )
+  }, [])
+
+  return (
+    <section className="p-16 relative">
+      <h2 className="text-5xl text-center mb-10">Our Journey</h2>
+
+      <div className="relative flex justify-center">
+        <div ref={lineRef} className="absolute w-[3px] bg-cyan-400 h-full" />
+
+        <div className="space-y-10">
+          <div>2015 - Company Started</div>
+          <div>2018 - Expansion</div>
+          <div>2023 - Major Projects</div>
+        </div>
       </div>
     </section>
   )
