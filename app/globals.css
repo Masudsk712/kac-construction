@@ -43,6 +43,11 @@ section {
   padding: 6rem 0;
 }
 
+/* 🔥 HERO FIX (NO TOP GAP) */
+#hero {
+  padding: 0 !important;
+}
+
 @media (min-width: 768px) {
   section {
     padding: 8rem 0; /* desktop pe premium spacing */
@@ -163,4 +168,16 @@ section::after {
 @keyframes scrollRight {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
+}
+html {
+  scroll-padding-top: 100px;
+}
+/* FIX STICKY ISSUE */
+body {
+  overflow-x: hidden;
+}
+/* 🔥 FIX: sticky always visible */
+#StickyTabs {
+  position: relative;
+  z-index: 60;
 }
