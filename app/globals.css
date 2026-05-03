@@ -15,13 +15,16 @@
 /* ============================= */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* 🔥 navbar + sticky offset fix */
 }
 
 body {
   background: radial-gradient(circle at top, #0a0f1c 0%, #020617 60%);
   color: var(--text);
   font-family: sans-serif;
+
   overflow-x: hidden;
+  overflow-y: auto; /* 🔥 IMPORTANT (sticky fix) */
 }
 
 /* ============================= */
@@ -41,20 +44,32 @@ body {
 section {
   position: relative;
   padding: 6rem 0;
+
+  /* 🔥 anchor scroll fix */
+  scroll-margin-top: 120px;
 }
 
-/* 🔥 HERO FIX (NO TOP GAP) */
+/* 🔥 HERO FIX (NO GAP) */
 #hero {
   padding: 0 !important;
 }
 
+/* 🔥 IMPORTANT: sticky tabs ka offset */
+#StickyTabs {
+  scroll-margin-top: 120px;
+  position: relative;
+  z-index: 60;
+}
+
 @media (min-width: 768px) {
   section {
-    padding: 8rem 0; /* desktop pe premium spacing */
+    padding: 8rem 0;
   }
 }
 
-/* section separator glow */
+/* ============================= */
+/* SECTION GLOW LINE */
+/* ============================= */
 section::after {
   content: "";
   position: absolute;
@@ -106,7 +121,6 @@ section::after {
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* premium hover */
 .card-hover {
   transition: 0.4s ease;
 }
@@ -132,7 +146,7 @@ section::after {
 }
 
 /* ============================= */
-/* 🔥 PREMIUM CONTAINER */
+/* CONTAINER */
 /* ============================= */
 .container-custom {
   width: 90%;
@@ -141,16 +155,18 @@ section::after {
 }
 
 /* ============================= */
-/* 🔥 SOFT BACKGROUND VARIATION */
+/* SOFT BG */
 /* ============================= */
 .bg-soft {
   background: linear-gradient(to bottom, #020617, #060d1f);
 }
-/* 🔥 CLIENT SCROLL ANIMATION */
+
+/* ============================= */
+/* SCROLL ANIMATION */
+/* ============================= */
 .scroll-left {
   animation: scrollLeft 40s linear infinite;
 }
-
 .scroll-right {
   animation: scrollRight 40s linear infinite;
 }
@@ -169,15 +185,19 @@ section::after {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
-html {
-  scroll-padding-top: 100px;
+
+/* ============================= */
+/* 🔥 GSAP SAFE FIX */
+/* ============================= */
+* {
+  will-change: auto; /* ❌ pehle galat tha */
 }
-/* FIX STICKY ISSUE */
-body {
-  overflow-x: hidden;
+
+/* 🔥 Smooth render */
+img {
+  max-width: 100%;
+  display: block;
 }
-/* 🔥 FIX: sticky always visible */
-#StickyTabs {
-  position: relative;
-  z-index: 60;
+main {
+  overflow: visible !important;
 }

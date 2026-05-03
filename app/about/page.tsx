@@ -14,6 +14,8 @@ import MDMessage from "@/components/about/MDMessage"
 import Journey from "@/components/about/Journey"
 import Awards from "@/components/about/Awards"
 import StickyTabs from "@/components/about/StickyTabs"
+import AboutIntro from "@/components/about/AboutIntro"
+import AboutPinSection from "@/components/about/AboutPinSection"
 
 export default function AboutPage() {
   const pathname = usePathname()
@@ -21,21 +23,33 @@ export default function AboutPage() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
-    window.scrollTo(0, 0)
-    ScrollTrigger.refresh()
+    window.scrollTo({ top: 0, behavior: "auto" })
+
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh()
+    }, 500)
+
+    return () => clearTimeout(timer)
   }, [])
 
   return (
-    <main key={pathname} className="bg-[#020617] text-white overflow-hidden">
+    <main className="bg-[#020617] text-white">
 
+      {/* 🔥 HERO SECTION */}
       <section id="hero">
         <Hero />
       </section>
 
-      {/* 🔥 IMPORTANT FIX */}
-      <div className="sticky top-[70px] z-40">
-        <StickyTabs />
-      </div>
+      {/* 🔥 FIXED STICKY TABS (NO WRAPPER) */}
+      <StickyTabs />
+
+      {/* 🔥 PIN INTRO SECTION */}
+      <AboutPinSection />
+
+      {/* 🔥 CONTENT START (OFFSET FOR FIXED TABS) */}
+      <section id="about-intro" className="mt-[90px]">
+        <AboutIntro />
+      </section>
 
       <section id="overview">
         <Overview />
