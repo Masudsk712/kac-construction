@@ -1,62 +1,41 @@
-"use client"
-
-import { useEffect } from "react"
-import { usePathname } from "next/navigation"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-import Hero from "@/components/about/Hero"
-import Overview from "@/components/about/Overview"
-import Leadership from "@/components/about/Leadership"
-import Vision from "@/components/about/Vision"
-import Values from "@/components/about/Values"
-import MDMessage from "@/components/about/MDMessage"
-import Journey from "@/components/about/Journey"
-import Awards from "@/components/about/Awards"
-import StickyTabs from "@/components/about/StickyTabs"
-import AboutIntro from "@/components/about/AboutIntro"
-import AboutPinSection from "@/components/about/AboutPinSection"
+import Hero from "./components/Hero"
+import StickyTabs from "./components/StickyTabs"
+import Overview from "./components/Overview"
+import Vision from "./components/MissionVision"
+import MDMessage from "./components/MDMessage"
+import Leadership from "./components/Leadership"
+import Awards from "./components/Awards"
+import Strengths from "./components/Strengths"
+import Timeline from "./components/Timeline"
+import MissionVision from "./components/MissionVision"
 
 export default function AboutPage() {
-  const pathname = usePathname()
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
-
-    window.scrollTo({ top: 0, behavior: "auto" })
-
-    const timer = setTimeout(() => {
-      ScrollTrigger.refresh()
-    }, 500)
-
-    return () => clearTimeout(timer)
-  }, [])
-
   return (
-    <main className="bg-[#020617] text-white">
+    <main>
 
-      {/* 🔥 HERO SECTION */}
-      <section id="hero">
+      {/* HERO */}
+      <div id="hero">
         <Hero />
-      </section>
+      </div>
 
-      {/* 🔥 FIXED STICKY TABS (NO WRAPPER) */}
+      {/* STICKY NAV */}
       <StickyTabs />
 
-      {/* 🔥 PIN INTRO SECTION */}
-      <AboutPinSection />
-
-      {/* 🔥 CONTENT START (OFFSET FOR FIXED TABS) */}
-      <section id="about-intro" className="mt-[90px]">
-        <AboutIntro />
-      </section>
-
+      {/* SECTIONS */}
       <section id="overview">
         <Overview />
       </section>
 
+      <section id="strengths">
+        <Strengths />
+      </section>
+
+      <section id="timeline">
+        <Timeline />
+      </section>
+
       <section id="vision">
-        <Vision />
+        <MissionVision />
       </section>
 
       <section id="md">
@@ -65,14 +44,6 @@ export default function AboutPage() {
 
       <section id="leadership">
         <Leadership />
-      </section>
-
-      <section id="values">
-        <Values />
-      </section>
-
-      <section id="journey">
-        <Journey />
       </section>
 
       <section id="awards">
