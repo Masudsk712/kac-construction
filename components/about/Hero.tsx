@@ -9,42 +9,33 @@ export default function Hero() {
   const subRef = useRef<HTMLParagraphElement>(null)
   const badgeRef = useRef<HTMLDivElement>(null)
 
-  // 🔥 FIX: scroll directly to StickyTabs
+  // ✅ FIX: scroll to FIRST CONTENT (not StickyTabs)
   const handleScroll = () => {
-    const el = document.getElementById("StickyTabs")
+    const el = document.getElementById("overview")
     if (el) {
-      window.scrollTo({
-        top: el.offsetTop - 80, // navbar offset
-        behavior: "smooth",
-      })
+      el.scrollIntoView({ behavior: "smooth" })
     }
   }
 
   useEffect(() => {
-    gsap.set([badgeRef.current, titleRef.current, subRef.current], {
-      opacity: 1,
-    })
-
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        delay: 0.2,
-      })
+      const tl = gsap.timeline({ delay: 0.2 })
 
       tl.from(badgeRef.current, {
         opacity: 0,
         y: 30,
-        duration: 0.8,
+        duration: 0.7,
         ease: "power3.out",
       })
         .from(titleRef.current, {
           opacity: 0,
-          y: 80,
+          y: 60,
           duration: 1,
           ease: "power4.out",
         })
         .from(subRef.current, {
           opacity: 0,
-          y: 40,
+          y: 30,
           duration: 0.8,
           ease: "power3.out",
         })
@@ -60,41 +51,41 @@ export default function Hero() {
       min-h-screen 
       w-full 
       overflow-hidden 
-      pt-24 md:pt-28
       flex items-center
+      pt-24 md:pt-28
       "
     >
 
-      {/* BACKGROUND IMAGE */}
+      {/* 🔥 BACKGROUND IMAGE */}
       <Image
         src="/about/Trans1pic.webp"
         alt="Hero Background"
         fill
         priority
-        className="object-cover"
+        className="object-cover object-center"
       />
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/70" />
+      {/* 🔥 SOFT OVERLAY (Vikran style — not too dark) */}
+      <div className="absolute inset-0 bg-black/60" />
 
-      {/* GRADIENT OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />
-
-      {/* CONTENT */}
+      {/* 🔥 CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
 
         {/* BADGE */}
         <div
           ref={badgeRef}
-          className="opacity-100 mb-6 inline-block w-fit px-4 py-1 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-sm text-white/80"
+          className="mb-6 inline-block px-4 py-1 rounded-full 
+          border border-white/20 bg-white/10 backdrop-blur-md 
+          text-sm text-white/80"
         >
-          • ABOUT KAC
+          ABOUT KAC
         </div>
 
         {/* TITLE */}
         <h1
           ref={titleRef}
-          className="opacity-100 text-4xl md:text-7xl font-bold leading-tight max-w-4xl"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold 
+          leading-tight max-w-4xl"
         >
           Empowering India’s <br />
           <span className="text-cyan-400">
@@ -103,33 +94,33 @@ export default function Hero() {
         </h1>
 
         {/* LINE */}
-        <div className="w-20 h-[3px] bg-cyan-400 mt-6 mb-6" />
+        <div className="w-16 h-[2px] bg-cyan-400 mt-6 mb-6" />
 
         {/* SUBTEXT */}
         <p
           ref={subRef}
-          className="opacity-100 text-gray-300 max-w-xl text-lg"
+          className="text-gray-300 max-w-xl text-lg leading-relaxed"
         >
           Building the future with innovation, precision and reliability
         </p>
       </div>
 
-      {/* 🔥 IMPROVED SCROLL BUTTON */}
+      {/* 🔥 SCROLL INDICATOR (clean like Vikran) */}
       <div
         onClick={handleScroll}
         className="
         absolute bottom-10 right-10 
         flex flex-col items-center 
-        text-white/70 cursor-pointer 
+        text-white/60 cursor-pointer 
         hover:text-cyan-400 transition
         z-20
         "
       >
         <span className="text-xs mb-2 tracking-widest">SCROLL</span>
 
-        <div className="relative h-14 w-[2px] overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-white/20" />
-          <div className="absolute top-0 left-0 w-full h-6 bg-cyan-400 animate-bounce" />
+        <div className="relative h-12 w-[2px] overflow-hidden">
+          <div className="absolute inset-0 bg-white/20" />
+          <div className="absolute top-0 left-0 w-full h-5 bg-cyan-400 animate-bounce" />
         </div>
       </div>
 

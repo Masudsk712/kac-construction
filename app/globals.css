@@ -201,3 +201,7 @@ img {
 main {
   overflow: visible !important;
 }
+/* smooth horizontal scroll feel */
+::-webkit-scrollbar {
+  height: 4px;
+}

@@ -15,7 +15,6 @@ import Journey from "@/components/about/Journey"
 import Awards from "@/components/about/Awards"
 import StickyTabs from "@/components/about/StickyTabs"
 import AboutIntro from "@/components/about/AboutIntro"
-import AboutPinSection from "@/components/about/AboutPinSection"
 
 export default function AboutPage() {
   const pathname = usePathname()
@@ -27,27 +26,24 @@ export default function AboutPage() {
 
     const timer = setTimeout(() => {
       ScrollTrigger.refresh()
-    }, 500)
+    }, 300)
 
     return () => clearTimeout(timer)
-  }, [])
+  }, [pathname])
 
   return (
     <main className="bg-[#020617] text-white">
 
-      {/* 🔥 HERO SECTION */}
+      {/* HERO */}
       <section id="hero">
         <Hero />
       </section>
 
-      {/* 🔥 FIXED STICKY TABS (NO WRAPPER) */}
+      {/* 🔥 TABS (NORMAL FLOW → THEN STICKY) */}
       <StickyTabs />
 
-      {/* 🔥 PIN INTRO SECTION */}
-      <AboutPinSection />
-
-      {/* 🔥 CONTENT START (OFFSET FOR FIXED TABS) */}
-      <section id="about-intro" className="mt-[90px]">
+      {/* WHITE CONTENT START */}
+      <section id="about-intro">
         <AboutIntro />
       </section>
 
