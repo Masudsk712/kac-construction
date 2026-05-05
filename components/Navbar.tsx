@@ -31,14 +31,12 @@ export default function Navbar() {
 
   // 🔥 ABOUT SUBMENU ITEMS
   const aboutLinks = [
-    { name: "Overview", href: "/about#overview" },
-    { name: "Vision", href: "/about#vision" },
-    { name: "MD Message", href: "/about#md" },
-    { name: "Leadership", href: "/about#leadership" },
-    { name: "Values", href: "/about#values" },
-    { name: "Journey", href: "/about#journey" },
-    { name: "Awards", href: "/about#awards" },
-  ]
+  { name: "Overview", href: "/about#overview" },
+  { name: "Mission, Vision and Values", href: "/about#mission" },
+  { name: "MD Message", href: "/about#md-message" },
+  { name: "Leadership", href: "/about#leadership" },
+  { name: "Awards", href: "/about#awards" },
+]
 
   return (
     <nav

@@ -1,80 +1,66 @@
 "use client"
 
-import { useEffect } from "react"
-import { usePathname } from "next/navigation"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-import Hero from "@/components/about/Hero"
-import Overview from "@/components/about/Overview"
-import Leadership from "@/components/about/Leadership"
-import Vision from "@/components/about/Vision"
-import Values from "@/components/about/Values"
-import MDMessage from "@/components/about/MDMessage"
-import Journey from "@/components/about/Journey"
-import Awards from "@/components/about/Awards"
-import StickyTabs from "@/components/about/StickyTabs"
-import AboutIntro from "@/components/about/AboutIntro"
+import Hero from "./components/Hero"
+import StickyTabs from "./components/StickyTabs"
+import Overview from "./components/Overview"
+import Strengths from "./components/Strengths"
+import Timeline from "./components/Timeline"
+import MissionVision from "./components/MissionVision"
+import MDMessage from "./components/MDMessage"
+import Leadership from "./components/Leadership"
+import Awards from "./components/Awards"
 
 export default function AboutPage() {
-  const pathname = usePathname()
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
-
-    window.scrollTo({ top: 0, behavior: "auto" })
-
-    const timer = setTimeout(() => {
-      ScrollTrigger.refresh()
-    }, 300)
-
-    return () => clearTimeout(timer)
-  }, [pathname])
-
   return (
-    <main className="bg-[#020617] text-white">
+    <main
+      className="
+        bg-transparent text-white overflow-x-hidden
+        relative
+      "
+    >
+      {/* 🔥 GLOBAL BACKGROUND EFFECT */}
+      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617]" />
 
-      {/* HERO */}
-      <section id="hero">
-        <Hero />
-      </section>
+      {/* 🔥 HERO SECTION */}
+      <Hero />
 
-      {/* 🔥 TABS (NORMAL FLOW → THEN STICKY) */}
+      {/* 🔥 STICKY TABS NAVBAR */}
       <StickyTabs />
 
-      {/* WHITE CONTENT START */}
-      <section id="about-intro">
-        <AboutIntro />
-      </section>
-
+      {/* 🔥 COMPANY OVERVIEW */}
       <section id="overview">
         <Overview />
       </section>
 
-      <section id="vision">
-        <Vision />
+      {/* 🔥 OUR STRENGTHS */}
+      <section id="strengths">
+        <Strengths />
       </section>
 
-      <section id="md">
+      {/* 🔥 TIMELINE (Journey Section) */}
+      <section id="timeline">
+        <Timeline />
+      </section>
+
+      {/* 🔥 MISSION / VISION / VALUES */}
+      <section id="mission">
+        <MissionVision />
+      </section>
+
+      {/* 🔥 MD MESSAGE */}
+      <section id="md-message">
         <MDMessage />
       </section>
 
+      {/* 🔥 LEADERSHIP TEAM */}
       <section id="leadership">
         <Leadership />
       </section>
 
-      <section id="values">
-        <Values />
-      </section>
-
-      <section id="journey">
-        <Journey />
-      </section>
-
+      {/* 🔥 AWARDS */}
       <section id="awards">
         <Awards />
       </section>
-
     </main>
   )
 }

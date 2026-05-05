@@ -15,16 +15,14 @@
 /* ============================= */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px; /* 🔥 navbar + sticky offset fix */
+  scroll-padding-top: 100px;
 }
 
 body {
   background: radial-gradient(circle at top, #0a0f1c 0%, #020617 60%);
   color: var(--text);
   font-family: sans-serif;
-
   overflow-x: hidden;
-  overflow-y: auto; /* 🔥 IMPORTANT (sticky fix) */
 }
 
 /* ============================= */
@@ -32,6 +30,7 @@ body {
 /* ============================= */
 ::-webkit-scrollbar {
   width: 6px;
+  height: 4px;
 }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(#22d3ee, #3b82f6);
@@ -39,26 +38,12 @@ body {
 }
 
 /* ============================= */
-/* 🔥 PREMIUM SECTION SPACING */
+/* SECTION BASE */
 /* ============================= */
 section {
   position: relative;
   padding: 6rem 0;
-
-  /* 🔥 anchor scroll fix */
   scroll-margin-top: 120px;
-}
-
-/* 🔥 HERO FIX (NO GAP) */
-#hero {
-  padding: 0 !important;
-}
-
-/* 🔥 IMPORTANT: sticky tabs ka offset */
-#StickyTabs {
-  scroll-margin-top: 120px;
-  position: relative;
-  z-index: 60;
 }
 
 @media (min-width: 768px) {
@@ -67,22 +52,50 @@ section {
   }
 }
 
+/* HERO FIX */
+#hero {
+  padding: 0 !important;
+}
+
 /* ============================= */
-/* SECTION GLOW LINE */
+/* PREMIUM BACKGROUND */
 /* ============================= */
-section::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 10%;
-  width: 80%;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(34, 211, 238, 0.2),
-    transparent
-  );
+.section-premium {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(34,211,238,0.08), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(59,130,246,0.08), transparent 40%);
+}
+
+/* ============================= */
+/* GLASS EFFECT */
+/* ============================= */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ============================= */
+/* BORDER GLOW */
+/* ============================= */
+.border-glow {
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 20px rgba(34,211,238,0.08);
+}
+
+/* ============================= */
+/* TEXT */
+/* ============================= */
+.gradient-text {
+  background: linear-gradient(to right, #22d3ee, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ============================= */
@@ -101,26 +114,9 @@ section::after {
   box-shadow: 0 0 40px rgba(34, 211, 238, 0.7);
 }
 
-.btn-outline {
-  padding: 12px 28px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: 0.3s;
-}
-.btn-outline:hover {
-  background: rgba(255,255,255,0.05);
-  border-color: rgba(34, 211, 238, 0.4);
-}
-
 /* ============================= */
-/* GLASS + CARD */
+/* CARD HOVER */
 /* ============================= */
-.glass {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
 .card-hover {
   transition: 0.4s ease;
 }
@@ -130,78 +126,78 @@ section::after {
 }
 
 /* ============================= */
-/* GLOW */
+/* IMAGE FIX */
 /* ============================= */
-.glow {
-  box-shadow: 0 0 60px rgba(34, 211, 238, 0.25);
+img {
+  max-width: 100%;
+  display: block;
 }
 
 /* ============================= */
-/* GRADIENT TEXT */
+/* PERFORMANCE */
 /* ============================= */
-.gradient-text {
-  background: linear-gradient(to right, #22d3ee, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+* {
+  will-change: auto;
+}
+/* LEFT → RIGHT */
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
-/* ============================= */
-/* CONTAINER */
-/* ============================= */
-.container-custom {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* ============================= */
-/* SOFT BG */
-/* ============================= */
-.bg-soft {
-  background: linear-gradient(to bottom, #020617, #060d1f);
-}
-
-/* ============================= */
-/* SCROLL ANIMATION */
-/* ============================= */
-.scroll-left {
-  animation: scrollLeft 40s linear infinite;
-}
-.scroll-right {
-  animation: scrollRight 40s linear infinite;
-}
-
-.scroll-left:hover,
-.scroll-right:hover {
-  animation-play-state: paused;
-}
-
+/* RIGHT → LEFT */
 @keyframes scrollLeft {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
+/* LEFT → RIGHT */
 @keyframes scrollRight {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
 
-/* ============================= */
-/* 🔥 GSAP SAFE FIX */
-/* ============================= */
-* {
-  will-change: auto; /* ❌ pehle galat tha */
+.scroll-left {
+  animation: scrollLeft 35s linear infinite;
 }
 
-/* 🔥 Smooth render */
-img {
-  max-width: 100%;
-  display: block;
+.scroll-right {
+  animation: scrollRight 35s linear infinite;
+}
+
+/* pause on hover */
+.scroll-left:hover,
+.scroll-right:hover {
+  animation-play-state: paused;
 }
 main {
   overflow: visible !important;
 }
-/* smooth horizontal scroll feel */
-::-webkit-scrollbar {
-  height: 4px;
+/* ============================= */
+/* 🔥 STICKY FIX */
+/* ============================= */
+
+#StickyTabs {
+  position: sticky;
+  top: 72px;
+  z-index: 49;
+}
+
+/* HERO → STICKY GAP FIX */
+#hero + div {
+  margin-top: -40px;
+}
+
+/* SCROLL OFFSET PERFECT */
+html {
+  scroll-padding-top: 140px;
+}
+
+/* SMOOTH SECTION ALIGN */
+section {
+  scroll-margin-top: 140px;
 }
