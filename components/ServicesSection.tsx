@@ -1,48 +1,49 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  FaTools,
-  FaHardHat,
-  FaBolt,
-  FaIndustry,
-} from "react-icons/fa";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const services = [
   {
-    title: "Tower Foundation Work",
-    desc: "Strong & durable foundations for high voltage transmission towers.",
-    icon: <FaHardHat />,
+    title: "Survey Work",
+    desc: "Preliminary, Detailed & Check Survey with precision planning.",
+    image: "/placeholder.jpg",
+    link: "/services#survey",
+  },
+  {
+    title: "Foundation Work",
+    desc: "Strong civil foundations for long-lasting tower stability.",
+    image: "/placeholder.jpg",
+    link: "/services#foundation",
   },
   {
     title: "Tower Erection",
-    desc: "High precision tower installation with safety and efficiency.",
-    icon: <FaTools />,
+    desc: "Efficient and safe erection of transmission towers.",
+    image: "/placeholder.jpg",
+    link: "/services#erection",
   },
   {
     title: "Stringing Work",
-    desc: "Efficient conductor stringing for reliable power transmission.",
-    icon: <FaBolt />,
-  },
-  {
-    title: "Power Grid Projects",
-    desc: "Complete transmission infrastructure and grid solutions.",
-    icon: <FaIndustry />,
+    desc: "High-quality conductor stringing with modern equipment.",
+    image: "/placeholder.jpg",
+    link: "/services#stringing",
   },
 ];
 
 export default function ServicesSection() {
+  const router = useRouter();
+
   return (
-    <section className="py-28 bg-[#020617] text-center text-white">
-      
+    <section className="py-28 bg-[#020617] text-white text-center">
+
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
         className="text-4xl md:text-5xl font-bold text-cyan-400 mb-16"
       >
-        Our Core Services
+        Our Services
       </motion.h2>
 
       {/* Cards */}
@@ -51,35 +52,49 @@ export default function ServicesSection() {
         {services.map((s, i) => (
           <motion.div
             key={i}
+            whileHover={{ scale: 1.05 }}
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group relative p-8 rounded-2xl bg-[#111827] border border-white/10 overflow-hidden cursor-pointer"
+            transition={{ delay: i * 0.1 }}
+            onClick={() => {
+              window.location.href = s.link;
+            }}
+            className="group cursor-pointer rounded-2xl overflow-hidden bg-[#111827] border border-white/10"
           >
 
-            {/* Glow Effect */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 blur-xl" />
-
-            {/* Icon */}
-            <div className="text-4xl text-cyan-400 mb-6 group-hover:scale-110 transition duration-300">
-              {s.icon}
+            {/* IMAGE */}
+            <div className="relative h-48">
+              <Image src={s.image} alt={s.title} fill className="object-cover group-hover:scale-110 transition duration-500" />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition" />
             </div>
 
-            {/* Title */}
-            <h3 className="text-xl font-semibold text-white mb-3">
-              {s.title}
-            </h3>
+            {/* CONTENT */}
+            <div className="p-6 text-left">
+              <h3 className="text-xl font-semibold text-cyan-400 mb-2">
+                {s.title}
+              </h3>
+              <p className="text-gray-400 text-sm">{s.desc}</p>
 
-            {/* Description */}
-            <p className="text-gray-400 text-sm leading-relaxed">
-              {s.desc}
-            </p>
+              <button className="mt-4 text-sm text-white border-b border-cyan-400 hover:text-cyan-300">
+                Know More →
+              </button>
+            </div>
 
           </motion.div>
         ))}
 
       </div>
+
+      {/* Explore More */}
+      <div className="mt-14">
+        <button
+          onClick={() => router.push("/services")}
+          className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-semibold hover:scale-105 transition"
+        >
+          Explore All Services
+        </button>
+      </div>
+
     </section>
   );
 }
