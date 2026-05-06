@@ -1,98 +1,233 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 const services = [
   {
     title: "Survey Work",
-    desc: "Preliminary, Detailed & Check Survey with precision planning.",
+    desc: "Preliminary, Detailed & Check Survey with high precision planning and route optimization.",
     image: "/placeholder.jpg",
-    link: "/services#survey",
+    link: "/service#survey",
   },
   {
     title: "Foundation Work",
-    desc: "Strong civil foundations for long-lasting tower stability.",
+    desc: "Strong civil foundations engineered for long-lasting transmission tower stability.",
     image: "/placeholder.jpg",
-    link: "/services#foundation",
+    link: "/service#foundation",
   },
   {
     title: "Tower Erection",
-    desc: "Efficient and safe erection of transmission towers.",
+    desc: "Efficient and safe erection of transmission towers using advanced methodologies.",
     image: "/placeholder.jpg",
-    link: "/services#erection",
+    link: "/service#erection",
   },
   {
     title: "Stringing Work",
-    desc: "High-quality conductor stringing with modern equipment.",
+    desc: "High-quality conductor stringing with modern equipment and safety compliance.",
     image: "/placeholder.jpg",
-    link: "/services#stringing",
+    link: "/service#stringing",
   },
 ];
 
 export default function ServicesSection() {
-  const router = useRouter();
 
   return (
-    <section className="py-28 bg-[#020617] text-white text-center">
+    <section className="relative py-28 bg-[#020617] overflow-hidden">
 
-      {/* Heading */}
-      <motion.h2
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        className="text-4xl md:text-5xl font-bold text-cyan-400 mb-16"
-      >
-        Our Services
-      </motion.h2>
+      {/* BACKGROUND GLOW */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[140px]" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[140px]" />
 
-      {/* Cards */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 w-[90%] mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
 
-        {services.map((s, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1 }}
-            onClick={() => {
-              window.location.href = s.link;
-            }}
-            className="group cursor-pointer rounded-2xl overflow-hidden bg-[#111827] border border-white/10"
-          >
-
-            {/* IMAGE */}
-            <div className="relative h-48">
-              <Image src={s.image} alt={s.title} fill className="object-cover group-hover:scale-110 transition duration-500" />
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition" />
-            </div>
-
-            {/* CONTENT */}
-            <div className="p-6 text-left">
-              <h3 className="text-xl font-semibold text-cyan-400 mb-2">
-                {s.title}
-              </h3>
-              <p className="text-gray-400 text-sm">{s.desc}</p>
-
-              <button className="mt-4 text-sm text-white border-b border-cyan-400 hover:text-cyan-300">
-                Know More →
-              </button>
-            </div>
-
-          </motion.div>
-        ))}
-
-      </div>
-
-      {/* Explore More */}
-      <div className="mt-14">
-        <button
-          onClick={() => router.push("/services")}
-          className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-semibold hover:scale-105 transition"
+        {/* HEADING */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-20"
         >
-          Explore All Services
-        </button>
+
+          <p className="uppercase tracking-[5px] text-cyan-400 text-sm mb-4">
+            What We Do
+          </p>
+
+          <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+            Our Core <span className="text-cyan-400">Services</span>
+          </h2>
+
+          <div className="w-24 h-[3px] bg-cyan-400 mx-auto mt-6 rounded-full" />
+
+        </motion.div>
+
+        {/* SERVICES GRID */}
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+          {services.map((service, i) => (
+
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 70 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: i * 0.15,
+              }}
+              whileHover={{ y: -12 }}
+              onClick={() => {
+                window.location.href = service.link;
+              }}
+              className="
+              group
+              relative
+              overflow-hidden
+              rounded-3xl
+              border border-white/10
+              bg-white/[0.03]
+              backdrop-blur-xl
+              cursor-pointer
+              transition-all duration-500
+              hover:border-cyan-400/40
+              hover:shadow-[0_0_40px_rgba(34,211,238,0.18)]
+              "
+            >
+
+              {/* IMAGE */}
+              <div className="relative h-64 overflow-hidden">
+
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="
+                  object-cover
+                  transition duration-700
+                  group-hover:scale-110
+                  "
+                />
+
+                {/* DARK OVERLAY */}
+                <div className="
+                absolute inset-0
+                bg-gradient-to-t
+                from-[#020617]
+                via-[#020617]/40
+                to-transparent
+                " />
+
+                {/* TOP LABEL */}
+                <div className="
+                absolute top-5 left-5
+                px-4 py-1
+                rounded-full
+                bg-black/40
+                backdrop-blur-md
+                border border-white/10
+                text-xs tracking-widest
+                text-cyan-300
+                uppercase
+                ">
+                  KAC SERVICE
+                </div>
+
+              </div>
+
+              {/* CONTENT */}
+              <div className="p-7">
+
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="
+                  text-2xl font-bold
+                  text-white
+                  mb-4
+                  group-hover:text-cyan-400
+                  transition
+                  "
+                >
+                  {service.title}
+                </motion.h3>
+
+                <p className="text-gray-400 leading-relaxed text-sm mb-8">
+                  {service.desc}
+                </p>
+
+                {/* BUTTON */}
+                <div className="flex items-center justify-between">
+
+                  <button
+                    className="
+                    text-cyan-400
+                    font-medium
+                    flex items-center gap-2
+                    group-hover:gap-4
+                    transition-all duration-300
+                    "
+                  >
+                    Know More
+                    <ArrowUpRight size={18} />
+                  </button>
+
+                  {/* GLOW DOT */}
+                  <div className="
+                  w-3 h-3 rounded-full
+                  bg-cyan-400
+                  shadow-[0_0_20px_rgba(34,211,238,1)]
+                  " />
+
+                </div>
+
+              </div>
+
+              {/* HOVER LINE */}
+              <div className="
+              absolute bottom-0 left-0
+              h-[3px] w-0
+              bg-cyan-400
+              group-hover:w-full
+              transition-all duration-500
+              " />
+
+            </motion.div>
+
+          ))}
+
+        </div>
+
+        {/* EXPLORE BUTTON */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="flex justify-center mt-20"
+        >
+
+          <button
+            onClick={() => {
+              window.location.href = "/service";
+            }}
+            className="
+            relative overflow-hidden
+            px-10 py-4
+            rounded-full
+            bg-gradient-to-r from-cyan-400 to-blue-500
+            text-black
+            font-bold
+            text-lg
+            hover:scale-105
+            transition duration-300
+            shadow-[0_0_40px_rgba(34,211,238,0.35)]
+            "
+          >
+            Explore All Services
+          </button>
+
+        </motion.div>
+
       </div>
 
     </section>

@@ -9,6 +9,7 @@ import MissionVision from "./components/MissionVision"
 import MDMessage from "./components/MDMessage"
 import Leadership from "./components/Leadership"
 import Awards from "./components/Awards"
+import CTASection from "@/components/CTASection";
 
 export default function AboutPage() {
   return (
@@ -61,6 +62,9 @@ export default function AboutPage() {
       <section id="awards">
         <Awards />
       </section>
+
+      {/* CTA */}
+      <CTASection />
     </main>
   )
 }
