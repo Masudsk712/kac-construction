@@ -52,14 +52,22 @@ export default function ServiceStickyTabs() {
   return (
     <div
       className="
-      sticky top-[78px] z-40
+      sticky top-[70px] sm:top-[78px] z-40
       bg-black/50 backdrop-blur-2xl
       border-b border-white/10
       "
     >
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="flex gap-10 overflow-x-auto py-5">
+        <div
+          className="
+  flex gap-6 sm:gap-10
+  overflow-x-auto
+  scrollbar-hide
+  py-4
+  scrollbar-hide
+  "
+        >
 
           {tabs.map((tab) => (
             <button
@@ -70,12 +78,12 @@ export default function ServiceStickyTabs() {
 
               <span
                 className={`
-                text-sm md:text-base transition
-                ${
-                  active === tab.id
+                text-sm sm:text-base
+font-medium transition
+                ${active === tab.id
                     ? "text-cyan-400"
                     : "text-white/60 hover:text-cyan-300"
-                }
+                  }
                 `}
               >
                 {tab.name}

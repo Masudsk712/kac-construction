@@ -82,7 +82,7 @@ export default function Foundation() {
             </p>
 
             <h2 className="
-            text-5xl md:text-6xl
+            text-4xl sm:text-5xl md:text-6xl
             font-bold leading-tight
             mb-8
             ">
@@ -103,7 +103,7 @@ export default function Foundation() {
             </p>
 
             {/* PROCESS CARDS */}
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
               {processes.map((item, i) => (
 
@@ -176,7 +176,7 @@ export default function Foundation() {
 
             {/* MAIN IMAGE */}
             <div className="
-            relative h-[700px]
+           relative h-[350px] sm:h-[500px] lg:h-[650px]
             rounded-3xl overflow-hidden
             border border-white/10
             ">
@@ -205,19 +205,19 @@ export default function Foundation() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="
-              absolute bottom-10 left-[-40px]
-              w-[280px]
+              absolute bottom-10 left-4 sm:left-[-20px]
+              w-[220px] sm:w-[250px]
               rounded-3xl
               border border-white/10
               bg-white/10
               backdrop-blur-xl
-              p-7
+              p-5 sm:p-6
               shadow-[0_0_50px_rgba(34,211,238,0.15)]
               "
             >
 
               <h3 className="
-              text-4xl font-bold
+              text-3xl sm:text-4xl font-bold
               text-cyan-400 mb-3
               ">
                 500k+
@@ -238,7 +238,7 @@ export default function Foundation() {
 
         {/* STATS */}
         <div className="
-        grid md:grid-cols-3 gap-8
+        grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6
         mt-28
         ">
 
