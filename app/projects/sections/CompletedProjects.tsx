@@ -4,68 +4,52 @@ import { motion } from "framer-motion";
 
 import Image from "next/image";
 
-import CountUp from "react-countup";
-
 import {
-  Zap,
-  RadioTower,
+  CheckCircle2,
   ArrowUpRight,
+  MapPin,
 } from "lucide-react";
 
 const projects = [
   {
-    title: "765kV Transmission Corridor",
+    title: "400kV Transmission Line",
+    location: "Bihar",
 
     image: "/placeholder.jpg",
 
     desc:
-      "Large-scale ultra high-voltage transmission infrastructure executed with engineering precision and operational excellence.",
+      "Successfully completed ultra high-voltage transmission infrastructure project with timely execution and engineering excellence.",
   },
 
   {
-    title: "Power Grid Expansion",
+    title: "Hotline Maintenance Project",
+    location: "Odisha",
 
     image: "/placeholder.jpg",
 
     desc:
-      "Advanced EPC transmission projects supporting India's rapidly growing energy infrastructure network.",
+      "Executed advanced hotline maintenance operations ensuring uninterrupted power transmission reliability.",
+  },
+
+  {
+    title: "Tower Erection Work",
+    location: "Jharkhand",
+
+    image: "/placeholder.jpg",
+
+    desc:
+      "Completed high-capacity transmission tower erection across complex terrain and remote infrastructure zones.",
   },
 ];
 
-const stats = [
-  {
-    number: 500,
-
-    suffix: "+",
-
-    label: "Projects Delivered",
-  },
-
-  {
-    number: 15,
-
-    suffix: "+",
-
-    label: "States Covered",
-  },
-
-  {
-    number: 765,
-
-    suffix: "kV",
-
-    label: "Voltage Expertise",
-  },
-];
-
-export default function TransmissionProjects() {
+export default function CompletedProjects() {
 
   return (
     <section
       className="
       section-premium
 
-      py-32
+      py-28
 
       relative
       overflow-hidden
@@ -126,7 +110,7 @@ export default function TransmissionProjects() {
           max-w-4xl
           mx-auto
 
-          mb-24
+          mb-20
           "
         >
 
@@ -141,60 +125,37 @@ export default function TransmissionProjects() {
             mb-3
             "
           >
-            TRANSMISSION INFRASTRUCTURE
+            COMPLETED PROJECTS
           </p>
 
           <h2
             className="
             text-4xl
-            md:text-6xl
+            md:text-5xl
 
             font-semibold
 
             leading-tight
-
-            mb-8
             "
           >
 
             <span className="gradient-text">
-              Delivering India's Energy Backbone
+              Successfully Delivered Infrastructure
             </span>
 
           </h2>
 
-          <p
-            className="
-            text-white/70
-
-            text-lg
-
-            leading-relaxed
-            "
-          >
-
-            KAC Construction continues
-            to deliver large-scale
-            transmission infrastructure
-            projects supporting India's
-            growing energy demands with
-            engineering excellence and
-            execution reliability.
-
-          </p>
-
         </div>
 
-        {/* IMAGE GRID */}
+        {/* GRID */}
         <div
           className="
           grid
 
-          lg:grid-cols-2
+          md:grid-cols-2
+          xl:grid-cols-3
 
-          gap-10
-
-          mb-24
+          gap-8
           "
         >
 
@@ -205,7 +166,7 @@ export default function TransmissionProjects() {
 
               initial={{
                 opacity: 0,
-                y: 60,
+                y: 50,
               }}
 
               whileInView={{
@@ -214,7 +175,7 @@ export default function TransmissionProjects() {
               }}
 
               transition={{
-                delay: index * 0.2,
+                delay: index * 0.15,
               }}
 
               viewport={{
@@ -242,8 +203,8 @@ export default function TransmissionProjects() {
                 className="
                 relative
 
-                h-[340px]
-                md:h-[480px]
+                h-[300px]
+                md:h-[340px]
 
                 overflow-hidden
                 "
@@ -276,30 +237,35 @@ export default function TransmissionProjects() {
                   "
                 />
 
-                {/* ICON */}
+                {/* STATUS */}
                 <div
                   className="
                   absolute
 
                   top-5 left-5
 
-                  w-14 h-14
+                  inline-flex items-center
+                  gap-2
 
-                  rounded-2xl
+                  px-4 py-2
 
-                  bg-cyan-400/10
+                  rounded-full
 
-                  border border-cyan-400/20
+                  bg-emerald-500/10
+
+                  border border-emerald-400/20
 
                   backdrop-blur-xl
 
-                  flex items-center justify-center
+                  text-emerald-300
 
-                  text-cyan-400
+                  text-sm
                   "
                 >
 
-                  <RadioTower size={26} />
+                  <CheckCircle2 size={16} />
+
+                  Completed
 
                 </div>
 
@@ -308,6 +274,27 @@ export default function TransmissionProjects() {
               {/* CONTENT */}
               <div className="p-7">
 
+                {/* LOCATION */}
+                <div
+                  className="
+                  flex items-center
+                  gap-2
+
+                  text-cyan-400
+
+                  text-sm
+
+                  mb-4
+                  "
+                >
+
+                  <MapPin size={16} />
+
+                  {item.location}
+
+                </div>
+
+                {/* TITLE */}
                 <h3
                   className="
                   text-2xl
@@ -320,6 +307,7 @@ export default function TransmissionProjects() {
                   {item.title}
                 </h3>
 
+                {/* TEXT */}
                 <p
                   className="
                   text-white/70
@@ -332,6 +320,7 @@ export default function TransmissionProjects() {
                   {item.desc}
                 </p>
 
+                {/* BTN */}
                 <button
                   className="
                   inline-flex items-center
@@ -352,121 +341,6 @@ export default function TransmissionProjects() {
                 </button>
 
               </div>
-
-            </motion.div>
-
-          ))}
-
-        </div>
-
-        {/* STATS */}
-        <div
-          className="
-          grid
-
-          md:grid-cols-3
-
-          gap-8
-          "
-        >
-
-          {stats.map((item, index) => (
-
-            <motion.div
-              key={index}
-
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-
-              transition={{
-                delay: index * 0.15,
-              }}
-
-              viewport={{
-                once: true,
-              }}
-
-              whileHover={{
-                y: -8,
-              }}
-
-              className="
-              relative
-
-              overflow-hidden
-
-              text-center
-
-              glass-strong
-              border-glow
-
-              rounded-3xl
-
-              py-12
-              px-6
-              "
-            >
-
-              {/* GLOW */}
-              <div
-                className="
-                absolute inset-0
-
-                opacity-0
-
-                hover:opacity-100
-
-                transition duration-500
-
-                bg-cyan-400/5
-
-                blur-3xl
-                "
-              />
-
-              {/* NUMBER */}
-              <h3
-                className="
-                relative z-10
-
-                text-5xl
-
-                font-black
-
-                text-cyan-400
-
-                mb-4
-                "
-              >
-
-                <CountUp
-                  end={item.number}
-                  duration={2.5}
-                />
-
-                {item.suffix}
-
-              </h3>
-
-              {/* LABEL */}
-              <p
-                className="
-                relative z-10
-
-                text-white/70
-
-                text-lg
-                "
-              >
-                {item.label}
-              </p>
 
             </motion.div>
 

@@ -1,88 +1,109 @@
 "use client";
 
-import ProjectsHero from "./components/ProjectsHero";
-import ProjectsStickyTabs from "./components/ProjectsStickyTabs";
+import Hero from "./components/Hero";
+import StickyTabs from "./components/StickyTabs";
 
 import ProjectStats from "./components/ProjectStats";
-import OngoingProjects from "./components/OngoingProjects";
-import CompletedProjects from "./components/CompletedProjects";
+import ProjectTimeline from "./components/ProjectTimeline";
 import ProjectGallery from "./components/ProjectGallery";
 import ProjectCTA from "./components/ProjectCTA";
 
-import TransmissionProjects from "./sections/TransmissionProjects";
-import HotlineProjects from "./sections/HotlineProjects";
+import OngoingProjects from "./sections/OngoingProjects";
+import CompletedProjects from "./sections/CompletedProjects";
 import FoundationProjects from "./sections/FoundationProjects";
+import ErectionProjects from "./sections/ErectionProjects";
+import HotlineProjects from "./sections/HotlineProjects";
 import StringingProjects from "./sections/StringingProjects";
 import ReconductoringProjects from "./sections/ReconductoringProjects";
+import TransmissionProjects from "./sections/TransmissionProjects";
 
 export default function ProjectsPage() {
+
   return (
     <main
       className="
-      relative
-      bg-[#020617]
+      bg-transparent
       text-white
-      overflow-hidden
+      overflow-x-hidden
+      relative
       "
     >
 
-      {/* BACKGROUND GLOW */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[150px]" />
+      {/* 🔥 GLOBAL BACKGROUND */}
+      <div
+        className="
+        fixed inset-0
+        -z-10
 
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[150px]" />
+        bg-gradient-to-b
+        from-[#020617]
+        via-[#020617]
+        to-[#020617]
+        "
+      />
 
-      {/* HERO */}
-      <ProjectsHero />
+      {/* 🔥 HERO */}
+      <Hero />
 
-      {/* STICKY TABS */}
-      <ProjectsStickyTabs />
+      {/* 🔥 STICKY TABS */}
+      <StickyTabs />
 
-      {/* OVERVIEW */}
-      <section id="overview">
+      {/* 🔥 PROJECT STATS */}
+      <section id="stats">
         <ProjectStats />
       </section>
 
-      {/* ONGOING */}
+      {/* 🔥 ONGOING PROJECTS */}
       <section id="ongoing">
         <OngoingProjects />
       </section>
 
-      {/* COMPLETED */}
+      {/* 🔥 COMPLETED PROJECTS */}
       <section id="completed">
         <CompletedProjects />
       </section>
 
-      {/* TRANSMISSION */}
-      <section id="transmission">
-        <TransmissionProjects />
-      </section>
-
-      {/* HOTLINE */}
-      <section id="hotline">
-        <HotlineProjects />
-      </section>
-
-      {/* FOUNDATION */}
+      {/* 🔥 FOUNDATION */}
       <section id="foundation">
         <FoundationProjects />
       </section>
 
-      {/* STRINGING */}
+      {/* 🔥 ERECTION */}
+      <section id="erection">
+        <ErectionProjects />
+      </section>
+
+      {/* 🔥 HOTLINE */}
+      <section id="hotline">
+        <HotlineProjects />
+      </section>
+
+      {/* 🔥 STRINGING */}
       <section id="stringing">
         <StringingProjects />
       </section>
 
-      {/* RECONDUCTORING */}
+      {/* 🔥 RECONDUCTORING */}
       <section id="reconductoring">
         <ReconductoringProjects />
       </section>
 
-      {/* GALLERY */}
+      {/* 🔥 TRANSMISSION */}
+      <section id="transmission">
+        <TransmissionProjects />
+      </section>
+
+      {/* 🔥 TIMELINE */}
+      <section id="timeline">
+        <ProjectTimeline />
+      </section>
+
+      {/* 🔥 PROJECT GALLERY */}
       <section id="gallery">
         <ProjectGallery />
       </section>
 
-      {/* CTA */}
+      {/* 🔥 CTA */}
       <ProjectCTA />
 
     </main>
