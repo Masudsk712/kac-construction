@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import {
   ArrowUpRight,
@@ -11,38 +12,18 @@ import {
   MapPin,
   Phone,
   RadioTower,
+  Send,
+  Clock3,
+  Globe,
 } from "lucide-react";
 
 const quickLinks = [
-  {
-    title: "Home",
-    href: "/",
-  },
-
-  {
-    title: "About",
-    href: "/about",
-  },
-
-  {
-    title: "Services",
-    href: "/service",
-  },
-
-  {
-    title: "Projects",
-    href: "/projects",
-  },
-
-  {
-    title: "Career",
-    href: "/career",
-  },
-
-  {
-    title: "Contact",
-    href: "/contact",
-  },
+  { title: "Home", href: "/" },
+  { title: "About", href: "/about" },
+  { title: "Services", href: "/service" },
+  { title: "Projects", href: "/projects" },
+  { title: "Career", href: "/career" },
+  { title: "Contact", href: "/contact" },
 ];
 
 const services = [
@@ -54,103 +35,208 @@ const services = [
   "Survey Services",
 ];
 
-export default function Footer() {
+const socialLinks = [
+  {
+    icon: <Facebook size={18} />,
+    href: "#",
+  },
 
+  {
+    icon: <Instagram size={18} />,
+    href: "#",
+  },
+
+  {
+    icon: <Linkedin size={18} />,
+    href: "#",
+  },
+];
+
+export default function Footer() {
   return (
     <footer
       className="
       relative
       overflow-hidden
-
       bg-[#020617]
       text-white
-
       border-t border-white/10
-      "
+    "
     >
 
       {/* BG GLOW */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[150px]" />
+      <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-cyan-500/10 blur-[140px]" />
 
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[150px]" />
+      <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-blue-500/10 blur-[140px]" />
 
       {/* GRID */}
       <div
         className="
         absolute inset-0
-
         opacity-[0.04]
-
         [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
-
         [background-size:60px_60px]
-        "
+      "
       />
 
       <div
         className="
         container-premium
-
         relative z-10
-
         pt-24
         pb-10
-        "
+      "
       >
 
-        {/* TOP GRID */}
+        {/* TOP CTA BAR */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="
+          mb-20
+          rounded-[32px]
+          border border-white/10
+          bg-white/[0.04]
+          backdrop-blur-2xl
+          p-8 md:p-10
+          flex
+          flex-col
+          lg:flex-row
+          items-start lg:items-center
+          justify-between
+          gap-10
+        "
+        >
+
+          {/* LEFT */}
+          <div className="max-w-3xl">
+
+            <div
+              className="
+              inline-flex
+              items-center
+              gap-3
+              px-5 py-2
+              rounded-full
+              border border-white/10
+              bg-white/5
+              mb-6
+            "
+            >
+
+              <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+
+              <span className="text-sm tracking-[4px] text-white/80">
+                KAC CONSTRUCTION
+              </span>
+
+            </div>
+
+            <h2
+              className="
+              text-4xl
+              md:text-5xl
+              font-black
+              leading-tight
+              mb-6
+            "
+            >
+              Powering India’s
+
+              <span className="block text-cyan-400">
+                Infrastructure Future
+              </span>
+
+            </h2>
+
+            <p className="text-white/60 leading-relaxed text-lg">
+              Delivering transmission infrastructure, EPC solutions,
+              tower erection, hotline stringing, and foundation
+              projects with precision, speed, and engineering excellence.
+            </p>
+
+          </div>
+
+          {/* RIGHT BUTTON */}
+          <Link
+            href="/contact"
+            className="
+            group
+            inline-flex
+            items-center
+            gap-3
+
+            bg-cyan-400
+            hover:bg-cyan-300
+
+            text-black
+            font-bold
+
+            px-8 py-5
+            rounded-2xl
+
+            transition-all duration-300
+
+            hover:scale-105
+          "
+          >
+
+            Start Your Project
+
+            <Send
+              size={18}
+              className="
+              transition
+              group-hover:translate-x-1
+            "
+            />
+
+          </Link>
+
+        </motion.div>
+
+        {/* MAIN GRID */}
         <div
           className="
           grid
           grid-cols-1
           md:grid-cols-2
-          lg:grid-cols-4
-
+          xl:grid-cols-5
           gap-14
-
-          pb-16
-          "
+          pb-20
+        "
         >
 
           {/* COMPANY */}
-          <div>
+          <div className="xl:col-span-2">
 
             {/* LOGO */}
-            <div
-              className="
-              flex items-center
-              gap-4
+            <div className="flex items-center gap-4 mb-8">
 
-              mb-8
-              "
-            >
-
-              <div
+              <motion.div
+                whileHover={{
+                  rotate: 8,
+                  scale: 1.08,
+                }}
                 className="
-                w-14 h-14
-
+                w-16 h-16
                 rounded-2xl
-
                 bg-cyan-400/10
-
+                border border-cyan-400/20
                 flex items-center justify-center
-
                 text-cyan-400
-                "
+              "
               >
 
-                <RadioTower size={28} />
+                <RadioTower size={30} />
 
-              </div>
+              </motion.div>
 
               <div>
 
-                <h2
-                  className="
-                  text-2xl
-                  font-black
-                  "
-                >
+                <h2 className="text-3xl font-black">
                   KAC Construction
                 </h2>
 
@@ -167,70 +253,53 @@ export default function Footer() {
               className="
               text-gray-400
               leading-relaxed
-
               mb-8
-              "
+              max-w-xl
+            "
             >
 
               KAC Construction delivers advanced
-              transmission infrastructure solutions
-              including tower erection, HTLS
-              reconductoring, hotline stringing
-              and EPC execution across India.
+              transmission infrastructure solutions including
+              tower erection, HTLS reconductoring,
+              hotline stringing, foundation works,
+              and EPC execution projects across India.
 
             </p>
 
             {/* SOCIAL */}
             <div className="flex items-center gap-4">
 
-              {[
+              {socialLinks.map((item, i) => (
 
-                {
-                  icon: <Facebook size={18} />,
-                  href: "#",
-                },
-
-                {
-                  icon: <Instagram size={18} />,
-                  href: "#",
-                },
-
-                {
-                  icon: <Linkedin size={18} />,
-                  href: "#",
-                },
-
-              ].map((item, i) => (
-
-                <Link
+                <motion.div
+                  whileHover={{
+                    y: -6,
+                    scale: 1.08,
+                  }}
                   key={i}
-                  href={item.href}
-
-                  className="
-                  w-11 h-11
-
-                  rounded-xl
-
-                  border border-white/10
-
-                  bg-white/[0.03]
-                  backdrop-blur-xl
-
-                  flex items-center justify-center
-
-                  text-gray-300
-
-                  transition-all duration-300
-
-                  hover:border-cyan-400/30
-                  hover:text-cyan-400
-                  hover:-translate-y-1
-                  "
                 >
 
-                  {item.icon}
+                  <Link
+                    href={item.href}
+                    className="
+                    w-12 h-12
+                    rounded-2xl
+                    border border-white/10
+                    bg-white/[0.03]
+                    backdrop-blur-xl
+                    flex items-center justify-center
+                    text-gray-300
+                    transition-all duration-300
+                    hover:border-cyan-400/30
+                    hover:text-cyan-400
+                  "
+                  >
 
-                </Link>
+                    {item.icon}
+
+                  </Link>
+
+                </motion.div>
 
               ))}
 
@@ -241,53 +310,37 @@ export default function Footer() {
           {/* QUICK LINKS */}
           <div>
 
-            <h3
-              className="
-              text-xl
-              font-bold
-
-              mb-8
-              "
-            >
+            <h3 className="text-xl font-bold mb-8">
               Quick Links
             </h3>
 
-            <div className="space-y-4">
+            <div className="space-y-5">
 
               {quickLinks.map((item, i) => (
 
                 <Link
                   key={i}
                   href={item.href}
-
                   className="
                   group
-
-                  flex items-center
-                  justify-between
-
+                  flex items-center justify-between
                   text-gray-400
-
                   transition-all duration-300
-
                   hover:text-cyan-400
-                  "
+                "
                 >
 
                   {item.title}
 
                   <ArrowUpRight
                     size={16}
-
                     className="
                     opacity-0
-
                     transition-all duration-300
-
                     group-hover:opacity-100
                     group-hover:translate-x-1
                     group-hover:-translate-y-1
-                    "
+                  "
                   />
 
                 </Link>
@@ -301,45 +354,37 @@ export default function Footer() {
           {/* SERVICES */}
           <div>
 
-            <h3
-              className="
-              text-xl
-              font-bold
-
-              mb-8
-              "
-            >
+            <h3 className="text-xl font-bold mb-8">
               Core Services
             </h3>
 
-            <div className="space-y-4">
+            <div className="space-y-5">
 
               {services.map((item, i) => (
 
-                <div
+                <motion.div
+                  whileHover={{
+                    x: 8,
+                  }}
                   key={i}
-
                   className="
                   flex items-center
                   gap-3
-
                   text-gray-400
-                  "
+                "
                 >
 
                   <div
                     className="
                     w-2 h-2
-
                     rounded-full
-
                     bg-cyan-400
-                    "
+                  "
                   />
 
                   {item}
 
-                </div>
+                </motion.div>
 
               ))}
 
@@ -347,37 +392,30 @@ export default function Footer() {
 
           </div>
 
-          {/* CONTACT */}
+          {/* CONTACT + MAP */}
           <div>
 
-            <h3
-              className="
-              text-xl
-              font-bold
-
-              mb-8
-              "
-            >
+            <h3 className="text-xl font-bold mb-8">
               Contact Info
             </h3>
 
-            <div className="space-y-6">
+            <div className="space-y-7">
 
               {/* PHONE */}
-              <div className="flex gap-4">
+              <motion.div
+                whileHover={{ x: 6 }}
+                className="flex gap-4"
+              >
 
                 <div
                   className="
                   w-12 h-12
-
                   rounded-xl
-
                   bg-cyan-400/10
-
+                  border border-cyan-400/20
                   flex items-center justify-center
-
                   text-cyan-400
-                  "
+                "
                 >
 
                   <Phone size={20} />
@@ -387,32 +425,36 @@ export default function Footer() {
                 <div>
 
                   <p className="text-sm text-gray-400 mb-1">
-                    Phone Number
+                    Mobile
                   </p>
 
                   <h4 className="font-semibold">
-                    +91 XXXXX XXXXX
+                    +91 9735067595
+                  </h4>
+
+                  <h4 className="font-semibold">
+                    +91 9933638309
                   </h4>
 
                 </div>
 
-              </div>
+              </motion.div>
 
               {/* EMAIL */}
-              <div className="flex gap-4">
+              <motion.div
+                whileHover={{ x: 6 }}
+                className="flex gap-4"
+              >
 
                 <div
                   className="
                   w-12 h-12
-
                   rounded-xl
-
                   bg-cyan-400/10
-
+                  border border-cyan-400/20
                   flex items-center justify-center
-
                   text-cyan-400
-                  "
+                "
                 >
 
                   <Mail size={20} />
@@ -426,28 +468,28 @@ export default function Footer() {
                   </p>
 
                   <h4 className="font-semibold break-all">
-                    info@kacconstruction.com
+                    kuddusali45@gmail.com
                   </h4>
 
                 </div>
 
-              </div>
+              </motion.div>
 
-              {/* LOCATION */}
-              <div className="flex gap-4">
+              {/* ADDRESS */}
+              <motion.div
+                whileHover={{ x: 6 }}
+                className="flex gap-4"
+              >
 
                 <div
                   className="
                   w-12 h-12
-
                   rounded-xl
-
                   bg-cyan-400/10
-
+                  border border-cyan-400/20
                   flex items-center justify-center
-
                   text-cyan-400
-                  "
+                "
                 >
 
                   <MapPin size={20} />
@@ -457,14 +499,81 @@ export default function Footer() {
                 <div>
 
                   <p className="text-sm text-gray-400 mb-1">
-                    Office Location
+                    Office Address
                   </p>
 
-                  <h4 className="font-semibold">
+                  <h4 className="font-semibold leading-relaxed text-sm">
+                    Kuddus Ali Construction,
+                    Mahisbathani Baluatola,
+                    PO Barkol,
+                    Malda - 732128,
                     India
                   </h4>
 
                 </div>
+
+              </motion.div>
+
+              {/* MAP BOX */}
+              <motion.div
+                whileHover={{
+                  scale: 1.03,
+                }}
+                className="
+                relative
+                overflow-hidden
+                rounded-3xl
+                border border-white/10
+                h-[220px]
+                mt-8
+              "
+              >
+
+                <iframe
+                  src="https://www.google.com/maps?q=Malda,West%20Bengal,India&output=embed"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  className="absolute inset-0"
+                />
+
+                {/* OVERLAY */}
+                <div
+                  className="
+                  absolute top-4 left-4
+                  px-4 py-2
+                  rounded-full
+                  bg-black/60
+                  backdrop-blur-xl
+                  border border-white/10
+                  flex items-center gap-2
+                "
+                >
+
+                  <Globe size={16} className="text-cyan-400" />
+
+                  <span className="text-xs tracking-wider">
+                    LIVE LOCATION
+                  </span>
+
+                </div>
+
+              </motion.div>
+
+              {/* OFFICE HOURS */}
+              <div
+                className="
+                flex items-center
+                gap-3
+                text-sm
+                text-white/60
+                mt-4
+              "
+              >
+
+                <Clock3 size={16} className="text-cyan-400" />
+
+                Monday - Saturday | 9:00 AM - 7:00 PM
 
               </div>
 
@@ -478,27 +587,22 @@ export default function Footer() {
         <div
           className="
           pt-8
-
           border-t border-white/10
-
           flex
           flex-col
-          md:flex-row
-
+          lg:flex-row
           items-center
           justify-between
-
           gap-5
-          "
+        "
         >
 
           <p
             className="
             text-gray-500
             text-sm
-
-            text-center md:text-left
-            "
+            text-center lg:text-left
+          "
           >
             © 2026 KAC Construction. All Rights Reserved.
           </p>
@@ -507,35 +611,39 @@ export default function Footer() {
             className="
             flex
             flex-wrap
-
             items-center
             justify-center
-
             gap-6
-
             text-sm
             text-gray-500
-            "
+          "
           >
 
             <Link
               href="#"
-
               className="
               transition hover:text-cyan-400
-              "
+            "
             >
               Privacy Policy
             </Link>
 
             <Link
               href="#"
-
               className="
               transition hover:text-cyan-400
-              "
+            "
             >
               Terms & Conditions
+            </Link>
+
+            <Link
+              href="#"
+              className="
+              transition hover:text-cyan-400
+            "
+            >
+              Sitemap
             </Link>
 
           </div>

@@ -10,10 +10,6 @@ const tabs = [
     id: "stats",
   },
   {
-    name: "Timeline",
-    id: "timeline",
-  },
-  {
     name: "Ongoing",
     id: "ongoing",
   },
@@ -44,6 +40,10 @@ const tabs = [
   {
     name: "Transmission",
     id: "transmission",
+  },
+  {
+    name: "Timeline",
+    id: "timeline",
   },
   {
     name: "Gallery",
