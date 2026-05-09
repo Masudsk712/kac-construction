@@ -4,13 +4,19 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
+
+import {
+  motion,
+  AnimatePresence,
+} from "framer-motion"
 
 import {
   ChevronDown,
   Plus,
   Minus,
   X,
+  ArrowUpRight,
+  FolderKanban,
 } from "lucide-react"
 
 export default function Navbar() {
@@ -22,28 +28,36 @@ export default function Navbar() {
 
   const [aboutOpen, setAboutOpen] = useState(false)
   const [serviceOpen, setServiceOpen] = useState(false)
+  const [projectOpen, setProjectOpen] = useState(false)
 
   const [mobileAbout, setMobileAbout] = useState(false)
   const [mobileService, setMobileService] = useState(false)
+  const [mobileProject, setMobileProject] = useState(false)
 
-  /* ============================= */
-  /* SCROLL EFFECT */
-  /* ============================= */
+  /* ================================================= */
+  /* 🔥 SCROLL EFFECT */
+  /* ================================================= */
+
   useEffect(() => {
 
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40)
+      setScrolled(window.scrollY > 20)
     }
 
     window.addEventListener("scroll", handleScroll)
 
-    return () => window.removeEventListener("scroll", handleScroll)
+    return () =>
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      )
 
   }, [])
 
-  /* ============================= */
-  /* LOCK BODY SCROLL */
-  /* ============================= */
+  /* ================================================= */
+  /* 🔥 LOCK BODY */
+  /* ================================================= */
+
   useEffect(() => {
 
     if (isOpen) {
@@ -54,44 +68,117 @@ export default function Navbar() {
 
   }, [isOpen])
 
-  /* ============================= */
-  /* ACTIVE LINK STYLE */
-  /* ============================= */
+  /* ================================================= */
+  /* 🔥 ACTIVE LINK */
+  /* ================================================= */
+
   const linkStyle = (path: string) =>
-    `transition duration-300 ${
+    `relative transition-all duration-300 ${
       pathname === path
-        ? "text-cyan-400 font-semibold"
-        : "text-white hover:text-cyan-300"
+        ? "text-cyan-300"
+        : "text-white/85 hover:text-cyan-300"
     }`
 
-  /* ============================= */
-  /* CLOSE MENU */
-  /* ============================= */
+  /* ================================================= */
+  /* 🔥 CLOSE */
+  /* ================================================= */
+
   const closeMenu = () => {
+
     setIsOpen(false)
+
     setMobileAbout(false)
     setMobileService(false)
+    setMobileProject(false)
+
   }
 
-  /* ============================= */
-  /* ABOUT LINKS */
-  /* ============================= */
+  /* ================================================= */
+  /* 🔥 ABOUT LINKS */
+  /* ================================================= */
+
   const aboutLinks = [
-    { name: "Overview", href: "/about#overview" },
-    { name: "Mission & Vision", href: "/about#mission" },
-    { name: "MD Message", href: "/about#md-message" },
-    { name: "Leadership", href: "/about#leadership" },
-    { name: "Awards", href: "/about#awards" },
+    {
+      name: "Overview",
+      href: "/about#overview",
+    },
+
+    {
+      name: "Mission & Vision",
+      href: "/about#mission",
+    },
+
+    {
+      name: "MD Message",
+      href: "/about#md-message",
+    },
+
+    {
+      name: "Leadership",
+      href: "/about#leadership",
+    },
+
+    {
+      name: "Awards",
+      href: "/about#awards",
+    },
   ]
 
-  /* ============================= */
-  /* SERVICE LINKS */
-  /* ============================= */
+  /* ================================================= */
+  /* 🔥 SERVICES */
+  /* ================================================= */
+
   const serviceLinks = [
-    { name: "Survey Work", href: "/service#survey" },
-    { name: "Foundation Work", href: "/service#foundation" },
-    { name: "Tower Erection", href: "/service#erection" },
-    { name: "Stringing Work", href: "/service#stringing" },
+    {
+      name: "Survey Work",
+      href: "/service#survey",
+    },
+
+    {
+      name: "Foundation Work",
+      href: "/service#foundation",
+    },
+
+    {
+      name: "Tower Erection",
+      href: "/service#erection",
+    },
+
+    {
+      name: "Stringing Work",
+      href: "/service#stringing",
+    },
+  ]
+
+  /* ================================================= */
+  /* 🔥 PROJECT LINKS */
+  /* ================================================= */
+
+  const projectLinks = [
+    {
+      name: "Completed Projects",
+      href: "/projects#completed",
+    },
+
+    {
+      name: "Ongoing Projects",
+      href: "/projects#ongoing",
+    },
+
+    {
+      name: "Transmission Projects",
+      href: "/projects#transmission",
+    },
+
+    {
+      name: "Tower Erection",
+      href: "/projects#tower",
+    },
+
+    {
+      name: "HTLS Reconductoring",
+      href: "/projects#htls",
+    },
   ]
 
   return (
@@ -99,66 +186,147 @@ export default function Navbar() {
     <nav
       className={`
       fixed top-0 left-0 w-full z-[999]
+
       transition-all duration-500
+
       ${
         scrolled
-          ? "bg-black/60 backdrop-blur-2xl border-b border-white/10 shadow-2xl"
-          : "bg-transparent"
+          ? `
+            bg-[#020617]/72
+            backdrop-blur-3xl
+
+            border-b border-white/10
+
+            shadow-[0_20px_60px_rgba(0,0,0,0.45)]
+          `
+          : `
+            bg-transparent
+          `
       }
-      `}
+    `}
     >
 
-      {/* BG GLOW */}
-      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-transparent to-blue-500/5 pointer-events-none" />
+      {/* ================================================= */}
+      {/* 🔥 PREMIUM GLOW */}
+      {/* ================================================= */}
 
-      <div className="relative max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div
+        className="
+        absolute inset-0
 
-        {/* ============================= */}
-        {/* LOGO */}
-        {/* ============================= */}
+        bg-gradient-to-r
+        from-cyan-500/[0.05]
+        via-transparent
+        to-blue-500/[0.05]
+
+        pointer-events-none
+      "
+      />
+
+      {/* ================================================= */}
+      {/* 🔥 NAVBAR */}
+      {/* ================================================= */}
+
+      <div
+        className="
+        relative
+
+        container-premium
+
+        py-4
+
+        flex
+        items-center
+        justify-between
+      "
+      >
+
+        {/* ================================================= */}
+        {/* 🔥 LOGO */}
+        {/* ================================================= */}
+
         <Link
           href="/"
           onClick={closeMenu}
-          className="flex items-center"
+
+          className="
+          relative z-20
+
+          flex items-center
+        "
         >
 
           <Image
             src="/LOGO 1.png"
-            alt="KAC Logo"
-            width={70}
-            height={70}
+            alt="KAC Construction"
+
+            width={72}
+            height={72}
+
             priority
+
             className="
             object-contain
-            drop-shadow-[0_0_20px_rgba(34,211,238,0.7)]
+
+            transition-all duration-500
+
             hover:scale-105
-            transition
-            "
+
+            drop-shadow-[0_0_25px_rgba(34,211,238,0.45)]
+          "
           />
 
         </Link>
 
-        {/* ============================= */}
-        {/* DESKTOP MENU */}
-        {/* ============================= */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* ================================================= */}
+        {/* 🔥 DESKTOP MENU */}
+        {/* ================================================= */}
 
-          <Link href="/" className={linkStyle("/")}>
+        <div
+          className="
+          hidden md:flex
+
+          items-center
+
+          gap-8
+        "
+        >
+
+          {/* HOME */}
+          <Link
+            href="/"
+            className={linkStyle("/")}
+          >
             Home
           </Link>
 
+          {/* ================================================= */}
           {/* ABOUT */}
+          {/* ================================================= */}
+
           <div
             className="relative"
-            onMouseEnter={() => setAboutOpen(true)}
-            onMouseLeave={() => setAboutOpen(false)}
+
+            onMouseEnter={() =>
+              setAboutOpen(true)
+            }
+
+            onMouseLeave={() =>
+              setAboutOpen(false)
+            }
           >
 
             <Link
               href="/about"
-              className={`${linkStyle("/about")} flex items-center gap-1`}
+
+              className={`
+              ${linkStyle("/about")}
+
+              flex items-center gap-1
+            `}
             >
               About
+
               <ChevronDown size={16} />
             </Link>
 
@@ -167,39 +335,96 @@ export default function Navbar() {
               {aboutOpen && (
 
                 <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 15 }}
-                  transition={{ duration: 0.25 }}
+                  initial={{
+                    opacity: 0,
+                    y: 14,
+                  }}
+
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+
+                  exit={{
+                    opacity: 0,
+                    y: 14,
+                  }}
+
+                  transition={{
+                    duration: 0.25,
+                  }}
+
                   className="
-                  absolute top-10 left-0
-                  w-64
-                  bg-black/80 backdrop-blur-2xl
+                  absolute
+                  top-12
+                  left-0
+
+                  w-72
+
+                  rounded-3xl
+
                   border border-white/10
-                  rounded-2xl
+
+                  bg-[#081120]/85
+                  backdrop-blur-3xl
+
                   p-4
-                  space-y-2
-                  shadow-[0_20px_60px_rgba(0,0,0,0.5)]
-                  "
+
+                  shadow-[0_30px_80px_rgba(0,0,0,0.55)]
+                "
                 >
 
-                  {aboutLinks.map((item, i) => (
+                  <div className="space-y-2">
 
-                    <Link
-                      key={i}
-                      href={item.href}
-                      className="
-                      block px-4 py-3 rounded-xl
-                      text-gray-300
-                      hover:bg-cyan-500/10
-                      hover:text-cyan-300
-                      transition
-                      "
-                    >
-                      {item.name}
-                    </Link>
+                    {aboutLinks.map(
+                      (item, i) => (
 
-                  ))}
+                        <Link
+                          key={i}
+                          href={item.href}
+
+                          className="
+                          group
+
+                          flex
+                          items-center
+                          justify-between
+
+                          px-4 py-3
+
+                          rounded-2xl
+
+                          text-gray-300
+
+                          transition-all duration-300
+
+                          hover:bg-cyan-500/10
+                          hover:text-cyan-300
+                        "
+                        >
+
+                          {item.name}
+
+                          <ArrowUpRight
+                            size={16}
+
+                            className="
+                            opacity-0
+
+                            transition
+
+                            group-hover:opacity-100
+                            group-hover:-translate-y-1
+                            group-hover:translate-x-1
+                          "
+                          />
+
+                        </Link>
+
+                      )
+                    )}
+
+                  </div>
 
                 </motion.div>
 
@@ -209,18 +434,33 @@ export default function Navbar() {
 
           </div>
 
+          {/* ================================================= */}
           {/* SERVICES */}
+          {/* ================================================= */}
+
           <div
             className="relative"
-            onMouseEnter={() => setServiceOpen(true)}
-            onMouseLeave={() => setServiceOpen(false)}
+
+            onMouseEnter={() =>
+              setServiceOpen(true)
+            }
+
+            onMouseLeave={() =>
+              setServiceOpen(false)
+            }
           >
 
             <Link
               href="/service"
-              className={`${linkStyle("/service")} flex items-center gap-1`}
+
+              className={`
+              ${linkStyle("/service")}
+
+              flex items-center gap-1
+            `}
             >
               Services
+
               <ChevronDown size={16} />
             </Link>
 
@@ -229,39 +469,96 @@ export default function Navbar() {
               {serviceOpen && (
 
                 <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 15 }}
-                  transition={{ duration: 0.25 }}
+                  initial={{
+                    opacity: 0,
+                    y: 14,
+                  }}
+
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+
+                  exit={{
+                    opacity: 0,
+                    y: 14,
+                  }}
+
+                  transition={{
+                    duration: 0.25,
+                  }}
+
                   className="
-                  absolute top-10 left-0
-                  w-72
-                  bg-black/80 backdrop-blur-2xl
+                  absolute
+                  top-12
+                  left-0
+
+                  w-80
+
+                  rounded-3xl
+
                   border border-white/10
-                  rounded-2xl
+
+                  bg-[#081120]/85
+                  backdrop-blur-3xl
+
                   p-4
-                  space-y-2
-                  shadow-[0_20px_60px_rgba(0,0,0,0.5)]
-                  "
+
+                  shadow-[0_30px_80px_rgba(0,0,0,0.55)]
+                "
                 >
 
-                  {serviceLinks.map((item, i) => (
+                  <div className="space-y-2">
 
-                    <Link
-                      key={i}
-                      href={item.href}
-                      className="
-                      block px-4 py-3 rounded-xl
-                      text-gray-300
-                      hover:bg-cyan-500/10
-                      hover:text-cyan-300
-                      transition
-                      "
-                    >
-                      {item.name}
-                    </Link>
+                    {serviceLinks.map(
+                      (item, i) => (
 
-                  ))}
+                        <Link
+                          key={i}
+                          href={item.href}
+
+                          className="
+                          group
+
+                          flex
+                          items-center
+                          justify-between
+
+                          px-4 py-3
+
+                          rounded-2xl
+
+                          text-gray-300
+
+                          transition-all duration-300
+
+                          hover:bg-cyan-500/10
+                          hover:text-cyan-300
+                        "
+                        >
+
+                          {item.name}
+
+                          <ArrowUpRight
+                            size={16}
+
+                            className="
+                            opacity-0
+
+                            transition
+
+                            group-hover:opacity-100
+                            group-hover:-translate-y-1
+                            group-hover:translate-x-1
+                          "
+                          />
+
+                        </Link>
+
+                      )
+                    )}
+
+                  </div>
 
                 </motion.div>
 
@@ -271,41 +568,262 @@ export default function Navbar() {
 
           </div>
 
-          <Link href="/projects" className={linkStyle("/projects")}>
-            Projects
-          </Link>
+          {/* ================================================= */}
+          {/* PROJECTS */}
+          {/* ================================================= */}
 
-          <Link href="/media" className={linkStyle("/media")}>
+          <div
+            className="relative"
+
+            onMouseEnter={() =>
+              setProjectOpen(true)
+            }
+
+            onMouseLeave={() =>
+              setProjectOpen(false)
+            }
+          >
+
+            <Link
+              href="/projects"
+
+              className={`
+              ${linkStyle("/projects")}
+
+              flex items-center gap-1
+            `}
+            >
+              Projects
+
+              <ChevronDown size={16} />
+            </Link>
+
+            <AnimatePresence>
+
+              {projectOpen && (
+
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    y: 14,
+                  }}
+
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+
+                  exit={{
+                    opacity: 0,
+                    y: 14,
+                  }}
+
+                  transition={{
+                    duration: 0.25,
+                  }}
+
+                  className="
+                  absolute
+                  top-12
+                  left-0
+
+                  w-[360px]
+
+                  rounded-3xl
+
+                  border border-white/10
+
+                  bg-[#081120]/85
+                  backdrop-blur-3xl
+
+                  p-5
+
+                  shadow-[0_30px_80px_rgba(0,0,0,0.55)]
+                "
+                >
+
+                  {/* HEADER */}
+                  <div
+                    className="
+                    flex items-center
+                    gap-3
+
+                    mb-5
+
+                    px-2
+                  "
+                  >
+
+                    <div
+                      className="
+                      w-12 h-12
+
+                      rounded-2xl
+
+                      bg-cyan-400/10
+
+                      flex items-center
+                      justify-center
+
+                      text-cyan-300
+                    "
+                    >
+
+                      <FolderKanban size={22} />
+
+                    </div>
+
+                    <div>
+
+                      <h4
+                        className="
+                        text-white
+                        font-bold
+                      "
+                      >
+                        Project Portfolio
+                      </h4>
+
+                      <p
+                        className="
+                        text-xs
+                        text-white/50
+                      "
+                      >
+                        Transmission Infrastructure
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                  {/* LINKS */}
+                  <div className="space-y-2">
+
+                    {projectLinks.map(
+                      (item, i) => (
+
+                        <Link
+                          key={i}
+                          href={item.href}
+
+                          className="
+                          group
+
+                          flex
+                          items-center
+                          justify-between
+
+                          px-4 py-3
+
+                          rounded-2xl
+
+                          text-gray-300
+
+                          transition-all duration-300
+
+                          hover:bg-cyan-500/10
+                          hover:text-cyan-300
+                        "
+                        >
+
+                          {item.name}
+
+                          <ArrowUpRight
+                            size={16}
+
+                            className="
+                            opacity-0
+
+                            transition
+
+                            group-hover:opacity-100
+                            group-hover:-translate-y-1
+                            group-hover:translate-x-1
+                          "
+                          />
+
+                        </Link>
+
+                      )
+                    )}
+
+                  </div>
+
+                </motion.div>
+
+              )}
+
+            </AnimatePresence>
+
+          </div>
+
+          {/* MEDIA */}
+          <Link
+            href="/media"
+            className={linkStyle("/media")}
+          >
             Media
           </Link>
 
-          <Link href="/career" className={linkStyle("/career")}>
+          {/* CAREER */}
+          <Link
+            href="/career"
+            className={linkStyle("/career")}
+          >
             Career
           </Link>
 
-          <Link href="/contact" className={linkStyle("/contact")}>
+          {/* CONTACT */}
+          <Link
+            href="/contact"
+            className={linkStyle("/contact")}
+          >
             Contact
           </Link>
 
         </div>
 
-        {/* ============================= */}
-        {/* MOBILE BUTTON */}
-        {/* ============================= */}
+        {/* ================================================= */}
+        {/* 🔥 MOBILE BUTTON */}
+        {/* ================================================= */}
+
         <div className="md:hidden">
 
           <button
             onClick={() => setIsOpen(true)}
+
             className="
-            w-11 h-11 rounded-full
+            relative
+
+            w-11 h-11
+
+            rounded-full
+
             border border-white/10
-            bg-white/5
+
+            bg-white/[0.05]
             backdrop-blur-xl
-            flex items-center justify-center
-            "
+
+            flex
+            items-center
+            justify-center
+
+            overflow-hidden
+          "
           >
 
-            <div className="space-y-1">
+            <div
+              className="
+              absolute inset-0
+
+              bg-gradient-to-r
+              from-cyan-500/10
+              to-blue-500/10
+            "
+            />
+
+            <div className="relative space-y-1">
 
               <span className="block w-6 h-0.5 bg-white rounded-full" />
               <span className="block w-6 h-0.5 bg-white rounded-full" />
@@ -319,61 +837,116 @@ export default function Navbar() {
 
       </div>
 
-      {/* ============================= */}
-      {/* MOBILE MENU */}
-      {/* ============================= */}
+      {/* ================================================= */}
+      {/* 🔥 MOBILE MENU */}
+      {/* ================================================= */}
+
       <AnimatePresence>
 
         {isOpen && (
 
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.4 }}
+            initial={{
+              opacity: 0,
+              x: "100%",
+            }}
+
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+
+            exit={{
+              opacity: 0,
+              x: "100%",
+            }}
+
+            transition={{
+              duration: 0.4,
+            }}
+
             className="
             fixed top-0 right-0
+
             w-full h-screen
+
             bg-[#020617]/95
             backdrop-blur-3xl
+
             z-[999]
+
             overflow-y-auto
+
             md:hidden
-            "
+          "
           >
 
             {/* TOP */}
-            <div className="flex justify-between items-center px-6 py-6 border-b border-white/10">
+            <div
+              className="
+              flex
+              items-center
+              justify-between
+
+              px-6 py-6
+
+              border-b border-white/10
+            "
+            >
 
               <Image
                 src="/LOGO 1.png"
                 alt="KAC"
+
                 width={70}
                 height={70}
+
                 className="object-contain"
               />
 
               <button
                 onClick={closeMenu}
+
                 className="
-                w-11 h-11 rounded-full
+                w-11 h-11
+
+                rounded-full
+
                 border border-white/10
+
                 bg-white/5
-                flex items-center justify-center
-                "
+
+                flex
+                items-center
+                justify-center
+              "
               >
                 <X size={22} />
               </button>
 
             </div>
 
-            {/* MENU */}
-            <div className="px-6 py-8 flex flex-col gap-6 text-lg">
+            {/* MOBILE LINKS */}
+            <div
+              className="
+              px-6 py-8
+
+              flex flex-col
+
+              gap-6
+
+              text-lg
+            "
+            >
 
               <Link
                 href="/"
                 onClick={closeMenu}
-                className="text-white hover:text-cyan-300 transition"
+
+                className="
+                text-white
+                hover:text-cyan-300
+              "
               >
                 Home
               </Link>
@@ -385,20 +958,27 @@ export default function Navbar() {
 
                   <Link
                     href="/about"
+
                     onClick={closeMenu}
-                    className="text-white hover:text-cyan-300 transition"
+
+                    className="
+                    text-white
+                    hover:text-cyan-300
+                  "
                   >
                     About
                   </Link>
 
                   <button
-                    onClick={() => setMobileAbout(!mobileAbout)}
+                    onClick={() =>
+                      setMobileAbout(
+                        !mobileAbout
+                      )
+                    }
                   >
-                    {mobileAbout ? (
-                      <Minus size={18} />
-                    ) : (
-                      <Plus size={18} />
-                    )}
+                    {mobileAbout
+                      ? <Minus size={18} />
+                      : <Plus size={18} />}
                   </button>
 
                 </div>
@@ -408,33 +988,52 @@ export default function Navbar() {
                   {mobileAbout && (
 
                     <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
+                      initial={{
+                        opacity: 0,
+                        height: 0,
+                      }}
+
+                      animate={{
+                        opacity: 1,
+                        height: "auto",
+                      }}
+
+                      exit={{
+                        opacity: 0,
+                        height: 0,
+                      }}
+
                       className="
                       overflow-hidden
+
                       ml-4 mt-4
-                      flex flex-col gap-4
+
+                      flex flex-col
+                      gap-4
+
                       text-sm
-                      "
+                    "
                     >
 
-                      {aboutLinks.map((item, i) => (
+                      {aboutLinks.map(
+                        (item, i) => (
 
-                        <Link
-                          key={i}
-                          href={item.href}
-                          onClick={closeMenu}
-                          className="
-                          text-gray-300
-                          hover:text-cyan-300
-                          transition
+                          <Link
+                            key={i}
+                            href={item.href}
+
+                            onClick={closeMenu}
+
+                            className="
+                            text-gray-300
+                            hover:text-cyan-300
                           "
-                        >
-                          {item.name}
-                        </Link>
+                          >
+                            {item.name}
+                          </Link>
 
-                      ))}
+                        )
+                      )}
 
                     </motion.div>
 
@@ -451,20 +1050,27 @@ export default function Navbar() {
 
                   <Link
                     href="/service"
+
                     onClick={closeMenu}
-                    className="text-white hover:text-cyan-300 transition"
+
+                    className="
+                    text-white
+                    hover:text-cyan-300
+                  "
                   >
                     Services
                   </Link>
 
                   <button
-                    onClick={() => setMobileService(!mobileService)}
+                    onClick={() =>
+                      setMobileService(
+                        !mobileService
+                      )
+                    }
                   >
-                    {mobileService ? (
-                      <Minus size={18} />
-                    ) : (
-                      <Plus size={18} />
-                    )}
+                    {mobileService
+                      ? <Minus size={18} />
+                      : <Plus size={18} />}
                   </button>
 
                 </div>
@@ -474,33 +1080,52 @@ export default function Navbar() {
                   {mobileService && (
 
                     <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
+                      initial={{
+                        opacity: 0,
+                        height: 0,
+                      }}
+
+                      animate={{
+                        opacity: 1,
+                        height: "auto",
+                      }}
+
+                      exit={{
+                        opacity: 0,
+                        height: 0,
+                      }}
+
                       className="
                       overflow-hidden
+
                       ml-4 mt-4
-                      flex flex-col gap-4
+
+                      flex flex-col
+                      gap-4
+
                       text-sm
-                      "
+                    "
                     >
 
-                      {serviceLinks.map((item, i) => (
+                      {serviceLinks.map(
+                        (item, i) => (
 
-                        <Link
-                          key={i}
-                          href={item.href}
-                          onClick={closeMenu}
-                          className="
-                          text-gray-300
-                          hover:text-cyan-300
-                          transition
+                          <Link
+                            key={i}
+                            href={item.href}
+
+                            onClick={closeMenu}
+
+                            className="
+                            text-gray-300
+                            hover:text-cyan-300
                           "
-                        >
-                          {item.name}
-                        </Link>
+                          >
+                            {item.name}
+                          </Link>
 
-                      ))}
+                        )
+                      )}
 
                     </motion.div>
 
@@ -510,18 +1135,107 @@ export default function Navbar() {
 
               </div>
 
-              <Link
-                href="/projects"
-                onClick={closeMenu}
-                className="text-white hover:text-cyan-300 transition"
-              >
-                Projects
-              </Link>
+              {/* PROJECTS */}
+              <div>
 
+                <div className="flex justify-between items-center">
+
+                  <Link
+                    href="/projects"
+
+                    onClick={closeMenu}
+
+                    className="
+                    text-white
+                    hover:text-cyan-300
+                  "
+                  >
+                    Projects
+                  </Link>
+
+                  <button
+                    onClick={() =>
+                      setMobileProject(
+                        !mobileProject
+                      )
+                    }
+                  >
+                    {mobileProject
+                      ? <Minus size={18} />
+                      : <Plus size={18} />}
+                  </button>
+
+                </div>
+
+                <AnimatePresence>
+
+                  {mobileProject && (
+
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        height: 0,
+                      }}
+
+                      animate={{
+                        opacity: 1,
+                        height: "auto",
+                      }}
+
+                      exit={{
+                        opacity: 0,
+                        height: 0,
+                      }}
+
+                      className="
+                      overflow-hidden
+
+                      ml-4 mt-4
+
+                      flex flex-col
+                      gap-4
+
+                      text-sm
+                    "
+                    >
+
+                      {projectLinks.map(
+                        (item, i) => (
+
+                          <Link
+                            key={i}
+                            href={item.href}
+
+                            onClick={closeMenu}
+
+                            className="
+                            text-gray-300
+                            hover:text-cyan-300
+                          "
+                          >
+                            {item.name}
+                          </Link>
+
+                        )
+                      )}
+
+                    </motion.div>
+
+                  )}
+
+                </AnimatePresence>
+
+              </div>
+
+              {/* OTHER */}
               <Link
                 href="/media"
                 onClick={closeMenu}
-                className="text-white hover:text-cyan-300 transition"
+
+                className="
+                text-white
+                hover:text-cyan-300
+              "
               >
                 Media
               </Link>
@@ -529,7 +1243,11 @@ export default function Navbar() {
               <Link
                 href="/career"
                 onClick={closeMenu}
-                className="text-white hover:text-cyan-300 transition"
+
+                className="
+                text-white
+                hover:text-cyan-300
+              "
               >
                 Career
               </Link>
@@ -537,7 +1255,11 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={closeMenu}
-                className="text-white hover:text-cyan-300 transition"
+
+                className="
+                text-white
+                hover:text-cyan-300
+              "
               >
                 Contact
               </Link>
@@ -551,6 +1273,5 @@ export default function Navbar() {
       </AnimatePresence>
 
     </nav>
-
   )
 }

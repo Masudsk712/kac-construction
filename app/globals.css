@@ -15,7 +15,7 @@
 /* ============================= */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 140px;
 }
 
 body {
@@ -23,6 +23,7 @@ body {
   color: var(--text);
   font-family: sans-serif;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* ============================= */
@@ -32,6 +33,7 @@ body {
   width: 6px;
   height: 4px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(#22d3ee, #3b82f6);
   border-radius: 10px;
@@ -62,8 +64,8 @@ section {
 /* ============================= */
 .section-premium {
   background:
-    radial-gradient(circle at 20% 20%, rgba(34,211,238,0.08), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(59,130,246,0.08), transparent 40%);
+    radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.08), transparent 40%);
 }
 
 /* ============================= */
@@ -72,12 +74,14 @@ section {
 .glass {
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-strong {
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -85,8 +89,8 @@ section {
 /* BORDER GLOW */
 /* ============================= */
 .border-glow {
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 0 20px rgba(34,211,238,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.08);
 }
 
 /* ============================= */
@@ -109,6 +113,7 @@ section {
   font-weight: 600;
   transition: 0.3s;
 }
+
 .btn-primary:hover {
   transform: scale(1.05);
   box-shadow: 0 0 40px rgba(34, 211, 238, 0.7);
@@ -120,9 +125,10 @@ section {
 .card-hover {
   transition: 0.4s ease;
 }
+
 .card-hover:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
 }
 
 /* ============================= */
@@ -138,27 +144,30 @@ img {
 /* ============================= */
 * {
   will-change: auto;
+  box-sizing: border-box;
 }
-/* LEFT → RIGHT */
+
+/* ============================= */
+/* MARQUEE ANIMATION */
+/* ============================= */
 @keyframes scrollRight {
   0% {
     transform: translateX(-50%);
   }
+
   100% {
     transform: translateX(0%);
   }
 }
 
-/* RIGHT → LEFT */
 @keyframes scrollLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+  0% {
+    transform: translateX(0);
+  }
 
-/* LEFT → RIGHT */
-@keyframes scrollRight {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .scroll-left {
@@ -174,13 +183,14 @@ img {
 .scroll-right:hover {
   animation-play-state: paused;
 }
+
 main {
   overflow: visible !important;
 }
+
 /* ============================= */
 /* 🔥 STICKY FIX */
 /* ============================= */
-
 #StickyTabs {
   position: sticky;
   top: 72px;
@@ -192,23 +202,18 @@ main {
   margin-top: -40px;
 }
 
-/* SCROLL OFFSET PERFECT */
-html {
-  scroll-padding-top: 140px;
-}
-
 /* SMOOTH SECTION ALIGN */
 section {
   scroll-margin-top: 140px;
 }
+
 html {
   scroll-behavior: smooth;
 }
 
-section {
-  scroll-margin-top: 120px;
-}
+/* ============================= */
 /* HIDE SCROLLBAR */
+/* ============================= */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -217,6 +222,7 @@ section {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 /* ================================================= */
 /* 🔥 GLOBAL MOBILE RESPONSIVE FIX */
 /* ================================================= */
@@ -224,6 +230,7 @@ section {
 html,
 body {
   overflow-x: hidden !important;
+  width: 100%;
 }
 
 /* CONTAINER FIX */
@@ -399,12 +406,6 @@ span img {
   }
 }
 
-/* SCROLLBAR HIDE */
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
 /* MOBILE BUTTON FIX */
 @media (max-width: 768px) {
 
@@ -432,4 +433,144 @@ h2,
 h3,
 p {
   text-wrap: balance;
+}
+
+/* ================================================= */
+/* 🔥 ULTRA PREMIUM IMPROVEMENTS */
+/* ================================================= */
+
+/* SMOOTH GPU RENDER */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* FIX BLUR FLICKERING */
+.glass,
+.glass-strong {
+  transform: translateZ(0);
+}
+
+/* BUTTON TAP FIX */
+button,
+a {
+  touch-action: manipulation;
+}
+
+/* INPUT FIX */
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* IOS BORDER RADIUS FIX */
+iframe {
+  border: 0;
+  width: 100%;
+}
+
+/* VIDEO / CANVAS FIX */
+video,
+canvas {
+  max-width: 100%;
+}
+
+/* LONG TEXT FIX */
+.break-anywhere {
+  overflow-wrap: anywhere;
+}
+
+/* FLEX OVERFLOW FIX */
+.flex {
+  min-width: 0;
+}
+
+/* GRID CHILD FIX */
+.grid > * {
+  min-width: 0;
+}
+
+/* NEXTJS IMAGE FIX */
+[data-nextjs-scroll-focus-boundary] {
+  display: contents;
+}
+
+/* SAFE MOBILE VIEW */
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 36px !important;
+  }
+
+  h2 {
+    font-size: 30px !important;
+  }
+
+  h3 {
+    font-size: 22px !important;
+  }
+
+  .container-premium {
+    padding-inline: 14px;
+  }
+
+  .rounded-\[32px\] {
+    border-radius: 24px !important;
+  }
+}
+
+/* REDUCE ANIMATION FOR LOW-END DEVICES */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* FIX STICKY IOS SAFARI */
+@supports (-webkit-touch-callout: none) {
+
+  #StickyTabs {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+/* HOVER EFFECT SAFE */
+@media (hover: hover) {
+
+  .card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+/* NO HOVER ON TOUCH */
+@media (hover: none) {
+
+  .card-hover:hover {
+    transform: none;
+  }
+}
+/* ============================= */
+/* 🔥 PREMIUM TEXT ANIMATION */
+/* ============================= */
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }

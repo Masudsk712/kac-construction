@@ -22,6 +22,10 @@ const quickLinks = [
   { title: "About", href: "/about" },
   { title: "Services", href: "/service" },
   { title: "Projects", href: "/projects" },
+
+  /* 🔥 NEW */
+  { title: "Media", href: "/media" },
+
   { title: "Career", href: "/career" },
   { title: "Contact", href: "/contact" },
 ];
@@ -64,6 +68,36 @@ export default function Footer() {
     "
     >
 
+      {/* ================================================= */}
+      {/* 🔥 CINEMATIC BACKGROUND IMAGE */}
+      {/* ================================================= */}
+
+      <div
+        className="
+        absolute inset-0
+        bg-cover bg-center
+        opacity-[0.10]
+        scale-105
+        "
+        style={{
+          backgroundImage: "url('/tower-pic1.webp')",
+        }}
+      />
+
+      {/* DARK OVERLAY */}
+      <div
+        className="
+        absolute inset-0
+
+        bg-gradient-to-b
+        from-[#020617]/95
+        via-[#020617]/92
+        to-[#020617]
+
+        backdrop-blur-[2px]
+        "
+      />
+
       {/* BG GLOW */}
       <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-cyan-500/10 blur-[140px]" />
 
@@ -88,7 +122,10 @@ export default function Footer() {
       "
       >
 
-        {/* TOP CTA BAR */}
+        {/* ================================================= */}
+        {/* 🔥 TOP CTA BAR */}
+        {/* ================================================= */}
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +135,7 @@ export default function Footer() {
           mb-20
           rounded-[32px]
           border border-white/10
-          bg-white/[0.04]
+          bg-black/30
           backdrop-blur-2xl
           p-8 md:p-10
           flex
@@ -107,6 +144,8 @@ export default function Footer() {
           items-start lg:items-center
           justify-between
           gap-10
+
+          shadow-[0_20px_80px_rgba(0,0,0,0.45)]
         "
         >
 
@@ -152,9 +191,9 @@ export default function Footer() {
             </h2>
 
             <p className="text-white/60 leading-relaxed text-lg">
-              Delivering transmission infrastructure, EPC solutions,
-              tower erection, hotline stringing, and foundation
-              projects with precision, speed, and engineering excellence.
+              Delivering transmission infrastructure, tower erection,
+              hotline stringing, HTLS reconductoring and foundation
+              execution projects with engineering precision across India.
             </p>
 
           </div>
@@ -180,6 +219,7 @@ export default function Footer() {
             transition-all duration-300
 
             hover:scale-105
+            hover:shadow-[0_0_40px_rgba(34,211,238,0.45)]
           "
           >
 
@@ -197,7 +237,10 @@ export default function Footer() {
 
         </motion.div>
 
-        {/* MAIN GRID */}
+        {/* ================================================= */}
+        {/* 🔥 MAIN GRID */}
+        {/* ================================================= */}
+
         <div
           className="
           grid
@@ -209,7 +252,10 @@ export default function Footer() {
         "
         >
 
+          {/* ================================================= */}
           {/* COMPANY */}
+          {/* ================================================= */}
+
           <div className="xl:col-span-2">
 
             {/* LOGO */}
@@ -227,6 +273,8 @@ export default function Footer() {
                 border border-cyan-400/20
                 flex items-center justify-center
                 text-cyan-400
+
+                shadow-[0_0_30px_rgba(34,211,238,0.18)]
               "
               >
 
@@ -241,7 +289,7 @@ export default function Footer() {
                 </h2>
 
                 <p className="text-sm text-gray-400">
-                  EPC Infrastructure Solutions
+                  Transmission Infrastructure Experts
                 </p>
 
               </div>
@@ -285,13 +333,15 @@ export default function Footer() {
                     w-12 h-12
                     rounded-2xl
                     border border-white/10
-                    bg-white/[0.03]
+                    bg-black/30
                     backdrop-blur-xl
                     flex items-center justify-center
                     text-gray-300
                     transition-all duration-300
+
                     hover:border-cyan-400/30
                     hover:text-cyan-400
+                    hover:shadow-[0_0_25px_rgba(34,211,238,0.18)]
                   "
                   >
 
@@ -307,7 +357,10 @@ export default function Footer() {
 
           </div>
 
+          {/* ================================================= */}
           {/* QUICK LINKS */}
+          {/* ================================================= */}
+
           <div>
 
             <h3 className="text-xl font-bold mb-8">
@@ -351,7 +404,10 @@ export default function Footer() {
 
           </div>
 
+          {/* ================================================= */}
           {/* SERVICES */}
+          {/* ================================================= */}
+
           <div>
 
             <h3 className="text-xl font-bold mb-8">
@@ -392,7 +448,10 @@ export default function Footer() {
 
           </div>
 
-          {/* CONTACT + MAP */}
+          {/* ================================================= */}
+          {/* CONTACT INFO */}
+          {/* ================================================= */}
+
           <div>
 
             <h3 className="text-xl font-bold mb-8">
@@ -514,7 +573,7 @@ export default function Footer() {
 
               </motion.div>
 
-              {/* MAP BOX */}
+              {/* MAP */}
               <motion.div
                 whileHover={{
                   scale: 1.03,
@@ -526,6 +585,8 @@ export default function Footer() {
                 border border-white/10
                 h-[220px]
                 mt-8
+
+                shadow-[0_20px_60px_rgba(0,0,0,0.45)]
               "
               >
 
@@ -583,7 +644,10 @@ export default function Footer() {
 
         </div>
 
+        {/* ================================================= */}
         {/* BOTTOM */}
+        {/* ================================================= */}
+
         <div
           className="
           pt-8

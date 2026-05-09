@@ -1,135 +1,447 @@
 "use client";
 
+import Link from "next/link";
+
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+
+import {
+  ArrowUpRight,
+  Sparkles,
+} from "lucide-react";
+
 import Image from "next/image";
+
+/* ================================================= */
+/* 🔥 SERVICES DATA */
+/* ================================================= */
 
 const services = [
   {
     title: "Survey Work",
-    desc: "Preliminary, Detailed & Check Survey with high precision planning and route optimization.",
+
+    desc:
+      "Preliminary, detailed and check survey services with route optimization and accurate transmission line planning.",
+
     image: "/placeholder.jpg",
+
     link: "/service#survey",
+
+    number: "01",
   },
+
   {
     title: "Foundation Work",
-    desc: "Strong civil foundations engineered for long-lasting transmission tower stability.",
+
+    desc:
+      "Precision-engineered civil foundation execution ensuring long-term tower strength and structural reliability.",
+
     image: "/placeholder.jpg",
+
     link: "/service#foundation",
+
+    number: "02",
   },
+
   {
     title: "Tower Erection",
-    desc: "Efficient and safe erection of transmission towers using advanced methodologies.",
+
+    desc:
+      "Safe and efficient erection of transmission towers using advanced methodologies and experienced site teams.",
+
     image: "/placeholder.jpg",
+
     link: "/service#erection",
+
+    number: "03",
   },
+
   {
     title: "Stringing Work",
-    desc: "High-quality conductor stringing with modern equipment and safety compliance.",
+
+    desc:
+      "High-capacity conductor stringing and hotline execution with modern machinery and strict safety compliance.",
+
     image: "/placeholder.jpg",
+
     link: "/service#stringing",
+
+    number: "04",
   },
 ];
+
+/* ================================================= */
+/* 🔥 COMPONENT */
+/* ================================================= */
 
 export default function ServicesSection() {
 
   return (
-    <section className="relative py-28 bg-[#020617] overflow-hidden">
+    <section
+      className="
+      relative
+      overflow-hidden
 
-      {/* BACKGROUND GLOW */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[140px]" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[140px]" />
+      bg-[#020617]
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      py-28
+    "
+    >
 
-        {/* HEADING */}
+      {/* ================================================= */}
+      {/* 🔥 BACKGROUND */}
+      {/* ================================================= */}
+
+      {/* GLOW */}
+      <div className="absolute inset-0 pointer-events-none">
+
+        <div
+          className="
+          absolute
+          top-[-180px]
+          left-[-100px]
+
+          w-[500px]
+          h-[500px]
+
+          bg-cyan-500/10
+
+          blur-[140px]
+
+          rounded-full
+        "
+        />
+
+        <div
+          className="
+          absolute
+          bottom-[-180px]
+          right-[-100px]
+
+          w-[500px]
+          h-[500px]
+
+          bg-blue-500/10
+
+          blur-[140px]
+
+          rounded-full
+        "
+        />
+
+      </div>
+
+      {/* GRID */}
+      <div
+        className="
+        absolute inset-0
+
+        opacity-[0.03]
+
+        [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+
+        [background-size:60px_60px]
+      "
+      />
+
+      {/* ================================================= */}
+      {/* 🔥 CONTENT */}
+      {/* ================================================= */}
+
+      <div
+        className="
+        container-premium
+
+        relative z-10
+      "
+      >
+
+        {/* ================================================= */}
+        {/* 🔥 HEADING */}
+        {/* ================================================= */}
+
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-20"
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+
+          transition={{
+            duration: 0.8,
+          }}
+
+          viewport={{
+            once: true,
+          }}
+
+          className="
+          text-center
+
+          max-w-4xl
+
+          mx-auto
+
+          mb-20
+        "
         >
 
-          <p className="uppercase tracking-[5px] text-cyan-400 text-sm mb-4">
-            What We Do
-          </p>
+          {/* LABEL */}
+          <div
+            className="
+            inline-flex
+            items-center
+            gap-2
 
-          <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-            Our Core <span className="text-cyan-400">Services</span>
+            px-5 py-2
+
+            rounded-full
+
+            border border-cyan-400/10
+
+            bg-cyan-400/5
+
+            text-cyan-300
+
+            text-sm
+            uppercase
+
+            tracking-[4px]
+
+            mb-6
+          "
+          >
+
+            <Sparkles size={14} />
+
+            Core Services
+
+          </div>
+
+          {/* TITLE */}
+          <h2
+            className="
+            text-4xl
+            md:text-6xl
+
+            font-black
+
+            leading-[1.05]
+
+            mb-6
+          "
+          >
+
+            <span
+              className="
+              bg-gradient-to-r
+              from-cyan-300
+              via-blue-400
+              to-cyan-100
+
+              bg-clip-text
+              text-transparent
+            "
+            >
+              Engineering Services
+            </span>
+
+            <br />
+
+            <span className="text-white">
+              Built For Reliability
+            </span>
+
           </h2>
 
-          <div className="w-24 h-[3px] bg-cyan-400 mx-auto mt-6 rounded-full" />
+          {/* DESCRIPTION */}
+          <p
+            className="
+            text-white/65
+
+            text-lg
+
+            leading-[2]
+
+            max-w-3xl
+
+            mx-auto
+          "
+          >
+
+            KAC Construction delivers advanced
+            transmission infrastructure solutions
+            with precision execution, experienced
+            engineering teams and reliable project
+            delivery across India.
+
+          </p>
 
         </motion.div>
 
-        {/* SERVICES GRID */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+        {/* ================================================= */}
+        {/* 🔥 GRID */}
+        {/* ================================================= */}
+
+        <div
+          className="
+          grid
+          md:grid-cols-2
+          xl:grid-cols-4
+
+          gap-7
+        "
+        >
 
           {services.map((service, i) => (
 
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 70 }}
-              whileInView={{ opacity: 1, y: 0 }}
+
+              initial={{
+                opacity: 0,
+                y: 70,
+              }}
+
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+
               transition={{
-                duration: 0.6,
-                delay: i * 0.15,
+                duration: 0.7,
+                delay: i * 0.12,
               }}
-              whileHover={{ y: -12 }}
-              onClick={() => {
-                window.location.href = service.link;
+
+              viewport={{
+                once: true,
               }}
+
+              whileHover={{
+                y: -8,
+              }}
+
               className="
               group
+
               relative
               overflow-hidden
-              rounded-3xl
+
+              rounded-[32px]
+
               border border-white/10
+
               bg-white/[0.03]
-              backdrop-blur-xl
-              cursor-pointer
+              backdrop-blur-2xl
+
               transition-all duration-500
-              hover:border-cyan-400/40
-              hover:shadow-[0_0_40px_rgba(34,211,238,0.18)]
-              "
+
+              hover:border-cyan-400/20
+            "
             >
 
+              {/* TOP LIGHT */}
+              <div
+                className="
+                absolute
+                inset-x-0
+                top-0
+
+                h-[1px]
+
+                bg-gradient-to-r
+                from-transparent
+                via-cyan-300/40
+                to-transparent
+
+                opacity-0
+                group-hover:opacity-100
+
+                transition duration-700
+              "
+              />
+
               {/* IMAGE */}
-              <div className="relative h-64 overflow-hidden">
+              <div
+                className="
+                relative
+
+                h-[260px]
+
+                overflow-hidden
+              "
+              >
 
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
+
                   className="
                   object-cover
+
                   transition duration-700
-                  group-hover:scale-110
-                  "
+
+                  group-hover:scale-105
+                "
                 />
 
-                {/* DARK OVERLAY */}
-                <div className="
-                absolute inset-0
-                bg-gradient-to-t
-                from-[#020617]
-                via-[#020617]/40
-                to-transparent
-                " />
+                {/* OVERLAY */}
+                <div
+                  className="
+                  absolute inset-0
 
-                {/* TOP LABEL */}
-                <div className="
-                absolute top-5 left-5
-                px-4 py-1
-                rounded-full
-                bg-black/40
-                backdrop-blur-md
-                border border-white/10
-                text-xs tracking-widest
-                text-cyan-300
-                uppercase
-                ">
-                  KAC SERVICE
+                  bg-gradient-to-t
+                  from-[#020617]
+                  via-[#020617]/20
+                  to-transparent
+                "
+                />
+
+                {/* NUMBER */}
+                <div
+                  className="
+                  absolute
+                  top-5
+                  right-5
+
+                  text-5xl
+                  font-black
+
+                  text-white/10
+                "
+                >
+                  {service.number}
+                </div>
+
+                {/* LABEL */}
+                <div
+                  className="
+                  absolute
+                  left-5
+                  top-5
+
+                  px-4 py-1
+
+                  rounded-full
+
+                  border border-white/10
+
+                  bg-black/30
+                  backdrop-blur-xl
+
+                  text-[11px]
+                  uppercase
+
+                  tracking-[3px]
+
+                  text-cyan-300
+                "
+                >
+                  KAC Service
                 </div>
 
               </div>
@@ -137,60 +449,90 @@ export default function ServicesSection() {
               {/* CONTENT */}
               <div className="p-7">
 
-                <motion.h3
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
+                {/* TITLE */}
+                <h3
                   className="
-                  text-2xl font-bold
+                  text-2xl
+
+                  font-bold
+
                   text-white
+
                   mb-4
-                  group-hover:text-cyan-400
-                  transition
-                  "
+
+                  transition duration-300
+
+                  group-hover:text-cyan-300
+                "
                 >
                   {service.title}
-                </motion.h3>
+                </h3>
 
-                <p className="text-gray-400 leading-relaxed text-sm mb-8">
+                {/* DESCRIPTION */}
+                <p
+                  className="
+                  text-white/60
+
+                  leading-[1.9]
+
+                  text-sm
+
+                  mb-10
+                "
+                >
                   {service.desc}
                 </p>
 
                 {/* BUTTON */}
-                <div className="flex items-center justify-between">
+                <Link
+                  href={service.link}
 
-                  <button
+                  className="
+                  flex items-center
+                  justify-between
+
+                  pt-5
+
+                  border-t border-white/10
+
+                  group/link
+                "
+                >
+
+                  <span
                     className="
-                    text-cyan-400
-                    font-medium
-                    flex items-center gap-2
-                    group-hover:gap-4
-                    transition-all duration-300
-                    "
+                    text-cyan-300
+
+                    text-sm
+                    uppercase
+
+                    tracking-[3px]
+
+                    transition duration-300
+
+                    group-hover/link:text-white
+                  "
                   >
                     Know More
-                    <ArrowUpRight size={18} />
-                  </button>
+                  </span>
 
-                  {/* GLOW DOT */}
-                  <div className="
-                  w-3 h-3 rounded-full
-                  bg-cyan-400
-                  shadow-[0_0_20px_rgba(34,211,238,1)]
-                  " />
+                  <ArrowUpRight
+                    size={18}
 
-                </div>
+                    className="
+                    text-cyan-300
+
+                    transition duration-500
+
+                    group-hover/link:translate-x-1
+                    group-hover/link:-translate-y-1
+                    group-hover/link:text-white
+                  "
+                  />
+
+                </Link>
 
               </div>
-
-              {/* HOVER LINE */}
-              <div className="
-              absolute bottom-0 left-0
-              h-[3px] w-0
-              bg-cyan-400
-              group-hover:w-full
-              transition-all duration-500
-              " />
 
             </motion.div>
 
@@ -198,33 +540,120 @@ export default function ServicesSection() {
 
         </div>
 
-        {/* EXPLORE BUTTON */}
+        {/* ================================================= */}
+        {/* 🔥 CTA BUTTON */}
+        {/* ================================================= */}
+
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="flex justify-center mt-20"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+
+          transition={{
+            delay: 0.2,
+            duration: 0.7,
+          }}
+
+          viewport={{
+            once: true,
+          }}
+
+          className="
+          flex
+          justify-center
+
+          mt-20
+        "
         >
 
-          <button
-            onClick={() => {
-              window.location.href = "/service";
-            }}
-            className="
-            relative overflow-hidden
-            px-10 py-4
-            rounded-full
-            bg-gradient-to-r from-cyan-400 to-blue-500
-            text-black
-            font-bold
-            text-lg
-            hover:scale-105
-            transition duration-300
-            shadow-[0_0_40px_rgba(34,211,238,0.35)]
+          <Link href="/service">
+
+            <motion.button
+              whileHover={{
+                scale: 1.03,
+              }}
+
+              whileTap={{
+                scale: 0.98,
+              }}
+
+              className="
+              group
+
+              relative
+              overflow-hidden
+
+              px-10 py-4
+
+              rounded-full
+
+              border border-cyan-400/20
+
+              bg-gradient-to-r
+              from-cyan-400
+              to-blue-500
+
+              text-black
+              font-bold
+
+              shadow-[0_10px_40px_rgba(34,211,238,0.25)]
+
+              transition duration-500
             "
-          >
-            Explore All Services
-          </button>
+            >
+
+              {/* SHINE */}
+              <div
+                className="
+                absolute
+                inset-0
+
+                translate-x-[-100%]
+
+                bg-gradient-to-r
+                from-transparent
+                via-white/30
+                to-transparent
+
+                group-hover:translate-x-[100%]
+
+                transition duration-1000
+              "
+              />
+
+              <span
+                className="
+                relative z-10
+
+                flex items-center
+                gap-3
+              "
+              >
+
+                Explore All Services
+
+                <ArrowUpRight
+                  size={18}
+
+                  className="
+                  transition duration-300
+
+                  group-hover:translate-x-1
+                  group-hover:-translate-y-1
+                "
+                />
+
+              </span>
+
+            </motion.button>
+
+          </Link>
 
         </motion.div>
 
