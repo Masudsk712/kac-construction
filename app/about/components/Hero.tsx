@@ -2,20 +2,28 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import {
+  ArrowDown,
+  Zap,
+  RadioTower,
+  ShieldCheck,
+} from "lucide-react";
 
 const stats = [
   {
     number: "15+",
     label: "Years Experience",
+    icon: <ShieldCheck size={20} />,
   },
   {
     number: "500+",
     label: "Projects Delivered",
+    icon: <RadioTower size={20} />,
   },
   {
     number: "765kV",
     label: "Transmission Expertise",
+    icon: <Zap size={20} />,
   },
 ];
 
@@ -44,7 +52,10 @@ export default function Hero() {
       "
     >
 
-      {/* BG IMAGE */}
+      {/* ================================================= */}
+      {/* 🔥 CINEMATIC BACKGROUND */}
+      {/* ================================================= */}
+
       <Image
         src="/placeholder.jpg"
         alt="About Hero"
@@ -54,195 +65,391 @@ export default function Hero() {
         object-cover
         object-center
         scale-105
+        brightness-[0.45]
         "
       />
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-[#020617]/80" />
+      {/* VIDEO STYLE OVERLAY */}
+      <div className="absolute inset-0 bg-black/40" />
 
-      {/* LEFT GRADIENT */}
+      {/* GRADIENT */}
       <div
         className="
         absolute inset-0
+
         bg-gradient-to-r
         from-[#020617]
-        via-[#020617]/80
-        to-[#020617]/20
+        via-[#020617]/70
+        to-[#020617]/30
         "
       />
 
-      {/* LIGHT GLOW */}
-      <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-cyan-500/10 blur-[140px]" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-500/10 blur-[140px]" />
+      {/* TOP LIGHT */}
+      <div
+        className="
+        absolute top-[-200px] left-[-200px]
 
-      
+        w-[700px]
+        h-[700px]
 
-      {/* MAIN CONTENT */}
+        bg-cyan-500/15
+        blur-[160px]
+        rounded-full
+      "
+      />
+
+      {/* RIGHT LIGHT */}
+      <div
+        className="
+        absolute bottom-[-180px] right-[-180px]
+
+        w-[600px]
+        h-[600px]
+
+        bg-blue-500/15
+        blur-[150px]
+        rounded-full
+      "
+      />
+
+      {/* GRID */}
+      <div
+        className="
+        absolute inset-0
+        opacity-[0.04]
+
+        [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+
+        [background-size:80px_80px]
+      "
+      />
+
+      {/* ================================================= */}
+      {/* 🔥 CONTENT */}
+      {/* ================================================= */}
+
       <div
         className="
         relative z-10
-        max-w-7xl
-        mx-auto
-        px-6
-        md:px-10
+        container-premium
         w-full
-        pt-32
-        pb-44
-        "
+        pt-36
+        pb-40
+      "
       >
 
-        {/* TOP BADGE */}
+        {/* BADGE */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+
+          transition={{
+            duration: 0.7,
+          }}
+
           className="
           inline-flex
           items-center
           gap-3
-          px-5 py-2
+
+          px-6 py-3
+
           rounded-full
+
           border border-white/10
-          bg-white/5
-          backdrop-blur-xl
-          mb-8
-          "
+
+          bg-white/[0.04]
+          backdrop-blur-2xl
+
+          shadow-[0_10px_40px_rgba(0,0,0,0.35)]
+
+          mb-10
+        "
         >
 
           <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
 
-          <span className="text-sm tracking-[4px] text-white/80">
-            ABOUT KAC
+          <span
+            className="
+            text-[11px]
+            tracking-[5px]
+            text-white/80
+          "
+          >
+            ABOUT KAC CONSTRUCTION
           </span>
 
         </motion.div>
 
-        {/* HERO CONTENT */}
-        <div className="max-w-5xl">
+        {/* HERO TEXT */}
+        <div className="max-w-6xl">
 
           {/* HEADING */}
           <motion.h1
-            initial={{ opacity: 0, y: 70 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            initial={{
+              opacity: 0,
+              y: 80,
+            }}
+
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+
+            transition={{
+              duration: 1,
+            }}
+
             className="
             text-[52px]
-            md:text-[92px]
-            leading-[0.95]
+            md:text-[110px]
+
+            leading-[0.9]
+
             font-black
-            tracking-[-3px]
+
+            tracking-[-5px]
+
             text-white
-            "
+          "
           >
-            Empowering India's
+
+            Building India’s
 
             <span
               className="
               block
-              mt-3
-              text-cyan-400
-              "
+
+              mt-4
+
+              bg-gradient-to-r
+              from-cyan-300
+              via-blue-400
+              to-cyan-200
+
+              bg-clip-text
+              text-transparent
+
+              drop-shadow-[0_0_30px_rgba(34,211,238,0.35)]
+            "
             >
-              Infrastructure Landscape
+              Power Infrastructure
             </span>
 
           </motion.h1>
 
           {/* LINE */}
           <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "120px" }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            initial={{
+              width: 0,
+            }}
+
+            animate={{
+              width: "140px",
+            }}
+
+            transition={{
+              delay: 0.7,
+              duration: 0.8,
+            }}
+
             className="
             h-[4px]
-            bg-cyan-400
-            mt-10
-            mb-10
             rounded-full
-            "
+
+            bg-gradient-to-r
+            from-cyan-400
+            to-blue-500
+
+            mt-12
+            mb-10
+          "
           />
 
           {/* DESCRIPTION */}
           <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+
+            transition={{
+              delay: 0.5,
+              duration: 0.8,
+            }}
+
             className="
             text-lg
-            md:text-xl
-            text-gray-300
+            md:text-[22px]
+
+            text-white/70
+
             leading-[2]
-            max-w-3xl
-            "
+
+            max-w-4xl
+          "
           >
-            KAC Construction stands as a trusted EPC infrastructure
-            company delivering excellence in transmission, foundation,
-            erection, and stringing projects across India with innovation,
-            reliability, and execution precision.
+
+            KAC Construction delivers high-performance
+            transmission infrastructure solutions including
+            tower foundation, erection, hotline stringing,
+            HTLS reconductoring and EPC execution projects
+            with engineering precision across India.
+
           </motion.p>
 
         </div>
 
-        {/* STATS */}
+        {/* ================================================= */}
+        {/* 🔥 STATS */}
+        {/* ================================================= */}
+
         <motion.div
-          initial={{ opacity: 0, y: 70 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
+          initial={{
+            opacity: 0,
+            y: 60,
+          }}
+
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+
+          transition={{
+            delay: 1,
+            duration: 0.8,
+          }}
+
           className="
           grid
           md:grid-cols-3
+
           gap-6
+
           mt-20
-          max-w-5xl
-          "
+
+          max-w-6xl
+        "
         >
 
           {stats.map((item, i) => (
 
             <motion.div
               key={i}
+
               whileHover={{
                 y: -10,
-                scale: 1.03,
+                scale: 1.02,
               }}
+
+              transition={{
+                duration: 0.4,
+              }}
+
               className="
-              relative
-              overflow-hidden
-              rounded-3xl
-              border border-white/10
-              bg-white/5
-              backdrop-blur-2xl
-              p-8
               group
-              "
+              relative
+
+              overflow-hidden
+
+              rounded-[32px]
+
+              border border-white/10
+
+              bg-black/30
+              backdrop-blur-2xl
+
+              p-8
+
+              shadow-[0_20px_60px_rgba(0,0,0,0.45)]
+            "
             >
 
-              {/* CARD GLOW */}
+              {/* HOVER LIGHT */}
               <div
                 className="
                 absolute inset-0
-                opacity-0 group-hover:opacity-100
+
+                opacity-0
+                group-hover:opacity-100
+
                 transition duration-500
+
                 bg-gradient-to-r
                 from-cyan-500/10
                 to-blue-500/10
-                "
+              "
               />
 
+              {/* CONTENT */}
               <div className="relative z-10">
 
+                {/* ICON */}
+                <div
+                  className="
+                  w-14 h-14
+
+                  rounded-2xl
+
+                  bg-cyan-400/10
+                  border border-cyan-400/20
+
+                  flex items-center justify-center
+
+                  text-cyan-400
+
+                  mb-6
+                "
+                >
+                  {item.icon}
+                </div>
+
+                {/* NUMBER */}
                 <h3
                   className="
                   text-5xl
+                  md:text-6xl
+
                   font-black
-                  text-cyan-400
-                  mb-3
-                  "
+
+                  text-white
+
+                  mb-4
+                "
                 >
-                  {item.number}
+                  <span
+                    className="
+                    bg-gradient-to-r
+                    from-cyan-300
+                    to-blue-400
+
+                    bg-clip-text
+                    text-transparent
+                  "
+                  >
+                    {item.number}
+                  </span>
                 </h3>
 
-                <p className="text-gray-300 text-lg">
+                {/* LABEL */}
+                <p
+                  className="
+                  text-white/65
+                  text-lg
+                "
+                >
                   {item.label}
                 </p>
 
@@ -256,27 +463,52 @@ export default function Hero() {
 
       </div>
 
-      {/* SCROLL INDICATOR */}
+      {/* ================================================= */}
+      {/* 🔥 SCROLL INDICATOR */}
+      {/* ================================================= */}
+
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        initial={{
+          opacity: 0,
+        }}
+
+        animate={{
+          opacity: 1,
+        }}
+
+        transition={{
+          delay: 1.5,
+        }}
+
         onClick={scrollToContent}
+
         className="
         absolute
         bottom-8
         left-1/2
         -translate-x-1/2
+
         z-20
+
         cursor-pointer
+
         flex flex-col items-center
+
         text-white/50
+
         hover:text-cyan-400
+
         transition
-        "
+      "
       >
 
-        <span className="text-[11px] tracking-[5px] mb-3">
+        <span
+          className="
+          text-[11px]
+          tracking-[5px]
+          mb-3
+        "
+        >
           SCROLL
         </span>
 
@@ -284,6 +516,7 @@ export default function Hero() {
           animate={{
             y: [0, 12, 0],
           }}
+
           transition={{
             duration: 1.5,
             repeat: Infinity,
@@ -298,11 +531,13 @@ export default function Hero() {
       <div
         className="
         absolute bottom-0 left-0
-        w-full h-40
+
+        w-full h-24
+
         bg-gradient-to-b
         from-transparent
         to-[#020617]
-        "
+      "
       />
 
     </section>

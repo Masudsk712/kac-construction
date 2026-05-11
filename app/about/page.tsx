@@ -9,62 +9,66 @@ import MissionVision from "./components/MissionVision"
 import MDMessage from "./components/MDMessage"
 import Leadership from "./components/Leadership"
 import Awards from "./components/Awards"
-import CTASection from "@/components/CTASection";
+import CTASection from "@/components/CTASection"
 
 export default function AboutPage() {
+
   return (
+
     <main
       className="
-        bg-transparent text-white overflow-x-hidden
-        relative
-      "
+      bg-transparent
+      text-white
+      relative
+    "
     >
-      {/* 🔥 GLOBAL BACKGROUND EFFECT */}
-      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617]" />
 
-      {/* 🔥 HERO SECTION */}
+      {/* BG */}
+      <div className="fixed inset-0 -z-10 bg-[#020617]" />
+
+      {/* HERO */}
       <Hero />
 
-      {/* 🔥 STICKY TABS NAVBAR */}
+      {/* STICKY */}
       <StickyTabs />
 
-      {/* 🔥 COMPANY OVERVIEW */}
-      <section id="overview">
-        <Overview />
-      </section>
+      {/* CONTENT */}
+      <div className="relative z-10">
 
-      {/* 🔥 OUR STRENGTHS */}
-      <section id="strengths">
-        <Strengths />
-      </section>
+        <section id="overview">
+          <Overview />
+        </section>
 
-      {/* 🔥 TIMELINE (Journey Section) */}
-      <section id="timeline">
-        <Timeline />
-      </section>
+        <section id="strengths">
+          <Strengths />
+        </section>
 
-      {/* 🔥 MISSION / VISION / VALUES */}
-      <section id="mission">
-        <MissionVision />
-      </section>
+        <section id="timeline">
+          <Timeline />
+        </section>
 
-      {/* 🔥 MD MESSAGE */}
-      <section id="md-message">
-        <MDMessage />
-      </section>
+        <section id="mission">
+          <MissionVision />
+        </section>
 
-      {/* 🔥 LEADERSHIP TEAM */}
-      <section id="leadership">
-        <Leadership />
-      </section>
+        <section id="md-message">
+          <MDMessage />
+        </section>
 
-      {/* 🔥 AWARDS */}
-      <section id="awards">
-        <Awards />
-      </section>
+        <section id="leadership">
+          <Leadership />
+        </section>
 
-      {/* CTA */}
-      <CTASection />
+        <section id="awards">
+          <Awards />
+        </section>
+
+        <CTASection />
+
+      </div>
+
     </main>
+
   )
+
 }

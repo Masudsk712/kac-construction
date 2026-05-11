@@ -1,165 +1,822 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Sparkles, ShieldCheck, HeartHandshake, Target } from "lucide-react"
+
+import Image from "next/image"
+
+import {
+  Sparkles,
+  ShieldCheck,
+  HeartHandshake,
+  Target,
+  Eye,
+  Rocket,
+  ArrowUpRight,
+  CheckCircle2,
+} from "lucide-react"
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
-  show: { opacity: 1, y: 0 }
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+
+  show: {
+    opacity: 1,
+    y: 0,
+  },
 }
 
+const values = [
+  {
+    icon: Target,
+    title: "Safety First",
+    desc: "Maintaining the highest standards across every infrastructure project.",
+  },
+
+  {
+    icon: Sparkles,
+    title: "Innovation",
+    desc: "Modern engineering solutions with scalable execution excellence.",
+  },
+
+  {
+    icon: ShieldCheck,
+    title: "Integrity",
+    desc: "Transparent operations with reliability, trust, and accountability.",
+  },
+
+  {
+    icon: HeartHandshake,
+    title: "Client Satisfaction",
+    desc: "Building long-term partnerships through quality and commitment.",
+  },
+]
+
 export default function MissionVision() {
+
   return (
-    <section className="section-premium py-32 relative overflow-hidden text-white">
 
-      {/* 🔥 BACKGROUND GRADIENT */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#020617]" />
+    <section
+      className="
+      relative
+      overflow-hidden
 
-      {/* 🔥 GLOW EFFECT */}
+      py-20 md:py-24
+
+      text-white
+    "
+    >
+
+      {/* ======================================== */}
+      {/* PREMIUM BG */}
+      {/* ======================================== */}
+
+      <div
+        className="
+        absolute inset-0
+
+        bg-gradient-to-br
+        from-[#020617]
+        via-[#07111f]
+        to-[#020617]
+      "
+      />
+
+      {/* GRID */}
+      <div
+        className="
+        absolute inset-0
+
+        opacity-[0.03]
+
+        [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
+
+        [background-size:60px_60px]
+      "
+      />
+
+      {/* GLOW */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute w-[500px] h-[500px] bg-cyan-500/10 blur-[120px] top-0 left-0" />
-        <div className="absolute w-[400px] h-[400px] bg-blue-500/10 blur-[100px] bottom-0 right-0" />
+
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+          }}
+
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+          }}
+
+          className="
+          absolute
+
+          top-0
+          -left-20
+
+          w-[500px]
+          h-[500px]
+
+          bg-cyan-500/10
+
+          blur-[140px]
+        "
+        />
+
+        <motion.div
+          animate={{
+            scale: [1, 1.15, 1],
+          }}
+
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+          }}
+
+          className="
+          absolute
+
+          bottom-0
+          right-0
+
+          w-[450px]
+          h-[450px]
+
+          bg-blue-500/10
+
+          blur-[130px]
+        "
+        />
+
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-6 text-center">
+      <div className="relative z-10 container-premium">
 
-        {/* 🔥 HEADING */}
+        {/* ======================================== */}
+        {/* HEADING */}
+        {/* ======================================== */}
+
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
-          transition={{ duration: 0.7 }}
-        >
-          <p className="uppercase tracking-widest text-sm mb-4 text-white/60">
-            Our Mission and Vision
-          </p>
 
-          <h2 className="text-4xl md:text-5xl font-semibold mb-10">
-            <span className="gradient-text">
-              What We Believe In
+          viewport={{
+            once: true,
+          }}
+
+          transition={{
+            duration: 0.6,
+          }}
+
+          className="
+          text-center
+
+          max-w-4xl
+
+          mx-auto
+
+          mb-16
+        "
+        >
+
+          <div
+            className="
+            inline-flex
+
+            items-center
+            gap-3
+
+            px-4 py-2
+
+            rounded-full
+
+            border border-white/10
+
+            bg-white/[0.03]
+
+            backdrop-blur-xl
+
+            mb-5
+          "
+          >
+
+            <Sparkles
+              size={14}
+              className="text-cyan-400"
+            />
+
+            <span
+              className="
+              text-[10px]
+
+              tracking-[4px]
+
+              text-white/70
+            "
+            >
+              OUR VISION & MISSION
             </span>
+
+          </div>
+
+          <h2
+            className="
+            text-3xl
+            md:text-5xl
+
+            font-black
+
+            leading-tight
+
+            mb-5
+          "
+          >
+
+            Powering India's
+
+            <span className="gradient-text block mt-2">
+              Infrastructure Future
+            </span>
+
           </h2>
 
-          <p className="max-w-3xl mx-auto text-lg text-white/70 mb-20">
-            We seek out people and clients who challenge themselves to be exceptional —
-            and champion that spirit in others.
+          <p
+            className="
+            text-white/60
+
+            text-sm
+            md:text-base
+
+            leading-[1.9]
+
+            max-w-3xl
+
+            mx-auto
+          "
+          >
+            KAC Construction is committed to delivering
+            reliable, innovative, and future-ready
+            infrastructure solutions with unmatched
+            execution standards across India.
           </p>
+
         </motion.div>
 
-        {/* 🔥 3 BLOCKS */}
-        <div className="grid md:grid-cols-3 gap-10 mb-20">
+        {/* ======================================== */}
+        {/* MAIN GRID */}
+        {/* ======================================== */}
 
-          {/* MISSION */}
+        <div
+          className="
+          grid
+          lg:grid-cols-[1.1fr_0.9fr]
+
+          gap-8
+
+          items-center
+
+          mb-16
+        "
+        >
+
+          {/* ======================================== */}
+          {/* LEFT CONTENT */}
+          {/* ======================================== */}
+
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            transition={{ delay: 0.1 }}
-            className="glass-strong border-glow p-8 rounded-xl"
-          >
-            <h3 className="text-xl font-semibold mb-4 gradient-text">
-              Our Mission
-            </h3>
 
-            <p className="text-white/70 leading-relaxed">
-              Our mission is to help our clients create such high levels of value that together
-              we set new standards of excellence in infrastructure and engineering services.
-            </p>
+            viewport={{
+              once: true,
+            }}
+
+            transition={{
+              duration: 0.6,
+            }}
+
+            className="
+            relative
+
+            overflow-hidden
+
+            rounded-[32px]
+
+            border border-white/10
+
+            bg-white/[0.03]
+
+            backdrop-blur-3xl
+
+            p-6 md:p-8
+          "
+          >
+
+            {/* BG GLOW */}
+            <div
+              className="
+              absolute inset-0
+
+              bg-gradient-to-br
+              from-cyan-500/10
+              via-transparent
+              to-blue-500/10
+            "
+            />
+
+            <div className="relative z-10">
+
+              {/* VISION */}
+              <motion.div
+                whileHover={{
+                  y: -4,
+                }}
+
+                className="
+                mb-10
+
+                pb-10
+
+                border-b border-white/10
+              "
+              >
+
+                <div
+                  className="
+                  flex
+                  items-center
+
+                  gap-4
+
+                  mb-5
+                "
+                >
+
+                  <div
+                    className="
+                    w-14 h-14
+
+                    rounded-2xl
+
+                    bg-cyan-400/10
+
+                    border border-cyan-400/20
+
+                    flex items-center justify-center
+                  "
+                  >
+
+                    <Eye
+                      size={26}
+                      className="text-cyan-300"
+                    />
+
+                  </div>
+
+                  <div>
+
+                    <p className="text-white/40 text-sm">
+                      Vision
+                    </p>
+
+                    <h3
+                      className="
+                      text-2xl
+
+                      font-black
+                    "
+                    >
+                      Our Vision
+                    </h3>
+
+                  </div>
+
+                </div>
+
+                <p
+                  className="
+                  text-white/70
+
+                  leading-[1.9]
+
+                  text-sm
+                  md:text-base
+                "
+                >
+                  To be India’s most trusted and preferred
+                  partner in electrical transmission line
+                  infrastructure — setting the benchmark for
+                  <span className="text-cyan-300 font-semibold">
+                    {" "}safety, quality, and innovation{" "}
+                  </span>
+                  across the power sector.
+                </p>
+
+              </motion.div>
+
+              {/* MISSION */}
+              <motion.div
+                whileHover={{
+                  y: -4,
+                }}
+              >
+
+                <div
+                  className="
+                  flex
+                  items-center
+
+                  gap-4
+
+                  mb-5
+                "
+                >
+
+                  <div
+                    className="
+                    w-14 h-14
+
+                    rounded-2xl
+
+                    bg-cyan-400/10
+
+                    border border-cyan-400/20
+
+                    flex items-center justify-center
+                  "
+                  >
+
+                    <Rocket
+                      size={26}
+                      className="text-cyan-300"
+                    />
+
+                  </div>
+
+                  <div>
+
+                    <p className="text-white/40 text-sm">
+                      Mission
+                    </p>
+
+                    <h3
+                      className="
+                      text-2xl
+
+                      font-black
+                    "
+                    >
+                      Our Mission
+                    </h3>
+
+                  </div>
+
+                </div>
+
+                <p
+                  className="
+                  text-white/70
+
+                  leading-[1.9]
+
+                  text-sm
+                  md:text-base
+                "
+                >
+                  To deliver
+                  <span className="text-cyan-300 font-semibold">
+                    {" "}reliable, cost-effective{" "}
+                  </span>
+                  transmission line construction, erection,
+                  and maintenance services that empower
+                  communities while upholding the highest
+                  standards of
+                  <span className="text-cyan-300 font-semibold">
+                    {" "}integrity, workmanship,
+                    and client satisfaction.
+                  </span>
+                </p>
+
+              </motion.div>
+
+            </div>
+
           </motion.div>
 
-          {/* VISION */}
+          {/* ======================================== */}
+          {/* RIGHT IMAGE */}
+          {/* ======================================== */}
+
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            transition={{ delay: 0.2 }}
-            className="glass-strong border-glow p-8 rounded-xl"
+
+            viewport={{
+              once: true,
+            }}
+
+            transition={{
+              duration: 0.7,
+              delay: 0.1,
+            }}
+
+            whileHover={{
+              scale: 1.02,
+            }}
+
+            className="
+            relative
+
+            overflow-hidden
+
+            rounded-[32px]
+
+            border border-white/10
+
+            bg-white/[0.03]
+
+            backdrop-blur-3xl
+
+            min-h-[420px]
+            md:min-h-[520px]
+          "
           >
-            <h3 className="text-xl font-semibold mb-4 gradient-text">
-              Our Vision
-            </h3>
 
-            <p className="text-white/70 leading-relaxed">
-              To be recognized as India's premier fast-track EPC company in Power,
-              Water, and Infrastructure projects with unmatched execution excellence.
-            </p>
-          </motion.div>
+            {/* IMAGE */}
+            <div className="absolute inset-0">
 
-          {/* VALUES */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            transition={{ delay: 0.3 }}
-            className="glass-strong border-glow p-8 rounded-xl"
-          >
-            <h3 className="text-xl font-semibold mb-4 gradient-text">
-              Our Values
-            </h3>
+              <Image
+                src="/placeholder.jpg"
+                alt="Mission Vision"
+                fill
+                className="
+                object-cover
 
-            <p className="text-white/70 leading-relaxed">
-              We work as one global team — both with each other and our clients —
-              to achieve extraordinary outcomes.
-            </p>
+                opacity-90
+              "
+              />
+
+            </div>
+
+            {/* OVERLAY */}
+            <div
+              className="
+              absolute inset-0
+
+              bg-gradient-to-br
+              from-[#020617]/70
+              via-[#020617]/30
+              to-[#020617]/80
+            "
+            />
+
+            {/* FLOATING CARD */}
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+              }}
+
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+              }}
+
+              className="
+              absolute
+
+              bottom-6
+              left-6
+              right-6
+
+              rounded-[24px]
+
+              border border-white/10
+
+              bg-black/40
+
+              backdrop-blur-2xl
+
+              p-5
+            "
+            >
+
+              <div
+                className="
+                flex
+                items-center
+                gap-3
+
+                mb-4
+              "
+              >
+
+                <CheckCircle2
+                  size={22}
+                  className="text-cyan-300"
+                />
+
+                <h4
+                  className="
+                  text-lg
+
+                  font-bold
+                "
+                >
+                  Engineering Excellence
+                </h4>
+
+              </div>
+
+              <p
+                className="
+                text-sm
+
+                text-white/70
+
+                leading-[1.8]
+              "
+              >
+                Building transmission and infrastructure
+                solutions with innovation, safety,
+                precision, and long-term sustainability.
+              </p>
+
+            </motion.div>
+
           </motion.div>
 
         </div>
 
-        {/* 🔥 VALUES CARDS */}
-        <div className="grid md:grid-cols-4 gap-6">
+        {/* ======================================== */}
+        {/* VALUES */}
+        {/* ======================================== */}
 
-          {[
-            {
-              icon: Target,
-              title: "Result Orientation",
-              desc: "We focus on delivering measurable results.",
-            },
-            {
-              icon: Sparkles,
-              title: "Customer Satisfaction",
-              desc: "We exceed expectations at every step.",
-            },
-            {
-              icon: ShieldCheck,
-              title: "Trust & Integrity",
-              desc: "We uphold honesty and transparency.",
-            },
-            {
-              icon: HeartHandshake,
-              title: "Work Culture",
-              desc: "We promote a healthy and collaborative environment.",
-            },
-          ].map((item, i) => (
+        <div
+          className="
+          grid
+          sm:grid-cols-2
+          lg:grid-cols-4
+
+          gap-5
+        "
+        >
+
+          {values.map((item, i) => (
+
             <motion.div
               key={i}
+
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -10, scale: 1.05 }}
+
+              viewport={{
+                once: true,
+              }}
+
+              transition={{
+                duration: 0.45,
+                delay: i * 0.08,
+              }}
+
+              whileHover={{
+                y: -8,
+                scale: 1.02,
+              }}
+
               className="
-                glass-strong border-glow
-                rounded-xl p-6 text-left
-                cursor-pointer
-              "
+              group
+
+              relative
+
+              overflow-hidden
+
+              rounded-[24px]
+
+              border border-white/10
+
+              bg-white/[0.03]
+
+              backdrop-blur-2xl
+
+              p-5
+
+              hover:border-cyan-400/20
+
+              transition-all duration-500
+            "
             >
 
-              <item.icon className="w-8 h-8 mb-4 text-cyan-400" />
+              {/* GLOW */}
+              <div
+                className="
+                absolute inset-0
 
-              <h4 className="font-semibold text-lg mb-2">
-                {item.title}
-              </h4>
+                opacity-0
 
-              <p className="text-sm text-white/70">
-                {item.desc}
-              </p>
+                group-hover:opacity-100
+
+                transition duration-500
+
+                bg-gradient-to-br
+                from-cyan-500/10
+                via-transparent
+                to-blue-500/10
+              "
+              />
+
+              <div className="relative z-10">
+
+                {/* ICON */}
+                <div
+                  className="
+                  w-12 h-12
+
+                  rounded-2xl
+
+                  bg-cyan-400/10
+
+                  border border-cyan-400/20
+
+                  flex items-center justify-center
+
+                  mb-5
+                "
+                >
+
+                  <item.icon
+                    size={22}
+                    className="text-cyan-300"
+                  />
+
+                </div>
+
+                {/* TITLE */}
+                <div
+                  className="
+                  flex
+                  items-center
+                  justify-between
+
+                  mb-3
+                "
+                >
+
+                  <h4
+                    className="
+                    text-lg
+
+                    font-bold
+                  "
+                  >
+                    {item.title}
+                  </h4>
+
+                  <ArrowUpRight
+                    size={18}
+                    className="
+                    text-white/30
+
+                    group-hover:text-cyan-300
+
+                    group-hover:-translate-y-1
+                    group-hover:translate-x-1
+
+                    transition-all duration-500
+                  "
+                  />
+
+                </div>
+
+                {/* DESC */}
+                <p
+                  className="
+                  text-sm
+
+                  leading-[1.8]
+
+                  text-white/65
+                "
+                >
+                  {item.desc}
+                </p>
+
+              </div>
 
             </motion.div>
+
           ))}
 
         </div>
 
       </div>
+
     </section>
+
   )
+
 }
