@@ -9,6 +9,8 @@ import {
   Cable,
   ShieldCheck,
   Activity,
+  ArrowUpRight,
+  GaugeCircle,
 } from "lucide-react";
 
 const features = [
@@ -48,18 +50,20 @@ const features = [
 export default function ReconductoringProjects() {
 
   return (
+
     <section
       className="
-      section-premium
-
-      py-28
-
       relative
       overflow-hidden
-      "
+
+      py-24 md:py-32
+    "
     >
 
+      {/* ======================================== */}
       {/* BG GLOW */}
+      {/* ======================================== */}
+
       <div className="absolute inset-0 pointer-events-none">
 
         <div
@@ -68,13 +72,13 @@ export default function ReconductoringProjects() {
 
           top-0 left-0
 
-          w-[500px]
-          h-[500px]
+          w-[550px]
+          h-[550px]
 
           bg-cyan-500/10
 
-          blur-[120px]
-          "
+          blur-[130px]
+        "
         />
 
         <div
@@ -83,29 +87,45 @@ export default function ReconductoringProjects() {
 
           bottom-0 right-0
 
-          w-[400px]
-          h-[400px]
+          w-[420px]
+          h-[420px]
 
           bg-blue-500/10
 
-          blur-[100px]
-          "
+          blur-[110px]
+        "
         />
 
       </div>
 
+      {/* GRID EFFECT */}
       <div
         className="
-        relative
+        absolute inset-0
+
+        opacity-[0.03]
+
+        [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
+
+        [background-size:60px_60px]
+      "
+      />
+
+      <div
+        className="
+        relative z-10
 
         max-w-7xl
         mx-auto
 
         px-6
-        "
+      "
       >
 
+        {/* ======================================== */}
         {/* TOP */}
+        {/* ======================================== */}
+
         <div
           className="
           text-center
@@ -114,50 +134,87 @@ export default function ReconductoringProjects() {
           mx-auto
 
           mb-20
-          "
+        "
         >
 
-          <p
+          {/* BADGE */}
+          <div
             className="
-            text-sm
+            inline-flex
 
-            tracking-widest
+            items-center
+            gap-3
 
-            text-white/60
+            px-5 py-2
 
-            mb-3
-            "
+            rounded-full
+
+            border border-cyan-400/20
+
+            bg-cyan-400/10
+
+            backdrop-blur-xl
+
+            mb-6
+          "
           >
-            RECONDUCTORING PROJECTS
-          </p>
 
+            <Zap
+              size={14}
+              className="text-cyan-300"
+            />
+
+            <span
+              className="
+              text-[10px]
+
+              tracking-[4px]
+
+              text-cyan-200
+            "
+            >
+              HTLS RECONDUCTORING
+            </span>
+
+          </div>
+
+          {/* TITLE */}
           <h2
             className="
             text-4xl
             md:text-5xl
+            xl:text-6xl
 
-            font-semibold
+            font-black
 
-            leading-tight
+            leading-[1.1]
 
             mb-8
-            "
+          "
           >
 
-            <span className="gradient-text">
-              Upgrading Transmission Infrastructure
+            Upgrading Transmission
+
+            <span className="gradient-text block mt-3">
+              Infrastructure Networks
             </span>
 
           </h2>
 
+          {/* DESC */}
           <p
             className="
-            text-white/70
+            text-white/65
 
-            text-lg
+            text-base
+            md:text-lg
 
-            leading-relaxed
-            "
+            leading-[2]
+
+            max-w-3xl
+
+            mx-auto
+          "
           >
 
             KAC Construction delivers
@@ -167,26 +224,32 @@ export default function ReconductoringProjects() {
             transmission capability,
             operational reliability and
             long-term infrastructure
-            efficiency.
+            efficiency across India.
 
           </p>
 
         </div>
 
-        {/* GRID */}
+        {/* ======================================== */}
+        {/* MAIN GRID */}
+        {/* ======================================== */}
+
         <div
           className="
           grid
 
-          lg:grid-cols-2
+          lg:grid-cols-[1fr_1fr]
 
-          gap-14
+          gap-14 lg:gap-20
 
           items-center
-          "
+        "
         >
 
-          {/* IMAGE */}
+          {/* ======================================== */}
+          {/* IMAGE SIDE */}
+          {/* ======================================== */}
+
           <motion.div
             initial={{
               opacity: 0,
@@ -209,20 +272,24 @@ export default function ReconductoringProjects() {
             className="relative"
           >
 
-            {/* IMAGE BOX */}
+            {/* MAIN IMAGE */}
             <div
               className="
               relative
 
               h-[420px]
-              md:h-[620px]
-
-              rounded-3xl
+              md:h-[650px]
 
               overflow-hidden
 
-              border-glow
-              "
+              rounded-[34px]
+
+              border border-white/10
+
+              bg-white/[0.03]
+
+              backdrop-blur-3xl
+            "
             >
 
               <Image
@@ -234,10 +301,10 @@ export default function ReconductoringProjects() {
                 className="
                 object-cover
 
-                transition-transform duration-700
-
                 hover:scale-110
-                "
+
+                transition duration-700
+              "
               />
 
               {/* OVERLAY */}
@@ -246,58 +313,115 @@ export default function ReconductoringProjects() {
                 absolute inset-0
 
                 bg-gradient-to-t
-                from-black/70
-                via-transparent
+                from-[#020617]
+                via-[#020617]/20
                 to-transparent
-                "
+              "
               />
 
             </div>
 
             {/* FLOATING CARD */}
-            <div
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+              }}
+
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+              }}
+
               className="
               absolute
 
-              bottom-5 left-5
+              bottom-6
+              left-6
 
-              glass-strong
-              border-glow
+              max-w-[290px]
 
-              rounded-2xl
+              rounded-[28px]
 
-              p-5
+              border border-cyan-400/20
 
-              max-w-[260px]
-              "
+              bg-black/50
+
+              backdrop-blur-3xl
+
+              p-6
+
+              shadow-[0_0_40px_rgba(34,211,238,0.15)]
+            "
             >
 
-              <h3
-                className="
-                text-3xl
+              <div className="flex items-center gap-4 mb-4">
 
-                font-bold
+                <div
+                  className="
+                  w-14 h-14
 
-                text-cyan-400
+                  rounded-2xl
 
-                mb-2
+                  bg-cyan-400/10
+
+                  border border-cyan-400/20
+
+                  flex items-center justify-center
+
+                  text-cyan-300
                 "
-              >
-                HTLS
-              </h3>
+                >
 
-              <p className="text-white/70 text-sm">
-                Advanced high-capacity
-                reconductoring technologies
-                for future-ready transmission
-                infrastructure.
+                  <GaugeCircle size={24} />
+
+                </div>
+
+                <div>
+
+                  <h3
+                    className="
+                    text-3xl
+
+                    font-black
+
+                    text-cyan-400
+                  "
+                  >
+                    HTLS
+                  </h3>
+
+                  <p className="text-white/60 text-sm">
+                    Future Ready Upgrade
+                  </p>
+
+                </div>
+
+              </div>
+
+              <p
+                className="
+                text-sm
+
+                leading-[1.8]
+
+                text-white/70
+              "
+              >
+                Advanced reconductoring
+                technologies enhancing
+                transmission efficiency,
+                power capacity and network
+                reliability.
               </p>
 
-            </div>
+            </motion.div>
 
           </motion.div>
 
-          {/* CARDS */}
+          {/* ======================================== */}
+          {/* FEATURES */}
+          {/* ======================================== */}
+
           <div
             className="
             grid
@@ -305,7 +429,7 @@ export default function ReconductoringProjects() {
             sm:grid-cols-2
 
             gap-6
-            "
+          "
           >
 
             {features.map((item, index) => (
@@ -333,68 +457,106 @@ export default function ReconductoringProjects() {
 
                 whileHover={{
                   y: -8,
+                  scale: 1.02,
                 }}
 
                 className="
                 group
 
-                glass-strong
-                border-glow
+                relative
 
-                rounded-3xl
+                overflow-hidden
+
+                rounded-[28px]
+
+                border border-white/10
+
+                bg-white/[0.03]
+
+                backdrop-blur-2xl
 
                 p-7
-                "
+              "
               >
 
-                {/* ICON */}
+                {/* HOVER GLOW */}
                 <div
                   className="
-                  w-14 h-14
+                  absolute inset-0
 
-                  rounded-2xl
+                  opacity-0
 
-                  bg-cyan-400/10
+                  group-hover:opacity-100
 
-                  border border-cyan-400/20
+                  transition duration-500
 
-                  flex items-center justify-center
+                  bg-gradient-to-br
+                  from-cyan-500/10
+                  via-transparent
+                  to-blue-500/10
+                "
+                />
 
-                  text-cyan-400
+                <div className="relative z-10">
 
-                  mb-6
+                  {/* ICON */}
+                  <div
+                    className="
+                    w-14 h-14
 
-                  group-hover:scale-110
+                    rounded-2xl
 
-                  transition
+                    bg-cyan-400/10
+
+                    border border-cyan-400/20
+
+                    flex items-center justify-center
+
+                    text-cyan-300
+
+                    mb-6
+
+                    group-hover:scale-110
+
+                    transition
                   "
-                >
-                  {item.icon}
+                  >
+                    {item.icon}
+                  </div>
+
+                  {/* TITLE */}
+                  <h3
+                    className="
+                    text-xl
+
+                    font-bold
+
+                    leading-snug
+
+                    mb-4
+
+                    group-hover:text-cyan-300
+
+                    transition
+                  "
+                  >
+                    {item.title}
+                  </h3>
+
+                  {/* TEXT */}
+                  <p
+                    className="
+                    text-white/65
+
+                    text-sm
+
+                    leading-[1.9]
+                  "
+                  >
+                    {item.desc}
+                  </p>
+
                 </div>
-
-                {/* TITLE */}
-                <h3
-                  className="
-                  text-xl
-
-                  font-semibold
-
-                  mb-4
-                  "
-                >
-                  {item.title}
-                </h3>
-
-                {/* TEXT */}
-                <p
-                  className="
-                  text-white/70
-
-                  leading-relaxed
-                  "
-                >
-                  {item.desc}
-                </p>
 
               </motion.div>
 
@@ -403,6 +565,70 @@ export default function ReconductoringProjects() {
           </div>
 
         </div>
+
+        {/* ======================================== */}
+        {/* BOTTOM CTA */}
+        {/* ======================================== */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+
+          transition={{
+            delay: 0.2,
+          }}
+
+          viewport={{
+            once: true,
+          }}
+
+          className="
+          flex justify-center
+
+          mt-16
+        "
+        >
+
+          <button
+            className="
+            inline-flex
+
+            items-center
+            gap-3
+
+            px-8 py-4
+
+            rounded-full
+
+            bg-gradient-to-r
+            from-cyan-400
+            to-blue-500
+
+            text-black
+            font-semibold
+
+            hover:scale-105
+
+            hover:shadow-[0_0_40px_rgba(34,211,238,0.35)]
+
+            transition-all duration-500
+          "
+          >
+
+            Explore HTLS Projects
+
+            <ArrowUpRight size={18} />
+
+          </button>
+
+        </motion.div>
 
       </div>
 

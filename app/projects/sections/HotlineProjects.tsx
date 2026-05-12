@@ -9,45 +9,57 @@ import {
   ShieldCheck,
   Zap,
   Wrench,
+  ArrowUpRight,
+  BadgeCheck,
 } from "lucide-react";
 
 const features = [
   {
     icon: <RadioTower size={24} />,
     title: "Live Line Maintenance",
+    desc:
+      "Advanced live-line maintenance ensuring uninterrupted transmission operations.",
   },
 
   {
     icon: <Zap size={24} />,
     title: "Hotline Operations",
+    desc:
+      "Specialized hotline execution with high-voltage operational expertise.",
   },
 
   {
     icon: <Wrench size={24} />,
     title: "Emergency Restoration",
+    desc:
+      "Rapid fault restoration and transmission line emergency response services.",
   },
 
   {
     icon: <ShieldCheck size={24} />,
     title: "Safety Protocol",
+    desc:
+      "Strict live-line safety procedures with certified technical teams.",
   },
 ];
 
 export default function HotlineProjects() {
 
   return (
+
     <section
       className="
-      section-premium
-
-      py-28
-
       relative
       overflow-hidden
-      "
+
+      py-24 md:py-32
+    "
     >
 
+      {/* ======================================== */}
       {/* BG GLOW */}
+      {/* ======================================== */}
+
       <div className="absolute inset-0 pointer-events-none">
 
         <div
@@ -56,13 +68,13 @@ export default function HotlineProjects() {
 
           top-0 left-0
 
-          w-[500px]
-          h-[500px]
+          w-[550px]
+          h-[550px]
 
           bg-cyan-500/10
 
-          blur-[120px]
-          "
+          blur-[130px]
+        "
         />
 
         <div
@@ -71,35 +83,39 @@ export default function HotlineProjects() {
 
           bottom-0 right-0
 
-          w-[400px]
-          h-[400px]
+          w-[420px]
+          h-[420px]
 
           bg-blue-500/10
 
-          blur-[100px]
-          "
+          blur-[110px]
+        "
         />
 
       </div>
 
       <div
         className="
-        relative
+        relative z-10
 
         max-w-7xl
         mx-auto
 
         px-6
 
-        grid md:grid-cols-2
+        grid
+        lg:grid-cols-[0.95fr_1.05fr]
 
-        gap-14
+        gap-14 lg:gap-20
 
         items-center
-        "
+      "
       >
 
-        {/* IMAGE */}
+        {/* ======================================== */}
+        {/* IMAGE SIDE */}
+        {/* ======================================== */}
+
         <motion.div
           initial={{
             opacity: 0,
@@ -122,7 +138,7 @@ export default function HotlineProjects() {
           className="relative"
         >
 
-          {/* IMAGE BOX */}
+          {/* MAIN IMAGE */}
           <div
             className="
             relative
@@ -130,12 +146,16 @@ export default function HotlineProjects() {
             h-[420px]
             md:h-[620px]
 
-            rounded-3xl
-
             overflow-hidden
 
-            border-glow
-            "
+            rounded-[34px]
+
+            border border-white/10
+
+            bg-white/[0.03]
+
+            backdrop-blur-3xl
+          "
           >
 
             <Image
@@ -147,10 +167,10 @@ export default function HotlineProjects() {
               className="
               object-cover
 
-              transition-transform duration-700
-
               hover:scale-110
-              "
+
+              transition duration-700
+            "
             />
 
             {/* OVERLAY */}
@@ -159,57 +179,127 @@ export default function HotlineProjects() {
               absolute inset-0
 
               bg-gradient-to-t
-              from-black/70
-              via-transparent
+              from-[#020617]
+              via-[#020617]/20
               to-transparent
-              "
+            "
+            />
+
+            {/* GRID EFFECT */}
+            <div
+              className="
+              absolute inset-0
+
+              opacity-[0.04]
+
+              [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
+
+              [background-size:50px_50px]
+            "
             />
 
           </div>
 
           {/* FLOATING CARD */}
-          <div
+          <motion.div
+            animate={{
+              y: [0, -10, 0],
+            }}
+
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+            }}
+
             className="
             absolute
 
-            bottom-5 left-5
+            bottom-6
+            left-6
 
-            glass-strong
-            border-glow
+            max-w-[280px]
 
-            rounded-2xl
+            rounded-[28px]
 
-            p-5
+            border border-cyan-400/20
 
-            max-w-[260px]
-            "
+            bg-black/50
+
+            backdrop-blur-3xl
+
+            p-6
+
+            shadow-[0_0_40px_rgba(34,211,238,0.15)]
+          "
           >
 
-            <h3
-              className="
-              text-3xl
+            <div className="flex items-center gap-4 mb-4">
 
-              font-bold
+              <div
+                className="
+                w-14 h-14
 
-              text-cyan-400
+                rounded-2xl
 
-              mb-2
+                bg-cyan-400/10
+
+                border border-cyan-400/20
+
+                flex items-center justify-center
+
+                text-cyan-300
               "
-            >
-              24x7
-            </h3>
+              >
 
-            <p className="text-white/70 text-sm">
+                <BadgeCheck size={24} />
+
+              </div>
+
+              <div>
+
+                <h3
+                  className="
+                  text-3xl
+
+                  font-black
+
+                  text-cyan-400
+                "
+                >
+                  24×7
+                </h3>
+
+                <p className="text-white/60 text-sm">
+                  Live-Line Support
+                </p>
+
+              </div>
+
+            </div>
+
+            <p
+              className="
+              text-sm
+
+              leading-[1.8]
+
+              text-white/70
+            "
+            >
               Reliable hotline maintenance
-              and live-line infrastructure
-              operations across India.
+              and live-line transmission
+              operations across critical
+              infrastructure networks.
             </p>
 
-          </div>
+          </motion.div>
 
         </motion.div>
 
-        {/* CONTENT */}
+        {/* ======================================== */}
+        {/* CONTENT SIDE */}
+        {/* ======================================== */}
+
         <motion.div
           initial={{
             opacity: 0,
@@ -231,40 +321,64 @@ export default function HotlineProjects() {
         >
 
           {/* LABEL */}
-          <p
+          <div
             className="
-            uppercase
+            inline-flex
 
-            tracking-[5px]
+            items-center
+            gap-3
 
-            text-cyan-400
+            px-5 py-2
 
-            text-sm
+            rounded-full
 
-            mb-5
-            "
+            border border-cyan-400/20
+
+            bg-cyan-400/10
+
+            backdrop-blur-xl
+
+            mb-6
+          "
           >
-            HOTLINE PROJECTS
-          </p>
+
+            <Zap
+              size={15}
+              className="text-cyan-300"
+            />
+
+            <span
+              className="
+              text-[10px]
+
+              tracking-[4px]
+
+              text-cyan-200
+            "
+            >
+              HOTLINE PROJECTS
+            </span>
+
+          </div>
 
           {/* TITLE */}
           <h2
             className="
             text-4xl
             md:text-5xl
+            xl:text-6xl
 
-            font-semibold
+            font-black
 
-            leading-tight
+            leading-[1.1]
 
             mb-8
-            "
+          "
           >
 
             Advanced Live-Line
-            Transmission
 
-            <span className="block text-cyan-400">
+            <span className="gradient-text block mt-3">
               Maintenance Solutions
             </span>
 
@@ -273,24 +387,27 @@ export default function HotlineProjects() {
           {/* TEXT */}
           <p
             className="
-            text-white/70
+            text-white/65
 
-            text-lg
+            text-base
+            md:text-lg
 
-            leading-relaxed
+            leading-[2]
 
-            mb-10
-            "
+            mb-12
+
+            max-w-2xl
+          "
           >
 
             KAC Construction specializes
             in hotline maintenance and
             live-line transmission services
             ensuring uninterrupted power
-            delivery, operational safety and
-            advanced infrastructure support
-            across critical transmission
-            networks.
+            delivery, operational safety
+            and high-performance support
+            for critical transmission
+            infrastructure networks.
 
           </p>
 
@@ -302,7 +419,7 @@ export default function HotlineProjects() {
             sm:grid-cols-2
 
             gap-5
-            "
+          "
           >
 
             {features.map((item, index) => (
@@ -311,64 +428,172 @@ export default function HotlineProjects() {
                 key={index}
 
                 whileHover={{
-                  y: -6,
+                  y: -8,
+                  scale: 1.02,
+                }}
+
+                transition={{
+                  duration: 0.3,
                 }}
 
                 className="
                 group
 
-                glass-strong
-                border-glow
+                relative
 
-                rounded-2xl
+                overflow-hidden
+
+                rounded-[26px]
+
+                border border-white/10
+
+                bg-white/[0.03]
+
+                backdrop-blur-2xl
 
                 p-5
-
-                flex items-center
-                gap-4
-                "
+              "
               >
 
-                {/* ICON */}
+                {/* HOVER GLOW */}
                 <div
                   className="
-                  min-w-[52px]
-                  h-[52px]
+                  absolute inset-0
 
-                  rounded-2xl
+                  opacity-0
 
-                  bg-cyan-400/10
+                  group-hover:opacity-100
 
-                  border border-cyan-400/20
+                  transition duration-500
 
-                  flex items-center justify-center
+                  bg-gradient-to-br
+                  from-cyan-500/10
+                  via-transparent
+                  to-blue-500/10
+                "
+                />
 
-                  text-cyan-400
+                <div className="relative z-10">
 
-                  group-hover:scale-110
+                  {/* ICON */}
+                  <div
+                    className="
+                    w-14 h-14
 
-                  transition
+                    rounded-2xl
+
+                    bg-cyan-400/10
+
+                    border border-cyan-400/20
+
+                    flex items-center justify-center
+
+                    text-cyan-300
+
+                    mb-5
+
+                    group-hover:scale-110
+
+                    transition
                   "
-                >
-                  {item.icon}
+                  >
+                    {item.icon}
+                  </div>
+
+                  {/* TITLE */}
+                  <h3
+                    className="
+                    text-xl
+
+                    font-bold
+
+                    mb-3
+
+                    group-hover:text-cyan-300
+
+                    transition
+                  "
+                  >
+                    {item.title}
+                  </h3>
+
+                  {/* DESC */}
+                  <p
+                    className="
+                    text-sm
+
+                    leading-[1.8]
+
+                    text-white/60
+                  "
+                  >
+                    {item.desc}
+                  </p>
+
                 </div>
-
-                {/* TITLE */}
-                <h3
-                  className="
-                  text-lg
-
-                  font-medium
-                  "
-                >
-                  {item.title}
-                </h3>
 
               </motion.div>
 
             ))}
 
           </div>
+
+          {/* CTA */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+
+            transition={{
+              delay: 0.3,
+            }}
+
+            viewport={{
+              once: true,
+            }}
+
+            className="mt-12"
+          >
+
+            <button
+              className="
+              inline-flex
+
+              items-center
+              gap-3
+
+              px-8 py-4
+
+              rounded-full
+
+              bg-gradient-to-r
+              from-cyan-400
+              to-blue-500
+
+              text-black
+              font-semibold
+
+              hover:scale-105
+
+              hover:shadow-[0_0_40px_rgba(34,211,238,0.35)]
+
+              transition-all duration-500
+            "
+            >
+
+              Explore Hotline Services
+
+              <ArrowUpRight size={18} />
+
+            </button>
+
+          </motion.div>
 
         </motion.div>
 

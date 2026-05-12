@@ -20,92 +20,171 @@ import TransmissionProjects from "./sections/TransmissionProjects";
 export default function ProjectsPage() {
 
   return (
+
     <main
       className="
-      bg-transparent
-      text-white
-      overflow-x-hidden
       relative
-      "
+
+      bg-[#020617]
+
+      text-white
+    "
     >
 
-      {/* 🔥 GLOBAL BACKGROUND */}
+      {/* BG */}
       <div
         className="
         fixed inset-0
-        -z-10
-
-        bg-gradient-to-b
-        from-[#020617]
-        via-[#020617]
-        to-[#020617]
-        "
+        -z-50
+        bg-[#020617]
+      "
       />
 
-      {/* 🔥 HERO */}
+      {/* GRID */}
+      <div
+        className="
+        fixed inset-0
+        -z-40
+
+        opacity-[0.03]
+
+        [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
+
+        [background-size:60px_60px]
+      "
+      />
+
+      {/* GLOW */}
+      <div
+        className="
+        fixed
+        top-[-200px]
+        left-[-120px]
+
+        -z-30
+
+        w-[700px]
+        h-[700px]
+
+        rounded-full
+
+        bg-cyan-500/10
+
+        blur-[160px]
+      "
+      />
+
+      <div
+        className="
+        fixed
+        bottom-[-250px]
+        right-[-150px]
+
+        -z-30
+
+        w-[700px]
+        h-[700px]
+
+        rounded-full
+
+        bg-blue-500/10
+
+        blur-[170px]
+      "
+      />
+
+      {/* HERO */}
       <Hero />
 
-      {/* 🔥 STICKY TABS */}
+      {/* STICKY TABS */}
       <StickyTabs />
 
-      {/* 🔥 PROJECT STATS */}
-      <section id="stats">
-        <ProjectStats />
-      </section>
+      {/* CONTENT */}
+      <div className="relative z-10">
 
-      {/* 🔥 ONGOING PROJECTS */}
-      <section id="ongoing">
-        <OngoingProjects />
-      </section>
+        <section
+          id="stats"
+          className="scroll-mt-40"
+        >
+          <ProjectStats />
+        </section>
 
-      {/* 🔥 COMPLETED PROJECTS */}
-      <section id="completed">
-        <CompletedProjects />
-      </section>
+        <section
+          id="ongoing"
+          className="scroll-mt-40"
+        >
+          <OngoingProjects />
+        </section>
 
-      {/* 🔥 FOUNDATION */}
-      <section id="foundation">
-        <FoundationProjects />
-      </section>
+        <section
+          id="completed"
+          className="scroll-mt-40"
+        >
+          <CompletedProjects />
+        </section>
 
-      {/* 🔥 ERECTION */}
-      <section id="erection">
-        <ErectionProjects />
-      </section>
+        <section
+          id="foundation"
+          className="scroll-mt-40"
+        >
+          <FoundationProjects />
+        </section>
 
-      {/* 🔥 HOTLINE */}
-      <section id="hotline">
-        <HotlineProjects />
-      </section>
+        <section
+          id="erection"
+          className="scroll-mt-40"
+        >
+          <ErectionProjects />
+        </section>
 
-      {/* 🔥 STRINGING */}
-      <section id="stringing">
-        <StringingProjects />
-      </section>
+        <section
+          id="hotline"
+          className="scroll-mt-40"
+        >
+          <HotlineProjects />
+        </section>
 
-      {/* 🔥 RECONDUCTORING */}
-      <section id="reconductoring">
-        <ReconductoringProjects />
-      </section>
+        <section
+          id="stringing"
+          className="scroll-mt-40"
+        >
+          <StringingProjects />
+        </section>
 
-      {/* 🔥 TRANSMISSION */}
-      <section id="transmission">
-        <TransmissionProjects />
-      </section>
+        <section
+          id="reconductoring"
+          className="scroll-mt-40"
+        >
+          <ReconductoringProjects />
+        </section>
 
-      {/* 🔥 TIMELINE */}
-      <section id="timeline">
-        <ProjectTimeline />
-      </section>
+        <section
+          id="transmission"
+          className="scroll-mt-40"
+        >
+          <TransmissionProjects />
+        </section>
 
-      {/* 🔥 PROJECT GALLERY */}
-      <section id="gallery">
-        <ProjectGallery />
-      </section>
+        <section
+          id="timeline"
+          className="scroll-mt-40"
+        >
+          <ProjectTimeline />
+        </section>
 
-      {/* 🔥 CTA */}
-      <ProjectCTA />
+        <section
+          id="gallery"
+          className="scroll-mt-40"
+        >
+          <ProjectGallery />
+        </section>
+
+        <ProjectCTA />
+
+      </div>
 
     </main>
+
   );
+
 }

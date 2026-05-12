@@ -13,6 +13,7 @@ import {
   ArrowUpRight,
   X,
   Plus,
+  Images,
 } from "lucide-react";
 
 const galleryImages = [
@@ -55,67 +56,73 @@ const galleryImages = [
 
 export default function ProjectGallery() {
 
-  const [selected, setSelected] = useState<any>(null);
+  const [selected, setSelected] =
+    useState<any>(null);
 
   return (
+
     <section
       className="
-      section-premium
-
-      py-28
-
       relative
       overflow-hidden
-      "
+
+      py-24 md:py-28
+    "
     >
 
+      {/* ======================================== */}
       {/* BG GLOW */}
+      {/* ======================================== */}
+
       <div className="absolute inset-0 pointer-events-none">
 
         <div
           className="
           absolute
 
+          top-0 left-0
+
           w-[500px]
           h-[500px]
 
           bg-cyan-500/10
 
-          blur-[120px]
-
-          top-0 left-0
-          "
+          blur-[130px]
+        "
         />
 
         <div
           className="
           absolute
 
-          w-[400px]
-          h-[400px]
+          bottom-0 right-0
+
+          w-[450px]
+          h-[450px]
 
           bg-blue-500/10
 
-          blur-[100px]
-
-          bottom-0 right-0
-          "
+          blur-[120px]
+        "
         />
 
       </div>
 
       <div
         className="
-        relative
+        relative z-10
 
         max-w-7xl
         mx-auto
 
         px-6
-        "
+      "
       >
 
-        {/* TOP */}
+        {/* ======================================== */}
+        {/* HEADING */}
+        {/* ======================================== */}
+
         <div
           className="
           text-center
@@ -124,44 +131,96 @@ export default function ProjectGallery() {
           mx-auto
 
           mb-16
-          "
+        "
         >
 
-          <p
+          <div
             className="
-            text-sm
+            inline-flex
 
-            tracking-widest
+            items-center
+            gap-3
 
-            text-white/60
+            px-5 py-2
 
-            mb-3
-            "
+            rounded-full
+
+            border border-white/10
+
+            bg-white/[0.03]
+
+            backdrop-blur-xl
+
+            mb-6
+          "
           >
-            PROJECT GALLERY
-          </p>
+
+            <Images
+              size={14}
+              className="text-cyan-400"
+            />
+
+            <span
+              className="
+              text-[10px]
+
+              tracking-[4px]
+
+              text-white/70
+            "
+            >
+              PROJECT GALLERY
+            </span>
+
+          </div>
 
           <h2
             className="
-            text-4xl
+            text-3xl
             md:text-5xl
 
-            font-semibold
+            font-black
 
             leading-tight
-            "
+          "
           >
 
-            <span className="gradient-text">
-              Infrastructure Execution
+            Infrastructure Execution
+
+            <span className="gradient-text block mt-3">
               Across India
             </span>
 
           </h2>
 
+          <p
+            className="
+            text-white/55
+
+            leading-[1.9]
+
+            text-sm
+            md:text-base
+
+            max-w-2xl
+
+            mx-auto
+
+            mt-6
+          "
+          >
+            Showcasing KAC Construction’s
+            transmission infrastructure,
+            tower erection, hotline and EPC
+            execution projects nationwide.
+          </p>
+
         </div>
 
+        {/* ======================================== */}
         {/* GRID */}
+        {/* ======================================== */}
+
         <div
           className="
           grid
@@ -170,7 +229,7 @@ export default function ProjectGallery() {
           lg:grid-cols-3
 
           gap-8
-          "
+        "
         >
 
           {galleryImages.map((item, index) => (
@@ -180,7 +239,7 @@ export default function ProjectGallery() {
 
               initial={{
                 opacity: 0,
-                y: 50,
+                y: 40,
               }}
 
               whileInView={{
@@ -207,17 +266,24 @@ export default function ProjectGallery() {
               className="
               group
 
-              glass-strong
-              border-glow
-
-              rounded-3xl
+              relative
 
               overflow-hidden
 
+              rounded-[28px]
+
+              border border-white/10
+
+              bg-white/[0.03]
+
+              backdrop-blur-2xl
+
               cursor-pointer
 
-              relative
-              "
+              hover:border-cyan-400/20
+
+              transition-all duration-500
+            "
             >
 
               {/* IMAGE */}
@@ -225,11 +291,11 @@ export default function ProjectGallery() {
                 className="
                 relative
 
-                h-[300px]
-                md:h-[360px]
+                h-[260px]
+                md:h-[320px]
 
                 overflow-hidden
-                "
+              "
               >
 
                 <Image
@@ -241,10 +307,10 @@ export default function ProjectGallery() {
                   className="
                   object-cover
 
-                  transition-transform duration-700
-
                   group-hover:scale-110
-                  "
+
+                  transition duration-700
+                "
                 />
 
                 {/* OVERLAY */}
@@ -253,13 +319,13 @@ export default function ProjectGallery() {
                   absolute inset-0
 
                   bg-gradient-to-t
-                  from-black/80
-                  via-black/10
+                  from-[#020617]
+                  via-[#020617]/20
                   to-transparent
-                  "
+                "
                 />
 
-                {/* HOVER OVERLAY */}
+                {/* HOVER */}
                 <div
                   className="
                   absolute inset-0
@@ -273,7 +339,7 @@ export default function ProjectGallery() {
                   bg-black/40
 
                   flex items-center justify-center
-                  "
+                "
                 >
 
                   <div
@@ -289,7 +355,7 @@ export default function ProjectGallery() {
                     backdrop-blur-xl
 
                     flex items-center justify-center
-                    "
+                  "
                   >
 
                     <Plus size={28} />
@@ -309,7 +375,7 @@ export default function ProjectGallery() {
                   justify-between
 
                   gap-4
-                  "
+                "
                 >
 
                   <div>
@@ -321,7 +387,7 @@ export default function ProjectGallery() {
                       text-sm
 
                       mb-2
-                      "
+                    "
                     >
                       {item.category}
                     </p>
@@ -330,8 +396,12 @@ export default function ProjectGallery() {
                       className="
                       text-2xl
 
-                      font-semibold
-                      "
+                      font-bold
+
+                      group-hover:text-cyan-300
+
+                      transition
+                    "
                     >
                       {item.title}
                     </h3>
@@ -357,7 +427,7 @@ export default function ProjectGallery() {
                     group-hover:scale-110
 
                     transition
-                    "
+                  "
                   >
 
                     <ArrowUpRight size={20} />
@@ -376,7 +446,10 @@ export default function ProjectGallery() {
 
       </div>
 
+      {/* ======================================== */}
       {/* MODAL */}
+      {/* ======================================== */}
+
       <AnimatePresence>
 
         {selected && (
@@ -394,50 +467,71 @@ export default function ProjectGallery() {
               opacity: 0,
             }}
 
+            onClick={() =>
+              setSelected(null)
+            }
+
             className="
             fixed inset-0
 
-            z-50
+            z-[9999]
 
             bg-black/80
 
-            backdrop-blur-sm
+            backdrop-blur-xl
 
             flex items-center justify-center
 
             px-4
-            "
+          "
           >
 
+            {/* CARD */}
             <motion.div
               initial={{
-                scale: 0.85,
                 opacity: 0,
+                scale: 0.9,
+                y: 20,
               }}
 
               animate={{
-                scale: 1,
                 opacity: 1,
+                scale: 1,
+                y: 0,
               }}
 
               exit={{
-                scale: 0.85,
                 opacity: 0,
+                scale: 0.9,
+                y: 20,
               }}
+
+              transition={{
+                duration: 0.3,
+              }}
+
+              onClick={(e) =>
+                e.stopPropagation()
+              }
 
               className="
               relative
 
-              max-w-6xl
-              w-full
-
-              glass-strong
-              border-glow
-
-              rounded-3xl
-
               overflow-hidden
-              "
+
+              w-full
+              max-w-[520px]
+
+              rounded-[24px]
+
+              border border-white/10
+
+              bg-[#08101f]/95
+
+              backdrop-blur-3xl
+
+              shadow-[0_0_50px_rgba(34,211,238,0.12)]
+            "
             >
 
               {/* CLOSE */}
@@ -449,102 +543,133 @@ export default function ProjectGallery() {
                 className="
                 absolute
 
-                top-5 right-5
+                top-3
+                right-3
 
-                z-20
+                z-30
 
-                w-10 h-10
+                w-9 h-9
 
                 rounded-full
 
-                bg-black/40
+                border border-white/10
+
+                bg-black/70
 
                 flex items-center justify-center
 
-                hover:bg-black/70
+                text-white
 
-                transition
-                "
+                hover:bg-cyan-400
+                hover:text-black
+
+                transition-all duration-300
+              "
               >
 
-                <X size={20} />
+                <X size={16} />
 
               </button>
 
+              {/* IMAGE */}
               <div
                 className="
-                grid md:grid-cols-2
-                "
+                relative
+
+                h-[220px]
+              "
               >
 
-                {/* IMAGE */}
-                <div className="relative h-[320px] md:h-[700px]">
+                <Image
+                  src={selected.image}
+                  alt={selected.title}
 
-                  <Image
-                    src={selected.image}
-                    alt={selected.title}
+                  fill
 
-                    fill
+                  className="object-cover"
+                />
 
-                    className="object-cover"
-                  />
-
-                </div>
-
-                {/* TEXT */}
+                {/* OVERLAY */}
                 <div
                   className="
-                  p-8 md:p-12
+                  absolute inset-0
 
-                  flex flex-col justify-center
-                  "
+                  bg-gradient-to-t
+                  from-[#020617]
+                  via-[#020617]/20
+                  to-transparent
+                "
+                />
+
+              </div>
+
+              {/* CONTENT */}
+              <div
+                className="
+                p-5
+                md:p-6
+              "
+              >
+
+                <div
+                  className="
+                  inline-flex
+
+                  items-center
+                  gap-2
+
+                  px-3 py-2
+
+                  rounded-full
+
+                  bg-cyan-400/10
+
+                  border border-cyan-400/20
+
+                  text-cyan-300
+
+                  text-xs
+
+                  mb-4
+                "
+                >
+                  {selected.category}
+                </div>
+
+                <h2
+                  className="
+                  text-2xl
+                  md:text-3xl
+
+                  font-black
+
+                  mb-4
+                "
+                >
+                  {selected.title}
+                </h2>
+
+                <p
+                  className="
+                  text-white/70
+
+                  leading-[1.9]
+
+                  text-sm
+                  md:text-base
+                "
                 >
 
-                  <p
-                    className="
-                    text-cyan-400
+                  KAC Construction continues
+                  delivering advanced
+                  transmission infrastructure,
+                  tower erection and EPC
+                  execution projects with
+                  engineering precision and
+                  operational excellence
+                  across India.
 
-                    text-sm
-
-                    tracking-widest
-
-                    mb-4
-                    "
-                  >
-                    {selected.category}
-                  </p>
-
-                  <h2
-                    className="
-                    text-4xl
-
-                    font-bold
-
-                    mb-6
-                    "
-                  >
-                    {selected.title}
-                  </h2>
-
-                  <p
-                    className="
-                    text-white/70
-
-                    leading-relaxed
-                    "
-                  >
-
-                    KAC Construction continues
-                    to deliver world-class EPC
-                    infrastructure execution with
-                    engineering precision, safety,
-                    innovation and reliable
-                    transmission project delivery
-                    across India.
-
-                  </p>
-
-                </div>
+                </p>
 
               </div>
 
@@ -557,5 +682,7 @@ export default function ProjectGallery() {
       </AnimatePresence>
 
     </section>
+
   );
+
 }

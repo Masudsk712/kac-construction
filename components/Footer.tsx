@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+
 import { motion } from "framer-motion";
 
 import {
@@ -22,10 +23,7 @@ const quickLinks = [
   { title: "About", href: "/about" },
   { title: "Services", href: "/service" },
   { title: "Projects", href: "/projects" },
-
-  /* 🔥 NEW */
   { title: "Media", href: "/media" },
-
   { title: "Career", href: "/career" },
   { title: "Contact", href: "/contact" },
 ];
@@ -42,22 +40,24 @@ const services = [
 const socialLinks = [
   {
     icon: <Facebook size={18} />,
-    href: "#",
+    href: "https://facebook.com/",
   },
 
   {
     icon: <Instagram size={18} />,
-    href: "#",
+    href: "https://instagram.com/",
   },
 
   {
     icon: <Linkedin size={18} />,
-    href: "#",
+    href: "https://linkedin.com/",
   },
 ];
 
 export default function Footer() {
+
   return (
+
     <footer
       className="
       relative
@@ -68,19 +68,24 @@ export default function Footer() {
     "
     >
 
-      {/* ================================================= */}
-      {/* 🔥 CINEMATIC BACKGROUND IMAGE */}
-      {/* ================================================= */}
+      {/* ================================================ */}
+      {/* CINEMATIC BACKGROUND */}
+      {/* ================================================ */}
 
       <div
         className="
         absolute inset-0
-        bg-cover bg-center
+
+        bg-cover
+        bg-center
+
         opacity-[0.10]
+
         scale-105
-        "
+      "
         style={{
-          backgroundImage: "url('/tower-pic1.webp')",
+          backgroundImage:
+            "url('/tower-pic1.webp')",
         }}
       />
 
@@ -95,20 +100,51 @@ export default function Footer() {
         to-[#020617]
 
         backdrop-blur-[2px]
-        "
+      "
       />
 
-      {/* BG GLOW */}
-      <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-cyan-500/10 blur-[140px]" />
+      {/* GLOW */}
+      <div
+        className="
+        absolute
 
-      <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-blue-500/10 blur-[140px]" />
+        top-[-200px]
+        left-[-200px]
+
+        w-[500px]
+        h-[500px]
+
+        bg-cyan-500/10
+
+        blur-[140px]
+      "
+      />
+
+      <div
+        className="
+        absolute
+
+        bottom-[-200px]
+        right-[-200px]
+
+        w-[500px]
+        h-[500px]
+
+        bg-blue-500/10
+
+        blur-[140px]
+      "
+      />
 
       {/* GRID */}
       <div
         className="
         absolute inset-0
+
         opacity-[0.04]
+
         [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+
         [background-size:60px_60px]
       "
       />
@@ -116,33 +152,59 @@ export default function Footer() {
       <div
         className="
         container-premium
+
         relative z-10
+
         pt-24
         pb-10
+
+        backdrop-blur-[2px]
       "
       >
 
-        {/* ================================================= */}
-        {/* 🔥 TOP CTA BAR */}
-        {/* ================================================= */}
+        {/* ================================================ */}
+        {/* TOP CTA */}
+        {/* ================================================ */}
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+
+          transition={{
+            duration: 0.7,
+          }}
+
+          viewport={{
+            once: true,
+          }}
+
           className="
           mb-20
+
           rounded-[32px]
+
           border border-white/10
+
           bg-black/30
+
           backdrop-blur-2xl
+
           p-8 md:p-10
+
           flex
           flex-col
           lg:flex-row
+
           items-start lg:items-center
           justify-between
+
           gap-10
 
           shadow-[0_20px_80px_rgba(0,0,0,0.45)]
@@ -155,19 +217,43 @@ export default function Footer() {
             <div
               className="
               inline-flex
+
               items-center
               gap-3
+
               px-5 py-2
+
               rounded-full
+
               border border-white/10
+
               bg-white/5
+
               mb-6
             "
             >
 
-              <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              <div
+                className="
+                w-2 h-2
 
-              <span className="text-sm tracking-[4px] text-white/80">
+                rounded-full
+
+                bg-cyan-400
+
+                animate-pulse
+              "
+              />
+
+              <span
+                className="
+                text-sm
+
+                tracking-[4px]
+
+                text-white/80
+              "
+              >
                 KAC CONSTRUCTION
               </span>
 
@@ -177,11 +263,15 @@ export default function Footer() {
               className="
               text-4xl
               md:text-5xl
+
               font-black
+
               leading-tight
+
               mb-6
             "
             >
+
               Powering India’s
 
               <span className="block text-cyan-400">
@@ -190,20 +280,38 @@ export default function Footer() {
 
             </h2>
 
-            <p className="text-white/60 leading-relaxed text-lg">
-              Delivering transmission infrastructure, tower erection,
-              hotline stringing, HTLS reconductoring and foundation
-              execution projects with engineering precision across India.
+            <p
+              className="
+              text-white/60
+
+              leading-relaxed
+
+              text-lg
+            "
+            >
+
+              KAC Construction specializes in
+              transmission infrastructure,
+              tower erection, foundation
+              execution, hotline stringing and
+              HTLS reconductoring projects with
+              engineering precision,
+              operational reliability and
+              nationwide project execution.
+
             </p>
 
           </div>
 
-          {/* RIGHT BUTTON */}
+          {/* BUTTON */}
           <Link
             href="/contact"
+
             className="
             group
+
             inline-flex
+
             items-center
             gap-3
 
@@ -214,11 +322,13 @@ export default function Footer() {
             font-bold
 
             px-8 py-5
+
             rounded-2xl
 
             transition-all duration-300
 
             hover:scale-105
+
             hover:shadow-[0_0_40px_rgba(34,211,238,0.45)]
           "
           >
@@ -227,8 +337,10 @@ export default function Footer() {
 
             <Send
               size={18}
+
               className="
               transition
+
               group-hover:translate-x-1
             "
             />
@@ -237,26 +349,30 @@ export default function Footer() {
 
         </motion.div>
 
-        {/* ================================================= */}
-        {/* 🔥 MAIN GRID */}
-        {/* ================================================= */}
+        {/* ================================================ */}
+        {/* MAIN GRID */}
+        {/* ================================================ */}
 
         <div
           className="
           grid
+
           grid-cols-1
           md:grid-cols-2
-          xl:grid-cols-5
+
+          xl:grid-cols-[1.5fr_0.8fr_1fr_1.2fr]
+
           gap-14
+
           pb-20
         "
         >
 
-          {/* ================================================= */}
+          {/* ================================================ */}
           {/* COMPANY */}
-          {/* ================================================= */}
+          {/* ================================================ */}
 
-          <div className="xl:col-span-2">
+          <div>
 
             {/* LOGO */}
             <div className="flex items-center gap-4 mb-8">
@@ -266,12 +382,18 @@ export default function Footer() {
                   rotate: 8,
                   scale: 1.08,
                 }}
+
                 className="
                 w-16 h-16
+
                 rounded-2xl
+
                 bg-cyan-400/10
+
                 border border-cyan-400/20
+
                 flex items-center justify-center
+
                 text-cyan-400
 
                 shadow-[0_0_30px_rgba(34,211,238,0.18)]
@@ -300,17 +422,17 @@ export default function Footer() {
             <p
               className="
               text-gray-400
+
               leading-relaxed
+
               mb-8
-              max-w-xl
             "
             >
 
-              KAC Construction delivers advanced
-              transmission infrastructure solutions including
-              tower erection, HTLS reconductoring,
-              hotline stringing, foundation works,
-              and EPC execution projects across India.
+              Delivering advanced EPC and
+              transmission infrastructure
+              projects with engineering
+              excellence across India.
 
             </p>
 
@@ -324,23 +446,35 @@ export default function Footer() {
                     y: -6,
                     scale: 1.08,
                   }}
+
                   key={i}
                 >
 
                   <Link
                     href={item.href}
+
+                    target="_blank"
+
                     className="
                     w-12 h-12
+
                     rounded-2xl
+
                     border border-white/10
+
                     bg-black/30
+
                     backdrop-blur-xl
+
                     flex items-center justify-center
+
                     text-gray-300
+
                     transition-all duration-300
 
                     hover:border-cyan-400/30
                     hover:text-cyan-400
+
                     hover:shadow-[0_0_25px_rgba(34,211,238,0.18)]
                   "
                   >
@@ -357,9 +491,9 @@ export default function Footer() {
 
           </div>
 
-          {/* ================================================= */}
+          {/* ================================================ */}
           {/* QUICK LINKS */}
-          {/* ================================================= */}
+          {/* ================================================ */}
 
           <div>
 
@@ -373,12 +507,18 @@ export default function Footer() {
 
                 <Link
                   key={i}
+
                   href={item.href}
+
                   className="
                   group
+
                   flex items-center justify-between
+
                   text-gray-400
+
                   transition-all duration-300
+
                   hover:text-cyan-400
                 "
                 >
@@ -387,10 +527,14 @@ export default function Footer() {
 
                   <ArrowUpRight
                     size={16}
+
                     className="
                     opacity-0
+
                     transition-all duration-300
+
                     group-hover:opacity-100
+
                     group-hover:translate-x-1
                     group-hover:-translate-y-1
                   "
@@ -404,9 +548,9 @@ export default function Footer() {
 
           </div>
 
-          {/* ================================================= */}
+          {/* ================================================ */}
           {/* SERVICES */}
-          {/* ================================================= */}
+          {/* ================================================ */}
 
           <div>
 
@@ -422,10 +566,13 @@ export default function Footer() {
                   whileHover={{
                     x: 8,
                   }}
+
                   key={i}
+
                   className="
                   flex items-center
                   gap-3
+
                   text-gray-400
                 "
                 >
@@ -433,7 +580,9 @@ export default function Footer() {
                   <div
                     className="
                     w-2 h-2
+
                     rounded-full
+
                     bg-cyan-400
                   "
                   />
@@ -448,9 +597,9 @@ export default function Footer() {
 
           </div>
 
-          {/* ================================================= */}
-          {/* CONTACT INFO */}
-          {/* ================================================= */}
+          {/* ================================================ */}
+          {/* CONTACT */}
+          {/* ================================================ */}
 
           <div>
 
@@ -462,17 +611,25 @@ export default function Footer() {
 
               {/* PHONE */}
               <motion.div
-                whileHover={{ x: 6 }}
+                whileHover={{
+                  x: 6,
+                }}
+
                 className="flex gap-4"
               >
 
                 <div
                   className="
                   w-12 h-12
+
                   rounded-xl
+
                   bg-cyan-400/10
+
                   border border-cyan-400/20
+
                   flex items-center justify-center
+
                   text-cyan-400
                 "
                 >
@@ -501,17 +658,25 @@ export default function Footer() {
 
               {/* EMAIL */}
               <motion.div
-                whileHover={{ x: 6 }}
+                whileHover={{
+                  x: 6,
+                }}
+
                 className="flex gap-4"
               >
 
                 <div
                   className="
                   w-12 h-12
+
                   rounded-xl
+
                   bg-cyan-400/10
+
                   border border-cyan-400/20
+
                   flex items-center justify-center
+
                   text-cyan-400
                 "
                 >
@@ -536,17 +701,25 @@ export default function Footer() {
 
               {/* ADDRESS */}
               <motion.div
-                whileHover={{ x: 6 }}
+                whileHover={{
+                  x: 6,
+                }}
+
                 className="flex gap-4"
               >
 
                 <div
                   className="
                   w-12 h-12
+
                   rounded-xl
+
                   bg-cyan-400/10
+
                   border border-cyan-400/20
+
                   flex items-center justify-center
+
                   text-cyan-400
                 "
                 >
@@ -561,7 +734,15 @@ export default function Footer() {
                     Office Address
                   </p>
 
-                  <h4 className="font-semibold leading-relaxed text-sm">
+                  <h4
+                    className="
+                    font-semibold
+
+                    leading-relaxed
+
+                    text-sm
+                  "
+                  >
                     Kuddus Ali Construction,
                     Mahisbathani Baluatola,
                     PO Barkol,
@@ -578,12 +759,18 @@ export default function Footer() {
                 whileHover={{
                   scale: 1.03,
                 }}
+
                 className="
                 relative
+
                 overflow-hidden
+
                 rounded-3xl
+
                 border border-white/10
+
                 h-[220px]
+
                 mt-8
 
                 shadow-[0_20px_60px_rgba(0,0,0,0.45)]
@@ -591,27 +778,41 @@ export default function Footer() {
               >
 
                 <iframe
-                  src="https://www.google.com/maps?q=Malda,West%20Bengal,India&output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d704.6048151757652!2d88.1037462695071!3d25.081566213257595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDA0JzUzLjYiTiA4OMKwMDYnMTUuOCJF!5e1!3m2!1sen!2sin!4v1778577513815!5m2!1sen!2sin"
+
                   width="100%"
                   height="100%"
+
                   loading="lazy"
+
                   className="absolute inset-0"
                 />
 
-                {/* OVERLAY */}
+                {/* MAP TAG */}
                 <div
                   className="
-                  absolute top-4 left-4
+                  absolute
+
+                  top-4 left-4
+
                   px-4 py-2
+
                   rounded-full
+
                   bg-black/60
+
                   backdrop-blur-xl
+
                   border border-white/10
+
                   flex items-center gap-2
                 "
                 >
 
-                  <Globe size={16} className="text-cyan-400" />
+                  <Globe
+                    size={16}
+                    className="text-cyan-400"
+                  />
 
                   <span className="text-xs tracking-wider">
                     LIVE LOCATION
@@ -626,13 +827,19 @@ export default function Footer() {
                 className="
                 flex items-center
                 gap-3
+
                 text-sm
+
                 text-white/60
+
                 mt-4
               "
               >
 
-                <Clock3 size={16} className="text-cyan-400" />
+                <Clock3
+                  size={16}
+                  className="text-cyan-400"
+                />
 
                 Monday - Saturday | 9:00 AM - 7:00 PM
 
@@ -644,78 +851,82 @@ export default function Footer() {
 
         </div>
 
-        {/* ================================================= */}
+        {/* ================================================ */}
         {/* BOTTOM */}
-        {/* ================================================= */}
+        {/* ================================================ */}
 
         <div
           className="
           pt-8
+
           border-t border-white/10
+
           flex
           flex-col
-          lg:flex-row
+          md:flex-row
+
           items-center
           justify-between
+
           gap-5
         "
         >
 
+          {/* COPYRIGHT */}
           <p
             className="
-            text-gray-500
+            text-white/40
+
             text-sm
-            text-center lg:text-left
+
+            text-center
+            md:text-left
           "
           >
             © 2026 KAC Construction. All Rights Reserved.
           </p>
 
-          <div
+          {/* CREDIT */}
+          <a
+            href="https://www.linkedin.com/in/masud-sk-254b581b9"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
+
             className="
-            flex
-            flex-wrap
-            items-center
-            justify-center
-            gap-6
+            group
+
             text-sm
-            text-gray-500
+
+            text-white/40
+
+            transition-all duration-300
+
+            hover:text-cyan-400
           "
           >
 
-            <Link
-              href="#"
+            Designed & Developed By{" "}
+
+            <span
               className="
-              transition hover:text-cyan-400
+              text-cyan-400
+
+              group-hover:text-cyan-300
             "
             >
-              Privacy Policy
-            </Link>
+              Masud Sk
+            </span>
 
-            <Link
-              href="#"
-              className="
-              transition hover:text-cyan-400
-            "
-            >
-              Terms & Conditions
-            </Link>
-
-            <Link
-              href="#"
-              className="
-              transition hover:text-cyan-400
-            "
-            >
-              Sitemap
-            </Link>
-
-          </div>
+          </a>
 
         </div>
 
       </div>
 
     </footer>
+
   );
+
 }

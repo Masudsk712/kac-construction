@@ -1,11 +1,20 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useState } from "react"
 
 import {
   motion,
   AnimatePresence,
-} from "framer-motion";
+} from "framer-motion"
+
+import Image from "next/image"
+
+import {
+  ArrowUpRight,
+  CalendarDays,
+  Sparkles,
+  X,
+} from "lucide-react"
 
 const timelineData = [
   {
@@ -61,165 +70,212 @@ const timelineData = [
 
     image: "/placeholder.jpg",
   },
-];
+]
 
 export default function ProjectTimeline() {
 
-  const [active, setActive] = useState<any>(null);
+  const [active, setActive] =
+    useState<any>(null)
 
   return (
+
     <section
       className="
-      section-premium
-
-      py-28
-
       relative
+
+      py-20 md:py-28
+
       overflow-hidden
-      "
+    "
     >
 
-      {/* BG GLOW */}
+      {/* BG */}
       <div className="absolute inset-0 pointer-events-none">
 
         <div
           className="
           absolute
 
-          w-[500px]
-          h-[500px]
+          top-0
+          left-[-100px]
+
+          w-[420px]
+          h-[420px]
 
           bg-cyan-500/10
 
-          blur-[120px]
-
-          top-0 left-0
-          "
+          blur-[130px]
+        "
         />
 
         <div
           className="
           absolute
 
-          w-[400px]
-          h-[400px]
+          bottom-0
+          right-[-80px]
+
+          w-[350px]
+          h-[350px]
 
           bg-blue-500/10
 
-          blur-[100px]
-
-          bottom-0 right-0
-          "
+          blur-[120px]
+        "
         />
 
       </div>
 
       <div
         className="
-        relative
+        relative z-10
 
-        max-w-6xl
+        max-w-7xl
         mx-auto
 
         px-6
-        "
+      "
       >
 
+        {/* ======================================== */}
         {/* HEADING */}
-        <div
-          className="
-          text-center
+        {/* ======================================== */}
 
-          mb-24
-          "
-        >
+        <div className="text-center max-w-4xl mx-auto mb-16">
 
-          <p
+          <div
             className="
-            text-sm
+            inline-flex
 
-            tracking-widest
+            items-center
+            gap-3
 
-            text-white/60
+            px-4 py-2
 
-            mb-3
-            "
+            rounded-full
+
+            border border-white/10
+
+            bg-white/[0.03]
+
+            backdrop-blur-xl
+
+            mb-5
+          "
           >
-            PROJECT JOURNEY
-          </p>
+
+            <Sparkles
+              size={14}
+              className="text-cyan-400"
+            />
+
+            <span
+              className="
+              text-[10px]
+
+              tracking-[4px]
+
+              text-white/70
+            "
+            >
+              PROJECT JOURNEY
+            </span>
+
+          </div>
 
           <h2
             className="
-            text-4xl
+            text-3xl
             md:text-5xl
 
-            font-semibold
-            "
+            font-black
+
+            leading-tight
+
+            mb-5
+          "
           >
 
-            <span className="gradient-text">
-              Infrastructure Milestones
+            Infrastructure
+
+            <span className="block text-cyan-400 mt-2">
+              Milestones
             </span>
 
           </h2>
 
+          <p
+            className="
+            text-white/55
+
+            text-sm
+            md:text-base
+
+            leading-[1.9]
+
+            max-w-2xl
+
+            mx-auto
+          "
+          >
+            A timeline showcasing KAC Construction’s
+            infrastructure growth, EPC achievements,
+            transmission expertise and nationwide
+            execution capability.
+          </p>
+
         </div>
 
+        {/* ======================================== */}
         {/* TIMELINE */}
+        {/* ======================================== */}
+
         <div className="relative">
 
           {/* CENTER LINE */}
           <div
             className="
-            hidden md:block
+            hidden lg:block
 
             absolute
 
-            left-1/2 top-0
+            left-1/2
+            top-0
 
             -translate-x-1/2
 
             w-[2px]
             h-full
 
-            bg-white/10
-            "
+            bg-gradient-to-b
+            from-cyan-400/10
+            via-cyan-400/40
+            to-transparent
+          "
           />
 
-          {/* MOBILE LINE */}
-          <div
-            className="
-            md:hidden
-
-            absolute
-
-            left-[8px]
-            top-0
-
-            w-[2px]
-            h-full
-
-            bg-white/10
-            "
-          />
-
-          {/* ITEMS */}
-          <div className="space-y-16 md:space-y-20">
+          <div className="space-y-10">
 
             {timelineData.map((item, index) => {
 
-              const isLeft = index % 2 === 0;
+              const isLeft =
+                index % 2 === 0
 
               return (
+
                 <div
                   key={index}
 
                   className="
                   relative
 
-                  flex md:items-center
+                  flex
+                  flex-col
+                  lg:flex-row
+
+                  items-center
                   justify-between
-                  "
+                "
                 >
 
                   {/* LEFT */}
@@ -228,7 +284,7 @@ export default function ProjectTimeline() {
                     <motion.div
                       initial={{
                         opacity: 0,
-                        x: -80,
+                        x: -40,
                       }}
 
                       whileInView={{
@@ -237,7 +293,7 @@ export default function ProjectTimeline() {
                       }}
 
                       transition={{
-                        duration: 0.6,
+                        duration: 0.5,
                       }}
 
                       viewport={{
@@ -245,90 +301,67 @@ export default function ProjectTimeline() {
                       }}
 
                       className="
-                      md:w-[45%]
-
-                      ml-10 md:ml-0
-                      "
+                      w-full
+                      lg:w-[42%]
+                    "
                     >
 
-                      <div
+                      <TimelineCard
+                        item={item}
                         onClick={() =>
                           setActive(item)
                         }
-
-                        className="
-                        glass-strong
-                        border-glow
-
-                        rounded-2xl
-
-                        p-6
-
-                        cursor-pointer
-
-                        hover:scale-[1.02]
-
-                        transition-all duration-500
-                        "
-                      >
-
-                        <h3
-                          className="
-                          text-2xl
-
-                          font-semibold
-
-                          mb-2
-                          "
-                        >
-                          {item.title}
-                        </h3>
-
-                        <p
-                          className="
-                          text-cyan-400
-
-                          font-medium
-
-                          mb-4
-                          "
-                        >
-                          {item.year}
-                        </p>
-
-                        <p className="text-white/70">
-                          {item.desc}
-                        </p>
-
-                      </div>
+                      />
 
                     </motion.div>
 
                   ) : (
-                    <div className="hidden md:block w-[45%]" />
+
+                    <div className="hidden lg:block lg:w-[42%]" />
+
                   )}
 
                   {/* CENTER DOT */}
                   <div
                     className="
-                    absolute
+                    hidden lg:flex
 
-                    md:left-1/2
-                    left-[8px]
+                    relative z-10
 
-                    top-6
+                    items-center
+                    justify-center
+                  "
+                  >
 
-                    md:-translate-x-1/2
+                    <div
+                      className="
+                      relative
 
-                    w-5 h-5
+                      w-4 h-4
 
-                    rounded-full
+                      rounded-full
 
-                    bg-cyan-400
+                      bg-cyan-400
 
-                    shadow-[0_0_20px_rgba(34,211,238,0.8)]
+                      shadow-[0_0_20px_rgba(34,211,238,0.8)]
                     "
-                  />
+                    >
+
+                      <div
+                        className="
+                        absolute inset-0
+
+                        rounded-full
+
+                        animate-ping
+
+                        bg-cyan-400/30
+                      "
+                      />
+
+                    </div>
+
+                  </div>
 
                   {/* RIGHT */}
                   {!isLeft ? (
@@ -336,7 +369,7 @@ export default function ProjectTimeline() {
                     <motion.div
                       initial={{
                         opacity: 0,
-                        x: 80,
+                        x: 40,
                       }}
 
                       whileInView={{
@@ -345,7 +378,7 @@ export default function ProjectTimeline() {
                       }}
 
                       transition={{
-                        duration: 0.6,
+                        duration: 0.5,
                       }}
 
                       viewport={{
@@ -353,71 +386,30 @@ export default function ProjectTimeline() {
                       }}
 
                       className="
-                      md:w-[45%]
-
-                      ml-10 md:ml-0
-                      "
+                      w-full
+                      lg:w-[42%]
+                    "
                     >
 
-                      <div
+                      <TimelineCard
+                        item={item}
                         onClick={() =>
                           setActive(item)
                         }
-
-                        className="
-                        glass-strong
-                        border-glow
-
-                        rounded-2xl
-
-                        p-6
-
-                        cursor-pointer
-
-                        hover:scale-[1.02]
-
-                        transition-all duration-500
-                        "
-                      >
-
-                        <h3
-                          className="
-                          text-2xl
-
-                          font-semibold
-
-                          mb-2
-                          "
-                        >
-                          {item.title}
-                        </h3>
-
-                        <p
-                          className="
-                          text-cyan-400
-
-                          font-medium
-
-                          mb-4
-                          "
-                        >
-                          {item.year}
-                        </p>
-
-                        <p className="text-white/70">
-                          {item.desc}
-                        </p>
-
-                      </div>
+                      />
 
                     </motion.div>
 
                   ) : (
-                    <div className="hidden md:block w-[45%]" />
+
+                    <div className="hidden lg:block lg:w-[42%]" />
+
                   )}
 
                 </div>
-              );
+
+              )
+
             })}
 
           </div>
@@ -426,7 +418,10 @@ export default function ProjectTimeline() {
 
       </div>
 
+      {/* ======================================== */}
       {/* MODAL */}
+      {/* ======================================== */}
+
       <AnimatePresence>
 
         {active && (
@@ -444,50 +439,69 @@ export default function ProjectTimeline() {
               opacity: 0,
             }}
 
+            onClick={() => setActive(null)}
+
             className="
-            fixed inset-0
+      fixed inset-0
 
-            bg-black/70
+      z-[9999]
 
-            backdrop-blur-sm
+      bg-black/80
 
-            z-50
+      backdrop-blur-lg
 
-            flex items-center justify-center
+      flex items-center justify-center
 
-            px-4
-            "
+      px-4
+    "
           >
 
+            {/* CARD */}
             <motion.div
               initial={{
-                scale: 0.85,
                 opacity: 0,
+                scale: 0.9,
+                y: 20,
               }}
 
               animate={{
-                scale: 1,
                 opacity: 1,
+                scale: 1,
+                y: 0,
               }}
 
               exit={{
-                scale: 0.85,
                 opacity: 0,
+                scale: 0.9,
+                y: 20,
               }}
 
+              transition={{
+                duration: 0.3,
+              }}
+
+              onClick={(e) =>
+                e.stopPropagation()
+              }
+
               className="
-              glass-strong
-              border-glow
+        relative
 
-              rounded-3xl
+        overflow-hidden
 
-              max-w-5xl
-              w-full
+        w-full
+        max-w-[500px]
 
-              overflow-hidden
+        rounded-[22px]
 
-              relative
-              "
+        border border-white/10
+
+        bg-[#08101f]/95
+
+        backdrop-blur-3xl
+
+        shadow-[0_0_50px_rgba(34,211,238,0.12)]
+      "
             >
 
               {/* CLOSE */}
@@ -497,87 +511,130 @@ export default function ProjectTimeline() {
                 }
 
                 className="
-                absolute
+          absolute
 
-                top-5 right-5
+          top-3
+          right-3
 
-                z-20
+          z-30
 
-                w-10 h-10
+          w-8 h-8
 
-                rounded-full
+          rounded-full
 
-                bg-white/10
+          border border-white/10
 
-                hover:bg-white/20
+          bg-black/70
 
-                transition
-                "
+          flex items-center justify-center
+
+          text-white
+
+          hover:bg-cyan-400
+          hover:text-black
+
+          transition-all duration-300
+        "
               >
-                ✕
+
+                <X size={15} />
+
               </button>
 
+              {/* IMAGE */}
               <div
                 className="
-                grid md:grid-cols-2
-                "
+          relative
+
+          h-[150px]
+        "
               >
 
-                {/* IMAGE */}
-                <div className="relative h-[300px] md:h-full">
+                <Image
+                  src={active.image}
+                  alt={active.title}
+                  fill
+                  className="object-cover"
+                />
 
-                  <img
-                    src={active.image}
+                {/* OVERLAY */}
+                <div
+                  className="
+            absolute inset-0
 
-                    alt={active.title}
+            bg-gradient-to-t
+            from-[#020617]
+            via-[#020617]/20
+            to-transparent
+          "
+                />
 
-                    className="
-                    w-full h-full
+              </div>
 
-                    object-cover
-                    "
-                  />
+              {/* CONTENT */}
+              <div
+                className="
+          p-4
+          md:p-5
+        "
+              >
+
+                {/* YEAR */}
+                <div
+                  className="
+            inline-flex
+
+            items-center
+            gap-2
+
+            px-3 py-1.5
+
+            rounded-full
+
+            bg-cyan-400/10
+
+            border border-cyan-400/20
+
+            text-cyan-300
+
+            text-[11px]
+
+            mb-3
+          "
+                >
+
+                  <CalendarDays size={12} />
+
+                  Year {active.year}
 
                 </div>
 
-                {/* CONTENT */}
-                <div className="p-8 md:p-10">
+                {/* TITLE */}
+                <h2
+                  className="
+            text-xl
+            md:text-2xl
 
-                  <p
-                    className="
-                    text-cyan-400
+            font-black
 
-                    font-semibold
+            mb-3
+          "
+                >
+                  {active.title}
+                </h2>
 
-                    mb-3
-                    "
-                  >
-                    {active.year}
-                  </p>
+                {/* DESCRIPTION */}
+                <p
+                  className="
+            text-white/70
 
-                  <h2
-                    className="
-                    text-3xl
+            leading-[1.8]
 
-                    font-bold
-
-                    mb-5
-                    "
-                  >
-                    {active.title}
-                  </h2>
-
-                  <p
-                    className="
-                    text-white/70
-
-                    leading-relaxed
-                    "
-                  >
-                    {active.desc}
-                  </p>
-
-                </div>
+            text-sm
+          "
+                >
+                  {active.desc}
+                </p>
 
               </div>
 
@@ -590,5 +647,230 @@ export default function ProjectTimeline() {
       </AnimatePresence>
 
     </section>
-  );
+
+  )
+
+}
+
+/* ======================================== */
+/* CARD */
+/* ======================================== */
+
+function TimelineCard({
+  item,
+  onClick,
+}: any) {
+
+  return (
+
+    <motion.div
+
+      whileHover={{
+        y: -6,
+        scale: 1.01,
+      }}
+
+      transition={{
+        duration: 0.3,
+      }}
+
+      onClick={onClick}
+
+      className="
+      group
+
+      relative
+
+      overflow-hidden
+
+      rounded-[22px]
+
+      border border-white/10
+
+      bg-white/[0.03]
+
+      backdrop-blur-2xl
+
+      p-4
+
+      cursor-pointer
+
+      hover:border-cyan-400/20
+
+      hover:shadow-[0_15px_40px_rgba(0,0,0,0.4)]
+
+      transition-all duration-500
+    "
+    >
+
+      {/* GLOW */}
+      <div
+        className="
+        absolute inset-0
+
+        opacity-0
+
+        group-hover:opacity-100
+
+        transition duration-500
+
+        bg-gradient-to-br
+        from-cyan-500/10
+        via-transparent
+        to-blue-500/10
+      "
+      />
+
+      {/* IMAGE */}
+      <div
+        className="
+        relative
+
+        w-full
+        h-[170px]
+
+        rounded-[18px]
+
+        overflow-hidden
+
+        mb-5
+      "
+      >
+
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className="
+          object-cover
+
+          group-hover:scale-110
+
+          transition duration-700
+        "
+        />
+
+        {/* OVERLAY */}
+        <div
+          className="
+          absolute inset-0
+
+          bg-gradient-to-t
+          from-[#020617]
+          via-[#020617]/20
+          to-transparent
+        "
+        />
+
+        {/* YEAR */}
+        <div
+          className="
+          absolute
+
+          top-4
+          left-4
+
+          inline-flex
+
+          items-center
+          gap-2
+
+          px-3 py-2
+
+          rounded-full
+
+          bg-black/60
+
+          backdrop-blur-xl
+
+          border border-white/10
+
+          text-cyan-300
+
+          text-xs
+        "
+        >
+
+          <CalendarDays size={13} />
+
+          {item.year}
+
+        </div>
+
+      </div>
+
+      {/* TITLE */}
+      <h3
+        className="
+        text-xl
+
+        font-bold
+
+        mb-3
+
+        group-hover:text-cyan-300
+
+        transition
+      "
+      >
+        {item.title}
+      </h3>
+
+      {/* DESC */}
+      <p
+        className="
+        text-white/65
+
+        leading-[1.8]
+
+        text-sm
+
+        mb-5
+      "
+      >
+        {item.desc}
+      </p>
+
+      {/* FOOTER */}
+      <div
+        className="
+        flex
+        items-center
+        justify-between
+      "
+      >
+
+        <span
+          className="
+          text-[10px]
+
+          tracking-[3px]
+
+          text-white/30
+        "
+        >
+          VIEW DETAILS
+        </span>
+
+        <ArrowUpRight
+          size={18}
+
+          className="
+          text-white/30
+
+          group-hover:text-cyan-300
+
+          group-hover:translate-x-1
+          group-hover:-translate-y-1
+
+          transition-all duration-500
+        "
+        />
+
+      </div>
+
+    </motion.div>
+
+  )
+
 }
