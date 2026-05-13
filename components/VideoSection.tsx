@@ -237,7 +237,7 @@ export default function VideoSection() {
         "
         >
 
-          KAC Construction delivers
+          Kuddus Ali Construction delivers
           high-voltage transmission
           infrastructure with reliable
           execution, safety compliance

@@ -295,7 +295,7 @@ export default function CTASection() {
             "
             >
 
-              KAC Construction delivers
+              Kuddus Ali Construction delivers
               reliable transmission line
               infrastructure solutions with
               engineering precision, safety,

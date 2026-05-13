@@ -244,7 +244,7 @@ export default function ClientsSection() {
             leading-[2]
           "
           >
-            KAC Construction proudly collaborates
+            Kuddus Ali Construction proudly collaborates
             with leading infrastructure,
             transmission and EPC companies
             delivering reliable execution across

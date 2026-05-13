@@ -272,7 +272,7 @@ export default function ServicesSection() {
           "
           >
 
-            KAC Construction delivers advanced
+            Kuddus Ali Construction delivers advanced
             transmission infrastructure solutions
             with precision execution, experienced
             engineering teams and reliable project

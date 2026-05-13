@@ -601,7 +601,7 @@ export default function AboutSection() {
               {/* IMAGE */}
               <img
                 src="/placeholder.jpg"
-                alt="KAC Construction"
+                alt="Kuddus Ali Construction"
 
                 className="
                 w-full

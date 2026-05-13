@@ -254,7 +254,7 @@ export default function Footer() {
                 text-white/80
               "
               >
-                KAC CONSTRUCTION
+                Kuddus Ali Construction
               </span>
 
             </div>
@@ -290,7 +290,7 @@ export default function Footer() {
             "
             >
 
-              KAC Construction specializes in
+              Kuddus Ali Construction specializes in
               transmission infrastructure,
               tower erection, foundation
               execution, hotline stringing and
@@ -407,7 +407,7 @@ export default function Footer() {
               <div>
 
                 <h2 className="text-3xl font-black">
-                  KAC Construction
+                  Kuddus Ali Construction
                 </h2>
 
                 <p className="text-sm text-gray-400">
@@ -883,7 +883,7 @@ export default function Footer() {
             md:text-left
           "
           >
-            © 2026 KAC Construction. All Rights Reserved.
+            © 2026 K Construction. All Rights Reserved.
           </p>
 
           {/* CREDIT */}

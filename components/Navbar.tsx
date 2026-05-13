@@ -258,7 +258,7 @@ export default function Navbar() {
 
           <Image
             src="/LOGO 1.png"
-            alt="KAC Construction"
+            alt="Kuddus Ali Construction"
 
             width={72}
             height={72}

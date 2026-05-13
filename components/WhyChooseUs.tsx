@@ -60,7 +60,7 @@ const features = [
     title: "Trusted Infrastructure Partner",
 
     desc:
-      "KAC Construction is trusted for transmission line and power infrastructure execution with a reputation built on performance.",
+      "Kuddus Ali Construction is trusted for transmission line and power infrastructure execution with a reputation built on performance.",
 
     icon: <FaCheckCircle />,
 
@@ -219,7 +219,7 @@ export default function WhyChooseUs() {
 
             <Sparkles size={14} />
 
-            Why KAC Construction
+            Why Kuddus Ali Construction
 
           </div>
 
@@ -274,7 +274,7 @@ export default function WhyChooseUs() {
           "
           >
 
-            KAC Construction delivers dependable
+            Kuddus Ali Construction delivers dependable
             transmission infrastructure solutions
             with technical expertise, field
             experience and a commitment to

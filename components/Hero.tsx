@@ -183,7 +183,7 @@ export default function Hero() {
     text-transparent
   "
           >
-            KAC CONSTRUCTION
+            KUDDUS ALI CONSTRUCTION
           </span>
 
           {/* 🔥 MAIN TEXT */}
@@ -207,7 +207,7 @@ export default function Hero() {
     drop-shadow-[0_0_35px_rgba(34,211,238,0.45)]
   "
           >
-            KAC CONSTRUCTION
+            KUDDUS ALI CONSTRUCTION
           </span>
 
         </motion.h1>

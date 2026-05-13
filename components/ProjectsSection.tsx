@@ -247,7 +247,8 @@ export default function ProjectsSection() {
             leading-[2]
           "
           >
-            Delivering transmission line,
+            Kuddus Ali Construction delivers
+            transmission line,
             tower erection, HTLS reconductoring
             and hotline stringing projects with
             engineering precision, operational

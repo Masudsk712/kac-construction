@@ -35,15 +35,15 @@ const oswald = Oswald({
 
 export const metadata: Metadata = {
   title: {
-    default: "KAC Construction",
-    template: "%s | KAC Construction",
+    default: "Kuddus Ali Construction",
+    template: "%s | Kuddus Ali Construction",
   },
 
   description:
-    "KAC Construction delivers premium EPC infrastructure solutions including transmission line, tower erection, foundation work, hotline stringing, HTLS reconductoring and power grid projects across India.",
+    "Kuddus Ali Construction delivers premium EPC infrastructure solutions including transmission line, tower erection, foundation work, hotline stringing, HTLS reconductoring and power grid projects across India.",
 
   keywords: [
-    "KAC Construction",
+    "Kuddus Ali Construction",
     "Transmission Line",
     "Tower Erection",
     "Power Grid",
@@ -56,22 +56,22 @@ export const metadata: Metadata = {
 
   authors: [
     {
-      name: "KAC Construction",
+      name: "Kuddus Ali Construction",
     },
   ],
 
-  creator: "KAC Construction",
+  creator: "Kuddus Ali Construction",
 
   metadataBase: new URL("https://kacconstruction.com"),
 
   openGraph: {
-    title: "KAC Construction",
+    title: "Kuddus Ali Construction",
     description:
       "Premium EPC infrastructure company delivering transmission, erection, foundation and power grid solutions across India.",
 
     url: "https://kacconstruction.com",
 
-    siteName: "KAC Construction",
+    siteName: "Kuddus Ali Construction",
 
     locale: "en_IN",
 
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
         url: "/LOGO 1.png",
         width: 1200,
         height: 630,
-        alt: "KAC Construction",
+        alt: "Kuddus Ali Construction",
       },
     ],
   },
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "KAC Construction",
+    title: "Kuddus Ali Construction",
 
     description:
       "Premium EPC infrastructure company delivering transmission and power solutions.",

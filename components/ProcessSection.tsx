@@ -265,7 +265,7 @@ export default function ProcessSection() {
           "
           >
 
-            KAC Construction follows a structured
+            Kuddus Ali Construction follows a structured
             engineering workflow ensuring precision,
             safety, timely delivery and long-term
             reliability across every infrastructure

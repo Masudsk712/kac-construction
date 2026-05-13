@@ -361,7 +361,7 @@ export default function IndiaMapSection() {
             leading-[2]
           "
           >
-            KAC Construction executes
+            Kuddus Ali Construction executes
             transmission infrastructure
             projects across multiple states
             with precision engineering,
