@@ -22,7 +22,7 @@ const services = [
     desc:
       "Preliminary, detailed and check survey services with route optimization and accurate transmission line planning.",
 
-    image: "/placeholder.jpg",
+    image: "/home/SurveyWork.webp",
 
     link: "/service#survey",
 
@@ -35,7 +35,7 @@ const services = [
     desc:
       "Precision-engineered civil foundation execution ensuring long-term tower strength and structural reliability.",
 
-    image: "/placeholder.jpg",
+    image: "/home/FoundationWork.webp",
 
     link: "/service#foundation",
 
@@ -48,7 +48,7 @@ const services = [
     desc:
       "Safe and efficient erection of transmission towers using advanced methodologies and experienced site teams.",
 
-    image: "/placeholder.jpg",
+    image: "/home/ErectionWork.webp",
 
     link: "/service#erection",
 
@@ -61,7 +61,7 @@ const services = [
     desc:
       "High-capacity conductor stringing and hotline execution with modern machinery and strict safety compliance.",
 
-    image: "/placeholder.jpg",
+    image: "/home/StringingWork.webp",
 
     link: "/service#stringing",
 

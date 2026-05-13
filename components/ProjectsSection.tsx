@@ -33,7 +33,7 @@ const projects = [
 
     icon: <TowerControl size={22} />,
 
-    image: "/placeholder.jpg",
+    image: "/home/HomeTower1.webp",
 
     href: "/projects#completed",
   },
@@ -52,7 +52,7 @@ const projects = [
 
     icon: <Zap size={22} />,
 
-    image: "/placeholder.jpg",
+    image: "/home/HomeTower2.webp",
 
     href: "/projects#htls",
   },
@@ -71,7 +71,7 @@ const projects = [
 
     icon: <Wrench size={22} />,
 
-    image: "/placeholder.jpg",
+    image: "/home/HomeTower3.webp",
 
     href: "/projects#strengthening",
   },
@@ -90,7 +90,7 @@ const projects = [
 
     icon: <Activity size={22} />,
 
-    image: "/placeholder.jpg",
+    image: "/home/ReconductoringWork.webp",
 
     href: "/projects#stringing",
   },

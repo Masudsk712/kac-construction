@@ -561,41 +561,41 @@ export default function AboutSection() {
             }}
 
             className="
-            relative
-          "
+      relative
+    "
           >
 
             {/* OUTER LIGHT */}
             <div
               className="
-              absolute inset-0
+        absolute inset-0
 
-              bg-gradient-to-r
-              from-cyan-500/10
-              to-blue-500/10
+        bg-gradient-to-r
+        from-cyan-500/10
+        to-blue-500/10
 
-              blur-[100px]
+        blur-[100px]
 
-              rounded-[40px]
-            "
+        rounded-[40px]
+      "
             />
 
             {/* IMAGE WRAPPER */}
             <div
               className="
-              relative
+        relative
 
-              overflow-hidden
+        overflow-hidden
 
-              rounded-[36px]
+        rounded-[32px]
 
-              border border-white/10
+        border border-white/10
 
-              bg-white/[0.04]
-              backdrop-blur-2xl
+        bg-white/[0.04]
+        backdrop-blur-2xl
 
-              shadow-[0_20px_80px_rgba(0,0,0,0.45)]
-            "
+        shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+      "
             >
 
               {/* IMAGE */}
@@ -604,29 +604,30 @@ export default function AboutSection() {
                 alt="Kuddus Ali Construction"
 
                 className="
-                w-full
+          w-full
 
-                h-[320px]
-                md:h-[620px]
+          h-[420px]
+          sm:h-[520px]
+          md:h-[620px]
 
-                object-cover
+          object-cover
 
-                transition duration-700
+          transition duration-700
 
-                hover:scale-105
-              "
+          hover:scale-105
+        "
               />
 
               {/* OVERLAY */}
               <div
                 className="
-                absolute inset-0
+          absolute inset-0
 
-                bg-gradient-to-t
-                from-[#020617]/80
-                via-[#020617]/10
-                to-transparent
-              "
+          bg-gradient-to-t
+          from-[#020617]/70
+          via-[#020617]/5
+          to-transparent
+        "
               />
 
               {/* FLOATING INFO */}
@@ -651,78 +652,122 @@ export default function AboutSection() {
                 }}
 
                 className="
-                absolute
-                bottom-5
-                left-5
-                right-5
+    absolute
 
-                p-6
+    bottom-3
+    left-1/2
 
-                rounded-3xl
+    -translate-x-1/2
 
-                border border-white/10
+    w-[84%]
 
-                bg-black/30
-                backdrop-blur-2xl
-              "
+    px-4
+    py-3
+
+    sm:px-5
+    sm:py-4
+
+    rounded-2xl
+
+    border border-white/10
+
+    bg-black/35
+    backdrop-blur-2xl
+
+    shadow-[0_8px_30px_rgba(0,0,0,0.35)]
+  "
               >
 
                 <div
                   className="
-                  flex items-center
-                  justify-between
+      flex items-center justify-between
 
-                  gap-5
-                "
+      gap-3
+    "
                 >
 
-                  <div>
+                  {/* LEFT */}
+                  <div className="flex-1">
 
                     <h3
                       className="
-                      text-3xl
-                      font-black
+          text-xl
+          sm:text-2xl
 
-                      text-cyan-300
+          font-black
 
-                      mb-2
-                    "
+          text-cyan-300
+
+          leading-none
+
+          mb-1
+        "
                     >
                       15+
                     </h3>
 
-                    <p className="text-white/70">
-                      Years of Industry Experience
+                    <p
+                      className="
+          text-[10px]
+          sm:text-xs
+
+          leading-[1.4]
+
+          text-white/65
+        "
+                    >
+                      Years of
+                      <br />
+                      Experience
                     </p>
 
                   </div>
 
+                  {/* DIVIDER */}
                   <div
                     className="
-                    w-px
-                    h-16
+        w-px
 
-                    bg-white/10
-                  "
+        h-9
+        sm:h-10
+
+        bg-white/10
+      "
                   />
 
-                  <div>
+                  {/* RIGHT */}
+                  <div className="flex-1">
 
                     <h3
                       className="
-                      text-3xl
-                      font-black
+          text-xl
+          sm:text-2xl
 
-                      text-cyan-300
+          font-black
 
-                      mb-2
-                    "
+          text-cyan-300
+
+          leading-none
+
+          mb-1
+        "
                     >
                       765kV
                     </h3>
 
-                    <p className="text-white/70">
-                      Transmission Expertise
+                    <p
+                      className="
+          text-[10px]
+          sm:text-xs
+
+          leading-[1.4]
+
+          text-white/65
+        "
+                    >
+                      Transmission
+                      <br />
+                      Expertise
                     </p>
 
                   </div>
