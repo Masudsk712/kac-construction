@@ -1,4 +1,24 @@
 "use client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Services",
+
+  description:
+    "Explore professional transmission line, tower erection, foundation work, hotline stringing and EPC infrastructure services by Kuddus Ali Construction.",
+
+  keywords: [
+    "Transmission Line Services",
+    "Tower Erection Services",
+    "Foundation Work Contractor",
+    "Power Grid Infrastructure",
+    "EPC Infrastructure Services",
+  ],
+
+  alternates: {
+    canonical: "https://kacgroups.com/service",
+  },
+};
 
 import ServiceHero from "./components/ServiceHero";
 import ServiceStickyTabs from "./components/ServiceStickyTabs";

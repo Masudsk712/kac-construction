@@ -1,4 +1,23 @@
 "use client"
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+
+  description:
+    "Learn more about Kuddus Ali Construction, a trusted EPC infrastructure and transmission line company based in Malda, West Bengal, India.",
+
+  keywords: [
+    "About Kuddus Ali Construction",
+    "Transmission Company India",
+    "Infrastructure Company West Bengal",
+    "Power Grid Contractor",
+  ],
+
+  alternates: {
+    canonical: "https://kacgroups.com/about",
+  },
+};
 
 import Hero from "./components/Hero"
 import StickyTabs from "./components/StickyTabs"

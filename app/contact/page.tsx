@@ -1,4 +1,23 @@
 "use client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+
+  description:
+    "Contact Kuddus Ali Construction for transmission line, tower erection, foundation and EPC infrastructure projects across India.",
+
+  keywords: [
+    "Contact Kuddus Ali Construction",
+    "Transmission Line Contractor",
+    "Power Infrastructure Contact",
+    "EPC Infrastructure Company",
+  ],
+
+  alternates: {
+    canonical: "https://kacgroups.com/contact",
+  },
+};
 
 import { motion } from "framer-motion";
 

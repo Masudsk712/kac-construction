@@ -1,4 +1,23 @@
 "use client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Career",
+
+  description:
+    "Join Kuddus Ali Construction and build your career in transmission line, tower erection and EPC infrastructure projects.",
+
+  keywords: [
+    "Construction Jobs India",
+    "Transmission Line Career",
+    "Tower Erection Jobs",
+    "Infrastructure Company Careers",
+  ],
+
+  alternates: {
+    canonical: "https://kacgroups.com/career",
+  },
+};
 
 import { motion } from "framer-motion";
 
