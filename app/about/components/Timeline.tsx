@@ -20,7 +20,7 @@ const timelineData = [
   {
     year: "2008",
     title: "Founded",
-    desc: "KAC Construction was founded with a vision to build strong infrastructure across India.",
+    desc: "Kuddus Ali Construction was founded with a vision to build strong infrastructure across India.",
     image: "/placeholder.jpg",
   },
 
@@ -197,7 +197,7 @@ export default function Timeline() {
             mx-auto
           "
           >
-            A timeline showcasing KAC Construction’s
+            A timeline showcasing Kuddus Ali Construction’s
             growth, achievements, and infrastructure
             excellence across India.
           </p>

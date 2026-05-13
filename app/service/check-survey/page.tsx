@@ -35,7 +35,7 @@ const process = [
       "Initial transmission corridor identification based on terrain, accessibility and project requirements.",
 
     extra:
-      "KAC Construction performs route identification using advanced mapping systems, feasibility checks and terrain analysis to optimize transmission line alignment and execution efficiency.",
+      "Kuddus Ali Construction performs route identification using advanced mapping systems, feasibility checks and terrain analysis to optimize transmission line alignment and execution efficiency.",
 
     icon: <Route size={28} />,
   },
@@ -300,7 +300,7 @@ export default function PreliminarySurveyPage() {
               mb-10
             "
             >
-              KAC Construction delivers advanced
+              Kuddus Ali Construction delivers advanced
               preliminary survey services for
               transmission infrastructure projects
               with precise route alignment and

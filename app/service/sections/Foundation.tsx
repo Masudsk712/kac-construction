@@ -350,7 +350,7 @@ export default function Foundation() {
               mb-12
               "
             >
-              KAC Construction specializes in robust
+              Kuddus Ali Construction specializes in robust
               transmission tower foundation works
               designed to withstand diverse terrain
               and environmental conditions while

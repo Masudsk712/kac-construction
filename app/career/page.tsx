@@ -271,7 +271,7 @@ export default function CareerPage() {
               text-cyan-200
             "
             >
-              JOIN KAC CONSTRUCTION
+              JOIN KUDDUS ALI CONSTRUCTION
             </span>
 
           </motion.div>
@@ -802,7 +802,7 @@ export default function CareerPage() {
                 </h2>
 
                 <p className="text-white/50 mt-2">
-                  Explore available vacancies at KAC Construction
+                  Explore available vacancies at Kuddus Ali Construction
                 </p>
 
               </div>

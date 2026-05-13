@@ -34,7 +34,7 @@ const projects = [
       "Successfully completed ultra high-voltage transmission infrastructure project with timely execution and engineering excellence.",
 
     details:
-      "KAC Construction executed complete transmission infrastructure including tower foundation, erection and stringing operations with advanced engineering planning and safety compliance.",
+      "Kuddus Ali Construction executed complete transmission infrastructure including tower foundation, erection and stringing operations with advanced engineering planning and safety compliance.",
   },
 
   {

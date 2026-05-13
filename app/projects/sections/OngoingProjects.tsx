@@ -34,7 +34,7 @@ const projects = [
       "Ultra high-voltage transmission infrastructure project executed with precision engineering and EPC excellence.",
 
     details:
-      "KAC Construction is actively executing ultra high-voltage transmission infrastructure including foundation, erection, stringing and EPC operations with advanced engineering and strict safety compliance.",
+      "Kuddus Ali Construction is actively executing ultra high-voltage transmission infrastructure including foundation, erection, stringing and EPC operations with advanced engineering and strict safety compliance.",
   },
 
   {

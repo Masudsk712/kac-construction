@@ -87,7 +87,7 @@ export default function DetailedSurveyPage() {
             </h1>
 
             <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mb-10">
-              KAC Construction delivers high-accuracy detailed survey
+              Kuddus Ali Construction delivers high-accuracy detailed survey
               services with advanced data collection, route profiling
               and engineering validation for transmission infrastructure.
             </p>

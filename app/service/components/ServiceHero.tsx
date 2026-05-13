@@ -227,7 +227,7 @@ export default function ServiceHero() {
             text-white/80
           "
           >
-            KAC EPC SERVICES
+            KUDDUS ALI CONSTRUCTION EPC SERVICES
           </span>
 
         </motion.div>
@@ -351,7 +351,7 @@ export default function ServiceHero() {
               max-w-2xl
             "
             >
-              KAC Construction delivers premium EPC
+              Kuddus Ali Construction delivers premium EPC
               infrastructure solutions across transmission,
               tower foundation, erection, and stringing
               services with engineering precision,
@@ -494,7 +494,7 @@ export default function ServiceHero() {
 
                 <Image
                   src="/placeholder.jpg"
-                  alt="KAC Services"
+                  alt="Kuddus Ali Construction Services"
                   fill
 
                   className="

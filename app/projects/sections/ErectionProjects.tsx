@@ -216,7 +216,7 @@ export default function ErectionProjects() {
           "
           >
 
-            KAC Construction delivers
+            Kuddus Ali Construction delivers
             advanced transmission tower
             erection services with precision
             engineering, structural accuracy

@@ -216,7 +216,7 @@ export default function StringingProjects() {
           "
           >
 
-            KAC Construction delivers
+            Kuddus Ali Construction delivers
             high-performance transmission
             stringing execution using
             advanced machinery, precision

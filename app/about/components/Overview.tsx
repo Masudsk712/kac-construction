@@ -19,7 +19,7 @@ export default function Overview() {
         <div className="glass-strong border-glow rounded-2xl p-8">
 
           <p className="text-sm tracking-widest text-white/60 mb-3">
-            KAC CONSTRUCTION
+            KUDDUS ALI CONSTRUCTION
           </p>
 
           <h2 className="text-4xl md:text-5xl font-semibold leading-tight mb-6">
@@ -31,7 +31,7 @@ export default function Overview() {
           </h2>
 
           <p className="text-white/70 leading-relaxed mb-4">
-            KAC stands as one of the fast-growing Indian Engineering,
+            Kuddus Ali Construction stands as one of the fast-growing Indian Engineering,
             Procurement and Construction (EPC) companies, focusing on
             delivering reliable and scalable infrastructure solutions.
           </p>
@@ -91,7 +91,7 @@ export default function Overview() {
         <div className="glass-strong border-glow rounded-2xl p-8">
 
           <h3 className="text-xl md:text-2xl font-semibold mb-4">
-            At KAC, our commitment goes beyond mere operations
+            At Kuddus Ali Construction, our commitment goes beyond mere operations
           </h3>
 
           <p className="text-white/70 leading-relaxed mb-4">
@@ -101,7 +101,7 @@ export default function Overview() {
           </p>
 
           <p className="text-white/70 leading-relaxed mb-4">
-            With a strong focus on quality and efficiency, KAC continues
+            With a strong focus on quality and efficiency, Kuddus Ali Construction continues
             to contribute to transforming India's infrastructure landscape
             and empowering communities nationwide.
           </p>

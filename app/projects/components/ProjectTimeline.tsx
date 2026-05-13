@@ -21,7 +21,7 @@ const timelineData = [
     year: "2010",
     title: "Foundation Projects Started",
     desc:
-      "KAC Construction initiated transmission tower foundation execution across multiple regions in India.",
+      "Kuddus Ali Construction initiated transmission tower foundation execution across multiple regions in India.",
 
     image: "/placeholder.jpg",
   },
@@ -218,7 +218,7 @@ export default function ProjectTimeline() {
             mx-auto
           "
           >
-            A timeline showcasing KAC Construction’s
+            A timeline showcasing Kuddus Ali Construction’s
             infrastructure growth, EPC achievements,
             transmission expertise and nationwide
             execution capability.

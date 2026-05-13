@@ -25,7 +25,7 @@ const leadershipData = [
     dept: "Chairman",
     image: "/placeholder.jpg",
     description:
-      "Leading KAC Construction with long-term vision, infrastructure excellence, operational growth, and sustainable engineering innovation across India.",
+      "Leading Kuddus Ali Construction with long-term vision, infrastructure excellence, operational growth, and sustainable engineering innovation across India.",
   },
 
   {
@@ -375,7 +375,7 @@ export default function Leadership() {
           "
           >
             Explore the leadership structure powering
-            KAC Construction’s infrastructure excellence.
+            Kuddus Ali Construction’s infrastructure excellence.
           </p>
 
         </motion.div>

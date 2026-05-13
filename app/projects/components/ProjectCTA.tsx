@@ -232,7 +232,7 @@ export default function ProjectCTA() {
                 text-cyan-200
               "
               >
-                BUILD THE FUTURE WITH KAC
+                BUILD THE FUTURE WITH KUDDUS ALI CONSTRUCTION
               </span>
 
             </motion.div>
@@ -322,7 +322,7 @@ export default function ProjectCTA() {
                 "
                 >
 
-                  Partner with KAC Construction
+                  Partner with Kuddus Ali Construction
                   for reliable EPC infrastructure,
                   transmission, tower erection,
                   hotline maintenance and

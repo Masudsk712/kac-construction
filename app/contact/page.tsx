@@ -246,7 +246,7 @@ export default function ContactPage() {
               text-cyan-200
             "
             >
-              CONTACT KAC CONSTRUCTION
+              CONTACT KUDDUS ALI CONSTRUCTION
             </span>
 
           </motion.div>
@@ -369,7 +369,7 @@ export default function ContactPage() {
               "
               >
 
-                Reach out to KAC Construction for
+                Reach out to Kuddus Ali Construction for
                 transmission line, tower erection,
                 stringing, foundation, EPC infrastructure
                 and high-voltage power projects across India.
@@ -860,7 +860,7 @@ export default function ContactPage() {
                     <div>
 
                       <h3 className="text-2xl font-black">
-                        KAC Construction
+                        Kuddus Ali Construction
                       </h3>
 
                       <p className="text-white/50 text-sm mt-1">

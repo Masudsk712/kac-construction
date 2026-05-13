@@ -183,7 +183,7 @@ export default function Hero() {
             text-white/80
           "
           >
-            ABOUT KAC CONSTRUCTION
+            ABOUT KUDDUS ALI CONSTRUCTION
           </span>
 
         </motion.div>
@@ -302,7 +302,7 @@ export default function Hero() {
           "
           >
 
-            KAC Construction delivers high-performance
+            Kuddus Ali Construction delivers high-performance
             transmission infrastructure solutions including
             tower foundation, erection, hotline stringing,
             HTLS reconductoring and EPC execution projects

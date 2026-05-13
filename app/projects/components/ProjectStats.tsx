@@ -234,7 +234,7 @@ export default function ProjectStats() {
             mx-auto
           "
           >
-            KAC Construction continues delivering
+            Kuddus Ali Construction continues delivering
             high-performance transmission
             infrastructure projects across India
             with engineering precision, reliability

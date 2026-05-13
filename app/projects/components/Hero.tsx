@@ -341,7 +341,7 @@ export default function Hero() {
             "
             >
 
-              KAC Construction delivers
+              Kuddus Ali Construction delivers
               high-performance transmission
               infrastructure projects including
               tower foundation, erection,

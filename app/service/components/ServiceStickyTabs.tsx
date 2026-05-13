@@ -317,7 +317,7 @@ export default function ServiceStickyTabs() {
                 text-white/80
               "
               >
-                KAC SOLUTIONS
+                KUDDUS ALI CONSTRUCTION SOLUTIONS
               </h3>
 
             </div>

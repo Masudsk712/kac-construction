@@ -28,7 +28,7 @@ const awards = [
       "Faster Completion Project Award by PGCIL – MD",
 
     description:
-      "KAC Construction was appreciated for completing multiple high-voltage transmission projects ahead of schedule with exceptional execution quality.",
+      "Kuddus Ali Construction was appreciated for completing multiple high-voltage transmission projects ahead of schedule with exceptional execution quality.",
 
     image: "/placeholder.jpg",
 
@@ -312,7 +312,7 @@ export default function Awards() {
             mx-auto
           "
           >
-            KAC Construction continues to earn
+            Kuddus Ali Construction continues to earn
             recognition for engineering excellence,
             infrastructure leadership, project execution,
             and operational performance.

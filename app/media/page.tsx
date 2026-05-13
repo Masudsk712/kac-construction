@@ -25,7 +25,7 @@ const featuredSlides = [
     title: "765kV Transmission Line Project",
     subtitle: "Powering India’s Grid Infrastructure",
     desc:
-      "KAC Construction successfully executing high-voltage transmission line projects with advanced engineering and precision.",
+      "Kuddus Ali Construction successfully executing high-voltage transmission line projects with advanced engineering and precision.",
     image: "/placeholder.jpg",
   },
 
@@ -747,7 +747,7 @@ export default function MediaPage() {
 
                       <Building2 size={18} />
 
-                      KAC Construction Infrastructure Division
+                      Kuddus Ali Construction Infrastructure Division
 
                     </div>
 

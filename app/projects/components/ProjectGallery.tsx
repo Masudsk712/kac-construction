@@ -209,7 +209,7 @@ export default function ProjectGallery() {
             mt-6
           "
           >
-            Showcasing KAC Construction’s
+            Showcasing Kuddus Ali Construction’s
             transmission infrastructure,
             tower erection, hotline and EPC
             execution projects nationwide.
@@ -660,7 +660,7 @@ export default function ProjectGallery() {
                 "
                 >
 
-                  KAC Construction continues
+                  Kuddus Ali Construction continues
                   delivering advanced
                   transmission infrastructure,
                   tower erection and EPC

@@ -366,7 +366,7 @@ export default function MDMessage() {
                 >
 
                   <p className="text-white/50 text-sm">
-                    KAC Construction
+                    Kuddus Ali Construction
                   </p>
 
                   <ArrowUpRight
@@ -539,7 +539,7 @@ export default function MDMessage() {
                 mb-6
               "
               >
-                At KAC Construction, we are committed
+                At Kuddus Ali Construction, we are committed
                 to delivering excellence in every
                 project we undertake. Our focus remains
                 on quality, safety, innovation, and

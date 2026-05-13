@@ -400,7 +400,7 @@ export default function HotlineProjects() {
           "
           >
 
-            KAC Construction specializes
+            Kuddus Ali Construction specializes
             in hotline maintenance and
             live-line transmission services
             ensuring uninterrupted power

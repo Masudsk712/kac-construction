@@ -400,7 +400,7 @@ export default function FoundationProjects() {
           "
           >
 
-            KAC Construction delivers
+            Kuddus Ali Construction delivers
             high-performance transmission
             tower foundation projects
             engineered for structural

@@ -498,7 +498,7 @@ export default function Erection() {
               mb-12
               "
             >
-              KAC Construction delivers reliable
+              Kuddus Ali Construction delivers reliable
               and large-scale tower erection
               solutions with unmatched execution
               expertise, safety standards, and

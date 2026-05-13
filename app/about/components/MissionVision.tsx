@@ -256,7 +256,7 @@ export default function MissionVision() {
             mx-auto
           "
           >
-            KAC Construction is committed to delivering
+            Kuddus Ali Construction is committed to delivering
             reliable, innovative, and future-ready
             infrastructure solutions with unmatched
             execution standards across India.

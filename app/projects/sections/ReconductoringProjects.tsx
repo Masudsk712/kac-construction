@@ -217,7 +217,7 @@ export default function ReconductoringProjects() {
           "
           >
 
-            KAC Construction delivers
+            Kuddus Ali Construction delivers
             high-performance HTLS
             reconductoring solutions
             designed to enhance power

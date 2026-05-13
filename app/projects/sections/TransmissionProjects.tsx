@@ -37,7 +37,7 @@ const projects = [
       "Large-scale ultra high-voltage transmission infrastructure executed with engineering precision and operational excellence.",
 
     details:
-      "KAC Construction successfully executed large-scale 765kV transmission corridor infrastructure with advanced engineering planning, tower erection, conductor stringing and operational safety compliance across challenging project environments.",
+      "Kuddus Ali Construction successfully executed large-scale 765kV transmission corridor infrastructure with advanced engineering planning, tower erection, conductor stringing and operational safety compliance across challenging project environments.",
   },
 
   {
@@ -257,7 +257,7 @@ export default function TransmissionProjects() {
           "
           >
 
-            KAC Construction continues
+            Kuddus Ali Construction continues
             to deliver large-scale
             transmission infrastructure
             projects supporting India's

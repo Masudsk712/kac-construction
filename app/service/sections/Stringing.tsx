@@ -504,7 +504,7 @@ export default function Stringing() {
               mb-12
               "
             >
-              KAC Construction provides advanced
+              Kuddus Ali Construction provides advanced
               stringing solutions for high-voltage
               transmission projects with precision
               engineering, modern equipment, and

@@ -91,7 +91,7 @@ export default function PreliminarySurveyPage() {
             </h1>
 
             <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mb-10">
-              KAC Construction provides advanced preliminary survey
+              Kuddus Ali Construction provides advanced preliminary survey
               solutions for transmission line infrastructure projects,
               ensuring optimized route alignment, terrain analysis and
               engineering feasibility before execution.

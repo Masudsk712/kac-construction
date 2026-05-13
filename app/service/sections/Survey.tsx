@@ -566,7 +566,7 @@ export default function Survey() {
               mb-10
               "
             >
-              KAC Construction delivers high-precision
+              Kuddus Ali Construction delivers high-precision
               survey services for transmission line
               infrastructure projects across India.
             </p>
