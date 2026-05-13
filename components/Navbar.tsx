@@ -257,7 +257,7 @@ export default function Navbar() {
         >
 
           <Image
-            src="/LOGO 1.png"
+            src="/icon.png"
             alt="Kuddus Ali Construction"
 
             width={72}
@@ -895,7 +895,7 @@ export default function Navbar() {
             >
 
               <Image
-                src="/LOGO 1.png"
+                src="/icon.png"
                 alt="KAC"
 
                 width={70}
