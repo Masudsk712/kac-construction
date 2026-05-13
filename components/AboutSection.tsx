@@ -600,7 +600,7 @@ export default function AboutSection() {
 
               {/* IMAGE */}
               <img
-                src="/placeholder.jpg"
+                src="/home/SitePic.webp"
                 alt="Kuddus Ali Construction"
 
                 className="
