@@ -1,24 +1,4 @@
 "use client";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Projects",
-
-  description:
-    "View completed and ongoing transmission line, power grid and EPC infrastructure projects by Kuddus Ali Construction across India.",
-
-  keywords: [
-    "Transmission Projects India",
-    "Power Grid Projects",
-    "Tower Erection Projects",
-    "Infrastructure Projects",
-  ],
-
-  alternates: {
-    canonical: "https://kacgroups.com/projects",
-  },
-};
-
 import Hero from "./components/Hero";
 import StickyTabs from "./components/StickyTabs";
 

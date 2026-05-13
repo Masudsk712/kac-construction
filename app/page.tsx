@@ -1,43 +1,5 @@
 "use client"
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title:
-    "Transmission Line & EPC Infrastructure Company in India",
-
-  description:
-    "Kuddus Ali Construction is a leading EPC infrastructure and transmission line company in India specializing in tower erection, foundation work, hotline stringing, HTLS reconductoring and power grid projects.",
-
-  keywords: [
-    "Transmission Line Company",
-    "Tower Erection Company",
-    "Power Grid Contractor",
-    "Foundation Work",
-    "HTLS Reconductoring",
-    "Infrastructure Company India",
-    "Construction Company Malda",
-  ],
-
-  alternates: {
-    canonical: "https://kacgroups.com",
-  },
-
-  openGraph: {
-    title:
-      "Transmission Line & EPC Infrastructure Company",
-
-    description:
-      "Professional transmission line, tower erection and EPC infrastructure services across India.",
-
-    url: "https://kacgroups.com",
-
-    siteName: "Kuddus Ali Construction",
-
-    locale: "en_IN",
-
-    type: "website",
-  },
-};
 import { useEffect, useState } from "react"
 
 import Hero from "@/components/Hero"

@@ -1,24 +1,4 @@
 "use client";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Media Gallery",
-
-  description:
-    "Explore project photos, transmission line work, tower erection activities and infrastructure developments by Kuddus Ali Construction.",
-
-  keywords: [
-    "Transmission Line Photos",
-    "Tower Erection Gallery",
-    "Infrastructure Work Images",
-    "Construction Media Gallery",
-  ],
-
-  alternates: {
-    canonical: "https://kacgroups.com/media",
-  },
-};
-
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
