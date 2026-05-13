@@ -3,9 +3,12 @@ import { Geist, Oswald } from "next/font/google";
 
 import "./globals.css";
 
+import { siteConfig } from "@/lib/seo";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Schema from "@/components/schema";
 
 /* ============================= */
 /* 🔥 FONT CONFIG */
@@ -30,29 +33,20 @@ const oswald = Oswald({
 });
 
 /* ============================= */
-/* 🔥 SEO METADATA */
+/* 🔥 PROFESSIONAL SEO METADATA */
 /* ============================= */
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+
   title: {
-    default: "Kuddus Ali Construction",
+    default: siteConfig.title,
     template: "%s | Kuddus Ali Construction",
   },
 
-  description:
-    "Kuddus Ali Construction delivers premium EPC infrastructure solutions including transmission line, tower erection, foundation work, hotline stringing, HTLS reconductoring and power grid projects across India.",
+  description: siteConfig.description,
 
-  keywords: [
-    "Kuddus Ali Construction",
-    "Transmission Line",
-    "Tower Erection",
-    "Power Grid",
-    "Foundation Work",
-    "Hotline Stringing",
-    "HTLS Reconductoring",
-    "EPC Infrastructure",
-    "Transmission Projects India",
-  ],
+  keywords: siteConfig.keywords,
 
   authors: [
     {
@@ -60,26 +54,24 @@ export const metadata: Metadata = {
     },
   ],
 
-  creator: "Kuddus Ali Construction",
-
-  metadataBase: new URL("https://kacconstruction.com"),
+  creator: siteConfig.creator,
 
   openGraph: {
-    title: "Kuddus Ali Construction",
-    description:
-      "Premium EPC infrastructure company delivering transmission, erection, foundation and power grid solutions across India.",
-
-    url: "https://kacconstruction.com",
-
-    siteName: "Kuddus Ali Construction",
+    type: "website",
 
     locale: "en_IN",
 
-    type: "website",
+    url: siteConfig.url,
+
+    title: siteConfig.title,
+
+    description: siteConfig.description,
+
+    siteName: "Kuddus Ali Construction",
 
     images: [
       {
-        url: "/LOGO 1.png",
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
         alt: "Kuddus Ali Construction",
@@ -90,23 +82,35 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Kuddus Ali Construction",
+    title: siteConfig.title,
 
-    description:
-      "Premium EPC infrastructure company delivering transmission and power solutions.",
+    description: siteConfig.description,
 
-    images: ["/LOGO 1.png"],
-  },
-
-  icons: {
-    icon: "/LOGO 1.png",
-    shortcut: "/LOGO 1.png",
-    apple: "/LOGO 1.png",
+    images: [siteConfig.ogImage],
   },
 
   robots: {
     index: true,
     follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  alternates: {
+    canonical: siteConfig.url,
+  },
+
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
   },
 };
 
@@ -119,7 +123,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html
       lang="en"
@@ -128,7 +131,6 @@ export default function RootLayout({
         scroll-smooth
       "
     >
-
       <body
         className={`
           ${geist.variable}
@@ -147,57 +149,57 @@ export default function RootLayout({
           selection:text-black
         `}
       >
+        {/* 🔥 SEO SCHEMA */}
+        <Schema />
 
         {/* 🔥 GLOBAL BACKGROUND */}
         <div
           className="
-          fixed inset-0
-          -z-50
+            fixed inset-0
+            -z-50
 
-          bg-[#020617]
-        "
+            bg-[#020617]
+          "
         />
 
         {/* 🔥 GLOBAL GLOW EFFECT */}
         <div
           className="
-          fixed inset-0
-          overflow-hidden
-          pointer-events-none
-          -z-40
-        "
+            fixed inset-0
+            overflow-hidden
+            pointer-events-none
+            -z-40
+          "
         >
-
           <div
             className="
-            absolute
-            top-[-200px]
-            left-[-200px]
+              absolute
+              top-[-200px]
+              left-[-200px]
 
-            w-[600px]
-            h-[600px]
+              w-[600px]
+              h-[600px]
 
-            bg-cyan-500/10
-            blur-[160px]
-            rounded-full
-          "
+              bg-cyan-500/10
+              blur-[160px]
+              rounded-full
+            "
           />
 
           <div
             className="
-            absolute
-            bottom-[-250px]
-            right-[-250px]
+              absolute
+              bottom-[-250px]
+              right-[-250px]
 
-            w-[700px]
-            h-[700px]
+              w-[700px]
+              h-[700px]
 
-            bg-blue-500/10
-            blur-[180px]
-            rounded-full
-          "
+              bg-blue-500/10
+              blur-[180px]
+              rounded-full
+            "
           />
-
         </div>
 
         {/* 🔥 NAVBAR */}
@@ -206,10 +208,10 @@ export default function RootLayout({
         {/* 🔥 MAIN CONTENT */}
         <main
           className="
-          relative
-          z-10
-          min-h-screen
-        "
+            relative
+            z-10
+            min-h-screen
+          "
         >
           {children}
         </main>
@@ -219,7 +221,6 @@ export default function RootLayout({
 
         {/* 🔥 FLOATING WHATSAPP */}
         <WhatsAppButton />
-
       </body>
     </html>
   );
