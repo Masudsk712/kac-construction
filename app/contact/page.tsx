@@ -1192,142 +1192,105 @@ export default function ContactPage() {
                   </div>
 
                   {/* FORM */}
-                  <form className="space-y-6">
-
+                  <form
+                    action="https://formspree.io/f/xaqvkbzo"
+                    method="POST"
+                    className="space-y-6"
+                  >
                     {/* NAME */}
                     <div>
-
                       <label className="text-sm text-white/70">
                         Full Name
                       </label>
 
                       <input
                         type="text"
-
+                        name="name"
+                        required
                         placeholder="Enter your full name"
-
                         className="
-                        mt-3
-
-                        w-full
-
-                        bg-[#0f172a]/80
-
-                        border border-white/10
-
-                        focus:border-cyan-400
-
-                        rounded-2xl
-
-                        px-5 py-4
-
-                        outline-none
-
-                        transition-all duration-300
-                      "
+      mt-3
+      w-full
+      bg-[#0f172a]/80
+      border border-white/10
+      focus:border-cyan-400
+      rounded-2xl
+      px-5 py-4
+      outline-none
+      transition-all duration-300
+    "
                       />
-
                     </div>
 
                     {/* EMAIL */}
                     <div>
-
                       <label className="text-sm text-white/70">
                         Email Address
                       </label>
 
                       <input
                         type="email"
-
+                        name="email"
+                        required
                         placeholder="Enter your email"
-
                         className="
-                        mt-3
-
-                        w-full
-
-                        bg-[#0f172a]/80
-
-                        border border-white/10
-
-                        focus:border-cyan-400
-
-                        rounded-2xl
-
-                        px-5 py-4
-
-                        outline-none
-
-                        transition-all duration-300
-                      "
+      mt-3
+      w-full
+      bg-[#0f172a]/80
+      border border-white/10
+      focus:border-cyan-400
+      rounded-2xl
+      px-5 py-4
+      outline-none
+      transition-all duration-300
+    "
                       />
-
                     </div>
 
                     {/* PHONE */}
                     <div>
-
                       <label className="text-sm text-white/70">
                         Phone Number
                       </label>
 
                       <input
                         type="text"
-
+                        name="phone"
                         placeholder="Enter your phone number"
-
                         className="
-                        mt-3
-
-                        w-full
-
-                        bg-[#0f172a]/80
-
-                        border border-white/10
-
-                        focus:border-cyan-400
-
-                        rounded-2xl
-
-                        px-5 py-4
-
-                        outline-none
-
-                        transition-all duration-300
-                      "
+      mt-3
+      w-full
+      bg-[#0f172a]/80
+      border border-white/10
+      focus:border-cyan-400
+      rounded-2xl
+      px-5 py-4
+      outline-none
+      transition-all duration-300
+    "
                       />
-
                     </div>
 
                     {/* PROJECT */}
                     <div>
-
                       <label className="text-sm text-white/70">
                         Project Type
                       </label>
 
                       <select
+                        name="projectType"
                         className="
-                        mt-3
-
-                        w-full
-
-                        bg-[#0f172a]/80
-
-                        border border-white/10
-
-                        focus:border-cyan-400
-
-                        rounded-2xl
-
-                        px-5 py-4
-
-                        outline-none
-
-                        transition-all duration-300
-                      "
+      mt-3
+      w-full
+      bg-[#0f172a]/80
+      border border-white/10
+      focus:border-cyan-400
+      rounded-2xl
+      px-5 py-4
+      outline-none
+      transition-all duration-300
+    "
                       >
-
                         <option>
                           Transmission Line
                         </option>
@@ -1347,92 +1310,63 @@ export default function ContactPage() {
                         <option>
                           EPC Infrastructure
                         </option>
-
                       </select>
-
                     </div>
 
                     {/* MESSAGE */}
                     <div>
-
                       <label className="text-sm text-white/70">
                         Message
                       </label>
 
                       <textarea
                         rows={6}
-
+                        name="message"
+                        required
                         placeholder="Tell us about your project..."
-
                         className="
-                        mt-3
-
-                        w-full
-
-                        bg-[#0f172a]/80
-
-                        border border-white/10
-
-                        focus:border-cyan-400
-
-                        rounded-2xl
-
-                        px-5 py-4
-
-                        outline-none
-
-                        transition-all duration-300
-
-                        resize-none
-                      "
+      mt-3
+      w-full
+      bg-[#0f172a]/80
+      border border-white/10
+      focus:border-cyan-400
+      rounded-2xl
+      px-5 py-4
+      outline-none
+      transition-all duration-300
+      resize-none
+    "
                       />
-
                     </div>
 
                     {/* BUTTON */}
                     <button
                       type="submit"
-
                       className="
-                      group
-
-                      w-full
-
-                      bg-cyan-500
-
-                      hover:bg-cyan-400
-
-                      text-black
-
-                      font-bold
-
-                      py-5
-
-                      rounded-2xl
-
-                      transition duration-300
-
-                      flex items-center justify-center
-                      gap-3
-
-                      hover:shadow-[0_0_40px_rgba(34,211,238,0.35)]
-                    "
+    group
+    w-full
+    bg-cyan-500
+    hover:bg-cyan-400
+    text-black
+    font-bold
+    py-5
+    rounded-2xl
+    transition duration-300
+    flex items-center justify-center
+    gap-3
+    hover:shadow-[0_0_40px_rgba(34,211,238,0.35)]
+  "
                     >
-
                       Send Message
 
                       <Send
                         size={18}
-
                         className="
-                        group-hover:translate-x-1
-
-                        transition
-                      "
+      group-hover:translate-x-1
+      transition
+    "
                       />
-
                     </button>
-
                   </form>
 
                 </div>
