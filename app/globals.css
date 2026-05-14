@@ -3,6 +3,7 @@
 /* ============================= */
 /* ROOT THEME */
 /* ============================= */
+
 :root {
   --bg: #020617;
   --bg-soft: #060d1f;
@@ -13,48 +14,67 @@
 /* ============================= */
 /* BASE */
 /* ============================= */
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 140px;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background:
-    radial-gradient(circle at top, #0a0f1c 0%, #020617 60%);
+    radial-gradient(
+      circle at top,
+      #0a0f1c 0%,
+      #020617 60%
+    );
+
   color: var(--text);
+
   font-family: sans-serif;
+
   overflow-x: hidden;
+
   min-height: 100vh;
 }
 
 /* ============================= */
 /* SCROLLBAR */
 /* ============================= */
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#22d3ee, #3b82f6);
+  background:
+    linear-gradient(
+      #22d3ee,
+      #3b82f6
+    );
+
   border-radius: 10px;
 }
 
 /* ============================= */
 /* MAIN */
 /* ============================= */
+
 main {
   position: relative;
   overflow-x: hidden;
 }
 
 /* ============================= */
-/* SECTION BASE */
+/* SECTION */
 /* ============================= */
+
 section {
   position: relative;
+
   padding: 6rem 0;
 
   overflow-x: hidden;
@@ -63,12 +83,15 @@ section {
 }
 
 @media (min-width: 768px) {
+
   section {
     padding: 8rem 0;
   }
+
 }
 
 /* HERO FIX */
+
 #hero {
   padding: 0 !important;
   overflow: hidden;
@@ -77,6 +100,7 @@ section {
 /* ============================= */
 /* PREMIUM BACKGROUND */
 /* ============================= */
+
 .section-premium {
   background:
     radial-gradient(
@@ -84,6 +108,7 @@ section {
       rgba(34, 211, 238, 0.08),
       transparent 40%
     ),
+
     radial-gradient(
       circle at 80% 80%,
       rgba(59, 130, 246, 0.08),
@@ -94,24 +119,29 @@ section {
 /* ============================= */
 /* GLASS EFFECT */
 /* ============================= */
+
 .glass {
-  background: rgba(255, 255, 255, 0.04);
+  background:
+    rgba(255, 255, 255, 0.04);
 
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
 
   transform: translateZ(0);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.06);
+  background:
+    rgba(255, 255, 255, 0.06);
 
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
 
   transform: translateZ(0);
 }
@@ -119,8 +149,10 @@ section {
 /* ============================= */
 /* BORDER GLOW */
 /* ============================= */
+
 .border-glow {
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
 
   box-shadow:
     0 0 20px rgba(34, 211, 238, 0.08);
@@ -129,9 +161,14 @@ section {
 /* ============================= */
 /* TEXT */
 /* ============================= */
+
 .gradient-text {
   background:
-    linear-gradient(to right, #22d3ee, #3b82f6);
+    linear-gradient(
+      to right,
+      #22d3ee,
+      #3b82f6
+    );
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -140,13 +177,18 @@ section {
 /* ============================= */
 /* BUTTON */
 /* ============================= */
+
 .btn-primary {
   padding: 12px 28px;
 
   border-radius: 999px;
 
   background:
-    linear-gradient(to right, #22d3ee, #3b82f6);
+    linear-gradient(
+      to right,
+      #22d3ee,
+      #3b82f6
+    );
 
   color: black;
 
@@ -165,6 +207,7 @@ section {
 /* ============================= */
 /* CARD HOVER */
 /* ============================= */
+
 .card-hover {
   transition: 0.4s ease;
 }
@@ -181,6 +224,7 @@ section {
 /* ============================= */
 /* IMAGE FIX */
 /* ============================= */
+
 img {
   max-width: 100%;
   display: block;
@@ -194,17 +238,21 @@ span img {
 /* ============================= */
 /* PERFORMANCE */
 /* ============================= */
+
 * {
   box-sizing: border-box;
+
   will-change: auto;
 
   -webkit-tap-highlight-color: transparent;
 }
 
 /* ============================= */
-/* MARQUEE ANIMATION */
+/* MARQUEE */
 /* ============================= */
+
 @keyframes scrollRight {
+
   0% {
     transform: translateX(-50%);
   }
@@ -212,9 +260,11 @@ span img {
   100% {
     transform: translateX(0%);
   }
+
 }
 
 @keyframes scrollLeft {
+
   0% {
     transform: translateX(0);
   }
@@ -222,6 +272,7 @@ span img {
   100% {
     transform: translateX(-50%);
   }
+
 }
 
 .scroll-left {
@@ -240,10 +291,12 @@ span img {
 }
 
 /* ============================= */
-/* CONTAINER FIX */
+/* CONTAINER */
 /* ============================= */
+
 .container-premium {
   width: 100%;
+
   max-width: 1280px;
 
   margin-inline: auto;
@@ -252,14 +305,17 @@ span img {
 }
 
 @media (max-width: 768px) {
+
   .container-premium {
     padding-inline: 16px;
   }
+
 }
 
 /* ============================= */
 /* HIDE SCROLLBAR */
 /* ============================= */
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -272,6 +328,7 @@ span img {
 /* ============================= */
 /* FLEX + GRID FIX */
 /* ============================= */
+
 .flex {
   min-width: 0;
 }
@@ -283,6 +340,7 @@ span img {
 /* ============================= */
 /* NEXT IMAGE FIX */
 /* ============================= */
+
 [data-nextjs-scroll-focus-boundary] {
   display: contents;
 }
@@ -290,12 +348,8 @@ span img {
 /* ============================= */
 /* MOBILE RESPONSIVE */
 /* ============================= */
-@media (max-width: 768px) {
 
-  .grid,
-  [class*="grid-cols"] {
-    gap: 24px !important;
-  }
+@media (max-width: 768px) {
 
   h1 {
     font-size: 42px !important;
@@ -326,10 +380,6 @@ span img {
   .glass-strong,
   .border-glow {
     border-radius: 22px !important;
-  }
-
-  .flex-row {
-    flex-direction: column !important;
   }
 
   .gap-20 {
@@ -381,9 +431,12 @@ span img {
 
   .absolute.bottom-5.left-5,
   .absolute.bottom-5.right-5 {
+
     left: 16px !important;
     right: 16px !important;
+
     bottom: 16px !important;
+
     max-width: 100% !important;
   }
 
@@ -400,11 +453,13 @@ span img {
   #StickyTabs .flex {
     gap: 20px !important;
   }
+
 }
 
 /* ============================= */
 /* SAFE MOBILE VIEW */
 /* ============================= */
+
 @media (max-width: 480px) {
 
   h1 {
@@ -426,11 +481,13 @@ span img {
   .rounded-\[32px\] {
     border-radius: 24px !important;
   }
+
 }
 
 /* ============================= */
 /* ACCESSIBILITY */
 /* ============================= */
+
 @media (prefers-reduced-motion: reduce) {
 
   *,
@@ -445,29 +502,38 @@ span img {
 
     scroll-behavior: auto !important;
   }
+
 }
 
 /* ============================= */
 /* IOS FIX */
 /* ============================= */
+
 @supports (-webkit-touch-callout: none) {
 
   #StickyTabs {
+
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+
   }
+
 }
 
 /* ============================= */
 /* HOVER SAFE */
 /* ============================= */
+
 @media (hover: hover) {
 
   .card-hover:hover {
+
     transform:
       translateY(-8px)
       scale(1.02);
+
   }
+
 }
 
 @media (hover: none) {
@@ -475,11 +541,13 @@ span img {
   .card-hover:hover {
     transform: none;
   }
+
 }
 
 /* ============================= */
 /* PREMIUM TEXT */
 /* ============================= */
+
 h1,
 h2,
 h3,
@@ -490,6 +558,7 @@ p {
 /* ============================= */
 /* INPUT FIX */
 /* ============================= */
+
 input,
 textarea,
 select {
@@ -499,6 +568,7 @@ select {
 /* ============================= */
 /* VIDEO FIX */
 /* ============================= */
+
 video,
 canvas,
 iframe {
@@ -509,6 +579,7 @@ iframe {
 /* ============================= */
 /* BREAK WORD */
 /* ============================= */
+
 .break-anywhere {
   overflow-wrap: anywhere;
 }

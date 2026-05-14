@@ -63,11 +63,12 @@ export default function ClientsSection() {
         bg-cover
         bg-center
 
+
         opacity-[0.08]
       "
         style={{
           backgroundImage:
-            "url('/tower-pic1.webp')",
+            "url('/home/HomeTower12.webp')",
         }}
       />
 
