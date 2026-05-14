@@ -21,42 +21,42 @@ const timelineData = [
     year: "2008",
     title: "Founded",
     desc: "Kuddus Ali Construction was founded with a vision to build strong infrastructure across India.",
-    image: "/placeholder.jpg",
+    image: "/about/Trans5Pic.webp",
   },
 
   {
     year: "2014",
     title: "Expansion",
     desc: "Major expansion in transmission and EPC projects across multiple states.",
-    image: "/placeholder.jpg",
+    image: "/about/Trans1Pic.webp",
   },
 
   {
     year: "2018",
     title: "Government Recognition",
     desc: "Awarded for excellence in infrastructure development.",
-    image: "/placeholder.jpg",
+    image: "/about/Trans2Pic.webp",
   },
 
   {
     year: "2020",
     title: "Achievements",
     desc: "Handled high capacity substation projects successfully.",
-    image: "/placeholder.jpg",
+    image: "/about/Trans3Pic.webp",
   },
 
   {
     year: "2022",
     title: "Water Segment",
     desc: "Entered water infrastructure segment with major government projects.",
-    image: "/placeholder.jpg",
+    image: "/about/Trans4Pic.webp",
   },
 
   {
     year: "2024",
     title: "Growth & Expansion",
     desc: "Secured major funding to expand operations nationwide.",
-    image: "/placeholder.jpg",
+    image: "/about/AboutTowerGrow3.webp",
   },
 ]
 

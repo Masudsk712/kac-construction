@@ -56,7 +56,7 @@ export default function Overview() {
           className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl cursor-pointer border-glow"
         >
           <Image
-            src="/placeholder.jpg"
+            src="/about/AboutTower4.webp"
             alt="Team"
             fill
             className="object-cover transition-transform duration-700 hover:scale-110"
@@ -78,7 +78,7 @@ export default function Overview() {
           className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl cursor-pointer border-glow"
         >
           <Image
-            src="/placeholder.jpg"
+            src="/about/AboutTower5.webp"
             alt="Leadership"
             fill
             className="object-cover transition-transform duration-700 hover:scale-110"

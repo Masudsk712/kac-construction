@@ -57,7 +57,7 @@ export default function Hero() {
       {/* ================================================= */}
 
       <Image
-        src="/placeholder.jpg"
+        src="/about/AboutTower1.webp"
         alt="About Hero"
         fill
         priority

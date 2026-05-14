@@ -23,7 +23,7 @@ const leadershipData = [
     role:
       "Founder • Chairman • Managing Director",
     dept: "Chairman",
-    image: "/placeholder.jpg",
+    image: "/about/Boss.webp",
     description:
       "Leading Kuddus Ali Construction with long-term vision, infrastructure excellence, operational growth, and sustainable engineering innovation across India.",
   },
@@ -32,7 +32,7 @@ const leadershipData = [
     name: "Sk Samim Aktar",
     role: "EHS & Engineering",
     dept: "Engineering",
-    image: "/placeholder.jpg",
+    image: "/about/ID1.webp",
     description:
       "Responsible for engineering quality, technical supervision, project safety, and execution excellence.",
   },
@@ -41,7 +41,7 @@ const leadershipData = [
     name: "Md Nasiruddin Ahmed",
     role: "HR & Administration",
     dept: "Administration",
-    image: "/placeholder.jpg",
+    image: "/about/ID2.webp",
     description:
       "Handles workforce coordination, administration systems, company discipline, and operational management.",
   },
@@ -50,7 +50,7 @@ const leadershipData = [
     name: "Akib Javed",
     role: "Planning & Procurement",
     dept: "Planning",
-    image: "/placeholder.jpg",
+    image: "/about/ID3.webp",
     description:
       "Responsible for strategic procurement planning, vendor coordination, and execution timelines.",
   },
@@ -59,7 +59,7 @@ const leadershipData = [
     name: "Safiur",
     role: "Projects Team",
     dept: "Projects",
-    image: "/placeholder.jpg",
+    image: "/about/ID4.webp",
     description:
       "Coordinates field execution, manpower deployment, and site-level project management.",
   },
@@ -68,7 +68,7 @@ const leadershipData = [
     name: "Probhakar Pramanik",
     role: "Store Management",
     dept: "Store",
-    image: "/placeholder.jpg",
+    image: "/about/ID5.webp",
     description:
       "Handles inventory control, logistics support, and material management operations.",
   },
@@ -77,7 +77,7 @@ const leadershipData = [
     name: "Asraful Hoque",
     role: "Finance Department",
     dept: "Finance",
-    image: "/placeholder.jpg",
+    image: "/about/ID6.webp",
     description:
       "Responsible for budgeting, company finance systems, and operational financial planning.",
   },
@@ -86,7 +86,7 @@ const leadershipData = [
     name: "Operations Head",
     role: "Operations Management",
     dept: "Operations",
-    image: "/placeholder.jpg",
+    image: "/about/ID7.webp",
     description:
       "Ensures smooth coordination across departments and efficient project delivery systems.",
   },
@@ -95,7 +95,7 @@ const leadershipData = [
     name: "Technical Advisor",
     role: "Technical Consultant",
     dept: "Consulting",
-    image: "/placeholder.jpg",
+    image: "/about/ID8.webp",
     description:
       "Provides technical guidance, engineering insights, and strategic advisory support.",
   },

@@ -550,7 +550,7 @@ export default function MissionVision() {
             <div className="absolute inset-0">
 
               <Image
-                src="/placeholder.jpg"
+                src="/about/AboutTower2.webp"
                 alt="Mission Vision"
                 fill
                 className="

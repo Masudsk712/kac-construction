@@ -30,7 +30,7 @@ const awards = [
     description:
       "Kuddus Ali Construction was appreciated for completing multiple high-voltage transmission projects ahead of schedule with exceptional execution quality.",
 
-    image: "/placeholder.jpg",
+    image: "/about/Award1.webp",
 
     tag: "National Recognition",
   },
@@ -45,7 +45,7 @@ const awards = [
     description:
       "Recognized for successful rural electrification and fast-track infrastructure execution under the government electrification mission.",
 
-    image: "/placeholder.jpg",
+    image: "/about/Award2.webp",
 
     tag: "Government Award",
   },
@@ -60,7 +60,7 @@ const awards = [
     description:
       "Awarded for consistent performance, engineering excellence, and delivering large-scale infrastructure projects across India.",
 
-    image: "/placeholder.jpg",
+    image: "/about/Award3.webp",
 
     tag: "Infrastructure Excellence",
   },
@@ -75,7 +75,7 @@ const awards = [
     description:
       "Honored for maintaining high safety standards, execution efficiency, and project quality across multiple states.",
 
-    image: "/placeholder.jpg",
+    image: "/about/Award4.webp",
 
     tag: "Execution Award",
   },

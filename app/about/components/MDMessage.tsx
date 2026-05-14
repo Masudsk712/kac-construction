@@ -228,7 +228,7 @@ export default function MDMessage() {
             <div className="absolute inset-0">
 
               <Image
-                src="/placeholder.jpg"
+                src="/about/Boss.webp"
                 alt="Managing Director"
                 fill
                 className="
