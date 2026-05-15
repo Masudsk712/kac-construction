@@ -286,226 +286,253 @@ export default function WhyChooseUs() {
         </motion.div>
 
         {/* ================================================= */}
-        {/* 🔥 CARDS */}
-        {/* ================================================= */}
+{/* 🔥 CARDS */}
+{/* ================================================= */}
 
-        <div
-          className="
-          grid
-          md:grid-cols-2
-          xl:grid-cols-4
+<div
+  className="
+    grid
 
-          gap-7
+    grid-cols-2
+    xl:grid-cols-4
+
+    gap-4
+    md:gap-7
+  "
+>
+
+  {features.map((item, i) => (
+
+    <motion.div
+      key={i}
+
+      initial={{
+        opacity: 0,
+        y: 60,
+      }}
+
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+
+      transition={{
+        delay: i * 0.12,
+        duration: 0.7,
+      }}
+
+      viewport={{
+        once: true,
+      }}
+
+      whileHover={{
+        y: -8,
+      }}
+
+      className="
+        group
+
+        relative
+        overflow-hidden
+
+        rounded-[24px]
+        md:rounded-[32px]
+
+        border border-white/10
+
+        bg-white/[0.03]
+        backdrop-blur-2xl
+
+        p-4
+        sm:p-5
+        md:p-8
+
+        shadow-[0_10px_40px_rgba(0,0,0,0.35)]
+
+        transition-all duration-500
+      "
+    >
+
+      {/* CARD GLOW */}
+      <div
+        className={`
+          absolute inset-0
+
+          opacity-0
+          group-hover:opacity-100
+
+          transition duration-700
+
+          bg-gradient-to-br
+          ${item.gradient}
+        `}
+      />
+
+      {/* TOP LIGHT */}
+      <div
+        className="
+          absolute
+          inset-x-0
+          top-0
+
+          h-[1px]
+
+          bg-gradient-to-r
+          from-transparent
+          via-cyan-300/40
+          to-transparent
+
+          opacity-0
+          group-hover:opacity-100
+
+          transition duration-700
         "
+      />
+
+      {/* ICON */}
+      <div
+        className="
+          relative z-10
+
+          w-12 h-12
+          sm:w-14 sm:h-14
+          md:w-20 md:h-20
+
+          rounded-2xl
+          md:rounded-3xl
+
+          bg-gradient-to-br
+          from-cyan-400
+          to-blue-500
+
+          flex items-center justify-center
+
+          text-white
+
+          text-lg
+          sm:text-xl
+          md:text-3xl
+
+          shadow-[0_10px_35px_rgba(34,211,238,0.25)]
+
+          mb-4
+          md:mb-8
+
+          transition-all duration-500
+
+          group-hover:scale-110
+          group-hover:rotate-3
+        "
+      >
+
+        {item.icon}
+
+      </div>
+
+      {/* TITLE */}
+      <h3
+        className="
+          relative z-10
+
+          text-sm
+          sm:text-base
+          md:text-2xl
+
+          font-bold
+
+          text-white
+
+          mb-2
+          md:mb-4
+
+          leading-tight
+        "
+      >
+        {item.title}
+      </h3>
+
+      {/* DESCRIPTION */}
+      <p
+        className="
+          relative z-10
+
+          text-white/65
+
+          leading-[1.6]
+          md:leading-[1.9]
+
+          text-[11px]
+          sm:text-xs
+          md:text-base
+        "
+      >
+        {item.desc}
+      </p>
+
+      {/* LINK */}
+      <Link
+        href="/media"
+
+        className="
+          relative z-10
+
+          flex items-center
+          justify-between
+
+          mt-4
+          md:mt-10
+
+          pt-3
+          md:pt-6
+
+          border-t border-white/10
+
+          group/link
+        "
+      >
+
+        <span
+          className="
+            text-cyan-300
+
+            text-[10px]
+            sm:text-xs
+            md:text-sm
+
+            uppercase
+
+            tracking-[2px]
+            md:tracking-[3px]
+
+            transition duration-300
+
+            group-hover/link:text-white
+          "
         >
+          KAC QUALITY
+        </span>
 
-          {features.map((item, i) => (
+        <ArrowUpRight
+          size={16}
 
-            <motion.div
-              key={i}
+          className="
+            text-cyan-300
 
-              initial={{
-                opacity: 0,
-                y: 60,
-              }}
+            transition duration-500
 
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
+            group-hover/link:translate-x-1
+            group-hover/link:-translate-y-1
+            group-hover/link:text-white
+          "
+        />
 
-              transition={{
-                delay: i * 0.12,
-                duration: 0.7,
-              }}
+      </Link>
 
-              viewport={{
-                once: true,
-              }}
+    </motion.div>
 
-              whileHover={{
-                y: -8,
-              }}
+  ))}
 
-              className="
-              group
-
-              relative
-              overflow-hidden
-
-              rounded-[32px]
-
-              border border-white/10
-
-              bg-white/[0.03]
-              backdrop-blur-2xl
-
-              p-8
-
-              shadow-[0_10px_40px_rgba(0,0,0,0.35)]
-
-              transition-all duration-500
-            "
-            >
-
-              {/* CARD GLOW */}
-              <div
-                className={`
-                absolute inset-0
-
-                opacity-0
-                group-hover:opacity-100
-
-                transition duration-700
-
-                bg-gradient-to-br
-                ${item.gradient}
-              `}
-              />
-
-              {/* TOP LIGHT */}
-              <div
-                className="
-                absolute
-                inset-x-0
-                top-0
-
-                h-[1px]
-
-                bg-gradient-to-r
-                from-transparent
-                via-cyan-300/40
-                to-transparent
-
-                opacity-0
-                group-hover:opacity-100
-
-                transition duration-700
-              "
-              />
-
-              {/* ICON */}
-              <div
-                className="
-                relative z-10
-
-                w-20 h-20
-
-                rounded-3xl
-
-                bg-gradient-to-br
-                from-cyan-400
-                to-blue-500
-
-                flex items-center justify-center
-
-                text-white
-                text-3xl
-
-                shadow-[0_10px_35px_rgba(34,211,238,0.25)]
-
-                mb-8
-
-                transition-all duration-500
-
-                group-hover:scale-110
-                group-hover:rotate-3
-              "
-              >
-
-                {item.icon}
-
-              </div>
-
-              {/* TITLE */}
-              <h3
-                className="
-                relative z-10
-
-                text-2xl
-
-                font-bold
-
-                text-white
-
-                mb-4
-              "
-              >
-                {item.title}
-              </h3>
-
-              {/* DESCRIPTION */}
-              <p
-                className="
-                relative z-10
-
-                text-white/65
-
-                leading-[1.9]
-
-                text-sm
-                md:text-base
-              "
-              >
-                {item.desc}
-              </p>
-
-                <Link
-                href="/media"
-                className="
-  relative z-10
-
-  flex items-center
-  justify-between
-
-  mt-10
-
-  pt-6
-
-  border-t border-white/10
-
-  group/link
-"
-              >
-
-                <span
-                  className="
-    text-cyan-300
-
-    text-sm
-    uppercase
-
-    tracking-[3px]
-
-    transition duration-300
-
-    group-hover/link:text-white
-  "
-                >
-                  KAC QUALITY
-                </span>
-
-                <ArrowUpRight
-                  size={18}
-
-                  className="
-    text-cyan-300
-
-    transition duration-500
-
-    group-hover/link:translate-x-1
-    group-hover/link:-translate-y-1
-    group-hover/link:text-white
-  "
-                />
-
-              </Link>
-
-            </motion.div>
-
-          ))}
-
-        </div>
+</div>
 
       </div>
 

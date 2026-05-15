@@ -9,6 +9,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Schema from "@/components/schema";
+import { LoaderProvider } from "@/components/LoaderContext";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 /* ============================= */
 /* 🔥 FONT CONFIG */
@@ -132,23 +134,24 @@ export default function RootLayout({
       "
     >
       <body
-        className={`
-          ${geist.variable}
-          ${oswald.variable}
-          ${geist.className}
-          ${oswald.className}
+  className={`
+    ${geist.variable}
+    ${oswald.variable}
+    ${geist.className}
+    ${oswald.className}
 
-          bg-[#020617]
-          text-white
+    bg-[#020617]
+    text-white
 
-          overflow-x-hidden
+    overflow-x-hidden
 
-          antialiased
+    antialiased
 
-          selection:bg-cyan-400
-          selection:text-black
-        `}
-      >
+    selection:bg-cyan-400
+    selection:text-black
+  `}
+>
+  <LoaderProvider>
         {/* 🔥 SEO SCHEMA */}
         <Schema />
 
@@ -201,27 +204,12 @@ export default function RootLayout({
             "
           />
         </div>
-
-        {/* 🔥 NAVBAR */}
-        <Navbar />
-
-        {/* 🔥 MAIN CONTENT */}
-        <main
-          className="
-            relative
-            z-10
-            min-h-screen
-          "
-        >
+        <LayoutWrapper>
           {children}
-        </main>
+        </LayoutWrapper>
 
-        {/* 🔥 FOOTER */}
-        <Footer />
-
-        {/* 🔥 FLOATING WHATSAPP */}
-        <WhatsAppButton />
-      </body>
-    </html>
+      </LoaderProvider>
+    </body>
+  </html>
   );
 }

@@ -1,33 +1,20 @@
 "use client"
 
-import { useEffect, useState } from "react"
-
 import Hero from "@/components/Hero"
 import AboutSection from "@/components/AboutSection"
 import ServicesSection from "@/components/ServicesSection"
 import ProjectsSection from "@/components/ProjectsSection"
 import VideoSection from "@/components/VideoSection"
 import CTASection from "@/components/CTASection"
-import PageLoader from "@/components/PageLoader"
 import ScrollZoom from "@/components/ScrollZoom"
 
 import StatsBar from "@/components/StatsBar"
 import WhyChooseUs from "@/components/WhyChooseUs"
 import IndiaMapSection from "@/components/IndiaMapSection"
 import FAQSection from "@/components/FAQSection"
-import ProcessSection from "@/components/ProcessSection"
 import ClientsSection from "@/components/ClientsSection"
 
 export default function HomePage() {
-
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2500)
-    return () => clearTimeout(timer)
-  }, [])
-
-  if (loading) return <PageLoader />
 
   return (
     <main className="overflow-x-hidden">
@@ -53,11 +40,6 @@ export default function HomePage() {
       {/* SERVICES */}
       <ScrollZoom>
         <ServicesSection />
-      </ScrollZoom>
-
-      {/* PROCESS */}
-      <ScrollZoom>
-        <ProcessSection />
       </ScrollZoom>
 
       {/* PROJECTS */}

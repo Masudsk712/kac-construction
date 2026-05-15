@@ -1,20 +1,23 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useEffect, useState } from "react"
+import { motion } from "framer-motion";
+import { useEffect } from "react";
+
+import { useLoader } from "./LoaderContext";
 
 export default function PageLoader() {
-  const [visible, setVisible] = useState(true)
+  const { loading, setLoading } =
+  useLoader();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setVisible(false)
+      setLoading(false)
     }, 2500) // ⏱️ loader duration
 
     return () => clearTimeout(timer)
   }, [])
 
-  if (!visible) return null
+  if (!loading) return null;
 
   return (
     <motion.div
