@@ -118,25 +118,17 @@ export default function MediaPage() {
 
   return (
     <main
-      className="
-      bg-[#020617]
-      text-white
-      overflow-x-hidden
-      relative
-    "
-    >
-
-      {/* GLOBAL BG */}
-      <div className="fixed inset-0 -z-10 bg-[#020617]" />
-
+  className="
+  bg-[#020617]
+  text-white
+  relative
+  z-10
+"
+>
       {/* GLOW */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-
         <div className="absolute top-[-200px] left-[-150px] w-[500px] h-[500px] bg-cyan-500/10 blur-[140px] rounded-full" />
 
         <div className="absolute bottom-[-200px] right-[-150px] w-[500px] h-[500px] bg-blue-500/10 blur-[140px] rounded-full" />
-
-      </div>
 
       {/* HERO SECTION */}
       <section

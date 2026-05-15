@@ -24,9 +24,9 @@ import {
 /* ======================================== */
 
 const images = [
-  "/placeholder.jpg",
-  "/placeholder.jpg",
-  "/placeholder.jpg",
+  "/service/ServiceSTR1.webp",
+  "/service/ServiceFd1.webp",
+  "/service/ServiceERC1.webp",
 ];
 
 /* ======================================== */
@@ -40,7 +40,7 @@ const services = [
     desc:
       "High-performance conductor pulling and installation across transmission corridors.",
 
-    image: "/placeholder.jpg",
+    image: "/service/ServiceConductorSTR.webp",
 
     link: "/service/stringing/conductor",
   },
@@ -51,7 +51,7 @@ const services = [
     desc:
       "Accurate alignment and tension balancing for ultra high voltage lines.",
 
-    image: "/placeholder.jpg",
+    image: "/service/ServiceAlignmentSTR.webp",
 
     link: "/service/stringing/alignment",
   },
@@ -62,7 +62,7 @@ const services = [
     desc:
       "Modern HTLS upgradation for improved transmission efficiency.",
 
-    image: "/placeholder.jpg",
+    image: "/service/ServiceReconductorSTR.webp",
 
     link: "/service/stringing/htls",
   },
@@ -73,7 +73,7 @@ const services = [
     desc:
       "Advanced hot line execution without interrupting live power transmission.",
 
-    image: "/placeholder.jpg",
+    image: "/service/ServiceHotlineSTR.webp",
 
     link: "/service/stringing/hotline",
   },

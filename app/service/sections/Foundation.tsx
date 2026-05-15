@@ -560,7 +560,7 @@ export default function Foundation() {
             >
 
               <Image
-                src="/placeholder.jpg"
+                src="/service/ServiceFd1.webp"
                 alt="Foundation Work"
                 fill
                 className="object-cover"

@@ -134,7 +134,7 @@ export default function RootLayout({
       "
     >
       <body
-  className={`
+        className={`
     ${geist.variable}
     ${oswald.variable}
     ${geist.className}
@@ -150,32 +150,32 @@ export default function RootLayout({
     selection:bg-cyan-400
     selection:text-black
   `}
->
-  <LoaderProvider>
-        {/* 🔥 SEO SCHEMA */}
-        <Schema />
+      >
+        <LoaderProvider>
+          {/* 🔥 SEO SCHEMA */}
+          <Schema />
 
-        {/* 🔥 GLOBAL BACKGROUND */}
-        <div
-          className="
-            fixed inset-0
-            -z-50
-
-            bg-[#020617]
-          "
-        />
-
-        {/* 🔥 GLOBAL GLOW EFFECT */}
-        <div
-          className="
-            fixed inset-0
-            overflow-hidden
-            pointer-events-none
-            -z-40
-          "
-        >
+          {/* 🔥 GLOBAL BACKGROUND */}
           <div
-            className="
+  className="
+    fixed inset-0
+    z-[-100]
+
+    bg-[#020617]
+  "
+/>
+
+          {/* 🔥 GLOBAL GLOW EFFECT */}
+          <div
+  className="
+    fixed inset-0
+    overflow-hidden
+    pointer-events-none
+    z-[-90]
+  "
+>
+            <div
+              className="
               absolute
               top-[-200px]
               left-[-200px]
@@ -187,10 +187,10 @@ export default function RootLayout({
               blur-[160px]
               rounded-full
             "
-          />
+            />
 
-          <div
-            className="
+            <div
+              className="
               absolute
               bottom-[-250px]
               right-[-250px]
@@ -202,14 +202,18 @@ export default function RootLayout({
               blur-[180px]
               rounded-full
             "
-          />
-        </div>
-        <LayoutWrapper>
-          {children}
-        </LayoutWrapper>
+            />
+          </div>
+          <>
+            <LayoutWrapper>
+              {children}
+            </LayoutWrapper>
 
-      </LoaderProvider>
-    </body>
-  </html>
+            <Footer />
+          </>
+
+        </LoaderProvider>
+      </body>
+    </html>
   );
 }

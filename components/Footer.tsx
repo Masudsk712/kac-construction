@@ -63,58 +63,48 @@ export default function Footer() {
   return (
 
     <footer
-      className="
-      relative
-      overflow-hidden
+  className="
+  relative
+  isolate
+  overflow-hidden
 
-      bg-[#020617]
+  text-white
 
-      text-white
-
-      border-t border-white/10
-    "
-    >
-
-      {/* ================================================= */}
-      {/* PREMIUM BACKGROUND IMAGE */}
-      {/* ================================================= */}
-
-      <div className="absolute inset-0">
-
-        <Image
-          src="/home/HomeTower11.webp"
-          alt="Footer Background"
-
-          fill
-
-          priority
-
-          className="
-object-cover
-
-opacity-[0.32]
-
-scale-105
-
-brightness-[0.75]
-
-contrast-[1.1]
+  border-t border-white/10
 "
-        />
+>
 
-      </div>
+      {/* BACKGROUND IMAGE */}
+  <div className="absolute inset-0 z-[1]">
 
-      {/* OVERLAY */}
-      <div
-        className="
-        absolute inset-0
-
-        bg-gradient-to-b
-from-[#020617]/72
-via-[#020617]/78
-to-[#020617]/90
+    <Image
+      src="/home/HomeTower11.webp"
+      alt="Footer Background"
+      fill
+      priority
+      className="
+      object-cover
+      opacity-[0.45]
+      scale-105
+      brightness-[0.75]
+      contrast-[1.1]
       "
-      />
+    />
+
+  </div>
+
+      {/* DARK OVERLAY */}
+  <div
+    className="
+    absolute inset-0
+    z-[2]
+
+    bg-gradient-to-b
+    from-[#020617]/72
+    via-[#020617]/78
+    to-[#020617]/90
+    "
+  />
 
       
 
@@ -160,21 +150,17 @@ to-[#020617]/90
       "
       />
 
-      {/* ================================================= */}
       {/* CONTENT */}
-      {/* ================================================= */}
+  <div
+    className="
+    container-premium
 
-      <div
-        className="
-        container-premium
+    relative z-[5]
 
-        relative z-10
-
-        pt-24
-        pb-10
-      "
-      >
-
+    pt-24
+    pb-10
+    "
+  >
         {/* ================================================= */}
         {/* TOP PREMIUM CTA */}
         {/* ================================================= */}

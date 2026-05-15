@@ -57,41 +57,14 @@ export default function ContactPage() {
   return (
 
     <main
-      className="
-      relative
-
-      overflow-x-hidden
-
-      bg-[#020617]
-
-      text-white
-    "
-    >
-
-      {/* ======================================== */}
-      {/* GLOBAL BG */}
-      {/* ======================================== */}
-
-      <div className="fixed inset-0 -z-50 bg-[#020617]" />
-
-      {/* GRID */}
-      <div
-        className="
-        fixed inset-0
-
-        -z-40
-
-        opacity-[0.03]
-
-        [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
-
-        [background-size:60px_60px]
-      "
-      />
-
+  className="
+  relative
+  bg-[#020617]
+  text-white
+  z-10
+"
+>
       {/* GLOW */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none -z-30">
-
         <div
           className="
           absolute
@@ -127,8 +100,6 @@ export default function ContactPage() {
           blur-[170px]
         "
         />
-
-      </div>
 
       {/* ======================================== */}
       {/* HERO */}

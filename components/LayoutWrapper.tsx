@@ -1,7 +1,6 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageLoader from "@/components/PageLoader";
 
@@ -33,8 +32,6 @@ export default function LayoutWrapper({
           >
             {children}
           </main>
-
-          <Footer />
 
           <WhatsAppButton />
         </>

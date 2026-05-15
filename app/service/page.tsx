@@ -15,7 +15,6 @@ export default function ServicesPage() {
       relative
       bg-[#020617]
       text-white
-      overflow-hidden
       "
     >
 

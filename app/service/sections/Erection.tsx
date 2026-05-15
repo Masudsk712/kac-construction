@@ -268,7 +268,7 @@ export default function Erection() {
             >
 
               <Image
-                src="/placeholder.jpg"
+                src="/service/ServiceERC1.webp"
                 alt="Tower Erection"
                 fill
                 className="object-cover"

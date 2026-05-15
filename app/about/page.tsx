@@ -15,16 +15,14 @@ export default function AboutPage() {
   return (
 
     <main
-      className="
-      bg-transparent
-      text-white
-      relative
-    "
-    >
-
-      {/* BG */}
-      <div className="fixed inset-0 -z-10 bg-[#020617]" />
-
+  className="
+  bg-transparent
+  text-white
+  relative
+  overflow-visible
+  z-10
+"
+>
       {/* HERO */}
       <Hero />
 

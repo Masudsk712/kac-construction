@@ -68,7 +68,7 @@ export default function ServiceHero() {
       {/* ======================================== */}
 
       <Image
-        src="/placeholder.jpg"
+        src="/service/ServiceBg1.webp"
         alt="Services Hero"
         fill
         priority
@@ -493,7 +493,7 @@ export default function ServiceHero() {
               >
 
                 <Image
-                  src="/placeholder.jpg"
+                  src="/service/ServiceBg2.webp"
                   alt="Kuddus Ali Construction Services"
                   fill
 
