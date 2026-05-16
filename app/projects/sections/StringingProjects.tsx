@@ -464,7 +464,7 @@ export default function StringingProjects() {
           >
 
             <Image
-              src="/placeholder.jpg"
+              src="/projects/Project10.webp"
               alt="Stringing Projects"
 
               fill

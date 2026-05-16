@@ -463,7 +463,7 @@ export default function ErectionProjects() {
           >
 
             <Image
-              src="/placeholder.jpg"
+              src="/projects/Project16.webp"
               alt="Erection Project"
 
               fill

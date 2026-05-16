@@ -28,7 +28,7 @@ const projects = [
 
     category: "Transmission",
 
-    image: "/placeholder.jpg",
+    image: "/projects/Project13.webp",
 
     desc:
       "Successfully completed ultra high-voltage transmission infrastructure project with timely execution and engineering excellence.",
@@ -46,7 +46,7 @@ const projects = [
 
     category: "Hotline",
 
-    image: "/placeholder.jpg",
+    image: "/projects/Project14.webp",
 
     desc:
       "Executed advanced hotline maintenance operations ensuring uninterrupted power transmission reliability.",
@@ -64,7 +64,7 @@ const projects = [
 
     category: "Erection",
 
-    image: "/placeholder.jpg",
+    image: "/projects/Project15.webp",
 
     desc:
       "Completed high-capacity transmission tower erection across complex terrain and remote infrastructure zones.",

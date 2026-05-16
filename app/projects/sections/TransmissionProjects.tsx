@@ -31,7 +31,7 @@ const projects = [
 
     category: "Ultra High Voltage",
 
-    image: "/placeholder.jpg",
+    image: "/projects/Project11.webp",
 
     desc:
       "Large-scale ultra high-voltage transmission infrastructure executed with engineering precision and operational excellence.",
@@ -49,7 +49,7 @@ const projects = [
 
     category: "EPC Infrastructure",
 
-    image: "/placeholder.jpg",
+    image: "/projects/Project20.webp",
 
     desc:
       "Advanced EPC transmission projects supporting India's rapidly growing energy infrastructure network.",

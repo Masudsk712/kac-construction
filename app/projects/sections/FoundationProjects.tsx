@@ -159,7 +159,7 @@ export default function FoundationProjects() {
           >
 
             <Image
-              src="/placeholder.jpg"
+              src="/projects/Project17.webp"
               alt="Foundation Project"
 
               fill

@@ -40,9 +40,9 @@ const highlights = [
 ];
 
 const gallery = [
-  "/placeholder.jpg",
-  "/placeholder.jpg",
-  "/placeholder.jpg",
+  "/service/DetailSurvey/DetailSurvey1.webp",
+  "/service/DetailSurvey/DetailSurvey2.webp",
+  "/service/DetailSurvey/DetailSurvey3.webp",
 ];
 
 export default function DetailedSurveyPage() {
@@ -53,7 +53,7 @@ export default function DetailedSurveyPage() {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
 
         <Image
-          src="/placeholder.jpg"
+          src="/service/DetailSurvey/DetailSurvey4.webp"
           alt="Detailed Survey"
           fill
           priority
@@ -140,7 +140,7 @@ export default function DetailedSurveyPage() {
             >
 
               <Image
-                src="/placeholder.jpg"
+                src="/service/DetailSurvey/DetailSurvey5.webp"
                 alt="Detailed Survey"
                 width={700}
                 height={500}
@@ -167,7 +167,7 @@ export default function DetailedSurveyPage() {
           >
 
             <Image
-              src="/placeholder.jpg"
+              src="/service/DetailSurvey/DetailSurvey6.webp"
               alt="Detailed Overview"
               width={700}
               height={550}

@@ -39,9 +39,9 @@ const highlights = [
 ];
 
 const gallery = [
-  "/placeholder.jpg",
-  "/placeholder.jpg",
-  "/placeholder.jpg",
+  "/service/PreSurvey/PreSurvey3.webp",
+  "/service/PreSurvey/PreSurvey4.webp",
+  "/service/PreSurvey/PreSurvey5.webp",
 ];
 
 export default function PreliminarySurveyPage() {
@@ -53,7 +53,7 @@ export default function PreliminarySurveyPage() {
 
         {/* BG IMAGE */}
         <Image
-          src="/placeholder.jpg"
+          src="/service/PreSurvey/PreSurvey6.webp"
           alt="Preliminary Survey"
           fill
           priority
@@ -136,7 +136,7 @@ export default function PreliminarySurveyPage() {
             >
 
               <Image
-                src="/placeholder.jpg"
+                src="/service/PreSurvey/PreSurvey2.webp"
                 alt="Survey"
                 width={700}
                 height={500}
@@ -186,7 +186,7 @@ export default function PreliminarySurveyPage() {
           >
 
             <Image
-              src="/placeholder.jpg"
+              src="/service/PreSurvey/PreSurvey1.webp"
               alt="Survey Overview"
               width={700}
               height={550}

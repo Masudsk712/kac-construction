@@ -293,7 +293,7 @@ export default function ReconductoringProjects() {
             >
 
               <Image
-                src="/placeholder.jpg"
+                src="/projects/Project19.webp"
                 alt="Reconductoring"
 
                 fill

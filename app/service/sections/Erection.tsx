@@ -15,36 +15,44 @@ import {
 } from "lucide-react";
 
 /* ======================================== */
-/* STEPS */
+/* SERVICES */
 /* ======================================== */
 
 const erectionSteps = [
   {
-    icon: <TowerControl size={28} />,
+    icon: <TowerControl size={18} />,
     title: "Tower Assembly",
     desc:
       "Complete tower member assembly with precision engineering and safety compliance.",
+
+    image: "/service/Erection3.webp",
   },
 
   {
-    icon: <Wrench size={28} />,
+    icon: <Wrench size={18} />,
     title: "Structural Installation",
     desc:
       "Accurate erection and alignment of transmission tower structures.",
+
+    image: "/service/Erection1.webp",
   },
 
   {
-    icon: <RadioTower size={28} />,
+    icon: <RadioTower size={18} />,
     title: "Height Operations",
     desc:
       "Advanced high-altitude execution using modern erection methodologies.",
+
+    image: "/service/Erection2.webp",
   },
 
   {
-    icon: <ShieldCheck size={28} />,
+    icon: <ShieldCheck size={18} />,
     title: "Safety Assurance",
     desc:
       "Strict quality checks and zero-compromise safety implementation.",
+
+    image: "/service/ServiceERC1.webp",
   },
 ];
 
@@ -83,7 +91,7 @@ export default function Erection() {
 
       overflow-hidden
 
-      py-24 md:py-28
+      py-20 md:py-24
 
       bg-[#020617]
 
@@ -92,7 +100,7 @@ export default function Erection() {
     >
 
       {/* ======================================== */}
-      {/* GRID BG */}
+      {/* GRID BACKGROUND */}
       {/* ======================================== */}
 
       <div
@@ -108,7 +116,7 @@ export default function Erection() {
       />
 
       {/* ======================================== */}
-      {/* GLOW */}
+      {/* BACKGROUND GLOW */}
       {/* ======================================== */}
 
       <div
@@ -123,7 +131,7 @@ export default function Erection() {
 
         bg-cyan-500/10
 
-        blur-[140px]
+        blur-[150px]
         "
       />
 
@@ -139,69 +147,13 @@ export default function Erection() {
 
         bg-blue-500/10
 
-        blur-[140px]
+        blur-[150px]
         "
       />
 
       {/* ======================================== */}
-      {/* FLOATING PARTICLES */}
+      {/* CONTENT */}
       {/* ======================================== */}
-
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-
-        <motion.div
-          animate={{
-            y: [0, -40, 0],
-          }}
-
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-          }}
-
-          className="
-          absolute
-
-          top-[15%]
-          left-[10%]
-
-          w-3 h-3
-
-          rounded-full
-
-          bg-cyan-400/40
-
-          blur-sm
-          "
-        />
-
-        <motion.div
-          animate={{
-            y: [0, 35, 0],
-          }}
-
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-          }}
-
-          className="
-          absolute
-
-          bottom-[18%]
-          right-[12%]
-
-          w-4 h-4
-
-          rounded-full
-
-          bg-blue-400/30
-
-          blur-sm
-          "
-        />
-
-      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
@@ -212,16 +164,16 @@ export default function Erection() {
         <div
           className="
           grid
-          lg:grid-cols-2
+          lg:grid-cols-[1.05fr_0.95fr]
 
-          gap-16
+          gap-14
 
           items-center
           "
         >
 
           {/* ======================================== */}
-          {/* IMAGE SIDE */}
+          {/* LEFT IMAGE */}
           {/* ======================================== */}
 
           <motion.div
@@ -246,24 +198,24 @@ export default function Erection() {
             className="relative"
           >
 
-            {/* MAIN IMAGE */}
+            {/* IMAGE CONTAINER */}
+
             <div
               className="
               relative
 
-              h-[350px]
-              sm:h-[500px]
-              lg:h-[650px]
-
-              rounded-[36px]
+              h-[320px]
+              md:h-[540px]
 
               overflow-hidden
+
+              rounded-[40px]
 
               border border-white/10
 
               bg-white/[0.03]
 
-              backdrop-blur-3xl
+              shadow-[0_0_60px_rgba(0,255,255,0.08)]
               "
             >
 
@@ -271,17 +223,20 @@ export default function Erection() {
                 src="/service/ServiceERC1.webp"
                 alt="Tower Erection"
                 fill
-                className="object-cover"
+                className="
+                object-cover
+                "
               />
 
               {/* OVERLAY */}
+
               <div
                 className="
                 absolute inset-0
 
                 bg-gradient-to-t
                 from-[#020617]
-                via-transparent
+                via-[#020617]/10
                 to-transparent
                 "
               />
@@ -289,87 +244,86 @@ export default function Erection() {
             </div>
 
             {/* FLOATING CARD */}
+
             <motion.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-
-              viewport={{
-                once: true,
-              }}
-
-              transition={{
-                delay: 0.4,
-              }}
-
               whileHover={{
-                y: -6,
+                y: -4,
               }}
 
               className="
               absolute
 
-              top-6
-              right-4
-              sm:right-[-20px]
+              bottom-6
+              right-6
 
-              w-[220px]
-              sm:w-[260px]
-
-              rounded-[30px]
+              rounded-3xl
 
               border border-cyan-400/20
 
-              bg-black/40
+              bg-black/55
 
               backdrop-blur-3xl
 
-              p-6
+              px-5 py-4
 
-              shadow-[0_0_50px_rgba(34,211,238,0.18)]
+              shadow-[0_0_35px_rgba(34,211,238,0.18)]
               "
             >
 
-              <h3
-                className="
-                text-4xl
+              <div className="flex items-center gap-4">
 
-                font-black
+                <div
+                  className="
+                  w-12 h-12
 
-                text-cyan-400
+                  rounded-2xl
 
-                mb-3
-                "
-              >
-                100%
-              </h3>
+                  bg-cyan-400/10
 
-              <p
-                className="
-                text-gray-300
+                  border border-cyan-400/20
 
-                leading-relaxed
+                  flex items-center justify-center
 
-                text-sm
-                "
-              >
-                Precision tower alignment and
-                erection with advanced engineering
-                standards.
-              </p>
+                  text-cyan-300
+                  "
+                >
+
+                  <TowerControl size={20} />
+
+                </div>
+
+                <div>
+
+                  <h4
+                    className="
+                    text-base
+
+                    font-bold
+                    "
+                  >
+                    Tower Erection
+                  </h4>
+
+                  <p
+                    className="
+                    text-xs
+
+                    text-gray-300
+                    "
+                  >
+                    High Precision Execution
+                  </p>
+
+                </div>
+
+              </div>
 
             </motion.div>
 
           </motion.div>
 
           {/* ======================================== */}
-          {/* CONTENT SIDE */}
+          {/* RIGHT CONTENT */}
           {/* ======================================== */}
 
           <motion.div
@@ -393,21 +347,8 @@ export default function Erection() {
           >
 
             {/* BADGE */}
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
 
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-
-              viewport={{
-                once: true,
-              }}
-
+            <div
               className="
               inline-flex
 
@@ -424,18 +365,18 @@ export default function Erection() {
 
               backdrop-blur-xl
 
-              mb-6
+              mb-5
               "
             >
 
               <Sparkles
-                size={14}
+                size={12}
                 className="text-cyan-300"
               />
 
               <span
                 className="
-                text-xs
+                text-[10px]
 
                 tracking-[4px]
 
@@ -445,9 +386,10 @@ export default function Erection() {
                 TOWER ERECTION
               </span>
 
-            </motion.div>
+            </div>
 
-            {/* SUBTITLE */}
+            {/* SMALL LABEL */}
+
             <p
               className="
               uppercase
@@ -456,15 +398,16 @@ export default function Erection() {
 
               text-cyan-400
 
-              text-sm
+              text-xs
 
-              mb-5
+              mb-4
               "
             >
-              Tower Erection Services
+              Erection Services
             </p>
 
             {/* HEADING */}
+
             <h2
               className="
               text-4xl
@@ -472,30 +415,31 @@ export default function Erection() {
 
               font-black
 
-              leading-[1]
+              leading-[0.95]
 
-              mb-8
+              mb-7
               "
             >
 
               Precision Execution
 
-              <span className="block text-cyan-400 mt-3">
+              <span className="block text-cyan-400 mt-2">
                 At Every Height
               </span>
 
             </h2>
 
-            {/* DESC */}
+            {/* DESCRIPTION */}
+
             <p
               className="
               text-gray-300
 
               leading-[1.9]
 
-              text-lg
+              text-base md:text-lg
 
-              mb-12
+              mb-10
               "
             >
               Kuddus Ali Construction delivers reliable
@@ -508,10 +452,18 @@ export default function Erection() {
             </p>
 
             {/* ======================================== */}
-            {/* PROCESS CARDS */}
+            {/* PREMIUM SERVICE CARDS */}
             {/* ======================================== */}
 
-            <div className="space-y-5">
+            <div
+              className="
+              grid
+              grid-cols-1
+              sm:grid-cols-2
+
+              gap-5
+              "
+            >
 
               {erectionSteps.map((item, i) => (
 
@@ -533,12 +485,12 @@ export default function Erection() {
                   }}
 
                   transition={{
-                    delay: i * 0.15,
+                    delay: i * 0.12,
                   }}
 
                   whileHover={{
-                    x: 8,
-                    scale: 1.01,
+                    y: -8,
+                    scale: 1.02,
                   }}
 
                   className="
@@ -548,32 +500,129 @@ export default function Erection() {
 
                   overflow-hidden
 
-                  flex gap-5
-
-                  rounded-[30px]
+                  rounded-[28px]
 
                   border border-white/10
 
-                  bg-white/[0.03]
+                  bg-gradient-to-br
+                  from-white/[0.05]
+                  to-white/[0.02]
 
                   backdrop-blur-2xl
 
-                  p-6
+                  hover:border-cyan-400/40
 
-                  hover:border-cyan-400/30
-
-                  hover:bg-cyan-400/[0.04]
-
-                  hover:shadow-[0_0_40px_rgba(34,211,238,0.10)]
+                  hover:shadow-[0_0_35px_rgba(34,211,238,0.12)]
 
                   transition-all duration-500
                   "
                 >
 
-                  {/* GLOW */}
+                  {/* TOP IMAGE */}
+
                   <div
                     className="
-                    absolute inset-0
+                    relative
+
+                    h-[120px]
+
+                    overflow-hidden
+                    "
+                  >
+
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="
+                      object-cover
+
+                      group-hover:scale-105
+
+                      transition duration-700
+                      "
+                    />
+
+                    {/* IMAGE OVERLAY */}
+
+                    <div
+                      className="
+                      absolute inset-0
+
+                      bg-gradient-to-t
+                      from-[#020617]
+                      via-[#020617]/40
+                      to-transparent
+                      "
+                    />
+
+                  </div>
+
+                  {/* CONTENT */}
+
+                  <div className="p-5">
+
+                    {/* ICON */}
+
+                    <div
+                      className="
+                      w-12 h-12
+
+                      rounded-2xl
+
+                      bg-cyan-400/10
+
+                      border border-cyan-400/20
+
+                      flex items-center justify-center
+
+                      text-cyan-300
+
+                      mb-4
+                      "
+                    >
+
+                      {item.icon}
+
+                    </div>
+
+                    {/* TITLE */}
+
+                    <h3
+                      className="
+                      text-lg
+
+                      font-bold
+
+                      mb-3
+                      "
+                    >
+                      {item.title}
+                    </h3>
+
+                    {/* DESCRIPTION */}
+
+                    <p
+                      className="
+                      text-gray-400
+
+                      text-sm
+
+                      leading-[1.8]
+                      "
+                    >
+                      {item.desc}
+                    </p>
+
+                  </div>
+
+                  {/* HOVER GLOW */}
+
+                  <div
+                    className="
+                    absolute
+
+                    inset-0
 
                     opacity-0
 
@@ -581,67 +630,11 @@ export default function Erection() {
 
                     transition duration-500
 
-                    bg-gradient-to-br
-                    from-cyan-500/5
-                    via-transparent
-                    to-blue-500/5
+                    bg-cyan-400/[0.03]
+
+                    pointer-events-none
                     "
                   />
-
-                  {/* ICON */}
-                  <div
-                    className="
-                    relative z-10
-
-                    min-w-[60px]
-                    h-[60px]
-
-                    rounded-2xl
-
-                    bg-cyan-400/10
-
-                    border border-cyan-400/20
-
-                    flex items-center justify-center
-
-                    text-cyan-300
-
-                    group-hover:scale-110
-
-                    transition
-                    "
-                  >
-
-                    {item.icon}
-
-                  </div>
-
-                  {/* TEXT */}
-                  <div className="relative z-10">
-
-                    <h3
-                      className="
-                      text-xl
-
-                      font-bold
-
-                      mb-2
-                      "
-                    >
-                      {item.title}
-                    </h3>
-
-                    <p
-                      className="
-                      text-gray-400
-
-                      leading-relaxed
-                      "
-                    >
-                      {item.desc}
-                    </p>
-
-                  </div>
 
                 </motion.div>
 
@@ -703,12 +696,12 @@ export default function Erection() {
               }}
 
               transition={{
-                delay: i * 0.15,
+                delay: i * 0.2,
               }}
 
               whileHover={{
                 y: -8,
-                scale: 1.03,
+                scale: 1.02,
               }}
 
               className="
@@ -722,35 +715,41 @@ export default function Erection() {
 
               border border-cyan-400/10
 
-              bg-white/[0.03]
+              bg-gradient-to-br
+              from-white/[0.04]
+              to-white/[0.02]
 
-              backdrop-blur-2xl
+              backdrop-blur-xl
 
-              py-12
-              px-5
+              py-12 px-5
 
               hover:border-cyan-400/40
+
+              hover:shadow-[0_0_40px_rgba(34,211,238,0.10)]
 
               transition-all duration-500
               "
             >
 
               {/* GLOW */}
+
               <div
                 className="
-                absolute
-                -top-20
-                -right-20
+                absolute inset-0
 
-                w-40 h-40
+                opacity-0
 
-                bg-cyan-400/10
+                hover:opacity-100
+
+                transition duration-500
+
+                bg-cyan-400/5
 
                 blur-3xl
-
-                rounded-full
                 "
               />
+
+              {/* NUMBER */}
 
               <h3
                 className="
@@ -764,7 +763,7 @@ export default function Erection() {
 
                 mb-3
 
-                drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]
+                drop-shadow-[0_0_20px_rgba(34,211,238,0.45)]
                 "
               >
 
@@ -776,6 +775,8 @@ export default function Erection() {
                 {item.suffix}
 
               </h3>
+
+              {/* LABEL */}
 
               <p
                 className="

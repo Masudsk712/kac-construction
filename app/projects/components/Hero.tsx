@@ -63,7 +63,7 @@ export default function Hero() {
       {/* ======================================== */}
 
       <Image
-        src="/placeholder.jpg"
+        src="/projects/Project1.webp"
         alt="Projects Hero"
 
         fill
@@ -507,7 +507,7 @@ export default function Hero() {
             >
 
               <Image
-                src="/placeholder.jpg"
+                src="/projects/Project2.webp"
                 alt="Transmission Projects"
 
                 width={700}

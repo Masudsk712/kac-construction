@@ -23,7 +23,7 @@ const timelineData = [
     desc:
       "Kuddus Ali Construction initiated transmission tower foundation execution across multiple regions in India.",
 
-    image: "/placeholder.jpg",
+    image: "/projects/Project9.webp",
   },
 
   {
@@ -32,7 +32,7 @@ const timelineData = [
     desc:
       "Successfully expanded operations into high-voltage tower erection and infrastructure execution.",
 
-    image: "/placeholder.jpg",
+    image: "/projects/Project10.webp",
   },
 
   {
@@ -41,7 +41,7 @@ const timelineData = [
     desc:
       "Handled ultra high-voltage transmission infrastructure with advanced engineering expertise.",
 
-    image: "/placeholder.jpg",
+    image: "/projects/Project11.webp",
   },
 
   {
@@ -50,7 +50,7 @@ const timelineData = [
     desc:
       "Entered hotline maintenance and live-line transmission operations with specialized teams.",
 
-    image: "/placeholder.jpg",
+    image: "/projects/Project12.webp",
   },
 
   {
@@ -59,7 +59,7 @@ const timelineData = [
     desc:
       "Executed advanced HTLS reconductoring and modernization transmission projects.",
 
-    image: "/placeholder.jpg",
+    image: "/projects/Project13.webp",
   },
 
   {
@@ -68,7 +68,7 @@ const timelineData = [
     desc:
       "Expanded infrastructure operations across India delivering reliable EPC solutions.",
 
-    image: "/placeholder.jpg",
+    image: "/projects/Project14.webp",
   },
 ]
 

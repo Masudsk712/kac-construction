@@ -28,7 +28,7 @@ const projects = [
 
     category: "Transmission",
 
-    image: "/placeholder.jpg",
+    image: "/projects/Project13.webp",
 
     desc:
       "Ultra high-voltage transmission infrastructure project executed with precision engineering and EPC excellence.",
@@ -46,7 +46,7 @@ const projects = [
 
     category: "Foundation",
 
-    image: "/placeholder.jpg",
+    image: "/projects/Project18.webp",
 
     desc:
       "Large-scale transmission tower foundation execution across challenging terrain and remote regions.",

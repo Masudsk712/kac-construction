@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 
 import Image from "next/image";
 
+import { useEffect, useState } from "react";
+
 import CountUp from "react-countup";
 
 import {
@@ -15,36 +17,54 @@ import {
 } from "lucide-react";
 
 /* ======================================== */
-/* PROCESS */
+/* AUTO IMAGE SLIDER */
 /* ======================================== */
 
-const processes = [
+const images = [
+  "/service/ServiceFd1.webp",
+  "/service/Foundation1.webp",
+  "/service/Foundation2.webp",
+];
+
+/* ======================================== */
+/* SERVICES */
+/* ======================================== */
+
+const services = [
   {
-    icon: <Hammer size={28} />,
+    icon: <Hammer size={18} />,
     title: "Excavation Work",
     desc:
       "Precision excavation and ground preparation for transmission tower foundations.",
+
+    image: "/service/Foundation3.webp",
   },
 
   {
-    icon: <Building2 size={28} />,
+    icon: <Building2 size={18} />,
     title: "Concrete Foundation",
     desc:
       "Heavy-duty reinforced concrete foundations ensuring long-term structural stability.",
+
+    image: "/service/Foundation4.webp",
   },
 
   {
-    icon: <Truck size={28} />,
+    icon: <Truck size={18} />,
     title: "Material Handling",
     desc:
       "Efficient logistics and material management using advanced construction practices.",
+
+    image: "/service/Foundation5.webp",
   },
 
   {
-    icon: <ShieldCheck size={28} />,
+    icon: <ShieldCheck size={18} />,
     title: "Quality Assurance",
     desc:
       "Strict adherence to safety, quality and engineering compliance standards.",
+
+    image: "/service/Foundation6.webp",
   },
 ];
 
@@ -74,6 +94,30 @@ const stats = [
 
 export default function Foundation() {
 
+  const [currentImage, setCurrentImage] =
+    useState(0);
+
+  /* ======================================== */
+  /* AUTO IMAGE CHANGE */
+  /* ======================================== */
+
+  useEffect(() => {
+
+    const interval = setInterval(() => {
+
+      setCurrentImage((prev) =>
+        prev === images.length - 1
+          ? 0
+          : prev + 1
+      );
+
+    }, 3500);
+
+    return () =>
+      clearInterval(interval);
+
+  }, []);
+
   return (
 
     <section
@@ -83,16 +127,16 @@ export default function Foundation() {
 
       overflow-hidden
 
-      py-24 md:py-28
+      py-20 md:py-24
 
-      bg-[#06111f]
+      bg-[#020617]
 
       text-white
       "
     >
 
       {/* ======================================== */}
-      {/* GRID BG */}
+      {/* GRID BACKGROUND */}
       {/* ======================================== */}
 
       <div
@@ -108,7 +152,7 @@ export default function Foundation() {
       />
 
       {/* ======================================== */}
-      {/* GLOW */}
+      {/* BACKGROUND GLOW */}
       {/* ======================================== */}
 
       <div
@@ -116,14 +160,14 @@ export default function Foundation() {
         absolute
 
         top-0
-        right-0
+        left-0
 
         w-[500px]
         h-[500px]
 
         bg-cyan-500/10
 
-        blur-[140px]
+        blur-[150px]
         "
       />
 
@@ -132,96 +176,40 @@ export default function Foundation() {
         absolute
 
         bottom-0
-        left-0
+        right-0
 
         w-[500px]
         h-[500px]
 
         bg-blue-500/10
 
-        blur-[140px]
+        blur-[150px]
         "
       />
 
       {/* ======================================== */}
-      {/* FLOATING PARTICLES */}
+      {/* CONTENT */}
       {/* ======================================== */}
-
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-
-        <motion.div
-          animate={{
-            y: [0, -40, 0],
-          }}
-
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-          }}
-
-          className="
-          absolute
-
-          top-[18%]
-          right-[12%]
-
-          w-3 h-3
-
-          rounded-full
-
-          bg-cyan-400/40
-
-          blur-sm
-          "
-        />
-
-        <motion.div
-          animate={{
-            y: [0, 30, 0],
-          }}
-
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-          }}
-
-          className="
-          absolute
-
-          bottom-[15%]
-          left-[10%]
-
-          w-4 h-4
-
-          rounded-full
-
-          bg-blue-400/30
-
-          blur-sm
-          "
-        />
-
-      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
         {/* ======================================== */}
-        {/* MAIN GRID */}
+        {/* TOP SECTION */}
         {/* ======================================== */}
 
         <div
           className="
           grid
-          lg:grid-cols-2
+          lg:grid-cols-[1.05fr_0.95fr]
 
-          gap-16
+          gap-14
 
           items-center
           "
         >
 
           {/* ======================================== */}
-          {/* LEFT CONTENT */}
+          {/* LEFT IMAGE */}
           {/* ======================================== */}
 
           <motion.div
@@ -242,278 +230,138 @@ export default function Foundation() {
             transition={{
               duration: 0.9,
             }}
+
+            className="relative"
           >
 
-            {/* BADGE */}
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-
-              viewport={{
-                once: true,
-              }}
-
-              className="
-              inline-flex
-
-              items-center
-              gap-3
-
-              px-5 py-2
-
-              rounded-full
-
-              border border-cyan-400/20
-
-              bg-cyan-400/10
-
-              backdrop-blur-xl
-
-              mb-6
-              "
-            >
-
-              <Sparkles
-                size={14}
-                className="text-cyan-300"
-              />
-
-              <span
-                className="
-                text-xs
-
-                tracking-[4px]
-
-                text-cyan-300
-                "
-              >
-                FOUNDATION EXECUTION
-              </span>
-
-            </motion.div>
-
-            {/* SUBTITLE */}
-            <p
-              className="
-              uppercase
-
-              tracking-[5px]
-
-              text-cyan-400
-
-              text-sm
-
-              mb-5
-              "
-            >
-              Foundation Services
-            </p>
-
-            {/* HEADING */}
-            <h2
-              className="
-              text-4xl
-              md:text-6xl
-
-              font-black
-
-              leading-[1]
-
-              mb-8
-              "
-            >
-
-              Building Strong
-
-              <span className="block text-cyan-400 mt-3">
-                Structural Foundations
-              </span>
-
-            </h2>
-
-            {/* DESC */}
-            <p
-              className="
-              text-gray-300
-
-              leading-[1.9]
-
-              text-lg
-
-              mb-12
-              "
-            >
-              Kuddus Ali Construction specializes in robust
-              transmission tower foundation works
-              designed to withstand diverse terrain
-              and environmental conditions while
-              ensuring maximum structural integrity
-              and long-term reliability.
-            </p>
-
-            {/* ======================================== */}
-            {/* PROCESS CARDS */}
-            {/* ======================================== */}
+            {/* IMAGE CONTAINER */}
 
             <div
               className="
-              grid
-              grid-cols-1
-              sm:grid-cols-2
+              relative
 
-              gap-5
+              h-[320px]
+              md:h-[540px]
+
+              overflow-hidden
+
+              rounded-[40px]
+
+              border border-white/10
+
+              bg-white/[0.03]
+
+              shadow-[0_0_60px_rgba(0,255,255,0.08)]
               "
             >
 
-              {processes.map((item, i) => (
+              <Image
+                src={images[currentImage]}
+                alt="Foundation Work"
+                fill
+                className="
+                object-cover
 
-                <motion.div
-                  key={i}
+                transition-all duration-1000
+                "
+              />
 
-                  initial={{
-                    opacity: 0,
-                    y: 40,
-                  }}
+              {/* OVERLAY */}
 
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
+              <div
+                className="
+                absolute inset-0
 
-                  viewport={{
-                    once: true,
-                  }}
+                bg-gradient-to-t
+                from-[#020617]
+                via-[#020617]/10
+                to-transparent
+                "
+              />
 
-                  transition={{
-                    delay: i * 0.15,
-                  }}
+            </div>
 
-                  whileHover={{
-                    y: -8,
-                    scale: 1.02,
-                  }}
+            {/* FLOATING CARD */}
 
+            <motion.div
+              whileHover={{
+                y: -4,
+              }}
+
+              className="
+              absolute
+
+              bottom-6
+              right-6
+
+              rounded-3xl
+
+              border border-cyan-400/20
+
+              bg-black/55
+
+              backdrop-blur-3xl
+
+              px-5 py-4
+
+              shadow-[0_0_35px_rgba(34,211,238,0.18)]
+              "
+            >
+
+              <div className="flex items-center gap-4">
+
+                <div
                   className="
-                  group
+                  w-12 h-12
 
-                  relative
+                  rounded-2xl
 
-                  overflow-hidden
+                  bg-cyan-400/10
 
-                  rounded-[30px]
+                  border border-cyan-400/20
 
-                  border border-white/10
+                  flex items-center justify-center
 
-                  bg-white/[0.03]
-
-                  backdrop-blur-2xl
-
-                  p-7
-
-                  hover:border-cyan-400/30
-
-                  hover:bg-cyan-400/[0.04]
-
-                  hover:shadow-[0_0_40px_rgba(34,211,238,0.10)]
-
-                  transition-all duration-500
+                  text-cyan-300
                   "
                 >
 
-                  {/* GLOW */}
-                  <div
+                  <Building2 size={20} />
+
+                </div>
+
+                <div>
+
+                  <h4
                     className="
-                    absolute inset-0
-
-                    opacity-0
-
-                    group-hover:opacity-100
-
-                    transition duration-500
-
-                    bg-gradient-to-br
-                    from-cyan-500/5
-                    via-transparent
-                    to-blue-500/5
-                    "
-                  />
-
-                  {/* ICON */}
-                  <div
-                    className="
-                    relative z-10
-
-                    w-14 h-14
-
-                    rounded-2xl
-
-                    bg-cyan-400/10
-
-                    border border-cyan-400/20
-
-                    flex items-center justify-center
-
-                    text-cyan-300
-
-                    mb-6
-
-                    group-hover:scale-110
-
-                    transition
-                    "
-                  >
-
-                    {item.icon}
-
-                  </div>
-
-                  {/* TITLE */}
-                  <h3
-                    className="
-                    relative z-10
-
-                    text-xl
+                    text-base
 
                     font-bold
-
-                    mb-3
                     "
                   >
-                    {item.title}
-                  </h3>
+                    Heavy Foundation
+                  </h4>
 
-                  {/* DESC */}
                   <p
                     className="
-                    relative z-10
+                    text-xs
 
-                    text-gray-400
-
-                    leading-relaxed
-
-                    text-sm
+                    text-gray-300
                     "
                   >
-                    {item.desc}
+                    Structural Stability Execution
                   </p>
 
-                </motion.div>
+                </div>
 
-              ))}
+              </div>
 
-            </div>
+            </motion.div>
 
           </motion.div>
 
           {/* ======================================== */}
-          {/* RIGHT IMAGE */}
+          {/* RIGHT CONTENT */}
           {/* ======================================== */}
 
           <motion.div
@@ -534,129 +382,302 @@ export default function Foundation() {
             transition={{
               duration: 0.9,
             }}
-
-            className="relative"
           >
 
-            {/* MAIN IMAGE */}
+            {/* BADGE */}
+
             <div
               className="
-              relative
+              inline-flex
 
-              h-[350px]
-              sm:h-[500px]
-              lg:h-[650px]
+              items-center
+              gap-3
 
-              rounded-[36px]
+              px-5 py-2
 
-              overflow-hidden
-
-              border border-white/10
-
-              bg-white/[0.03]
-
-              backdrop-blur-3xl
-              "
-            >
-
-              <Image
-                src="/service/ServiceFd1.webp"
-                alt="Foundation Work"
-                fill
-                className="object-cover"
-              />
-
-              {/* OVERLAY */}
-              <div
-                className="
-                absolute inset-0
-
-                bg-gradient-to-t
-                from-[#06111f]
-                via-transparent
-                to-transparent
-                "
-              />
-
-            </div>
-
-            {/* FLOAT CARD */}
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-
-              viewport={{
-                once: true,
-              }}
-
-              transition={{
-                delay: 0.4,
-              }}
-
-              whileHover={{
-                y: -6,
-              }}
-
-              className="
-              absolute
-
-              bottom-6
-              left-4
-              sm:left-[-20px]
-
-              w-[220px]
-              sm:w-[260px]
-
-              rounded-[30px]
+              rounded-full
 
               border border-cyan-400/20
 
-              bg-black/40
+              bg-cyan-400/10
 
-              backdrop-blur-3xl
+              backdrop-blur-xl
 
-              p-6
-
-              shadow-[0_0_50px_rgba(34,211,238,0.18)]
+              mb-5
               "
             >
 
-              <h3
+              <Sparkles
+                size={12}
+                className="text-cyan-300"
+              />
+
+              <span
                 className="
-                text-4xl
+                text-[10px]
 
-                font-black
+                tracking-[4px]
 
-                text-cyan-400
-
-                mb-3
+                text-cyan-300
                 "
               >
-                500k+
-              </h3>
+                FOUNDATION SERVICES
+              </span>
 
-              <p
-                className="
-                text-gray-300
+            </div>
 
-                leading-relaxed
+            {/* SMALL LABEL */}
 
-                text-sm
-                "
-              >
-                Cubic meters of concrete executed
-                across multiple transmission
-                infrastructure projects.
-              </p>
+            <p
+              className="
+              uppercase
 
-            </motion.div>
+              tracking-[5px]
+
+              text-cyan-400
+
+              text-xs
+
+              mb-4
+              "
+            >
+              Foundation Services
+            </p>
+
+            {/* HEADING */}
+
+            <h2
+              className="
+              text-4xl
+              md:text-6xl
+
+              font-black
+
+              leading-[0.95]
+
+              mb-7
+              "
+            >
+
+              Strong Base
+
+              <span className="block text-cyan-400 mt-2">
+                Infrastructure Foundations
+              </span>
+
+            </h2>
+
+            {/* DESCRIPTION */}
+
+            <p
+              className="
+              text-gray-300
+
+              leading-[1.9]
+
+              text-base md:text-lg
+
+              mb-10
+              "
+            >
+              Kuddus Ali Construction provides advanced
+              foundation solutions for transmission
+              tower infrastructure projects with
+              precision excavation, reinforced
+              concrete execution and high structural
+              reliability standards.
+            </p>
+
+            {/* ======================================== */}
+            {/* PREMIUM HORIZONTAL SERVICE CARDS */}
+            {/* ======================================== */}
+
+            <div
+              className="
+              grid
+              grid-cols-1
+              sm:grid-cols-2
+
+              gap-5
+              "
+            >
+
+              {services.map((item, i) => (
+
+                <motion.div
+                  key={i}
+
+                  initial={{
+                    opacity: 0,
+                    y: 40,
+                  }}
+
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+
+                  viewport={{
+                    once: true,
+                  }}
+
+                  transition={{
+                    delay: i * 0.12,
+                  }}
+
+                  whileHover={{
+                    y: -8,
+                    scale: 1.02,
+                  }}
+
+                  className="
+                  group
+
+                  relative
+
+                  overflow-hidden
+
+                  rounded-[28px]
+
+                  border border-white/10
+
+                  bg-gradient-to-br
+                  from-white/[0.05]
+                  to-white/[0.02]
+
+                  backdrop-blur-2xl
+
+                  hover:border-cyan-400/40
+
+                  hover:shadow-[0_0_35px_rgba(34,211,238,0.12)]
+
+                  transition-all duration-500
+                  "
+                >
+
+                  {/* TOP IMAGE */}
+
+                  <div
+                    className="
+                    relative
+
+                    h-[120px]
+
+                    overflow-hidden
+                    "
+                  >
+
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="
+                      object-cover
+
+                      group-hover:scale-105
+
+                      transition duration-700
+                      "
+                    />
+
+                    {/* IMAGE OVERLAY */}
+
+                    <div
+                      className="
+                      absolute inset-0
+
+                      bg-gradient-to-t
+                      from-[#020617]
+                      via-[#020617]/40
+                      to-transparent
+                      "
+                    />
+
+                  </div>
+
+                  {/* CONTENT */}
+
+                  <div className="p-5">
+
+                    {/* ICON */}
+
+                    <div
+                      className="
+                      w-12 h-12
+
+                      rounded-2xl
+
+                      bg-cyan-400/10
+
+                      border border-cyan-400/20
+
+                      flex items-center justify-center
+
+                      text-cyan-300
+
+                      mb-4
+                      "
+                    >
+
+                      {item.icon}
+
+                    </div>
+
+                    {/* TITLE */}
+
+                    <h3
+                      className="
+                      text-lg
+
+                      font-bold
+
+                      mb-3
+                      "
+                    >
+                      {item.title}
+                    </h3>
+
+                    {/* DESCRIPTION */}
+
+                    <p
+                      className="
+                      text-gray-400
+
+                      text-sm
+
+                      leading-[1.8]
+                      "
+                    >
+                      {item.desc}
+                    </p>
+
+                  </div>
+
+                  {/* HOVER GLOW */}
+
+                  <div
+                    className="
+                    absolute
+
+                    inset-0
+
+                    opacity-0
+
+                    group-hover:opacity-100
+
+                    transition duration-500
+
+                    bg-cyan-400/[0.03]
+
+                    pointer-events-none
+                    "
+                  />
+
+                </motion.div>
+
+              ))}
+
+            </div>
 
           </motion.div>
 
@@ -712,12 +733,12 @@ export default function Foundation() {
               }}
 
               transition={{
-                delay: i * 0.15,
+                delay: i * 0.2,
               }}
 
               whileHover={{
                 y: -8,
-                scale: 1.03,
+                scale: 1.02,
               }}
 
               className="
@@ -731,35 +752,41 @@ export default function Foundation() {
 
               border border-cyan-400/10
 
-              bg-white/[0.03]
+              bg-gradient-to-br
+              from-white/[0.04]
+              to-white/[0.02]
 
-              backdrop-blur-2xl
+              backdrop-blur-xl
 
-              py-12
-              px-5
+              py-12 px-5
 
               hover:border-cyan-400/40
+
+              hover:shadow-[0_0_40px_rgba(34,211,238,0.10)]
 
               transition-all duration-500
               "
             >
 
               {/* GLOW */}
+
               <div
                 className="
-                absolute
-                -top-20
-                -right-20
+                absolute inset-0
 
-                w-40 h-40
+                opacity-0
 
-                bg-cyan-400/10
+                hover:opacity-100
+
+                transition duration-500
+
+                bg-cyan-400/5
 
                 blur-3xl
-
-                rounded-full
                 "
               />
+
+              {/* NUMBER */}
 
               <h3
                 className="
@@ -773,7 +800,7 @@ export default function Foundation() {
 
                 mb-3
 
-                drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]
+                drop-shadow-[0_0_20px_rgba(34,211,238,0.45)]
                 "
               >
 
@@ -785,6 +812,8 @@ export default function Foundation() {
                 {item.suffix}
 
               </h3>
+
+              {/* LABEL */}
 
               <p
                 className="

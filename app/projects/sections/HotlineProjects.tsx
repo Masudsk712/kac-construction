@@ -159,7 +159,7 @@ export default function HotlineProjects() {
           >
 
             <Image
-              src="/placeholder.jpg"
+              src="/projects/Project18.webp"
               alt="Hotline Projects"
 
               fill

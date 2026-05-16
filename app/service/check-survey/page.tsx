@@ -84,9 +84,9 @@ const highlights = [
 /* ======================================== */
 
 const gallery = [
-  "/placeholder.jpg",
-  "/placeholder.jpg",
-  "/placeholder.jpg",
+  "/service/CheckSurvey/CheckSurvey1.webp",
+  "/service/CheckSurvey/CheckSurvey2.webp",
+  "/service/CheckSurvey/CheckSurvey3.webp",
 ];
 
 export default function PreliminarySurveyPage() {
@@ -150,7 +150,7 @@ export default function PreliminarySurveyPage() {
 
         {/* BG IMAGE */}
         <Image
-          src="/placeholder.jpg"
+          src="/service/CheckSurvey/CheckSurvey4.webp"
           alt="Survey Hero"
           fill
           priority
@@ -424,7 +424,7 @@ export default function PreliminarySurveyPage() {
             >
 
               <Image
-                src="/placeholder.jpg"
+                src="/service/CheckSurvey/CheckSurvey5.webp"
                 alt="Survey"
 
                 width={700}
@@ -565,7 +565,7 @@ export default function PreliminarySurveyPage() {
             >
 
               <Image
-                src="/placeholder.jpg"
+                src="/service/CheckSurvey/CheckSurvey6.webp"
                 alt="Overview"
 
                 width={700}
