@@ -18,17 +18,19 @@ import {
 export default function CTASection() {
 
   return (
+
     <section
       className="
-      relative
+        relative
 
-      overflow-hidden
+        overflow-hidden
 
-      bg-[#020617]
-      text-white
+        bg-[var(--bg)]
+        text-[var(--text)]
 
-      py-28
-    "
+        py-24
+        md:py-28
+      "
     >
 
       {/* ================================================= */}
@@ -40,36 +42,42 @@ export default function CTASection() {
 
         <div
           className="
-          absolute
-          top-[-150px]
-          left-[-150px]
+            absolute
+            top-[-150px]
+            left-[-150px]
 
-          w-[450px]
-          h-[450px]
+            w-[380px]
+            h-[380px]
 
-          rounded-full
+            md:w-[450px]
+            md:h-[450px]
 
-          bg-cyan-500/10
+            rounded-full
 
-          blur-[130px]
-        "
+            bg-cyan-500/10
+
+            blur-[130px]
+          "
         />
 
         <div
           className="
-          absolute
-          bottom-[-180px]
-          right-[-180px]
+            absolute
+            bottom-[-180px]
+            right-[-180px]
 
-          w-[500px]
-          h-[500px]
+            w-[420px]
+            h-[420px]
 
-          rounded-full
+            md:w-[500px]
+            md:h-[500px]
 
-          bg-blue-500/10
+            rounded-full
 
-          blur-[140px]
-        "
+            bg-blue-500/10
+
+            blur-[140px]
+          "
         />
 
       </div>
@@ -77,14 +85,14 @@ export default function CTASection() {
       {/* GRID */}
       <div
         className="
-        absolute inset-0
+          absolute inset-0
 
-        opacity-[0.03]
+          opacity-[0.03]
 
-        [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+          [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
 
-        [background-size:60px_60px]
-      "
+          [background-size:60px_60px]
+        "
       />
 
       {/* ================================================= */}
@@ -113,25 +121,27 @@ export default function CTASection() {
           }}
 
           className="
-          relative
+            relative
 
-          overflow-hidden
+            overflow-hidden
 
-          rounded-[40px]
+            rounded-[28px]
+            md:rounded-[40px]
 
-          border border-white/10
+            border border-white/10
 
-          bg-white/[0.04]
-          backdrop-blur-2xl
+            bg-white/[0.04]
+            backdrop-blur-2xl
 
-          shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+            shadow-[0_20px_80px_rgba(0,0,0,0.45)]
 
-          px-6
-          md:px-14
+            px-5
+            sm:px-8
+            md:px-14
 
-          py-16
-          md:py-20
-        "
+            py-14
+            md:py-20
+          "
         >
 
           {/* ================================================= */}
@@ -140,14 +150,14 @@ export default function CTASection() {
 
           <div
             className="
-            absolute
-            inset-0
+              absolute
+              inset-0
 
-            bg-gradient-to-r
-            from-cyan-500/5
-            via-transparent
-            to-blue-500/5
-          "
+              bg-gradient-to-r
+              from-cyan-500/5
+              via-transparent
+              to-blue-500/5
+            "
           />
 
           {/* ================================================= */}
@@ -166,30 +176,37 @@ export default function CTASection() {
             }}
 
             className="
-            relative z-10
+              relative z-10
 
-            w-20
-            h-20
+              w-16
+              h-16
 
-            mx-auto
+              md:w-20
+              md:h-20
 
-            rounded-3xl
+              mx-auto
 
-            border border-cyan-400/20
+              rounded-3xl
 
-            bg-cyan-400/10
+              border border-cyan-400/20
 
-            flex
-            items-center
-            justify-center
+              bg-cyan-400/10
 
-            text-cyan-300
+              flex
+              items-center
+              justify-center
 
-            mb-10
-          "
+              text-cyan-300
+
+              mb-8
+              md:mb-10
+            "
           >
 
-            <RadioTower size={38} />
+            <RadioTower
+              size={32}
+              className="md:w-[38px] md:h-[38px]"
+            />
 
           </motion.div>
 
@@ -218,25 +235,28 @@ export default function CTASection() {
             }}
 
             className="
-            relative z-10
+              relative z-10
 
-            text-center
-          "
+              text-center
+            "
           >
 
             {/* SMALL LABEL */}
             <p
               className="
-              uppercase
+                uppercase
 
-              tracking-[6px]
+                tracking-[5px]
+                md:tracking-[6px]
 
-              text-cyan-300/80
+                text-cyan-300/80
 
-              text-sm
+                text-[11px]
+                md:text-sm
 
-              mb-5
-            "
+                mb-4
+                md:mb-5
+              "
             >
               Let’s Connect
             </p>
@@ -244,28 +264,29 @@ export default function CTASection() {
             {/* TITLE */}
             <h2
               className="
-              text-4xl
-              md:text-6xl
+                text-[34px]
+                sm:text-5xl
+                md:text-6xl
 
-              font-black
+                font-black
 
-              leading-[1.05]
+                leading-[1.08]
 
-              max-w-5xl
-              mx-auto
-            "
+                max-w-5xl
+                mx-auto
+              "
             >
 
               <span
                 className="
-                bg-gradient-to-r
-                from-cyan-300
-                via-blue-400
-                to-cyan-200
+                  bg-gradient-to-r
+                  from-cyan-300
+                  via-blue-400
+                  to-cyan-200
 
-                bg-clip-text
-                text-transparent
-              "
+                  bg-clip-text
+                  text-transparent
+                "
               >
                 Let’s Build The Future
               </span>
@@ -281,18 +302,21 @@ export default function CTASection() {
             {/* DESCRIPTION */}
             <p
               className="
-              mt-7
+                mt-6
+                md:mt-7
 
-              text-white/60
+                text-white/60
 
-              text-base
-              md:text-lg
+                text-sm
+                sm:text-base
+                md:text-lg
 
-              leading-[2]
+                leading-[1.9]
+                md:leading-[2]
 
-              max-w-3xl
-              mx-auto
-            "
+                max-w-3xl
+                mx-auto
+              "
             >
 
               Kuddus Ali Construction delivers
@@ -331,61 +355,68 @@ export default function CTASection() {
             }}
 
             className="
-            relative z-10
+              relative z-10
 
-            mt-14
+              mt-12
+              md:mt-14
 
-            grid
-            md:grid-cols-3
+              grid
+              gap-4
+              md:gap-5
 
-            gap-5
-          "
+              md:grid-cols-3
+            "
           >
 
             {/* PHONE */}
             <div
               className="
-              rounded-3xl
+                rounded-3xl
 
-              border border-white/10
+                border border-white/10
 
-              bg-white/[0.03]
-              backdrop-blur-xl
+                bg-white/[0.03]
+                backdrop-blur-xl
 
-              p-6
+                p-5
+                md:p-6
 
-              text-center
-            "
+                text-center
+              "
             >
 
               <div
                 className="
-                w-14
-                h-14
+                  w-12
+                  h-12
 
-                mx-auto
+                  md:w-14
+                  md:h-14
 
-                rounded-2xl
+                  mx-auto
 
-                bg-cyan-400/10
+                  rounded-2xl
 
-                flex
-                items-center
-                justify-center
+                  bg-cyan-400/10
 
-                text-cyan-300
+                  flex
+                  items-center
+                  justify-center
 
-                mb-5
-              "
+                  text-cyan-300
+
+                  mb-4
+                  md:mb-5
+                "
               >
-                <PhoneCall size={24} />
+                <PhoneCall size={22} />
               </div>
 
               <p className="text-sm text-white/40 mb-2">
                 Call Us
               </p>
 
-              <h3 className="font-bold text-lg">
+              <h3 className="font-bold text-base md:text-lg">
                 +91 9735067595
               </h3>
 
@@ -394,47 +425,61 @@ export default function CTASection() {
             {/* EMAIL */}
             <div
               className="
-              rounded-3xl
+                rounded-3xl
 
-              border border-white/10
+                border border-white/10
 
-              bg-white/[0.03]
-              backdrop-blur-xl
+                bg-white/[0.03]
+                backdrop-blur-xl
 
-              p-6
+                p-5
+                md:p-6
 
-              text-center
-            "
+                text-center
+              "
             >
 
               <div
                 className="
-                w-14
-                h-14
+                  w-12
+                  h-12
 
-                mx-auto
+                  md:w-14
+                  md:h-14
 
-                rounded-2xl
+                  mx-auto
 
-                bg-cyan-400/10
+                  rounded-2xl
 
-                flex
-                items-center
-                justify-center
+                  bg-cyan-400/10
 
-                text-cyan-300
+                  flex
+                  items-center
+                  justify-center
 
-                mb-5
-              "
+                  text-cyan-300
+
+                  mb-4
+                  md:mb-5
+                "
               >
-                <Mail size={24} />
+                <Mail size={22} />
               </div>
 
               <p className="text-sm text-white/40 mb-2">
                 Email Address
               </p>
 
-              <h3 className="font-bold text-base break-all">
+              <h3
+                className="
+                  font-bold
+
+                  text-sm
+                  sm:text-base
+
+                  break-all
+                "
+              >
                 kuddusali45@gmail.com
               </h3>
 
@@ -443,47 +488,59 @@ export default function CTASection() {
             {/* SERVICE */}
             <div
               className="
-              rounded-3xl
+                rounded-3xl
 
-              border border-white/10
+                border border-white/10
 
-              bg-white/[0.03]
-              backdrop-blur-xl
+                bg-white/[0.03]
+                backdrop-blur-xl
 
-              p-6
+                p-5
+                md:p-6
 
-              text-center
-            "
+                text-center
+              "
             >
 
               <div
                 className="
-                w-14
-                h-14
+                  w-12
+                  h-12
 
-                mx-auto
+                  md:w-14
+                  md:h-14
 
-                rounded-2xl
+                  mx-auto
 
-                bg-cyan-400/10
+                  rounded-2xl
 
-                flex
-                items-center
-                justify-center
+                  bg-cyan-400/10
 
-                text-cyan-300
+                  flex
+                  items-center
+                  justify-center
 
-                mb-5
-              "
+                  text-cyan-300
+
+                  mb-4
+                  md:mb-5
+                "
               >
-                <RadioTower size={24} />
+                <RadioTower size={22} />
               </div>
 
               <p className="text-sm text-white/40 mb-2">
                 Expertise
               </p>
 
-              <h3 className="font-bold text-base">
+              <h3
+                className="
+                  font-bold
+
+                  text-sm
+                  sm:text-base
+                "
+              >
                 Transmission Infrastructure
               </h3>
 
@@ -516,76 +573,79 @@ export default function CTASection() {
             }}
 
             className="
-            relative z-10
+              relative z-10
 
-            mt-14
+              mt-12
+              md:mt-14
 
-            flex
-            flex-col
-            sm:flex-row
+              flex
+              flex-col
+              sm:flex-row
 
-            items-center
-            justify-center
+              items-center
+              justify-center
 
-            gap-5
-          "
+              gap-4
+              md:gap-5
+            "
           >
 
             {/* WHATSAPP */}
             <a
               href="https://wa.me/919735067595"
               target="_blank"
+              rel="noopener noreferrer"
 
               className="
-              group
+                group
 
-              relative
-              overflow-hidden
+                relative
+                overflow-hidden
 
-              w-full
-              sm:w-auto
+                w-full
+                sm:w-auto
 
-              px-8 py-4
+                px-8 py-4
 
-              rounded-full
+                rounded-full
 
-              bg-gradient-to-r
-              from-cyan-400
-              to-blue-500
+                bg-gradient-to-r
+                from-cyan-400
+                to-blue-500
 
-              text-black
-              font-bold
+                text-black
+                font-bold
 
-              shadow-[0_10px_40px_rgba(34,211,238,0.35)]
+                shadow-[0_10px_40px_rgba(34,211,238,0.35)]
 
-              transition-all duration-500
+                transition-all duration-500
 
-              hover:scale-[1.04]
-            "
+                hover:scale-[1.04]
+              "
             >
 
               <div
                 className="
-                absolute inset-0
+                  absolute inset-0
 
-                opacity-0
-                group-hover:opacity-100
+                  opacity-0
+                  group-hover:opacity-100
 
-                transition duration-500
+                  transition duration-500
 
-                bg-white/20
-              "
+                  bg-white/20
+                "
               />
 
               <span
                 className="
-                relative z-10
+                  relative z-10
 
-                flex items-center
-                justify-center
+                  flex items-center
+                  justify-center
 
-                gap-3
-              "
+                  gap-3
+                "
               >
 
                 <FaWhatsapp size={20} />
@@ -596,11 +656,11 @@ export default function CTASection() {
                   size={18}
 
                   className="
-                  transition
+                    transition
 
-                  group-hover:translate-x-1
-                  group-hover:-translate-y-1
-                "
+                    group-hover:translate-x-1
+                    group-hover:-translate-y-1
+                  "
                 />
 
               </span>
@@ -608,41 +668,44 @@ export default function CTASection() {
             </a>
 
             {/* CONTACT */}
-            <Link href="/contact">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto"
+            >
 
               <button
                 className="
-                group
+                  group
 
-                w-full
-                sm:w-auto
+                  w-full
+                  sm:w-auto
 
-                px-8 py-4
+                  px-8 py-4
 
-                rounded-full
+                  rounded-full
 
-                border border-white/10
+                  border border-white/10
 
-                bg-white/[0.04]
-                backdrop-blur-xl
+                  bg-white/[0.04]
+                  backdrop-blur-xl
 
-                text-white
-                font-semibold
+                  text-white
+                  font-semibold
 
-                transition-all duration-500
+                  transition-all duration-500
 
-                hover:border-cyan-400/30
-                hover:bg-cyan-400/10
-              "
+                  hover:border-cyan-400/30
+                  hover:bg-cyan-400/10
+                "
               >
 
                 <span
                   className="
-                  flex items-center
-                  justify-center
+                    flex items-center
+                    justify-center
 
-                  gap-3
-                "
+                    gap-3
+                  "
                 >
 
                   Contact Us
@@ -651,11 +714,11 @@ export default function CTASection() {
                     size={18}
 
                     className="
-                    transition
+                      transition
 
-                    group-hover:translate-x-1
-                    group-hover:-translate-y-1
-                  "
+                      group-hover:translate-x-1
+                      group-hover:-translate-y-1
+                    "
                   />
 
                 </span>
@@ -671,5 +734,6 @@ export default function CTASection() {
       </div>
 
     </section>
+
   );
 }

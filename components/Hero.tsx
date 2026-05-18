@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 
-import { motion } from "framer-motion";
+import {
+  motion,
+} from "framer-motion";
 
 import {
   ArrowRight,
@@ -11,7 +13,12 @@ import {
 
 import MagneticButton from "./MagneticButton";
 
+/* ======================================== */
+/* ANIMATION */
+/* ======================================== */
+
 const fadeUp = {
+
   hidden: {
     opacity: 0,
     y: 60,
@@ -23,7 +30,15 @@ const fadeUp = {
   },
 };
 
+/* ======================================== */
+/* COMPONENT */
+/* ======================================== */
+
 export default function Hero() {
+
+  /* ======================================== */
+  /* SCROLL */
+  /* ======================================== */
 
   const scrollToNext = () => {
 
@@ -40,30 +55,45 @@ export default function Hero() {
   };
 
   return (
+
     <section
       id="hero"
       className="
-      relative
-      min-h-screen
-      flex items-center justify-center
-      overflow-hidden
-      text-white
-    "
+        relative
+        z-0
+
+        min-h-screen
+
+        flex items-center justify-center
+
+        overflow-hidden
+
+        text-white
+      "
     >
 
-      {/* 🎥 VIDEO BACKGROUND */}
+      {/* ======================================== */}
+      {/* VIDEO BACKGROUND */}
+      {/* ======================================== */}
+
       <video
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
+
         className="
-        absolute inset-0
-        w-full h-full
-        object-cover
-        scale-105
-      "
+          absolute inset-0
+
+          w-full h-full
+
+          object-cover
+
+          z-0
+
+          pointer-events-none
+        "
       >
 
         <source
@@ -73,233 +103,309 @@ export default function Hero() {
 
       </video>
 
-      {/* 🔥 LIGHT OVERLAY */}
-      <div className="absolute inset-0 bg-[#020617]/40" />
+      {/* ======================================== */}
+      {/* OVERLAYS */}
+      {/* ======================================== */}
 
-      {/* 🔥 CINEMATIC GRADIENT */}
       <div
         className="
-        absolute inset-0
+          absolute inset-0
 
-        bg-gradient-to-b
-        from-[#020617]/40
-        via-[#020617]/10
-        to-[#020617]/70
-      "
+          bg-black/60
+
+          z-[1]
+
+          pointer-events-none
+        "
       />
 
-      {/* 🔥 LEFT GLOW */}
       <div
         className="
-        absolute
-        top-[-180px]
-        left-[-120px]
+          absolute inset-0
 
-        w-[500px]
-        h-[500px]
+          bg-gradient-to-b
+          from-[#020617]/50
+          via-[#020617]/10
+          to-[#020617]
 
-        bg-cyan-400/20
-        blur-[140px]
-        rounded-full
-      "
+          z-[2]
+
+          pointer-events-none
+        "
       />
 
-      {/* 🔥 RIGHT GLOW */}
+      {/* ======================================== */}
+      {/* GLOW EFFECTS */}
+      {/* ======================================== */}
+
       <div
         className="
-        absolute
-        bottom-[-200px]
-        right-[-120px]
+          absolute
+          top-[-220px]
+          left-[-220px]
 
-        w-[500px]
-        h-[500px]
+          w-[650px]
+          h-[650px]
 
-        bg-blue-500/20
-        blur-[150px]
-        rounded-full
-      "
+          rounded-full
+
+          bg-cyan-400/20
+
+          blur-[150px]
+
+          z-[2]
+
+          pointer-events-none
+        "
       />
 
-      {/* 🔥 CONTENT */}
       <div
         className="
-        container-premium
+          absolute
+          bottom-[-250px]
+          right-[-220px]
 
-        relative z-10
+          w-[650px]
+          h-[650px]
 
-        flex flex-col
-        items-center
-        text-center
+          rounded-full
 
-        pt-32
-        pb-24
-      "
+          bg-blue-500/20
+
+          blur-[160px]
+
+          z-[2]
+
+          pointer-events-none
+        "
+      />
+
+      {/* ======================================== */}
+      {/* HERO CONTENT */}
+      {/* ======================================== */}
+
+      <div
+        className="
+          container-premium
+
+          relative z-20
+
+          flex flex-col
+          items-center
+          text-center
+
+          pt-36
+          pb-28
+
+          md:pt-40
+        "
       >
 
-        {/* 🔥 MAIN HEADING */}
-        <motion.h1
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
-          transition={{
-            duration: 1,
-            delay: 0.1,
-          }}
-          className="
-  relative
+        {/* ======================================== */}
+        {/* LABEL */}
+        {/* ======================================== */}
 
-  max-w-5xl
-
-  text-[42px]
-  sm:text-[58px]
-  md:text-[82px]
-  lg:text-[100px]
-
-  leading-[0.95]
-  tracking-[-3px]
-
-  font-black
-"
-          style={{
-            fontFamily: "Times New Roman, serif",
-          }}
-        >
-
-          {/* 🔥 GLOW BACKGROUND */}
-          <span
-            className="
-    absolute inset-0
-
-    blur-[30px]
-
-    opacity-60
-
-    bg-gradient-to-r
-    from-cyan-400
-    via-blue-500
-    to-cyan-300
-
-    bg-clip-text
-    text-transparent
-  "
-          >
-            KUDDUS ALI CONSTRUCTION
-          </span>
-
-          {/* 🔥 MAIN TEXT */}
-          <span
-            className="
-    relative z-10
-
-    bg-gradient-to-r
-    from-cyan-200
-    via-sky-400
-    via-blue-400
-    to-cyan-300
-
-    bg-[length:200%_200%]
-
-    animate-[gradient_6s_ease_infinite]
-
-    bg-clip-text
-    text-transparent
-
-    drop-shadow-[0_0_35px_rgba(34,211,238,0.45)]
-  "
-          >
-            KUDDUS ALI CONSTRUCTION
-          </span>
-
-        </motion.h1>
-
-        {/* 🔥 SMALL PREMIUM LABEL */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="show"
+
           transition={{
-            duration: 0.9,
-            delay: 0.25,
+            duration: 0.8,
           }}
+
           className="
-          mt-5
+            mb-8
 
-          px-5 py-2
+            inline-flex
+            items-center
 
-          rounded-full
+            gap-3
 
-          border border-cyan-400/20
+            px-6 py-3
 
-          bg-white/5
-          backdrop-blur-xl
+            rounded-full
 
-          shadow-[0_0_30px_rgba(34,211,238,0.12)]
-        "
+            border border-cyan-400/20
+
+            bg-white/5
+            backdrop-blur-xl
+
+            shadow-[0_0_40px_rgba(34,211,238,0.08)]
+          "
         >
+
+          <div
+            className="
+              w-2 h-2
+
+              rounded-full
+
+              bg-cyan-300
+
+              animate-pulse
+            "
+          />
 
           <p
             className="
-            text-[11px]
-            sm:text-xs
+              text-[10px]
+              sm:text-xs
 
-            uppercase
+              uppercase
 
-            tracking-[5px]
+              tracking-[5px]
 
-            text-cyan-200
-          "
+              text-cyan-100
+            "
           >
             Powering Progress Since 2010
           </p>
 
         </motion.div>
 
-        {/* 🔥 SUBTITLE */}
+        {/* ======================================== */}
+        {/* MAIN HEADING */}
+        {/* ======================================== */}
+
+        <motion.h1
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+
+          transition={{
+            duration: 1,
+            delay: 0.1,
+          }}
+
+          className="
+            relative
+
+            max-w-6xl
+
+            text-[42px]
+            sm:text-[64px]
+            md:text-[90px]
+            lg:text-[110px]
+
+            leading-[0.9]
+
+            tracking-[-2px]
+            md:tracking-[-4px]
+
+            font-black
+          "
+
+          style={{
+            fontFamily:
+              "Times New Roman, serif",
+          }}
+        >
+
+          {/* GLOW */}
+          <span
+            className="
+              absolute inset-0
+
+              opacity-70
+
+              blur-[38px]
+
+              bg-gradient-to-r
+              from-cyan-300
+              via-blue-400
+              to-cyan-300
+
+              bg-clip-text
+              text-transparent
+            "
+          >
+            KUDDUS ALI
+            <br />
+            CONSTRUCTION
+          </span>
+
+          {/* MAIN */}
+          <span
+            className="
+              relative z-10
+
+              bg-gradient-to-r
+              from-white
+              via-cyan-100
+              to-cyan-300
+
+              bg-clip-text
+              text-transparent
+
+              drop-shadow-[0_0_35px_rgba(34,211,238,0.35)]
+            "
+          >
+            KUDDUS ALI
+            <br />
+            CONSTRUCTION
+          </span>
+
+        </motion.h1>
+
+        {/* ======================================== */}
+        {/* SUBTITLE */}
+        {/* ======================================== */}
+
         <motion.h2
           variants={fadeUp}
           initial="hidden"
           animate="show"
+
           transition={{
             duration: 0.9,
-            delay: 0.4,
+            delay: 0.35,
           }}
+
           className="
-          mt-10
+            mt-10
 
-          text-2xl
-          sm:text-3xl
-          md:text-5xl
+            text-2xl
+            sm:text-4xl
+            md:text-6xl
 
-          font-bold
+            font-black
 
-          text-white/95
-        "
+            text-white
+
+            drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]
+          "
         >
           Powering India’s Future
         </motion.h2>
 
-        {/* 🔥 DESCRIPTION */}
+        {/* ======================================== */}
+        {/* DESCRIPTION */}
+        {/* ======================================== */}
+
         <motion.p
           variants={fadeUp}
           initial="hidden"
           animate="show"
+
           transition={{
             duration: 0.9,
-            delay: 0.6,
+            delay: 0.55,
           }}
+
           className="
-          mt-8
+            mt-8
 
-          max-w-3xl
+            max-w-3xl
 
-          text-base
-          sm:text-lg
-          md:text-xl
+            text-sm
+            sm:text-lg
+            md:text-xl
 
-          text-gray-200
+            leading-[1.9]
 
-          leading-[1.9]
-        "
+            text-white/75
+          "
         >
 
           Experts in Transmission Line,
@@ -309,31 +415,57 @@ export default function Hero() {
 
         </motion.p>
 
-        {/* 🔥 BUTTONS */}
+        {/* ======================================== */}
+        {/* BUTTONS */}
+        {/* ======================================== */}
+
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="show"
+
           transition={{
             duration: 0.9,
             delay: 0.8,
           }}
+
           className="
-          mt-14
+            mt-14
 
-          flex flex-wrap
-          items-center justify-center
+            flex flex-col
+            sm:flex-row
 
-          gap-6
-        "
+            items-center
+            justify-center
+
+            gap-5
+
+            w-full
+            sm:w-auto
+          "
         >
 
-          {/* 🔥 VIEW PROJECTS */}
-          <Link href="/projects">
+          {/* PRIMARY BUTTON */}
+
+          <Link
+            href="/projects"
+
+            className="
+              w-full
+              sm:w-auto
+            "
+          >
 
             <MagneticButton>
 
-              <div className="flex items-center gap-3">
+              <div
+                className="
+                  flex items-center
+                  justify-center
+
+                  gap-3
+                "
+              >
 
                 View Projects
 
@@ -345,34 +477,41 @@ export default function Hero() {
 
           </Link>
 
-          {/* 🔥 CONTACT BUTTON */}
-          <Link href="/contact">
+          {/* SECONDARY BUTTON */}
+
+          <Link
+            href="/contact"
+
+            className="
+              w-full
+              sm:w-auto
+            "
+          >
 
             <button
               className="
-              group
+                w-full
 
-              px-8 py-4
+                px-8 py-4
 
-              rounded-full
+                rounded-full
 
-              border border-white/15
+                border border-white/15
 
-              bg-white/10
-              backdrop-blur-xl
+                bg-white/10
+                backdrop-blur-xl
 
-              text-white
-              font-semibold
+                text-white
+                font-semibold
 
-              shadow-[0_0_25px_rgba(255,255,255,0.05)]
+                shadow-[0_0_25px_rgba(255,255,255,0.05)]
 
-              transition-all duration-300
+                transition-all duration-300
 
-              hover:bg-white/20
-              hover:border-cyan-400/40
-              hover:text-cyan-300
-              hover:shadow-[0_0_35px_rgba(34,211,238,0.25)]
-            "
+                hover:bg-white/20
+                hover:border-cyan-400/40
+                hover:text-cyan-300
+              "
             >
               Contact Us
             </button>
@@ -383,7 +522,10 @@ export default function Hero() {
 
       </div>
 
-      {/* 🔥 SCROLL INDICATOR */}
+      {/* ======================================== */}
+      {/* SCROLL INDICATOR */}
+      {/* ======================================== */}
+
       <motion.div
         initial={{
           opacity: 0,
@@ -400,32 +542,36 @@ export default function Hero() {
         onClick={scrollToNext}
 
         className="
-        absolute
-        bottom-8
-        left-1/2
-        -translate-x-1/2
+          absolute
+          bottom-7
+          left-1/2
 
-        z-20
+          -translate-x-1/2
 
-        cursor-pointer
+          z-30
 
-        flex flex-col
-        items-center
+          cursor-pointer
 
-        text-white/50
+          flex flex-col
+          items-center
 
-        hover:text-cyan-300
+          text-white/50
 
-        transition
-      "
+          hover:text-cyan-300
+
+          transition-all duration-300
+        "
       >
 
         <span
           className="
-          text-[11px]
-          tracking-[5px]
-          mb-3
-        "
+            text-[10px]
+            sm:text-[11px]
+
+            tracking-[5px]
+
+            mb-3
+          "
         >
           SCROLL
         </span>
@@ -447,17 +593,24 @@ export default function Hero() {
 
       </motion.div>
 
-      {/* 🔥 BOTTOM FADE */}
+      {/* ======================================== */}
+      {/* BOTTOM FADE */}
+      {/* ======================================== */}
+
       <div
         className="
-        absolute bottom-0 left-0
+          absolute bottom-0 left-0
 
-        w-full h-40
+          w-full h-40
 
-        bg-gradient-to-b
-        from-transparent
-        to-[#020617]
-      "
+          bg-gradient-to-b
+          from-transparent
+          to-[#020617]
+
+          z-[5]
+
+          pointer-events-none
+        "
       />
 
     </section>

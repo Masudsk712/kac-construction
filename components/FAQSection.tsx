@@ -47,20 +47,23 @@ const faqs = [
 
 export default function FAQSection() {
 
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] =
+    useState<number | null>(0);
 
   return (
+
     <section
       className="
-      relative
+        relative
 
-      overflow-hidden
+        overflow-hidden
 
-      bg-[#020617]
-      text-white
+        bg-[var(--bg)]
+        text-[var(--text)]
 
-      py-28
-    "
+        py-24
+        md:py-28
+      "
     >
 
       {/* ================================================= */}
@@ -71,36 +74,42 @@ export default function FAQSection() {
 
         <div
           className="
-          absolute
-          top-[-180px]
-          left-[-150px]
+            absolute
+            top-[-180px]
+            left-[-150px]
 
-          w-[420px]
-          h-[420px]
+            w-[360px]
+            h-[360px]
 
-          rounded-full
+            md:w-[420px]
+            md:h-[420px]
 
-          bg-cyan-500/10
+            rounded-full
 
-          blur-[120px]
-        "
+            bg-cyan-500/10
+
+            blur-[120px]
+          "
         />
 
         <div
           className="
-          absolute
-          bottom-[-180px]
-          right-[-150px]
+            absolute
+            bottom-[-180px]
+            right-[-150px]
 
-          w-[420px]
-          h-[420px]
+            w-[360px]
+            h-[360px]
 
-          rounded-full
+            md:w-[420px]
+            md:h-[420px]
 
-          bg-blue-500/10
+            rounded-full
 
-          blur-[120px]
-        "
+            bg-blue-500/10
+
+            blur-[120px]
+          "
         />
 
       </div>
@@ -108,14 +117,14 @@ export default function FAQSection() {
       {/* GRID */}
       <div
         className="
-        absolute inset-0
+          absolute inset-0
 
-        opacity-[0.03]
+          opacity-[0.03]
 
-        [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+          [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
 
-        [background-size:60px_60px]
-      "
+          [background-size:60px_60px]
+        "
       />
 
       {/* ================================================= */}
@@ -124,12 +133,12 @@ export default function FAQSection() {
 
       <div
         className="
-        container-premium
+          container-premium
 
-        relative z-10
+          relative z-10
 
-        max-w-5xl
-      "
+          max-w-5xl
+        "
       >
 
         {/* ================================================= */}
@@ -155,22 +164,30 @@ export default function FAQSection() {
             once: true,
           }}
 
-          className="text-center mb-20"
+          className="
+            text-center
+
+            mb-14
+            md:mb-20
+          "
         >
 
           {/* SMALL TEXT */}
           <p
             className="
-            uppercase
+              uppercase
 
-            tracking-[6px]
+              tracking-[4px]
+              md:tracking-[6px]
 
-            text-cyan-300/80
+              text-cyan-300/80
 
-            text-sm
+              text-[11px]
+              md:text-sm
 
-            mb-5
-          "
+              mb-4
+              md:mb-5
+            "
           >
             Frequently Asked Questions
           </p>
@@ -178,25 +195,26 @@ export default function FAQSection() {
           {/* HEADING */}
           <h2
             className="
-            text-4xl
-            md:text-6xl
+              text-3xl
+              sm:text-4xl
+              md:text-6xl
 
-            font-black
+              font-black
 
-            leading-[1.05]
-          "
+              leading-[1.08]
+            "
           >
 
             <span
               className="
-              bg-gradient-to-r
-              from-cyan-300
-              via-blue-400
-              to-cyan-200
+                bg-gradient-to-r
+                from-cyan-300
+                via-blue-400
+                to-cyan-200
 
-              bg-clip-text
-              text-transparent
-            "
+                bg-clip-text
+                text-transparent
+              "
             >
               Everything You Need
             </span>
@@ -212,15 +230,20 @@ export default function FAQSection() {
           {/* DESCRIPTION */}
           <p
             className="
-            mt-7
+              mt-6
+              md:mt-7
 
-            max-w-3xl
-            mx-auto
+              max-w-3xl
+              mx-auto
 
-            text-white/60
+              text-white/60
 
-            leading-[2]
-          "
+              text-sm
+              md:text-base
+
+              leading-[1.9]
+              md:leading-[2]
+            "
           >
 
             Explore commonly asked questions
@@ -236,7 +259,12 @@ export default function FAQSection() {
         {/* 🔥 FAQ LIST */}
         {/* ================================================= */}
 
-        <div className="space-y-6">
+        <div
+          className="
+            space-y-4
+            md:space-y-6
+          "
+        >
 
           {faqs.map((item, i) => {
 
@@ -267,39 +295,40 @@ export default function FAQSection() {
                 }}
 
                 className="
-                group
+                  group
 
-                relative
+                  relative
 
-                overflow-hidden
+                  overflow-hidden
 
-                rounded-[30px]
+                  rounded-[22px]
+                  md:rounded-[30px]
 
-                border border-white/10
+                  border border-white/10
 
-                bg-white/[0.04]
-                backdrop-blur-2xl
+                  bg-white/[0.04]
+                  backdrop-blur-2xl
 
-                transition-all duration-500
+                  transition-all duration-500
 
-                hover:border-cyan-400/20
-              "
+                  hover:border-cyan-400/20
+                "
               >
 
                 {/* HOVER GLOW */}
                 <div
                   className="
-                  absolute inset-0
+                    absolute inset-0
 
-                  opacity-0
-                  group-hover:opacity-100
+                    opacity-0
+                    group-hover:opacity-100
 
-                  transition duration-500
+                    transition duration-500
 
-                  bg-gradient-to-r
-                  from-cyan-500/5
-                  to-blue-500/5
-                "
+                    bg-gradient-to-r
+                    from-cyan-500/5
+                    to-blue-500/5
+                  "
                 />
 
                 {/* ================================================= */}
@@ -312,21 +341,22 @@ export default function FAQSection() {
                   }}
 
                   className="
-                  relative z-10
+                    relative z-10
 
-                  w-full
+                    w-full
 
-                  flex
-                  items-center
-                  justify-between
+                    flex
+                    items-center
+                    justify-between
 
-                  gap-6
+                    gap-4
+                    md:gap-6
 
-                  p-6
-                  md:p-8
+                    p-5
+                    md:p-8
 
-                  text-left
-                "
+                    text-left
+                  "
                 >
 
                   <div className="flex-1">
@@ -334,16 +364,19 @@ export default function FAQSection() {
                     {/* NUMBER */}
                     <div
                       className="
-                      mb-3
+                        mb-2
+                        md:mb-3
 
-                      text-cyan-300/70
+                        text-cyan-300/70
 
-                      text-xs
+                        text-[10px]
+                        md:text-xs
 
-                      tracking-[4px]
+                        tracking-[3px]
+                        md:tracking-[4px]
 
-                      uppercase
-                    "
+                        uppercase
+                      "
                     >
                       FAQ 0{i + 1}
                     </div>
@@ -351,15 +384,16 @@ export default function FAQSection() {
                     {/* QUESTION */}
                     <h3
                       className="
-                      text-lg
-                      md:text-2xl
+                        text-base
+                        sm:text-lg
+                        md:text-2xl
 
-                      font-bold
+                        font-bold
 
-                      leading-[1.5]
+                        leading-[1.5]
 
-                      text-white
-                    "
+                        text-white
+                      "
                     >
                       {item.q}
                     </h3>
@@ -369,33 +403,34 @@ export default function FAQSection() {
                   {/* ICON */}
                   <div
                     className="
-                    flex-shrink-0
+                      flex-shrink-0
 
-                    w-14
-                    h-14
+                      w-11 h-11
+                      md:w-14 md:h-14
 
-                    rounded-2xl
+                      rounded-xl
+                      md:rounded-2xl
 
-                    border border-white/10
+                      border border-white/10
 
-                    bg-white/[0.05]
+                      bg-white/[0.05]
 
-                    flex
-                    items-center
-                    justify-center
+                      flex
+                      items-center
+                      justify-center
 
-                    text-cyan-300
+                      text-cyan-300
 
-                    transition duration-500
+                      transition duration-500
 
-                    group-hover:border-cyan-400/20
-                  "
+                      group-hover:border-cyan-400/20
+                    "
                   >
 
                     {isOpen ? (
-                      <Minus size={20} />
+                      <Minus size={18} />
                     ) : (
-                      <Plus size={20} />
+                      <Plus size={18} />
                     )}
 
                   </div>
@@ -435,43 +470,46 @@ export default function FAQSection() {
 
                       <div
                         className="
-                        relative z-10
+                          relative z-10
 
-                        px-6
-                        md:px-8
+                          px-5
+                          md:px-8
 
-                        pb-8
-                      "
+                          pb-6
+                          md:pb-8
+                        "
                       >
 
                         {/* LINE */}
                         <div
                           className="
-                          w-full
-                          h-px
+                            w-full
+                            h-px
 
-                          bg-white/10
+                            bg-white/10
 
-                          mb-6
-                        "
+                            mb-5
+                            md:mb-6
+                          "
                         />
 
                         {/* ANSWER TEXT */}
                         <p
                           className="
-                          text-white/65
+                            text-white/65
 
-                          leading-[2]
+                            leading-[1.9]
+                            md:leading-[2]
 
-                          text-sm
-                          md:text-base
-                        "
+                            text-sm
+                            md:text-base
+                          "
                         >
                           {item.a}
                         </p>
 
                         {/* CTA */}
-                        <div className="mt-6">
+                        <div className="mt-5 md:mt-6">
 
                           <button
                             onClick={() => {
@@ -479,18 +517,21 @@ export default function FAQSection() {
                             }}
 
                             className="
-                            group/btn
+                              group/btn
 
-                            inline-flex
-                            items-center
-                            gap-3
+                              inline-flex
+                              items-center
+                              gap-3
 
-                            text-cyan-300
+                              text-cyan-300
 
-                            font-medium
+                              text-sm
+                              md:text-base
 
-                            transition duration-300
-                          "
+                              font-medium
+
+                              transition duration-300
+                            "
                           >
 
                             Contact Our Team
@@ -499,11 +540,11 @@ export default function FAQSection() {
                               size={18}
 
                               className="
-                              transition
+                                transition
 
-                              group-hover/btn:translate-x-1
-                              group-hover/btn:-translate-y-1
-                            "
+                                group-hover/btn:translate-x-1
+                                group-hover/btn:-translate-y-1
+                              "
                             />
 
                           </button>
@@ -528,5 +569,6 @@ export default function FAQSection() {
       </div>
 
     </section>
+
   );
 }

@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Oswald } from "next/font/google";
+
+import {
+  Geist,
+  Oswald,
+} from "next/font/google";
 
 import "./globals.css";
 
 import { siteConfig } from "@/lib/seo";
 
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import Schema from "@/components/schema";
-import { LoaderProvider } from "@/components/LoaderContext";
+
+import {
+  LoaderProvider,
+} from "@/components/LoaderContext";
+
 import LayoutWrapper from "@/components/LayoutWrapper";
+import ThemeProvider from "@/components/ThemeProvider";
 
 /* ============================= */
 /* 🔥 FONT CONFIG */
@@ -27,7 +34,12 @@ const geist = Geist({
 const oswald = Oswald({
   subsets: ["latin"],
 
-  weight: ["400", "500", "600", "700"],
+  weight: [
+    "400",
+    "500",
+    "600",
+    "700",
+  ],
 
   variable: "--font-oswald",
 
@@ -35,30 +47,40 @@ const oswald = Oswald({
 });
 
 /* ============================= */
-/* 🔥 PROFESSIONAL SEO METADATA */
+/* 🔥 SEO METADATA */
 /* ============================= */
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+
+  metadataBase: new URL(
+    siteConfig.url
+  ),
 
   title: {
     default: siteConfig.title,
-    template: "%s | Kuddus Ali Construction",
+
+    template:
+      "%s | Kuddus Ali Construction",
   },
 
-  description: siteConfig.description,
+  description:
+    siteConfig.description,
 
-  keywords: siteConfig.keywords,
+  keywords:
+    siteConfig.keywords,
 
   authors: [
     {
-      name: "Kuddus Ali Construction",
+      name:
+        "Kuddus Ali Construction",
     },
   ],
 
-  creator: siteConfig.creator,
+  creator:
+    siteConfig.creator,
 
   openGraph: {
+
     type: "website",
 
     locale: "en_IN",
@@ -67,52 +89,76 @@ export const metadata: Metadata = {
 
     title: siteConfig.title,
 
-    description: siteConfig.description,
+    description:
+      siteConfig.description,
 
-    siteName: "Kuddus Ali Construction",
+    siteName:
+      "Kuddus Ali Construction",
 
     images: [
       {
         url: siteConfig.ogImage,
+
         width: 1200,
+
         height: 630,
-        alt: "Kuddus Ali Construction",
+
+        alt:
+          "Kuddus Ali Construction",
       },
     ],
   },
 
   twitter: {
-    card: "summary_large_image",
+
+    card:
+      "summary_large_image",
 
     title: siteConfig.title,
 
-    description: siteConfig.description,
+    description:
+      siteConfig.description,
 
-    images: [siteConfig.ogImage],
+    images: [
+      siteConfig.ogImage,
+    ],
   },
 
   robots: {
+
     index: true,
+
     follow: true,
 
     googleBot: {
+
       index: true,
+
       follow: true,
 
       "max-video-preview": -1,
-      "max-image-preview": "large",
+
+      "max-image-preview":
+        "large",
+
       "max-snippet": -1,
     },
   },
 
   alternates: {
-    canonical: siteConfig.url,
+    canonical:
+      siteConfig.url,
   },
 
   icons: {
+
     icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+
+    shortcut:
+      "/icon.png",
+
+    apple:
+      "/icon.png",
   },
 };
 
@@ -125,7 +171,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
+
     <html
       lang="en"
       suppressHydrationWarning
@@ -133,87 +181,47 @@ export default function RootLayout({
         scroll-smooth
       "
     >
+
       <body
         className={`
-    ${geist.variable}
-    ${oswald.variable}
-    ${geist.className}
-    ${oswald.className}
+          ${geist.variable}
+          ${oswald.variable}
+          ${geist.className}
+          ${oswald.className}
 
-    bg-[#020617]
-    text-white
+          bg-[var(--bg)]
+          text-[var(--text)]
 
-    overflow-x-hidden
+          overflow-x-hidden
 
-    antialiased
+          antialiased
 
-    selection:bg-cyan-400
-    selection:text-black
-  `}
+          transition-colors duration-500
+
+          selection:bg-cyan-400
+          selection:text-black
+        `}
       >
-        <LoaderProvider>
-          {/* 🔥 SEO SCHEMA */}
-          <Schema />
 
-          {/* 🔥 GLOBAL BACKGROUND */}
-          <div
-  className="
-    fixed inset-0
-    z-[-100]
+        <ThemeProvider>
+          <LoaderProvider>
 
-    bg-[#020617]
-  "
-/>
+            {/* 🔥 SEO SCHEMA */}
+            <Schema />
 
-          {/* 🔥 GLOBAL GLOW EFFECT */}
-          <div
-  className="
-    fixed inset-0
-    overflow-hidden
-    pointer-events-none
-    z-[-90]
-  "
->
-            <div
-              className="
-              absolute
-              top-[-200px]
-              left-[-200px]
-
-              w-[600px]
-              h-[600px]
-
-              bg-cyan-500/10
-              blur-[160px]
-              rounded-full
-            "
-            />
-
-            <div
-              className="
-              absolute
-              bottom-[-250px]
-              right-[-250px]
-
-              w-[700px]
-              h-[700px]
-
-              bg-blue-500/10
-              blur-[180px]
-              rounded-full
-            "
-            />
-          </div>
-          <>
+            {/* 🔥 MAIN WEBSITE */}
             <LayoutWrapper>
               {children}
             </LayoutWrapper>
 
+            {/* 🔥 FOOTER */}
             <Footer />
-          </>
 
-        </LoaderProvider>
+          </LoaderProvider>
+        </ThemeProvider>
+
       </body>
+
     </html>
   );
 }

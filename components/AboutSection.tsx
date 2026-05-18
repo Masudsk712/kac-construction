@@ -11,9 +11,9 @@ import {
 
 import Reveal from "./Reveal";
 
-/* ============================= */
-/* 🔥 FEATURES */
-/* ============================= */
+/* ======================================== */
+/* FEATURES */
+/* ======================================== */
 
 const features = [
   "Transmission Line Infrastructure",
@@ -25,104 +25,129 @@ const features = [
   "High Voltage EPC Execution",
 ];
 
-/* ============================= */
-/* 🔥 COMPONENT */
-/* ============================= */
+/* ======================================== */
+/* COMPONENT */
+/* ======================================== */
 
 export default function AboutSection() {
 
   return (
+
     <section
       className="
-      relative
-      overflow-hidden
+        relative
 
-      bg-[#020617]
-      text-white
+        overflow-hidden
 
-      py-28
-    "
+        py-24
+        md:py-32
+
+        bg-white
+        dark:bg-[#020617]
+
+        text-slate-900
+        dark:text-white
+      "
     >
 
-      {/* ============================= */}
-      {/* 🔥 BACKGROUND */}
-      {/* ============================= */}
+      {/* ======================================== */}
+      {/* BACKGROUND */}
+      {/* ======================================== */}
 
-      {/* GLOW */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div
+        className="
+          absolute inset-0
+
+          pointer-events-none
+        "
+      >
+
+        {/* LEFT GLOW */}
 
         <div
           className="
-          absolute
-          top-[-180px]
-          left-[-180px]
+            absolute
+            top-[-180px]
+            left-[-180px]
 
-          w-[520px]
-          h-[520px]
+            w-[520px]
+            h-[520px]
 
-          bg-cyan-500/10
-          blur-[140px]
-          rounded-full
-        "
+            rounded-full
+
+            bg-cyan-500/10
+
+            blur-[140px]
+          "
         />
 
+        {/* RIGHT GLOW */}
+
         <div
           className="
-          absolute
-          bottom-[-180px]
-          right-[-180px]
+            absolute
+            bottom-[-180px]
+            right-[-180px]
 
-          w-[520px]
-          h-[520px]
+            w-[520px]
+            h-[520px]
 
-          bg-blue-500/10
-          blur-[140px]
-          rounded-full
-        "
+            rounded-full
+
+            bg-blue-500/10
+
+            blur-[140px]
+          "
         />
 
       </div>
 
       {/* GRID */}
+
       <div
         className="
-        absolute inset-0
+          absolute inset-0
 
-        opacity-[0.03]
+          opacity-[0.03]
 
-        [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
+          [background-image:linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)]
 
-        [background-size:60px_60px]
-      "
+          dark:[background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
+
+          [background-size:60px_60px]
+        "
       />
 
-      {/* ============================= */}
-      {/* 🔥 MAIN CONTAINER */}
-      {/* ============================= */}
+      {/* ======================================== */}
+      {/* MAIN CONTAINER */}
+      {/* ======================================== */}
 
       <div
         className="
-        container-premium
+          container-premium
 
-        relative z-10
+          relative z-10
 
-        grid
-        lg:grid-cols-2
+          grid
+          lg:grid-cols-2
 
-        gap-20
-        items-center
-      "
+          gap-14
+          lg:gap-20
+
+          items-center
+        "
       >
 
-        {/* ================================================= */}
-        {/* 🔥 LEFT CONTENT */}
-        {/* ================================================= */}
+        {/* ======================================== */}
+        {/* LEFT CONTENT */}
+        {/* ======================================== */}
 
         <Reveal>
 
           <div className="max-w-2xl">
 
-            {/* TOP LABEL */}
+            {/* LABEL */}
+
             <motion.div
               initial={{
                 opacity: 0,
@@ -143,44 +168,47 @@ export default function AboutSection() {
               }}
 
               className="
-              inline-flex
-              items-center
+                inline-flex
+                items-center
 
-              gap-3
+                gap-3
 
-              px-5 py-2
+                px-5 py-2
 
-              rounded-full
+                rounded-full
 
-              border border-cyan-400/20
+                border border-cyan-400/20
 
-              bg-cyan-400/5
-              backdrop-blur-xl
+                bg-cyan-400/5
+                backdrop-blur-xl
 
-              mb-8
-            "
+                mb-8
+              "
             >
 
               <div
                 className="
-                w-2 h-2
-                rounded-full
+                  w-2 h-2
 
-                bg-cyan-400
+                  rounded-full
 
-                animate-pulse
-              "
+                  bg-cyan-400
+
+                  animate-pulse
+                "
               />
 
               <span
                 className="
-                text-xs
+                  text-[11px]
+                  sm:text-xs
 
-                tracking-[4px]
-                uppercase
+                  tracking-[4px]
+                  uppercase
 
-                text-cyan-200
-              "
+                  text-cyan-600
+                  dark:text-cyan-200
+                "
               >
                 About Us
               </span>
@@ -188,6 +216,7 @@ export default function AboutSection() {
             </motion.div>
 
             {/* HEADING */}
+
             <motion.h2
               initial={{
                 opacity: 0,
@@ -208,39 +237,42 @@ export default function AboutSection() {
               }}
 
               className="
-              text-4xl
-              md:text-6xl
+                text-3xl
+                sm:text-4xl
+                md:text-6xl
 
-              font-black
+                font-black
 
-              leading-[1.02]
+                leading-[1.05]
 
-              tracking-[-2px]
+                tracking-[-2px]
 
-              mb-8
-            "
+                mb-8
+              "
             >
 
               <span
                 className="
-                bg-gradient-to-r
-                from-cyan-300
-                via-sky-400
-                to-blue-400
+                  bg-gradient-to-r
+                  from-cyan-400
+                  via-sky-500
+                  to-blue-500
 
-                bg-clip-text
-                text-transparent
+                  bg-clip-text
+                  text-transparent
 
-                drop-shadow-[0_0_25px_rgba(34,211,238,0.25)]
-              "
+                  drop-shadow-[0_0_25px_rgba(34,211,238,0.25)]
+                "
               >
                 A Decade Of
+                <br />
                 Dedication
               </span>
 
             </motion.h2>
 
             {/* DESCRIPTION 1 */}
+
             <motion.p
               initial={{
                 opacity: 0,
@@ -262,25 +294,41 @@ export default function AboutSection() {
               }}
 
               className="
-              text-lg
+                text-base
+                sm:text-lg
 
-              text-white/75
+                text-slate-700
+                dark:text-white/75
 
-              leading-[2]
+                leading-[2]
 
-              mb-6
-            "
+                mb-6
+              "
             >
 
               Established in{" "}
 
-              <span className="text-cyan-300 font-semibold">
+              <span
+                className="
+                  text-cyan-600
+                  dark:text-cyan-300
+
+                  font-semibold
+                "
+              >
                 2010
               </span>
 
               ,{" "}
 
-              <span className="text-white font-semibold">
+              <span
+                className="
+                  text-slate-900
+                  dark:text-white
+
+                  font-semibold
+                "
+              >
                 Kuddus Ali Construction
               </span>
 
@@ -291,6 +339,7 @@ export default function AboutSection() {
             </motion.p>
 
             {/* DESCRIPTION 2 */}
+
             <motion.p
               initial={{
                 opacity: 0,
@@ -312,12 +361,13 @@ export default function AboutSection() {
               }}
 
               className="
-              text-white/55
+                text-slate-600
+                dark:text-white/60
 
-              leading-[2]
+                leading-[2]
 
-              mb-10
-            "
+                mb-10
+              "
             >
 
               Our mission is to deliver reliable,
@@ -332,15 +382,17 @@ export default function AboutSection() {
             </motion.p>
 
             {/* FEATURES */}
+
             <div
               className="
-              grid
-              sm:grid-cols-2
+                grid
+                sm:grid-cols-2
 
-              gap-5
+                gap-4
+                sm:gap-5
 
-              mb-12
-            "
+                mb-12
+              "
             >
 
               {features.map((item, i) => (
@@ -372,48 +424,62 @@ export default function AboutSection() {
                   }}
 
                   className="
-                  flex items-center
-                  gap-3
+                    flex items-center
+                    gap-3
 
-                  p-4
+                    p-4
 
-                  rounded-2xl
+                    rounded-2xl
 
-                  border border-white/5
+                    border
 
-                  bg-white/[0.02]
+                    border-slate-200
+                    dark:border-white/5
 
-                  text-white/80
+                    bg-slate-50/80
+                    dark:bg-white/[0.02]
 
-                  transition-all duration-300
+                    text-slate-700
+                    dark:text-white/80
 
-                  hover:border-cyan-400/20
-                  hover:bg-cyan-400/[0.03]
-                "
+                    transition-all duration-300
+
+                    hover:border-cyan-400/20
+                    hover:bg-cyan-400/[0.03]
+                  "
                 >
 
                   <div
                     className="
-                    w-10 h-10
+                      w-10 h-10
 
-                    rounded-xl
+                      rounded-xl
 
-                    bg-cyan-400/10
+                      bg-cyan-400/10
 
-                    flex items-center justify-center
+                      flex items-center
+                      justify-center
 
-                    border border-cyan-400/20
-                  "
+                      border border-cyan-400/20
+                    "
                   >
 
                     <CheckCircle2
-                      className="text-cyan-400"
+                      className="
+                        text-cyan-500
+                        dark:text-cyan-400
+                      "
                       size={18}
                     />
 
                   </div>
 
-                  <span className="text-sm md:text-base">
+                  <span
+                    className="
+                      text-sm
+                      md:text-base
+                    "
+                  >
                     {item}
                   </span>
 
@@ -424,9 +490,18 @@ export default function AboutSection() {
             </div>
 
             {/* BUTTONS */}
-            <div className="flex flex-wrap gap-5">
+
+            <div
+              className="
+                flex flex-wrap
+
+                gap-4
+                sm:gap-5
+              "
+            >
 
               {/* PRIMARY */}
+
               <Link href="/about">
 
                 <motion.button
@@ -439,49 +514,49 @@ export default function AboutSection() {
                   }}
 
                   className="
-                  group
+                    group
 
-                  relative
-                  overflow-hidden
+                    relative
+                    overflow-hidden
 
-                  px-8 py-4
+                    px-8 py-4
 
-                  rounded-full
+                    rounded-full
 
-                  bg-gradient-to-r
-                  from-cyan-400
-                  via-sky-400
-                  to-blue-500
+                    bg-gradient-to-r
+                    from-cyan-400
+                    via-sky-400
+                    to-blue-500
 
-                  text-black
-                  font-bold
+                    text-black
+                    font-bold
 
-                  shadow-[0_10px_40px_rgba(34,211,238,0.35)]
+                    shadow-[0_10px_40px_rgba(34,211,238,0.35)]
 
-                  transition-all duration-500
-                "
+                    transition-all duration-500
+                  "
                 >
 
                   <div
                     className="
-                    absolute inset-0
+                      absolute inset-0
 
-                    opacity-0
-                    group-hover:opacity-100
+                      opacity-0
+                      group-hover:opacity-100
 
-                    transition duration-500
+                      transition duration-500
 
-                    bg-white/20
-                  "
+                      bg-white/20
+                    "
                   />
 
                   <span
                     className="
-                    relative z-10
+                      relative z-10
 
-                    flex items-center
-                    gap-3
-                  "
+                      flex items-center
+                      gap-3
+                    "
                   >
 
                     Explore More
@@ -490,11 +565,11 @@ export default function AboutSection() {
                       size={18}
 
                       className="
-                      transition
+                        transition
 
-                      group-hover:translate-x-1
-                      group-hover:-translate-y-1
-                    "
+                        group-hover:translate-x-1
+                        group-hover:-translate-y-1
+                      "
                     />
 
                   </span>
@@ -504,6 +579,7 @@ export default function AboutSection() {
               </Link>
 
               {/* SECONDARY */}
+
               <Link href="/projects">
 
                 <motion.button
@@ -516,23 +592,30 @@ export default function AboutSection() {
                   }}
 
                   className="
-                  px-8 py-4
+                    px-8 py-4
 
-                  rounded-full
+                    rounded-full
 
-                  border border-white/10
+                    border
 
-                  bg-white/[0.04]
-                  backdrop-blur-xl
+                    border-slate-300
+                    dark:border-white/10
 
-                  text-white
-                  font-semibold
+                    bg-white/70
+                    dark:bg-white/[0.04]
 
-                  hover:border-cyan-400/30
-                  hover:bg-cyan-400/[0.04]
+                    backdrop-blur-xl
 
-                  transition-all duration-500
-                "
+                    text-slate-900
+                    dark:text-white
+
+                    font-semibold
+
+                    hover:border-cyan-400/30
+                    hover:bg-cyan-400/[0.04]
+
+                    transition-all duration-500
+                  "
                 >
                   View Projects
                 </motion.button>
@@ -545,9 +628,9 @@ export default function AboutSection() {
 
         </Reveal>
 
-        {/* ================================================= */}
-        {/* 🔥 RIGHT IMAGE */}
-        {/* ================================================= */}
+        {/* ======================================== */}
+        {/* RIGHT IMAGE */}
+        {/* ======================================== */}
 
         <Reveal>
 
@@ -561,76 +644,89 @@ export default function AboutSection() {
             }}
 
             className="
-      relative
-    "
+              relative
+            "
           >
 
-            {/* OUTER LIGHT */}
+            {/* OUTER GLOW */}
+
             <div
               className="
-        absolute inset-0
+                absolute inset-0
 
-        bg-gradient-to-r
-        from-cyan-500/10
-        to-blue-500/10
+                bg-gradient-to-r
+                from-cyan-500/10
+                to-blue-500/10
 
-        blur-[100px]
+                blur-[100px]
 
-        rounded-[40px]
-      "
+                rounded-[40px]
+              "
             />
 
             {/* IMAGE WRAPPER */}
+
             <div
               className="
-        relative
+                relative
 
-        overflow-hidden
+                overflow-hidden
 
-        rounded-[32px]
+                rounded-[32px]
 
-        border border-white/10
+                border
 
-        bg-white/[0.04]
-        backdrop-blur-2xl
+                border-slate-200
+                dark:border-white/10
 
-        shadow-[0_20px_80px_rgba(0,0,0,0.45)]
-      "
+                bg-white/80
+                dark:bg-white/[0.04]
+
+                backdrop-blur-2xl
+
+                shadow-[0_20px_80px_rgba(0,0,0,0.12)]
+
+                dark:shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+              "
             >
 
               {/* IMAGE */}
+
               <img
                 src="/home/SitePic.webp"
                 alt="Kuddus Ali Construction"
 
                 className="
-          w-full
+                  w-full
 
-          h-[420px]
-          sm:h-[520px]
-          md:h-[620px]
+                  h-[360px]
+                  sm:h-[520px]
+                  md:h-[620px]
 
-          object-cover
+                  object-cover
 
-          transition duration-700
+                  transition duration-700
 
-          hover:scale-105
-        "
+                  hover:scale-105
+                "
               />
 
               {/* OVERLAY */}
+
               <div
                 className="
-          absolute inset-0
+                  absolute inset-0
 
-          bg-gradient-to-t
-          from-[#020617]/70
-          via-[#020617]/5
-          to-transparent
-        "
+                  bg-gradient-to-t
+
+                  from-black/70
+                  via-black/10
+                  to-transparent
+                "
               />
 
               {/* FLOATING INFO */}
+
               <motion.div
                 initial={{
                   opacity: 0,
@@ -652,69 +748,70 @@ export default function AboutSection() {
                 }}
 
                 className="
-    absolute
+                  absolute
 
-    bottom-3
-    left-1/2
+                  bottom-4
+                  left-1/2
 
-    -translate-x-1/2
+                  -translate-x-1/2
 
-    w-[84%]
+                  w-[88%]
+                  sm:w-[84%]
 
-    px-4
-    py-3
+                  px-4 py-3
+                  sm:px-5 sm:py-4
 
-    sm:px-5
-    sm:py-4
+                  rounded-2xl
 
-    rounded-2xl
+                  border border-white/10
 
-    border border-white/10
+                  bg-black/40
 
-    bg-black/35
-    backdrop-blur-2xl
+                  backdrop-blur-2xl
 
-    shadow-[0_8px_30px_rgba(0,0,0,0.35)]
-  "
+                  shadow-[0_8px_30px_rgba(0,0,0,0.35)]
+                "
               >
 
                 <div
                   className="
-      flex items-center justify-between
+                    flex items-center
+                    justify-between
 
-      gap-3
-    "
+                    gap-3
+                  "
                 >
 
                   {/* LEFT */}
+
                   <div className="flex-1">
 
                     <h3
                       className="
-          text-xl
-          sm:text-2xl
+                        text-xl
+                        sm:text-2xl
 
-          font-black
+                        font-black
 
-          text-cyan-300
+                        text-cyan-300
 
-          leading-none
+                        leading-none
 
-          mb-1
-        "
+                        mb-1
+                      "
                     >
                       15+
                     </h3>
 
                     <p
                       className="
-          text-[10px]
-          sm:text-xs
+                        text-[10px]
+                        sm:text-xs
 
-          leading-[1.4]
+                        leading-[1.4]
 
-          text-white/65
-        "
+                        text-white/70
+                      "
                     >
                       Years of
                       <br />
@@ -724,46 +821,48 @@ export default function AboutSection() {
                   </div>
 
                   {/* DIVIDER */}
+
                   <div
                     className="
-        w-px
+                      w-px
 
-        h-9
-        sm:h-10
+                      h-9
+                      sm:h-10
 
-        bg-white/10
-      "
+                      bg-white/10
+                    "
                   />
 
                   {/* RIGHT */}
+
                   <div className="flex-1">
 
                     <h3
                       className="
-          text-xl
-          sm:text-2xl
+                        text-xl
+                        sm:text-2xl
 
-          font-black
+                        font-black
 
-          text-cyan-300
+                        text-cyan-300
 
-          leading-none
+                        leading-none
 
-          mb-1
-        "
+                        mb-1
+                      "
                     >
                       765kV
                     </h3>
 
                     <p
                       className="
-          text-[10px]
-          sm:text-xs
+                        text-[10px]
+                        sm:text-xs
 
-          leading-[1.4]
+                        leading-[1.4]
 
-          text-white/65
-        "
+                        text-white/70
+                      "
                     >
                       Transmission
                       <br />

@@ -25,7 +25,7 @@ const featuredSlides = [
     subtitle: "Powering India’s Grid Infrastructure",
     desc:
       "Kuddus Ali Construction successfully executing high-voltage transmission line projects with advanced engineering and precision.",
-    image: "/placeholder.jpg",
+    image: "/media/Media1.webp",
   },
 
   {
@@ -33,7 +33,7 @@ const featuredSlides = [
     subtitle: "Execution Excellence Across India",
     desc:
       "Our expert teams ensure fast-track tower erection and infrastructure deployment in challenging terrains.",
-    image: "/placeholder.jpg",
+    image: "/media/Media2.webp",
   },
 
   {
@@ -41,7 +41,7 @@ const featuredSlides = [
     subtitle: "Reliable Infrastructure Solutions",
     desc:
       "Delivering durable civil foundations and EPC infrastructure for modern energy systems.",
-    image: "/placeholder.jpg",
+    image: "/media/Media3.webp",
   },
 ];
 
@@ -51,7 +51,7 @@ const mediaCards = [
     category: "Project Execution",
     desc:
       "High-voltage transmission projects executed with safety, speed, and engineering precision.",
-    image: "/placeholder.jpg",
+    image: "/media/Media4.webp",
   },
 
   {
@@ -59,7 +59,7 @@ const mediaCards = [
     category: "Field Operations",
     desc:
       "Advanced hotline stringing operations ensuring uninterrupted power supply across critical corridors.",
-    image: "/placeholder.jpg",
+    image: "/media/Media5.webp",
   },
 
   {
@@ -67,7 +67,7 @@ const mediaCards = [
     category: "Civil Engineering",
     desc:
       "Strong and reliable tower foundations engineered for long-term infrastructure stability.",
-    image: "/placeholder.jpg",
+    image: "/media/Media6.webp",
   },
 
   {
@@ -75,7 +75,7 @@ const mediaCards = [
     category: "Grid Modernization",
     desc:
       "Modernizing transmission lines with high-temperature low-sag conductors.",
-    image: "/placeholder.jpg",
+    image: "/media/Media7.webp",
   },
 
   {
@@ -83,7 +83,7 @@ const mediaCards = [
     category: "Planning & Survey",
     desc:
       "Advanced survey and route planning solutions for optimized transmission infrastructure.",
-    image: "/placeholder.jpg",
+    image: "/media/Media8.webp",
   },
 
   {
@@ -91,7 +91,7 @@ const mediaCards = [
     category: "Execution Team",
     desc:
       "Efficient mobilization of manpower, machinery, and engineering teams nationwide.",
-    image: "/placeholder.jpg",
+    image: "/media/Media9.webp",
   },
 ];
 

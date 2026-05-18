@@ -39,127 +39,140 @@ const clients = [
 /* ================================================= */
 
 export default function ClientsSection() {
+
   return (
+
     <section
       className="
-      relative
-      overflow-hidden
+        relative
+        overflow-hidden
 
-      bg-[#020617]
-      text-white
+        bg-[var(--bg)]
+        text-[var(--text)]
 
-      py-28
-    "
+        py-24
+        md:py-28
+      "
     >
+
       {/* ================================================= */}
       {/* 🔥 BACKGROUND */}
       {/* ================================================= */}
 
-      {/* BG IMAGE */}
       <div
         className="
-        absolute inset-0
+          absolute inset-0
 
-        bg-cover
-        bg-center
+          bg-cover
+          bg-center
 
-
-        opacity-[0.08]
-      "
+          opacity-[0.05]
+        "
         style={{
           backgroundImage:
             "url('/home/HomeTower12.webp')",
         }}
       />
 
-      {/* DARK LAYER */}
-      <div className="absolute inset-0 bg-[#020617]/92" />
+      <div className="absolute inset-0 bg-[var(--bg)]/92" />
 
       {/* GLOW */}
       <div className="absolute inset-0 pointer-events-none">
+
         <div
           className="
-          absolute
-          top-[-150px]
-          left-[-150px]
+            absolute
+            top-[-140px]
+            left-[-140px]
 
-          w-[500px]
-          h-[500px]
+            w-[420px]
+            h-[420px]
 
-          bg-cyan-500/10
+            md:w-[520px]
+            md:h-[520px]
 
-          blur-[150px]
-          rounded-full
-        "
+            bg-cyan-500/10
+
+            blur-[130px]
+
+            rounded-full
+          "
         />
 
         <div
           className="
-          absolute
-          bottom-[-150px]
-          right-[-150px]
+            absolute
+            bottom-[-140px]
+            right-[-140px]
 
-          w-[500px]
-          h-[500px]
+            w-[420px]
+            h-[420px]
 
-          bg-blue-500/10
+            md:w-[520px]
+            md:h-[520px]
 
-          blur-[150px]
-          rounded-full
-        "
+            bg-blue-500/10
+
+            blur-[130px]
+
+            rounded-full
+          "
         />
+
       </div>
 
       {/* GRID */}
       <div
         className="
-        absolute inset-0
+          absolute inset-0
 
-        opacity-[0.03]
+          opacity-[0.03]
 
-        [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+          [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
 
-        [background-size:60px_60px]
-      "
+          [background-size:60px_60px]
+        "
       />
 
       {/* FADE EDGES */}
       <div
         className="
-        pointer-events-none
+          pointer-events-none
 
-        absolute
-        left-0
-        top-0
+          absolute
+          left-0
+          top-0
 
-        h-full
-        w-24
+          h-full
+          w-10
+          md:w-24
 
-        bg-gradient-to-r
-        from-[#020617]
-        to-transparent
+          bg-gradient-to-r
+          from-[var(--bg)]
+          to-transparent
 
-        z-20
-      "
+          z-20
+        "
       />
 
       <div
         className="
-        pointer-events-none
+          pointer-events-none
 
-        absolute
-        right-0
-        top-0
+          absolute
+          right-0
+          top-0
 
-        h-full
-        w-24
+          h-full
+          w-10
+          md:w-24
 
-        bg-gradient-to-l
-        from-[#020617]
-        to-transparent
+          bg-gradient-to-l
+          from-[var(--bg)]
+          to-transparent
 
-        z-20
-      "
+          z-20
+        "
       />
 
       {/* ================================================= */}
@@ -167,6 +180,7 @@ export default function ClientsSection() {
       {/* ================================================= */}
 
       <div className="container-premium relative z-10">
+
         {/* ================================================= */}
         {/* 🔥 TOP CONTENT */}
         {/* ================================================= */}
@@ -176,81 +190,104 @@ export default function ClientsSection() {
             opacity: 0,
             y: 40,
           }}
+
           whileInView={{
             opacity: 1,
             y: 0,
           }}
+
           transition={{
             duration: 0.8,
           }}
+
           viewport={{
             once: true,
           }}
+
           className="
-          text-center
+            text-center
 
-          max-w-4xl
-          mx-auto
+            max-w-4xl
+            mx-auto
 
-          mb-20
-        "
+            mb-14
+            md:mb-20
+          "
         >
+
           <p
             className="
-            uppercase
+              uppercase
 
-            tracking-[6px]
+              tracking-[5px]
+              md:tracking-[6px]
 
-            text-cyan-300/80
+              text-cyan-300/80
 
-            text-sm
+              text-[11px]
+              md:text-sm
 
-            mb-5
-          "
+              mb-4
+              md:mb-5
+            "
           >
             Trusted Partnerships
           </p>
 
           <h2
             className="
-            text-4xl
-            md:text-6xl
+              text-3xl
+              sm:text-4xl
+              md:text-6xl
 
-            font-black
+              font-black
 
-            leading-[1.05]
+              leading-[1.08]
 
-            mb-6
-          "
+              mb-5
+              md:mb-6
+            "
           >
+
             <span
               className="
-              bg-gradient-to-r
-              from-cyan-300
-              via-blue-400
-              to-cyan-200
+                bg-gradient-to-r
+                from-cyan-300
+                via-blue-400
+                to-cyan-200
 
-              bg-clip-text
-              text-transparent
-            "
+                bg-clip-text
+                text-transparent
+              "
             >
               Our Valuable Clients
             </span>
+
           </h2>
 
           <p
             className="
-            text-white/60
+              text-white/60
 
-            leading-[2]
-          "
+              text-sm
+              md:text-base
+
+              leading-[1.9]
+              md:leading-[2]
+
+              max-w-3xl
+              mx-auto
+            "
           >
+
             Kuddus Ali Construction proudly collaborates
             with leading infrastructure,
             transmission and EPC companies
             delivering reliable execution across
             India’s power sector.
+
           </p>
+
         </motion.div>
 
         {/* ================================================= */}
@@ -259,76 +296,101 @@ export default function ClientsSection() {
 
         <div
           className="
-          grid
-          md:grid-cols-3
+            grid
 
-          gap-6
+            grid-cols-1
+            md:grid-cols-3
 
-          mb-16
-        "
+            gap-4
+            md:gap-6
+
+            mb-14
+            md:mb-16
+          "
         >
+
           {/* CARD 1 */}
           <motion.div
             initial={{
               opacity: 0,
               y: 40,
             }}
+
             whileInView={{
               opacity: 1,
               y: 0,
             }}
+
             transition={{
               duration: 0.6,
             }}
+
             viewport={{
               once: true,
             }}
+
             className="
-            rounded-[28px]
+              rounded-[24px]
+              md:rounded-[28px]
 
-            border border-white/10
+              border border-white/10
 
-            bg-white/[0.03]
-            backdrop-blur-2xl
+              bg-white/[0.03]
+              backdrop-blur-2xl
 
-            p-7
-          "
+              p-5
+              md:p-7
+            "
           >
+
             <div
               className="
-              w-14
-              h-14
+                w-12 h-12
+                md:w-14 md:h-14
 
-              rounded-2xl
+                rounded-2xl
 
-              bg-cyan-400/10
+                bg-cyan-400/10
 
-              flex items-center justify-center
+                flex items-center justify-center
 
-              text-cyan-300
+                text-cyan-300
 
-              mb-5
-            "
+                mb-4
+                md:mb-5
+              "
             >
-              <ShieldCheck size={24} />
+              <ShieldCheck size={22} />
             </div>
 
             <h3
               className="
-              text-2xl
-              font-black
+                text-xl
+                md:text-2xl
 
-              mb-3
-            "
+                font-black
+
+                mb-3
+              "
             >
               Trusted Execution
             </h3>
 
-            <p className="text-white/60 leading-[1.9]">
+            <p
+              className="
+                text-white/60
+
+                text-sm
+                md:text-base
+
+                leading-[1.8]
+              "
+            >
               Long-term partnerships built through
               quality execution, safety compliance
               and reliable infrastructure delivery.
             </p>
+
           </motion.div>
 
           {/* CARD 2 */}
@@ -337,64 +399,84 @@ export default function ClientsSection() {
               opacity: 0,
               y: 40,
             }}
+
             whileInView={{
               opacity: 1,
               y: 0,
             }}
+
             transition={{
               duration: 0.6,
               delay: 0.1,
             }}
+
             viewport={{
               once: true,
             }}
+
             className="
-            rounded-[28px]
+              rounded-[24px]
+              md:rounded-[28px]
 
-            border border-cyan-400/20
+              border border-cyan-400/20
 
-            bg-cyan-400/[0.05]
-            backdrop-blur-2xl
+              bg-cyan-400/[0.05]
+              backdrop-blur-2xl
 
-            p-7
-          "
+              p-5
+              md:p-7
+            "
           >
+
             <div
               className="
-              w-14
-              h-14
+                w-12 h-12
+                md:w-14 md:h-14
 
-              rounded-2xl
+                rounded-2xl
 
-              bg-cyan-400/15
+                bg-cyan-400/15
 
-              flex items-center justify-center
+                flex items-center justify-center
 
-              text-cyan-300
+                text-cyan-300
 
-              mb-5
-            "
+                mb-4
+                md:mb-5
+              "
             >
-              <Zap size={24} />
+              <Zap size={22} />
             </div>
 
             <h3
               className="
-              text-2xl
-              font-black
+                text-xl
+                md:text-2xl
 
-              mb-3
-            "
+                font-black
+
+                mb-3
+              "
             >
               Transmission Expertise
             </h3>
 
-            <p className="text-white/70 leading-[1.9]">
+            <p
+              className="
+                text-white/70
+
+                text-sm
+                md:text-base
+
+                leading-[1.8]
+              "
+            >
               Specialized in tower erection,
               hotline stringing, HTLS
               reconductoring and EHV
               infrastructure execution.
             </p>
+
           </motion.div>
 
           {/* CARD 3 */}
@@ -403,91 +485,120 @@ export default function ClientsSection() {
               opacity: 0,
               y: 40,
             }}
+
             whileInView={{
               opacity: 1,
               y: 0,
             }}
+
             transition={{
               duration: 0.6,
               delay: 0.2,
             }}
+
             viewport={{
               once: true,
             }}
+
             className="
-            rounded-[28px]
+              rounded-[24px]
+              md:rounded-[28px]
 
-            border border-white/10
+              border border-white/10
 
-            bg-white/[0.03]
-            backdrop-blur-2xl
+              bg-white/[0.03]
+              backdrop-blur-2xl
 
-            p-7
-          "
+              p-5
+              md:p-7
+            "
           >
+
             <div
               className="
-              w-14
-              h-14
+                w-12 h-12
+                md:w-14 md:h-14
 
-              rounded-2xl
+                rounded-2xl
 
-              bg-cyan-400/10
+                bg-cyan-400/10
 
-              flex items-center justify-center
+                flex items-center justify-center
 
-              text-cyan-300
+                text-cyan-300
 
-              mb-5
-            "
+                mb-4
+                md:mb-5
+              "
             >
-              <ArrowUpRight size={24} />
+              <ArrowUpRight size={22} />
             </div>
 
             <h3
               className="
-              text-2xl
-              font-black
+                text-xl
+                md:text-2xl
 
-              mb-3
-            "
+                font-black
+
+                mb-3
+              "
             >
               Nationwide Presence
             </h3>
 
-            <p className="text-white/60 leading-[1.9]">
+            <p
+              className="
+                text-white/60
+
+                text-sm
+                md:text-base
+
+                leading-[1.8]
+              "
+            >
               Successfully supporting major
               transmission and infrastructure
               projects across multiple states in
               India.
             </p>
+
           </motion.div>
+
         </div>
 
         {/* ================================================= */}
         {/* 🔥 ROW 1 */}
         {/* ================================================= */}
 
-        <div className="overflow-hidden mb-8">
+        <div className="overflow-hidden mb-5 md:mb-8">
+
           <div
             className="
-            scroll-left
+              scroll-left
 
-            flex
-            gap-8
+              flex
 
-            w-max
-          "
+              gap-4
+              md:gap-8
+
+              w-max
+            "
           >
+
             {[...clients, ...clients].map(
               (logo, i) => (
+
                 <ClientCard
                   key={i}
                   logo={logo}
                 />
+
               )
             )}
+
           </div>
+
         </div>
 
         {/* ================================================= */}
@@ -495,28 +606,39 @@ export default function ClientsSection() {
         {/* ================================================= */}
 
         <div className="overflow-hidden">
+
           <div
             className="
-            scroll-right
+              scroll-right
 
-            flex
-            gap-8
+              flex
 
-            w-max
-          "
+              gap-4
+              md:gap-8
+
+              w-max
+            "
           >
+
             {[...clients, ...clients].map(
               (logo, i) => (
+
                 <ClientCard
                   key={i}
                   logo={logo}
                 />
+
               )
             )}
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
   );
 }
 
@@ -529,89 +651,106 @@ function ClientCard({
 }: {
   logo: string;
 }) {
+
   return (
+
     <motion.div
       whileHover={{
-        y: -8,
+        y: -6,
       }}
+
       className="
-      group
+        group
 
-      relative
+        relative
 
-      min-w-[170px]
-      h-[170px]
+        min-w-[120px]
+        min-h-[120px]
 
-      rounded-[28px]
+        sm:min-w-[150px]
+        sm:min-h-[150px]
 
-      overflow-hidden
+        md:min-w-[170px]
+        md:h-[170px]
 
-      border border-white/10
+        rounded-[22px]
+        md:rounded-[28px]
 
-      bg-white/[0.95]
-      backdrop-blur-xl
+        overflow-hidden
 
-      shadow-[0_10px_40px_rgba(0,0,0,0.25)]
+        border border-white/10
 
-      transition-all duration-500
+        bg-white/[0.95]
+        backdrop-blur-xl
 
-      hover:border-cyan-400/30
-      hover:shadow-[0_10px_50px_rgba(34,211,238,0.18)]
-    "
+        shadow-[0_10px_40px_rgba(0,0,0,0.25)]
+
+        transition-all duration-500
+
+        hover:border-cyan-400/30
+        hover:shadow-[0_10px_50px_rgba(34,211,238,0.18)]
+      "
     >
+
       {/* BG GLOW */}
       <div
         className="
-        absolute inset-0
+          absolute inset-0
 
-        opacity-0
-        group-hover:opacity-100
+          opacity-0
+          group-hover:opacity-100
 
-        transition duration-500
+          transition duration-500
 
-        bg-gradient-to-br
-        from-cyan-400/10
-        to-blue-400/10
-      "
+          bg-gradient-to-br
+          from-cyan-400/10
+          to-blue-400/10
+        "
       />
 
       {/* IMAGE */}
       <div className="relative w-full h-full">
+
         <Image
           src={logo}
           alt="client"
           fill
+
           className="
-          object-contain
+            object-contain
 
-          p-6
+            p-4
+            md:p-6
 
-          transition duration-500
+            transition duration-500
 
-          group-hover:scale-105
-        "
+            group-hover:scale-105
+          "
         />
+
       </div>
 
       {/* BOTTOM LINE */}
       <div
         className="
-        absolute
-        bottom-0
-        left-0
+          absolute
+          bottom-0
+          left-0
 
-        h-[3px]
-        w-0
+          h-[3px]
+          w-0
 
-        bg-gradient-to-r
-        from-cyan-400
-        to-blue-400
+          bg-gradient-to-r
+          from-cyan-400
+          to-blue-400
 
-        group-hover:w-full
+          group-hover:w-full
 
-        transition-all duration-500
-      "
+          transition-all duration-500
+        "
       />
+
     </motion.div>
+
   );
 }

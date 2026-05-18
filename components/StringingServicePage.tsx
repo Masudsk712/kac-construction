@@ -49,7 +49,7 @@ export default function StringingServicePage({
   gallery,
 }: Props) {
   return (
-    <main className="bg-[#020617] text-white overflow-hidden">
+    <main className="bg-[var(--bg)] text-[var(--text)] overflow-hidden">
 
       {/* HERO */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">

@@ -122,7 +122,7 @@ export default function ContactPage() {
           className="
           absolute inset-0
 
-          bg-[url('/placeholder.jpg')]
+          bg-[url('/contact/Contact1.webp')]
 
           bg-cover
           bg-center

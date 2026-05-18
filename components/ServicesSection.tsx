@@ -12,7 +12,7 @@ import {
 import Image from "next/image";
 
 /* ================================================= */
-/* 🔥 SERVICES DATA */
+/* SERVICES DATA */
 /* ================================================= */
 
 const services = [
@@ -70,93 +70,107 @@ const services = [
 ];
 
 /* ================================================= */
-/* 🔥 COMPONENT */
+/* COMPONENT */
 /* ================================================= */
 
 export default function ServicesSection() {
 
   return (
+
     <section
       className="
-      relative
-      overflow-hidden
+        relative
 
-      bg-[#020617]
+        overflow-hidden
 
-      py-28
-    "
+        py-24
+        md:py-32
+
+        bg-white
+        dark:bg-[#020617]
+      "
     >
 
       {/* ================================================= */}
-      {/* 🔥 BACKGROUND */}
+      {/* BACKGROUND */}
       {/* ================================================= */}
 
       {/* GLOW */}
-      <div className="absolute inset-0 pointer-events-none">
+
+      <div
+        className="
+          absolute inset-0
+
+          pointer-events-none
+        "
+      >
 
         <div
           className="
-          absolute
-          top-[-180px]
-          left-[-100px]
+            absolute
+            top-[-180px]
+            left-[-100px]
 
-          w-[500px]
-          h-[500px]
+            w-[500px]
+            h-[500px]
 
-          bg-cyan-500/10
+            rounded-full
 
-          blur-[140px]
+            bg-cyan-500/10
 
-          rounded-full
-        "
+            blur-[140px]
+          "
         />
 
         <div
           className="
-          absolute
-          bottom-[-180px]
-          right-[-100px]
+            absolute
+            bottom-[-180px]
+            right-[-100px]
 
-          w-[500px]
-          h-[500px]
+            w-[500px]
+            h-[500px]
 
-          bg-blue-500/10
+            rounded-full
 
-          blur-[140px]
+            bg-blue-500/10
 
-          rounded-full
-        "
+            blur-[140px]
+          "
         />
 
       </div>
 
       {/* GRID */}
+
       <div
         className="
-        absolute inset-0
+          absolute inset-0
 
-        opacity-[0.03]
+          opacity-[0.03]
 
-        [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+          [background-image:linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)]
 
-        [background-size:60px_60px]
-      "
+          dark:[background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+
+          [background-size:60px_60px]
+        "
       />
 
       {/* ================================================= */}
-      {/* 🔥 CONTENT */}
+      {/* CONTENT */}
       {/* ================================================= */}
 
       <div
         className="
-        container-premium
+          container-premium
 
-        relative z-10
-      "
+          relative z-10
+        "
       >
 
         {/* ================================================= */}
-        {/* 🔥 HEADING */}
+        {/* HEADING */}
         {/* ================================================= */}
 
         <motion.div
@@ -179,40 +193,45 @@ export default function ServicesSection() {
           }}
 
           className="
-          text-center
+            text-center
 
-          max-w-4xl
+            max-w-4xl
 
-          mx-auto
+            mx-auto
 
-          mb-20
-        "
+            mb-16
+            md:mb-20
+          "
         >
 
           {/* LABEL */}
+
           <div
             className="
-            inline-flex
-            items-center
-            gap-2
+              inline-flex
+              items-center
+              gap-2
 
-            px-5 py-2
+              px-5 py-2
 
-            rounded-full
+              rounded-full
 
-            border border-cyan-400/10
+              border border-cyan-400/15
 
-            bg-cyan-400/5
+              bg-cyan-400/5
 
-            text-cyan-300
+              text-cyan-600
+              dark:text-cyan-300
 
-            text-sm
-            uppercase
+              text-[11px]
+              sm:text-sm
 
-            tracking-[4px]
+              uppercase
 
-            mb-6
-          "
+              tracking-[4px]
+
+              mb-6
+            "
           >
 
             <Sparkles size={14} />
@@ -222,54 +241,64 @@ export default function ServicesSection() {
           </div>
 
           {/* TITLE */}
+
           <h2
             className="
-            text-4xl
-            md:text-6xl
+              text-3xl
+              sm:text-4xl
+              md:text-6xl
 
-            font-black
+              font-black
 
-            leading-[1.05]
+              leading-[1.05]
 
-            mb-6
-          "
+              mb-6
+            "
           >
 
             <span
               className="
-              bg-gradient-to-r
-              from-cyan-300
-              via-blue-400
-              to-cyan-100
+                bg-gradient-to-r
+                from-cyan-400
+                via-blue-500
+                to-cyan-300
 
-              bg-clip-text
-              text-transparent
-            "
+                bg-clip-text
+                text-transparent
+              "
             >
               Engineering Services
             </span>
 
             <br />
 
-            <span className="text-white">
+            <span
+              className="
+                text-slate-900
+                dark:text-white
+              "
+            >
               Built For Reliability
             </span>
 
           </h2>
 
           {/* DESCRIPTION */}
+
           <p
             className="
-            text-white/65
+              text-slate-600
+              dark:text-white/65
 
-            text-lg
+              text-base
+              md:text-lg
 
-            leading-[2]
+              leading-[2]
 
-            max-w-3xl
+              max-w-3xl
 
-            mx-auto
-          "
+              mx-auto
+            "
           >
 
             Kuddus Ali Construction delivers advanced
@@ -283,17 +312,20 @@ export default function ServicesSection() {
         </motion.div>
 
         {/* ================================================= */}
-        {/* 🔥 GRID */}
+        {/* GRID */}
         {/* ================================================= */}
 
         <div
           className="
-          grid
-          md:grid-cols-2
-          xl:grid-cols-4
+            grid
 
-          gap-7
-        "
+            grid-cols-1
+            sm:grid-cols-2
+            xl:grid-cols-4
+
+            gap-5
+            md:gap-7
+          "
         >
 
           {services.map((service, i) => (
@@ -325,54 +357,67 @@ export default function ServicesSection() {
               }}
 
               className="
-              group
+                group
 
-              relative
-              overflow-hidden
+                relative
+                overflow-hidden
 
-              rounded-[32px]
+                rounded-[28px]
+                md:rounded-[32px]
 
-              border border-white/10
+                border
 
-              bg-white/[0.03]
-              backdrop-blur-2xl
+                border-slate-200
+                dark:border-white/10
 
-              transition-all duration-500
+                bg-white/80
+                dark:bg-white/[0.03]
 
-              hover:border-cyan-400/20
-            "
+                backdrop-blur-2xl
+
+                transition-all duration-500
+
+                hover:border-cyan-400/20
+
+                shadow-[0_10px_40px_rgba(15,23,42,0.08)]
+
+                dark:shadow-[0_10px_40px_rgba(0,0,0,0.35)]
+              "
             >
 
               {/* TOP LIGHT */}
+
               <div
                 className="
-                absolute
-                inset-x-0
-                top-0
+                  absolute
+                  inset-x-0
+                  top-0
 
-                h-[1px]
+                  h-[1px]
 
-                bg-gradient-to-r
-                from-transparent
-                via-cyan-300/40
-                to-transparent
+                  bg-gradient-to-r
+                  from-transparent
+                  via-cyan-300/40
+                  to-transparent
 
-                opacity-0
-                group-hover:opacity-100
+                  opacity-0
+                  group-hover:opacity-100
 
-                transition duration-700
-              "
+                  transition duration-700
+                "
               />
 
               {/* IMAGE */}
+
               <div
                 className="
-                relative
+                  relative
 
-                h-[260px]
+                  h-[240px]
+                  md:h-[260px]
 
-                overflow-hidden
-              "
+                  overflow-hidden
+                "
               >
 
                 <Image
@@ -381,65 +426,75 @@ export default function ServicesSection() {
                   fill
 
                   className="
-                  object-cover
+                    object-cover
 
-                  transition duration-700
+                    transition duration-700
 
-                  group-hover:scale-105
-                "
+                    group-hover:scale-105
+                  "
                 />
 
                 {/* OVERLAY */}
+
                 <div
                   className="
-                  absolute inset-0
+                    absolute inset-0
 
-                  bg-gradient-to-t
-                  from-[#020617]
-                  via-[#020617]/20
-                  to-transparent
-                "
+                    bg-gradient-to-t
+
+                    from-black/85
+                    via-black/20
+                    to-transparent
+                  "
                 />
 
                 {/* NUMBER */}
+
                 <div
                   className="
-                  absolute
-                  top-5
-                  right-5
+                    absolute
+                    top-5
+                    right-5
 
-                  text-5xl
-                  font-black
+                    text-4xl
+                    md:text-5xl
 
-                  text-white/10
-                "
+                    font-black
+
+                    text-white/10
+                  "
                 >
                   {service.number}
                 </div>
 
                 {/* LABEL */}
+
                 <div
                   className="
-                  absolute
-                  left-5
-                  top-5
+                    absolute
+                    left-4
+                    top-4
+                    md:left-5
+                    md:top-5
 
-                  px-4 py-1
+                    px-4 py-1
 
-                  rounded-full
+                    rounded-full
 
-                  border border-white/10
+                    border border-white/10
 
-                  bg-black/30
-                  backdrop-blur-xl
+                    bg-black/30
+                    backdrop-blur-xl
 
-                  text-[11px]
-                  uppercase
+                    text-[10px]
+                    md:text-[11px]
 
-                  tracking-[3px]
+                    uppercase
 
-                  text-cyan-300
-                "
+                    tracking-[3px]
+
+                    text-cyan-300
+                  "
                 >
                   KAC Service
                 </div>
@@ -447,71 +502,90 @@ export default function ServicesSection() {
               </div>
 
               {/* CONTENT */}
-              <div className="p-7">
+
+              <div
+                className="
+                  p-5
+                  md:p-7
+                "
+              >
 
                 {/* TITLE */}
+
                 <h3
                   className="
-                  text-2xl
+                    text-xl
+                    md:text-2xl
 
-                  font-bold
+                    font-bold
 
-                  text-white
+                    text-slate-900
+                    dark:text-white
 
-                  mb-4
+                    mb-4
 
-                  transition duration-300
+                    transition duration-300
 
-                  group-hover:text-cyan-300
-                "
+                    group-hover:text-cyan-500
+                    dark:group-hover:text-cyan-300
+                  "
                 >
                   {service.title}
                 </h3>
 
                 {/* DESCRIPTION */}
+
                 <p
                   className="
-                  text-white/60
+                    text-slate-600
+                    dark:text-white/60
 
-                  leading-[1.9]
+                    leading-[1.9]
 
-                  text-sm
+                    text-sm
 
-                  mb-10
-                "
+                    mb-8
+                    md:mb-10
+                  "
                 >
                   {service.desc}
                 </p>
 
                 {/* BUTTON */}
+
                 <Link
                   href={service.link}
 
                   className="
-                  flex items-center
-                  justify-between
+                    flex items-center
+                    justify-between
 
-                  pt-5
+                    pt-5
 
-                  border-t border-white/10
+                    border-t
 
-                  group/link
-                "
+                    border-slate-200
+                    dark:border-white/10
+
+                    group/link
+                  "
                 >
 
                   <span
                     className="
-                    text-cyan-300
+                      text-cyan-600
+                      dark:text-cyan-300
 
-                    text-sm
-                    uppercase
+                      text-sm
+                      uppercase
 
-                    tracking-[3px]
+                      tracking-[3px]
 
-                    transition duration-300
+                      transition duration-300
 
-                    group-hover/link:text-white
-                  "
+                      group-hover/link:text-slate-900
+                      dark:group-hover/link:text-white
+                    "
                   >
                     Know More
                   </span>
@@ -520,14 +594,17 @@ export default function ServicesSection() {
                     size={18}
 
                     className="
-                    text-cyan-300
+                      text-cyan-600
+                      dark:text-cyan-300
 
-                    transition duration-500
+                      transition duration-500
 
-                    group-hover/link:translate-x-1
-                    group-hover/link:-translate-y-1
-                    group-hover/link:text-white
-                  "
+                      group-hover/link:translate-x-1
+                      group-hover/link:-translate-y-1
+
+                      group-hover/link:text-slate-900
+                      dark:group-hover/link:text-white
+                    "
                   />
 
                 </Link>
@@ -541,7 +618,7 @@ export default function ServicesSection() {
         </div>
 
         {/* ================================================= */}
-        {/* 🔥 CTA BUTTON */}
+        {/* CTA BUTTON */}
         {/* ================================================= */}
 
         <motion.div
@@ -565,11 +642,12 @@ export default function ServicesSection() {
           }}
 
           className="
-          flex
-          justify-center
+            flex
+            justify-center
 
-          mt-20
-        "
+            mt-16
+            md:mt-20
+          "
         >
 
           <Link href="/service">
@@ -584,56 +662,58 @@ export default function ServicesSection() {
               }}
 
               className="
-              group
+                group
 
-              relative
-              overflow-hidden
+                relative
+                overflow-hidden
 
-              px-10 py-4
+                px-8 py-4
+                md:px-10
 
-              rounded-full
+                rounded-full
 
-              border border-cyan-400/20
+                border border-cyan-400/20
 
-              bg-gradient-to-r
-              from-cyan-400
-              to-blue-500
+                bg-gradient-to-r
+                from-cyan-400
+                to-blue-500
 
-              text-black
-              font-bold
+                text-black
+                font-bold
 
-              shadow-[0_10px_40px_rgba(34,211,238,0.25)]
+                shadow-[0_10px_40px_rgba(34,211,238,0.25)]
 
-              transition duration-500
-            "
+                transition duration-500
+              "
             >
 
               {/* SHINE */}
+
               <div
                 className="
-                absolute
-                inset-0
+                  absolute
+                  inset-0
 
-                translate-x-[-100%]
+                  translate-x-[-100%]
 
-                bg-gradient-to-r
-                from-transparent
-                via-white/30
-                to-transparent
+                  bg-gradient-to-r
+                  from-transparent
+                  via-white/30
+                  to-transparent
 
-                group-hover:translate-x-[100%]
+                  group-hover:translate-x-[100%]
 
-                transition duration-1000
-              "
+                  transition duration-1000
+                "
               />
 
               <span
                 className="
-                relative z-10
+                  relative z-10
 
-                flex items-center
-                gap-3
-              "
+                  flex items-center
+                  gap-3
+                "
               >
 
                 Explore All Services
@@ -642,11 +722,11 @@ export default function ServicesSection() {
                   size={18}
 
                   className="
-                  transition duration-300
+                    transition duration-300
 
-                  group-hover:translate-x-1
-                  group-hover:-translate-y-1
-                "
+                    group-hover:translate-x-1
+                    group-hover:-translate-y-1
+                  "
                 />
 
               </span>

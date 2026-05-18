@@ -144,7 +144,7 @@ export default function CareerPage() {
           className="
           absolute inset-0
 
-          bg-[url('/placeholder.jpg')]
+          bg-[url('/career/Career1.webp')]
 
           bg-cover
           bg-center

@@ -246,8 +246,8 @@ export default function IndiaMapSection() {
       relative
       overflow-hidden
 
-      bg-[#020617]
-      text-white
+     bg-[var(--bg)]
+     text-[var(--text)]
 
       py-28
     "

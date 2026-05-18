@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageLoader from "@/components/PageLoader";
@@ -11,31 +13,79 @@ export default function LayoutWrapper({
 }: {
   children: React.ReactNode;
 }) {
+
   const { loading } = useLoader();
 
   return (
     <>
-      {/* LOADER */}
-      <PageLoader />
+      {/* ======================================== */}
+      {/* WEBSITE */}
+      {/* ======================================== */}
 
-      {/* WEBSITE CONTENT */}
-      {!loading && (
-        <>
-          <Navbar />
+      <motion.div
+        initial={{
+          opacity: 0,
+        }}
 
-          <main
-            className="
+        animate={{
+          opacity: loading ? 0 : 1,
+        }}
+
+        transition={{
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+
+        style={{
+          pointerEvents:
+            loading
+              ? "none"
+              : "auto",
+        }}
+
+        className="
+          relative
+
+          min-h-screen
+
+          bg-white
+          dark:bg-[#020617]
+
+          text-slate-900
+          dark:text-white
+
+          transition-colors duration-500
+        "
+      >
+
+        {/* NAVBAR */}
+        <Navbar />
+
+        {/* MAIN */}
+        <main
+          className="
             relative
             z-10
-            min-h-screen
-          "
-          >
-            {children}
-          </main>
 
-          <WhatsAppButton />
-        </>
-      )}
+            min-h-screen
+
+            overflow-x-hidden
+          "
+        >
+          {children}
+        </main>
+
+        {/* FLOATING BUTTON */}
+        <WhatsAppButton />
+
+      </motion.div>
+
+      {/* ======================================== */}
+      {/* PAGE LOADER */}
+      {/* ======================================== */}
+
+      <PageLoader />
+
     </>
   );
 }

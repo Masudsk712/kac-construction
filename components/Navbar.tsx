@@ -5,6 +5,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 
+import ThemeToggle from "./ThemeToggle"
+
 import {
   motion,
   AnimatePresence,
@@ -23,20 +25,33 @@ export default function Navbar() {
 
   const pathname = usePathname()
 
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] =
+    useState(false)
 
-  const [aboutOpen, setAboutOpen] = useState(false)
-  const [serviceOpen, setServiceOpen] = useState(false)
-  const [projectOpen, setProjectOpen] = useState(false)
+  const [scrolled, setScrolled] =
+    useState(false)
 
-  const [mobileAbout, setMobileAbout] = useState(false)
-  const [mobileService, setMobileService] = useState(false)
-  const [mobileProject, setMobileProject] = useState(false)
+  const [aboutOpen, setAboutOpen] =
+    useState(false)
 
-  /* ================================================= */
-  /* 🔥 SCROLL EFFECT */
-  /* ================================================= */
+  const [serviceOpen, setServiceOpen] =
+    useState(false)
+
+  const [projectOpen, setProjectOpen] =
+    useState(false)
+
+  const [mobileAbout, setMobileAbout] =
+    useState(false)
+
+  const [mobileService, setMobileService] =
+    useState(false)
+
+  const [mobileProject, setMobileProject] =
+    useState(false)
+
+  /* ======================================== */
+  /* SCROLL */
+  /* ======================================== */
 
   useEffect(() => {
 
@@ -44,7 +59,10 @@ export default function Navbar() {
       setScrolled(window.scrollY > 20)
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    )
 
     return () =>
       window.removeEventListener(
@@ -54,34 +72,41 @@ export default function Navbar() {
 
   }, [])
 
-  /* ================================================= */
-  /* 🔥 LOCK BODY */
-  /* ================================================= */
+  /* ======================================== */
+  /* BODY LOCK */
+  /* ======================================== */
 
   useEffect(() => {
 
     if (isOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow =
+        "hidden"
     } else {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow =
+        "auto"
     }
 
   }, [isOpen])
 
-  /* ================================================= */
-  /* 🔥 ACTIVE LINK */
-  /* ================================================= */
+  /* ======================================== */
+  /* ACTIVE LINK */
+  /* ======================================== */
 
   const linkStyle = (path: string) =>
     `relative transition-all duration-300 ${
       pathname === path
-        ? "text-cyan-300"
-        : "text-white/85 hover:text-cyan-300"
+        ? "text-cyan-400"
+        : `
+          text-slate-800
+          dark:text-white/85
+
+          hover:text-cyan-400
+        `
     }`
 
-  /* ================================================= */
-  /* 🔥 CLOSE */
-  /* ================================================= */
+  /* ======================================== */
+  /* CLOSE */
+  /* ======================================== */
 
   const closeMenu = () => {
 
@@ -90,12 +115,11 @@ export default function Navbar() {
     setMobileAbout(false)
     setMobileService(false)
     setMobileProject(false)
-
   }
 
-  /* ================================================= */
-  /* 🔥 ABOUT LINKS */
-  /* ================================================= */
+  /* ======================================== */
+  /* ABOUT */
+  /* ======================================== */
 
   const aboutLinks = [
     {
@@ -124,9 +148,9 @@ export default function Navbar() {
     },
   ]
 
-  /* ================================================= */
-  /* 🔥 SERVICES */
-  /* ================================================= */
+  /* ======================================== */
+  /* SERVICES */
+  /* ======================================== */
 
   const serviceLinks = [
     {
@@ -150,9 +174,9 @@ export default function Navbar() {
     },
   ]
 
-  /* ================================================= */
-  /* 🔥 PROJECT LINKS */
-  /* ================================================= */
+  /* ======================================== */
+  /* PROJECTS */
+  /* ======================================== */
 
   const projectLinks = [
     {
@@ -181,79 +205,127 @@ export default function Navbar() {
     },
   ]
 
+  /* ======================================== */
+  /* DROPDOWN CLASS */
+  /* ======================================== */
+
+  const dropdownClass = `
+    absolute
+    top-12
+    left-0
+
+    rounded-3xl
+
+    border
+
+    border-black/10
+    dark:border-white/10
+
+    bg-white/95
+    dark:bg-[#081120]/92
+
+    backdrop-blur-3xl
+
+    p-4
+
+    shadow-[0_30px_80px_rgba(0,0,0,0.25)]
+    dark:shadow-[0_30px_80px_rgba(0,0,0,0.55)]
+  `
+
+  const dropdownLink = `
+    group
+
+    flex
+    items-center
+    justify-between
+
+    px-4 py-3
+
+    rounded-2xl
+
+    text-slate-700
+    dark:text-white/75
+
+    transition-all duration-300
+
+    hover:bg-cyan-500/10
+    hover:text-cyan-400
+  `
+
   return (
 
     <nav
       className={`
-      fixed top-0 left-0 w-full z-[999]
+        fixed top-0 left-0
 
-      transition-all duration-500
+        w-full
 
-      ${
-        scrolled
-          ? `
-            bg-[#020617]/72
-            backdrop-blur-3xl
+        z-[99999]
 
-            border-b border-white/10
+        transition-all duration-500
 
-            shadow-[0_20px_60px_rgba(0,0,0,0.45)]
-          `
-          : `
-            bg-transparent
-          `
-      }
-    `}
+        ${
+          scrolled
+            ? `
+              bg-white/75
+              dark:bg-[#020617]/75
+
+              backdrop-blur-3xl
+
+              border-b
+
+              border-black/5
+              dark:border-white/10
+
+              shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+              dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)]
+            `
+            : `
+              bg-transparent
+            `
+        }
+      `}
     >
 
-      {/* ================================================= */}
-      {/* 🔥 PREMIUM GLOW */}
-      {/* ================================================= */}
-
+      {/* GLOW */}
       <div
         className="
-        absolute inset-0
+          absolute inset-0
 
-        bg-gradient-to-r
-        from-cyan-500/[0.05]
-        via-transparent
-        to-blue-500/[0.05]
+          bg-gradient-to-r
+          from-cyan-500/[0.05]
+          via-transparent
+          to-blue-500/[0.05]
 
-        pointer-events-none
-      "
+          pointer-events-none
+        "
       />
 
-      {/* ================================================= */}
-      {/* 🔥 NAVBAR */}
-      {/* ================================================= */}
-
+      {/* NAVBAR */}
       <div
         className="
-        relative
+          relative
 
-        container-premium
+          container-premium
 
-        py-4
+          py-4
 
-        flex
-        items-center
-        justify-between
-      "
+          flex
+          items-center
+          justify-between
+        "
       >
 
-        {/* ================================================= */}
-        {/* 🔥 LOGO */}
-        {/* ================================================= */}
-
+        {/* LOGO */}
         <Link
           href="/"
           onClick={closeMenu}
 
           className="
-          relative z-20
+            relative z-20
 
-          flex items-center
-        "
+            flex items-center
+          "
         >
 
           <Image
@@ -266,33 +338,29 @@ export default function Navbar() {
             priority
 
             className="
-            object-contain
+              object-contain
 
-            transition-all duration-500
+              transition-all duration-500
 
-            hover:scale-105
+              hover:scale-105
 
-            drop-shadow-[0_0_25px_rgba(34,211,238,0.45)]
-          "
+              drop-shadow-[0_0_25px_rgba(34,211,238,0.45)]
+            "
           />
 
         </Link>
 
-        {/* ================================================= */}
-        {/* 🔥 DESKTOP MENU */}
-        {/* ================================================= */}
-
+        {/* DESKTOP */}
         <div
           className="
-          hidden md:flex
+            hidden md:flex
 
-          items-center
+            items-center
 
-          gap-8
-        "
+            gap-8
+          "
         >
 
-          {/* HOME */}
           <Link
             href="/"
             className={linkStyle("/")}
@@ -300,10 +368,7 @@ export default function Navbar() {
             Home
           </Link>
 
-          {/* ================================================= */}
           {/* ABOUT */}
-          {/* ================================================= */}
-
           <div
             className="relative"
 
@@ -320,10 +385,10 @@ export default function Navbar() {
               href="/about"
 
               className={`
-              ${linkStyle("/about")}
+                ${linkStyle("/about")}
 
-              flex items-center gap-1
-            `}
+                flex items-center gap-1
+              `}
             >
               About
 
@@ -354,24 +419,11 @@ export default function Navbar() {
                     duration: 0.25,
                   }}
 
-                  className="
-                  absolute
-                  top-12
-                  left-0
+                  className={`
+                    ${dropdownClass}
 
-                  w-72
-
-                  rounded-3xl
-
-                  border border-white/10
-
-                  bg-[#081120]/85
-                  backdrop-blur-3xl
-
-                  p-4
-
-                  shadow-[0_30px_80px_rgba(0,0,0,0.55)]
-                "
+                    w-72
+                  `}
                 >
 
                   <div className="space-y-2">
@@ -383,24 +435,7 @@ export default function Navbar() {
                           key={i}
                           href={item.href}
 
-                          className="
-                          group
-
-                          flex
-                          items-center
-                          justify-between
-
-                          px-4 py-3
-
-                          rounded-2xl
-
-                          text-gray-300
-
-                          transition-all duration-300
-
-                          hover:bg-cyan-500/10
-                          hover:text-cyan-300
-                        "
+                          className={dropdownLink}
                         >
 
                           {item.name}
@@ -409,14 +444,14 @@ export default function Navbar() {
                             size={16}
 
                             className="
-                            opacity-0
+                              opacity-0
 
-                            transition
+                              transition
 
-                            group-hover:opacity-100
-                            group-hover:-translate-y-1
-                            group-hover:translate-x-1
-                          "
+                              group-hover:opacity-100
+                              group-hover:-translate-y-1
+                              group-hover:translate-x-1
+                            "
                           />
 
                         </Link>
@@ -434,10 +469,7 @@ export default function Navbar() {
 
           </div>
 
-          {/* ================================================= */}
           {/* SERVICES */}
-          {/* ================================================= */}
-
           <div
             className="relative"
 
@@ -454,10 +486,10 @@ export default function Navbar() {
               href="/service"
 
               className={`
-              ${linkStyle("/service")}
+                ${linkStyle("/service")}
 
-              flex items-center gap-1
-            `}
+                flex items-center gap-1
+              `}
             >
               Services
 
@@ -488,24 +520,11 @@ export default function Navbar() {
                     duration: 0.25,
                   }}
 
-                  className="
-                  absolute
-                  top-12
-                  left-0
+                  className={`
+                    ${dropdownClass}
 
-                  w-80
-
-                  rounded-3xl
-
-                  border border-white/10
-
-                  bg-[#081120]/85
-                  backdrop-blur-3xl
-
-                  p-4
-
-                  shadow-[0_30px_80px_rgba(0,0,0,0.55)]
-                "
+                    w-80
+                  `}
                 >
 
                   <div className="space-y-2">
@@ -517,24 +536,7 @@ export default function Navbar() {
                           key={i}
                           href={item.href}
 
-                          className="
-                          group
-
-                          flex
-                          items-center
-                          justify-between
-
-                          px-4 py-3
-
-                          rounded-2xl
-
-                          text-gray-300
-
-                          transition-all duration-300
-
-                          hover:bg-cyan-500/10
-                          hover:text-cyan-300
-                        "
+                          className={dropdownLink}
                         >
 
                           {item.name}
@@ -543,14 +545,14 @@ export default function Navbar() {
                             size={16}
 
                             className="
-                            opacity-0
+                              opacity-0
 
-                            transition
+                              transition
 
-                            group-hover:opacity-100
-                            group-hover:-translate-y-1
-                            group-hover:translate-x-1
-                          "
+                              group-hover:opacity-100
+                              group-hover:-translate-y-1
+                              group-hover:translate-x-1
+                            "
                           />
 
                         </Link>
@@ -568,10 +570,7 @@ export default function Navbar() {
 
           </div>
 
-          {/* ================================================= */}
           {/* PROJECTS */}
-          {/* ================================================= */}
-
           <div
             className="relative"
 
@@ -588,10 +587,10 @@ export default function Navbar() {
               href="/projects"
 
               className={`
-              ${linkStyle("/projects")}
+                ${linkStyle("/projects")}
 
-              flex items-center gap-1
-            `}
+                flex items-center gap-1
+              `}
             >
               Projects
 
@@ -622,51 +621,37 @@ export default function Navbar() {
                     duration: 0.25,
                   }}
 
-                  className="
-                  absolute
-                  top-12
-                  left-0
+                  className={`
+                    ${dropdownClass}
 
-                  w-[360px]
-
-                  rounded-3xl
-
-                  border border-white/10
-
-                  bg-[#081120]/85
-                  backdrop-blur-3xl
-
-                  p-5
-
-                  shadow-[0_30px_80px_rgba(0,0,0,0.55)]
-                "
+                    w-[360px]
+                  `}
                 >
 
-                  {/* HEADER */}
                   <div
                     className="
-                    flex items-center
-                    gap-3
+                      flex items-center
+                      gap-3
 
-                    mb-5
+                      mb-5
 
-                    px-2
-                  "
+                      px-2
+                    "
                   >
 
                     <div
                       className="
-                      w-12 h-12
+                        w-12 h-12
 
-                      rounded-2xl
+                        rounded-2xl
 
-                      bg-cyan-400/10
+                        bg-cyan-400/10
 
-                      flex items-center
-                      justify-center
+                        flex items-center
+                        justify-center
 
-                      text-cyan-300
-                    "
+                        text-cyan-300
+                      "
                     >
 
                       <FolderKanban size={22} />
@@ -677,18 +662,22 @@ export default function Navbar() {
 
                       <h4
                         className="
-                        text-white
-                        font-bold
-                      "
+                          text-slate-900
+                          dark:text-white
+
+                          font-bold
+                        "
                       >
                         Project Portfolio
                       </h4>
 
                       <p
                         className="
-                        text-xs
-                        text-white/50
-                      "
+                          text-xs
+
+                          text-slate-500
+                          dark:text-white/50
+                        "
                       >
                         Transmission Infrastructure
                       </p>
@@ -697,7 +686,6 @@ export default function Navbar() {
 
                   </div>
 
-                  {/* LINKS */}
                   <div className="space-y-2">
 
                     {projectLinks.map(
@@ -707,24 +695,7 @@ export default function Navbar() {
                           key={i}
                           href={item.href}
 
-                          className="
-                          group
-
-                          flex
-                          items-center
-                          justify-between
-
-                          px-4 py-3
-
-                          rounded-2xl
-
-                          text-gray-300
-
-                          transition-all duration-300
-
-                          hover:bg-cyan-500/10
-                          hover:text-cyan-300
-                        "
+                          className={dropdownLink}
                         >
 
                           {item.name}
@@ -733,14 +704,14 @@ export default function Navbar() {
                             size={16}
 
                             className="
-                            opacity-0
+                              opacity-0
 
-                            transition
+                              transition
 
-                            group-hover:opacity-100
-                            group-hover:-translate-y-1
-                            group-hover:translate-x-1
-                          "
+                              group-hover:opacity-100
+                              group-hover:-translate-y-1
+                              group-hover:translate-x-1
+                            "
                           />
 
                         </Link>
@@ -758,7 +729,6 @@ export default function Navbar() {
 
           </div>
 
-          {/* MEDIA */}
           <Link
             href="/media"
             className={linkStyle("/media")}
@@ -766,7 +736,6 @@ export default function Navbar() {
             Media
           </Link>
 
-          {/* CAREER */}
           <Link
             href="/career"
             className={linkStyle("/career")}
@@ -774,7 +743,6 @@ export default function Navbar() {
             Career
           </Link>
 
-          {/* CONTACT */}
           <Link
             href="/contact"
             className={linkStyle("/contact")}
@@ -782,52 +750,99 @@ export default function Navbar() {
             Contact
           </Link>
 
+          <ThemeToggle />
+
         </div>
 
-        {/* ================================================= */}
-        {/* 🔥 MOBILE BUTTON */}
-        {/* ================================================= */}
+        {/* MOBILE RIGHT */}
+        <div
+          className="
+            md:hidden
 
-        <div className="md:hidden">
+            flex items-center
+            gap-3
+          "
+        >
+
+          <ThemeToggle />
 
           <button
-            onClick={() => setIsOpen(true)}
+            onClick={() =>
+              setIsOpen(true)
+            }
 
             className="
-            relative
+              relative
 
-            w-11 h-11
+              w-11 h-11
 
-            rounded-full
+              rounded-full
 
-            border border-white/10
+              border
 
-            bg-white/[0.05]
-            backdrop-blur-xl
+              border-black/10
+              dark:border-white/10
 
-            flex
-            items-center
-            justify-center
+              bg-white/80
+              dark:bg-white/[0.05]
 
-            overflow-hidden
-          "
+              backdrop-blur-xl
+
+              flex
+              items-center
+              justify-center
+
+              overflow-hidden
+            "
           >
 
             <div
               className="
-              absolute inset-0
+                absolute inset-0
 
-              bg-gradient-to-r
-              from-cyan-500/10
-              to-blue-500/10
-            "
+                bg-gradient-to-r
+                from-cyan-500/10
+                to-blue-500/10
+              "
             />
 
             <div className="relative space-y-1">
 
-              <span className="block w-6 h-0.5 bg-white rounded-full" />
-              <span className="block w-6 h-0.5 bg-white rounded-full" />
-              <span className="block w-6 h-0.5 bg-white rounded-full" />
+              <span
+                className="
+                  block
+                  w-6 h-0.5
+
+                  bg-slate-900
+                  dark:bg-white
+
+                  rounded-full
+                "
+              />
+
+              <span
+                className="
+                  block
+                  w-6 h-0.5
+
+                  bg-slate-900
+                  dark:bg-white
+
+                  rounded-full
+                "
+              />
+
+              <span
+                className="
+                  block
+                  w-6 h-0.5
+
+                  bg-slate-900
+                  dark:bg-white
+
+                  rounded-full
+                "
+              />
 
             </div>
 
@@ -837,436 +852,174 @@ export default function Navbar() {
 
       </div>
 
-      {/* ================================================= */}
-      {/* 🔥 MOBILE MENU */}
-      {/* ================================================= */}
-
+      {/* MOBILE MENU */}
       <AnimatePresence>
 
         {isOpen && (
 
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: "100%",
-            }}
+          <>
+            {/* OVERLAY */}
+            <motion.div
+              initial={{
+                opacity: 0,
+              }}
 
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
+              animate={{
+                opacity: 1,
+              }}
 
-            exit={{
-              opacity: 0,
-              x: "100%",
-            }}
+              exit={{
+                opacity: 0,
+              }}
 
-            transition={{
-              duration: 0.4,
-            }}
+              onClick={closeMenu}
 
-            className="
-            fixed top-0 right-0
-
-            w-full h-screen
-
-            bg-[#020617]/95
-            backdrop-blur-3xl
-
-            z-[999]
-
-            overflow-y-auto
-
-            md:hidden
-          "
-          >
-
-            {/* TOP */}
-            <div
               className="
-              flex
-              items-center
-              justify-between
+                fixed inset-0
 
-              px-6 py-6
+                bg-black/50
 
-              border-b border-white/10
-            "
+                z-[9998]
+
+                md:hidden
+              "
+            />
+
+            {/* MENU */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: "100%",
+              }}
+
+              animate={{
+                opacity: 1,
+                x: 0,
+              }}
+
+              exit={{
+                opacity: 0,
+                x: "100%",
+              }}
+
+              transition={{
+                duration: 0.35,
+              }}
+
+              className="
+                fixed top-0 right-0
+
+                w-[85%]
+                max-w-[340px]
+
+                h-screen
+
+                bg-white
+                dark:bg-[#020617]
+
+                z-[99999]
+
+                overflow-y-auto
+
+                shadow-[0_0_80px_rgba(0,0,0,0.35)]
+
+                md:hidden
+              "
             >
 
-              <Image
-                src="/icon.png"
-                alt="KAC"
-
-                width={70}
-                height={70}
-
-                className="object-contain"
-              />
-
-              <button
-                onClick={closeMenu}
-
+              {/* TOP */}
+              <div
                 className="
-                w-11 h-11
+                  flex
+                  items-center
+                  justify-between
 
-                rounded-full
+                  px-6 py-6
 
-                border border-white/10
+                  border-b
 
-                bg-white/5
-
-                flex
-                items-center
-                justify-center
-              "
+                  border-black/5
+                  dark:border-white/10
+                "
               >
-                <X size={22} />
-              </button>
 
-            </div>
+                <Image
+                  src="/icon.png"
+                  alt="KAC"
 
-            {/* MOBILE LINKS */}
-            <div
-              className="
-              px-6 py-8
+                  width={70}
+                  height={70}
 
-              flex flex-col
+                  className="object-contain"
+                />
 
-              gap-6
+                <button
+                  onClick={closeMenu}
 
-              text-lg
-            "
-            >
+                  className="
+                    w-11 h-11
 
-              <Link
-                href="/"
-                onClick={closeMenu}
+                    rounded-full
 
-                className="
-                text-white
-                hover:text-cyan-300
-              "
-              >
-                Home
-              </Link>
+                    border
 
-              {/* ABOUT */}
-              <div>
+                    border-black/10
+                    dark:border-white/10
 
-                <div className="flex justify-between items-center">
+                    bg-black/[0.03]
+                    dark:bg-white/5
 
-                  <Link
-                    href="/about"
+                    flex
+                    items-center
+                    justify-center
+                  "
+                >
 
-                    onClick={closeMenu}
+                  <X
+                    size={22}
 
                     className="
-                    text-white
-                    hover:text-cyan-300
-                  "
-                  >
-                    About
-                  </Link>
-
-                  <button
-                    onClick={() =>
-                      setMobileAbout(
-                        !mobileAbout
-                      )
-                    }
-                  >
-                    {mobileAbout
-                      ? <Minus size={18} />
-                      : <Plus size={18} />}
-                  </button>
-
-                </div>
-
-                <AnimatePresence>
-
-                  {mobileAbout && (
-
-                    <motion.div
-                      initial={{
-                        opacity: 0,
-                        height: 0,
-                      }}
-
-                      animate={{
-                        opacity: 1,
-                        height: "auto",
-                      }}
-
-                      exit={{
-                        opacity: 0,
-                        height: 0,
-                      }}
-
-                      className="
-                      overflow-hidden
-
-                      ml-4 mt-4
-
-                      flex flex-col
-                      gap-4
-
-                      text-sm
+                      text-slate-900
+                      dark:text-white
                     "
-                    >
+                  />
 
-                      {aboutLinks.map(
-                        (item, i) => (
-
-                          <Link
-                            key={i}
-                            href={item.href}
-
-                            onClick={closeMenu}
-
-                            className="
-                            text-gray-300
-                            hover:text-cyan-300
-                          "
-                          >
-                            {item.name}
-                          </Link>
-
-                        )
-                      )}
-
-                    </motion.div>
-
-                  )}
-
-                </AnimatePresence>
+                </button>
 
               </div>
 
-              {/* SERVICES */}
-              <div>
+              {/* LINKS */}
+              <div
+                className="
+                  px-6 py-8
 
-                <div className="flex justify-between items-center">
+                  flex flex-col
 
-                  <Link
-                    href="/service"
+                  gap-6
 
-                    onClick={closeMenu}
+                  text-lg
+                "
+              >
 
-                    className="
-                    text-white
-                    hover:text-cyan-300
+                <Link
+                  href="/"
+                  onClick={closeMenu}
+
+                  className="
+                    text-slate-900
+                    dark:text-white
+
+                    hover:text-cyan-400
                   "
-                  >
-                    Services
-                  </Link>
-
-                  <button
-                    onClick={() =>
-                      setMobileService(
-                        !mobileService
-                      )
-                    }
-                  >
-                    {mobileService
-                      ? <Minus size={18} />
-                      : <Plus size={18} />}
-                  </button>
-
-                </div>
-
-                <AnimatePresence>
-
-                  {mobileService && (
-
-                    <motion.div
-                      initial={{
-                        opacity: 0,
-                        height: 0,
-                      }}
-
-                      animate={{
-                        opacity: 1,
-                        height: "auto",
-                      }}
-
-                      exit={{
-                        opacity: 0,
-                        height: 0,
-                      }}
-
-                      className="
-                      overflow-hidden
-
-                      ml-4 mt-4
-
-                      flex flex-col
-                      gap-4
-
-                      text-sm
-                    "
-                    >
-
-                      {serviceLinks.map(
-                        (item, i) => (
-
-                          <Link
-                            key={i}
-                            href={item.href}
-
-                            onClick={closeMenu}
-
-                            className="
-                            text-gray-300
-                            hover:text-cyan-300
-                          "
-                          >
-                            {item.name}
-                          </Link>
-
-                        )
-                      )}
-
-                    </motion.div>
-
-                  )}
-
-                </AnimatePresence>
+                >
+                  Home
+                </Link>
 
               </div>
 
-              {/* PROJECTS */}
-              <div>
+            </motion.div>
 
-                <div className="flex justify-between items-center">
-
-                  <Link
-                    href="/projects"
-
-                    onClick={closeMenu}
-
-                    className="
-                    text-white
-                    hover:text-cyan-300
-                  "
-                  >
-                    Projects
-                  </Link>
-
-                  <button
-                    onClick={() =>
-                      setMobileProject(
-                        !mobileProject
-                      )
-                    }
-                  >
-                    {mobileProject
-                      ? <Minus size={18} />
-                      : <Plus size={18} />}
-                  </button>
-
-                </div>
-
-                <AnimatePresence>
-
-                  {mobileProject && (
-
-                    <motion.div
-                      initial={{
-                        opacity: 0,
-                        height: 0,
-                      }}
-
-                      animate={{
-                        opacity: 1,
-                        height: "auto",
-                      }}
-
-                      exit={{
-                        opacity: 0,
-                        height: 0,
-                      }}
-
-                      className="
-                      overflow-hidden
-
-                      ml-4 mt-4
-
-                      flex flex-col
-                      gap-4
-
-                      text-sm
-                    "
-                    >
-
-                      {projectLinks.map(
-                        (item, i) => (
-
-                          <Link
-                            key={i}
-                            href={item.href}
-
-                            onClick={closeMenu}
-
-                            className="
-                            text-gray-300
-                            hover:text-cyan-300
-                          "
-                          >
-                            {item.name}
-                          </Link>
-
-                        )
-                      )}
-
-                    </motion.div>
-
-                  )}
-
-                </AnimatePresence>
-
-              </div>
-
-              {/* OTHER */}
-              <Link
-                href="/media"
-                onClick={closeMenu}
-
-                className="
-                text-white
-                hover:text-cyan-300
-              "
-              >
-                Media
-              </Link>
-
-              <Link
-                href="/career"
-                onClick={closeMenu}
-
-                className="
-                text-white
-                hover:text-cyan-300
-              "
-              >
-                Career
-              </Link>
-
-              <Link
-                href="/contact"
-                onClick={closeMenu}
-
-                className="
-                text-white
-                hover:text-cyan-300
-              "
-              >
-                Contact
-              </Link>
-
-            </div>
-
-          </motion.div>
+          </>
 
         )}
 

@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 /* ================================================= */
-/* 🔥 FEATURES */
+/* FEATURES */
 /* ================================================= */
 
 const features = [
@@ -70,95 +70,112 @@ const features = [
 ];
 
 /* ================================================= */
-/* 🔥 COMPONENT */
+/* COMPONENT */
 /* ================================================= */
 
 export default function WhyChooseUs() {
 
   return (
+
     <section
       className="
-      relative
-      overflow-hidden
+        relative
 
-      bg-[#020617]
-      text-white
+        overflow-hidden
 
-      py-28
-    "
+        py-24
+        md:py-32
+
+        bg-white
+        dark:bg-[#020617]
+
+        text-slate-900
+        dark:text-white
+      "
     >
 
       {/* ================================================= */}
-      {/* 🔥 BACKGROUND */}
+      {/* BACKGROUND */}
       {/* ================================================= */}
 
-      <div className="absolute inset-0 pointer-events-none">
+      <div
+        className="
+          absolute inset-0
+
+          pointer-events-none
+        "
+      >
 
         {/* TOP GLOW */}
+
         <div
           className="
-          absolute
-          top-[-180px]
-          left-[-120px]
+            absolute
+            top-[-180px]
+            left-[-120px]
 
-          w-[500px]
-          h-[500px]
+            w-[500px]
+            h-[500px]
 
-          bg-cyan-500/10
+            rounded-full
 
-          blur-[140px]
+            bg-cyan-500/10
 
-          rounded-full
-        "
+            blur-[140px]
+          "
         />
 
         {/* BOTTOM GLOW */}
+
         <div
           className="
-          absolute
-          bottom-[-180px]
-          right-[-120px]
+            absolute
+            bottom-[-180px]
+            right-[-120px]
 
-          w-[500px]
-          h-[500px]
+            w-[500px]
+            h-[500px]
 
-          bg-blue-500/10
+            rounded-full
 
-          blur-[140px]
+            bg-blue-500/10
 
-          rounded-full
-        "
+            blur-[140px]
+          "
         />
 
       </div>
 
       {/* GRID */}
+
       <div
         className="
-        absolute inset-0
+          absolute inset-0
 
-        opacity-[0.03]
+          opacity-[0.03]
 
-        [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+          [background-image:linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)]
 
-        [background-size:60px_60px]
-      "
+          dark:[background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+
+          [background-size:60px_60px]
+        "
       />
 
       {/* ================================================= */}
-      {/* 🔥 CONTENT */}
+      {/* CONTENT */}
       {/* ================================================= */}
 
       <div
         className="
-        container-premium
+          container-premium
 
-        relative z-10
-      "
+          relative z-10
+        "
       >
 
         {/* ================================================= */}
-        {/* 🔥 HEADING */}
+        {/* HEADING */}
         {/* ================================================= */}
 
         <motion.div
@@ -181,40 +198,45 @@ export default function WhyChooseUs() {
           }}
 
           className="
-          text-center
+            text-center
 
-          max-w-4xl
+            max-w-4xl
 
-          mx-auto
+            mx-auto
 
-          mb-20
-        "
+            mb-16
+            md:mb-20
+          "
         >
 
           {/* SMALL LABEL */}
+
           <div
             className="
-            inline-flex
-            items-center
-            gap-2
+              inline-flex
+              items-center
+              gap-2
 
-            px-5 py-2
+              px-5 py-2
 
-            rounded-full
+              rounded-full
 
-            border border-cyan-400/10
+              border border-cyan-400/15
 
-            bg-cyan-400/5
+              bg-cyan-400/5
 
-            text-cyan-300
+              text-cyan-600
+              dark:text-cyan-300
 
-            text-sm
-            uppercase
+              text-[11px]
+              sm:text-sm
 
-            tracking-[4px]
+              uppercase
 
-            mb-6
-          "
+              tracking-[4px]
+
+              mb-6
+            "
           >
 
             <Sparkles size={14} />
@@ -224,54 +246,64 @@ export default function WhyChooseUs() {
           </div>
 
           {/* TITLE */}
+
           <h2
             className="
-            text-4xl
-            md:text-6xl
+              text-3xl
+              sm:text-4xl
+              md:text-6xl
 
-            font-black
+              font-black
 
-            leading-[1.05]
+              leading-[1.08]
 
-            mb-6
-          "
+              mb-6
+            "
           >
 
             <span
               className="
-              bg-gradient-to-r
-              from-cyan-300
-              via-blue-400
-              to-cyan-100
+                bg-gradient-to-r
+                from-cyan-400
+                via-blue-500
+                to-cyan-300
 
-              bg-clip-text
-              text-transparent
-            "
+                bg-clip-text
+                text-transparent
+              "
             >
               Engineering Reliability
             </span>
 
             <br />
 
-            <span className="text-white">
+            <span
+              className="
+                text-slate-900
+                dark:text-white
+              "
+            >
               With Precision & Trust
             </span>
 
           </h2>
 
           {/* DESCRIPTION */}
+
           <p
             className="
-            text-white/65
+              text-slate-600
+              dark:text-white/65
 
-            text-lg
+              text-base
+              md:text-lg
 
-            leading-[2]
+              leading-[2]
 
-            max-w-3xl
+              max-w-3xl
 
-            mx-auto
-          "
+              mx-auto
+            "
           >
 
             Kuddus Ali Construction delivers dependable
@@ -286,253 +318,269 @@ export default function WhyChooseUs() {
         </motion.div>
 
         {/* ================================================= */}
-{/* 🔥 CARDS */}
-{/* ================================================= */}
+        {/* CARDS */}
+        {/* ================================================= */}
 
-<div
-  className="
-    grid
-
-    grid-cols-2
-    xl:grid-cols-4
-
-    gap-4
-    md:gap-7
-  "
->
-
-  {features.map((item, i) => (
-
-    <motion.div
-      key={i}
-
-      initial={{
-        opacity: 0,
-        y: 60,
-      }}
-
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-
-      transition={{
-        delay: i * 0.12,
-        duration: 0.7,
-      }}
-
-      viewport={{
-        once: true,
-      }}
-
-      whileHover={{
-        y: -8,
-      }}
-
-      className="
-        group
-
-        relative
-        overflow-hidden
-
-        rounded-[24px]
-        md:rounded-[32px]
-
-        border border-white/10
-
-        bg-white/[0.03]
-        backdrop-blur-2xl
-
-        p-4
-        sm:p-5
-        md:p-8
-
-        shadow-[0_10px_40px_rgba(0,0,0,0.35)]
-
-        transition-all duration-500
-      "
-    >
-
-      {/* CARD GLOW */}
-      <div
-        className={`
-          absolute inset-0
-
-          opacity-0
-          group-hover:opacity-100
-
-          transition duration-700
-
-          bg-gradient-to-br
-          ${item.gradient}
-        `}
-      />
-
-      {/* TOP LIGHT */}
-      <div
-        className="
-          absolute
-          inset-x-0
-          top-0
-
-          h-[1px]
-
-          bg-gradient-to-r
-          from-transparent
-          via-cyan-300/40
-          to-transparent
-
-          opacity-0
-          group-hover:opacity-100
-
-          transition duration-700
-        "
-      />
-
-      {/* ICON */}
-      <div
-        className="
-          relative z-10
-
-          w-12 h-12
-          sm:w-14 sm:h-14
-          md:w-20 md:h-20
-
-          rounded-2xl
-          md:rounded-3xl
-
-          bg-gradient-to-br
-          from-cyan-400
-          to-blue-500
-
-          flex items-center justify-center
-
-          text-white
-
-          text-lg
-          sm:text-xl
-          md:text-3xl
-
-          shadow-[0_10px_35px_rgba(34,211,238,0.25)]
-
-          mb-4
-          md:mb-8
-
-          transition-all duration-500
-
-          group-hover:scale-110
-          group-hover:rotate-3
-        "
-      >
-
-        {item.icon}
-
-      </div>
-
-      {/* TITLE */}
-      <h3
-        className="
-          relative z-10
-
-          text-sm
-          sm:text-base
-          md:text-2xl
-
-          font-bold
-
-          text-white
-
-          mb-2
-          md:mb-4
-
-          leading-tight
-        "
-      >
-        {item.title}
-      </h3>
-
-      {/* DESCRIPTION */}
-      <p
-        className="
-          relative z-10
-
-          text-white/65
-
-          leading-[1.6]
-          md:leading-[1.9]
-
-          text-[11px]
-          sm:text-xs
-          md:text-base
-        "
-      >
-        {item.desc}
-      </p>
-
-      {/* LINK */}
-      <Link
-        href="/media"
-
-        className="
-          relative z-10
-
-          flex items-center
-          justify-between
-
-          mt-4
-          md:mt-10
-
-          pt-3
-          md:pt-6
-
-          border-t border-white/10
-
-          group/link
-        "
-      >
-
-        <span
+        <div
           className="
-            text-cyan-300
+            grid
 
-            text-[10px]
-            sm:text-xs
-            md:text-sm
+            grid-cols-1
+            sm:grid-cols-2
+            xl:grid-cols-4
 
-            uppercase
-
-            tracking-[2px]
-            md:tracking-[3px]
-
-            transition duration-300
-
-            group-hover/link:text-white
+            gap-5
+            md:gap-7
           "
         >
-          KAC QUALITY
-        </span>
 
-        <ArrowUpRight
-          size={16}
+          {features.map((item, i) => (
 
-          className="
-            text-cyan-300
+            <motion.div
+              key={i}
 
-            transition duration-500
+              initial={{
+                opacity: 0,
+                y: 60,
+              }}
 
-            group-hover/link:translate-x-1
-            group-hover/link:-translate-y-1
-            group-hover/link:text-white
-          "
-        />
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
 
-      </Link>
+              transition={{
+                delay: i * 0.12,
+                duration: 0.7,
+              }}
 
-    </motion.div>
+              viewport={{
+                once: true,
+              }}
 
-  ))}
+              whileHover={{
+                y: -8,
+              }}
 
-</div>
+              className="
+                group
+
+                relative
+                overflow-hidden
+
+                rounded-[28px]
+                md:rounded-[32px]
+
+                border
+
+                border-slate-200
+                dark:border-white/10
+
+                bg-white/80
+                dark:bg-white/[0.03]
+
+                backdrop-blur-2xl
+
+                p-5
+                sm:p-6
+                md:p-8
+
+                shadow-[0_10px_40px_rgba(15,23,42,0.08)]
+
+                dark:shadow-[0_10px_40px_rgba(0,0,0,0.35)]
+
+                transition-all duration-500
+              "
+            >
+
+              {/* CARD GLOW */}
+
+              <div
+                className={`
+                  absolute inset-0
+
+                  opacity-0
+                  group-hover:opacity-100
+
+                  transition duration-700
+
+                  bg-gradient-to-br
+                  ${item.gradient}
+                `}
+              />
+
+              {/* TOP LIGHT */}
+
+              <div
+                className="
+                  absolute
+                  inset-x-0
+                  top-0
+
+                  h-[1px]
+
+                  bg-gradient-to-r
+                  from-transparent
+                  via-cyan-300/40
+                  to-transparent
+
+                  opacity-0
+                  group-hover:opacity-100
+
+                  transition duration-700
+                "
+              />
+
+              {/* ICON */}
+
+              <div
+                className="
+                  relative z-10
+
+                  w-14 h-14
+                  md:w-20 md:h-20
+
+                  rounded-2xl
+                  md:rounded-3xl
+
+                  bg-gradient-to-br
+                  from-cyan-400
+                  to-blue-500
+
+                  flex items-center justify-center
+
+                  text-white
+
+                  text-xl
+                  md:text-3xl
+
+                  shadow-[0_10px_35px_rgba(34,211,238,0.25)]
+
+                  mb-6
+                  md:mb-8
+
+                  transition-all duration-500
+
+                  group-hover:scale-110
+                  group-hover:rotate-3
+                "
+              >
+
+                {item.icon}
+
+              </div>
+
+              {/* TITLE */}
+
+              <h3
+                className="
+                  relative z-10
+
+                  text-lg
+                  md:text-2xl
+
+                  font-bold
+
+                  text-slate-900
+                  dark:text-white
+
+                  mb-4
+
+                  leading-tight
+                "
+              >
+                {item.title}
+              </h3>
+
+              {/* DESCRIPTION */}
+
+              <p
+                className="
+                  relative z-10
+
+                  text-slate-600
+                  dark:text-white/65
+
+                  leading-[1.8]
+
+                  text-sm
+                  md:text-base
+                "
+              >
+                {item.desc}
+              </p>
+
+              {/* LINK */}
+
+              <Link
+                href="/media"
+
+                className="
+                  relative z-10
+
+                  flex items-center
+                  justify-between
+
+                  mt-6
+                  md:mt-10
+
+                  pt-4
+                  md:pt-6
+
+                  border-t
+
+                  border-slate-200
+                  dark:border-white/10
+
+                  group/link
+                "
+              >
+
+                <span
+                  className="
+                    text-cyan-600
+                    dark:text-cyan-300
+
+                    text-xs
+                    md:text-sm
+
+                    uppercase
+
+                    tracking-[3px]
+
+                    transition duration-300
+
+                    group-hover/link:text-slate-900
+                    dark:group-hover/link:text-white
+                  "
+                >
+                  KAC QUALITY
+                </span>
+
+                <ArrowUpRight
+                  size={16}
+
+                  className="
+                    text-cyan-600
+                    dark:text-cyan-300
+
+                    transition duration-500
+
+                    group-hover/link:translate-x-1
+                    group-hover/link:-translate-y-1
+
+                    group-hover/link:text-slate-900
+                    dark:group-hover/link:text-white
+                  "
+                />
+
+              </Link>
+
+            </motion.div>
+
+          ))}
+
+        </div>
 
       </div>
 

@@ -14,8 +14,7 @@ export function LoaderProvider({
   children: React.ReactNode;
 }) {
   const [loading, setLoading] =
-    useState(true);
-
+    useState(() => true);
   return (
     <LoaderContext.Provider
       value={{
