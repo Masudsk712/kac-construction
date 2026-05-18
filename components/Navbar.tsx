@@ -93,10 +93,9 @@ export default function Navbar() {
   /* ======================================== */
 
   const linkStyle = (path: string) =>
-    `relative transition-all duration-300 ${
-      pathname === path
-        ? "text-cyan-400"
-        : `
+    `relative transition-all duration-300 ${pathname === path
+      ? "text-cyan-400"
+      : `
           text-slate-800
           dark:text-white/85
 
@@ -264,9 +263,8 @@ export default function Navbar() {
 
         transition-all duration-500
 
-        ${
-          scrolled
-            ? `
+        ${scrolled
+          ? `
               bg-white/75
               dark:bg-[#020617]/75
 
@@ -280,7 +278,7 @@ export default function Navbar() {
               shadow-[0_20px_60px_rgba(0,0,0,0.08)]
               dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)]
             `
-            : `
+          : `
               bg-transparent
             `
         }
@@ -319,7 +317,14 @@ export default function Navbar() {
         {/* LOGO */}
         <Link
           href="/"
-          onClick={closeMenu}
+
+          onClick={() => {
+            closeMenu()
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })
+          }}
 
           className="
             relative z-20
@@ -943,15 +948,29 @@ export default function Navbar() {
                 "
               >
 
-                <Image
-                  src="/icon.png"
-                  alt="KAC"
+                <Link
+                  href="/"
 
-                  width={70}
-                  height={70}
+                  onClick={() => {
+                    closeMenu()
+                    window.scrollTo({
+                      top: 0,
+                      behavior: "smooth",
+                    })
+                  }}
+                >
 
-                  className="object-contain"
-                />
+                  <Image
+                    src="/icon.png"
+                    alt="KAC"
+
+                    width={70}
+                    height={70}
+
+                    className="object-contain"
+                  />
+
+                </Link>
 
                 <button
                   onClick={closeMenu}
@@ -991,28 +1010,444 @@ export default function Navbar() {
               {/* LINKS */}
               <div
                 className="
-                  px-6 py-8
+    px-6 py-8
 
-                  flex flex-col
+    flex flex-col
 
-                  gap-6
+    gap-5
 
-                  text-lg
-                "
+    w-full
+  "
               >
 
+                {/* HOME */}
                 <Link
                   href="/"
                   onClick={closeMenu}
 
                   className="
-                    text-slate-900
-                    dark:text-white
+      w-full
 
-                    hover:text-cyan-400
-                  "
+      flex
+      items-center
+      justify-between
+
+      text-left
+
+      text-base
+      font-medium
+
+      text-slate-900
+      dark:text-white
+
+      hover:text-cyan-400
+
+      transition
+    "
                 >
                   Home
+                </Link>
+
+                {/* ABOUT */}
+                <div className="w-full border-b border-black/5 dark:border-white/10 pb-4">
+
+                  <button
+                    onClick={() =>
+                      setMobileAbout(!mobileAbout)
+                    }
+
+                    className="
+        w-full
+
+        flex
+        items-center
+        justify-between
+
+        text-left
+
+        text-base
+        font-medium
+
+        text-slate-900
+        dark:text-white
+
+        hover:text-cyan-400
+
+        transition
+      "
+                  >
+
+                    <span>About</span>
+
+                    {mobileAbout ? (
+                      <Minus size={18} />
+                    ) : (
+                      <Plus size={18} />
+                    )}
+
+                  </button>
+
+                  <AnimatePresence>
+
+                    {mobileAbout && (
+
+                      <motion.div
+                        initial={{
+                          opacity: 0,
+                          height: 0,
+                        }}
+
+                        animate={{
+                          opacity: 1,
+                          height: "auto",
+                        }}
+
+                        exit={{
+                          opacity: 0,
+                          height: 0,
+                        }}
+
+                        transition={{
+                          duration: 0.3,
+                        }}
+
+                        className="
+            overflow-hidden
+
+            pt-4
+            pl-3
+
+            flex flex-col
+            gap-4
+          "
+                      >
+
+                        {aboutLinks.map((item, i) => (
+
+                          <Link
+                            key={i}
+                            href={item.href}
+
+                            onClick={closeMenu}
+
+                            className="
+                text-sm
+
+                text-slate-600
+                dark:text-white/70
+
+                hover:text-cyan-400
+
+                transition
+              "
+                          >
+                            {item.name}
+                          </Link>
+
+                        ))}
+
+                      </motion.div>
+
+                    )}
+
+                  </AnimatePresence>
+
+                </div>
+
+                {/* SERVICES */}
+                <div className="w-full border-b border-black/5 dark:border-white/10 pb-4">
+
+                  <button
+                    onClick={() =>
+                      setMobileService(!mobileService)
+                    }
+
+                    className="
+        w-full
+
+        flex
+        items-center
+        justify-between
+
+        text-left
+
+        text-base
+        font-medium
+
+        text-slate-900
+        dark:text-white
+
+        hover:text-cyan-400
+
+        transition
+      "
+                  >
+
+                    <span>Services</span>
+
+                    {mobileService ? (
+                      <Minus size={18} />
+                    ) : (
+                      <Plus size={18} />
+                    )}
+
+                  </button>
+
+                  <AnimatePresence>
+
+                    {mobileService && (
+
+                      <motion.div
+                        initial={{
+                          opacity: 0,
+                          height: 0,
+                        }}
+
+                        animate={{
+                          opacity: 1,
+                          height: "auto",
+                        }}
+
+                        exit={{
+                          opacity: 0,
+                          height: 0,
+                        }}
+
+                        transition={{
+                          duration: 0.3,
+                        }}
+
+                        className="
+            overflow-hidden
+
+            pt-4
+            pl-3
+
+            flex flex-col
+            gap-4
+          "
+                      >
+
+                        {serviceLinks.map((item, i) => (
+
+                          <Link
+                            key={i}
+                            href={item.href}
+
+                            onClick={closeMenu}
+
+                            className="
+                text-sm
+
+                text-slate-600
+                dark:text-white/70
+
+                hover:text-cyan-400
+
+                transition
+              "
+                          >
+                            {item.name}
+                          </Link>
+
+                        ))}
+
+                      </motion.div>
+
+                    )}
+
+                  </AnimatePresence>
+
+                </div>
+
+                {/* PROJECTS */}
+                <div className="w-full border-b border-black/5 dark:border-white/10 pb-4">
+
+                  <button
+                    onClick={() =>
+                      setMobileProject(!mobileProject)
+                    }
+
+                    className="
+        w-full
+
+        flex
+        items-center
+        justify-between
+
+        text-left
+
+        text-base
+        font-medium
+
+        text-slate-900
+        dark:text-white
+
+        hover:text-cyan-400
+
+        transition
+      "
+                  >
+
+                    <span>Projects</span>
+
+                    {mobileProject ? (
+                      <Minus size={18} />
+                    ) : (
+                      <Plus size={18} />
+                    )}
+
+                  </button>
+
+                  <AnimatePresence>
+
+                    {mobileProject && (
+
+                      <motion.div
+                        initial={{
+                          opacity: 0,
+                          height: 0,
+                        }}
+
+                        animate={{
+                          opacity: 1,
+                          height: "auto",
+                        }}
+
+                        exit={{
+                          opacity: 0,
+                          height: 0,
+                        }}
+
+                        transition={{
+                          duration: 0.3,
+                        }}
+
+                        className="
+            overflow-hidden
+
+            pt-4
+            pl-3
+
+            flex flex-col
+            gap-4
+          "
+                      >
+
+                        {projectLinks.map((item, i) => (
+
+                          <Link
+                            key={i}
+                            href={item.href}
+
+                            onClick={closeMenu}
+
+                            className="
+                text-sm
+
+                text-slate-600
+                dark:text-white/70
+
+                hover:text-cyan-400
+
+                transition
+              "
+                          >
+                            {item.name}
+                          </Link>
+
+                        ))}
+
+                      </motion.div>
+
+                    )}
+
+                  </AnimatePresence>
+
+                </div>
+
+                {/* MEDIA */}
+                <Link
+                  href="/media"
+                  onClick={closeMenu}
+
+                  className="
+      w-full
+
+      flex
+      items-center
+      justify-between
+
+      text-left
+
+      text-base
+      font-medium
+
+      text-slate-900
+      dark:text-white
+
+      hover:text-cyan-400
+
+      transition
+    "
+                >
+                  Media
+                </Link>
+
+                {/* CAREER */}
+                <Link
+                  href="/career"
+                  onClick={closeMenu}
+
+                  className="
+      w-full
+
+      flex
+      items-center
+      justify-between
+
+      text-left
+
+      text-base
+      font-medium
+
+      text-slate-900
+      dark:text-white
+
+      hover:text-cyan-400
+
+      transition
+    "
+                >
+                  Career
+                </Link>
+
+                {/* CONTACT */}
+                <Link
+                  href="/contact"
+                  onClick={closeMenu}
+
+                  className="
+      w-full
+
+      flex
+      items-center
+      justify-between
+
+      text-left
+
+      text-base
+      font-medium
+
+      text-slate-900
+      dark:text-white
+
+      hover:text-cyan-400
+
+      transition
+    "
+                >
+                  Contact
                 </Link>
 
               </div>
