@@ -334,7 +334,7 @@ export default function Leadership() {
               text-white/70
             "
             >
-              LEADERSHIP STRUCTURE
+              MEET THE TEAM
             </span>
 
           </div>
@@ -355,7 +355,7 @@ export default function Leadership() {
             Organization Chart &
 
             <span className="gradient-text block mt-2">
-              Leadership Structure
+              Meet the Team
             </span>
 
           </h2>
@@ -374,7 +374,7 @@ export default function Leadership() {
             mx-auto
           "
           >
-            Explore the leadership structure powering
+            Explore the Team Member powering
             Kuddus Ali Construction’s infrastructure excellence.
           </p>
 
@@ -803,7 +803,7 @@ export default function Leadership() {
 
                     <ShieldCheck size={13} />
 
-                    Leadership Profile
+                    Team Members Profile
 
                   </div>
 

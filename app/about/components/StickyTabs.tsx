@@ -32,7 +32,7 @@ const tabs = [
   },
 
   {
-    name: "Board Of Directors",
+    name: "Our Theam Members",
     id: "leadership",
     icon: <Users size={16} />,
   },
