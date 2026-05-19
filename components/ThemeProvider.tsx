@@ -12,16 +12,12 @@ export default function ThemeProvider({
 
     <NextThemesProvider
       attribute="class"
-
       defaultTheme="dark"
-
-      enableSystem={false}
-
-      disableTransitionOnChange
+      enableSystem={true}
+      enableColorScheme={true}
+      storageKey="kac-theme"
     >
-
       {children}
-
     </NextThemesProvider>
 
   );
