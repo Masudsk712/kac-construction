@@ -56,14 +56,14 @@ export default function ContactPage() {
 
   return (
 
-    <main
-  className="
-  relative
-  bg-[var(--bg)]
-  text-[var(--text)]
-  z-10
-"
->
+    <div
+      className="
+        relative
+        bg-[var(--bg)]
+        text-[var(--text)]
+        z-10
+      "
+    >
       {/* GLOW */}
         <div
           className="
@@ -1228,6 +1228,6 @@ export default function ContactPage() {
 
       </section>
 
-    </main>
+    </div>
   );
 }

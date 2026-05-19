@@ -81,14 +81,14 @@ export default function CareerPage() {
 
   return (
 
-    <main
-  className="
-  relative
-  bg-[var(--bg)]
-  text-[var(--text)]
-  z-10
-"
->
+    <div
+      className="
+        relative
+        bg-[var(--bg)]
+        text-[var(--text)]
+        z-10
+      "
+    >
       {/* BACKGROUND GLOWS */}
         <div
           className="
@@ -1457,6 +1457,6 @@ export default function CareerPage() {
       {/* CTA */}
       <CTASection />
 
-    </main>
+    </div>
   );
 }
