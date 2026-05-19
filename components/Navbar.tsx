@@ -255,6 +255,7 @@ export default function Navbar() {
   return (
 
     <nav
+      aria-label="Main navigation"
       className={`
         fixed top-0 left-0
 
@@ -307,11 +308,16 @@ export default function Navbar() {
 
           container-premium
 
-          py-4
+          min-h-[72px]
+          md:min-h-[80px]
+
+          py-3
+          md:py-4
 
           flex
           items-center
           justify-between
+          gap-4
         "
       >
 
@@ -330,7 +336,9 @@ export default function Navbar() {
           className="
             relative z-20
 
-            flex items-center
+            flex
+            shrink-0
+            items-center
           "
         >
 
@@ -344,6 +352,10 @@ export default function Navbar() {
             priority
 
             className="
+              h-12
+              w-auto
+              md:h-14
+
               object-contain
 
               transition-all duration-500
@@ -357,13 +369,17 @@ export default function Navbar() {
         </Link>
 
         {/* DESKTOP */}
-        <div
+        <motion.div
           className="
             hidden md:flex
 
+            flex-1
             items-center
+            justify-center
 
-            gap-8
+            gap-5
+            lg:gap-7
+            xl:gap-8
           "
         >
 
@@ -756,16 +772,15 @@ export default function Navbar() {
             Contact
           </Link>
 
-          <ThemeToggle />
+        </motion.div>
 
-        </div>
-
-        {/* MOBILE RIGHT */}
-        <div
+        {/* THEME + MOBILE MENU */}
+        <motion.div
           className="
-            md:hidden
-
-            flex items-center
+            flex
+            shrink-0
+            items-center
+            justify-end
             gap-3
           "
         >
@@ -773,12 +788,17 @@ export default function Navbar() {
           <ThemeToggle />
 
           <button
+            type="button"
+            aria-label="Open menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav-panel"
             onClick={() =>
               setIsOpen(true)
             }
 
             className="
               relative
+              md:hidden
 
               w-11 h-11
 
@@ -854,7 +874,7 @@ export default function Navbar() {
 
           </button>
 
-        </div>
+        </motion.div>
 
       </div>
 
@@ -893,6 +913,10 @@ export default function Navbar() {
 
             {/* MENU */}
             <motion.div
+              id="mobile-nav-panel"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile navigation"
               initial={{
                 opacity: 0,
                 x: "100%",
@@ -974,6 +998,8 @@ export default function Navbar() {
                 </Link>
 
                 <button
+                  type="button"
+                  aria-label="Close menu"
                   onClick={closeMenu}
 
                   className="
@@ -1009,16 +1035,17 @@ export default function Navbar() {
               </div>
 
               {/* LINKS */}
-              <div
+              <motion.div
                 className="
-    px-6 py-8
+                  px-6 py-8
 
-    flex flex-col
+                  flex flex-col
+                  items-stretch
 
-    gap-5
+                  gap-1
 
-    w-full
-  "
+                  w-full
+                "
               >
 
                 {/* HOME */}
@@ -1027,24 +1054,26 @@ export default function Navbar() {
                   onClick={closeMenu}
 
                   className="
-      w-full
+                    w-full
 
-      flex
-      items-center
-      justify-between
+                    flex
+                    items-center
+                    justify-start
 
-      text-left
+                    py-3
 
-      text-base
-      font-medium
+                    text-left
+                    text-base
+                    font-medium
 
-      text-slate-900
-      dark:text-white
+                    text-slate-800
+                    dark:text-white
 
-      hover:text-cyan-400
+                    hover:text-cyan-600
+                    dark:hover:text-cyan-400
 
-      transition
-    "
+                    transition
+                  "
                 >
                   Home
                 </Link>
@@ -1053,6 +1082,9 @@ export default function Navbar() {
                 <div className="w-full border-b border-black/5 dark:border-white/10 pb-4">
 
                   <button
+                    type="button"
+                    aria-expanded={mobileAbout}
+                    aria-controls="mobile-about-links"
                     onClick={() =>
                       setMobileAbout(!mobileAbout)
                     }
@@ -1069,16 +1101,17 @@ export default function Navbar() {
         text-base
         font-medium
 
-        text-slate-900
+        text-slate-800
         dark:text-white
 
-        hover:text-cyan-400
+        hover:text-cyan-600
+        dark:hover:text-cyan-400
 
         transition
       "
                   >
 
-                    <span>About</span>
+                    <span className="text-left">About</span>
 
                     {mobileAbout ? (
                       <Minus size={18} />
@@ -1093,6 +1126,7 @@ export default function Navbar() {
                     {mobileAbout && (
 
                       <motion.div
+                        id="mobile-about-links"
                         initial={{
                           opacity: 0,
                           height: 0,
@@ -1132,12 +1166,19 @@ export default function Navbar() {
                             onClick={closeMenu}
 
                             className="
+                block
+                w-full
+
+                py-1.5
+
+                text-left
                 text-sm
 
-                text-slate-600
-                dark:text-white/70
+                text-slate-700
+                dark:text-white/75
 
-                hover:text-cyan-400
+                hover:text-cyan-600
+                dark:hover:text-cyan-400
 
                 transition
               "
@@ -1175,16 +1216,17 @@ export default function Navbar() {
         text-base
         font-medium
 
-        text-slate-900
+        text-slate-800
         dark:text-white
 
-        hover:text-cyan-400
+        hover:text-cyan-600
+        dark:hover:text-cyan-400
 
         transition
       "
                   >
 
-                    <span>Services</span>
+                    <span className="text-left">Services</span>
 
                     {mobileService ? (
                       <Minus size={18} />
@@ -1240,10 +1282,11 @@ export default function Navbar() {
                             className="
                 text-sm
 
-                text-slate-600
-                dark:text-white/70
+                text-slate-700
+                dark:text-white/75
 
-                hover:text-cyan-400
+                hover:text-cyan-600
+                dark:hover:text-cyan-400
 
                 transition
               "
@@ -1281,16 +1324,17 @@ export default function Navbar() {
         text-base
         font-medium
 
-        text-slate-900
+        text-slate-800
         dark:text-white
 
-        hover:text-cyan-400
+        hover:text-cyan-600
+        dark:hover:text-cyan-400
 
         transition
       "
                   >
 
-                    <span>Projects</span>
+                    <span className="text-left">Projects</span>
 
                     {mobileProject ? (
                       <Minus size={18} />
@@ -1344,12 +1388,19 @@ export default function Navbar() {
                             onClick={closeMenu}
 
                             className="
+                block
+                w-full
+
+                py-1.5
+
+                text-left
                 text-sm
 
-                text-slate-600
-                dark:text-white/70
+                text-slate-700
+                dark:text-white/75
 
-                hover:text-cyan-400
+                hover:text-cyan-600
+                dark:hover:text-cyan-400
 
                 transition
               "
@@ -1373,24 +1424,26 @@ export default function Navbar() {
                   onClick={closeMenu}
 
                   className="
-      w-full
+                    w-full
 
-      flex
-      items-center
-      justify-between
+                    flex
+                    items-center
+                    justify-start
 
-      text-left
+                    py-3
 
-      text-base
-      font-medium
+                    text-left
+                    text-base
+                    font-medium
 
-      text-slate-900
-      dark:text-white
+                    text-slate-800
+                    dark:text-white
 
-      hover:text-cyan-400
+                    hover:text-cyan-600
+                    dark:hover:text-cyan-400
 
-      transition
-    "
+                    transition
+                  "
                 >
                   Media
                 </Link>
@@ -1401,24 +1454,26 @@ export default function Navbar() {
                   onClick={closeMenu}
 
                   className="
-      w-full
+                    w-full
 
-      flex
-      items-center
-      justify-between
+                    flex
+                    items-center
+                    justify-start
 
-      text-left
+                    py-3
 
-      text-base
-      font-medium
+                    text-left
+                    text-base
+                    font-medium
 
-      text-slate-900
-      dark:text-white
+                    text-slate-800
+                    dark:text-white
 
-      hover:text-cyan-400
+                    hover:text-cyan-600
+                    dark:hover:text-cyan-400
 
-      transition
-    "
+                    transition
+                  "
                 >
                   Career
                 </Link>
@@ -1429,29 +1484,31 @@ export default function Navbar() {
                   onClick={closeMenu}
 
                   className="
-      w-full
+                    w-full
 
-      flex
-      items-center
-      justify-between
+                    flex
+                    items-center
+                    justify-start
 
-      text-left
+                    py-3
 
-      text-base
-      font-medium
+                    text-left
+                    text-base
+                    font-medium
 
-      text-slate-900
-      dark:text-white
+                    text-slate-800
+                    dark:text-white
 
-      hover:text-cyan-400
+                    hover:text-cyan-600
+                    dark:hover:text-cyan-400
 
-      transition
-    "
+                    transition
+                  "
                 >
                   Contact
                 </Link>
 
-              </div>
+              </motion.div>
 
             </motion.div>
 

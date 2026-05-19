@@ -38,6 +38,12 @@ const tabs = [
   },
 ];
 
+const tabActive =
+  "border-cyan-500/40 bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 shadow-[0_0_30px_rgba(34,211,238,0.18)]";
+
+const tabInactive =
+  "border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.03] text-slate-700 dark:text-white/70 hover:text-cyan-700 dark:hover:text-cyan-300 hover:border-cyan-500/30 dark:hover:border-cyan-400/20 hover:bg-cyan-500/5 dark:hover:bg-cyan-400/5";
+
 export default function ServiceStickyTabs() {
 
   const [active, setActive] =
@@ -49,13 +55,11 @@ export default function ServiceStickyTabs() {
   const [hideTabs, setHideTabs] =
     useState(false);
 
+  const isPinned = fixed && !hideTabs;
+
   useEffect(() => {
 
     const handleScroll = () => {
-
-      /* ======================================== */
-      /* HERO SCROLL DETECT */
-      /* ======================================== */
 
       const hero =
         document.getElementById("service-hero");
@@ -70,10 +74,6 @@ export default function ServiceStickyTabs() {
         );
 
       }
-
-      /* ======================================== */
-      /* ACTIVE SECTION */
-      /* ======================================== */
 
       let current = "survey";
 
@@ -99,10 +99,6 @@ export default function ServiceStickyTabs() {
       });
 
       setActive(current);
-
-      /* ======================================== */
-      /* HIDE AFTER STRINGING */
-      /* ======================================== */
 
       const stringing =
         document.getElementById("stringing");
@@ -141,10 +137,6 @@ export default function ServiceStickyTabs() {
 
   }, []);
 
-  /* ======================================== */
-  /* SCROLL */
-  /* ======================================== */
-
   const scrollToSection = (
     id: string
   ) => {
@@ -170,14 +162,9 @@ export default function ServiceStickyTabs() {
 
     <>
 
-      {/* SPACER */}
-      {fixed && !hideTabs && (
+      {isPinned && (
         <div className="h-[90px]" />
       )}
-
-      {/* ======================================== */}
-      {/* MAIN */}
-      {/* ======================================== */}
 
       <motion.div
 
@@ -198,6 +185,7 @@ export default function ServiceStickyTabs() {
         }}
 
         className={`
+          sticky-tabs-bar
           w-full
 
           z-[999]
@@ -205,37 +193,40 @@ export default function ServiceStickyTabs() {
           transition-all duration-500
 
           ${
-            fixed
+            isPinned
               ? `
                 fixed
                 top-[72px]
                 left-0
+                right-0
 
-                bg-white/90
+                bg-white/95
                 dark:bg-[#020617]/85
 
                 backdrop-blur-3xl
 
-                border-b border-white/10
+                border-b border-slate-200/80
+                dark:border-white/10
 
-                shadow-[0_20px_60px_rgba(0,0,0,0.55)]
+                shadow-[0_12px_40px_rgba(15,23,42,0.08)]
+                dark:shadow-[0_20px_60px_rgba(0,0,0,0.55)]
               `
               : `
                 relative
 
-                bg-white/70
+                bg-white/95
                 dark:bg-[#020617]/50
 
                 backdrop-blur-2xl
 
-                border-b border-white/5
+                border-b border-slate-200/80
+                dark:border-white/5
               `
           }
         `}
       >
 
-        {/* BG GLOW */}
-        <div
+        <motion.div
           className="
           absolute inset-0
 
@@ -246,11 +237,7 @@ export default function ServiceStickyTabs() {
         "
         />
 
-        {/* ======================================== */}
-        {/* CONTENT */}
-        {/* ======================================== */}
-
-        <div
+        <motion.div
           className="
           container-premium
 
@@ -263,8 +250,7 @@ export default function ServiceStickyTabs() {
         "
         >
 
-          {/* LEFT INFO */}
-          <div
+          <motion.div
             className="
             hidden lg:flex
 
@@ -275,15 +261,16 @@ export default function ServiceStickyTabs() {
           "
           >
 
-            <div
+            <motion.div
               className="
               w-10 h-10
 
               rounded-2xl
 
-              bg-cyan-400/10
-
-              border border-cyan-400/20
+              bg-cyan-500/10
+              border border-cyan-500/20
+              dark:bg-cyan-400/10
+              dark:border-cyan-400/20
 
               flex items-center justify-center
             "
@@ -291,12 +278,12 @@ export default function ServiceStickyTabs() {
 
               <Sparkles
                 size={16}
-                className="text-cyan-300"
+                className="text-cyan-600 dark:text-cyan-300"
               />
 
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div>
 
               <p
                 className="
@@ -304,7 +291,8 @@ export default function ServiceStickyTabs() {
 
                 tracking-[4px]
 
-                text-white/40
+                text-slate-500
+                dark:text-white/40
               "
               >
                 EPC SERVICES
@@ -316,31 +304,29 @@ export default function ServiceStickyTabs() {
 
                 font-semibold
 
-                text-white/80
+                text-slate-800
+                dark:text-white/80
               "
               >
                 KUDDUS ALI CONSTRUCTION SOLUTIONS
               </h3>
 
-            </div>
+            </motion.div>
 
-            <div
+            <motion.div
               className="
               w-px h-8
 
-              bg-white/10
+              bg-slate-200
+              dark:bg-white/10
 
               ml-2
             "
             />
 
-          </div>
+          </motion.div>
 
-          {/* ======================================== */}
-          {/* TABS */}
-          {/* ======================================== */}
-
-          <div
+          <motion.div
             className="
             flex
             items-center
@@ -360,6 +346,8 @@ export default function ServiceStickyTabs() {
 
               const isActive =
                 active === tab.id;
+
+              const Icon = tab.icon;
 
               return (
 
@@ -390,33 +378,10 @@ export default function ServiceStickyTabs() {
 
                     transition-all duration-300
 
-                    ${
-                      isActive
-                        ? `
-                          border-cyan-400/30
-
-                          bg-cyan-400/10
-
-                          text-cyan-300
-
-                          shadow-[0_0_30px_rgba(34,211,238,0.18)]
-                        `
-                        : `
-                          border-white/5
-
-                          bg-white/[0.03]
-
-                          text-white/60
-
-                          hover:text-cyan-300
-                          hover:border-cyan-400/20
-                          hover:bg-cyan-400/5
-                        `
-                    }
+                    ${isActive ? tabActive : tabInactive}
                   `}
                 >
 
-                  {/* ACTIVE GLOW */}
                   {isActive && (
 
                     <motion.div
@@ -435,14 +400,10 @@ export default function ServiceStickyTabs() {
 
                   )}
 
-                  {/* ICON */}
-                  <span className="relative z-10">
-
-                    <tab.icon size={16} />
-
+                  <span className="relative z-10 [&_svg]:shrink-0">
+                    <Icon size={16} />
                   </span>
 
-                  {/* TEXT */}
                   <span
                     className="
                     relative z-10
@@ -462,9 +423,9 @@ export default function ServiceStickyTabs() {
 
             })}
 
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
 
       </motion.div>
 

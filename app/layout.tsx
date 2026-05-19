@@ -202,10 +202,10 @@ export default function RootLayout({
           ${geist.variable}
           ${oswald.variable}
           ${geist.className}
-          ${oswald.className}
 
           bg-[var(--bg)]
           text-[var(--text)]
+          antialiased
 
           overflow-x-hidden
 

@@ -20,7 +20,7 @@ export default function ProjectsPage() {
 
   return (
 
-    <main
+    <div
   className="
   relative
   bg-[var(--bg)]
@@ -119,7 +119,7 @@ export default function ProjectsPage() {
 
       </div>
 
-    </main>
+    </div>
 
   );
 

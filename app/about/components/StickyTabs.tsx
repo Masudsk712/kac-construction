@@ -55,6 +55,8 @@ export default function StickyTabs() {
   const [hideTabs, setHideTabs] =
     useState(false)
 
+  const isPinned = fixed && !hideTabs
+
   useEffect(() => {
 
     const handleScroll = () => {
@@ -182,8 +184,8 @@ export default function StickyTabs() {
       {/* SPACER */}
       {/* ======================================== */}
 
-      {fixed && !hideTabs && (
-        <div className="h-[90px]" />
+      {isPinned && (
+        <motion.div className="h-[90px]" />
       )}
 
       {/* ======================================== */}
@@ -191,6 +193,7 @@ export default function StickyTabs() {
       {/* ======================================== */}
 
       <motion.div
+        id="StickyTabs"
 
         initial={{
           y: 0,
@@ -207,19 +210,21 @@ export default function StickyTabs() {
         }}
 
         className={`
+          sticky-tabs-bar
           w-full
 
           z-[999]
 
           transition-all duration-500
 
-          ${fixed
+          ${isPinned
             ? `
               fixed
               top-[72px]
               left-0
+              right-0
 
-              bg-white/90
+              bg-white/95
               dark:bg-[#020617]/85
               backdrop-blur-3xl
 
@@ -232,11 +237,11 @@ export default function StickyTabs() {
             : `
               relative
 
-              bg-white/70
+              bg-white/95
               dark:bg-[#020617]/50
               backdrop-blur-2xl
 
-              border-b border-slate-200/60
+              border-b border-slate-200/80
               dark:border-white/5
             `
           }
@@ -325,7 +330,8 @@ export default function StickyTabs() {
 
                 tracking-[4px]
 
-                text-white/40
+                text-slate-500
+                dark:text-white/40
               "
               >
                 COMPANY PROFILE
@@ -337,10 +343,11 @@ export default function StickyTabs() {
 
                 font-semibold
 
-                text-white/80
+                text-slate-800
+                dark:text-white/80
               "
-              >
-                ABOUT KAC
+            >
+              ABOUT KAC
               </h3>
 
             </div>
@@ -349,7 +356,8 @@ export default function StickyTabs() {
               className="
               w-px h-8
 
-              bg-white/10
+              bg-slate-200
+              dark:bg-white/10
 
               ml-2
             "
@@ -413,23 +421,30 @@ export default function StickyTabs() {
 
                     ${isActive
                       ? `
-                        border-cyan-400/30
-                        bg-cyan-400/10
+                        border-cyan-500/40
+                        bg-cyan-500/10
 
-                        text-cyan-300
+                        text-cyan-700
+                        dark:text-cyan-300
 
                         shadow-[0_0_30px_rgba(34,211,238,0.18)]
                       `
                       : `
-                        border-white/5
+                        border-slate-200
+                        dark:border-white/10
 
-                        bg-white/[0.03]
+                        bg-white
+                        dark:bg-white/[0.03]
 
-                        text-white/60
+                        text-slate-700
+                        dark:text-white/70
 
-                        hover:text-cyan-300
-                        hover:border-cyan-400/20
-                        hover:bg-cyan-400/5
+                        hover:text-cyan-700
+                        dark:hover:text-cyan-300
+                        hover:border-cyan-500/30
+                        dark:hover:border-cyan-400/20
+                        hover:bg-cyan-500/5
+                        dark:hover:bg-cyan-400/5
                       `
                     }
                   `}

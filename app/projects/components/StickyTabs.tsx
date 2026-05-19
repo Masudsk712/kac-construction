@@ -97,6 +97,8 @@ export default function StickyTabs() {
   const [hideTabs, setHideTabs] =
     useState(false);
 
+  const isPinned = fixed && !hideTabs;
+
   useEffect(() => {
 
     const handleScroll = () => {
@@ -219,7 +221,7 @@ export default function StickyTabs() {
 
     <>
       {/* SPACER */}
-      {fixed && !hideTabs && (
+      {isPinned && (
         <div className="h-[92px]" />
       )}
 
@@ -227,14 +229,15 @@ export default function StickyTabs() {
         id="StickyTabs"
 
         className={`
+          sticky-tabs-bar
           w-full
 
-          z-[60]
+          z-[999]
 
           border-y border-slate-200/80
           dark:border-white/10
 
-          bg-white/90
+          bg-white/95
           dark:bg-[#020617]/85
 
           backdrop-blur-3xl
@@ -255,11 +258,12 @@ export default function StickyTabs() {
           }
 
           ${
-            fixed
+            isPinned
               ? `
                 fixed
-                top-[80px]
+                top-[72px]
                 left-0
+                right-0
               `
               : `
                 relative
@@ -343,19 +347,26 @@ export default function StickyTabs() {
                     ${
                       isActive
                         ? `
-                          border-cyan-400/30
-                          bg-cyan-400/10
-                          text-cyan-300
+                          border-cyan-500/40
+                          bg-cyan-500/10
+                          text-cyan-700
+                          dark:text-cyan-300
                           shadow-[0_0_25px_rgba(34,211,238,0.15)]
                         `
                         : `
-                          border-white/5
-                          bg-white/[0.03]
-                          text-white/60
+                          border-slate-200
+                          dark:border-white/10
+                          bg-white
+                          dark:bg-white/[0.03]
+                          text-slate-700
+                          dark:text-white/70
 
-                          hover:text-cyan-300
-                          hover:border-cyan-400/20
-                          hover:bg-cyan-400/[0.05]
+                          hover:text-cyan-700
+                          dark:hover:text-cyan-300
+                          hover:border-cyan-500/30
+                          dark:hover:border-cyan-400/20
+                          hover:bg-cyan-500/5
+                          dark:hover:bg-cyan-400/[0.05]
                         `
                     }
                   `}
@@ -399,8 +410,8 @@ export default function StickyTabs() {
                       className={`
                         ${
                           isActive
-                            ? "text-cyan-300"
-                            : "text-white/50"
+                            ? "text-cyan-600 dark:text-cyan-300"
+                            : "text-slate-500 dark:text-white/50"
                         }
                       `}
                     >

@@ -10,14 +10,27 @@ import ScrollZoom from "@/components/ScrollZoom"
 
 import StatsBar from "@/components/StatsBar"
 import WhyChooseUs from "@/components/WhyChooseUs"
-import IndiaMapSection from "@/components/IndiaMapSection"
+import dynamic from "next/dynamic"
+
+const IndiaMapSection = dynamic(
+  () => import("@/components/IndiaMapSection"),
+  {
+    ssr: false,
+    loading: () => (
+      <div
+        className="min-h-[420px] w-full bg-[var(--bg-soft)] section-surface"
+        aria-hidden
+      />
+    ),
+  }
+)
 import FAQSection from "@/components/FAQSection"
 import ClientsSection from "@/components/ClientsSection"
 
 export default function HomePage() {
 
   return (
-    <main className="overflow-x-hidden">
+    <div className="overflow-x-hidden">
 
       {/* HERO */}
       <Hero />
@@ -72,6 +85,6 @@ export default function HomePage() {
         <CTASection />
       </ScrollZoom>
 
-    </main>
+    </div>
   )
 }

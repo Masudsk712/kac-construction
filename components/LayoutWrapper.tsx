@@ -56,11 +56,16 @@ export default function LayoutWrapper({
         "
       >
 
+        <a href="#page-content" className="skip-link">
+          Skip to content
+        </a>
+
         {/* NAVBAR */}
         <Navbar />
 
         {/* MAIN */}
         <main
+          id="page-content"
           className="
             relative
             z-10

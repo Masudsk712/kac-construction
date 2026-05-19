@@ -18,7 +18,7 @@ export default function PageLoader() {
 
       setLoading(false);
 
-    }, 1800);
+    }, 1200);
 
     return () => clearTimeout(timer);
 

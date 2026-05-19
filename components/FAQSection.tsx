@@ -340,6 +340,10 @@ export default function FAQSection() {
                 {/* ================================================= */}
 
                 <button
+                  type="button"
+                  id={`faq-trigger-${i}`}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-panel-${i}`}
                   onClick={() => {
                     setOpen(isOpen ? null : i);
                   }}
@@ -455,6 +459,9 @@ export default function FAQSection() {
                   {isOpen && (
 
                     <motion.div
+                      id={`faq-panel-${i}`}
+                      role="region"
+                      aria-labelledby={`faq-trigger-${i}`}
                       initial={{
                         height: 0,
                         opacity: 0,

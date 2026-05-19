@@ -14,7 +14,7 @@ export default function AboutPage() {
 
   return (
 
-    <main
+    <div
   className="
   bg-[var(--bg)]
   text-[var(--text)]
@@ -64,7 +64,7 @@ export default function AboutPage() {
 
       </div>
 
-    </main>
+    </div>
 
   )
 

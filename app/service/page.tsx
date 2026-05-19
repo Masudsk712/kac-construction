@@ -10,7 +10,7 @@ import CTASection from "@/components/CTASection";
 
 export default function ServicesPage() {
   return (
-    <main
+    <div
       className="
       relative
       bg-[var(--bg)]
@@ -63,6 +63,6 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <CTASection />
-    </main>
+    </div>
   );
 }
