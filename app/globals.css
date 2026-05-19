@@ -5,46 +5,30 @@
 /* ============================= */
 
 :root {
-
   /* LIGHT MODE */
   --bg: #f4f7fb;
-
   --bg-soft: #ffffff;
-
   --text: #0f172a;
-
   --text-soft: #475569;
-
   --primary: #06b6d4;
-
   --card: rgba(255, 255, 255, 0.78);
-
   --border: rgba(15, 23, 42, 0.08);
-
   --glass: rgba(255, 255, 255, 0.55);
-
   color-scheme: light;
 }
 
+html[class="dark"],
+html.dark,
 .dark {
-
   /* DARK MODE */
   --bg: #020617;
-
   --bg-soft: #060d1f;
-
   --text: #e2e8f0;
-
   --text-soft: #94a3b8;
-
   --primary: #22d3ee;
-
   --card: rgba(255, 255, 255, 0.04);
-
   --border: rgba(255, 255, 255, 0.08);
-
   --glass: rgba(255, 255, 255, 0.05);
-
   color-scheme: dark;
 }
 

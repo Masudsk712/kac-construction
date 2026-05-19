@@ -6,7 +6,11 @@ module.exports = {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+      },
+    },
   },
 
   plugins: [require("tailwind-scrollbar-hide")],
