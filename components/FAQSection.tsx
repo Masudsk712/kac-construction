@@ -58,8 +58,10 @@ export default function FAQSection() {
 
         overflow-hidden
 
-        bg-[var(--bg)]
-        text-[var(--text)]
+        bg-white
+        dark:bg-[#020617]
+        text-slate-900
+        dark:text-white
 
         py-24
         md:py-28
@@ -86,7 +88,8 @@ export default function FAQSection() {
 
             rounded-full
 
-            bg-cyan-500/10
+            bg-cyan-500/8
+            dark:bg-cyan-500/10
 
             blur-[120px]
           "
@@ -106,7 +109,8 @@ export default function FAQSection() {
 
             rounded-full
 
-            bg-blue-500/10
+            bg-blue-500/8
+            dark:bg-blue-500/10
 
             blur-[120px]
           "
@@ -119,9 +123,11 @@ export default function FAQSection() {
         className="
           absolute inset-0
 
-          opacity-[0.03]
+          opacity-[0.04]
 
-          [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+          [background-image:linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)]
+
+          dark:[background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
 
           [background-size:60px_60px]
         "
@@ -180,7 +186,8 @@ export default function FAQSection() {
               tracking-[4px]
               md:tracking-[6px]
 
-              text-cyan-300/80
+              text-cyan-600
+              dark:text-cyan-300/80
 
               text-[11px]
               md:text-sm
@@ -208,9 +215,9 @@ export default function FAQSection() {
             <span
               className="
                 bg-gradient-to-r
-                from-cyan-300
-                via-blue-400
-                to-cyan-200
+                from-cyan-400
+                via-blue-500
+                to-cyan-300
 
                 bg-clip-text
                 text-transparent
@@ -221,7 +228,10 @@ export default function FAQSection() {
 
             <br />
 
-            <span className="text-white">
+            <span className="
+              text-slate-900
+              dark:text-white
+            ">
               To Know About KAC
             </span>
 
@@ -236,7 +246,8 @@ export default function FAQSection() {
               max-w-3xl
               mx-auto
 
-              text-white/60
+              text-slate-600
+              dark:text-white/60
 
               text-sm
               md:text-base
@@ -294,7 +305,7 @@ export default function FAQSection() {
                   once: true,
                 }}
 
-                className="
+                className={`
                   group
 
                   relative
@@ -304,15 +315,19 @@ export default function FAQSection() {
                   rounded-[22px]
                   md:rounded-[30px]
 
-                  border border-white/10
+                  border
 
-                  bg-white/[0.04]
+                  ${isOpen
+                    ? "border-cyan-400/20 bg-slate-50 dark:bg-white/[0.06]"
+                    : "border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.04]"
+                  }
+
                   backdrop-blur-2xl
 
                   transition-all duration-500
 
                   hover:border-cyan-400/20
-                "
+                `}
               >
 
                 {/* HOVER GLOW */}
@@ -367,7 +382,8 @@ export default function FAQSection() {
                         mb-2
                         md:mb-3
 
-                        text-cyan-300/70
+                        text-cyan-600
+                        dark:text-cyan-300/70
 
                         text-[10px]
                         md:text-xs
@@ -392,7 +408,8 @@ export default function FAQSection() {
 
                         leading-[1.5]
 
-                        text-white
+                        text-slate-900
+                        dark:text-white
                       "
                     >
                       {item.q}
@@ -411,15 +428,20 @@ export default function FAQSection() {
                       rounded-xl
                       md:rounded-2xl
 
-                      border border-white/10
+                      border
 
-                      bg-white/[0.05]
+                      border-slate-200
+                      dark:border-white/10
+
+                      bg-white
+                      dark:bg-white/[0.05]
 
                       flex
                       items-center
                       justify-center
 
-                      text-cyan-300
+                      text-cyan-600
+                      dark:text-cyan-300
 
                       transition duration-500
 
@@ -486,7 +508,8 @@ export default function FAQSection() {
                             w-full
                             h-px
 
-                            bg-white/10
+                            bg-slate-200
+                            dark:bg-white/10
 
                             mb-5
                             md:mb-6
@@ -496,7 +519,8 @@ export default function FAQSection() {
                         {/* ANSWER TEXT */}
                         <p
                           className="
-                            text-white/65
+                            text-slate-600
+                            dark:text-white/65
 
                             leading-[1.9]
                             md:leading-[2]
@@ -523,7 +547,8 @@ export default function FAQSection() {
                               items-center
                               gap-3
 
-                              text-cyan-300
+                              text-cyan-600
+                              dark:text-cyan-300
 
                               text-sm
                               md:text-base
@@ -569,6 +594,5 @@ export default function FAQSection() {
       </div>
 
     </section>
-
   );
 }

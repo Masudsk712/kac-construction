@@ -246,8 +246,10 @@ export default function IndiaMapSection() {
       relative
       overflow-hidden
 
-     bg-[var(--bg)]
-     text-[var(--text)]
+      bg-white
+      dark:bg-[#020617]
+      text-slate-900
+      dark:text-white
 
       py-28
     "
@@ -266,7 +268,8 @@ export default function IndiaMapSection() {
           w-[450px]
           h-[450px]
 
-          bg-cyan-500/10
+          bg-cyan-500/8
+          dark:bg-cyan-500/10
 
           blur-[140px]
           rounded-full
@@ -282,7 +285,8 @@ export default function IndiaMapSection() {
           w-[450px]
           h-[450px]
 
-          bg-blue-500/10
+          bg-blue-500/8
+          dark:bg-blue-500/10
 
           blur-[140px]
           rounded-full
@@ -295,9 +299,11 @@ export default function IndiaMapSection() {
         className="
         absolute inset-0
 
-        opacity-[0.03]
+        opacity-[0.04]
 
-        [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+        [background-image:linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)]
+
+        dark:[background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
 
         [background-size:60px_60px]
       "
@@ -348,7 +354,8 @@ export default function IndiaMapSection() {
 
             tracking-[6px]
 
-            text-cyan-300/80
+            text-cyan-600
+            dark:text-cyan-300/80
 
             text-sm
 
@@ -386,14 +393,18 @@ export default function IndiaMapSection() {
 
             <br />
 
-            <span className="text-white">
+            <span className="
+              text-slate-900
+              dark:text-white
+            ">
               Execution Network
             </span>
           </h2>
 
           <p
             className="
-            text-white/60
+            text-slate-600
+            dark:text-white/60
 
             leading-[2]
           "
@@ -453,16 +464,22 @@ lg:items-center
             rounded-[24px]
 md:rounded-[32px]
 
-            border border-white/10
+            border
 
-            bg-white/[0.04]
+            border-slate-200
+            dark:border-white/10
+
+            bg-white
+            dark:bg-white/[0.04]
             backdrop-blur-2xl
 
             p-4
 sm:p-5
 md:p-8
 
-            shadow-[0_20px_80px_rgba(0,0,0,0.35)]
+            shadow-[0_20px_80px_rgba(15,23,42,0.08)]
+
+            dark:shadow-[0_20px_80px_rgba(0,0,0,0.35)]
           "
           >
             {/* TOP ICON */}
@@ -507,7 +524,8 @@ md:mb-3
 
             <p
               className="
-              text-white/55
+              text-slate-600
+              dark:text-white/55
 
 text-sm
 md:text-base

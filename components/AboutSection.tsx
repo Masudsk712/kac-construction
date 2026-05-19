@@ -75,7 +75,8 @@ export default function AboutSection() {
 
             rounded-full
 
-            bg-cyan-500/10
+            bg-cyan-500/8
+            dark:bg-cyan-500/10
 
             blur-[140px]
           "
@@ -94,7 +95,8 @@ export default function AboutSection() {
 
             rounded-full
 
-            bg-blue-500/10
+            bg-blue-500/8
+            dark:bg-blue-500/10
 
             blur-[140px]
           "
@@ -108,7 +110,7 @@ export default function AboutSection() {
         className="
           absolute inset-0
 
-          opacity-[0.03]
+          opacity-[0.04]
 
           [background-image:linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)]
 

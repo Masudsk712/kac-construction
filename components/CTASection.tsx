@@ -25,8 +25,10 @@ export default function CTASection() {
 
         overflow-hidden
 
-        bg-[var(--bg)]
-        text-[var(--text)]
+        bg-slate-50
+        dark:bg-[#020617]
+        text-slate-900
+        dark:text-white
 
         py-24
         md:py-28
@@ -54,7 +56,8 @@ export default function CTASection() {
 
             rounded-full
 
-            bg-cyan-500/10
+            bg-cyan-500/8
+            dark:bg-cyan-500/10
 
             blur-[130px]
           "
@@ -74,7 +77,8 @@ export default function CTASection() {
 
             rounded-full
 
-            bg-blue-500/10
+            bg-blue-500/8
+            dark:bg-blue-500/10
 
             blur-[140px]
           "
@@ -87,9 +91,11 @@ export default function CTASection() {
         className="
           absolute inset-0
 
-          opacity-[0.03]
+          opacity-[0.04]
 
-          [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+          [background-image:linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)]
+
+          dark:[background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
 
           [background-size:60px_60px]
         "
@@ -128,12 +134,18 @@ export default function CTASection() {
             rounded-[28px]
             md:rounded-[40px]
 
-            border border-white/10
+            border
 
-            bg-white/[0.04]
+            border-slate-200
+            dark:border-white/10
+
+            bg-white
+            dark:bg-white/[0.04]
             backdrop-blur-2xl
 
-            shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+            shadow-[0_20px_80px_rgba(15,23,42,0.08)]
+
+            dark:shadow-[0_20px_80px_rgba(0,0,0,0.45)]
 
             px-5
             sm:px-8
@@ -196,7 +208,8 @@ export default function CTASection() {
               items-center
               justify-center
 
-              text-cyan-300
+              text-cyan-600
+              dark:text-cyan-300
 
               mb-8
               md:mb-10
@@ -249,7 +262,8 @@ export default function CTASection() {
                 tracking-[5px]
                 md:tracking-[6px]
 
-                text-cyan-300/80
+                text-cyan-600
+                dark:text-cyan-300/80
 
                 text-[11px]
                 md:text-sm
@@ -258,7 +272,7 @@ export default function CTASection() {
                 md:mb-5
               "
             >
-              Let’s Connect
+              Let's Connect
             </p>
 
             {/* TITLE */}
@@ -280,20 +294,23 @@ export default function CTASection() {
               <span
                 className="
                   bg-gradient-to-r
-                  from-cyan-300
-                  via-blue-400
-                  to-cyan-200
+                  from-cyan-400
+                  via-blue-500
+                  to-cyan-300
 
                   bg-clip-text
                   text-transparent
                 "
               >
-                Let’s Build The Future
+                Let's Build The Future
               </span>
 
               <br />
 
-              <span className="text-white">
+              <span className="
+                text-slate-900
+                dark:text-white
+              ">
                 Of Infrastructure Together
               </span>
 
@@ -305,7 +322,8 @@ export default function CTASection() {
                 mt-6
                 md:mt-7
 
-                text-white/60
+                text-slate-600
+                dark:text-white/60
 
                 text-sm
                 sm:text-base
@@ -373,9 +391,13 @@ export default function CTASection() {
               className="
                 rounded-3xl
 
-                border border-white/10
+                border
 
-                bg-white/[0.03]
+                border-slate-200
+                dark:border-white/10
+
+                bg-white
+                dark:bg-white/[0.03]
                 backdrop-blur-xl
 
                 p-5
@@ -403,7 +425,8 @@ export default function CTASection() {
                   items-center
                   justify-center
 
-                  text-cyan-300
+                  text-cyan-600
+                  dark:text-cyan-300
 
                   mb-4
                   md:mb-5
@@ -412,11 +435,22 @@ export default function CTASection() {
                 <PhoneCall size={22} />
               </div>
 
-              <p className="text-sm text-white/40 mb-2">
+              <p className="
+                text-sm
+                text-slate-400
+                dark:text-white/40
+                mb-2
+              ">
                 Call Us
               </p>
 
-              <h3 className="font-bold text-base md:text-lg">
+              <h3 className="
+                font-bold
+                text-base
+                md:text-lg
+                text-slate-900
+                dark:text-white
+              ">
                 +91 9735067595
               </h3>
 
@@ -427,9 +461,13 @@ export default function CTASection() {
               className="
                 rounded-3xl
 
-                border border-white/10
+                border
 
-                bg-white/[0.03]
+                border-slate-200
+                dark:border-white/10
+
+                bg-white
+                dark:bg-white/[0.03]
                 backdrop-blur-xl
 
                 p-5
@@ -457,7 +495,8 @@ export default function CTASection() {
                   items-center
                   justify-center
 
-                  text-cyan-300
+                  text-cyan-600
+                  dark:text-cyan-300
 
                   mb-4
                   md:mb-5
@@ -466,7 +505,12 @@ export default function CTASection() {
                 <Mail size={22} />
               </div>
 
-              <p className="text-sm text-white/40 mb-2">
+              <p className="
+                text-sm
+                text-slate-400
+                dark:text-white/40
+                mb-2
+              ">
                 Email Address
               </p>
 
@@ -478,6 +522,9 @@ export default function CTASection() {
                   sm:text-base
 
                   break-all
+
+                  text-slate-900
+                  dark:text-white
                 "
               >
                 kuddusali45@gmail.com
@@ -490,9 +537,13 @@ export default function CTASection() {
               className="
                 rounded-3xl
 
-                border border-white/10
+                border
 
-                bg-white/[0.03]
+                border-slate-200
+                dark:border-white/10
+
+                bg-white
+                dark:bg-white/[0.03]
                 backdrop-blur-xl
 
                 p-5
@@ -520,7 +571,8 @@ export default function CTASection() {
                   items-center
                   justify-center
 
-                  text-cyan-300
+                  text-cyan-600
+                  dark:text-cyan-300
 
                   mb-4
                   md:mb-5
@@ -529,7 +581,12 @@ export default function CTASection() {
                 <RadioTower size={22} />
               </div>
 
-              <p className="text-sm text-white/40 mb-2">
+              <p className="
+                text-sm
+                text-slate-400
+                dark:text-white/40
+                mb-2
+              ">
                 Expertise
               </p>
 
@@ -539,6 +596,9 @@ export default function CTASection() {
 
                   text-sm
                   sm:text-base
+
+                  text-slate-900
+                  dark:text-white
                 "
               >
                 Transmission Infrastructure
@@ -684,12 +744,17 @@ export default function CTASection() {
 
                   rounded-full
 
-                  border border-white/10
+                  border
 
-                  bg-white/[0.04]
+                  border-slate-300
+                  dark:border-white/10
+
+                  bg-white/70
+                  dark:bg-white/[0.04]
                   backdrop-blur-xl
 
-                  text-white
+                  text-slate-900
+                  dark:text-white
                   font-semibold
 
                   transition-all duration-500
@@ -734,6 +799,5 @@ export default function CTASection() {
       </div>
 
     </section>
-
   );
 }

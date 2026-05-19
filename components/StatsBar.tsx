@@ -157,7 +157,7 @@ function StatItem({
         border-slate-200
         dark:border-white/10
 
-        bg-white/80
+        bg-white
         dark:bg-white/[0.04]
 
         backdrop-blur-2xl
@@ -200,7 +200,8 @@ function StatItem({
 
           border
 
-          border-white/5
+          border-slate-200/30
+          dark:border-white/5
         "
       />
 
@@ -287,7 +288,7 @@ function StatItem({
 
         <p
           className="
-            text-slate-600
+            text-slate-500
             dark:text-white/70
 
             text-xs
@@ -357,7 +358,8 @@ export default function StatsBar() {
 
             rounded-full
 
-            bg-cyan-500/10
+            bg-cyan-500/8
+            dark:bg-cyan-500/10
 
             blur-[120px]
           "
@@ -374,7 +376,8 @@ export default function StatsBar() {
 
             rounded-full
 
-            bg-blue-500/10
+            bg-blue-500/8
+            dark:bg-blue-500/10
 
             blur-[120px]
           "
@@ -390,9 +393,9 @@ export default function StatsBar() {
         className="
           absolute inset-0
 
-          opacity-[0.03]
+          opacity-[0.04]
 
-          [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
+          [background-image:linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)]
 
           dark:[background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
 
@@ -445,7 +448,7 @@ export default function StatsBar() {
 
             tracking-[5px]
 
-            text-cyan-500
+            text-cyan-600
             dark:text-cyan-300/80
 
             mb-5

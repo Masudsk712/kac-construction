@@ -47,8 +47,10 @@ export default function ClientsSection() {
         relative
         overflow-hidden
 
-        bg-[var(--bg)]
-        text-[var(--text)]
+        bg-slate-50
+        dark:bg-[#020617]
+        text-slate-900
+        dark:text-white
 
         py-24
         md:py-28
@@ -74,7 +76,7 @@ export default function ClientsSection() {
         }}
       />
 
-      <div className="absolute inset-0 bg-[var(--bg)]/92" />
+      <div className="absolute inset-0 bg-slate-50/92 dark:bg-[#020617]/92" />
 
       {/* GLOW */}
       <div className="absolute inset-0 pointer-events-none">
@@ -91,7 +93,8 @@ export default function ClientsSection() {
             md:w-[520px]
             md:h-[520px]
 
-            bg-cyan-500/10
+            bg-cyan-500/8
+            dark:bg-cyan-500/10
 
             blur-[130px]
 
@@ -111,7 +114,8 @@ export default function ClientsSection() {
             md:w-[520px]
             md:h-[520px]
 
-            bg-blue-500/10
+            bg-blue-500/8
+            dark:bg-blue-500/10
 
             blur-[130px]
 
@@ -126,9 +130,11 @@ export default function ClientsSection() {
         className="
           absolute inset-0
 
-          opacity-[0.03]
+          opacity-[0.04]
 
-          [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+          [background-image:linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)]
+
+          dark:[background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
 
           [background-size:60px_60px]
         "
@@ -148,7 +154,8 @@ export default function ClientsSection() {
           md:w-24
 
           bg-gradient-to-r
-          from-[var(--bg)]
+          from-slate-50
+          dark:from-[#020617]
           to-transparent
 
           z-20
@@ -168,7 +175,8 @@ export default function ClientsSection() {
           md:w-24
 
           bg-gradient-to-l
-          from-[var(--bg)]
+          from-slate-50
+          dark:from-[#020617]
           to-transparent
 
           z-20
@@ -222,7 +230,8 @@ export default function ClientsSection() {
               tracking-[5px]
               md:tracking-[6px]
 
-              text-cyan-300/80
+              text-cyan-600
+              dark:text-cyan-300/80
 
               text-[11px]
               md:text-sm
@@ -252,9 +261,9 @@ export default function ClientsSection() {
             <span
               className="
                 bg-gradient-to-r
-                from-cyan-300
-                via-blue-400
-                to-cyan-200
+                from-cyan-400
+                via-blue-500
+                to-cyan-300
 
                 bg-clip-text
                 text-transparent
@@ -267,7 +276,8 @@ export default function ClientsSection() {
 
           <p
             className="
-              text-white/60
+              text-slate-600
+              dark:text-white/60
 
               text-sm
               md:text-base
@@ -284,7 +294,7 @@ export default function ClientsSection() {
             with leading infrastructure,
             transmission and EPC companies
             delivering reliable execution across
-            India’s power sector.
+            India's power sector.
 
           </p>
 
@@ -333,9 +343,13 @@ export default function ClientsSection() {
               rounded-[24px]
               md:rounded-[28px]
 
-              border border-white/10
+              border
 
-              bg-white/[0.03]
+              border-slate-200
+              dark:border-white/10
+
+              bg-white
+              dark:bg-white/[0.03]
               backdrop-blur-2xl
 
               p-5
@@ -354,7 +368,8 @@ export default function ClientsSection() {
 
                 flex items-center justify-center
 
-                text-cyan-300
+                text-cyan-600
+                dark:text-cyan-300
 
                 mb-4
                 md:mb-5
@@ -370,6 +385,9 @@ export default function ClientsSection() {
 
                 font-black
 
+                text-slate-900
+                dark:text-white
+
                 mb-3
               "
             >
@@ -378,7 +396,8 @@ export default function ClientsSection() {
 
             <p
               className="
-                text-white/60
+                text-slate-600
+                dark:text-white/60
 
                 text-sm
                 md:text-base
@@ -418,7 +437,9 @@ export default function ClientsSection() {
               rounded-[24px]
               md:rounded-[28px]
 
-              border border-cyan-400/20
+              border
+
+              border-cyan-400/20
 
               bg-cyan-400/[0.05]
               backdrop-blur-2xl
@@ -439,7 +460,8 @@ export default function ClientsSection() {
 
                 flex items-center justify-center
 
-                text-cyan-300
+                text-cyan-600
+                dark:text-cyan-300
 
                 mb-4
                 md:mb-5
@@ -455,6 +477,9 @@ export default function ClientsSection() {
 
                 font-black
 
+                text-slate-900
+                dark:text-white
+
                 mb-3
               "
             >
@@ -463,7 +488,8 @@ export default function ClientsSection() {
 
             <p
               className="
-                text-white/70
+                text-slate-600
+                dark:text-white/70
 
                 text-sm
                 md:text-base
@@ -504,9 +530,13 @@ export default function ClientsSection() {
               rounded-[24px]
               md:rounded-[28px]
 
-              border border-white/10
+              border
 
-              bg-white/[0.03]
+              border-slate-200
+              dark:border-white/10
+
+              bg-white
+              dark:bg-white/[0.03]
               backdrop-blur-2xl
 
               p-5
@@ -525,7 +555,8 @@ export default function ClientsSection() {
 
                 flex items-center justify-center
 
-                text-cyan-300
+                text-cyan-600
+                dark:text-cyan-300
 
                 mb-4
                 md:mb-5
@@ -541,6 +572,9 @@ export default function ClientsSection() {
 
                 font-black
 
+                text-slate-900
+                dark:text-white
+
                 mb-3
               "
             >
@@ -549,7 +583,8 @@ export default function ClientsSection() {
 
             <p
               className="
-                text-white/60
+                text-slate-600
+                dark:text-white/60
 
                 text-sm
                 md:text-base
@@ -678,12 +713,17 @@ function ClientCard({
 
         overflow-hidden
 
-        border border-white/10
+        border
+
+        border-slate-200
+        dark:border-white/10
 
         bg-white/[0.95]
         backdrop-blur-xl
 
-        shadow-[0_10px_40px_rgba(0,0,0,0.25)]
+        shadow-[0_10px_40px_rgba(15,23,42,0.08)]
+
+        dark:shadow-[0_10px_40px_rgba(0,0,0,0.25)]
 
         transition-all duration-500
 
