@@ -84,8 +84,8 @@ export default function CareerPage() {
     <main
   className="
   relative
-  bg-[#020617]
-  text-white
+  bg-[var(--bg)]
+  text-[var(--text)]
   z-10
 "
 >
@@ -154,7 +154,7 @@ export default function CareerPage() {
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-[#020617]/88" />
+        <div className="absolute inset-0 bg-[var(--bg)]/88" />
 
         {/* GRADIENT */}
         <div
@@ -162,9 +162,9 @@ export default function CareerPage() {
           absolute inset-0
 
           bg-gradient-to-r
-          from-[#020617]
-          via-[#020617]/85
-          to-[#020617]/30
+          from-[var(--bg)]
+          via-[var(--bg)]/85
+          to-[var(--bg)]/30
         "
         />
 
@@ -283,6 +283,7 @@ export default function CareerPage() {
                 font-black
 
                 tracking-[-4px]
+                text-[var(--text)]
               "
               >
 
@@ -353,7 +354,7 @@ export default function CareerPage() {
                 text-lg
                 md:text-xl
 
-                text-gray-300
+                text-[var(--text-soft)]
 
                 leading-[2]
 
@@ -437,9 +438,9 @@ export default function CareerPage() {
 
                   rounded-full
 
-                  border border-white/10
+                  border border-[var(--border)]
 
-                  bg-white/[0.05]
+                  bg-[var(--glass)]
 
                   backdrop-blur-2xl
 
@@ -447,6 +448,7 @@ export default function CareerPage() {
                   hover:bg-cyan-400/[0.08]
 
                   transition-all duration-500
+                  text-[var(--text)]
                 "
                 >
 
@@ -488,9 +490,9 @@ export default function CareerPage() {
 
                 rounded-[36px]
 
-                border border-white/10
+                border border-[var(--border)]
 
-                bg-white/[0.04]
+                bg-[var(--card)]
 
                 backdrop-blur-3xl
 
@@ -516,9 +518,9 @@ export default function CareerPage() {
                     className="
                     rounded-3xl
 
-                    border border-white/10
+                    border border-[var(--border)]
 
-                    bg-white/[0.04]
+                    bg-[var(--card)]
 
                     p-5
                   "
@@ -548,11 +550,11 @@ export default function CareerPage() {
 
                       <div>
 
-                        <h3 className="text-xl font-bold">
+                        <h3 className="text-xl font-bold text-[var(--text)]">
                           Career Opportunities
                         </h3>
 
-                        <p className="text-white/50 text-sm">
+                        <p className="text-[var(--text-soft)] text-sm">
                           Infrastructure & EPC Projects
                         </p>
 
@@ -560,7 +562,7 @@ export default function CareerPage() {
 
                     </div>
 
-                    <p className="text-white/65 leading-[1.8] text-sm">
+                    <p className="text-[var(--text-soft)] leading-[1.8] text-sm">
                       Work with experienced professionals on
                       transmission infrastructure projects
                       across India.
@@ -599,9 +601,9 @@ export default function CareerPage() {
                         className="
                         rounded-2xl
 
-                        border border-white/10
+                        border border-[var(--border)]
 
-                        bg-white/[0.03]
+                        bg-[var(--card)]
 
                         p-5
 
@@ -623,7 +625,7 @@ export default function CareerPage() {
                           {item.number}
                         </h3>
 
-                        <p className="text-white/60 text-sm">
+                        <p className="text-[var(--text-soft)] text-sm">
                           {item.label}
                         </p>
 
@@ -652,7 +654,7 @@ export default function CareerPage() {
 
           bg-gradient-to-b
           from-transparent
-          to-[#020617]
+          to-[var(--bg)]
         "
         />
 
@@ -763,12 +765,13 @@ export default function CareerPage() {
                   md:text-5xl
 
                   font-black
+                  text-[var(--text)]
                 "
                 >
                   Current Openings
                 </h2>
 
-                <p className="text-white/50 mt-2">
+                <p className="text-[var(--text-soft)] mt-2">
                   Explore available vacancies at Kuddus Ali Construction
                 </p>
 
@@ -847,9 +850,9 @@ export default function CareerPage() {
 
                 rounded-[34px]
 
-                border border-white/10
+                border border-[var(--border)]
 
-                bg-white/[0.04]
+                bg-[var(--card)]
 
                 backdrop-blur-3xl
 
@@ -895,6 +898,7 @@ export default function CareerPage() {
                         group-hover:text-cyan-300
 
                         transition duration-300
+                        text-[var(--text)]
                       "
                       >
                         {job.title}
@@ -935,10 +939,12 @@ export default function CareerPage() {
                           text-sm
 
                           bg-white/10
+                          dark:bg-white/10
 
                           px-4 py-2
 
                           rounded-full
+                          text-[var(--text-soft)]
                         "
                         >
 
@@ -956,10 +962,12 @@ export default function CareerPage() {
                           text-sm
 
                           bg-white/10
+                          dark:bg-white/10
 
                           px-4 py-2
 
                           rounded-full
+                          text-[var(--text-soft)]
                         "
                         >
 
@@ -1000,70 +1008,36 @@ export default function CareerPage() {
 
                   </div>
 
-                  {/* ELIGIBILITY */}
-                  <div className="mt-8">
+                  {/* DETAILS */}
+                  <div className="mt-8 md:mt-10">
 
-                    <h4
-                      className="
-                      text-lg
-
-                      font-semibold
-
-                      text-cyan-400
-                    "
-                    >
-                      Eligibility
-                    </h4>
-
-                    <p
-                      className="
-                      mt-3
-
-                      text-white/60
-
-                      leading-[1.9]
-                    "
-                    >
+                    <p className="text-[var(--text-soft)] text-sm leading-relaxed mb-6">
+                      <span className="font-semibold text-[var(--text)]">Eligibility:</span>{" "}
                       {job.eligibility}
                     </p>
 
-                  </div>
+                    <div className="space-y-4">
 
-                  {/* RESPONSIBILITIES */}
-                  <div className="mt-8">
-
-                    <h4
-                      className="
-                      text-lg
-
-                      font-semibold
-
-                      text-cyan-400
-                    "
-                    >
-                      Responsibilities
-                    </h4>
-
-                    <div className="mt-5 space-y-4">
-
-                      {job.responsibilities.map((item, i) => (
+                      {job.responsibilities.map((resp, i) => (
 
                         <div
                           key={i}
-
-                          className="
-                          flex items-start
-                          gap-3
-                        "
+                          className="flex items-start gap-3"
                         >
 
                           <CheckCircle2
-                            size={18}
-                            className="text-cyan-400 mt-1"
+                            size={20}
+                            className="
+                            text-cyan-400
+
+                            mt-1
+
+                            flex-shrink-0
+                          "
                           />
 
-                          <p className="text-white/70">
-                            {item}
+                          <p className="text-[var(--text-soft)] text-sm leading-relaxed">
+                            {resp}
                           </p>
 
                         </div>
@@ -1071,6 +1045,41 @@ export default function CareerPage() {
                       ))}
 
                     </div>
+
+                  </div>
+
+                  {/* BOTTOM */}
+                  <div className="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-[var(--border)] flex items-center justify-between">
+
+                    <button
+                      className="
+                      inline-flex items-center
+                      gap-3
+
+                      px-6 py-3
+
+                      rounded-full
+
+                      border border-[var(--border)]
+
+                      text-sm
+                      font-medium
+
+                      text-[var(--text)]
+
+                      hover:border-cyan-400/30
+                      hover:bg-cyan-400/[0.05]
+
+                      transition-all duration-300
+                    "
+                    >
+                      <Send size={15} />
+                      Apply Now
+                    </button>
+
+                    <span className="text-xs text-[var(--text-soft)]">
+                      Job ID: KAC-{2026 - index}
+                    </span>
 
                   </div>
 
@@ -1096,12 +1105,36 @@ export default function CareerPage() {
         className="
         relative
 
-        pb-28
+        py-28
+
+        overflow-hidden
       "
       >
 
+        {/* GLOW */}
+        <div className="absolute inset-0 pointer-events-none">
+
+          <div
+            className="
+            absolute
+
+            w-[500px]
+            h-[500px]
+
+            bg-cyan-500/10
+
+            blur-[130px]
+
+            top-0 right-0
+          "
+          />
+
+        </div>
+
         <div
           className="
+          relative z-10
+
           max-w-7xl
           mx-auto
 
@@ -1109,479 +1142,321 @@ export default function CareerPage() {
         "
         >
 
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 80,
-            }}
+          <div
+            className="
+            grid
+            lg:grid-cols-2
 
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
+            gap-16
 
-            transition={{
-              duration: 0.8,
-            }}
-
-            viewport={{
-              once: true,
-            }}
+            items-center
+          "
           >
 
-            <div
-              className="
-              relative
+            {/* LEFT CONTENT */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: -60,
+              }}
 
-              overflow-hidden
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
 
-              rounded-[40px]
+              transition={{
+                duration: 0.8,
+              }}
 
-              border border-white/10
-
-              bg-white/[0.04]
-
-              backdrop-blur-3xl
-
-              p-6 sm:p-10 lg:p-14
-            "
+              viewport={{
+                once: true,
+              }}
             >
 
-              {/* GLOW */}
-              <div
-                className="
-                absolute inset-0
-
-                bg-gradient-to-br
-                from-cyan-500/5
-                via-transparent
-                to-blue-500/5
-              "
-              />
-
-              <div className="relative z-10">
-
-                {/* TOP */}
-                <div className="text-center">
-
-                  <div
-                    className="
-                    inline-flex
-
-                    items-center
-                    gap-3
-
-                    px-5 py-2
-
-                    rounded-full
-
-                    border border-cyan-400/20
-
-                    bg-cyan-400/10
-
-                    backdrop-blur-xl
-
-                    mb-6
-                  "
-                  >
-
-                    <Building2
-                      size={14}
-                      className="text-cyan-300"
-                    />
-
-                    <span
-                      className="
-                      text-[10px]
-
-                      tracking-[4px]
-
-                      text-cyan-200
-                    "
-                    >
-                      APPLY NOW
-                    </span>
-
-                  </div>
-
-                  <h2
-                    className="
-                    text-3xl
-                    sm:text-4xl
-                    lg:text-5xl
-
-                    font-black
-                  "
-                  >
-                    Submit Your CV
-                  </h2>
-
-                  <p
-                    className="
-                    mt-5
-
-                    text-white/60
-
-                    max-w-2xl
-
-                    mx-auto
-
-                    leading-[1.9]
-                  "
-                  >
-
-                    Fill out the form below and our HR
-                    team will contact you if your profile
-                    matches our requirements.
-
-                  </p>
-
-                </div>
-
-                {/* FORM */}
-                <form className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                  <div>
-
-                    <label className="text-sm text-white/70">
-                      Full Name
-                    </label>
-
-                    <input
-                      type="text"
-                      placeholder="Enter your full name"
-
-                      className="
-                      mt-3
-
-                      w-full
-
-                      bg-[#0f172a]/80
-
-                      border border-white/10
-
-                      focus:border-cyan-400
-
-                      rounded-2xl
-
-                      px-5 py-4
-
-                      outline-none
-
-                      transition duration-300
-                    "
-                    />
-
-                  </div>
-
-                  <div>
-
-                    <label className="text-sm text-white/70">
-                      Phone Number
-                    </label>
-
-                    <input
-                      type="text"
-                      placeholder="Enter your number"
-
-                      className="
-                      mt-3
-
-                      w-full
-
-                      bg-[#0f172a]/80
-
-                      border border-white/10
-
-                      focus:border-cyan-400
-
-                      rounded-2xl
-
-                      px-5 py-4
-
-                      outline-none
-
-                      transition duration-300
-                    "
-                    />
-
-                  </div>
-
-                  <div>
-
-                    <label className="text-sm text-white/70">
-                      Email Address
-                    </label>
-
-                    <input
-                      type="email"
-                      placeholder="Enter your email"
-
-                      className="
-                      mt-3
-
-                      w-full
-
-                      bg-[#0f172a]/80
-
-                      border border-white/10
-
-                      focus:border-cyan-400
-
-                      rounded-2xl
-
-                      px-5 py-4
-
-                      outline-none
-
-                      transition duration-300
-                    "
-                    />
-
-                  </div>
-
-                  <div>
-
-                    <label className="text-sm text-white/70">
-                      Experience
-                    </label>
-
-                    <input
-                      type="text"
-                      placeholder="e.g. 3 Years"
-
-                      className="
-                      mt-3
-
-                      w-full
-
-                      bg-[#0f172a]/80
-
-                      border border-white/10
-
-                      focus:border-cyan-400
-
-                      rounded-2xl
-
-                      px-5 py-4
-
-                      outline-none
-
-                      transition duration-300
-                    "
-                    />
-
-                  </div>
-
-                  <div className="md:col-span-2">
-
-                    <label className="text-sm text-white/70">
-                      Applying For
-                    </label>
-
-                    <select
-                      className="
-                      mt-3
-
-                      w-full
-
-                      bg-[#0f172a]/80
-
-                      border border-white/10
-
-                      focus:border-cyan-400
-
-                      rounded-2xl
-
-                      px-5 py-4
-
-                      outline-none
-
-                      transition duration-300
-                    "
-                    >
-
-                      <option>Site Supervisor</option>
-
-                      <option>
-                        Tower Erection Engineer
-                      </option>
-
-                      <option>
-                        Stringing Supervisor
-                      </option>
-
-                    </select>
-
-                  </div>
-
-                  <div className="md:col-span-2">
-
-                    <label className="text-sm text-white/70">
-                      Message
-                    </label>
-
-                    <textarea
-                      rows={6}
-
-                      placeholder="Tell us about your experience..."
-
-                      className="
-                      mt-3
-
-                      w-full
-
-                      bg-[#0f172a]/80
-
-                      border border-white/10
-
-                      focus:border-cyan-400
-
-                      rounded-2xl
-
-                      px-5 py-4
-
-                      outline-none
-
-                      transition duration-300
-
-                      resize-none
-                    "
-                    />
-
-                  </div>
-
-                  <div className="md:col-span-2">
-
-                    <label className="text-sm text-white/70">
-                      Upload CV / Resume
-                    </label>
-
-                    <input
-                      type="file"
-
-                      className="
-                      mt-3
-
-                      w-full
-
-                      bg-[#0f172a]/80
-
-                      border border-dashed border-cyan-400/40
-
-                      rounded-2xl
-
-                      px-5 py-4
-
-                      text-gray-400
-                    "
-                    />
-
-                  </div>
-
-                  {/* BUTTON */}
-                  <div className="md:col-span-2">
-
-                    <button
-                      type="submit"
-
-                      className="
-                      group
-
-                      w-full
-
-                      bg-cyan-500
-
-                      hover:bg-cyan-400
-
-                      text-black
-
-                      font-bold
-
-                      py-5
-
-                      rounded-2xl
-
-                      transition duration-300
-
-                      flex items-center justify-center
-                      gap-3
-
-                      hover:shadow-[0_0_40px_rgba(34,211,238,0.35)]
-                    "
-                    >
-
-                      Submit Application
-
-                      <Send
-                        size={18}
-
-                        className="
-                        group-hover:translate-x-1
-
-                        transition duration-300
-                      "
-                      />
-
-                    </button>
-
-                  </div>
-
-                </form>
-
-                {/* EMAIL INFO */}
-                <div
-                  className="
-                  mt-10
-
-                  flex flex-col
-                  sm:flex-row
-
-                  items-center
-                  justify-center
-
-                  gap-4
-
-                  text-white/50
-
-                  text-sm
-                "
-                >
-
-                  <div className="flex items-center gap-2">
-
-                    <Mail
-                      size={16}
-                      className="text-cyan-400"
-                    />
-
-                    hr@kacconstruction.com
-
-                  </div>
-
-                  <div
-                    className="
-                    hidden sm:block
-
-                    w-1 h-1
-
-                    rounded-full
-
-                    bg-white/30
-                  "
+              <p className="uppercase tracking-widest text-cyan-400 text-sm mb-6">
+                SUBMIT YOUR APPLICATION
+              </p>
+
+              <h2 className="text-4xl md:text-6xl font-black leading-tight mb-8">
+                <span className="text-[var(--text)]">
+                  Ready To Join
+                </span>
+
+                <span className="block text-cyan-400">
+                  Our Team?
+                </span>
+              </h2>
+
+              <p className="text-[var(--text-soft)] leading-relaxed text-lg mb-10">
+                Send your updated resume and we will connect
+                with you for relevant opportunities in
+                transmission infrastructure projects
+                across India.
+              </p>
+
+              <div className="flex items-center gap-5 text-sm">
+
+                <div className="flex items-center gap-3">
+
+                  <Mail
+                    size={18}
+                    className="text-cyan-400"
                   />
 
-                  <div>
-                    PAN India Hiring
-                  </div>
+                  <span className="text-[var(--text-soft)]">
+                    kuddusali45@gmail.com
+                  </span>
 
                 </div>
 
               </div>
 
-            </div>
+            </motion.div>
 
-          </motion.div>
+            {/* RIGHT FORM */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 60,
+              }}
+
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+
+              transition={{
+                duration: 0.8,
+              }}
+
+              viewport={{
+                once: true,
+              }}
+
+              className="
+              relative
+
+              overflow-hidden
+
+              rounded-[36px]
+
+              border border-[var(--border)]
+
+              bg-[var(--card)]
+
+              backdrop-blur-3xl
+
+              p-8 md:p-10
+            "
+            >
+
+              <div
+                className="
+                absolute inset-0
+
+                bg-gradient-to-br
+                from-cyan-500/10
+                via-transparent
+                to-blue-500/10
+              "
+              />
+
+              <div className="relative z-10">
+
+                <h3 className="text-2xl font-black mb-8 text-[var(--text)]">
+                  Send Your Application
+                </h3>
+
+                {/* FORM */}
+                <form className="space-y-6">
+
+                  <input
+                    type="text"
+                    placeholder="Full Name *"
+                    className="
+                    w-full
+
+                    px-5 py-4
+
+                    rounded-2xl
+
+                    border border-[var(--border)]
+
+                    bg-[var(--bg)]
+
+                    text-[var(--text)]
+
+                    placeholder:text-[var(--text-soft)]
+
+                    outline-none
+
+                    focus:border-cyan-400/40
+
+                    transition-all duration-300
+                  "
+                  />
+
+                  <input
+                    type="email"
+                    placeholder="Email Address *"
+                    className="
+                    w-full
+
+                    px-5 py-4
+
+                    rounded-2xl
+
+                    border border-[var(--border)]
+
+                    bg-[var(--bg)]
+
+                    text-[var(--text)]
+
+                    placeholder:text-[var(--text-soft)]
+
+                    outline-none
+
+                    focus:border-cyan-400/40
+
+                    transition-all duration-300
+                  "
+                  />
+
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    className="
+                    w-full
+
+                    px-5 py-4
+
+                    rounded-2xl
+
+                    border border-[var(--border)]
+
+                    bg-[var(--bg)]
+
+                    text-[var(--text)]
+
+                    placeholder:text-[var(--text-soft)]
+
+                    outline-none
+
+                    focus:border-cyan-400/40
+
+                    transition-all duration-300
+                  "
+                  />
+
+                  <select
+                    className="
+                    w-full
+
+                    px-5 py-4
+
+                    rounded-2xl
+
+                    border border-[var(--border)]
+
+                    bg-[var(--bg)]
+
+                    text-[var(--text)]
+
+                    placeholder:text-[var(--text-soft)]
+
+                    outline-none
+
+                    focus:border-cyan-400/40
+
+                    transition-all duration-300
+                  "
+                  >
+                    <option value="">
+                      Select Position
+                    </option>
+
+                    <option value="supervisor">
+                      Site Supervisor
+                    </option>
+
+                    <option value="engineer">
+                      Tower Erection Engineer
+                    </option>
+
+                    <option value="stringing">
+                      Stringing Supervisor
+                    </option>
+
+                  </select>
+
+                  <textarea
+                    placeholder="Cover Letter / Additional Info"
+                    rows={4}
+                    className="
+                    w-full
+
+                    px-5 py-4
+
+                    rounded-2xl
+
+                    border border-[var(--border)]
+
+                    bg-[var(--bg)]
+
+                    text-[var(--text)]
+
+                    placeholder:text-[var(--text-soft)]
+
+                    outline-none
+
+                    focus:border-cyan-400/40
+
+                    transition-all duration-300
+
+                    resize-none
+                  "
+                  />
+
+                  <button
+                    type="submit"
+                    className="
+                    w-full
+
+                    py-4
+
+                    rounded-2xl
+
+                    bg-gradient-to-r
+                    from-cyan-400
+                    to-blue-500
+
+                    text-black
+                    font-bold
+
+                    hover:scale-[1.02]
+
+                    transition-all duration-300
+                  "
+                  >
+
+                    <span className="flex items-center justify-center gap-3">
+
+                      Submit Application
+
+                      <Send size={18} />
+
+                    </span>
+
+                  </button>
+
+                </form>
+
+              </div>
+
+            </motion.div>
+
+          </div>
 
         </div>
 

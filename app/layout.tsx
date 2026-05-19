@@ -196,8 +196,6 @@ export default function RootLayout({
 
           antialiased
 
-          transition-colors duration-500
-
           selection:bg-cyan-400
           selection:text-black
         `}

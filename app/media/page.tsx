@@ -22,7 +22,7 @@ import CTASection from "@/components/CTASection";
 const featuredSlides = [
   {
     title: "765kV Transmission Line Project",
-    subtitle: "Powering India’s Grid Infrastructure",
+    subtitle: "Powering India's Grid Infrastructure",
     desc:
       "Kuddus Ali Construction successfully executing high-voltage transmission line projects with advanced engineering and precision.",
     image: "/media/Media1.webp",
@@ -119,8 +119,8 @@ export default function MediaPage() {
   return (
     <main
   className="
-  bg-[#020617]
-  text-white
+  bg-[var(--bg)]
+  text-[var(--text)]
   relative
   z-10
 "
@@ -165,15 +165,15 @@ export default function MediaPage() {
         </AnimatePresence>
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-[#020617]/80" />
+        <div className="absolute inset-0 bg-[var(--bg)]/80" />
 
         {/* LEFT GRADIENT */}
         <div
           className="
           absolute inset-0
           bg-gradient-to-r
-          from-[#020617]
-          via-[#020617]/80
+          from-[var(--bg)]
+          via-[var(--bg)]/80
           to-transparent
         "
         />
@@ -199,8 +199,8 @@ export default function MediaPage() {
             gap-3
             px-5 py-2
             rounded-full
-            border border-white/10
-            bg-white/5
+            border border-[var(--border)]
+            bg-[var(--glass)]
             backdrop-blur-xl
             mb-8
           "
@@ -208,7 +208,7 @@ export default function MediaPage() {
 
             <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
 
-            <span className="text-sm tracking-[4px] text-white/80">
+            <span className="text-sm tracking-[4px] text-[var(--text-soft)]">
               MEDIA & GALLERY
             </span>
 
@@ -235,6 +235,7 @@ export default function MediaPage() {
                   leading-[0.95]
                   font-black
                   tracking-[-3px]
+                  text-[var(--text)]
                 "
                 >
 
@@ -262,7 +263,7 @@ export default function MediaPage() {
                   className="
                   text-lg
                   md:text-xl
-                  text-gray-300
+                  text-[var(--text-soft)]
                   leading-[2]
                   max-w-3xl
                 "
@@ -319,13 +320,14 @@ export default function MediaPage() {
             <button
               className="
               flex items-center gap-3
-              border border-white/10
-              bg-white/5
+              border border-[var(--border)]
+              bg-[var(--glass)]
               backdrop-blur-xl
               px-8 py-5
               rounded-2xl
               hover:border-cyan-400/40
               transition
+              text-[var(--text)]
             "
             >
 
@@ -346,7 +348,7 @@ export default function MediaPage() {
           w-full h-40
           bg-gradient-to-b
           from-transparent
-          to-[#020617]
+          to-[var(--bg)]
         "
         />
 
@@ -369,7 +371,7 @@ export default function MediaPage() {
           {/* HEADING */}
           <div className="text-center mb-20">
 
-            <p className="text-sm tracking-widest text-white/60 mb-3">
+            <p className="text-sm tracking-widest text-[var(--text-soft)] mb-3">
               FIELD OPERATIONS & PROJECTS
             </p>
 
@@ -469,7 +471,7 @@ export default function MediaPage() {
                 {/* CONTENT */}
                 <div className="p-7">
 
-                  <div className="flex items-center gap-3 text-white/50 text-sm mb-4">
+                  <div className="flex items-center gap-3 text-[var(--text-soft)] text-sm mb-4">
 
                     <CalendarDays size={15} />
 
@@ -484,12 +486,13 @@ export default function MediaPage() {
                     mb-4
                     group-hover:text-cyan-400
                     transition
+                    text-[var(--text)]
                   "
                   >
                     {item.title}
                   </h3>
 
-                  <p className="text-white/60 leading-relaxed">
+                  <p className="text-[var(--text-soft)] leading-relaxed">
                     {item.desc}
                   </p>
 
@@ -537,11 +540,11 @@ export default function MediaPage() {
 
             <div>
 
-              <p className="text-sm tracking-widest text-white/60 mb-3">
+              <p className="text-sm tracking-widest text-[var(--text-soft)] mb-3">
                 LIVE PROJECT GALLERY
               </p>
 
-              <h2 className="text-4xl md:text-5xl font-semibold">
+              <h2 className="text-4xl md:text-5xl font-semibold text-[var(--text)]">
                 <span className="gradient-text">
                   Engineering In Motion
                 </span>
@@ -607,7 +610,7 @@ export default function MediaPage() {
 
                   <div className="absolute bottom-5 left-5">
 
-                    <h3 className="font-semibold text-lg">
+                    <h3 className="font-semibold text-lg text-white">
                       {item.title}
                     </h3>
 
@@ -721,18 +724,18 @@ export default function MediaPage() {
                       {selected.category}
                     </p>
 
-                    <h2 className="text-4xl font-bold mb-6">
+                    <h2 className="text-4xl font-bold mb-6 text-black dark:text-white">
                       {selected.title}
                     </h2>
 
-                    <p className="text-white/70 leading-relaxed mb-8">
+                    <p className="text-black/70 dark:text-white/70 leading-relaxed mb-8">
                       {selected.desc}
                     </p>
 
                     <div
                       className="
                       flex items-center gap-4
-                      text-white/60
+                      text-black/60 dark:text-white/60
                     "
                     >
 

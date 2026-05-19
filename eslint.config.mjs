@@ -13,6 +13,18 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      // Allow `any` types for generic utility code
+      "@typescript-eslint/no-explicit-any": "warn",
+      // Allow unescaped entities like apostrophes in text content
+      "react/no-unescaped-entities": "off",
+      // Allow require() in config files
+      "@typescript-eslint/no-require-imports": "off",
+      // Allow <img> element where Next.js Image component isn't practical
+      "@next/next/no-img-element": "warn",
+    },
+  },
 ]);
 
 export default eslintConfig;

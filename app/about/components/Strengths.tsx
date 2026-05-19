@@ -22,7 +22,8 @@ export default function Strengths() {
 
     <section
       className="
-      section-premium
+      bg-[var(--bg)]
+      text-[var(--text)]
 
       py-28
 
@@ -158,7 +159,7 @@ export default function Strengths() {
 
               tracking-[4px]
 
-              text-white/70
+              text-[var(--text-soft)]
             "
             >
               OUR CORE STRENGTHS
@@ -213,23 +214,25 @@ export default function Strengths() {
 
             tracking-[-2px]
 
+            text-[var(--text)]
+
             mb-8
           "
-          >
+        >
 
-            Delving Into Our
+          Delving Into Our
 
-            <span
-              className="
+          <span
+            className="
               block
 
               mt-3
 
               gradient-text
             "
-            >
-              Specialized Capabilities
-            </span>
+          >
+            Specialized Capabilities
+          </span>
 
           </h2>
 
@@ -238,7 +241,7 @@ export default function Strengths() {
             text-lg
             md:text-xl
 
-            text-white/55
+            text-[var(--text-soft)]
 
             leading-[2]
 
@@ -309,9 +312,9 @@ export default function Strengths() {
 
               rounded-[30px]
 
-              border border-white/10
+              border border-[var(--border)]
 
-              bg-white/[0.03]
+              bg-[var(--card)]
 
               backdrop-blur-2xl
 
@@ -420,7 +423,7 @@ export default function Strengths() {
                     size={22}
 
                     className="
-                    text-white/20
+                    text-[var(--text-soft)]/50
 
                     group-hover:text-cyan-300
 
@@ -436,15 +439,15 @@ export default function Strengths() {
                 {/* TEXT */}
                 <h3
                   className="
-                  text-xl
+                    text-xl
 
-                  font-semibold
+                    font-semibold
 
-                  leading-relaxed
+                    leading-relaxed
 
-                  text-white/75
+                    text-[var(--text-soft)]
 
-                  group-hover:text-white
+                    group-hover:text-[var(--text)]
 
                   transition duration-500
                 "

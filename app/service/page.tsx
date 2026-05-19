@@ -13,8 +13,8 @@ export default function ServicesPage() {
     <main
       className="
       relative
-      bg-[#020617]
-      text-white
+      bg-[var(--bg)]
+      text-[var(--text)]
       "
     >
 

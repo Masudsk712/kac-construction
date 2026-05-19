@@ -234,7 +234,7 @@ export default function MissionVision() {
           "
           >
 
-            Powering India's
+            Powering India{'\''}s
 
             <span className="gradient-text block mt-2">
               Infrastructure Future

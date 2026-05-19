@@ -48,13 +48,11 @@ export default function LayoutWrapper({
 
           min-h-screen
 
-          bg-white
-          dark:bg-[#020617]
+          bg-[var(--bg)]
+          text-[var(--text)]
 
-          text-slate-900
-          dark:text-white
-
-          transition-colors duration-500
+          transition-[background-color,color,border-color]
+          duration-500
         "
       >
 

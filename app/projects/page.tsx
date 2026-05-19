@@ -23,8 +23,8 @@ export default function ProjectsPage() {
     <main
   className="
   relative
-  bg-[#020617]
-  text-white
+  bg-[var(--bg)]
+  text-[var(--text)]
   overflow-visible
   z-10
 "

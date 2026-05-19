@@ -16,8 +16,8 @@ export default function AboutPage() {
 
     <main
   className="
-  bg-transparent
-  text-white
+  bg-[var(--bg)]
+  text-[var(--text)]
   relative
   overflow-visible
   z-10

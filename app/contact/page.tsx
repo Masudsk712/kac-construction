@@ -59,8 +59,8 @@ export default function ContactPage() {
     <main
   className="
   relative
-  bg-[#020617]
-  text-white
+  bg-[var(--bg)]
+  text-[var(--text)]
   z-10
 "
 >
@@ -132,7 +132,7 @@ export default function ContactPage() {
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-[#020617]/85" />
+        <div className="absolute inset-0 bg-[var(--bg)]/85" />
 
         {/* GRADIENT */}
         <div
@@ -140,9 +140,9 @@ export default function ContactPage() {
           absolute inset-0
 
           bg-gradient-to-r
-          from-[#020617]
-          via-[#020617]/85
-          to-[#020617]/30
+          from-[var(--bg)]
+          via-[var(--bg)]/85
+          to-[var(--bg)]/30
         "
         />
 
@@ -261,10 +261,11 @@ export default function ContactPage() {
                 font-black
 
                 tracking-[-4px]
+                text-[var(--text)]
               "
               >
 
-                Let’s Build India’s
+                Let's Build India's
 
                 <span
                   className="
@@ -331,7 +332,7 @@ export default function ContactPage() {
                 text-lg
                 md:text-xl
 
-                text-gray-300
+                text-[var(--text-soft)]
 
                 leading-[2]
 
@@ -414,9 +415,9 @@ export default function ContactPage() {
 
                   rounded-full
 
-                  border border-white/10
+                  border border-[var(--border)]
 
-                  bg-white/[0.05]
+                  bg-[var(--glass)]
 
                   backdrop-blur-2xl
 
@@ -424,6 +425,7 @@ export default function ContactPage() {
                   hover:bg-cyan-400/[0.08]
 
                   transition-all duration-500
+                  text-[var(--text)]
                 "
                 >
 
@@ -466,9 +468,9 @@ export default function ContactPage() {
 
                 rounded-[36px]
 
-                border border-white/10
+                border border-[var(--border)]
 
-                bg-white/[0.04]
+                bg-[var(--card)]
 
                 backdrop-blur-3xl
 
@@ -494,9 +496,9 @@ export default function ContactPage() {
                     className="
                     rounded-3xl
 
-                    border border-white/10
+                    border border-[var(--border)]
 
-                    bg-white/[0.04]
+                    bg-[var(--card)]
 
                     p-5
                   "
@@ -526,11 +528,11 @@ export default function ContactPage() {
 
                       <div>
 
-                        <h3 className="text-xl font-bold">
+                        <h3 className="text-xl font-bold text-[var(--text)]">
                           Transmission Projects
                         </h3>
 
-                        <p className="text-white/50 text-sm">
+                        <p className="text-[var(--text-soft)] text-sm">
                           EPC Infrastructure Solutions
                         </p>
 
@@ -538,7 +540,7 @@ export default function ContactPage() {
 
                     </div>
 
-                    <p className="text-white/65 leading-[1.8] text-sm">
+                    <p className="text-[var(--text-soft)] leading-[1.8] text-sm">
                       Specialized in foundation, erection,
                       stringing and transmission line execution
                       across India.
@@ -577,9 +579,9 @@ export default function ContactPage() {
                         className="
                         rounded-2xl
 
-                        border border-white/10
+                        border border-[var(--border)]
 
-                        bg-white/[0.03]
+                        bg-[var(--card)]
 
                         p-5
 
@@ -601,7 +603,7 @@ export default function ContactPage() {
                           {item.number}
                         </h3>
 
-                        <p className="text-white/60 text-sm">
+                        <p className="text-[var(--text-soft)] text-sm">
                           {item.label}
                         </p>
 
@@ -630,7 +632,7 @@ export default function ContactPage() {
 
           bg-gradient-to-b
           from-transparent
-          to-[#020617]
+          to-[var(--bg)]
         "
         />
 
@@ -714,7 +716,7 @@ export default function ContactPage() {
 
               tracking-widest
 
-              text-white/60
+              text-[var(--text-soft)]
 
               mb-3
             "
@@ -728,6 +730,7 @@ export default function ContactPage() {
               md:text-5xl
 
               font-black
+              text-[var(--text)]
             "
             >
 
@@ -784,9 +787,9 @@ export default function ContactPage() {
 
                 rounded-[32px]
 
-                border border-white/10
+                border border-[var(--border)]
 
-                bg-white/[0.04]
+                bg-[var(--card)]
 
                 backdrop-blur-3xl
 
@@ -829,19 +832,19 @@ export default function ContactPage() {
 
                     <div>
 
-                      <h3 className="text-2xl font-black">
+                      <h3 className="text-2xl font-black text-[var(--text)]">
                         Kuddus Ali Construction
                       </h3>
 
-                      <p className="text-white/50 text-sm mt-1">
-                        Powering India’s Infrastructure
+                      <p className="text-[var(--text-soft)] text-sm mt-1">
+                        Powering India's Infrastructure
                       </p>
 
                     </div>
 
                   </div>
 
-                  <p className="text-white/65 leading-[1.9]">
+                  <p className="text-[var(--text-soft)] leading-[1.9]">
                     Reach out for project enquiries,
                     transmission infrastructure, EPC
                     solutions and partnership discussions.
@@ -900,9 +903,9 @@ export default function ContactPage() {
 
                   rounded-[30px]
 
-                  border border-white/10
+                  border border-[var(--border)]
 
-                  bg-white/[0.04]
+                  bg-[var(--card)]
 
                   backdrop-blur-3xl
 
@@ -971,7 +974,7 @@ export default function ContactPage() {
                       "
                       >
 
-                        <h3 className="text-2xl font-bold">
+                        <h3 className="text-2xl font-bold text-[var(--text)]">
                           {item.title}
                         </h3>
 
@@ -983,7 +986,7 @@ export default function ContactPage() {
                         className="
                         mt-4
 
-                        text-white
+                        text-[var(--text)]
 
                         text-lg
 
@@ -999,7 +1002,7 @@ export default function ContactPage() {
                           className="
                           mt-2
 
-                          text-white
+                          text-[var(--text)]
 
                           text-lg
 
@@ -1011,15 +1014,7 @@ export default function ContactPage() {
 
                       )}
 
-                      <p
-                        className="
-                        mt-4
-
-                        text-white/60
-
-                        leading-[1.8]
-                      "
-                      >
+                      <p className="mt-4 text-[var(--text-soft)] leading-relaxed text-sm">
                         {item.desc}
                       </p>
 
@@ -1033,7 +1028,7 @@ export default function ContactPage() {
 
             </motion.div>
 
-            {/* RIGHT FORM */}
+            {/* RIGHT - MAP */}
             <motion.div
               initial={{
                 opacity: 0,
@@ -1052,298 +1047,188 @@ export default function ContactPage() {
               viewport={{
                 once: true,
               }}
+
+              className="
+              sticky
+              top-32
+
+              overflow-hidden
+
+              rounded-[32px]
+
+              border border-[var(--border)]
+
+              bg-[var(--card)]
+
+              backdrop-blur-3xl
+
+              h-[500px]
+              md:h-[600px]
+
+              shadow-[0_20px_80px_rgba(0,0,0,0.25)]
+            "
             >
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d704.6048151757652!2d88.1037462695071!3d25.081566213257595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDQnNTMuNiBOIDg4sDA2JzE1LjgiRQ!5e1!3m2!1sen!2sin!4v1778577513815!5m2!1sen!2sin"
+
+                width="100%"
+                height="100%"
+
+                loading="lazy"
+
+                className="absolute inset-0"
+              />
 
               <div
                 className="
-                relative
+                absolute
 
-                overflow-hidden
+                top-4 left-4
 
-                rounded-[38px]
+                px-4 py-2
+
+                rounded-full
+
+                bg-black/60
 
                 border border-white/10
 
-                bg-white/[0.04]
+                backdrop-blur-xl
 
-                backdrop-blur-3xl
-
-                p-6 sm:p-8 lg:p-10
-
-                shadow-[0_0_80px_rgba(0,0,0,0.6)]
+                flex items-center gap-2
               "
               >
 
-                {/* GLOW */}
-                <div
-                  className="
-                  absolute
-
-                  top-0
-                  right-0
-
-                  w-[300px]
-                  h-[300px]
-
-                  bg-cyan-500/10
-
-                  blur-[100px]
-                "
-                />
-
-                <div className="relative z-10">
-
-                  {/* TOP */}
-                  <div className="mb-10">
-
-                    <div
-                      className="
-                      inline-flex
-
-                      items-center
-                      gap-3
-
-                      px-4 py-2
-
-                      rounded-full
-
-                      border border-cyan-400/20
-
-                      bg-cyan-400/10
-
-                      mb-5
-                    "
-                    >
-
-                      <ShieldCheck
-                        size={14}
-                        className="text-cyan-300"
-                      />
-
-                      <span
-                        className="
-                        text-[10px]
-
-                        tracking-[4px]
-
-                        text-cyan-200
-                      "
-                      >
-                        SEND MESSAGE
-                      </span>
-
-                    </div>
-
-                    <h2
-                      className="
-                      text-3xl
-                      md:text-4xl
-
-                      font-black
-
-                      mb-5
-                    "
-                    >
-                      Start Your Project Discussion
-                    </h2>
-
-                    <p
-                      className="
-                      text-white/60
-
-                      leading-[1.9]
-                    "
-                    >
-                      Fill out the form below and our
-                      infrastructure experts will contact
-                      you shortly.
-                    </p>
-
-                  </div>
-
-                  {/* FORM */}
-                  <form
-                    action="https://formspree.io/f/xaqvkbzo"
-                    method="POST"
-                    className="space-y-6"
-                  >
-                    {/* NAME */}
-                    <div>
-                      <label className="text-sm text-white/70">
-                        Full Name
-                      </label>
-
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        placeholder="Enter your full name"
-                        className="
-      mt-3
-      w-full
-      bg-[#0f172a]/80
-      border border-white/10
-      focus:border-cyan-400
-      rounded-2xl
-      px-5 py-4
-      outline-none
-      transition-all duration-300
-    "
-                      />
-                    </div>
-
-                    {/* EMAIL */}
-                    <div>
-                      <label className="text-sm text-white/70">
-                        Email Address
-                      </label>
-
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="Enter your email"
-                        className="
-      mt-3
-      w-full
-      bg-[#0f172a]/80
-      border border-white/10
-      focus:border-cyan-400
-      rounded-2xl
-      px-5 py-4
-      outline-none
-      transition-all duration-300
-    "
-                      />
-                    </div>
-
-                    {/* PHONE */}
-                    <div>
-                      <label className="text-sm text-white/70">
-                        Phone Number
-                      </label>
-
-                      <input
-                        type="text"
-                        name="phone"
-                        placeholder="Enter your phone number"
-                        className="
-      mt-3
-      w-full
-      bg-[#0f172a]/80
-      border border-white/10
-      focus:border-cyan-400
-      rounded-2xl
-      px-5 py-4
-      outline-none
-      transition-all duration-300
-    "
-                      />
-                    </div>
-
-                    {/* PROJECT */}
-                    <div>
-                      <label className="text-sm text-white/70">
-                        Project Type
-                      </label>
-
-                      <select
-                        name="projectType"
-                        className="
-      mt-3
-      w-full
-      bg-[#0f172a]/80
-      border border-white/10
-      focus:border-cyan-400
-      rounded-2xl
-      px-5 py-4
-      outline-none
-      transition-all duration-300
-    "
-                      >
-                        <option>
-                          Transmission Line
-                        </option>
-
-                        <option>
-                          Foundation Work
-                        </option>
-
-                        <option>
-                          Stringing Work
-                        </option>
-
-                        <option>
-                          Tower Erection
-                        </option>
-
-                        <option>
-                          EPC Infrastructure
-                        </option>
-                      </select>
-                    </div>
-
-                    {/* MESSAGE */}
-                    <div>
-                      <label className="text-sm text-white/70">
-                        Message
-                      </label>
-
-                      <textarea
-                        rows={6}
-                        name="message"
-                        required
-                        placeholder="Tell us about your project..."
-                        className="
-      mt-3
-      w-full
-      bg-[#0f172a]/80
-      border border-white/10
-      focus:border-cyan-400
-      rounded-2xl
-      px-5 py-4
-      outline-none
-      transition-all duration-300
-      resize-none
-    "
-                      />
-                    </div>
-
-                    {/* BUTTON */}
-                    <button
-                      type="submit"
-                      className="
-    group
-    w-full
-    bg-cyan-500
-    hover:bg-cyan-400
-    text-black
-    font-bold
-    py-5
-    rounded-2xl
-    transition duration-300
-    flex items-center justify-center
-    gap-3
-    hover:shadow-[0_0_40px_rgba(34,211,238,0.35)]
-  "
-                    >
-                      Send Message
-
-                      <Send
-                        size={18}
-                        className="
-      group-hover:translate-x-1
-      transition
-    "
-                      />
-                    </button>
-                  </form>
-
-                </div>
+                <span className="text-xs tracking-wider text-white">
+                  LIVE LOCATION
+                </span>
 
               </div>
 
             </motion.div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ======================================== */}
+      {/* MAP SECTION */}
+      {/* ======================================== */}
+
+      <section
+        className="
+        relative
+
+        py-28
+
+        overflow-hidden
+      "
+      >
+
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div
+            className="
+            relative
+
+            overflow-hidden
+
+            rounded-[36px]
+
+            border border-[var(--border)]
+
+            bg-gradient-to-br
+            from-cyan-500/10
+            via-transparent
+            to-blue-500/10
+
+            backdrop-blur-3xl
+
+            px-8 md:px-14
+            py-14 md:py-20
+
+            text-center
+          "
+          >
+
+            <p className="uppercase tracking-widest text-cyan-400 text-sm mb-6">
+              WE ARE HERE
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-black leading-tight mb-6 text-[var(--text)]">
+              Visit Our Office
+            </h2>
+
+            <p className="text-[var(--text-soft)] text-lg leading-relaxed max-w-3xl mx-auto">
+              Kuddus Ali Construction, Mahisbathani Baluatola,
+              PO Barkol, Malda - 732128, India
+            </p>
+
+            <div className="mt-10 flex flex-wrap justify-center gap-5">
+
+              <a
+                href="tel:+919735067595"
+                className="
+                inline-flex items-center
+                gap-3
+
+                px-8 py-4
+
+                rounded-full
+
+                bg-gradient-to-r
+                from-cyan-400
+                to-blue-500
+
+                text-black
+                font-bold
+
+                hover:scale-105
+
+                transition-all duration-300
+              "
+              >
+
+                <Phone size={18} />
+
+                Call Now
+
+              </a>
+
+              <a
+                href="https://maps.google.com/?q=25.081566,88.103746"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                inline-flex items-center
+                gap-3
+
+                px-8 py-4
+
+                rounded-full
+
+                border border-[var(--border)]
+
+                bg-[var(--card)]
+
+                text-[var(--text)]
+
+                hover:border-cyan-400/30
+
+                transition-all duration-300
+              "
+              >
+
+                <MapPin size={18} />
+
+                Open In Maps
+
+              </a>
+
+            </div>
 
           </div>
 

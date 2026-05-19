@@ -66,86 +66,245 @@ const stats = [
 ];
 
 /* ======================================== */
-/* COUNT ANIMATION */
+/* STAT ITEM COMPONENT */
 /* ======================================== */
 
-function useCountUpOnView(
-  end: number,
-  duration = 1800
-) {
-
-  const [count, setCount] =
-    useState(0);
-
-  const ref =
-    useRef<HTMLSpanElement | null>(
-      null
-    );
-
-  const [started, setStarted] =
-    useState(false);
+function StatItem({
+  item,
+  i,
+}: {
+  item: { value: number; suffix: string; label: string; icon: React.ReactNode; color: string };
+  i: number;
+}) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement | null>(null);
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
-
     if (!ref.current) return;
 
-    const observer =
-      new IntersectionObserver(
-        ([entry]) => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started) {
+          setStarted(true);
 
-          if (
-            entry.isIntersecting &&
-            !started
-          ) {
+          let start = 0;
+          const end = item.value;
+          const duration = 1800;
+          const increment = end / (duration / 16);
 
-            setStarted(true);
+          const animate = () => {
+            start += increment;
+            if (start < end) {
+              setCount(Math.floor(start));
+              requestAnimationFrame(animate);
+            } else {
+              setCount(end);
+            }
+          };
 
-            let start = 0;
-
-            const increment =
-              end / (duration / 16);
-
-            const animate = () => {
-
-              start += increment;
-
-              if (start < end) {
-
-                setCount(
-                  Math.floor(start)
-                );
-
-                requestAnimationFrame(
-                  animate
-                );
-
-              } else {
-
-                setCount(end);
-
-              }
-            };
-
-            animate();
-          }
-        },
-
-        {
-          threshold: 0.4,
+          animate();
         }
-      );
+      },
+      {
+        threshold: 0.4,
+      }
+    );
 
     observer.observe(ref.current);
 
-    return () =>
-      observer.disconnect();
+    return () => observer.disconnect();
+  }, [item.value, started]);
 
-  }, [end, duration, started]);
+  return (
+    <motion.div
+      key={i}
 
-  return {
-    count,
-    ref,
-  };
+      initial={{
+        opacity: 0,
+        y: 60,
+      }}
+
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+
+      whileHover={{
+        y: -10,
+        scale: 1.02,
+      }}
+
+      transition={{
+        delay: i * 0.12,
+        duration: 0.5,
+      }}
+
+      viewport={{
+        once: true,
+      }}
+
+      className="
+        group
+        relative
+
+        overflow-hidden
+
+        rounded-[30px]
+
+        border
+
+        border-slate-200
+        dark:border-white/10
+
+        bg-white/80
+        dark:bg-white/[0.04]
+
+        backdrop-blur-2xl
+
+        p-6
+        md:p-8
+
+        shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+
+        dark:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+
+        transition-all duration-500
+      "
+    >
+      {/* CARD GLOW */}
+
+      <div
+        className={`
+          absolute inset-0
+
+          opacity-0
+          group-hover:opacity-20
+
+          transition duration-700
+
+          bg-gradient-to-br
+          ${item.color}
+
+          blur-3xl
+        `}
+      />
+
+      {/* INNER BORDER */}
+
+      <div
+        className="
+          absolute inset-[1px]
+
+          rounded-[30px]
+
+          border
+
+          border-white/5
+        "
+      />
+
+      {/* CONTENT */}
+
+      <div
+        className="
+          relative z-10
+        "
+      >
+        {/* ICON */}
+
+        <div
+          className={`
+            w-16 h-16
+            md:w-18 md:h-18
+
+            rounded-2xl
+
+            flex items-center
+            justify-center
+
+            text-2xl
+            md:text-3xl
+
+            bg-gradient-to-br
+            ${item.color}
+
+            text-white
+
+            shadow-[0_0_30px_rgba(34,211,238,0.25)]
+
+            mb-6
+
+            transition duration-500
+
+            group-hover:scale-110
+            group-hover:rotate-3
+          `}
+        >
+          {item.icon}
+        </div>
+
+        {/* NUMBER */}
+
+        <h3
+          className="
+            text-4xl
+            sm:text-5xl
+            md:text-6xl
+
+            font-black
+
+            mb-3
+          "
+        >
+          <span
+            ref={ref}
+
+            className="
+              bg-gradient-to-r
+              from-cyan-400
+              via-blue-500
+              to-cyan-300
+
+              bg-clip-text
+              text-transparent
+            "
+          >
+            {count}
+          </span>
+
+          <span
+            className="
+              text-slate-900
+              dark:text-white
+            "
+          >
+            {item.suffix}
+          </span>
+        </h3>
+
+        {/* LABEL */}
+
+        <p
+          className="
+            text-slate-600
+            dark:text-white/70
+
+            text-xs
+            sm:text-sm
+
+            uppercase
+
+            tracking-[3px]
+
+            leading-relaxed
+          "
+        >
+          {item.label}
+        </p>
+      </div>
+    </motion.div>
+  );
 }
 
 /* ======================================== */
@@ -368,217 +527,9 @@ export default function StatsBar() {
             md:gap-7
           "
         >
-
-          {stats.map((item, i) => {
-
-            const {
-              count,
-              ref,
-            } =
-              useCountUpOnView(
-                item.value
-              );
-
-            return (
-
-              <motion.div
-                key={i}
-
-                initial={{
-                  opacity: 0,
-                  y: 60,
-                }}
-
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-
-                whileHover={{
-                  y: -10,
-                  scale: 1.02,
-                }}
-
-                transition={{
-                  delay: i * 0.12,
-                  duration: 0.5,
-                }}
-
-                viewport={{
-                  once: true,
-                }}
-
-                className="
-                  group
-                  relative
-
-                  overflow-hidden
-
-                  rounded-[30px]
-
-                  border
-
-                  border-slate-200
-                  dark:border-white/10
-
-                  bg-white/80
-                  dark:bg-white/[0.04]
-
-                  backdrop-blur-2xl
-
-                  p-6
-                  md:p-8
-
-                  shadow-[0_10px_40px_rgba(0,0,0,0.08)]
-
-                  dark:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-
-                  transition-all duration-500
-                "
-              >
-
-                {/* CARD GLOW */}
-
-                <div
-                  className={`
-                    absolute inset-0
-
-                    opacity-0
-                    group-hover:opacity-20
-
-                    transition duration-700
-
-                    bg-gradient-to-br
-                    ${item.color}
-
-                    blur-3xl
-                  `}
-                />
-
-                {/* INNER BORDER */}
-
-                <div
-                  className="
-                    absolute inset-[1px]
-
-                    rounded-[30px]
-
-                    border
-
-                    border-white/5
-                  "
-                />
-
-                {/* CONTENT */}
-
-                <div
-                  className="
-                    relative z-10
-                  "
-                >
-
-                  {/* ICON */}
-
-                  <div
-                    className={`
-                      w-16 h-16
-                      md:w-18 md:h-18
-
-                      rounded-2xl
-
-                      flex items-center
-                      justify-center
-
-                      text-2xl
-                      md:text-3xl
-
-                      bg-gradient-to-br
-                      ${item.color}
-
-                      text-white
-
-                      shadow-[0_0_30px_rgba(34,211,238,0.25)]
-
-                      mb-6
-
-                      transition duration-500
-
-                      group-hover:scale-110
-                      group-hover:rotate-3
-                    `}
-                  >
-
-                    {item.icon}
-
-                  </div>
-
-                  {/* NUMBER */}
-
-                  <h3
-                    className="
-                      text-4xl
-                      sm:text-5xl
-                      md:text-6xl
-
-                      font-black
-
-                      mb-3
-                    "
-                  >
-
-                    <span
-                      ref={ref}
-
-                      className="
-                        bg-gradient-to-r
-                        from-cyan-400
-                        via-blue-500
-                        to-cyan-300
-
-                        bg-clip-text
-                        text-transparent
-                      "
-                    >
-                      {count}
-                    </span>
-
-                    <span
-                      className="
-                        text-slate-900
-                        dark:text-white
-                      "
-                    >
-                      {item.suffix}
-                    </span>
-
-                  </h3>
-
-                  {/* LABEL */}
-
-                  <p
-                    className="
-                      text-slate-600
-                      dark:text-white/70
-
-                      text-xs
-                      sm:text-sm
-
-                      uppercase
-
-                      tracking-[3px]
-
-                      leading-relaxed
-                    "
-                  >
-                    {item.label}
-                  </p>
-
-                </div>
-
-              </motion.div>
-            );
-          })}
-
+          {stats.map((item, i) => (
+            <StatItem key={i} item={item} i={i} />
+          ))}
         </div>
 
       </div>
