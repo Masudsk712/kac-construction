@@ -81,11 +81,15 @@ export default function ProjectTimeline() {
 
     <section
       className="
+      section-surface
       relative
 
       py-20 md:py-28
 
       overflow-hidden
+
+      text-slate-900
+      dark:text-white
     "
     >
 

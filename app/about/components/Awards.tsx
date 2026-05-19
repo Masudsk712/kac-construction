@@ -127,12 +127,14 @@ export default function Awards() {
 
     <section
       className="
+      section-surface
       relative
       overflow-hidden
 
       py-16 md:py-20
 
-      text-white
+      text-slate-900
+      dark:text-white
     "
     >
 
@@ -144,10 +146,11 @@ export default function Awards() {
         className="
         absolute inset-0
 
-        bg-gradient-to-br
-        from-[#020617]
-        via-[#07111f]
-        to-[#020617]
+        bg-[var(--bg-soft)]
+        dark:bg-gradient-to-br
+        dark:from-[#020617]
+        dark:via-[#07111f]
+        dark:to-[#020617]
       "
       />
 

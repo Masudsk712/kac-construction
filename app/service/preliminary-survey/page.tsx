@@ -46,10 +46,10 @@ const gallery = [
 
 export default function PreliminarySurveyPage() {
   return (
-    <main className="bg-[#020617] text-white overflow-hidden">
+    <main className="bg-[var(--bg)] text-[var(--text)] overflow-hidden">
 
       {/* HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="page-hero relative min-h-[90vh] flex items-center overflow-hidden">
 
         {/* BG IMAGE */}
         <Image
@@ -61,7 +61,8 @@ export default function PreliminarySurveyPage() {
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 hero-page-overlay" />
+        <div className="absolute inset-0 hero-page-gradient" />
 
         {/* GLOW */}
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[120px]" />

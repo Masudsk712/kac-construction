@@ -58,8 +58,8 @@ export default function FAQSection() {
 
         overflow-hidden
 
-        bg-white
-        dark:bg-[#020617]
+        bg-[var(--bg-soft)]
+        section-surface
         text-slate-900
         dark:text-white
 
@@ -186,8 +186,7 @@ export default function FAQSection() {
               tracking-[4px]
               md:tracking-[6px]
 
-              text-cyan-600
-              dark:text-cyan-300/80
+              section-label
 
               text-[11px]
               md:text-sm
@@ -212,17 +211,7 @@ export default function FAQSection() {
             "
           >
 
-            <span
-              className="
-                bg-gradient-to-r
-                from-cyan-400
-                via-blue-500
-                to-cyan-300
-
-                bg-clip-text
-                text-transparent
-              "
-            >
+            <span className="accent-heading">
               Everything You Need
             </span>
 
@@ -382,8 +371,7 @@ export default function FAQSection() {
                         mb-2
                         md:mb-3
 
-                        text-cyan-600
-                        dark:text-cyan-300/70
+                    accent-link
 
                         text-[10px]
                         md:text-xs
@@ -440,8 +428,7 @@ export default function FAQSection() {
                       items-center
                       justify-center
 
-                      text-cyan-600
-                      dark:text-cyan-300
+                      accent-link
 
                       transition duration-500
 
@@ -547,8 +534,7 @@ export default function FAQSection() {
                               items-center
                               gap-3
 
-                              text-cyan-600
-                              dark:text-cyan-300
+                              accent-link
 
                               text-sm
                               md:text-base

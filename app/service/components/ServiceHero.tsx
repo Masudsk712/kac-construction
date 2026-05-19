@@ -55,10 +55,12 @@ export default function ServiceHero() {
     <section
       id="service-hero"
       className="
+  page-hero
   relative
   min-h-screen
   overflow-hidden
-  bg-[#020617]
+  bg-slate-100
+  dark:bg-[#020617]
   flex items-center
   "
     >
@@ -83,12 +85,13 @@ export default function ServiceHero() {
       "
       />
 
-      {/* DARK OVERLAY */}
+      {/* OVERLAY */}
       <div
         className="
         absolute inset-0
 
-        bg-[#020617]/85
+        bg-white/55
+        dark:bg-[#020617]/85
       "
       />
 
@@ -98,9 +101,12 @@ export default function ServiceHero() {
         absolute inset-0
 
         bg-gradient-to-r
-        from-[#020617]
-        via-[#020617]/80
-        to-[#020617]/20
+        from-slate-100/95
+        via-slate-100/80
+        to-slate-100/20
+        dark:from-[#020617]
+        dark:via-[#020617]/80
+        dark:to-[#020617]/20
       "
       />
 
@@ -224,7 +230,7 @@ export default function ServiceHero() {
 
             tracking-[4px]
 
-            text-white/80
+            text-slate-700 dark:text-white/80
           "
           >
             KUDDUS ALI CONSTRUCTION EPC SERVICES
@@ -277,7 +283,8 @@ export default function ServiceHero() {
 
               tracking-[-3px]
 
-              text-white
+              text-slate-900
+              dark:text-white
             "
             >
 
@@ -341,7 +348,7 @@ export default function ServiceHero() {
               }}
 
               className="
-              text-white/70
+              text-slate-600 dark:text-white/70
 
               text-sm
               md:text-lg
@@ -413,15 +420,19 @@ export default function ServiceHero() {
 
                 rounded-2xl
 
-                border border-white/10
+                border border-slate-300/60
+                dark:border-white/10
 
-                bg-white/[0.04]
+                bg-white/80
+                dark:bg-white/[0.04]
 
                 backdrop-blur-xl
 
-                text-white
+                text-slate-800
+                dark:text-white
 
-                hover:border-cyan-400/20
+                hover:border-cyan-500/30
+                dark:hover:border-cyan-400/20
                 hover:bg-cyan-400/5
 
                 transition-all duration-300
@@ -710,7 +721,7 @@ export default function ServiceHero() {
                 {/* LABEL */}
                 <p
                   className="
-                  text-white/65
+                  text-slate-600 dark:text-white/65
 
                   text-sm
                   md:text-base
@@ -765,7 +776,7 @@ export default function ServiceHero() {
 
         items-center
 
-        text-white/50
+        text-slate-500 dark:text-white/50
 
         hover:text-cyan-400
 

@@ -47,12 +47,16 @@ export default function ProjectStats() {
 
     <section
       className="
+      section-surface
       relative
 
       py-28
       md:py-32
 
       overflow-hidden
+
+      text-slate-900
+      dark:text-white
     "
     >
 

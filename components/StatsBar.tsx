@@ -262,13 +262,7 @@ function StatItem({
             ref={ref}
 
             className="
-              bg-gradient-to-r
-              from-cyan-400
-              via-blue-500
-              to-cyan-300
-
-              bg-clip-text
-              text-transparent
+              accent-number
             "
           >
             {count}
@@ -327,8 +321,8 @@ export default function StatsBar() {
         py-24
         md:py-32
 
-        bg-white
-        dark:bg-[#020617]
+        bg-[var(--bg-soft)]
+        section-surface
 
         text-slate-900
         dark:text-white
@@ -448,8 +442,7 @@ export default function StatsBar() {
 
             tracking-[5px]
 
-            text-cyan-600
-            dark:text-cyan-300/80
+            section-label
 
             mb-5
           "
@@ -496,19 +489,7 @@ export default function StatsBar() {
           "
         >
 
-          <span
-            className="
-              bg-gradient-to-r
-              from-cyan-400
-              via-blue-500
-              to-cyan-300
-
-              bg-clip-text
-              text-transparent
-
-              drop-shadow-[0_0_25px_rgba(34,211,238,0.35)]
-            "
-          >
+          <span className="accent-heading">
             Infrastructure Excellence
           </span>
 

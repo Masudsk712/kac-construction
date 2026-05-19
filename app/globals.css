@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Class-based dark mode only (toggle controls .dark on html) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ============================= */
 /* ROOT THEME */
 /* ============================= */
@@ -16,6 +19,15 @@
   --card: rgba(255, 255, 255, 0.78);
   --border: rgba(15, 23, 42, 0.08);
   --glass: rgba(255, 255, 255, 0.55);
+  --surface-deep: #f4f7fb;
+  --hero-overlay: rgba(255, 255, 255, 0.55);
+  --hero-gradient: #e8eef5;
+  --hero-fade: #f4f7fb;
+  --video-overlay: rgba(15, 23, 42, 0.25);
+  --page-hero-overlay: rgba(255, 255, 255, 0.38);
+  --page-hero-gradient-from: rgba(244, 247, 251, 0.72);
+  --page-hero-gradient-via: rgba(244, 247, 251, 0.42);
+  --page-hero-gradient-to: rgba(244, 247, 251, 0.08);
   color-scheme: light;
 }
 
@@ -33,6 +45,15 @@ html.dark,
   --card: rgba(255, 255, 255, 0.04);
   --border: rgba(255, 255, 255, 0.08);
   --glass: rgba(255, 255, 255, 0.05);
+  --surface-deep: #020617;
+  --hero-overlay: rgba(2, 6, 23, 0.82);
+  --hero-gradient: #020617;
+  --hero-fade: #020617;
+  --video-overlay: rgba(0, 0, 0, 0.6);
+  --page-hero-overlay: rgba(2, 6, 23, 0.72);
+  --page-hero-gradient-from: rgba(2, 6, 23, 0.92);
+  --page-hero-gradient-via: rgba(2, 6, 23, 0.7);
+  --page-hero-gradient-to: rgba(2, 6, 23, 0.25);
   color-scheme: dark;
 }
 
@@ -246,7 +267,22 @@ section {
     );
 
   -webkit-background-clip: text;
+  background-clip: text;
 
+  -webkit-text-fill-color: transparent;
+}
+
+html:not(.dark) .gradient-text {
+  background: linear-gradient(to right, #0e7490, #1d4ed8, #0891b2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(to right, #ffffff, #e2e8f0, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -457,7 +493,7 @@ svg * {
   color: rgba(255, 255, 255, 0.75) !important;
 }
 
-.dark .bg-white {
+.dark .bg-white:not(section):not(main):not(.section-surface) {
   background: rgba(255, 255, 255, 0.04) !important;
 }
 
@@ -475,6 +511,259 @@ svg * {
 .dark .border-slate-200,
 .dark .border-slate-300 {
   border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ============================= */
+/* SECTION THEME UTILITIES */
+/* ============================= */
+
+.section-surface {
+  background-color: var(--bg-soft);
+  color: var(--text);
+}
+
+.accent-heading {
+  color: #0f172a;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.dark .accent-heading {
+  color: #ffffff;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.accent-number {
+  color: #0e7490;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.dark .accent-number {
+  color: #ffffff;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.section-label {
+  color: #0e7490;
+}
+
+.dark .section-label {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.section-badge {
+  color: #0e7490;
+  border-color: rgba(14, 116, 144, 0.25);
+  background: rgba(14, 116, 144, 0.06);
+}
+
+.dark .section-badge {
+  color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.accent-link {
+  color: #0e7490;
+}
+
+.dark .accent-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================= */
+/* LIGHT MODE GLOBAL FIXES */
+/* ============================= */
+
+/* Surface utilities */
+.bg-surface-deep { background-color: var(--surface-deep); }
+.bg-hero-overlay { background-color: var(--hero-overlay); }
+.to-hero-fade { --tw-gradient-to: var(--hero-fade); }
+
+/* Dark-only section backgrounds → light in light mode */
+html:not(.dark) section.bg-\[\#020617\],
+html:not(.dark) main.bg-\[\#020617\] {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* White text on non-hero content sections */
+html:not(.dark) main > section.text-white:not(#hero):not(#service-hero),
+html:not(.dark) main section.text-white:not(#hero):not(#service-hero) {
+  color: var(--text);
+}
+
+html:not(.dark) main section.text-white:not(#hero):not(#service-hero) .text-white,
+html:not(.dark) main section.text-white:not(#hero):not(#service-hero) [class*="text-white\/"] {
+  color: var(--text-soft) !important;
+}
+
+html:not(.dark) main section.text-white:not(#hero):not(#service-hero) h1,
+html:not(.dark) main section.text-white:not(#hero):not(#service-hero) h2,
+html:not(.dark) main section.text-white:not(#hero):not(#service-hero) h3,
+html:not(.dark) main section.text-white:not(#hero):not(#service-hero) h4 {
+  color: var(--text) !important;
+}
+
+/* Sticky tabs bar */
+html:not(.dark) [class*="bg-\\[\\#020617\\]"] {
+  --tw-bg-opacity: 1;
+}
+
+html:not(.dark) nav[class*="020617"],
+html:not(.dark) div[class*="020617\\/85"],
+html:not(.dark) div[class*="020617\\/50"] {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Page loader */
+html:not(.dark) .page-loader-bg {
+  background-color: var(--bg) !important;
+}
+
+/* Light mode: ensure cyan accent text stays visible */
+html:not(.dark) .text-cyan-100,
+html:not(.dark) .text-cyan-200,
+html:not(.dark) .text-cyan-300 {
+  color: #0891b2 !important;
+}
+
+html:not(.dark) .text-cyan-400 {
+  color: #0e7490 !important;
+}
+
+/* Light mode borders on glass cards */
+html:not(.dark) .border-white\/10,
+html:not(.dark) .border-white\/15,
+html:not(.dark) .border-white\/5 {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Light mode: force readable text inside themed sections */
+html:not(.dark) .section-surface {
+  color: #0f172a;
+}
+
+html:not(.dark) .section-surface p,
+html:not(.dark) .section-surface li,
+html:not(.dark) .section-surface span:not([class*="text-white"]) {
+  color: #475569;
+}
+
+html:not(.dark) .section-surface h1,
+html:not(.dark) .section-surface h2,
+html:not(.dark) .section-surface h3,
+html:not(.dark) .section-surface h4 {
+  color: #0f172a;
+}
+
+html:not(.dark) .section-surface .accent-heading {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .section-surface .accent-number {
+  color: #0e7490 !important;
+}
+
+html:not(.dark) .section-surface .section-label,
+html:not(.dark) .section-surface .accent-link {
+  color: #0e7490 !important;
+}
+
+/* Navbar links visible in light mode */
+html:not(.dark) nav a:not([class*="text-cyan"]) {
+  color: #1e293b !important;
+}
+
+html:not(.dark) nav a[class*="text-cyan"] {
+  color: #0891b2 !important;
+}
+
+/* ============================= */
+/* PAGE HERO - VISIBLE PHOTO/VIDEO */
+/* ============================= */
+
+.hero-page-overlay {
+  background-color: var(--page-hero-overlay) !important;
+}
+
+.hero-page-gradient {
+  background: linear-gradient(
+    to right,
+    var(--page-hero-gradient-from),
+    var(--page-hero-gradient-via),
+    var(--page-hero-gradient-to)
+  ) !important;
+}
+
+html:not(.dark) .page-hero img,
+html:not(.dark) #hero video,
+html:not(.dark) #service-hero img {
+  filter: brightness(1.02) saturate(1.08);
+}
+
+html:not(.dark) #hero .brightness-\[0\.88\] {
+  filter: brightness(0.95) saturate(1.05);
+}
+
+/* ============================= */
+/* ALL PAGES - READABLE TEXT (LIGHT MODE) */
+/* ============================= */
+
+html:not(.dark) main {
+  color: var(--text);
+}
+
+html:not(.dark) main section:not(#hero):not(#service-hero):not(.page-hero) [class*="text-white/"] {
+  color: #64748b !important;
+}
+
+html:not(.dark) main section.text-white,
+html:not(.dark) main section.text-white h1,
+html:not(.dark) main section.text-white h2,
+html:not(.dark) main section.text-white h3,
+html:not(.dark) main section.text-white h4,
+html:not(.dark) main section.text-white p,
+html:not(.dark) main section.text-white span {
+  color: #0f172a;
+}
+
+html:not(.dark) main section.text-white [class*="text-white/"] {
+  color: #64748b !important;
+}
+
+html:not(.dark) main section.text-white > div.absolute.bg-gradient-to-br,
+html:not(.dark) main section.text-white > div.absolute[class*="from-\\[\\#020617\\]"] {
+  background: linear-gradient(to bottom right, #f8fafc, #f1f5f9, #f8fafc) !important;
+}
+
+html:not(.dark) main .text-cyan-100,
+html:not(.dark) main .text-cyan-200,
+html:not(.dark) main .text-cyan-300,
+html:not(.dark) main .text-cyan-400 {
+  color: #0e7490 !important;
+}
+
+.dark main .text-cyan-300,
+.dark main .text-cyan-400 {
+  color: #67e8f9;
+}
+
+/* Keep white text on dark image/card overlays */
+html:not(.dark) main [class*="from-black"] [class*="text-white"],
+html:not(.dark) main [class*="bg-black/"] [class*="text-white"],
+html:not(.dark) main [class*="from-\\[\\#020617\\]"] [class*="text-white"] {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+html:not(.dark) main [class*="from-black"] .text-white,
+html:not(.dark) main [class*="bg-black/"] .text-white {
+  color: #ffffff !important;
 }
 
 /* ============================= */

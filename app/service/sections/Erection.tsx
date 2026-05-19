@@ -93,9 +93,12 @@ export default function Erection() {
 
       py-20 md:py-24
 
-      bg-[#020617]
+      section-surface
+      bg-[var(--bg-soft)]
+      dark:bg-[#020617]
 
-      text-white
+      text-slate-900
+      dark:text-white
       "
     >
 

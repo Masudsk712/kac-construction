@@ -86,8 +86,8 @@ export default function WhyChooseUs() {
         py-24
         md:py-32
 
-        bg-white
-        dark:bg-[#020617]
+        bg-[var(--bg-soft)]
+        section-surface
 
         text-slate-900
         dark:text-white
@@ -223,12 +223,8 @@ export default function WhyChooseUs() {
 
               rounded-full
 
-              border border-cyan-400/15
-
-              bg-cyan-400/5
-
-              text-cyan-600
-              dark:text-cyan-300
+              border
+              section-badge
 
               text-[11px]
               sm:text-sm
@@ -263,17 +259,7 @@ export default function WhyChooseUs() {
             "
           >
 
-            <span
-              className="
-                bg-gradient-to-r
-                from-cyan-400
-                via-blue-500
-                to-cyan-300
-
-                bg-clip-text
-                text-transparent
-              "
-            >
+            <span className="accent-heading">
               Engineering Reliability
             </span>
 
@@ -540,8 +526,7 @@ export default function WhyChooseUs() {
 
                 <span
                   className="
-                    text-cyan-600
-                    dark:text-cyan-300
+                    accent-link
 
                     text-xs
                     md:text-sm
@@ -563,8 +548,7 @@ export default function WhyChooseUs() {
                   size={16}
 
                   className="
-                    text-cyan-600
-                    dark:text-cyan-300
+                    accent-link
 
                     transition duration-500
 

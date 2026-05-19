@@ -46,10 +46,10 @@ const gallery = [
 
 export default function DetailedSurveyPage() {
   return (
-    <main className="bg-[#020617] text-white overflow-hidden">
+    <main className="bg-[var(--bg)] text-[var(--text)] overflow-hidden">
 
       {/* HERO */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="page-hero relative min-h-[90vh] flex items-center overflow-hidden">
 
         <Image
           src="/service/DetailSurvey/DetailSurvey4.webp"
@@ -59,7 +59,8 @@ export default function DetailedSurveyPage() {
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/75" />
+        <div className="absolute inset-0 hero-page-overlay" />
+        <div className="absolute inset-0 hero-page-gradient" />
 
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[120px]" />
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[120px]" />

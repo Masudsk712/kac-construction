@@ -219,20 +219,25 @@ export default function StickyTabs() {
               top-[72px]
               left-0
 
-              bg-[#020617]/85
+              bg-white/90
+              dark:bg-[#020617]/85
               backdrop-blur-3xl
 
-              border-b border-white/10
+              border-b border-slate-200/80
+              dark:border-white/10
 
-              shadow-[0_20px_60px_rgba(0,0,0,0.55)]
+              shadow-[0_12px_40px_rgba(15,23,42,0.08)]
+              dark:shadow-[0_20px_60px_rgba(0,0,0,0.55)]
             `
             : `
               relative
 
-              bg-[#020617]/50
+              bg-white/70
+              dark:bg-[#020617]/50
               backdrop-blur-2xl
 
-              border-b border-white/5
+              border-b border-slate-200/60
+              dark:border-white/5
             `
           }
         `}

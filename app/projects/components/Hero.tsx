@@ -51,9 +51,11 @@ export default function Hero() {
     <section
       id="hero"
       className="
+      page-hero
       relative
       min-h-screen
-      bg-[#020617]
+      bg-slate-100
+      dark:bg-[#020617]
       flex items-center
     "
     >
@@ -75,12 +77,13 @@ export default function Hero() {
 
         scale-105
 
-        opacity-70
+        opacity-90
+        dark:opacity-70
       "
       />
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-[#020617]/80" />
+      {/* OVERLAY */}
+      <div className="absolute inset-0 bg-white/55 dark:bg-[#020617]/80" />
 
       {/* GRADIENT */}
       <div
@@ -88,9 +91,12 @@ export default function Hero() {
         absolute inset-0
 
         bg-gradient-to-r
-        from-[#020617]
-        via-[#020617]/75
-        to-[#020617]/30
+        from-slate-100/95
+        via-slate-100/75
+        to-slate-100/30
+        dark:from-[#020617]
+        dark:via-[#020617]/75
+        dark:to-[#020617]/30
       "
       />
 
@@ -263,7 +269,8 @@ export default function Hero() {
 
               tracking-[-4px]
 
-              text-white
+              text-slate-900
+              dark:text-white
             "
             >
 
@@ -782,7 +789,7 @@ export default function Hero() {
 
         flex flex-col items-center
 
-        text-white/50
+        text-slate-500 dark:text-white/50
 
         hover:text-cyan-400
 

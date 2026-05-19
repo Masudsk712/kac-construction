@@ -86,8 +86,8 @@ export default function ServicesSection() {
         py-24
         md:py-32
 
-        bg-white
-        dark:bg-[#020617]
+        bg-[var(--bg-soft)]
+        section-surface
       "
     >
 
@@ -218,12 +218,8 @@ export default function ServicesSection() {
 
               rounded-full
 
-              border border-cyan-400/15
-
-              bg-cyan-400/5
-
-              text-cyan-600
-              dark:text-cyan-300
+              border
+              section-badge
 
               text-[11px]
               sm:text-sm
@@ -258,17 +254,7 @@ export default function ServicesSection() {
             "
           >
 
-            <span
-              className="
-                bg-gradient-to-r
-                from-cyan-400
-                via-blue-500
-                to-cyan-300
-
-                bg-clip-text
-                text-transparent
-              "
-            >
+            <span className="accent-heading">
               Engineering Services
             </span>
 
@@ -495,7 +481,7 @@ export default function ServicesSection() {
 
                     tracking-[3px]
 
-                    text-cyan-300
+                    text-white
                   "
                 >
                   KAC Service
@@ -528,8 +514,8 @@ export default function ServicesSection() {
 
                     transition duration-300
 
-                    group-hover:text-cyan-500
-                    dark:group-hover:text-cyan-300
+                    group-hover:text-slate-800
+                    dark:group-hover:text-white
                   "
                 >
                   {service.title}
@@ -575,8 +561,7 @@ export default function ServicesSection() {
 
                   <span
                     className="
-                      text-cyan-600
-                      dark:text-cyan-300
+                      accent-link
 
                       text-sm
                       uppercase
@@ -596,8 +581,7 @@ export default function ServicesSection() {
                     size={18}
 
                     className="
-                      text-cyan-600
-                      dark:text-cyan-300
+                      accent-link
 
                       transition duration-500
 

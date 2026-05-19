@@ -18,10 +18,14 @@ export default function ProjectCTA() {
 
     <section
       className="
+      section-surface
       relative
       overflow-hidden
 
       py-24 md:py-32
+
+      text-slate-900
+      dark:text-white
     "
     >
 

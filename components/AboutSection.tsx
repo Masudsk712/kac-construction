@@ -42,8 +42,8 @@ export default function AboutSection() {
         py-24
         md:py-32
 
-        bg-white
-        dark:bg-[#020617]
+        bg-[var(--bg-soft)]
+        section-surface
 
         text-slate-900
         dark:text-white
@@ -179,9 +179,9 @@ export default function AboutSection() {
 
                 rounded-full
 
-                border border-cyan-400/20
+                border
+                section-badge
 
-                bg-cyan-400/5
                 backdrop-blur-xl
 
                 mb-8
@@ -194,7 +194,8 @@ export default function AboutSection() {
 
                   rounded-full
 
-                  bg-cyan-400
+                  bg-cyan-600
+                  dark:bg-white
 
                   animate-pulse
                 "
@@ -208,8 +209,7 @@ export default function AboutSection() {
                   tracking-[4px]
                   uppercase
 
-                  text-cyan-600
-                  dark:text-cyan-200
+                  section-label
                 "
               >
                 About Us
@@ -253,19 +253,7 @@ export default function AboutSection() {
               "
             >
 
-              <span
-                className="
-                  bg-gradient-to-r
-                  from-cyan-400
-                  via-sky-500
-                  to-blue-500
-
-                  bg-clip-text
-                  text-transparent
-
-                  drop-shadow-[0_0_25px_rgba(34,211,238,0.25)]
-                "
-              >
+              <span className="accent-heading">
                 A Decade Of
                 <br />
                 Dedication
@@ -312,8 +300,8 @@ export default function AboutSection() {
 
               <span
                 className="
-                  text-cyan-600
-                  dark:text-cyan-300
+                  text-slate-800
+                  dark:text-white
 
                   font-semibold
                 "
@@ -468,8 +456,8 @@ export default function AboutSection() {
 
                     <CheckCircle2
                       className="
-                        text-cyan-500
-                        dark:text-cyan-400
+                        text-slate-700
+                        dark:text-white
                       "
                       size={18}
                     />
@@ -795,7 +783,7 @@ export default function AboutSection() {
 
                         font-black
 
-                        text-cyan-300
+                        text-white
 
                         leading-none
 
@@ -812,7 +800,7 @@ export default function AboutSection() {
 
                         leading-[1.4]
 
-                        text-white/70
+                        text-white/80
                       "
                     >
                       Years of
@@ -846,7 +834,7 @@ export default function AboutSection() {
 
                         font-black
 
-                        text-cyan-300
+                        text-white
 
                         leading-none
 
@@ -863,7 +851,7 @@ export default function AboutSection() {
 
                         leading-[1.4]
 
-                        text-white/70
+                        text-white/80
                       "
                     >
                       Transmission

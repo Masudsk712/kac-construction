@@ -22,7 +22,8 @@ export default function Strengths() {
 
     <section
       className="
-      bg-[var(--bg)]
+      section-surface
+      bg-[var(--bg-soft)]
       text-[var(--text)]
 
       py-28

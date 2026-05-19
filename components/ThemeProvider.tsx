@@ -12,7 +12,7 @@ export default function ThemeProvider({
 
     <NextThemesProvider
       attribute="class"
-      defaultTheme="dark"
+      defaultTheme="light"
       enableSystem={true}
       enableColorScheme={true}
       storageKey="kac-theme"

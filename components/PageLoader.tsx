@@ -54,7 +54,8 @@ export default function PageLoader() {
 
             z-[999999]
 
-            bg-[#020617]
+            page-loader-bg
+            bg-[var(--bg)]
           "
         >
 

@@ -68,12 +68,16 @@ export default function Timeline() {
 
     <section
       className="
+      section-surface
       section-premium
 
       py-16 md:py-20
 
       relative
       overflow-hidden
+
+      text-slate-900
+      dark:text-white
     "
     >
 

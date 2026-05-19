@@ -231,9 +231,11 @@ export default function StickyTabs() {
 
           z-[60]
 
-          border-y border-white/10
+          border-y border-slate-200/80
+          dark:border-white/10
 
-          bg-[#020617]/85
+          bg-white/90
+          dark:bg-[#020617]/85
 
           backdrop-blur-3xl
 

@@ -133,6 +133,7 @@ export default function MediaPage() {
       {/* HERO SECTION */}
       <section
         className="
+        page-hero
         relative
         min-h-screen
         overflow-hidden
@@ -165,18 +166,10 @@ export default function MediaPage() {
         </AnimatePresence>
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-[var(--bg)]/80" />
+        <div className="absolute inset-0 hero-page-overlay" />
 
         {/* LEFT GRADIENT */}
-        <div
-          className="
-          absolute inset-0
-          bg-gradient-to-r
-          from-[var(--bg)]
-          via-[var(--bg)]/80
-          to-transparent
-        "
-        />
+        <div className="absolute inset-0 hero-page-gradient" />
 
         {/* CONTENT */}
         <div

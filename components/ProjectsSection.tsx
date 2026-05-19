@@ -117,8 +117,8 @@ export default function ProjectsSection() {
         py-24
         md:py-32
 
-        bg-white
-        dark:bg-[#020617]
+        bg-[var(--bg-soft)]
+        section-surface
       "
     >
 
@@ -237,8 +237,7 @@ export default function ProjectsSection() {
 
               tracking-[6px]
 
-              text-cyan-600
-              dark:text-cyan-300/80
+              section-label
 
               text-[11px]
               sm:text-sm
@@ -263,17 +262,7 @@ export default function ProjectsSection() {
             "
           >
 
-            <span
-              className="
-                bg-gradient-to-r
-                from-cyan-400
-                via-blue-500
-                to-cyan-300
-
-                bg-clip-text
-                text-transparent
-              "
-            >
+            <span className="accent-heading">
               Successfully Delivered
             </span>
 
@@ -454,7 +443,7 @@ export default function ProjectsSection() {
 
                     flex items-center justify-center
 
-                    text-cyan-300
+                    text-white
                   "
                 >
                   {project.icon}
@@ -486,7 +475,7 @@ export default function ProjectsSection() {
                     uppercase
                     tracking-[3px]
 
-                    text-cyan-300
+                    text-white
                   "
                 >
                   Completed

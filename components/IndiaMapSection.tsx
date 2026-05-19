@@ -246,8 +246,8 @@ export default function IndiaMapSection() {
       relative
       overflow-hidden
 
-      bg-white
-      dark:bg-[#020617]
+      bg-[var(--bg-soft)]
+      section-surface
       text-slate-900
       dark:text-white
 
@@ -354,8 +354,7 @@ export default function IndiaMapSection() {
 
             tracking-[6px]
 
-            text-cyan-600
-            dark:text-cyan-300/80
+            section-label
 
             text-sm
 
@@ -377,17 +376,7 @@ export default function IndiaMapSection() {
             mb-6
           "
           >
-            <span
-              className="
-              bg-gradient-to-r
-              from-cyan-300
-              via-blue-400
-              to-cyan-200
-
-              bg-clip-text
-              text-transparent
-            "
-            >
+            <span className="accent-heading">
               Nationwide Project
             </span>
 
@@ -497,7 +486,7 @@ md:rounded-2xl
 
               flex items-center justify-center
 
-              text-cyan-300
+              text-slate-800 dark:text-white
 
               mb-4
 md:mb-8
@@ -574,7 +563,7 @@ md:p-5
 
                     flex items-center justify-center
 
-                    text-cyan-300
+                    text-slate-800 dark:text-white
                   "
                   >
                     <TowerControl size={20} />
@@ -600,7 +589,7 @@ sm:text-2xl
 md:text-3xl
                   font-black
 
-                  text-cyan-300
+                  text-slate-800 dark:text-white
                 "
                   data-value={
                     stateData[active]
@@ -737,7 +726,7 @@ md:text-3xl
   items-center
   gap-3
 
-  text-cyan-300
+  text-slate-800 dark:text-white
   font-semibold
 
   transition duration-300

@@ -47,8 +47,8 @@ export default function ClientsSection() {
         relative
         overflow-hidden
 
-        bg-slate-50
-        dark:bg-[#020617]
+        bg-[var(--bg-soft)]
+        section-surface
         text-slate-900
         dark:text-white
 
@@ -76,7 +76,7 @@ export default function ClientsSection() {
         }}
       />
 
-      <div className="absolute inset-0 bg-slate-50/92 dark:bg-[#020617]/92" />
+      <div className="absolute inset-0 bg-white/95 dark:bg-[#020617]/92" />
 
       {/* GLOW */}
       <div className="absolute inset-0 pointer-events-none">
@@ -230,8 +230,7 @@ export default function ClientsSection() {
               tracking-[5px]
               md:tracking-[6px]
 
-              text-cyan-600
-              dark:text-cyan-300/80
+              section-label
 
               text-[11px]
               md:text-sm
@@ -258,17 +257,7 @@ export default function ClientsSection() {
             "
           >
 
-            <span
-              className="
-                bg-gradient-to-r
-                from-cyan-400
-                via-blue-500
-                to-cyan-300
-
-                bg-clip-text
-                text-transparent
-              "
-            >
+            <span className="accent-heading">
               Our Valuable Clients
             </span>
 
@@ -368,8 +357,7 @@ export default function ClientsSection() {
 
                 flex items-center justify-center
 
-                text-cyan-600
-                dark:text-cyan-300
+                accent-link
 
                 mb-4
                 md:mb-5
@@ -460,8 +448,7 @@ export default function ClientsSection() {
 
                 flex items-center justify-center
 
-                text-cyan-600
-                dark:text-cyan-300
+                accent-link
 
                 mb-4
                 md:mb-5
@@ -555,8 +542,7 @@ export default function ClientsSection() {
 
                 flex items-center justify-center
 
-                text-cyan-600
-                dark:text-cyan-300
+                accent-link
 
                 mb-4
                 md:mb-5

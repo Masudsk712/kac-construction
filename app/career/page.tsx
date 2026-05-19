@@ -129,6 +129,7 @@ export default function CareerPage() {
       
       <section
         className="
+        page-hero
         relative
 
         min-h-screen
@@ -154,19 +155,10 @@ export default function CareerPage() {
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-[var(--bg)]/88" />
+        <div className="absolute inset-0 hero-page-overlay" />
 
         {/* GRADIENT */}
-        <div
-          className="
-          absolute inset-0
-
-          bg-gradient-to-r
-          from-[var(--bg)]
-          via-[var(--bg)]/85
-          to-[var(--bg)]/30
-        "
-        />
+        <div className="absolute inset-0 hero-page-gradient" />
 
         {/* CONTENT */}
         <div

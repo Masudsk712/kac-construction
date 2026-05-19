@@ -94,12 +94,13 @@ export default function Navbar() {
 
   const linkStyle = (path: string) =>
     `relative transition-all duration-300 ${pathname === path
-      ? "text-cyan-400"
+      ? "text-cyan-600 dark:text-cyan-400"
       : `
           text-slate-800
           dark:text-white/85
 
-          hover:text-cyan-400
+          hover:text-cyan-600
+          dark:hover:text-cyan-400
         `
     }`
 

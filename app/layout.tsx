@@ -177,10 +177,25 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className="
-        scroll-smooth
-      "
+      className="scroll-smooth"
     >
+
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+(function() {
+  try {
+    var t = localStorage.getItem('kac-theme');
+    var d = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (d) document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
+  } catch (e) {}
+})();
+            `.trim(),
+          }}
+        />
+      </head>
 
       <body
         className={`

@@ -129,9 +129,12 @@ export default function Foundation() {
 
       py-20 md:py-24
 
-      bg-[#020617]
+      section-surface
+      bg-[var(--bg-soft)]
+      dark:bg-[#020617]
 
-      text-white
+      text-slate-900
+      dark:text-white
       "
     >
 
@@ -145,7 +148,8 @@ export default function Foundation() {
 
         opacity-[0.04]
 
-        [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
+        [background-image:linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)]
+        dark:[background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
 
         [background-size:60px_60px]
         "

@@ -211,7 +211,8 @@ export default function ServiceStickyTabs() {
                 top-[72px]
                 left-0
 
-                bg-[#020617]/85
+                bg-white/90
+                dark:bg-[#020617]/85
 
                 backdrop-blur-3xl
 
@@ -222,7 +223,8 @@ export default function ServiceStickyTabs() {
               : `
                 relative
 
-                bg-[#020617]/50
+                bg-white/70
+                dark:bg-[#020617]/50
 
                 backdrop-blur-2xl
 

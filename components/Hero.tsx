@@ -68,7 +68,9 @@ export default function Hero() {
 
         overflow-hidden
 
-        text-white
+        page-hero
+        text-slate-900
+        dark:text-white
       "
     >
 
@@ -111,7 +113,8 @@ export default function Hero() {
         className="
           absolute inset-0
 
-          bg-black/60
+          bg-white/30
+          dark:bg-black/60
 
           z-[1]
 
@@ -124,9 +127,12 @@ export default function Hero() {
           absolute inset-0
 
           bg-gradient-to-b
-          from-[#020617]/50
-          via-[#020617]/10
-          to-[#020617]
+          from-white/40
+          via-white/10
+          to-[var(--hero-fade)]
+          dark:from-[#020617]/50
+          dark:via-[#020617]/10
+          dark:to-[#020617]
 
           z-[2]
 
@@ -226,9 +232,11 @@ export default function Hero() {
 
             rounded-full
 
-            border border-cyan-400/20
+            border border-cyan-400/30
+            dark:border-cyan-400/20
 
-            bg-white/5
+            bg-white/70
+            dark:bg-white/5
             backdrop-blur-xl
 
             shadow-[0_0_40px_rgba(34,211,238,0.08)]
@@ -256,7 +264,8 @@ export default function Hero() {
 
               tracking-[5px]
 
-              text-cyan-100
+              text-cyan-700
+              dark:text-cyan-100
             "
           >
             Powering Progress Since 2010
@@ -331,14 +340,18 @@ export default function Hero() {
               relative z-10
 
               bg-gradient-to-r
-              from-white
-              via-cyan-100
-              to-cyan-300
+              from-slate-900
+              via-cyan-700
+              to-cyan-500
+              dark:from-white
+              dark:via-cyan-100
+              dark:to-cyan-300
 
               bg-clip-text
               text-transparent
 
-              drop-shadow-[0_0_35px_rgba(34,211,238,0.35)]
+              drop-shadow-[0_0_35px_rgba(34,211,238,0.2)]
+              dark:drop-shadow-[0_0_35px_rgba(34,211,238,0.35)]
             "
           >
             KUDDUS ALI
@@ -371,9 +384,11 @@ export default function Hero() {
 
             font-black
 
-            text-white
+            text-slate-900
+            dark:text-white
 
-            drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]
+            drop-shadow-none
+            dark:drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]
           "
         >
           Powering India’s Future
@@ -404,7 +419,8 @@ export default function Hero() {
 
             leading-[1.9]
 
-            text-white/75
+            text-slate-700
+            dark:text-white/75
           "
         >
 
@@ -496,21 +512,28 @@ export default function Hero() {
 
                 rounded-full
 
-                border border-white/15
+                border border-slate-300/60
+                dark:border-white/15
 
-                bg-white/10
+                bg-white/80
+                dark:bg-white/10
                 backdrop-blur-xl
 
-                text-white
+                text-slate-800
+                dark:text-white
                 font-semibold
 
-                shadow-[0_0_25px_rgba(255,255,255,0.05)]
+                shadow-[0_8px_30px_rgba(15,23,42,0.08)]
+                dark:shadow-[0_0_25px_rgba(255,255,255,0.05)]
 
                 transition-all duration-300
 
-                hover:bg-white/20
-                hover:border-cyan-400/40
-                hover:text-cyan-300
+                hover:bg-white
+                dark:hover:bg-white/20
+                hover:border-cyan-500/40
+                dark:hover:border-cyan-400/40
+                hover:text-cyan-600
+                dark:hover:text-cyan-300
               "
             >
               Contact Us
@@ -555,9 +578,11 @@ export default function Hero() {
           flex flex-col
           items-center
 
-          text-white/50
+          text-slate-600
+          dark:text-white/50
 
-          hover:text-cyan-300
+          hover:text-cyan-600
+          dark:hover:text-cyan-300
 
           transition-all duration-300
         "
@@ -605,7 +630,7 @@ export default function Hero() {
 
           bg-gradient-to-b
           from-transparent
-          to-[#020617]
+          to-[var(--hero-fade)]
 
           z-[5]
 

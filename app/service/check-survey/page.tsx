@@ -120,8 +120,11 @@ export default function PreliminarySurveyPage() {
       className="
       relative
       overflow-hidden
-      bg-[#020617]
-      text-white
+      section-surface
+      bg-[var(--bg-soft)]
+      dark:bg-[#020617]
+      text-slate-900
+      dark:text-white
     "
     >
 
@@ -141,6 +144,7 @@ export default function PreliminarySurveyPage() {
 
       <section
         className="
+        page-hero
         relative
         min-h-screen
         flex items-center
@@ -161,18 +165,10 @@ export default function PreliminarySurveyPage() {
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-[#020617]/80" />
+        <div className="absolute inset-0 hero-page-overlay" />
 
         {/* GRADIENT */}
-        <div
-          className="
-          absolute inset-0
-          bg-gradient-to-r
-          from-[#020617]
-          via-[#020617]/70
-          to-[#020617]/30
-        "
-        />
+        <div className="absolute inset-0 hero-page-gradient" />
 
         {/* GLOW */}
         <div

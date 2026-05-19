@@ -83,10 +83,14 @@ export default function CompletedProjects() {
 
     <section
       className="
+      section-surface
       relative
       overflow-hidden
 
       py-24 md:py-28
+
+      text-slate-900
+      dark:text-white
     "
     >
 

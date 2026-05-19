@@ -142,9 +142,12 @@ export default function Stringing() {
 
       py-24 md:py-28
 
-      bg-[#020617]
+      section-surface
+      bg-[var(--bg-soft)]
+      dark:bg-[#020617]
 
-      text-white
+      text-slate-900
+      dark:text-white
       "
     >
 

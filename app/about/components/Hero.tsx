@@ -44,10 +44,12 @@ export default function Hero() {
     <section
       id="hero"
       className="
+      page-hero
       relative
       min-h-screen
       overflow-hidden
-      bg-[#020617]
+      bg-slate-100
+      dark:bg-[#020617]
       flex items-center
       "
     >
@@ -65,12 +67,13 @@ export default function Hero() {
         object-cover
         object-center
         scale-105
-        brightness-[0.45]
+        brightness-[0.88]
+        dark:brightness-[0.45]
         "
       />
 
       {/* VIDEO STYLE OVERLAY */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-white/45 dark:bg-black/40" />
 
       {/* GRADIENT */}
       <div
@@ -78,9 +81,12 @@ export default function Hero() {
         absolute inset-0
 
         bg-gradient-to-r
-        from-[#020617]
-        via-[#020617]/70
-        to-[#020617]/30
+        from-slate-100/95
+        via-slate-100/70
+        to-slate-100/30
+        dark:from-[#020617]
+        dark:via-[#020617]/70
+        dark:to-[#020617]/30
         "
       />
 
@@ -180,7 +186,7 @@ export default function Hero() {
             className="
             text-[11px]
             tracking-[5px]
-            text-white/80
+            text-slate-700 dark:text-white/80
           "
           >
             ABOUT KUDDUS ALI CONSTRUCTION
@@ -217,7 +223,8 @@ export default function Hero() {
 
             tracking-[-5px]
 
-            text-white
+            text-slate-900
+            dark:text-white
           "
           >
 
@@ -294,7 +301,7 @@ export default function Hero() {
             text-lg
             md:text-[22px]
 
-            text-white/70
+            text-slate-600 dark:text-white/70
 
             leading-[2]
 
@@ -424,7 +431,8 @@ export default function Hero() {
 
                   font-black
 
-                  text-white
+                  text-slate-900
+                  dark:text-white
 
                   mb-4
                 "
@@ -446,7 +454,7 @@ export default function Hero() {
                 {/* LABEL */}
                 <p
                   className="
-                  text-white/65
+                  text-slate-600 dark:text-white/65
                   text-lg
                 "
                 >
@@ -494,7 +502,7 @@ export default function Hero() {
 
         flex flex-col items-center
 
-        text-white/50
+        text-slate-500 dark:text-white/50
 
         hover:text-cyan-400
 
