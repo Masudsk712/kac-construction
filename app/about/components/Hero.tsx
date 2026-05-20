@@ -60,7 +60,7 @@ export default function Hero() {
 
       <Image
         src="/about/AboutTower1.webp"
-        alt="About Hero"
+        alt="Kuddus Ali Construction - About Our Transmission Line Infrastructure Company"
         fill
         priority
         className="

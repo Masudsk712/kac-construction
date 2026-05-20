@@ -66,7 +66,7 @@ export default function Hero() {
 
       <Image
         src="/projects/Project1.webp"
-        alt="Projects Hero"
+        alt="Kuddus Ali Construction - Transmission Line Projects Portfolio"
 
         fill
         priority

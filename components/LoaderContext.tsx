@@ -4,9 +4,16 @@ import {
   createContext,
   useContext,
   useState,
+  type Dispatch,
+  type SetStateAction,
 } from "react";
 
-const LoaderContext = createContext<any>(null);
+interface LoaderContextValue {
+  loading: boolean;
+  setLoading: Dispatch<SetStateAction<boolean>>;
+}
+
+const LoaderContext = createContext<LoaderContextValue | null>(null);
 
 export function LoaderProvider({
   children,
@@ -14,7 +21,8 @@ export function LoaderProvider({
   children: React.ReactNode;
 }) {
   const [loading, setLoading] =
-    useState(() => true);
+    useState<boolean>(true);
+
   return (
     <LoaderContext.Provider
       value={{
@@ -27,6 +35,8 @@ export function LoaderProvider({
   );
 }
 
-export function useLoader() {
-  return useContext(LoaderContext);
+export function useLoader(): LoaderContextValue {
+  const ctx = useContext(LoaderContext);
+  if (!ctx) throw new Error("useLoader must be used within LoaderProvider");
+  return ctx;
 }

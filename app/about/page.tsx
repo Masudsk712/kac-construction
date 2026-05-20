@@ -11,61 +11,46 @@ import Awards from "./components/Awards"
 import CTASection from "@/components/CTASection"
 
 export default function AboutPage() {
-
   return (
-
-    <div
-  className="
-  bg-[var(--bg)]
-  text-[var(--text)]
-  relative
-  overflow-visible
-  z-10
-"
->
+    <div className="relative z-10 overflow-visible bg-[var(--bg)] text-[var(--text)]">
       {/* HERO */}
       <Hero />
 
-      {/* STICKY */}
+      {/* STICKY TABS */}
       <StickyTabs />
 
       {/* CONTENT */}
       <div className="relative z-10">
-
-        <section id="overview">
+        <section id="overview" className="py-24">
           <Overview />
         </section>
 
-        <section id="strengths">
+        <section id="strengths" className="py-24">
           <Strengths />
         </section>
 
-        <section id="timeline">
+        <section id="timeline" className="py-24">
           <Timeline />
         </section>
 
-        <section id="mission">
+        <section id="mission" className="py-24">
           <MissionVision />
         </section>
 
-        <section id="md-message">
+        <section id="md-message" className="py-24">
           <MDMessage />
         </section>
 
-        <section id="leadership">
+        <section id="leadership" className="py-24">
           <Leadership />
         </section>
 
-        <section id="awards">
+        <section id="awards" className="py-24">
           <Awards />
         </section>
 
         <CTASection />
-
       </div>
-
     </div>
-
-  )
-
+  );
 }

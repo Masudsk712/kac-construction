@@ -1,13 +1,27 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/", "/_next/", "/_error"],
+      },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+        disallow: ["/api/"],
+      },
+      {
+        userAgent: "Googlebot-Image",
+        allow: ["/*.webp", "/*.jpg", "/*.jpeg", "/*.png", "/*.avif"],
+      },
+    ],
 
-      allow: "/",
-    },
+    sitemap: `${siteConfig.url}/sitemap.xml`,
 
-    sitemap: "https://kacgroups.com/sitemap.xml",
+    host: siteConfig.url,
   };
 }

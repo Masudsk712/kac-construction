@@ -63,8 +63,8 @@ export default function FAQSection() {
         text-slate-900
         dark:text-white
 
-        py-24
-        md:py-28
+        py-32
+        md:py-44
       "
     >
 

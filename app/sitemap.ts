@@ -1,48 +1,52 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://kacgroups.com";
+  const baseUrl = siteConfig.url;
+  const now = new Date();
 
   return [
+    // 🔥 Main Pages
     {
       url: baseUrl,
-      lastModified: new Date(),
-      priority: 1,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 1.0,
     },
-
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      priority: 0.8,
-    },
-
-    {
-      url: `${baseUrl}/service`,
-      lastModified: new Date(),
+      lastModified: now,
+      changeFrequency: "monthly",
       priority: 0.9,
     },
-
+    {
+      url: `${baseUrl}/service`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     {
       url: `${baseUrl}/projects`,
-      lastModified: new Date(),
+      lastModified: now,
+      changeFrequency: "weekly",
       priority: 0.8,
     },
-
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      lastModified: now,
+      changeFrequency: "monthly",
       priority: 0.8,
     },
-
     {
       url: `${baseUrl}/career`,
-      lastModified: new Date(),
+      lastModified: now,
+      changeFrequency: "weekly",
       priority: 0.7,
     },
-
     {
       url: `${baseUrl}/media`,
-      lastModified: new Date(),
+      lastModified: now,
+      changeFrequency: "weekly",
       priority: 0.6,
     },
   ];

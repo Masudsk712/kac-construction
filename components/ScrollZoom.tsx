@@ -20,24 +20,27 @@ export default function ScrollZoom({
 
   const rawScale = useTransform(
     scrollYProgress,
-    [0, 0.5, 1],
-    [0.92, 1, 0.92]
+    [0, 0.4, 0.6, 1],
+    [0.94, 1, 1, 0.94]
   )
 
   const rawOpacity = useTransform(
     scrollYProgress,
-    [0, 0.25, 0.75, 1],
-    [0.6, 1, 1, 0.6]
+    [0, 0.2, 0.8, 1],
+    [0.55, 1, 1, 0.55]
   )
 
+  // Smoother spring config for a premium, fluid feel
   const scale = useSpring(rawScale, {
-    stiffness: 90,
-    damping: 22,
+    stiffness: 60,
+    damping: 20,
+    mass: 1.2,
   })
 
   const opacity = useSpring(rawOpacity, {
-    stiffness: 90,
-    damping: 22,
+    stiffness: 60,
+    damping: 20,
+    mass: 1.2,
   })
 
   if (reducedMotion) {
@@ -48,7 +51,7 @@ export default function ScrollZoom({
     <motion.div
       ref={ref}
       style={{ scale, opacity }}
-      className="relative w-full py-6 md:py-10"
+      className="relative w-full"
     >
       {children}
     </motion.div>

@@ -7,6 +7,8 @@ import ProjectsSection from "@/components/ProjectsSection"
 import VideoSection from "@/components/VideoSection"
 import CTASection from "@/components/CTASection"
 import ScrollZoom from "@/components/ScrollZoom"
+import SafetySection from "@/components/SafetySection"
+import MachinerySection from "@/components/MachinerySection"
 
 import StatsBar from "@/components/StatsBar"
 import WhyChooseUs from "@/components/WhyChooseUs"
@@ -58,6 +60,16 @@ export default function HomePage() {
       {/* PROJECTS */}
       <ScrollZoom>
         <ProjectsSection />
+      </ScrollZoom>
+
+      {/* SAFETY */}
+      <ScrollZoom>
+        <SafetySection />
+      </ScrollZoom>
+
+      {/* MACHINERY */}
+      <ScrollZoom>
+        <MachinerySection />
       </ScrollZoom>
 
       {/* CLIENTS */}

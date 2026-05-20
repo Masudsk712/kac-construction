@@ -9,6 +9,8 @@ import {
   Play,
 } from "lucide-react";
 
+import { ease } from "@/lib/animations";
+
 export default function VideoSection() {
 
   return (
@@ -38,6 +40,7 @@ export default function VideoSection() {
         loop
         playsInline
         preload="metadata"
+        poster="/home/SitePic.webp"
 
         className="
           absolute inset-0
@@ -164,37 +167,16 @@ export default function VideoSection() {
 
         {/* SMALL LABEL */}
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-
-          transition={{
-            duration: 0.7,
-          }}
-
-          viewport={{
-            once: true,
-          }}
-
+          initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.7, ease: ease.premiumOut }}
+          viewport={{ once: true }}
           className="
-            mb-5
-            md:mb-6
-
-            px-4 py-2
-            md:px-5 md:py-2
-
+            mb-5 md:mb-6
+            px-4 py-2 md:px-5 md:py-2
             rounded-full
-
             border border-white/10
-
-            bg-white/5
-            backdrop-blur-xl
+            bg-white/5 backdrop-blur-xl
           "
         >
 
@@ -219,23 +201,10 @@ export default function VideoSection() {
 
         {/* HEADING */}
         <motion.h2
-          initial={{
-            opacity: 0,
-            y: 60,
-          }}
-
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-
-          transition={{
-            duration: 1,
-          }}
-
-          viewport={{
-            once: true,
-          }}
+          initial={{ opacity: 0, y: 60, filter: "blur(4px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.9, ease: ease.premiumOut }}
+          viewport={{ once: true }}
 
           className="
             max-w-6xl
@@ -280,24 +249,10 @@ export default function VideoSection() {
 
         {/* DESCRIPTION */}
         <motion.p
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-
-          transition={{
-            delay: 0.2,
-            duration: 0.8,
-          }}
-
-          viewport={{
-            once: true,
-          }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.7, ease: ease.premiumOut }}
+          viewport={{ once: true }}
 
           className="
             mt-6
@@ -327,24 +282,10 @@ export default function VideoSection() {
 
         {/* BUTTONS */}
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 40,
-          }}
-
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-
-          transition={{
-            delay: 0.4,
-            duration: 0.8,
-          }}
-
-          viewport={{
-            once: true,
-          }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.7, ease: ease.premiumOut }}
+          viewport={{ once: true }}
 
           className="
             mt-10

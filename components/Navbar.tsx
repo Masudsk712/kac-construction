@@ -93,9 +93,18 @@ export default function Navbar() {
   /* ======================================== */
 
   const linkStyle = (path: string) =>
-    `relative transition-all duration-300 ${pathname === path
-      ? "text-cyan-600 dark:text-cyan-400"
-      : `
+    `relative transition-all duration-300 ${
+      pathname === path ||
+      (path !== "/" && pathname.startsWith(path))
+        ? `
+          text-cyan-600 dark:text-cyan-400
+          after:absolute after:bottom-[-6px] after:left-0 after:h-[3px] after:w-full
+          after:rounded-full
+          after:bg-gradient-to-r after:from-cyan-400 after:to-blue-500
+          after:shadow-[0_0_12px_rgba(34,211,238,0.7),0_0_24px_rgba(34,211,238,0.4)]
+          [text-shadow:0_0_18px_rgba(34,211,238,0.5),0_0_36px_rgba(34,211,238,0.3)]
+        `
+        : `
           text-slate-800
           dark:text-white/85
 
@@ -308,11 +317,11 @@ export default function Navbar() {
 
           container-premium
 
-          min-h-[72px]
-          md:min-h-[80px]
+          min-h-[56px]
+          md:min-h-[60px]
 
-          py-3
-          md:py-4
+          py-2
+          md:py-2.5
 
           flex
           items-center
@@ -346,15 +355,15 @@ export default function Navbar() {
             src="/icon.png"
             alt="Kuddus Ali Construction"
 
-            width={72}
-            height={72}
+            width={56}
+            height={56}
 
             priority
 
             className="
-              h-12
+              h-9
               w-auto
-              md:h-14
+              md:h-10
 
               object-contain
 
@@ -1271,7 +1280,7 @@ export default function Navbar() {
           "
                       >
 
-                        {serviceLinks.map((item, i) => (
+                    {serviceLinks.map((item, i) => (
 
                           <Link
                             key={i}
@@ -1280,6 +1289,12 @@ export default function Navbar() {
                             onClick={closeMenu}
 
                             className="
+                block
+                w-full
+
+                py-1.5
+
+                text-left
                 text-sm
 
                 text-slate-700

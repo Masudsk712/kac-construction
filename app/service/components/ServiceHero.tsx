@@ -71,7 +71,7 @@ export default function ServiceHero() {
 
       <Image
         src="/service/ServiceBg1.webp"
-        alt="Services Hero"
+        alt="Kuddus Ali Construction - Transmission Line Construction Services"
         fill
         priority
 

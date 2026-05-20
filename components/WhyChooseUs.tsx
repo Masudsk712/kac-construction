@@ -83,8 +83,8 @@ export default function WhyChooseUs() {
 
         overflow-hidden
 
-        py-24
-        md:py-32
+        py-32
+        md:py-44
 
         bg-[var(--bg-soft)]
         section-surface

@@ -10,6 +10,8 @@ import {
   Zap,
 } from "lucide-react";
 
+import { ease, spring as sp } from "@/lib/animations";
+
 /* ================================================= */
 /* 🔥 CLIENTS */
 /* ================================================= */
@@ -52,8 +54,8 @@ export default function ClientsSection() {
         text-slate-900
         dark:text-white
 
-        py-24
-        md:py-28
+        py-32
+        md:py-44
       "
     >
 
@@ -194,23 +196,10 @@ export default function ClientsSection() {
         {/* ================================================= */}
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 40,
-          }}
-
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-
-          transition={{
-            duration: 0.8,
-          }}
-
-          viewport={{
-            once: true,
-          }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: ease.premiumOut }}
+          viewport={{ once: true }}
 
           className="
             text-center
@@ -310,23 +299,10 @@ export default function ClientsSection() {
 
           {/* CARD 1 */}
           <motion.div
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
-
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-
-            transition={{
-              duration: 0.6,
-            }}
-
-            viewport={{
-              once: true,
-            }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: ease.premiumOut }}
+            viewport={{ once: true }}
 
             className="
               rounded-[24px]
@@ -402,24 +378,10 @@ export default function ClientsSection() {
 
           {/* CARD 2 */}
           <motion.div
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
-
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-
-            transition={{
-              duration: 0.6,
-              delay: 0.1,
-            }}
-
-            viewport={{
-              once: true,
-            }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: ease.premiumOut }}
+            viewport={{ once: true }}
 
             className="
               rounded-[24px]
@@ -494,24 +456,10 @@ export default function ClientsSection() {
 
           {/* CARD 3 */}
           <motion.div
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
-
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-
-            transition={{
-              duration: 0.6,
-              delay: 0.2,
-            }}
-
-            viewport={{
-              once: true,
-            }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: ease.premiumOut }}
+            viewport={{ once: true }}
 
             className="
               rounded-[24px]
@@ -676,9 +624,7 @@ function ClientCard({
   return (
 
     <motion.div
-      whileHover={{
-        y: -6,
-      }}
+      whileHover={{ y: -6, transition: sp.soft }}
 
       className="
         group
@@ -739,8 +685,10 @@ function ClientCard({
 
         <Image
           src={logo}
-          alt="client"
+          alt={`${logo.replace('/clients/', '').replace('.webp', '')} - Kuddus Ali Construction Client`}
           fill
+          sizes="(max-width: 640px) 120px, (max-width: 768px) 150px, 170px"
+          loading="lazy"
 
           className="
             object-contain

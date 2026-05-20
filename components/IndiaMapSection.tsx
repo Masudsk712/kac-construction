@@ -251,7 +251,7 @@ export default function IndiaMapSection() {
       text-slate-900
       dark:text-white
 
-      py-28
+      py-32 md:py-44
     "
     >
       {/* ================================================= */}

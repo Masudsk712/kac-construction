@@ -10,14 +10,7 @@ import CTASection from "@/components/CTASection";
 
 export default function ServicesPage() {
   return (
-    <div
-      className="
-      relative
-      bg-[var(--bg)]
-      text-[var(--text)]
-      "
-    >
-
+    <div className="relative bg-[var(--bg)] text-[var(--text)]">
       {/* HERO */}
       <ServiceHero />
 
@@ -25,39 +18,26 @@ export default function ServicesPage() {
       <ServiceStickyTabs />
 
       {/* GLOBAL BACKGROUND GLOW */}
-      <div className="absolute top-[20%] left-0 w-[600px] h-[600px] bg-cyan-500/10 blur-[160px] pointer-events-none" />
-
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-500/10 blur-[160px] pointer-events-none" />
+      <div className="pointer-events-none absolute left-0 top-[20%] h-[600px] w-[600px] bg-cyan-500/10 blur-[160px]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-[600px] w-[600px] bg-blue-500/10 blur-[160px]" />
 
       {/* SURVEY */}
-      <section
-        id="survey"
-        className="relative z-10"
-      >
+      <section id="survey" className="relative z-10 py-24">
         <Survey />
       </section>
 
       {/* FOUNDATION */}
-      <section
-        id="foundation"
-        className="relative z-10"
-      >
+      <section id="foundation" className="relative z-10 py-24">
         <Foundation />
       </section>
 
       {/* ERECTION */}
-      <section
-        id="erection"
-        className="relative z-10"
-      >
+      <section id="erection" className="relative z-10 py-24">
         <Erection />
       </section>
 
       {/* STRINGING */}
-      <section
-        id="stringing"
-        className="relative z-10"
-      >
+      <section id="stringing" className="relative z-10 py-24">
         <Stringing />
       </section>
 

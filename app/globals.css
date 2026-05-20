@@ -101,6 +101,59 @@ h4,
 }
 
 /* ============================= */
+/* PREMIUM TYPOGRAPHY ENHANCEMENTS */
+/* ============================= */
+
+/* Stronger visual hierarchy for corporate headings */
+h1 {
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+h2 {
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+h3 {
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+/* Corporate section label styling */
+.section-label {
+  font-family: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+/* Premium body text readability */
+p {
+  text-wrap: pretty;
+  max-width: 72ch;
+}
+
+/* Accent gradient border for premium feel */
+.border-accent-gradient {
+  border-image: linear-gradient(to right, #22d3ee, #3b82f6) 1;
+}
+
+/* Premium shadow for elevated cards */
+.shadow-premium {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 16px rgba(0, 0, 0, 0.06),
+    0 8px 40px rgba(0, 0, 0, 0.04);
+}
+
+.dark .shadow-premium {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    0 8px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================= */
 /* CLICK FIX */
 /* ============================= */
 
@@ -898,6 +951,45 @@ html:not(.dark) main [class*="bg-black/"] .text-white {
   .h-\[420px\] { height: 280px !important; }
   .h-\[380px\] { height: 260px !important; }
 
+  .md\:w-18,
+  .md\:h-18 {
+    width: 72px !important;
+    height: 72px !important;
+  }
+
+  .gap-16 { gap: 40px !important; }
+
+  /* Reduce glow element sizes on mobile to prevent overflow */
+  .w-\[650px\].h-\[650px\] {
+    width: 320px !important;
+    height: 320px !important;
+  }
+
+  .w-\[520px\].h-\[520px\] {
+    width: 260px !important;
+    height: 260px !important;
+  }
+
+  .w-\[500px\].h-\[500px\] {
+    width: 240px !important;
+    height: 240px !important;
+  }
+
+  .w-\[420px\].h-\[420px\] {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .w-\[400px\].h-\[400px\] {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .w-\[380px\].h-\[380px\] {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
   .absolute.bottom-5.left-5,
   .absolute.bottom-5.right-5 {
     left: 16px !important;
@@ -929,24 +1021,33 @@ html:not(.dark) main [class*="bg-black/"] .text-white {
 }
 
 /* ============================= */
-/* SAFE MOBILE VIEW */
+/* RESPONSIVE TEXT SCALING */
 /* ============================= */
 
 @media (max-width: 480px) {
   h1 { font-size: 36px !important; }
   h2 { font-size: 30px !important; }
   h3 { font-size: 22px !important; }
+  
+  /* Hero overrides for very small screens */
+  #hero h1 {
+    font-size: 30px !important;
+    letter-spacing: -1px !important;
+  }
+
+  #hero h2 {
+    font-size: 22px !important;
+  }
   .container-premium { padding-inline: 14px; }
   .rounded-\[32px\] { border-radius: 24px !important; }
+
+  /* Footer small screens */
+  .gap-16 { gap: 32px !important; }
 }
 
 /* ============================= */
 /* ACCESSIBILITY */
 /* ============================= */
-
-:focus {
-  outline: none;
-}
 
 a:focus-visible,
 button:focus-visible,

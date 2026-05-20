@@ -11,6 +11,8 @@ import {
 
 import Image from "next/image";
 
+import { ease, spring as sp } from "@/lib/animations";
+
 /* ================================================= */
 /* SERVICES DATA */
 /* ================================================= */
@@ -83,8 +85,8 @@ export default function ServicesSection() {
 
         overflow-hidden
 
-        py-24
-        md:py-32
+        py-32
+        md:py-44
 
         bg-[var(--bg-soft)]
         section-surface
@@ -176,23 +178,10 @@ export default function ServicesSection() {
         {/* ================================================= */}
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 40,
-          }}
-
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-
-          transition={{
-            duration: 0.8,
-          }}
-
-          viewport={{
-            once: true,
-          }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: ease.premiumOut }}
+          viewport={{ once: true }}
 
           className="
             text-center
@@ -320,29 +309,11 @@ export default function ServicesSection() {
 
             <motion.div
               key={i}
-
-              initial={{
-                opacity: 0,
-                y: 70,
-              }}
-
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-
-              transition={{
-                duration: 0.7,
-                delay: i * 0.12,
-              }}
-
-              viewport={{
-                once: true,
-              }}
-
-              whileHover={{
-                y: -8,
-              }}
+              initial={{ opacity: 0, y: 70 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: i * 0.12, ease: ease.premiumOut }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8, transition: sp.soft }}
 
               className="
                 group
@@ -412,6 +383,8 @@ export default function ServicesSection() {
                   src={service.image}
                   alt={service.title}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 320px"
+                  loading={i < 2 ? "eager" : "lazy"}
 
                   className="
                     object-cover
@@ -608,24 +581,10 @@ export default function ServicesSection() {
         {/* ================================================= */}
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-
-          transition={{
-            delay: 0.2,
-            duration: 0.7,
-          }}
-
-          viewport={{
-            once: true,
-          }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.7, ease: ease.premiumOut }}
+          viewport={{ once: true }}
 
           className="
             flex
@@ -639,13 +598,8 @@ export default function ServicesSection() {
           <Link href="/service">
 
             <motion.button
-              whileHover={{
-                scale: 1.03,
-              }}
-
-              whileTap={{
-                scale: 0.98,
-              }}
+              whileHover={{ scale: 1.03, transition: sp.snappy }}
+              whileTap={{ scale: 0.97, transition: sp.snappy }}
 
               className="
                 group

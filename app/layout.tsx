@@ -18,6 +18,7 @@ import {
 
 import LayoutWrapper from "@/components/LayoutWrapper";
 import ThemeProvider from "@/components/ThemeProvider";
+import { Toaster } from "react-hot-toast";
 
 /* ============================= */
 /* 🔥 FONT CONFIG */
@@ -67,7 +68,7 @@ export const metadata: Metadata = {
     siteConfig.description,
 
   keywords:
-    siteConfig.keywords,
+    [...siteConfig.keywords] as string[],
 
   authors: [
     {
@@ -78,6 +79,15 @@ export const metadata: Metadata = {
 
   creator:
     siteConfig.creator,
+
+  publisher:
+    siteConfig.creator,
+
+  category:
+    "construction",
+
+  classification:
+    "Transmission Line & EPC Infrastructure Company",
 
   openGraph: {
 
@@ -104,8 +114,18 @@ export const metadata: Metadata = {
         height: 630,
 
         alt:
-          "Kuddus Ali Construction",
+          "Kuddus Ali Construction - Transmission Line & EPC Infrastructure Company",
       },
+    ],
+
+    countryName: "India",
+
+    phoneNumbers: [
+      siteConfig.phone,
+    ],
+
+    emails: [
+      siteConfig.email,
     ],
   },
 
@@ -122,6 +142,10 @@ export const metadata: Metadata = {
     images: [
       siteConfig.ogImage,
     ],
+
+    site: siteConfig.twitterHandle,
+
+    creator: siteConfig.twitterHandle,
   },
 
   robots: {
@@ -160,6 +184,22 @@ export const metadata: Metadata = {
     apple:
       "/icon.png",
   },
+
+  appleWebApp: {
+    capable: true,
+    title: "KAC",
+    statusBarStyle: "default",
+  },
+
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
+
+  verification: {
+    google: "google-site-verification-code", // Replace with actual verification code
+  },
 };
 
 /* ============================= */
@@ -181,6 +221,8 @@ export default function RootLayout({
     >
 
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -218,6 +260,33 @@ export default function RootLayout({
 
         <ThemeProvider>
           <LoaderProvider>
+
+            {/* 🔥 TOAST NOTIFICATIONS */}
+            <Toaster
+              position="top-center"
+              toastOptions={{
+                duration: 4000,
+                style: {
+                  background: "var(--card)",
+                  color: "var(--text)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "16px",
+                  fontSize: "14px",
+                },
+                success: {
+                  iconTheme: {
+                    primary: "#06b6d4",
+                    secondary: "#000",
+                  },
+                },
+                error: {
+                  iconTheme: {
+                    primary: "#f87171",
+                    secondary: "#000",
+                  },
+                },
+              }}
+            />
 
             {/* 🔥 SEO SCHEMA */}
             <Schema />
