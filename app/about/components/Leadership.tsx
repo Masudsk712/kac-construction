@@ -32,7 +32,7 @@ const leadershipData = [
     name: "Sk Samim Aktar",
     role: "EHS & Engineering",
     dept: "Engineering",
-    image: "/about/ID1.webp",
+    image: "/about/SamimSir.webp",
     description:
       "Responsible for engineering quality, technical supervision, project safety, and execution excellence.",
   },
@@ -41,7 +41,7 @@ const leadershipData = [
     name: "Md Nasiruddin Ahmed",
     role: "HR & Administration",
     dept: "Administration",
-    image: "/about/ID2.webp",
+    image: "/about/NasirDa.webp",
     description:
       "Handles workforce coordination, administration systems, company discipline, and operational management.",
   },
@@ -50,7 +50,7 @@ const leadershipData = [
     name: "Akib Javed",
     role: "Planning & Procurement",
     dept: "Planning",
-    image: "/about/ID3.webp",
+    image: "/about/JavedDa.webp",
     description:
       "Responsible for strategic procurement planning, vendor coordination, and execution timelines.",
   },
@@ -59,7 +59,7 @@ const leadershipData = [
     name: "Safiur",
     role: "Projects Team",
     dept: "Projects",
-    image: "/about/ID4.webp",
+    image: "/about/SafidurKaku.webp",
     description:
       "Coordinates field execution, manpower deployment, and site-level project management.",
   },
@@ -68,7 +68,7 @@ const leadershipData = [
     name: "Probhakar Pramanik",
     role: "Store Management",
     dept: "Store",
-    image: "/about/ID5.webp",
+    image: "/about/BibekDa.webp",
     description:
       "Handles inventory control, logistics support, and material management operations.",
   },
@@ -77,7 +77,7 @@ const leadershipData = [
     name: "Asraful Hoque",
     role: "Finance Department",
     dept: "Finance",
-    image: "/about/ID6.webp",
+    image: "/about/AsrafulDa.webp",
     description:
       "Responsible for budgeting, company finance systems, and operational financial planning.",
   },
@@ -92,12 +92,20 @@ const leadershipData = [
   },
 
   {
-    name: "Technical Advisor",
-    role: "Technical Consultant",
-    dept: "Consulting",
-    image: "/about/ID8.webp",
+    name: "Abdul Mozid",
+    role: "Payroll Executive",
+    dept: "HR",
+    image: "/about/Mozidda.webp",
     description:
-      "Provides technical guidance, engineering insights, and strategic advisory support.",
+      "Provides technical guidance, company policies, and payment advisory support.",
+  },
+  {
+    name: "Isob Ali",
+    role: "HSE Asst-Manager",
+    dept: "EHS & ENGINEERING",
+    image: "/about/IsobDa.webp",
+    description:
+      "Ensures safety compliance and effective project delivery systems.",
   },
 ]
 
