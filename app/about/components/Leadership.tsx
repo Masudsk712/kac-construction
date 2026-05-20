@@ -50,13 +50,13 @@ const leadershipData = [
     name: "Akib Javed",
     role: "Planning & Procurement",
     dept: "Planning",
-    image: "/about/JavedDa.webp",
+    image: "/about/Javedda.webp",
     description:
       "Responsible for strategic procurement planning, vendor coordination, and execution timelines.",
   },
 
   {
-    name: "Safiur",
+    name: "Safidur",
     role: "Projects Team",
     dept: "Projects",
     image: "/about/SafidurKaku.webp",
@@ -68,7 +68,7 @@ const leadershipData = [
     name: "Probhakar Pramanik",
     role: "Store Management",
     dept: "Store",
-    image: "/about/BibekDa.webp",
+    image: "/about/Bibekda.webp",
     description:
       "Handles inventory control, logistics support, and material management operations.",
   },
