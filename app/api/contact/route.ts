@@ -104,13 +104,37 @@ export async function POST(request: NextRequest) {
     /* 5. Send email via Resend          */
     /* --------------------------------- */
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const RESEND_API_KEY = process.env.RESEND_API_KEY;
+
+    if (!RESEND_API_KEY) {
+      console.error(
+        "❌ RESEND_API_KEY environment variable is not set. Email cannot be sent."
+      );
+      return NextResponse.json(
+        {
+          success: false,
+          error:
+            "Email service is not configured. Please contact the site administrator.",
+        },
+        { status: 500 }
+      );
+    }
+
+    const resend = new Resend(RESEND_API_KEY);
 
     const contactEmail =
       process.env.CONTACT_EMAIL ?? "immasudskz0712@gmail.com";
 
+    // ⚠️ IMPORTANT: For production, you MUST verify your domain (kacgroups.com)
+    // in the Resend dashboard and change the `from` address to use your verified domain.
+    // Until then, use the Resend sandbox (onboarding@resend.dev) which only works
+    // when `to` email matches your Resend account email.
+    const fromEmail =
+      process.env.FROM_EMAIL ??
+      "Kuddus Ali Construction <onboarding@resend.dev>";
+
     const { data, error } = await resend.emails.send({
-      from: `Kuddus Ali Construction <onboarding@resend.dev>`,
+      from: fromEmail,
       // ⚠️ Replace 'onboarding@resend.dev' with your verified domain
       // once you add and verify a domain in Resend dashboard.
       // Example: from: "Kuddus Ali Construction <contact@kac-construction.com>",
