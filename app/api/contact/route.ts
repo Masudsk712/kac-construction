@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import fs from "fs";
+import path from "path";
 import {
   contactFormSchema,
   honeypotSchema,
@@ -30,6 +32,51 @@ function isRateLimited(ip: string): boolean {
   rateLimitMap.set(ip, recent);
 
   return false;
+}
+
+/* ============================== */
+/* 📁 FILE-BASED FALLBACK STORE */
+/* ============================== */
+
+interface ContactSubmission {
+  id: string;
+  name: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  subject: string;
+  message: string;
+  submittedAt: string;
+  ip: string;
+  source: "resend" | "local";
+}
+
+const DATA_DIR = path.join(process.cwd(), "data");
+const SUBMISSIONS_FILE = path.join(DATA_DIR, "contact-submissions.json");
+
+function ensureDataDir(): void {
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  }
+}
+
+function saveSubmissionLocally(submission: ContactSubmission): void {
+  ensureDataDir();
+
+  let submissions: ContactSubmission[] = [];
+  if (fs.existsSync(SUBMISSIONS_FILE)) {
+    try {
+      const raw = fs.readFileSync(SUBMISSIONS_FILE, "utf-8");
+      submissions = JSON.parse(raw);
+    } catch {
+      // If file is corrupted, start fresh
+      submissions = [];
+    }
+  }
+
+  submissions.push(submission);
+  fs.writeFileSync(SUBMISSIONS_FILE, JSON.stringify(submissions, null, 2), "utf-8");
+  console.log(`📁 Contact submission saved locally: ${submission.id}`);
 }
 
 /* ============================== */
@@ -101,74 +148,74 @@ export async function POST(request: NextRequest) {
       validationResult.data;
 
     /* --------------------------------- */
-    /* 5. Send email via Resend          */
+    /* 5. Build submission object        */
+    /* --------------------------------- */
+
+    const submission: ContactSubmission = {
+      id: `sub_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`,
+      name,
+      email,
+      phone: phone || undefined,
+      company: company || undefined,
+      subject,
+      message,
+      submittedAt: new Date().toISOString(),
+      ip,
+      source: "local",
+    };
+
+    /* --------------------------------- */
+    /* 6. Try Resend first               */
     /* --------------------------------- */
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
-    if (!RESEND_API_KEY) {
-      console.error(
-        "❌ RESEND_API_KEY environment variable is not set. Email cannot be sent."
-      );
-      return NextResponse.json(
-        {
-          success: false,
-          error:
-            "Email service is not configured. Please contact the site administrator.",
-        },
-        { status: 500 }
-      );
-    }
+    if (RESEND_API_KEY) {
+      try {
+        const resend = new Resend(RESEND_API_KEY);
 
-    const resend = new Resend(RESEND_API_KEY);
+        const contactEmail =
+          process.env.CONTACT_EMAIL ?? "immasudskz0712@gmail.com";
 
-    const contactEmail =
-      process.env.CONTACT_EMAIL ?? "immasudskz0712@gmail.com";
+        const fromEmail =
+          process.env.FROM_EMAIL ??
+          "Kuddus Ali Construction <onboarding@resend.dev>";
 
-    // ⚠️ IMPORTANT: For production, you MUST verify your domain (kacgroups.com)
-    // in the Resend dashboard and change the `from` address to use your verified domain.
-    // Until then, use the Resend sandbox (onboarding@resend.dev) which only works
-    // when `to` email matches your Resend account email.
-    const fromEmail =
-      process.env.FROM_EMAIL ??
-      "Kuddus Ali Construction <onboarding@resend.dev>";
+        const { error: resendError } = await resend.emails.send({
+          from: fromEmail,
+          to: [contactEmail],
+          replyTo: email,
+          subject: `Contact Inquiry: ${subject}`,
+          react: ContactEmailTemplate({
+            name,
+            email,
+            phone: phone || undefined,
+            company: company || undefined,
+            subject,
+            message,
+          }),
+        });
 
-    const { data, error } = await resend.emails.send({
-      from: fromEmail,
-      // ⚠️ Replace 'onboarding@resend.dev' with your verified domain
-      // once you add and verify a domain in Resend dashboard.
-      // Example: from: "Kuddus Ali Construction <contact@kac-construction.com>",
-      // Current placeholder: <onboarding@resend.dev> is the default Resend sandbox.
-      // Once you verify a domain (e.g. kacgroups.com), change to:
-      // from: "Kuddus Ali Construction <noreply@kacgroups.com>",
-      to: [contactEmail],
-      replyTo: email,
-      subject: `Contact Inquiry: ${subject}`,
-      react: ContactEmailTemplate({
-        name,
-        email,
-        phone: phone || undefined,
-        company: company || undefined,
-        subject,
-        message,
-      }),
-    });
-
-    if (error) {
-      console.error("Resend email error:", error);
-
-      return NextResponse.json(
-        {
-          success: false,
-          error:
-            "Failed to send message. Please try again later.",
-        },
-        { status: 500 }
-      );
+        if (!resendError) {
+          submission.source = "resend";
+          console.log(`✉️ Email sent via Resend for submission ${submission.id}`);
+          // Also save a copy locally for backup
+          saveSubmissionLocally(submission);
+        } else {
+          console.warn("⚠️ Resend failed, saving locally:", resendError.message);
+          saveSubmissionLocally(submission);
+        }
+      } catch (resendErr: any) {
+        console.warn("⚠️ Resend exception, saving locally:", resendErr?.message ?? resendErr);
+        saveSubmissionLocally(submission);
+      }
+    } else {
+      console.warn("⚠️ RESEND_API_KEY not set, saving locally only.");
+      saveSubmissionLocally(submission);
     }
 
     /* --------------------------------- */
-    /* 6. Return success                 */
+    /* 7. Always return success to user  */
     /* --------------------------------- */
 
     return NextResponse.json(
