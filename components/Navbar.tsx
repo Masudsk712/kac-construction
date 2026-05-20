@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useCallback, useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -19,321 +19,205 @@ import {
   X,
   ArrowUpRight,
   FolderKanban,
+  Menu,
 } from "lucide-react"
 
+type MenuKey = "about" | "service" | "project"
+
+const aboutLinks = [
+  { name: "Overview", href: "/about#overview" },
+  { name: "Mission & Vision", href: "/about#mission" },
+  { name: "MD Message", href: "/about#md-message" },
+  { name: "Leadership", href: "/about#leadership" },
+  { name: "Awards", href: "/about#awards" },
+]
+
+const serviceLinks = [
+  { name: "Survey Work", href: "/service#survey" },
+  { name: "Foundation Work", href: "/service#foundation" },
+  { name: "Tower Erection", href: "/service#erection" },
+  { name: "Stringing Work", href: "/service#stringing" },
+]
+
+const projectLinks = [
+  { name: "Completed Projects", href: "/projects#completed" },
+  { name: "Ongoing Projects", href: "/projects#ongoing" },
+  { name: "Transmission Projects", href: "/projects#transmission" },
+  { name: "Tower Erection", href: "/projects#tower" },
+  { name: "HTLS Reconductoring", href: "/projects#htls" },
+]
+
+const dropdownGroups: Array<{
+  key: MenuKey
+  name: string
+  href: string
+  links: typeof aboutLinks
+}> = [
+  {
+    key: "about",
+    name: "About",
+    href: "/about",
+    links: aboutLinks,
+  },
+  {
+    key: "service",
+    name: "Services",
+    href: "/service",
+    links: serviceLinks,
+  },
+  {
+    key: "project",
+    name: "Projects",
+    href: "/projects",
+    links: projectLinks,
+  },
+]
+
+const singleLinks = [
+  { name: "Home", href: "/" },
+  { name: "Media", href: "/media" },
+  { name: "Career", href: "/career" },
+  { name: "Contact", href: "/contact" },
+]
+
+const dropdownClass = `
+  absolute left-0 top-[calc(100%+0.75rem)]
+  rounded-3xl border border-black/10 dark:border-white/10
+  bg-white/90 dark:bg-black/80
+  p-3
+  shadow-2xl
+  backdrop-blur-2xl
+`
+
+const dropdownLink = `
+  group flex items-center justify-between gap-4
+  rounded-2xl px-4 py-3
+  text-sm font-semibold
+  text-slate-700 dark:text-white/75
+  transition-all duration-300
+  hover:bg-cyan-500/10 hover:text-cyan-700
+  dark:hover:text-cyan-300
+`
+
 export default function Navbar() {
-
   const pathname = usePathname()
+  const isHome = pathname === "/"
 
-  const [isOpen, setIsOpen] =
-    useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<MenuKey | null>(null)
+  const [mobileGroups, setMobileGroups] = useState<Record<MenuKey, boolean>>({
+    about: false,
+    service: false,
+    project: false,
+  })
 
-  const [scrolled, setScrolled] =
-    useState(false)
-
-  const [aboutOpen, setAboutOpen] =
-    useState(false)
-
-  const [serviceOpen, setServiceOpen] =
-    useState(false)
-
-  const [projectOpen, setProjectOpen] =
-    useState(false)
-
-  const [mobileAbout, setMobileAbout] =
-    useState(false)
-
-  const [mobileService, setMobileService] =
-    useState(false)
-
-  const [mobileProject, setMobileProject] =
-    useState(false)
-
-  /* ======================================== */
-  /* SCROLL */
-  /* ======================================== */
+  const closeMenu = useCallback(() => {
+    setIsOpen(false)
+    setOpenDropdown(null)
+    setMobileGroups({
+      about: false,
+      service: false,
+      project: false,
+    })
+  }, [])
 
   useEffect(() => {
-
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
     }
 
-    window.addEventListener(
-      "scroll",
-      handleScroll
-    )
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
 
-    return () =>
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      )
-
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  /* ======================================== */
-  /* BODY LOCK */
-  /* ======================================== */
-
   useEffect(() => {
+    if (!isOpen) return
 
-    if (isOpen) {
-      document.body.style.overflow =
-        "hidden"
-    } else {
-      document.body.style.overflow =
-        "auto"
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      document.body.style.overflow = previousOverflow
     }
-
   }, [isOpen])
 
-  /* ======================================== */
-  /* ACTIVE LINK */
-  /* ======================================== */
+  useEffect(() => {
+    if (!isOpen) return
 
-  const linkStyle = (path: string) =>
-    `relative transition-all duration-300 ${
-      pathname === path ||
-      (path !== "/" && pathname.startsWith(path))
-        ? `
-          text-cyan-600 dark:text-cyan-400
-          after:absolute after:bottom-[-6px] after:left-0 after:h-[3px] after:w-full
-          after:rounded-full
-          after:bg-gradient-to-r after:from-cyan-400 after:to-blue-500
-          after:shadow-[0_0_12px_rgba(34,211,238,0.7),0_0_24px_rgba(34,211,238,0.4)]
-          [text-shadow:0_0_18px_rgba(34,211,238,0.5),0_0_36px_rgba(34,211,238,0.3)]
-        `
-        : `
-          text-slate-800
-          dark:text-white/85
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeMenu()
+      }
+    }
 
-          hover:text-cyan-600
-          dark:hover:text-cyan-400
-        `
-    }`
+    window.addEventListener("keydown", handleKeyDown)
 
-  /* ======================================== */
-  /* CLOSE */
-  /* ======================================== */
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [isOpen, closeMenu])
 
-  const closeMenu = () => {
+  const isActivePath = (href: string) => {
+    const path = href.split("#")[0]
 
-    setIsOpen(false)
+    if (path === "/") {
+      return pathname === "/"
+    }
 
-    setMobileAbout(false)
-    setMobileService(false)
-    setMobileProject(false)
+    return pathname === path || pathname.startsWith(`${path}/`)
   }
 
-  /* ======================================== */
-  /* ABOUT */
-  /* ======================================== */
+  const desktopLinkStyle = (href: string) =>
+    `nav-link-pill ${
+      isActivePath(href)
+        ? "bg-cyan-500/10 text-cyan-700 dark:text-cyan-300"
+        : "text-slate-800 dark:text-white/85 hover:text-cyan-700 dark:hover:text-cyan-300"
+    }`
 
-  const aboutLinks = [
-    {
-      name: "Overview",
-      href: "/about#overview",
-    },
+  const mobileLinkStyle = (href: string) =>
+    `mobile-nav-link ${
+      isActivePath(href)
+        ? "bg-cyan-500/10 text-cyan-700 dark:text-cyan-300"
+        : "text-slate-800 dark:text-white/85"
+    }`
 
-    {
-      name: "Mission & Vision",
-      href: "/about#mission",
-    },
-
-    {
-      name: "MD Message",
-      href: "/about#md-message",
-    },
-
-    {
-      name: "Leadership",
-      href: "/about#leadership",
-    },
-
-    {
-      name: "Awards",
-      href: "/about#awards",
-    },
-  ]
-
-  /* ======================================== */
-  /* SERVICES */
-  /* ======================================== */
-
-  const serviceLinks = [
-    {
-      name: "Survey Work",
-      href: "/service#survey",
-    },
-
-    {
-      name: "Foundation Work",
-      href: "/service#foundation",
-    },
-
-    {
-      name: "Tower Erection",
-      href: "/service#erection",
-    },
-
-    {
-      name: "Stringing Work",
-      href: "/service#stringing",
-    },
-  ]
-
-  /* ======================================== */
-  /* PROJECTS */
-  /* ======================================== */
-
-  const projectLinks = [
-    {
-      name: "Completed Projects",
-      href: "/projects#completed",
-    },
-
-    {
-      name: "Ongoing Projects",
-      href: "/projects#ongoing",
-    },
-
-    {
-      name: "Transmission Projects",
-      href: "/projects#transmission",
-    },
-
-    {
-      name: "Tower Erection",
-      href: "/projects#tower",
-    },
-
-    {
-      name: "HTLS Reconductoring",
-      href: "/projects#htls",
-    },
-  ]
-
-  /* ======================================== */
-  /* DROPDOWN CLASS */
-  /* ======================================== */
-
-  const dropdownClass = `
-    absolute
-    top-12
-    left-0
-
-    rounded-3xl
-
-    border
-
-    border-black/10
-    dark:border-white/10
-
-    bg-white/95
-    dark:bg-[#081120]/92
-
-    backdrop-blur-3xl
-
-    p-4
-
-    shadow-[0_30px_80px_rgba(0,0,0,0.25)]
-    dark:shadow-[0_30px_80px_rgba(0,0,0,0.55)]
-  `
-
-  const dropdownLink = `
-    group
-
-    flex
-    items-center
-    justify-between
-
-    px-4 py-3
-
-    rounded-2xl
-
-    text-slate-700
-    dark:text-white/75
-
-    transition-all duration-300
-
-    hover:bg-cyan-500/10
-    hover:text-cyan-400
-  `
+  const toggleMobileGroup = (key: MenuKey) => {
+    setMobileGroups((current) => ({
+      ...current,
+      [key]: !current[key],
+    }))
+  }
 
   return (
-
     <nav
       aria-label="Main navigation"
       className={`
-        fixed top-0 left-0
-
-        w-full
-
-        z-[99999]
-
+        fixed left-0 top-0 z-[99999] w-full
         transition-all duration-500
-
-        ${scrolled
-          ? `
-              bg-white/75
-              dark:bg-[#020617]/75
-
-              backdrop-blur-3xl
-
-              border-b
-
-              border-black/5
-              dark:border-white/10
-
-              shadow-[0_20px_60px_rgba(0,0,0,0.08)]
-              dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)]
-            `
-          : `
-              bg-transparent
-            `
-        }
+        ${isHome && !scrolled ? "bg-transparent shadow-none border-transparent" : "nav-glass"}
+        ${scrolled ? "shadow-2xl" : ""}
       `}
     >
-
-      {/* GLOW */}
       <div
-        className="
-          absolute inset-0
-
-          bg-gradient-to-r
-          from-cyan-500/[0.05]
-          via-transparent
-          to-blue-500/[0.05]
-
-          pointer-events-none
-        "
+        className={`
+          pointer-events-none absolute inset-0
+          bg-gradient-to-r from-cyan-500/[0.06] via-transparent to-blue-500/[0.06]
+          transition-opacity duration-500
+          ${isHome && !scrolled ? "opacity-0" : "opacity-100"}
+        `}
       />
 
-      {/* NAVBAR */}
       <div
         className="
-          relative
-
-          container-premium
-
-          min-h-[56px]
-          md:min-h-[60px]
-
-          py-2
-          md:py-2.5
-
-          flex
-          items-center
-          justify-between
-          gap-4
+          container-premium relative
+          flex min-h-[64px] items-center justify-between gap-3
+          py-2 md:min-h-[72px]
         "
       >
-
-        {/* LOGO */}
         <Link
           href="/"
-
+          aria-label="Kuddus Ali Construction home"
           onClick={() => {
             closeMenu()
             window.scrollTo({
@@ -341,459 +225,119 @@ export default function Navbar() {
               behavior: "smooth",
             })
           }}
-
-          className="
-            relative z-20
-
-            flex
-            shrink-0
-            items-center
-          "
+          className="relative z-20 flex shrink-0 items-center"
         >
-
           <Image
             src="/icon.png"
             alt="Kuddus Ali Construction"
-
-            width={56}
-            height={56}
-
+            width={64}
+            height={64}
             priority
-
             className="
-              h-9
-              w-auto
-              md:h-10
-
-              object-contain
-
-              transition-all duration-500
-
-              hover:scale-105
-
-              drop-shadow-[0_0_25px_rgba(34,211,238,0.45)]
+              h-10 w-auto object-contain md:h-11
+              drop-shadow-[0_0_22px_rgba(34,211,238,0.32)]
+              transition-transform duration-300 hover:scale-105
             "
           />
-
         </Link>
 
-        {/* DESKTOP */}
-        <motion.div
+        <div
           className="
-            hidden md:flex
-
-            flex-1
-            items-center
-            justify-center
-
-            gap-5
-            lg:gap-7
-            xl:gap-8
+            hidden flex-1 items-center justify-center gap-1
+            md:flex xl:gap-2
           "
         >
-
-          <Link
-            href="/"
-            className={linkStyle("/")}
-          >
+          <Link href="/" className={desktopLinkStyle("/")}>
             Home
           </Link>
 
-          {/* ABOUT */}
-          <div
-            className="relative"
-
-            onMouseEnter={() =>
-              setAboutOpen(true)
-            }
-
-            onMouseLeave={() =>
-              setAboutOpen(false)
-            }
-          >
-
-            <Link
-              href="/about"
-
-              className={`
-                ${linkStyle("/about")}
-
-                flex items-center gap-1
-              `}
+          {dropdownGroups.map((group) => (
+            <div
+              key={group.key}
+              className="relative"
+              onMouseEnter={() => setOpenDropdown(group.key)}
+              onMouseLeave={() => setOpenDropdown(null)}
+              onFocus={() => setOpenDropdown(group.key)}
             >
-              About
-
-              <ChevronDown size={16} />
-            </Link>
-
-            <AnimatePresence>
-
-              {aboutOpen && (
-
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 14,
-                  }}
-
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-
-                  exit={{
-                    opacity: 0,
-                    y: 14,
-                  }}
-
-                  transition={{
-                    duration: 0.25,
-                  }}
-
+              <Link
+                href={group.href}
+                className={`${desktopLinkStyle(group.href)} gap-1.5`}
+                aria-expanded={openDropdown === group.key}
+              >
+                {group.name}
+                <ChevronDown
+                  size={15}
                   className={`
-                    ${dropdownClass}
-
-                    w-72
+                    transition-transform duration-300
+                    ${openDropdown === group.key ? "rotate-180" : ""}
                   `}
-                >
-
-                  <div className="space-y-2">
-
-                    {aboutLinks.map(
-                      (item, i) => (
-
-                        <Link
-                          key={i}
-                          href={item.href}
-
-                          className={dropdownLink}
-                        >
-
-                          {item.name}
-
-                          <ArrowUpRight
-                            size={16}
-
-                            className="
-                              opacity-0
-
-                              transition
-
-                              group-hover:opacity-100
-                              group-hover:-translate-y-1
-                              group-hover:translate-x-1
-                            "
-                          />
-
-                        </Link>
-
-                      )
-                    )}
-
-                  </div>
-
-                </motion.div>
-
-              )}
-
-            </AnimatePresence>
-
-          </div>
-
-          {/* SERVICES */}
-          <div
-            className="relative"
-
-            onMouseEnter={() =>
-              setServiceOpen(true)
-            }
-
-            onMouseLeave={() =>
-              setServiceOpen(false)
-            }
-          >
-
-            <Link
-              href="/service"
-
-              className={`
-                ${linkStyle("/service")}
-
-                flex items-center gap-1
-              `}
-            >
-              Services
-
-              <ChevronDown size={16} />
-            </Link>
-
-            <AnimatePresence>
-
-              {serviceOpen && (
-
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 14,
-                  }}
-
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-
-                  exit={{
-                    opacity: 0,
-                    y: 14,
-                  }}
-
-                  transition={{
-                    duration: 0.25,
-                  }}
-
-                  className={`
-                    ${dropdownClass}
-
-                    w-80
-                  `}
-                >
-
-                  <div className="space-y-2">
-
-                    {serviceLinks.map(
-                      (item, i) => (
-
-                        <Link
-                          key={i}
-                          href={item.href}
-
-                          className={dropdownLink}
-                        >
-
-                          {item.name}
-
-                          <ArrowUpRight
-                            size={16}
-
-                            className="
-                              opacity-0
-
-                              transition
-
-                              group-hover:opacity-100
-                              group-hover:-translate-y-1
-                              group-hover:translate-x-1
-                            "
-                          />
-
-                        </Link>
-
-                      )
-                    )}
-
-                  </div>
-
-                </motion.div>
-
-              )}
-
-            </AnimatePresence>
-
-          </div>
-
-          {/* PROJECTS */}
-          <div
-            className="relative"
-
-            onMouseEnter={() =>
-              setProjectOpen(true)
-            }
-
-            onMouseLeave={() =>
-              setProjectOpen(false)
-            }
-          >
-
-            <Link
-              href="/projects"
-
-              className={`
-                ${linkStyle("/projects")}
-
-                flex items-center gap-1
-              `}
-            >
-              Projects
-
-              <ChevronDown size={16} />
-            </Link>
-
-            <AnimatePresence>
-
-              {projectOpen && (
-
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 14,
-                  }}
-
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-
-                  exit={{
-                    opacity: 0,
-                    y: 14,
-                  }}
-
-                  transition={{
-                    duration: 0.25,
-                  }}
-
-                  className={`
-                    ${dropdownClass}
-
-                    w-[360px]
-                  `}
-                >
-
-                  <div
-                    className="
-                      flex items-center
-                      gap-3
-
-                      mb-5
-
-                      px-2
-                    "
+                />
+              </Link>
+
+              <AnimatePresence>
+                {openDropdown === group.key && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.98 }}
+                    transition={{ duration: 0.22 }}
+                    className={`${dropdownClass} ${
+                      group.key === "project" ? "w-[360px]" : "w-80"
+                    }`}
                   >
-
-                    <div
-                      className="
-                        w-12 h-12
-
-                        rounded-2xl
-
-                        bg-cyan-400/10
-
-                        flex items-center
-                        justify-center
-
-                        text-cyan-300
-                      "
-                    >
-
-                      <FolderKanban size={22} />
-
-                    </div>
-
-                    <div>
-
-                      <h4
-                        className="
-                          text-slate-900
-                          dark:text-white
-
-                          font-bold
-                        "
-                      >
-                        Project Portfolio
-                      </h4>
-
-                      <p
-                        className="
-                          text-xs
-
-                          text-slate-500
-                          dark:text-white/50
-                        "
-                      >
-                        Transmission Infrastructure
-                      </p>
-
-                    </div>
-
-                  </div>
-
-                  <div className="space-y-2">
-
-                    {projectLinks.map(
-                      (item, i) => (
-
-                        <Link
-                          key={i}
-                          href={item.href}
-
-                          className={dropdownLink}
-                        >
-
-                          {item.name}
-
-                          <ArrowUpRight
-                            size={16}
-
-                            className="
-                              opacity-0
-
-                              transition
-
-                              group-hover:opacity-100
-                              group-hover:-translate-y-1
-                              group-hover:translate-x-1
-                            "
-                          />
-
-                        </Link>
-
-                      )
+                    {group.key === "project" && (
+                      <div className="mb-3 flex items-center gap-3 rounded-2xl border border-black/5 bg-slate-50/70 p-3 dark:border-white/10 dark:bg-white/[0.04]">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-700 dark:text-cyan-300">
+                          <FolderKanban size={20} />
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-slate-900 dark:text-white">
+                            Project Portfolio
+                          </h4>
+                          <p className="text-xs text-slate-500 dark:text-white/50">
+                            Transmission Infrastructure
+                          </p>
+                        </div>
+                      </div>
                     )}
 
-                  </div>
+                    <div className="space-y-1">
+                      {group.links.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className={dropdownLink}
+                        >
+                          {item.name}
+                          <ArrowUpRight
+                            size={15}
+                            className="
+                              opacity-0 transition-all duration-300
+                              group-hover:-translate-y-0.5 group-hover:translate-x-0.5
+                              group-hover:opacity-100
+                            "
+                          />
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
 
-                </motion.div>
+          {singleLinks.slice(1).map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={desktopLinkStyle(item.href)}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
 
-              )}
-
-            </AnimatePresence>
-
-          </div>
-
-          <Link
-            href="/media"
-            className={linkStyle("/media")}
-          >
-            Media
-          </Link>
-
-          <Link
-            href="/career"
-            className={linkStyle("/career")}
-          >
-            Career
-          </Link>
-
-          <Link
-            href="/contact"
-            className={linkStyle("/contact")}
-          >
-            Contact
-          </Link>
-
-        </motion.div>
-
-        {/* THEME + MOBILE MENU */}
-        <motion.div
-          className="
-            flex
-            shrink-0
-            items-center
-            justify-end
-            gap-3
-          "
-        >
-
+        <div className="relative z-20 flex shrink-0 items-center justify-end gap-2 sm:gap-3">
           <ThemeToggle />
 
           <button
@@ -801,190 +345,54 @@ export default function Navbar() {
             aria-label="Open menu"
             aria-expanded={isOpen}
             aria-controls="mobile-nav-panel"
-            onClick={() =>
-              setIsOpen(true)
-            }
-
-            className="
-              relative
-              md:hidden
-
-              w-11 h-11
-
-              rounded-full
-
-              border
-
-              border-black/10
-              dark:border-white/10
-
-              bg-white/80
-              dark:bg-white/[0.05]
-
-              backdrop-blur-xl
-
-              flex
-              items-center
-              justify-center
-
-              overflow-hidden
-            "
+            onClick={() => setIsOpen(true)}
+            className="mobile-menu-trigger h-11 w-11"
           >
-
-            <div
-              className="
-                absolute inset-0
-
-                bg-gradient-to-r
-                from-cyan-500/10
-                to-blue-500/10
-              "
-            />
-
-            <div className="relative space-y-1">
-
-              <span
-                className="
-                  block
-                  w-6 h-0.5
-
-                  bg-slate-900
-                  dark:bg-white
-
-                  rounded-full
-                "
-              />
-
-              <span
-                className="
-                  block
-                  w-6 h-0.5
-
-                  bg-slate-900
-                  dark:bg-white
-
-                  rounded-full
-                "
-              />
-
-              <span
-                className="
-                  block
-                  w-6 h-0.5
-
-                  bg-slate-900
-                  dark:bg-white
-
-                  rounded-full
-                "
-              />
-
-            </div>
-
+            <Menu size={21} />
           </button>
-
-        </motion.div>
-
+        </div>
       </div>
 
-      {/* MOBILE MENU */}
       <AnimatePresence>
-
         {isOpen && (
-
           <>
-            {/* OVERLAY */}
             <motion.div
-              initial={{
-                opacity: 0,
-              }}
-
-              animate={{
-                opacity: 1,
-              }}
-
-              exit={{
-                opacity: 0,
-              }}
-
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               onClick={closeMenu}
-
               className="
-                fixed inset-0
-
-                bg-black/50
-
-                z-[9998]
-
+                fixed inset-0 z-[99998]
+                bg-black/70 backdrop-blur-sm
                 md:hidden
               "
             />
 
-            {/* MENU */}
             <motion.div
               id="mobile-nav-panel"
               role="dialog"
               aria-modal="true"
               aria-label="Mobile navigation"
-              initial={{
-                opacity: 0,
-                x: "100%",
-              }}
-
-              animate={{
-                opacity: 1,
-                x: 0,
-              }}
-
-              exit={{
-                opacity: 0,
-                x: "100%",
-              }}
-
-              transition={{
-                duration: 0.35,
-              }}
-
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+              transition={{ duration: 0.34, ease: [0.16, 1, 0.3, 1] }}
               className="
-                fixed top-0 right-0
-
-                w-[85%]
-                max-w-[340px]
-
-                h-screen
-
-                bg-white
-                dark:bg-[#020617]
-
-                z-[99999]
-
-                overflow-y-auto
-
-                shadow-[0_0_80px_rgba(0,0,0,0.35)]
-
-                md:hidden
+                mobile-nav-panel fixed right-0 top-0 z-[99999]
+                h-[100dvh] w-[90%] max-w-[390px]
+                overflow-y-auto md:hidden
               "
             >
-
-              {/* TOP */}
               <div
                 className="
-                  flex
-                  items-center
-                  justify-between
-
-                  px-6 py-6
-
-                  border-b
-
-                  border-black/5
+                  flex items-center justify-between gap-4
+                  border-b border-black/5 px-5 py-5
                   dark:border-white/10
                 "
               >
-
                 <Link
                   href="/"
-
+                  aria-label="Kuddus Ali Construction home"
                   onClick={() => {
                     closeMenu()
                     window.scrollTo({
@@ -992,547 +400,113 @@ export default function Navbar() {
                       behavior: "smooth",
                     })
                   }}
+                  className="flex items-center"
                 >
-
                   <Image
                     src="/icon.png"
                     alt="KAC"
-
-                    width={70}
-                    height={70}
-
-                    className="object-contain"
+                    width={68}
+                    height={68}
+                    className="h-12 w-auto object-contain"
                   />
-
                 </Link>
 
                 <button
                   type="button"
                   aria-label="Close menu"
                   onClick={closeMenu}
-
-                  className="
-                    w-11 h-11
-
-                    rounded-full
-
-                    border
-
-                    border-black/10
-                    dark:border-white/10
-
-                    bg-black/[0.03]
-                    dark:bg-white/5
-
-                    flex
-                    items-center
-                    justify-center
-                  "
+                  className="icon-button-premium h-11 w-11"
                 >
-
-                  <X
-                    size={22}
-
-                    className="
-                      text-slate-900
-                      dark:text-white
-                    "
-                  />
-
+                  <X size={21} />
                 </button>
-
               </div>
 
-              {/* LINKS */}
-              <motion.div
-                className="
-                  px-6 py-8
-
-                  flex flex-col
-                  items-stretch
-
-                  gap-1
-
-                  w-full
-                "
-              >
-
-                {/* HOME */}
-                <Link
-                  href="/"
-                  onClick={closeMenu}
-
-                  className="
-                    w-full
-
-                    flex
-                    items-center
-                    justify-start
-
-                    py-3
-
-                    text-left
-                    text-base
-                    font-medium
-
-                    text-slate-800
-                    dark:text-white
-
-                    hover:text-cyan-600
-                    dark:hover:text-cyan-400
-
-                    transition
-                  "
-                >
-                  Home
-                </Link>
-
-                {/* ABOUT */}
-                <div className="w-full border-b border-black/5 dark:border-white/10 pb-4">
-
-                  <button
-                    type="button"
-                    aria-expanded={mobileAbout}
-                    aria-controls="mobile-about-links"
-                    onClick={() =>
-                      setMobileAbout(!mobileAbout)
-                    }
-
-                    className="
-        w-full
-
-        flex
-        items-center
-        justify-between
-
-        text-left
-
-        text-base
-        font-medium
-
-        text-slate-800
-        dark:text-white
-
-        hover:text-cyan-600
-        dark:hover:text-cyan-400
-
-        transition
-      "
+              <div className="px-4 py-5">
+                <div className="space-y-2">
+                  <Link
+                    href="/"
+                    onClick={closeMenu}
+                    className={mobileLinkStyle("/")}
                   >
+                    <span>Home</span>
+                    <ArrowUpRight size={16} />
+                  </Link>
 
-                    <span className="text-left">About</span>
+                  {dropdownGroups.map((group) => {
+                    const isExpanded = mobileGroups[group.key]
+                    const panelId = `mobile-${group.key}-links`
 
-                    {mobileAbout ? (
-                      <Minus size={18} />
-                    ) : (
-                      <Plus size={18} />
-                    )}
-
-                  </button>
-
-                  <AnimatePresence>
-
-                    {mobileAbout && (
-
-                      <motion.div
-                        id="mobile-about-links"
-                        initial={{
-                          opacity: 0,
-                          height: 0,
-                        }}
-
-                        animate={{
-                          opacity: 1,
-                          height: "auto",
-                        }}
-
-                        exit={{
-                          opacity: 0,
-                          height: 0,
-                        }}
-
-                        transition={{
-                          duration: 0.3,
-                        }}
-
+                    return (
+                      <div
+                        key={group.key}
                         className="
-            overflow-hidden
-
-            pt-4
-            pl-3
-
-            flex flex-col
-            gap-4
-          "
+                          rounded-2xl border border-black/5 bg-white/45 p-1
+                          dark:border-white/10 dark:bg-white/[0.04]
+                        "
                       >
+                        <button
+                          type="button"
+                          aria-expanded={isExpanded}
+                          aria-controls={panelId}
+                          onClick={() => toggleMobileGroup(group.key)}
+                          className={mobileLinkStyle(group.href)}
+                        >
+                          <span>{group.name}</span>
+                          {isExpanded ? <Minus size={18} /> : <Plus size={18} />}
+                        </button>
 
-                        {aboutLinks.map((item, i) => (
+                        <AnimatePresence>
+                          {isExpanded && (
+                            <motion.div
+                              id={panelId}
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.26 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="space-y-1 px-2 pb-3 pt-1">
+                                {group.links.map((item) => (
+                                  <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    onClick={closeMenu}
+                                    className="
+                                      block rounded-xl px-4 py-2.5 text-sm font-semibold
+                                      text-slate-600 transition-colors duration-300
+                                      hover:bg-cyan-500/10 hover:text-cyan-700
+                                      dark:text-white/70 dark:hover:text-cyan-300
+                                    "
+                                  >
+                                    {item.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    )
+                  })}
 
-                          <Link
-                            key={i}
-                            href={item.href}
-
-                            onClick={closeMenu}
-
-                            className="
-                block
-                w-full
-
-                py-1.5
-
-                text-left
-                text-sm
-
-                text-slate-700
-                dark:text-white/75
-
-                hover:text-cyan-600
-                dark:hover:text-cyan-400
-
-                transition
-              "
-                          >
-                            {item.name}
-                          </Link>
-
-                        ))}
-
-                      </motion.div>
-
-                    )}
-
-                  </AnimatePresence>
-
+                  {singleLinks.slice(1).map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={closeMenu}
+                      className={mobileLinkStyle(item.href)}
+                    >
+                      <span>{item.name}</span>
+                      <ArrowUpRight size={16} />
+                    </Link>
+                  ))}
                 </div>
 
-                {/* SERVICES */}
-                <div className="w-full border-b border-black/5 dark:border-white/10 pb-4">
-
-                  <button
-                    onClick={() =>
-                      setMobileService(!mobileService)
-                    }
-
-                    className="
-        w-full
-
-        flex
-        items-center
-        justify-between
-
-        text-left
-
-        text-base
-        font-medium
-
-        text-slate-800
-        dark:text-white
-
-        hover:text-cyan-600
-        dark:hover:text-cyan-400
-
-        transition
-      "
-                  >
-
-                    <span className="text-left">Services</span>
-
-                    {mobileService ? (
-                      <Minus size={18} />
-                    ) : (
-                      <Plus size={18} />
-                    )}
-
-                  </button>
-
-                  <AnimatePresence>
-
-                    {mobileService && (
-
-                      <motion.div
-                        initial={{
-                          opacity: 0,
-                          height: 0,
-                        }}
-
-                        animate={{
-                          opacity: 1,
-                          height: "auto",
-                        }}
-
-                        exit={{
-                          opacity: 0,
-                          height: 0,
-                        }}
-
-                        transition={{
-                          duration: 0.3,
-                        }}
-
-                        className="
-            overflow-hidden
-
-            pt-4
-            pl-3
-
-            flex flex-col
-            gap-4
-          "
-                      >
-
-                    {serviceLinks.map((item, i) => (
-
-                          <Link
-                            key={i}
-                            href={item.href}
-
-                            onClick={closeMenu}
-
-                            className="
-                block
-                w-full
-
-                py-1.5
-
-                text-left
-                text-sm
-
-                text-slate-700
-                dark:text-white/75
-
-                hover:text-cyan-600
-                dark:hover:text-cyan-400
-
-                transition
-              "
-                          >
-                            {item.name}
-                          </Link>
-
-                        ))}
-
-                      </motion.div>
-
-                    )}
-
-                  </AnimatePresence>
-
-                </div>
-
-                {/* PROJECTS */}
-                <div className="w-full border-b border-black/5 dark:border-white/10 pb-4">
-
-                  <button
-                    onClick={() =>
-                      setMobileProject(!mobileProject)
-                    }
-
-                    className="
-        w-full
-
-        flex
-        items-center
-        justify-between
-
-        text-left
-
-        text-base
-        font-medium
-
-        text-slate-800
-        dark:text-white
-
-        hover:text-cyan-600
-        dark:hover:text-cyan-400
-
-        transition
-      "
-                  >
-
-                    <span className="text-left">Projects</span>
-
-                    {mobileProject ? (
-                      <Minus size={18} />
-                    ) : (
-                      <Plus size={18} />
-                    )}
-
-                  </button>
-
-                  <AnimatePresence>
-
-                    {mobileProject && (
-
-                      <motion.div
-                        initial={{
-                          opacity: 0,
-                          height: 0,
-                        }}
-
-                        animate={{
-                          opacity: 1,
-                          height: "auto",
-                        }}
-
-                        exit={{
-                          opacity: 0,
-                          height: 0,
-                        }}
-
-                        transition={{
-                          duration: 0.3,
-                        }}
-
-                        className="
-            overflow-hidden
-
-            pt-4
-            pl-3
-
-            flex flex-col
-            gap-4
-          "
-                      >
-
-                        {projectLinks.map((item, i) => (
-
-                          <Link
-                            key={i}
-                            href={item.href}
-
-                            onClick={closeMenu}
-
-                            className="
-                block
-                w-full
-
-                py-1.5
-
-                text-left
-                text-sm
-
-                text-slate-700
-                dark:text-white/75
-
-                hover:text-cyan-600
-                dark:hover:text-cyan-400
-
-                transition
-              "
-                          >
-                            {item.name}
-                          </Link>
-
-                        ))}
-
-                      </motion.div>
-
-                    )}
-
-                  </AnimatePresence>
-
-                </div>
-
-                {/* MEDIA */}
-                <Link
-                  href="/media"
-                  onClick={closeMenu}
-
-                  className="
-                    w-full
-
-                    flex
-                    items-center
-                    justify-start
-
-                    py-3
-
-                    text-left
-                    text-base
-                    font-medium
-
-                    text-slate-800
-                    dark:text-white
-
-                    hover:text-cyan-600
-                    dark:hover:text-cyan-400
-
-                    transition
-                  "
-                >
-                  Media
-                </Link>
-
-                {/* CAREER */}
-                <Link
-                  href="/career"
-                  onClick={closeMenu}
-
-                  className="
-                    w-full
-
-                    flex
-                    items-center
-                    justify-start
-
-                    py-3
-
-                    text-left
-                    text-base
-                    font-medium
-
-                    text-slate-800
-                    dark:text-white
-
-                    hover:text-cyan-600
-                    dark:hover:text-cyan-400
-
-                    transition
-                  "
-                >
-                  Career
-                </Link>
-
-                {/* CONTACT */}
-                <Link
-                  href="/contact"
-                  onClick={closeMenu}
-
-                  className="
-                    w-full
-
-                    flex
-                    items-center
-                    justify-start
-
-                    py-3
-
-                    text-left
-                    text-base
-                    font-medium
-
-                    text-slate-800
-                    dark:text-white
-
-                    hover:text-cyan-600
-                    dark:hover:text-cyan-400
-
-                    transition
-                  "
-                >
-                  Contact
-                </Link>
-
-              </motion.div>
-
+              </div>
             </motion.div>
-
           </>
-
         )}
-
       </AnimatePresence>
-
     </nav>
   )
 }

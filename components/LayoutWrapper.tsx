@@ -44,6 +44,8 @@ export default function LayoutWrapper({
         }}
 
         className="
+          site-shell
+
           relative
 
           min-h-screen
@@ -67,6 +69,8 @@ export default function LayoutWrapper({
         <main
           id="page-content"
           className="
+            main-shell
+
             relative
             z-10
 

@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import { useRef } from "react"
 
 import { useReducedMotion } from "@/lib/useReducedMotion"
+import { useMediaQuery } from "@/lib/useMediaQuery"
 
 export default function ScrollZoom({
   children,
@@ -12,6 +13,7 @@ export default function ScrollZoom({
 }) {
   const ref = useRef(null)
   const reducedMotion = useReducedMotion()
+  const isDesktop = useMediaQuery("(min-width: 1024px)")
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -21,13 +23,13 @@ export default function ScrollZoom({
   const rawScale = useTransform(
     scrollYProgress,
     [0, 0.4, 0.6, 1],
-    [0.94, 1, 1, 0.94]
+    [0.985, 1, 1, 0.985]
   )
 
   const rawOpacity = useTransform(
     scrollYProgress,
     [0, 0.2, 0.8, 1],
-    [0.55, 1, 1, 0.55]
+    [0.82, 1, 1, 0.82]
   )
 
   // Smoother spring config for a premium, fluid feel
@@ -43,8 +45,8 @@ export default function ScrollZoom({
     mass: 1.2,
   })
 
-  if (reducedMotion) {
-    return <div className="relative w-full">{children}</div>
+  if (reducedMotion || !isDesktop) {
+    return <div ref={ref} className="relative w-full">{children}</div>
   }
 
   return (

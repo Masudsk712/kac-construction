@@ -16,7 +16,7 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 dark:bg-white/10 animate-pulse" />
+      <div className="h-11 w-11 rounded-full bg-white/10 dark:bg-white/10 sm:h-12 sm:w-12 animate-pulse" />
     );
   }
 
@@ -28,24 +28,9 @@ export default function ThemeToggle() {
       aria-label="Toggle Theme"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="
-        relative
-        w-11 h-11
-        sm:w-12 sm:h-12
-        rounded-full
-        border
-        border-black/10
-        dark:border-white/10
-        bg-white/80
-        dark:bg-white/10
-        backdrop-blur-xl
-        flex
-        items-center
-        justify-center
-        shadow-[0_8px_30px_rgba(0,0,0,0.08)]
-        transition-all duration-300
-        hover:scale-105
-        hover:border-cyan-400/40
-        hover:shadow-[0_12px_40px_rgba(34,211,238,0.2)]
+        icon-button-premium
+        h-11 w-11
+        sm:h-12 sm:w-12
       "
     >
       {/* GLOW */}
