@@ -264,25 +264,59 @@ export default function RootLayout({
             {/* 🔥 TOAST NOTIFICATIONS */}
             <Toaster
               position="top-center"
+              gutter={12}
+              containerStyle={{
+                zIndex: 999999,
+                top: 20,
+              }}
               toastOptions={{
                 duration: 4000,
                 style: {
-                  background: "var(--card)",
-                  color: "var(--text)",
-                  border: "1px solid var(--border)",
+                  background: "rgba(255, 255, 255, 0.95)",
+                  color: "#0f172a",
+                  border: "1px solid rgba(15, 23, 42, 0.1)",
                   borderRadius: "16px",
                   fontSize: "14px",
+                  padding: "14px 18px",
+                  boxShadow:
+                    "0 20px 60px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.04)",
+                  backdropFilter: "blur(20px) saturate(180%)",
+                  WebkitBackdropFilter: "blur(20px) saturate(180%)",
                 },
                 success: {
                   iconTheme: {
                     primary: "#06b6d4",
-                    secondary: "#000",
+                    secondary: "#ffffff",
+                  },
+                  style: {
+                    background: "rgba(255, 255, 255, 0.95)",
+                    color: "#0f172a",
+                    border: "1px solid rgba(6, 182, 212, 0.2)",
+                    borderRadius: "16px",
+                    fontSize: "14px",
+                    padding: "14px 18px",
+                    boxShadow:
+                      "0 20px 60px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.04)",
+                    backdropFilter: "blur(20px) saturate(180%)",
+                    WebkitBackdropFilter: "blur(20px) saturate(180%)",
                   },
                 },
                 error: {
                   iconTheme: {
                     primary: "#f87171",
-                    secondary: "#000",
+                    secondary: "#ffffff",
+                  },
+                  style: {
+                    background: "rgba(255, 255, 255, 0.95)",
+                    color: "#0f172a",
+                    border: "1px solid rgba(248, 113, 113, 0.2)",
+                    borderRadius: "16px",
+                    fontSize: "14px",
+                    padding: "14px 18px",
+                    boxShadow:
+                      "0 20px 60px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(248, 113, 113, 0.06)",
+                    backdropFilter: "blur(20px) saturate(180%)",
+                    WebkitBackdropFilter: "blur(20px) saturate(180%)",
                   },
                 },
               }}

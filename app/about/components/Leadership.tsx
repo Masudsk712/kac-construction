@@ -65,7 +65,7 @@ const leadershipData = [
   },
 
   {
-    name: "Probhakar Pramanik",
+    name: "Prabhakar Pramanik",
     role: "Store Management",
     dept: "Store",
     image: "/about/Probhakar.webp",
