@@ -12,6 +12,18 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "kacgroups.com",
       },
+      {
+        protocol: "https",
+        hostname: "www.kacgroups.com",
+      },
+      {
+        protocol: "https",
+        hostname: "kcpltl.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.kcpltl.com",
+      },
     ],
   },
 

@@ -1,12 +1,13 @@
 import type { MetadataRoute } from "next";
-import { siteConfig } from "@/lib/seo";
+import { getDomain } from "@/lib/domain-server";
+import { getDomainUrl } from "@/lib/domain";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = siteConfig.url;
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const domain = await getDomain();
+  const baseUrl = getDomainUrl(domain);
   const now = new Date();
 
   return [
-    // 🔥 Main Pages
     {
       url: baseUrl,
       lastModified: now,

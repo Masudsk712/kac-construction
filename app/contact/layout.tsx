@@ -1,27 +1,28 @@
 import type { Metadata } from "next";
-import { pageMetadata } from "@/lib/seo";
+import { getBrandConfig } from "@/lib/content-server";
 
-export const metadata: Metadata = {
-  title: pageMetadata.contact.title,
-  description: pageMetadata.contact.description,
-  alternates: {
-    canonical: pageMetadata.contact.path,
-  },
-  openGraph: {
-    title: pageMetadata.contact.title,
-    description: pageMetadata.contact.description,
-    url: pageMetadata.contact.path,
-  },
-  twitter: {
-    title: pageMetadata.contact.title,
-    description: pageMetadata.contact.description,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const config = await getBrandConfig();
+  const meta = config.pageMetadata.contact;
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: { canonical: meta.path },
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: meta.path,
+    },
+    twitter: {
+      title: meta.title,
+      description: meta.description,
+    },
+  };
+}
 
 export default function ContactLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return <>{children}</>;
 }

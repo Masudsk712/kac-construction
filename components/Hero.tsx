@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, ShieldCheck, Award } from "lucide-react";
 import MagneticButton from "./MagneticButton";
 import { ease, spring } from "@/lib/animations";
+import { useBrand } from "@/components/BrandContext";
 
 /* ======================================== */
 /* ANIMATION VARIANTS */
@@ -20,6 +21,8 @@ const fadeUp = {
 /* ======================================== */
 
 export default function Hero() {
+  const { config: c } = useBrand();
+
   const scrollToNext = () => {
     const nextSection = document.getElementById("stats");
     if (!nextSection) return;
@@ -28,6 +31,10 @@ export default function Hero() {
       behavior: "smooth",
     });
   };
+
+  const heroHeadingContent = c.hero.heading.line2
+    ? `${c.hero.heading.line1}<br />${c.hero.heading.line2}`
+    : c.hero.heading.line1;
 
   return (
     <section
@@ -41,10 +48,10 @@ export default function Hero() {
         loop
         playsInline
         preload="metadata"
-        poster="/home/SitePic.webp"
+        poster={c.hero.posterUrl}
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
       >
-        <source src="/videos/NewBackground.mp4" type="video/mp4" />
+        <source src={c.hero.videoUrl} type="video/mp4" />
       </video>
 
       {/* OVERLAYS */}
@@ -68,7 +75,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-cyan-400/25 dark:border-cyan-400/20 bg-white/65 dark:bg-white/5 backdrop-blur-xl shadow-[0_0_40px_rgba(34,211,238,0.08)]">
             <div className="w-2 h-2 rounded-full bg-cyan-300 animate-pulse" />
             <p className="text-[10px] sm:text-xs uppercase tracking-[5px] text-cyan-700 dark:text-cyan-100">
-              EPC Infrastructure Since 2010
+              {c.hero.label}
             </p>
           </div>
 
@@ -93,11 +100,13 @@ export default function Hero() {
         >
           {/* GLOW */}
           <span className="absolute inset-0 opacity-70 blur-[38px] bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-300 bg-clip-text text-transparent">
-            KUDDUS ALI<br />CONSTRUCTION
+            {c.hero.heading.line1}
+            {c.hero.heading.line2 && <><br />{c.hero.heading.line2}</>}
           </span>
           {/* MAIN */}
           <span className="relative z-10 bg-gradient-to-r from-slate-900 via-cyan-700 to-cyan-500 dark:from-white dark:via-cyan-100 dark:to-cyan-300 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(34,211,238,0.2)] dark:drop-shadow-[0_0_35px_rgba(34,211,238,0.35)]">
-            KUDDUS ALI<br />CONSTRUCTION
+            {c.hero.heading.line1}
+            {c.hero.heading.line2 && <><br />{c.hero.heading.line2}</>}
           </span>
         </motion.h1>
 
@@ -109,7 +118,7 @@ export default function Hero() {
           transition={{ duration: 0.85, delay: 0.35, ease: ease.premiumOut }}
           className="mt-10 text-2xl sm:text-4xl md:text-6xl font-black text-slate-900 dark:text-white drop-shadow-none dark:drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]"
         >
-          Powering India's Future
+          {c.hero.subtitle}
         </motion.h2>
 
         {/* DESCRIPTION */}
@@ -120,7 +129,7 @@ export default function Hero() {
           transition={{ duration: 0.85, delay: 0.55, ease: ease.premiumOut }}
           className="mt-8 max-w-3xl text-sm sm:text-lg md:text-xl leading-[1.9] text-slate-700 dark:text-white/75"
         >
-          Experts in Transmission Line, Tower Erection, Foundation, Hotline Stringing and EPC Infrastructure Projects across India.
+          {c.hero.description}
         </motion.p>
 
         {/* KEY METRICS ROW */}
@@ -131,11 +140,7 @@ export default function Hero() {
           transition={{ duration: 0.85, delay: 0.65, ease: ease.premiumOut }}
           className="mt-12 flex flex-wrap items-center justify-center gap-8 sm:gap-12"
         >
-          {[
-            { value: "150+", label: "Towers Completed" },
-            { value: "765kV", label: "Transmission Capacity" },
-            { value: "10+", label: "States Covered" },
-          ].map((metric, i) => (
+          {c.hero.metrics.map((metric, i) => (
             <div key={i} className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-black text-cyan-600 dark:text-cyan-300">{metric.value}</p>
               <p className="text-[10px] sm:text-xs uppercase tracking-[3px] text-slate-500 dark:text-white/50 mt-1">{metric.label}</p>
@@ -151,17 +156,17 @@ export default function Hero() {
           transition={{ duration: 0.85, delay: 0.8, ease: ease.premiumOut }}
           className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto"
         >
-          <Link href="/projects" className="w-full sm:w-auto">
+          <Link href={c.hero.primaryButton.href} className="w-full sm:w-auto">
             <MagneticButton>
               <div className="flex items-center justify-center gap-3">
-                View Projects
+                {c.hero.primaryButton.label}
                 <ArrowRight size={18} />
               </div>
             </MagneticButton>
           </Link>
-          <Link href="/contact" className="w-full sm:w-auto">
+          <Link href={c.hero.secondaryButton.href} className="w-full sm:w-auto">
             <button className="w-full px-8 py-4 rounded-full border border-slate-300/60 dark:border-white/15 bg-white/75 dark:bg-white/10 backdrop-blur-xl text-slate-800 dark:text-white font-semibold shadow-[0_8px_30px_rgba(15,23,42,0.08)] dark:shadow-[0_0_25px_rgba(255,255,255,0.05)] transition-all duration-300 hover:bg-white dark:hover:bg-white/20 hover:border-cyan-500/40 dark:hover:border-cyan-400/40 hover:text-cyan-600 dark:hover:text-cyan-300">
-              Contact Us
+              {c.hero.secondaryButton.label}
             </button>
           </Link>
         </motion.div>

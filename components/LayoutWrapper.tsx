@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { DomainKey } from "@/lib/domain";
 
+import { BrandProvider } from "@/components/BrandContext";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageLoader from "@/components/PageLoader";
@@ -9,55 +11,32 @@ import PageLoader from "@/components/PageLoader";
 import { useLoader } from "@/components/LoaderContext";
 
 export default function LayoutWrapper({
+  domain,
   children,
 }: {
+  domain: DomainKey;
   children: React.ReactNode;
 }) {
-
   const { loading } = useLoader();
 
   return (
-    <>
-      {/* ======================================== */}
+    <BrandProvider domain={domain}>
       {/* WEBSITE */}
-      {/* ======================================== */}
-
       <motion.div
-        initial={{
-          opacity: 0,
-        }}
-
-        animate={{
-          opacity: loading ? 0 : 1,
-        }}
-
-        transition={{
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-
-        style={{
-          pointerEvents:
-            loading
-              ? "none"
-              : "auto",
-        }}
-
+        initial={{ opacity: 0 }}
+        animate={{ opacity: loading ? 0 : 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        style={{ pointerEvents: loading ? "none" : "auto" }}
         className="
           site-shell
-
           relative
-
           min-h-screen
-
           bg-[var(--bg)]
           text-[var(--text)]
-
           transition-[background-color,color,border-color]
           duration-500
         "
       >
-
         <a href="#page-content" className="skip-link">
           Skip to content
         </a>
@@ -70,12 +49,9 @@ export default function LayoutWrapper({
           id="page-content"
           className="
             main-shell
-
             relative
             z-10
-
             min-h-screen
-
             overflow-x-hidden
           "
         >
@@ -87,12 +63,8 @@ export default function LayoutWrapper({
 
       </motion.div>
 
-      {/* ======================================== */}
       {/* PAGE LOADER */}
-      {/* ======================================== */}
-
       <PageLoader />
-
-    </>
+    </BrandProvider>
   );
 }

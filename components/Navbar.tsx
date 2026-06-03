@@ -22,6 +22,8 @@ import {
   Menu,
 } from "lucide-react"
 
+import { useBrand } from "@/components/BrandContext"
+
 type MenuKey = "about" | "service" | "project"
 
 const aboutLinks = [
@@ -53,24 +55,9 @@ const dropdownGroups: Array<{
   href: string
   links: typeof aboutLinks
 }> = [
-  {
-    key: "about",
-    name: "About",
-    href: "/about",
-    links: aboutLinks,
-  },
-  {
-    key: "service",
-    name: "Services",
-    href: "/service",
-    links: serviceLinks,
-  },
-  {
-    key: "project",
-    name: "Projects",
-    href: "/projects",
-    links: projectLinks,
-  },
+  { key: "about", name: "About", href: "/about", links: aboutLinks },
+  { key: "service", name: "Services", href: "/service", links: serviceLinks },
+  { key: "project", name: "Projects", href: "/projects", links: projectLinks },
 ]
 
 const singleLinks = [
@@ -103,6 +90,8 @@ export default function Navbar() {
   const pathname = usePathname()
   const isHome = pathname === "/"
 
+  const { config } = useBrand()
+
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<MenuKey | null>(null)
@@ -115,30 +104,22 @@ export default function Navbar() {
   const closeMenu = useCallback(() => {
     setIsOpen(false)
     setOpenDropdown(null)
-    setMobileGroups({
-      about: false,
-      service: false,
-      project: false,
-    })
+    setMobileGroups({ about: false, service: false, project: false })
   }, [])
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
     }
-
     handleScroll()
     window.addEventListener("scroll", handleScroll, { passive: true })
-
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   useEffect(() => {
     if (!isOpen) return
-
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = "hidden"
-
     return () => {
       document.body.style.overflow = previousOverflow
     }
@@ -146,25 +127,16 @@ export default function Navbar() {
 
   useEffect(() => {
     if (!isOpen) return
-
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        closeMenu()
-      }
+      if (event.key === "Escape") closeMenu()
     }
-
     window.addEventListener("keydown", handleKeyDown)
-
     return () => window.removeEventListener("keydown", handleKeyDown)
   }, [isOpen, closeMenu])
 
   const isActivePath = (href: string) => {
     const path = href.split("#")[0]
-
-    if (path === "/") {
-      return pathname === "/"
-    }
-
+    if (path === "/") return pathname === "/"
     return pathname === path || pathname.startsWith(`${path}/`)
   }
 
@@ -183,10 +155,7 @@ export default function Navbar() {
     }`
 
   const toggleMobileGroup = (key: MenuKey) => {
-    setMobileGroups((current) => ({
-      ...current,
-      [key]: !current[key],
-    }))
+    setMobileGroups((current) => ({ ...current, [key]: !current[key] }))
   }
 
   return (
@@ -217,19 +186,16 @@ export default function Navbar() {
       >
         <Link
           href="/"
-          aria-label="Kuddus Ali Construction home"
+          aria-label={`${config.name} home`}
           onClick={() => {
             closeMenu()
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            })
+            window.scrollTo({ top: 0, behavior: "smooth" })
           }}
           className="relative z-20 flex shrink-0 items-center"
         >
           <Image
-            src="/icon.png"
-            alt="Kuddus Ali Construction"
+            src={config.navbar.logoUrl}
+            alt={config.navbar.logoAlt}
             width={64}
             height={64}
             priority
@@ -241,12 +207,7 @@ export default function Navbar() {
           />
         </Link>
 
-        <div
-          className="
-            hidden flex-1 items-center justify-center gap-1
-            md:flex xl:gap-2
-          "
-        >
+        <div className="hidden flex-1 items-center justify-center gap-1 md:flex xl:gap-2">
           <Link href="/" className={desktopLinkStyle("/")}>
             Home
           </Link>
@@ -281,9 +242,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.98 }}
                     transition={{ duration: 0.22 }}
-                    className={`${dropdownClass} ${
-                      group.key === "project" ? "w-[360px]" : "w-80"
-                    }`}
+                    className={`${dropdownClass} ${group.key === "project" ? "w-[360px]" : "w-80"}`}
                   >
                     {group.key === "project" && (
                       <div className="mb-3 flex items-center gap-3 rounded-2xl border border-black/5 bg-slate-50/70 p-3 dark:border-white/10 dark:bg-white/[0.04]">
@@ -292,10 +251,10 @@ export default function Navbar() {
                         </div>
                         <div>
                           <h4 className="font-bold text-slate-900 dark:text-white">
-                            Project Portfolio
+                            {config.navbar.dropdownLabel}
                           </h4>
                           <p className="text-xs text-slate-500 dark:text-white/50">
-                            Transmission Infrastructure
+                            {config.navbar.dropdownSubtext}
                           </p>
                         </div>
                       </div>
@@ -303,11 +262,7 @@ export default function Navbar() {
 
                     <div className="space-y-1">
                       {group.links.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className={dropdownLink}
-                        >
+                        <Link key={item.href} href={item.href} className={dropdownLink}>
                           {item.name}
                           <ArrowUpRight
                             size={15}
@@ -327,11 +282,7 @@ export default function Navbar() {
           ))}
 
           {singleLinks.slice(1).map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={desktopLinkStyle(item.href)}
-            >
+            <Link key={item.href} href={item.href} className={desktopLinkStyle(item.href)}>
               {item.name}
             </Link>
           ))}
@@ -392,19 +343,16 @@ export default function Navbar() {
               >
                 <Link
                   href="/"
-                  aria-label="Kuddus Ali Construction home"
+                  aria-label={`${config.name} home`}
                   onClick={() => {
                     closeMenu()
-                    window.scrollTo({
-                      top: 0,
-                      behavior: "smooth",
-                    })
+                    window.scrollTo({ top: 0, behavior: "smooth" })
                   }}
                   className="flex items-center"
                 >
                   <Image
-                    src="/icon.png"
-                    alt="KAC"
+                    src={config.navbar.logoUrl}
+                    alt={config.navbar.logoAltMobile}
                     width={68}
                     height={68}
                     className="h-12 w-auto object-contain"
@@ -423,11 +371,7 @@ export default function Navbar() {
 
               <div className="px-4 py-5">
                 <div className="space-y-2">
-                  <Link
-                    href="/"
-                    onClick={closeMenu}
-                    className={mobileLinkStyle("/")}
-                  >
+                  <Link href="/" onClick={closeMenu} className={mobileLinkStyle("/")}>
                     <span>Home</span>
                     <ArrowUpRight size={16} />
                   </Link>
@@ -501,7 +445,6 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </div>
-
               </div>
             </motion.div>
           </>

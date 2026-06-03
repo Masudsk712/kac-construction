@@ -1,0 +1,491 @@
+// ─── KCPLTL Brand Content ──────────────────────────────────────────
+
+export const kcpltlConfig = {
+  // ─── Brand Identity ────────────────────────────────
+  name: "KCPLTL",
+  shortName: "KCPLTL",
+  legalName: "KCPLTL",
+  tagline: "Powering Infrastructure",
+  since: "2015",
+  abbreviation: "KCPLTL",
+  infrastructureGroup: "Infrastructure Group",
+
+  // ─── Domain ────────────────────────────────────────
+  url: "https://www.kcpltl.com",
+  domain: "kcpltl.com",
+
+  // ─── SEO ───────────────────────────────────────────
+  seo: {
+    title: "KCPLTL | Transmission Line & Infrastructure Solutions",
+    description:
+      "KCPLTL is a professional transmission line and infrastructure solutions provider specializing in tower erection, stringing, foundation, and EPC projects across India.",
+    keywords: [
+      "KCPLTL",
+      "Transmission Line Company",
+      "Tower Erection Company",
+      "Stringing Work Contractor",
+      "Foundation Work Contractor",
+      "EPC Infrastructure Company",
+      "Power Grid Contractor",
+      "Infrastructure Company India",
+      "765kV Transmission Line",
+      "220kV Tower Erection",
+      "400kV Transmission",
+      "Hotline Stringing Contractor",
+      "HTLS Reconductoring",
+      "Power Transmission India",
+      "Substation Foundation Work",
+      "Transmission Line Survey",
+      "EPC Contractor India",
+      "High Voltage Transmission",
+      "Power Infrastructure Development",
+    ],
+    ogImage: "/kcpltl/og-image.jpg",
+    twitterHandle: "@KCPLTL",
+    creator: "KCPLTL",
+    googleVerification: "google-site-verification-code-kcpltl",
+  },
+
+  // ─── Favicon ───────────────────────────────────────
+  favicon: "/kcpltl/icon.png",
+
+  // ─── Contact ───────────────────────────────────────
+  contact: {
+    phone: "+919735067595",
+    phone2: "+919933638309",
+    email: "info@kcpltl.com",
+    whatsapp: "919735067595",
+    address: {
+      street: "Mahisbathani Baluatola, PO Barkol",
+      locality: "Malda",
+      region: "West Bengal",
+      postalCode: "732128",
+      country: "India",
+    },
+    geo: {
+      latitude: "25.0000",
+      longitude: "88.0000",
+    },
+    mapEmbedUrl:
+      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d704.6048151757652!2d88.1037462695071!3d25.081566213257595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDA0JzUzLjYiTiA4OMKwMDYnMTUuOCJF!5e1!3m2!1sen!2sin!4v1778577513815!5m2!1sen!2sin",
+    officeHours: "Monday - Saturday | 9:00 AM - 7:00 PM",
+  },
+
+  // ─── Social ────────────────────────────────────────
+  social: {
+    facebook: "https://facebook.com/kcpltl",
+    linkedin: "https://linkedin.com/company/kcpltl",
+    youtube: "https://youtube.com/@kcpltl",
+  },
+
+  // ─── Hero Section ──────────────────────────────────
+  hero: {
+    videoUrl: "/videos/NewBackground.mp4",
+    posterUrl: "/home/SitePic.webp",
+    label: "Infrastructure Since 2015",
+    heading: {
+      line1: "KCPLTL",
+      line2: "",
+    },
+    subtitle: "Powering Infrastructure",
+    description:
+      "Experts in Transmission Line, Tower Erection, Foundation, Hotline Stringing and EPC Infrastructure Projects across India.",
+    metrics: [
+      { value: "100+", label: "Towers Completed" },
+      { value: "765kV", label: "Transmission Capacity" },
+      { value: "8+", label: "States Covered" },
+    ],
+    primaryButton: { label: "View Projects", href: "/projects" },
+    secondaryButton: { label: "Contact Us", href: "/contact" },
+  },
+
+  // ─── About Section ─────────────────────────────────
+  about: {
+    label: "About Us",
+    heading: {
+      part1: "Engineering Excellence",
+      part2: "Infrastructure",
+    },
+    trustBadges: [
+      { label: "ISO Certified 9001:2015", icon: "ShieldCheck" },
+      { label: "10+ Years of Excellence", icon: "Award" },
+    ],
+    description1:
+      "Established in 2015, KCPLTL has built a strong reputation in the electrical transmission line infrastructure sector across India.",
+    description2:
+      "Our mission: deliver reliable, high-quality construction, maintenance, and installation services for electrical transmission infrastructure — connecting communities and powering progress through innovation, safety, and execution excellence.",
+    features: [
+      "Transmission Line EPC Projects",
+      "Tower Erection & Foundation Engineering",
+      "High Voltage System Installation",
+      "Hotline Stringing & Maintenance",
+    ],
+    imageUrl: "/home/SitePic.webp",
+    imageAlt: "KCPLTL - Transmission Infrastructure",
+    stats: [
+      { value: "10+", label: "Years of Experience" },
+      { value: "765kV", label: "Transmission Expertise" },
+      { value: "30+", label: "Active Projects" },
+    ],
+  },
+
+  // ─── Services Section ──────────────────────────────
+  services: {
+    label: "Core Services",
+    heading: {
+      part1: "Engineering Services",
+      part2: "Built For Reliability",
+    },
+    description:
+      "KCPLTL delivers advanced transmission infrastructure solutions with precision execution, experienced engineering teams and reliable project delivery across India.",
+    items: [
+      {
+        title: "Survey Work",
+        desc: "Preliminary, detailed and check survey services with route optimization and accurate transmission line planning.",
+        image: "/home/SurveyWork.webp",
+        link: "/service#survey",
+        number: "01",
+        label: "KCPLTL Service",
+      },
+      {
+        title: "Foundation Work",
+        desc: "Precision-engineered civil foundation execution ensuring long-term tower strength and structural reliability.",
+        image: "/home/FoundationWork.webp",
+        link: "/service#foundation",
+        number: "02",
+        label: "KCPLTL Service",
+      },
+      {
+        title: "Tower Erection",
+        desc: "Safe and efficient erection of transmission towers using advanced methodologies and experienced site teams.",
+        image: "/home/ErectionWork.webp",
+        link: "/service#erection",
+        number: "03",
+        label: "KCPLTL Service",
+      },
+      {
+        title: "Stringing Work",
+        desc: "High-capacity conductor stringing and hotline execution with modern machinery and strict safety compliance.",
+        image: "/home/StringingWork.webp",
+        link: "/service#stringing",
+        number: "04",
+        label: "KCPLTL Service",
+      },
+    ],
+    ctaLabel: "Explore All Services",
+    ctaHref: "/service",
+  },
+
+  // ─── Projects Section ──────────────────────────────
+  projects: {
+    label: "KCPLTL Projects",
+    heading: {
+      part1: "Successfully Delivered",
+      part2: "Infrastructure Projects",
+    },
+    description:
+      "KCPLTL delivers transmission line, tower erection, HTLS reconductoring and hotline stringing projects with engineering precision, operational safety and execution excellence.",
+    items: [
+      {
+        title: "220kV / 400kV / 765kV Transmission Lines",
+        desc: "Tower erection and transmission infrastructure execution across multiple states with precision engineering standards.",
+        points: [
+          "High-capacity EHV transmission corridors",
+          "Tower erection & stringing operations",
+          "Multi-state execution capability",
+          "Reliable power infrastructure delivery",
+        ],
+        icon: "TowerControl",
+        image: "/home/HomeTower1.webp",
+        href: "/projects#completed",
+        location: "Multi-State",
+      },
+      {
+        title: "HTLS Reconductoring Projects",
+        desc: "Upgradation of existing lines using HTLS low-sag conductors for enhanced transmission efficiency and capacity.",
+        points: [
+          "Low-sag high-temperature conductors",
+          "Transmission upgrade execution",
+          "Modern reconductoring systems",
+          "Improved power transfer capability",
+        ],
+        icon: "Zap",
+        image: "/home/HomeTower2.webp",
+        href: "/projects#htls",
+        location: "Pan India",
+      },
+      {
+        title: "Tower Strengthening & Rectification",
+        desc: "Structural strengthening, alignment correction and maintenance support for ageing transmission infrastructure.",
+        points: [
+          "Tower rectification services",
+          "Structural reinforcement",
+          "Safety compliance execution",
+          "Long-term infrastructure stability",
+        ],
+        icon: "Wrench",
+        image: "/home/HomeTower3.webp",
+        href: "/projects#strengthening",
+        location: "Eastern India",
+      },
+      {
+        title: "Hotline Stringing Operations",
+        desc: "Live-line stringing operations ensuring uninterrupted transmission flow and minimal downtime.",
+        points: [
+          "Zero shutdown execution",
+          "Advanced hotline techniques",
+          "Critical power corridor support",
+          "High safety operational standards",
+        ],
+        icon: "Activity",
+        image: "/home/ReconductoringWork.webp",
+        href: "/projects#stringing",
+        location: "National Grid",
+      },
+    ],
+    ctaLabel: "View All Projects",
+    ctaHref: "/projects",
+  },
+
+  // ─── Footer ────────────────────────────────────────
+  footer: {
+    topLabel: "KCPLTL",
+    heading: {
+      line1: "Building India's",
+      line2: "Power Infrastructure",
+    },
+    description:
+      "KCPLTL specializes in transmission infrastructure, tower erection, hotline stringing, HTLS reconductoring and EPC execution projects with precision, safety and nationwide reliability.",
+    ctaButton: { label: "Start Your Project", href: "/contact" },
+    credentials: [
+      { label: "ISO 9001:2015 Certified", icon: "ShieldCheck" },
+      { label: "10+ Years Excellence", icon: "Award" },
+    ],
+    companyTitle: "KCPLTL",
+    companySubtitle: "Infrastructure Group",
+    companyDescription:
+      "Delivering modern EPC and transmission infrastructure solutions with engineering excellence across India.",
+    quickLinks: [
+      { title: "Home", href: "/" },
+      { title: "About", href: "/about" },
+      { title: "Services", href: "/service" },
+      { title: "Projects", href: "/projects" },
+      { title: "Media", href: "/media" },
+      { title: "Career", href: "/career" },
+      { title: "Contact", href: "/contact" },
+    ],
+    coreServices: [
+      "Transmission Line EPC",
+      "Tower Erection",
+      "HTLS Reconductoring",
+      "Foundation Engineering",
+      "Hotline Stringing",
+      "Survey & Planning",
+    ],
+    backgroundImage: "/home/HomeTower11.webp",
+    copyright: "© 2026 KCPLTL. All Rights Reserved.",
+    developerName: "Masud Sk",
+    developerUrl: "https://www.linkedin.com/in/masud-sk-254b581b9",
+  },
+
+  // ─── CTA Section ───────────────────────────────────
+  cta: {
+    label: "Let's Build Together",
+    heading: {
+      part1: "Ready To Power",
+      part2: "India's Infrastructure?",
+    },
+    description:
+      "Partner with KCPLTL for reliable transmission infrastructure solutions — engineering precision, safety excellence, and trusted project delivery across India.",
+    phone: "+91 9735067595",
+    email: "info@kcpltl.com",
+    coreExpertise: "EPC Transmission Infrastructure",
+    whatsappNumber: "919735067595",
+    whatsappLabel: "Start A Project",
+    contactLabel: "Contact Us",
+  },
+
+  // ─── Why Choose Us ─────────────────────────────────
+  whyChooseUs: {
+    label: "Why KCPLTL",
+    heading: {
+      part1: "Engineering Reliability",
+      part2: "With Precision & Trust",
+    },
+    description:
+      "KCPLTL delivers dependable transmission infrastructure solutions with technical expertise, field experience and a commitment to operational excellence across every project site.",
+    features: [
+      {
+        title: "Experienced Workforce",
+        desc: "Our highly skilled engineers, supervisors and technical teams deliver precision-driven transmission infrastructure projects across India.",
+        icon: "FaUserTie",
+        gradient: "from-cyan-400/20 to-blue-500/10",
+      },
+      {
+        title: "Safety & Compliance",
+        desc: "We follow strict operational safety standards, site protocols and quality assurance systems in every phase of execution.",
+        icon: "FaShieldAlt",
+        gradient: "from-emerald-400/20 to-cyan-500/10",
+      },
+      {
+        title: "Timely Execution",
+        desc: "From foundation work to hotline stringing, our structured planning ensures on-time project delivery with consistent reliability.",
+        icon: "FaClock",
+        gradient: "from-blue-400/20 to-indigo-500/10",
+      },
+      {
+        title: "Trusted Infrastructure Partner",
+        desc: "KCPLTL is trusted for transmission line and power infrastructure execution with a reputation built on performance.",
+        icon: "FaCheckCircle",
+        gradient: "from-cyan-400/20 to-sky-500/10",
+      },
+    ],
+    qualityLabel: "KCPLTL QUALITY",
+  },
+
+  // ─── Clients Section ───────────────────────────────
+  clients: {
+    label: "Trusted Partnerships",
+    heading: "Our Valuable Clients",
+    description:
+      "KCPLTL proudly collaborates with leading infrastructure, transmission and EPC companies delivering reliable execution across India's power sector.",
+    featureCards: [
+      {
+        title: "Trusted Execution",
+        desc: "Long-term partnerships built through quality execution, safety compliance and reliable infrastructure delivery.",
+        icon: "ShieldCheck",
+      },
+      {
+        title: "Transmission Expertise",
+        desc: "Specialized in tower erection, hotline stringing, HTLS reconductoring and EHV infrastructure execution.",
+        icon: "Zap",
+      },
+      {
+        title: "Nationwide Presence",
+        desc: "Successfully supporting major transmission and infrastructure projects across multiple states in India.",
+        icon: "ArrowUpRight",
+      },
+    ],
+    logos: [
+      "/clients/Adani.webp",
+      "/clients/APAR.webp",
+      "/clients/Bajel.webp",
+      "/clients/Jsk.webp",
+      "/clients/Jsw.webp",
+      "/clients/KEC.webp",
+      "/clients/KPIL.webp",
+      "/clients/L&T.webp",
+      "/clients/lumino.webp",
+      "/clients/ntpc.webp",
+      "/clients/powergrid.webp",
+      "/clients/simplex.webp",
+      "/clients/sterlight.webp",
+      "/clients/tataproject.webp",
+      "/clients/Transrail.webp",
+      "/clients/skipper.webp",
+      "/clients/Grilll.webp",
+    ],
+    backgroundImage: "/home/HomeTower12.webp",
+  },
+
+  // ─── FAQ ───────────────────────────────────────────
+  faq: [
+    {
+      question: "What types of transmission line projects does KCPLTL handle?",
+      answer:
+        "KCPLTL handles 220kV, 400kV, and 765kV transmission line projects including tower erection, foundation work, stringing, and HTLS reconductoring across India.",
+    },
+    {
+      question: "Where does KCPLTL operate?",
+      answer:
+        "KCPLTL operates across India with headquarters in Malda, West Bengal. We have successfully executed projects in multiple states including West Bengal, Assam, and the North East region.",
+    },
+    {
+      question: "What services does KCPLTL offer?",
+      answer:
+        "We offer survey work, tower foundation, tower erection, hotline stringing, HTLS reconductoring, and complete EPC infrastructure solutions for power transmission projects.",
+    },
+    {
+      question: "How can I contact KCPLTL for project enquiries?",
+      answer:
+        "You can contact us at +91 9735067595 or email info@kcpltl.com. Our office is located at Mahisbathani Baluatola, PO Barkol, Malda, West Bengal - 732128, India.",
+    },
+    {
+      question: "What voltage levels does KCPLTL work with?",
+      answer:
+        "KCPLTL has expertise in 220kV, 400kV, and 765kV Extra High Voltage (EHV) transmission line projects.",
+    },
+    {
+      question: "Is KCPLTL hiring for transmission line projects?",
+      answer:
+        "Yes, we regularly hire site supervisors, tower erection engineers, stringing supervisors, and other professionals for our transmission line projects. Visit our careers page for current openings.",
+    },
+  ],
+
+  // ─── Service Types ─────────────────────────────────
+  serviceTypes: [
+    "Transmission Line Construction",
+    "Tower Erection",
+    "Foundation Work",
+    "Hotline Stringing",
+    "HTLS Reconductoring",
+    "Power Grid Infrastructure",
+    "Transmission Line Survey",
+    "EPC Infrastructure Solutions",
+  ],
+
+  // ─── Navbar ────────────────────────────────────────
+  navbar: {
+    logoUrl: "/kcpltl/icon.png",
+    logoAlt: "KCPLTL",
+    logoAltMobile: "KCPLTL",
+    dropdownLabel: "Project Portfolio",
+    dropdownSubtext: "Transmission Infrastructure",
+  },
+
+  // ─── Page Metadata ─────────────────────────────────
+  pageMetadata: {
+    home: {
+      title: "KCPLTL | Transmission Line & Infrastructure Solutions",
+      description:
+        "KCPLTL is a professional transmission line and infrastructure solutions provider specializing in tower erection, stringing, foundation, and EPC projects across India.",
+      path: "/",
+    },
+    about: {
+      title: "About Us | KCPLTL",
+      description:
+        "Learn about KCPLTL's journey in transmission line and EPC infrastructure. Discover our expertise in tower erection, foundation work, stringing, and power grid projects across India.",
+      path: "/about",
+    },
+    service: {
+      title: "Our Services | Transmission Line & EPC Infrastructure | KCPLTL",
+      description:
+        "KCPLTL offers comprehensive transmission line services: survey work, tower foundation, tower erection, hotline stringing, and HTLS reconductoring. EPC infrastructure solutions for power grid projects across India.",
+      path: "/service",
+    },
+    projects: {
+      title: "Our Projects | Transmission Line & Power Infrastructure | KCPLTL",
+      description:
+        "Explore KCPLTL's portfolio of completed and ongoing transmission line projects across India. 220kV, 400kV, and 765kV tower erection, stringing, and foundation projects.",
+      path: "/projects",
+    },
+    contact: {
+      title: "Contact Us | KCPLTL",
+      description:
+        "Contact KCPLTL for transmission line, tower erection, foundation, and EPC infrastructure projects.",
+      path: "/contact",
+    },
+    career: {
+      title: "Careers | Join KCPLTL",
+      description:
+        "Explore career opportunities at KCPLTL. We're hiring site supervisors, tower erection engineers, and stringing supervisors for transmission line projects across India.",
+      path: "/career",
+    },
+    media: {
+      title: "Media & Gallery | KCPLTL",
+      description:
+        "Browse project photos, videos, and media coverage of KCPLTL's transmission line, tower erection, and power infrastructure operations across India.",
+      path: "/media",
+    },
+  },
+} as const;

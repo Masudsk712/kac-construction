@@ -1,27 +1,28 @@
 import type { Metadata } from "next";
-import { pageMetadata } from "@/lib/seo";
+import { getBrandConfig } from "@/lib/content-server";
 
-export const metadata: Metadata = {
-  title: pageMetadata.media.title,
-  description: pageMetadata.media.description,
-  alternates: {
-    canonical: pageMetadata.media.path,
-  },
-  openGraph: {
-    title: pageMetadata.media.title,
-    description: pageMetadata.media.description,
-    url: pageMetadata.media.path,
-  },
-  twitter: {
-    title: pageMetadata.media.title,
-    description: pageMetadata.media.description,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const config = await getBrandConfig();
+  const meta = config.pageMetadata.media;
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: { canonical: meta.path },
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: meta.path,
+    },
+    twitter: {
+      title: meta.title,
+      description: meta.description,
+    },
+  };
+}
 
 export default function MediaLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return <>{children}</>;
 }

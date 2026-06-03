@@ -1,27 +1,28 @@
 import type { Metadata } from "next";
-import { pageMetadata } from "@/lib/seo";
+import { getBrandConfig } from "@/lib/content-server";
 
-export const metadata: Metadata = {
-  title: pageMetadata.career.title,
-  description: pageMetadata.career.description,
-  alternates: {
-    canonical: pageMetadata.career.path,
-  },
-  openGraph: {
-    title: pageMetadata.career.title,
-    description: pageMetadata.career.description,
-    url: pageMetadata.career.path,
-  },
-  twitter: {
-    title: pageMetadata.career.title,
-    description: pageMetadata.career.description,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const config = await getBrandConfig();
+  const meta = config.pageMetadata.career;
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: { canonical: meta.path },
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: meta.path,
+    },
+    twitter: {
+      title: meta.title,
+      description: meta.description,
+    },
+  };
+}
 
 export default function CareerLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return <>{children}</>;
 }

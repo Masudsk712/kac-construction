@@ -20,46 +20,25 @@ import {
   Award,
 } from "lucide-react";
 import { ease, spring as sp } from "@/lib/animations";
-import { siteConfig } from "@/lib/seo";
-
-const quickLinks = [
-  { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
-  { title: "Services", href: "/service" },
-  { title: "Projects", href: "/projects" },
-  { title: "Media", href: "/media" },
-  { title: "Career", href: "/career" },
-  { title: "Contact", href: "/contact" },
-];
-
-const services = [
-  "Transmission Line EPC",
-  "Tower Erection",
-  "HTLS Reconductoring",
-  "Foundation Engineering",
-  "Hotline Stringing",
-  "Survey & Planning",
-];
-
-const socialLinks = [
-  { icon: <Facebook size={18} />, href: siteConfig.social.facebook },
-  { icon: <Linkedin size={18} />, href: siteConfig.social.linkedin },
-  { icon: <Instagram size={18} />, href: siteConfig.social.facebook }, // no Instagram configured yet, fallback
-];
-
-const credentials = [
-  { icon: <ShieldCheck size={16} className="text-emerald-400" />, label: "ISO 9001:2015 Certified" },
-  { icon: <Award size={16} className="text-amber-400" />, label: "15+ Years Excellence" },
-];
+import { useBrand } from "@/components/BrandContext";
 
 export default function Footer() {
+  const { config } = useBrand();
+  const c = config;
+
+  const socialLinks = [
+    { icon: <Facebook size={18} />, href: c.social.facebook },
+    { icon: <Linkedin size={18} />, href: c.social.linkedin },
+    { icon: <Instagram size={18} />, href: c.social.facebook },
+  ];
+
   return (
     <footer className="relative isolate overflow-hidden text-white border-t border-white/10">
       {/* BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-[1]">
         <Image
-          src="/home/HomeTower11.webp"
-          alt="Kuddus Ali Construction - Transmission Tower Infrastructure Background"
+          src={c.footer.backgroundImage}
+          alt={`${c.name} - Transmission Tower Infrastructure Background`}
           fill
           sizes="100vw"
           loading="lazy"
@@ -89,44 +68,37 @@ export default function Footer() {
           viewport={{ once: true }}
           className="relative overflow-hidden mb-24 rounded-[36px] border border-white/10 bg-white/[0.04] backdrop-blur-3xl p-8 md:p-12 shadow-[0_30px_120px_rgba(0,0,0,0.45)]"
         >
-          {/* INSIDE GLOW */}
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-cyan-500/[0.06] via-transparent to-blue-500/[0.06]" />
 
           <div className="relative flex flex-col xl:flex-row items-start xl:items-center justify-between gap-10">
-            {/* LEFT */}
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 bg-white/[0.04] mb-8">
                 <Sparkles size={16} className="text-cyan-400" />
-                <span className="text-sm tracking-[4px] text-white/80">KUDDUS ALI CONSTRUCTION</span>
+                <span className="text-sm tracking-[4px] text-white/80">{c.footer.topLabel}</span>
               </div>
 
               <h2 className="text-4xl md:text-6xl font-black leading-tight mb-6">
-                Building India's
+                {c.footer.heading.line1}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
-                  Power Infrastructure
+                  {c.footer.heading.line2}
                 </span>
               </h2>
 
-              <p className="text-white/60 text-lg leading-relaxed">
-                Kuddus Ali Construction specializes in transmission infrastructure, tower erection, hotline
-                stringing, HTLS reconductoring and EPC execution projects with precision, safety and nationwide
-                reliability.
-              </p>
+              <p className="text-white/60 text-lg leading-relaxed">{c.footer.description}</p>
             </div>
 
-            {/* RIGHT */}
             <div className="flex flex-col gap-5">
               <Link
-                href="/contact"
+                href={c.footer.ctaButton.href}
                 className="group inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-cyan-400 text-black font-bold transition-all duration-300 hover:scale-105 hover:bg-cyan-300 hover:shadow-[0_0_50px_rgba(34,211,238,0.45)]"
               >
-                Start Your Project
+                {c.footer.ctaButton.label}
                 <Send size={18} className="transition-all duration-300 group-hover:translate-x-1" />
               </Link>
 
-              {credentials.map((cred, i) => (
+              {c.footer.credentials.map((cred, i) => (
                 <div key={i} className="flex items-center gap-3 text-sm text-white/50">
-                  {cred.icon}
+                  {cred.icon === "ShieldCheck" ? <ShieldCheck size={16} className="text-emerald-400" /> : <Award size={16} className="text-amber-400" />}
                   {cred.label}
                 </div>
               ))}
@@ -146,17 +118,13 @@ export default function Footer() {
                 <RadioTower size={30} />
               </motion.div>
               <div>
-                <h2 className="text-2xl font-black">KAC</h2>
-                <p className="text-sm text-white/40">Infrastructure Group</p>
+                <h2 className="text-2xl font-black">{c.footer.companyTitle}</h2>
+                <p className="text-sm text-white/40">{c.footer.companySubtitle}</p>
               </div>
             </div>
 
-            <p className="text-white/55 leading-relaxed mb-8">
-              Delivering modern EPC and transmission infrastructure solutions with engineering excellence across
-              India.
-            </p>
+            <p className="text-white/55 leading-relaxed mb-8">{c.footer.companyDescription}</p>
 
-            {/* SOCIAL */}
             <div className="flex items-center gap-4">
               {socialLinks.map((item, i) => (
                 <motion.div key={i} whileHover={{ y: -5, scale: 1.08, transition: sp.snappy }}>
@@ -183,17 +151,14 @@ export default function Footer() {
               <h3 className="text-xl font-bold">Quick Links</h3>
             </div>
             <div className="space-y-5">
-              {quickLinks.map((item, i) => (
+              {c.footer.quickLinks.map((item, i) => (
                 <Link
                   key={i}
                   href={item.href}
                   className="group flex items-center justify-between text-white/55 transition-all duration-300 hover:text-cyan-400"
                 >
                   {item.title}
-                  <ArrowUpRight
-                    size={16}
-                    className="opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1"
-                  />
+                  <ArrowUpRight size={16} className="opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </Link>
               ))}
             </div>
@@ -208,7 +173,7 @@ export default function Footer() {
               <h3 className="text-xl font-bold">Core Services</h3>
             </div>
             <div className="space-y-5">
-              {services.map((item, i) => (
+              {c.footer.coreServices.map((item, i) => (
                 <motion.div
                   key={i}
                   whileHover={{ x: 8, transition: sp.snappy }}
@@ -230,30 +195,27 @@ export default function Footer() {
               <h3 className="text-xl font-bold">Contact Info</h3>
             </div>
             <div className="space-y-7">
-              {/* PHONE */}
               <div className="flex gap-4">
                 <div className="w-12 h-12 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 flex items-center justify-center text-cyan-400">
                   <Phone size={20} />
                 </div>
                 <div>
                   <p className="text-sm text-white/40 mb-1">Mobile</p>
-                  <h4 className="font-semibold">+91 9735067595</h4>
-                  <h4 className="font-semibold">+91 9933638309</h4>
+                  <h4 className="font-semibold">{c.contact.phone}</h4>
+                  {c.contact.phone2 && <h4 className="font-semibold">{c.contact.phone2}</h4>}
                 </div>
               </div>
 
-              {/* EMAIL */}
               <div className="flex gap-4">
                 <div className="w-12 h-12 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 flex items-center justify-center text-cyan-400">
                   <Mail size={20} />
                 </div>
                 <div>
                   <p className="text-sm text-white/40 mb-1">Email</p>
-                  <h4 className="font-semibold break-all">kuddusali45@gmail.com</h4>
+                  <h4 className="font-semibold break-all">{c.contact.email}</h4>
                 </div>
               </div>
 
-              {/* ADDRESS */}
               <div className="flex gap-4">
                 <div className="w-12 h-12 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 flex items-center justify-center text-cyan-400">
                   <MapPin size={20} />
@@ -261,11 +223,11 @@ export default function Footer() {
                 <div>
                   <p className="text-sm text-white/40 mb-1">Office</p>
                   <h4 className="font-semibold text-sm leading-relaxed">
-                    KAC, Mahisbathani Baluatola,
+                    {c.shortName}, {c.contact.address.street},
                     <br />
-                    PO Barkol, Malda - 732128,
+                    PO {c.contact.address.postalCode.split(" ")[0] || "Barkol"}, {c.contact.address.locality} - {c.contact.address.postalCode},
                     <br />
-                    India
+                    {c.contact.address.country}
                   </h4>
                 </div>
               </div>
@@ -273,7 +235,7 @@ export default function Footer() {
               {/* MAP */}
               <div className="relative overflow-hidden rounded-[28px] border border-white/10 h-[220px] shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d704.6048151757652!2d88.1037462695071!3d25.081566213257595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDA0JzUzLjYiTiA4OMKwMDYnMTUuOCJF!5e1!3m2!1sen!2sin!4v1778577513815!5m2!1sen!2sin"
+                  src={c.contact.mapEmbedUrl}
                   width="100%"
                   height="100%"
                   loading="lazy"
@@ -285,10 +247,9 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* OFFICE HOURS */}
               <div className="flex items-center gap-3 text-sm text-white/50">
                 <Clock3 size={16} className="text-cyan-400" />
-                Monday - Saturday | 9:00 AM - 7:00 PM
+                {c.contact.officeHours}
               </div>
             </div>
           </div>
@@ -296,16 +257,14 @@ export default function Footer() {
 
         {/* BOTTOM BAR */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-5">
-          <p className="text-white/40 text-sm text-center md:text-left">
-            © 2026 Kuddus Ali Construction. All Rights Reserved.
-          </p>
+          <p className="text-white/40 text-sm text-center md:text-left">{c.footer.copyright}</p>
           <a
-            href="https://www.linkedin.com/in/masud-sk-254b581b9"
+            href={c.footer.developerUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="group text-sm text-white/40 transition-all duration-300 hover:text-cyan-400"
           >
-            Designed & Developed By <span className="text-cyan-400 group-hover:text-cyan-300">Masud Sk</span>
+            Designed & Developed By <span className="text-cyan-400 group-hover:text-cyan-300">{c.footer.developerName}</span>
           </a>
         </div>
       </div>

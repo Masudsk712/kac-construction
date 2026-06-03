@@ -1,7 +1,11 @@
 import type { MetadataRoute } from "next";
-import { siteConfig } from "@/lib/seo";
+import { getDomain } from "@/lib/domain-server";
+import { getDomainUrl } from "@/lib/domain";
 
-export default function robots(): MetadataRoute.Robots {
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const domain = await getDomain();
+  const url = getDomainUrl(domain);
+
   return {
     rules: [
       {
@@ -20,8 +24,8 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
 
-    sitemap: `${siteConfig.url}/sitemap.xml`,
+    sitemap: `${url}/sitemap.xml`,
 
-    host: siteConfig.url,
+    host: url,
   };
 }

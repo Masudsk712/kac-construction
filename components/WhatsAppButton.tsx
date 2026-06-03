@@ -1,12 +1,16 @@
-"use client"
+"use client";
+
+import { useBrand } from "@/components/BrandContext";
 
 export default function WhatsAppButton() {
+  const { config: c } = useBrand();
+
   return (
     <a
-      href="https://wa.me/919735067595"
+      href={`https://wa.me/${c.contact.whatsapp}`}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with us on WhatsApp"
+      aria-label={`Chat with ${c.name} on WhatsApp`}
       className="fixed bottom-5 right-5 z-50 group"
     >
       <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center 
@@ -25,5 +29,5 @@ export default function WhatsAppButton() {
 
       </div>
     </a>
-  )
+  );
 }

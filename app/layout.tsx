@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 
 import {
   Geist,
@@ -7,219 +8,148 @@ import {
 
 import "./globals.css";
 
-import { siteConfig } from "@/lib/seo";
+import { getDomain } from "@/lib/domain-server";
+import { getDomainUrl, type DomainKey } from "@/lib/domain";
+import { getBrandConfig } from "@/lib/content-server";
 
-import Footer from "@/components/Footer";
+import { LoaderProvider } from "@/components/LoaderContext";
 import Schema from "@/components/schema";
-
-import {
-  LoaderProvider,
-} from "@/components/LoaderContext";
-
 import LayoutWrapper from "@/components/LayoutWrapper";
 import ThemeProvider from "@/components/ThemeProvider";
 import { Toaster } from "react-hot-toast";
 
 /* ============================= */
-/* 🔥 FONT CONFIG */
+/* FONT CONFIG */
 /* ============================= */
 
 const geist = Geist({
   subsets: ["latin"],
-
   variable: "--font-geist",
-
   display: "swap",
 });
 
 const oswald = Oswald({
   subsets: ["latin"],
-
-  weight: [
-    "400",
-    "500",
-    "600",
-    "700",
-  ],
-
+  weight: ["400", "500", "600", "700"],
   variable: "--font-oswald",
-
   display: "swap",
 });
 
 /* ============================= */
-/* 🔥 SEO METADATA */
+/* DYNAMIC SEO METADATA */
 /* ============================= */
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const domain = await getDomain();
+  const config = await getBrandConfig();
 
-  metadataBase: new URL(
-    siteConfig.url
-  ),
+  return {
+    metadataBase: new URL(getDomainUrl(domain)),
 
-  title: {
-    default: siteConfig.title,
-
-    template:
-      "%s | Kuddus Ali Construction",
-  },
-
-  description:
-    siteConfig.description,
-
-  keywords:
-    [...siteConfig.keywords] as string[],
-
-  authors: [
-    {
-      name:
-        "Kuddus Ali Construction",
+    title: {
+      default: config.seo.title,
+      template: `%s | ${config.name}`,
     },
-  ],
 
-  creator:
-    siteConfig.creator,
+    description: config.seo.description,
 
-  publisher:
-    siteConfig.creator,
+    keywords: [...config.seo.keywords] as string[],
 
-  category:
-    "construction",
+    authors: [{ name: config.legalName }],
 
-  classification:
-    "Transmission Line & EPC Infrastructure Company",
+    creator: config.seo.creator,
+    publisher: config.seo.creator,
 
-  openGraph: {
+    category: "construction",
+    classification: "Transmission Line & EPC Infrastructure Company",
 
-    type: "website",
+    openGraph: {
+      type: "website",
+      locale: "en_IN",
+      url: config.url,
+      title: config.seo.title,
+      description: config.seo.description,
+      siteName: config.name,
+      images: [
+        {
+          url: config.seo.ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${config.name} - Transmission Line & EPC Infrastructure Company`,
+        },
+      ],
+      countryName: "India",
+      phoneNumbers: [config.contact.phone],
+      emails: [config.contact.email],
+    },
 
-    locale: "en_IN",
+    twitter: {
+      card: "summary_large_image",
+      title: config.seo.title,
+      description: config.seo.description,
+      images: [config.seo.ogImage],
+      site: config.seo.twitterHandle,
+      creator: config.seo.twitterHandle,
+    },
 
-    url: siteConfig.url,
-
-    title: siteConfig.title,
-
-    description:
-      siteConfig.description,
-
-    siteName:
-      "Kuddus Ali Construction",
-
-    images: [
-      {
-        url: siteConfig.ogImage,
-
-        width: 1200,
-
-        height: 630,
-
-        alt:
-          "Kuddus Ali Construction - Transmission Line & EPC Infrastructure Company",
-      },
-    ],
-
-    countryName: "India",
-
-    phoneNumbers: [
-      siteConfig.phone,
-    ],
-
-    emails: [
-      siteConfig.email,
-    ],
-  },
-
-  twitter: {
-
-    card:
-      "summary_large_image",
-
-    title: siteConfig.title,
-
-    description:
-      siteConfig.description,
-
-    images: [
-      siteConfig.ogImage,
-    ],
-
-    site: siteConfig.twitterHandle,
-
-    creator: siteConfig.twitterHandle,
-  },
-
-  robots: {
-
-    index: true,
-
-    follow: true,
-
-    googleBot: {
-
+    robots: {
       index: true,
-
       follow: true,
-
-      "max-video-preview": -1,
-
-      "max-image-preview":
-        "large",
-
-      "max-snippet": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-  },
 
-  alternates: {
-    canonical:
-      siteConfig.url,
-  },
+    alternates: {
+      canonical: config.url,
+    },
 
-  icons: {
+    icons: {
+      icon: config.favicon,
+      shortcut: config.favicon,
+      apple: config.favicon,
+    },
 
-    icon: "/icon.png",
+    appleWebApp: {
+      capable: true,
+      title: config.shortName,
+      statusBarStyle: "default",
+    },
 
-    shortcut:
-      "/icon.png",
+    formatDetection: {
+      telephone: true,
+      email: true,
+      address: true,
+    },
 
-    apple:
-      "/icon.png",
-  },
-
-  appleWebApp: {
-    capable: true,
-    title: "KAC",
-    statusBarStyle: "default",
-  },
-
-  formatDetection: {
-    telephone: true,
-    email: true,
-    address: true,
-  },
-
-  verification: {
-    google: "google-site-verification-code", // Replace with actual verification code
-  },
-};
+    verification: {
+      google: config.seo.googleVerification,
+    },
+  };
+}
 
 /* ============================= */
-/* 🔥 ROOT LAYOUT */
+/* ROOT LAYOUT (Server Component) */
 /* ============================= */
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const domain = await getDomain();
+  const config = await getBrandConfig();
 
   return (
-
     <html
       lang="en"
       suppressHydrationWarning
       className="scroll-smooth"
     >
-
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -257,24 +187,36 @@ export default function RootLayout({
           selection:text-black
         `}
       >
-
         <ThemeProvider>
           <LoaderProvider>
-
-            {/* 🔥 TOAST NOTIFICATIONS */}
-            <Toaster
-              position="top-center"
-              gutter={12}
-              containerStyle={{
-                zIndex: 999999,
-                top: 20,
-              }}
-              toastOptions={{
-                duration: 4000,
+          {/* TOAST NOTIFICATIONS */}
+          <Toaster
+            position="top-center"
+            gutter={12}
+            containerStyle={{
+              zIndex: 999999,
+              top: 20,
+            }}
+            toastOptions={{
+              duration: 4000,
+              style: {
+                background: "rgba(255, 255, 255, 0.95)",
+                color: "#0f172a",
+                border: "1px solid rgba(15, 23, 42, 0.1)",
+                borderRadius: "16px",
+                fontSize: "14px",
+                padding: "14px 18px",
+                boxShadow:
+                  "0 20px 60px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.04)",
+                backdropFilter: "blur(20px) saturate(180%)",
+                WebkitBackdropFilter: "blur(20px) saturate(180%)",
+              },
+              success: {
+                iconTheme: { primary: "#06b6d4", secondary: "#ffffff" },
                 style: {
                   background: "rgba(255, 255, 255, 0.95)",
                   color: "#0f172a",
-                  border: "1px solid rgba(15, 23, 42, 0.1)",
+                  border: "1px solid rgba(6, 182, 212, 0.2)",
                   borderRadius: "16px",
                   fontSize: "14px",
                   padding: "14px 18px",
@@ -283,61 +225,35 @@ export default function RootLayout({
                   backdropFilter: "blur(20px) saturate(180%)",
                   WebkitBackdropFilter: "blur(20px) saturate(180%)",
                 },
-                success: {
-                  iconTheme: {
-                    primary: "#06b6d4",
-                    secondary: "#ffffff",
-                  },
-                  style: {
-                    background: "rgba(255, 255, 255, 0.95)",
-                    color: "#0f172a",
-                    border: "1px solid rgba(6, 182, 212, 0.2)",
-                    borderRadius: "16px",
-                    fontSize: "14px",
-                    padding: "14px 18px",
-                    boxShadow:
-                      "0 20px 60px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.04)",
-                    backdropFilter: "blur(20px) saturate(180%)",
-                    WebkitBackdropFilter: "blur(20px) saturate(180%)",
-                  },
+              },
+              error: {
+                iconTheme: { primary: "#f87171", secondary: "#ffffff" },
+                style: {
+                  background: "rgba(255, 255, 255, 0.95)",
+                  color: "#0f172a",
+                  border: "1px solid rgba(248, 113, 113, 0.2)",
+                  borderRadius: "16px",
+                  fontSize: "14px",
+                  padding: "14px 18px",
+                  boxShadow:
+                    "0 20px 60px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(248, 113, 113, 0.06)",
+                  backdropFilter: "blur(20px) saturate(180%)",
+                  WebkitBackdropFilter: "blur(20px) saturate(180%)",
                 },
-                error: {
-                  iconTheme: {
-                    primary: "#f87171",
-                    secondary: "#ffffff",
-                  },
-                  style: {
-                    background: "rgba(255, 255, 255, 0.95)",
-                    color: "#0f172a",
-                    border: "1px solid rgba(248, 113, 113, 0.2)",
-                    borderRadius: "16px",
-                    fontSize: "14px",
-                    padding: "14px 18px",
-                    boxShadow:
-                      "0 20px 60px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(248, 113, 113, 0.06)",
-                    backdropFilter: "blur(20px) saturate(180%)",
-                    WebkitBackdropFilter: "blur(20px) saturate(180%)",
-                  },
-                },
-              }}
-            />
+              },
+            }}
+          />
 
-            {/* 🔥 SEO SCHEMA */}
-            <Schema />
+          {/* SEO SCHEMA */}
+          <Schema config={config} />
 
-            {/* 🔥 MAIN WEBSITE */}
-            <LayoutWrapper>
+            {/* MAIN WEBSITE */}
+            <LayoutWrapper domain={domain}>
               {children}
             </LayoutWrapper>
-
-            {/* 🔥 FOOTER */}
-            <Footer />
-
           </LoaderProvider>
         </ThemeProvider>
-
       </body>
-
     </html>
   );
 }
