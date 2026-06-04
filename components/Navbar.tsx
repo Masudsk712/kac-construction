@@ -205,15 +205,6 @@ export default function Navbar() {
                   transition-transform duration-300 hover:scale-105
                 "
               />
-              <span
-                className="
-                  hidden xl:inline-block ml-3 text-sm font-bold
-                  text-slate-800 dark:text-white/90
-                  tracking-tight
-                "
-              >
-                {config.name}
-              </span>
             </Link>
 
         <div className="hidden flex-1 items-center justify-center gap-1 md:flex xl:gap-2">
@@ -366,9 +357,6 @@ export default function Navbar() {
                         height={68}
                         className="h-12 w-auto object-contain"
                       />
-                      <span className="ml-3 text-sm font-bold text-slate-800 dark:text-white/90">
-                        {config.shortName}
-                      </span>
                     </Link>
 
                 <button

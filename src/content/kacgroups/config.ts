@@ -127,7 +127,7 @@ export const kacgroupsConfig = {
   //  NOTE: Next.js automatically generates favicon.ico, apple-touch-icon, etc.
   //        from this single icon file.
   // ===========================================================================
-  favicon: "/kacgroups/icon.png",
+  favicon: "/icon.png",
 
   // ===========================================================================
   //  CONTACT INFORMATION
