@@ -193,19 +193,28 @@ export default function Navbar() {
           }}
           className="relative z-20 flex shrink-0 items-center"
         >
-          <Image
-            src={config.navbar.logoUrl}
-            alt={config.navbar.logoAlt}
-            width={64}
-            height={64}
-            priority
-            className="
-              h-10 w-auto object-contain md:h-11
-              drop-shadow-[0_0_22px_rgba(34,211,238,0.32)]
-              transition-transform duration-300 hover:scale-105
-            "
-          />
-        </Link>
+              <Image
+                src={config.navbar.logoUrl}
+                alt={config.navbar.logoAlt}
+                width={64}
+                height={64}
+                priority
+                className="
+                  h-10 w-auto object-contain md:h-11
+                  drop-shadow-[0_0_22px_rgba(34,211,238,0.32)]
+                  transition-transform duration-300 hover:scale-105
+                "
+              />
+              <span
+                className="
+                  hidden xl:inline-block ml-3 text-sm font-bold
+                  text-slate-800 dark:text-white/90
+                  tracking-tight
+                "
+              >
+                {config.name}
+              </span>
+            </Link>
 
         <div className="hidden flex-1 items-center justify-center gap-1 md:flex xl:gap-2">
           <Link href="/" className={desktopLinkStyle("/")}>
@@ -350,14 +359,17 @@ export default function Navbar() {
                   }}
                   className="flex items-center"
                 >
-                  <Image
-                    src={config.navbar.logoUrl}
-                    alt={config.navbar.logoAltMobile}
-                    width={68}
-                    height={68}
-                    className="h-12 w-auto object-contain"
-                  />
-                </Link>
+                      <Image
+                        src={config.navbar.logoUrl}
+                        alt={config.navbar.logoAltMobile}
+                        width={68}
+                        height={68}
+                        className="h-12 w-auto object-contain"
+                      />
+                      <span className="ml-3 text-sm font-bold text-slate-800 dark:text-white/90">
+                        {config.shortName}
+                      </span>
+                    </Link>
 
                 <button
                   type="button"

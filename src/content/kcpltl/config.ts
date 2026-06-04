@@ -1,7 +1,34 @@
-// ─── KCPLTL Brand Content ──────────────────────────────────────────
+// =============================================================================
+//  KCPLTL — Brand Configuration
+//  Domain: kcpltl.com | www.kcpltl.com
+// =============================================================================
+// 
+//  HOW TO EDIT THIS FILE:
+//  ──────────────────────
+//  • Every section is clearly labeled with a separator comment like:
+//    // ─── Section Name ────────────────────────────
+//  • To change text: find the relevant section and update the string value.
+//  • To change images: update the path string (e.g. "/kcpltl/hero.jpg").
+//    Image files live in: public/kcpltl/
+//  • After editing, save the file and redeploy. Next.js will pick up changes.
+//  • Do NOT change the structure/keys — components expect these exact key names.
+//  • Always wrap strings in double quotes. Use \n for line breaks in strings.
+// =============================================================================
 
 export const kcpltlConfig = {
-  // ─── Brand Identity ────────────────────────────────
+
+  // ===========================================================================
+  //  BRAND IDENTITY
+  //  Core identity values used across the entire site.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  name          → Full company name (shown in Navbar, Hero, SEO title, footer)
+  //  shortName     → Short version (used in compact spaces like mobile nav)
+  //  legalName     → Legal entity name (used in Schema.org structured data)
+  //  tagline       → Slogan shown in Hero section
+  //  since         → Founding year (shown in About section)
+  //  abbreviation  → Abbreviation used in compact labels
+  //  infrastructureGroup → Subtitle shown below company name in footer
+  // ===========================================================================
   name: "KCPLTL",
   shortName: "KCPLTL",
   legalName: "KCPLTL",
@@ -10,11 +37,30 @@ export const kcpltlConfig = {
   abbreviation: "KCPLTL",
   infrastructureGroup: "Infrastructure Group",
 
-  // ─── Domain ────────────────────────────────────────
+  // ===========================================================================
+  //  DOMAIN
+  //  The canonical URL and domain for this brand.
+  //  Used in sitemap, canonical links, and structured data.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  url    → Full canonical URL including https:// and www if applicable
+  //  domain → Bare domain without protocol (used in email templates)
+  // ===========================================================================
   url: "https://www.kcpltl.com",
   domain: "kcpltl.com",
 
-  // ─── SEO ───────────────────────────────────────────
+  // ===========================================================================
+  //  SEO — Search Engine Optimization
+  //  Controls page title, meta description, Open Graph tags, and more.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  title              → Default page title (shown in browser tab & search results)
+  //  description        → Meta description (shown in search results, keep under 160 chars)
+  //  keywords           → Array of SEO keywords (comma-separated in meta tag)
+  //  ogImage            → Open Graph image URL (shown when sharing on social media)
+  //                       CHANGE: Replace /kcpltl/og-image.jpg with your 1200×630px image
+  //  twitterHandle      → Twitter/X handle (without @)
+  //  creator            → Content creator name for meta tags
+  //  googleVerification → Google Search Console verification code
+  // ===========================================================================
   seo: {
     title: "KCPLTL | Transmission Line & Infrastructure Solutions",
     description:
@@ -40,21 +86,76 @@ export const kcpltlConfig = {
       "High Voltage Transmission",
       "Power Infrastructure Development",
     ],
+
+    /*
+     * HOW TO CHANGE THE SOCIAL SHARING IMAGE:
+     * ───────────────────────────────────────
+     * 1. Create a 1200×630px JPG or PNG image
+     * 2. Save it as: public/kcpltl/og-image.jpg
+     * 3. The path below should match the file location
+     */
     ogImage: "/kcpltl/og-image.jpg",
+
+    /*
+     * HOW TO CHANGE THE TWITTER/X HANDLE:
+     * ────────────────────────────────────
+     * 1. Update the string below (without the @ symbol)
+     */
     twitterHandle: "@KCPLTL",
+
     creator: "KCPLTL",
+
+    /*
+     * HOW TO ADD GOOGLE VERIFICATION:
+     * ────────────────────────────────
+     * 1. Get your verification code from Google Search Console
+     * 2. Replace the placeholder string below
+     */
     googleVerification: "google-site-verification-code-kcpltl",
   },
 
-  // ─── Favicon ───────────────────────────────────────
+  // ===========================================================================
+  //  FAVICON
+  //  The small icon shown in browser tabs and bookmarks.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO CHANGE THE FAVICON:
+  //  ──────────────────────────
+  //  1. Create a square PNG (recommended: 512×512px for best results)
+  //  2. Save it as: public/kcpltl/icon.png
+  //  3. Update the path below if you use a different filename
+  //  NOTE: Next.js automatically generates favicon.ico, apple-touch-icon, etc.
+  //        from this single icon file.
+  // ===========================================================================
   favicon: "/kcpltl/icon.png",
 
-  // ─── Contact ───────────────────────────────────────
+  // ===========================================================================
+  //  CONTACT INFORMATION
+  //  Used in Footer, Contact page, CTA section, and Schema.org data.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO UPDATE CONTACT DETAILS:
+  //  ──────────────────────────────
+  //  1. Change phone numbers (use +91 prefix for India)
+  //  2. Change email address
+  //  3. Update the WhatsApp number (country code + number, no + sign)
+  //  4. Update the physical address fields
+  //  5. Update the map embed URL (get from Google Maps → Share → Embed)
+  //  6. Update office hours text
+  // ===========================================================================
   contact: {
+
+    /* Primary phone — shown in footer, contact page, CTA */
     phone: "+919735067595",
+
+    /* Secondary phone — shown next to primary in footer */
     phone2: "+919933638309",
+
+    /* Primary email address */
     email: "info@kcpltl.com",
+
+    /* WhatsApp number (country code + number, NO + or spaces) */
     whatsapp: "919735067595",
+
+    /* Physical address — used in footer and Schema.org */
     address: {
       street: "Mahisbathani Baluatola, PO Barkol",
       locality: "Malda",
@@ -62,44 +163,104 @@ export const kcpltlConfig = {
       postalCode: "732128",
       country: "India",
     },
+
+    /* Geo coordinates — used in Schema.org structured data */
     geo: {
       latitude: "25.0000",
       longitude: "88.0000",
     },
+
+    /*
+     * HOW TO UPDATE THE MAP:
+     * ──────────────────────
+     * 1. Go to Google Maps and search for your location
+     * 2. Click "Share" → "Embed a map"
+     * 3. Copy the src URL from the iframe code
+     * 4. Paste it below
+     */
     mapEmbedUrl:
       "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d704.6048151757652!2d88.1037462695071!3d25.081566213257595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDA0JzUzLjYiTiA4OMKwMDYnMTUuOCJF!5e1!3m2!1sen!2sin!4v1778577513815!5m2!1sen!2sin",
+
+    /* Office hours text — shown in footer */
     officeHours: "Monday - Saturday | 9:00 AM - 7:00 PM",
   },
 
-  // ─── Social ────────────────────────────────────────
+  // ===========================================================================
+  //  SOCIAL MEDIA LINKS
+  //  Used in Footer social icons.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO UPDATE SOCIAL LINKS:
+  //  ──────────────────────────
+  //  1. Replace the URL strings below with your actual social profile URLs
+  //  2. Use full HTTPS URLs
+  //  3. Leave empty string "" to hide a social icon
+  // ===========================================================================
   social: {
     facebook: "https://facebook.com/kcpltl",
     linkedin: "https://linkedin.com/company/kcpltl",
     youtube: "https://youtube.com/@kcpltl",
   },
 
-  // ─── Hero Section ──────────────────────────────────
+  // ===========================================================================
+  //  HERO SECTION
+  //  The full-screen video hero at the top of the homepage.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO CHANGE THE HERO:
+  //  ───────────────────────
+  //  • videoUrl   → Background video (MP4). Put new video in public/videos/
+  //  • posterUrl  → Fallback image shown while video loads.
+  //                 CHANGE: Replace /kcpltl/hero.jpg with your hero image in:
+  //                 public/kcpltl/hero.jpg
+  //  • heading    → Main headline text (line1 and line2)
+  //  • subtitle   → Text below the heading
+  //  • description→ Paragraph below subtitle
+  //  • metrics    → Three stat cards (value + label)
+  //  • buttons    → Call-to-action buttons
+  // ===========================================================================
   hero: {
     videoUrl: "/videos/NewBackground.mp4",
-    posterUrl: "/home/SitePic.webp",
+    posterUrl: "/kcpltl/hero.jpg",
+
+    /* Small label chip at top of hero */
     label: "Infrastructure Since 2015",
+
+    /* Main headline — two lines, leave line2 empty string "" to use single line */
     heading: {
       line1: "KCPLTL",
       line2: "",
     },
+
     subtitle: "Powering Infrastructure",
+
     description:
       "Experts in Transmission Line, Tower Erection, Foundation, Hotline Stringing and EPC Infrastructure Projects across India.",
+
+    /* Three key metric boxes shown below the description */
     metrics: [
       { value: "100+", label: "Towers Completed" },
       { value: "765kV", label: "Transmission Capacity" },
       { value: "8+", label: "States Covered" },
     ],
+
+    /* CTA buttons */
     primaryButton: { label: "View Projects", href: "/projects" },
     secondaryButton: { label: "Contact Us", href: "/contact" },
   },
 
-  // ─── About Section ─────────────────────────────────
+  // ===========================================================================
+  //  ABOUT SECTION
+  //  The "About Us" section on the homepage.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO CHANGE THE ABOUT IMAGE:
+  //  ─────────────────────────────
+  //  1. Replace: public/kcpltl/about.jpg with your image
+  //  2. OR update imageUrl below to point to any image in public/
+  //  HOW TO CHANGE ABOUT TEXT:
+  //  ─────────────────────────
+  //  • description1/description2 → The two main paragraphs
+  //  • features → Bullet-point list with check icons
+  //  • stats → Three stat boxes (years, expertise, active projects)
+  // ===========================================================================
   about: {
     label: "About Us",
     heading: {
@@ -120,8 +281,11 @@ export const kcpltlConfig = {
       "High Voltage System Installation",
       "Hotline Stringing & Maintenance",
     ],
-    imageUrl: "/home/SitePic.webp",
+
+    /* About image shown on the right side */
+    imageUrl: "/kcpltl/about.jpg",
     imageAlt: "KCPLTL - Transmission Infrastructure",
+
     stats: [
       { value: "10+", label: "Years of Experience" },
       { value: "765kV", label: "Transmission Expertise" },
@@ -129,7 +293,21 @@ export const kcpltlConfig = {
     ],
   },
 
-  // ─── Services Section ──────────────────────────────
+  // ===========================================================================
+  //  SERVICES SECTION
+  //  The "Core Services" grid on the homepage.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO ADD/EDIT A SERVICE:
+  //  ──────────────────────────
+  //  1. Add a new object to the items[] array
+  //  2. Required fields: title, desc, image, link, number, label
+  //  3. image → Path to the service image in public/home/
+  //  4. link  → URL fragment e.g. "/service#survey"
+  //  HOW TO CHANGE SERVICE IMAGES:
+  //  ─────────────────────────────
+  //  • Place new WebP images in public/home/
+  //  • Update the image path below
+  // ===========================================================================
   services: {
     label: "Core Services",
     heading: {
@@ -176,7 +354,22 @@ export const kcpltlConfig = {
     ctaHref: "/service",
   },
 
-  // ─── Projects Section ──────────────────────────────
+  // ===========================================================================
+  //  PROJECTS SECTION
+  //  The "Projects" grid on the homepage.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO ADD A PROJECT:
+  //  ─────────────────────
+  //  1. Add a new object to the items[] array
+  //  2. Required fields: title, desc, points[], icon, image, href, location
+  //  3. icon → Use one of: TowerControl, Zap, Wrench, Activity
+  //  4. image → Path to the project image in public/home/
+  //  5. href → Link target e.g. "/projects#completed"
+  //  HOW TO CHANGE PROJECT IMAGES:
+  //  ─────────────────────────────
+  //  • Place new WebP images in public/home/
+  //  • Update the image path in each item
+  // ===========================================================================
   projects: {
     label: "KCPLTL Projects",
     heading: {
@@ -247,7 +440,31 @@ export const kcpltlConfig = {
     ctaHref: "/projects",
   },
 
-  // ─── Footer ────────────────────────────────────────
+  // ===========================================================================
+  //  FOOTER
+  //  The global footer shown on every page.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO CHANGE FOOTER CONTENT:
+  //  ─────────────────────────────
+  //  • topLabel        → Small label chip at the top of the footer
+  //  • heading         → Large CTA heading (line1 + line2)
+  //  • description     → Text below the heading
+  //  • ctaButton       → Main CTA button in footer header
+  //  • credentials     → Credential badges (ISO, years, etc.)
+  //  • companyTitle    → Short title next to footer icon
+  //  • companySubtitle → Subtitle below company title
+  //  • companyDescription → About text in the first column
+  //  • quickLinks      → Navigation links in the second column
+  //  • coreServices    → Service list in the third column
+  //  • backgroundImage → Footer background image
+  //  • copyright       → Copyright text at the very bottom
+  //  • developerName   → Developer credit name
+  //  • developerUrl    → Developer credit link
+  //  HOW TO CHANGE FOOTER BACKGROUND IMAGE:
+  //  ──────────────────────────────────────
+  //  • Replace: public/home/HomeTower11.webp with your image
+  //  • OR update backgroundImage below to a different path
+  // ===========================================================================
   footer: {
     topLabel: "KCPLTL",
     heading: {
@@ -288,7 +505,15 @@ export const kcpltlConfig = {
     developerUrl: "https://www.linkedin.com/in/masud-sk-254b581b9",
   },
 
-  // ─── CTA Section ───────────────────────────────────
+  // ===========================================================================
+  //  CTA SECTION (Call To Action)
+  //  The "Let's Build Together" section near the bottom of the homepage.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO CHANGE CTA DETAILS:
+  //  ──────────────────────────
+  //  • Update phone, email, WhatsApp number
+  //  • Change heading text and description
+  // ===========================================================================
   cta: {
     label: "Let's Build Together",
     heading: {
@@ -305,7 +530,16 @@ export const kcpltlConfig = {
     contactLabel: "Contact Us",
   },
 
-  // ─── Why Choose Us ─────────────────────────────────
+  // ===========================================================================
+  //  WHY CHOOSE US SECTION
+  //  The features grid highlighting competitive advantages.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO EDIT FEATURES:
+  //  ─────────────────────
+  //  1. Add/edit objects in the features[] array
+  //  2. icon → Use one of: FaUserTie, FaShieldAlt, FaClock, FaCheckCircle
+  //  3. gradient → Tailwind gradient classes (from-X to-Y)
+  // ===========================================================================
   whyChooseUs: {
     label: "Why KCPLTL",
     heading: {
@@ -343,7 +577,18 @@ export const kcpltlConfig = {
     qualityLabel: "KCPLTL QUALITY",
   },
 
-  // ─── Clients Section ───────────────────────────────
+  // ===========================================================================
+  //  CLIENTS SECTION
+  //  The "Our Valuable Clients" section with logo carousel.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO ADD/REMOVE CLIENT LOGOS:
+  //  ──────────────────────────────
+  //  1. Add the logo file to: public/clients/
+  //  2. Add the path to the logos[] array below
+  //  3. Format: "/clients/CompanyName.webp"
+  //  4. To remove a logo, delete its entry from the array
+  //  Recommended: Use WebP format, transparent background, ~300×150px
+  // ===========================================================================
   clients: {
     label: "Trusted Partnerships",
     heading: "Our Valuable Clients",
@@ -366,6 +611,8 @@ export const kcpltlConfig = {
         icon: "ArrowUpRight",
       },
     ],
+
+    /* HOW TO ADD/REMOVE CLIENT LOGOS: See instructions above */
     logos: [
       "/clients/Adani.webp",
       "/clients/APAR.webp",
@@ -388,7 +635,17 @@ export const kcpltlConfig = {
     backgroundImage: "/home/HomeTower12.webp",
   },
 
-  // ─── FAQ ───────────────────────────────────────────
+  // ===========================================================================
+  //  FAQ SECTION
+  //  The Frequently Asked Questions accordion on the homepage.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO ADD/EDIT FAQ ITEMS:
+  //  ──────────────────────────
+  //  1. Add a new object to the faq[] array
+  //  2. question → The question text
+  //  3. answer   → The answer text (supports plain text only)
+  //  4. To remove a question, delete its object from the array
+  // ===========================================================================
   faq: [
     {
       question: "What types of transmission line projects does KCPLTL handle?",
@@ -422,7 +679,14 @@ export const kcpltlConfig = {
     },
   ],
 
-  // ─── Service Types ─────────────────────────────────
+  // ===========================================================================
+  //  SERVICE TYPES (used in Schema.org structured data)
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO ADD/EDIT SERVICE TYPES:
+  //  ─────────────────────────────
+  //  • Add or edit strings in the array below
+  //  • These appear in Schema.org structured data for SEO
+  // ===========================================================================
   serviceTypes: [
     "Transmission Line Construction",
     "Tower Erection",
@@ -434,7 +698,20 @@ export const kcpltlConfig = {
     "EPC Infrastructure Solutions",
   ],
 
-  // ─── Navbar ────────────────────────────────────────
+  // ===========================================================================
+  //  NAVBAR
+  //  The global navigation bar shown on every page.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO CHANGE THE LOGO:
+  //  ───────────────────────
+  //  1. Replace the image file: public/kcpltl/icon.png
+  //  2. Recommended: PNG with transparent background, at least 128×128px
+  //  3. The path below must match the file location
+  //  HOW TO CHANGE THE LOGO ALT TEXT:
+  //  ────────────────────────────────
+  //  • logoAlt → Shown on desktop (full company name)
+  //  • logoAltMobile → Shown on mobile (abbreviated)
+  // ===========================================================================
   navbar: {
     logoUrl: "/kcpltl/icon.png",
     logoAlt: "KCPLTL",
@@ -443,7 +720,17 @@ export const kcpltlConfig = {
     dropdownSubtext: "Transmission Infrastructure",
   },
 
-  // ─── Page Metadata ─────────────────────────────────
+  // ===========================================================================
+  //  PAGE METADATA
+  //  SEO title and description for every individual page.
+  //  ─────────────────────────────────────────────────────────────────────────
+  //  HOW TO UPDATE PAGE SEO:
+  //  ───────────────────────
+  //  1. Find the page key below (home, about, service, etc.)
+  //  2. Update the title (shown in browser tab and Google results)
+  //  3. Update the description (keep under 160 characters for best results)
+  //  4. path is for reference — do NOT change unless you restructure URLs
+  // ===========================================================================
   pageMetadata: {
     home: {
       title: "KCPLTL | Transmission Line & Infrastructure Solutions",

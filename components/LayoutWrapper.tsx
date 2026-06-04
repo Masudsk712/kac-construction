@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageLoader from "@/components/PageLoader";
 
+import Footer from "@/components/Footer";
 import { useLoader } from "@/components/LoaderContext";
 
 export default function LayoutWrapper({
@@ -57,6 +58,9 @@ export default function LayoutWrapper({
         >
           {children}
         </main>
+
+        {/* FOOTER */}
+        <Footer />
 
         {/* FLOATING BUTTON */}
         <WhatsAppButton />
