@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { ease, spring as sp } from "@/lib/animations";
+import { useBrand } from "@/components/BrandContext";
 
 /* ================================================= */
 /* SAFETY DATA */
@@ -73,6 +74,7 @@ const safetyProtocols = [
 /* ================================================= */
 
 export default function SafetySection() {
+  const { config: c } = useBrand();
   return (
     <section
       className="
@@ -122,7 +124,7 @@ export default function SafetySection() {
 
           {/* DESCRIPTION */}
           <p className="text-slate-600 dark:text-white/65 text-base md:text-lg leading-[2] max-w-3xl mx-auto">
-            At Kuddus Ali Construction, safety is embedded in every layer of operations. From daily toolbox talks to third-party audits, our zero-harm philosophy drives every transmission infrastructure project.
+            At {c.name}, safety is embedded in every layer of operations. From daily toolbox talks to third-party audits, our zero-harm philosophy drives every transmission infrastructure project.
           </p>
         </motion.div>
 

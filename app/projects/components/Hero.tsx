@@ -10,6 +10,7 @@ import {
   Sparkles,
   ShieldCheck,
 } from "lucide-react";
+import { useBrand } from "@/components/BrandContext";
 
 const stats = [
   {
@@ -29,6 +30,7 @@ const stats = [
 ];
 
 export default function Hero() {
+  const { config: c } = useBrand();
 
   const scrollToContent = () => {
 
@@ -66,7 +68,7 @@ export default function Hero() {
 
       <Image
         src="/projects/Project1.webp"
-        alt="Kuddus Ali Construction - Transmission Line Projects Portfolio"
+        alt={`${c.name} - Transmission Line Projects Portfolio`}
 
         fill
         priority
@@ -219,7 +221,7 @@ export default function Hero() {
             text-cyan-200
           "
           >
-            KAC TRANSMISSION PROJECTS
+            {c.shortName} TRANSMISSION PROJECTS
           </span>
 
         </motion.div>
@@ -348,7 +350,7 @@ export default function Hero() {
             "
             >
 
-              Kuddus Ali Construction delivers
+              {c.name} delivers
               high-performance transmission
               infrastructure projects including
               tower foundation, erection,

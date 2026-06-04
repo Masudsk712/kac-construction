@@ -16,6 +16,7 @@ import {
   X,
   ChevronRight,
 } from "lucide-react"
+import { useBrand } from "@/components/BrandContext"
 
 const leadershipData = [
   {
@@ -25,7 +26,7 @@ const leadershipData = [
     dept: "Chairman",
     image: "/about/Boss.webp",
     description:
-      "Leading Kuddus Ali Construction with long-term vision, infrastructure excellence, operational growth, and sustainable engineering innovation across India.",
+      "Leading with long-term vision, infrastructure excellence, operational growth, and sustainable engineering innovation across India.",
   },
 
   {
@@ -116,6 +117,7 @@ export default function Leadership() {
 
   const scrollRef =
     useRef<HTMLDivElement>(null)
+  const { config: c } = useBrand();
 
   /* ======================================== */
   /* AUTO INFINITE SCROLL */
@@ -386,7 +388,7 @@ export default function Leadership() {
           "
           >
             Explore the Team Member powering
-            Kuddus Ali Construction’s infrastructure excellence.
+            {c.name}&rsquo;s infrastructure excellence.
           </p>
 
         </motion.div>

@@ -8,6 +8,7 @@ import {
   RadioTower,
   ShieldCheck,
 } from "lucide-react";
+import { useBrand } from "@/components/BrandContext";
 
 const stats = [
   {
@@ -28,6 +29,7 @@ const stats = [
 ];
 
 export default function Hero() {
+  const { config: c } = useBrand();
 
   const scrollToContent = () => {
     const el = document.getElementById("StickyTabs");
@@ -60,7 +62,7 @@ export default function Hero() {
 
       <Image
         src="/about/AboutTower1.webp"
-        alt="Kuddus Ali Construction - About Our Transmission Line Infrastructure Company"
+        alt={`${c.name} - About Our Transmission Line Infrastructure Company`}
         fill
         priority
         className="
@@ -189,7 +191,7 @@ export default function Hero() {
             text-slate-700 dark:text-white/80
           "
           >
-            ABOUT KUDDUS ALI CONSTRUCTION
+            ABOUT {c.name.toUpperCase()}
           </span>
 
         </motion.div>
@@ -309,7 +311,7 @@ export default function Hero() {
           "
           >
 
-            Kuddus Ali Construction delivers high-performance
+            {c.name} delivers high-performance
             transmission infrastructure solutions including
             tower foundation, erection, hotline stringing,
             HTLS reconductoring and EPC execution projects

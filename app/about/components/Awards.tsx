@@ -18,6 +18,7 @@ import {
   Trophy,
   ShieldCheck,
 } from "lucide-react"
+import { useBrand } from "@/components/BrandContext"
 
 const awards = [
   {
@@ -28,7 +29,7 @@ const awards = [
       "Faster Completion Project Award by PGCIL – MD",
 
     description:
-      "Kuddus Ali Construction was appreciated for completing multiple high-voltage transmission projects ahead of schedule with exceptional execution quality.",
+      "Appreciated for completing multiple high-voltage transmission projects ahead of schedule with exceptional execution quality.",
 
     image: "/about/Award1.webp",
 
@@ -87,6 +88,7 @@ export default function Awards() {
 
   const [modal, setModal] =
     useState<any>(null)
+  const { config: c } = useBrand();
 
   /* ======================================== */
   /* AUTO SLIDER */
@@ -315,7 +317,7 @@ export default function Awards() {
             mx-auto
           "
           >
-            Kuddus Ali Construction continues to earn
+            {c.name} continues to earn
             recognition for engineering excellence,
             infrastructure leadership, project execution,
             and operational performance.

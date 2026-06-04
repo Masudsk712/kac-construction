@@ -2,8 +2,11 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { useBrand } from "@/components/BrandContext"
 
 export default function Overview() {
+  const { config: c } = useBrand();
+
   return (
     <section className="section-surface section-premium py-24 relative overflow-hidden text-slate-900 dark:text-white">
 
@@ -19,19 +22,19 @@ export default function Overview() {
         <div className="glass-strong border-glow rounded-2xl p-8">
 
           <p className="text-sm tracking-widest text-slate-500 dark:text-white/60 mb-3">
-            KUDDUS ALI CONSTRUCTION
+            {c.name.toUpperCase()}
           </p>
 
           <h2 className="text-4xl md:text-5xl font-semibold leading-tight mb-6">
             Charting the Future of Energy:
             <br />
             <span className="gradient-text">
-              Inside KAC’s Journey
+              Inside {c.shortName}&rsquo;s Journey
             </span>
           </h2>
 
           <p className="text-slate-600 dark:text-slate-600 dark:text-white/70 leading-relaxed mb-4">
-            Kuddus Ali Construction stands as one of the fast-growing Indian Engineering,
+            {c.name} stands as one of the fast-growing Indian Engineering,
             Procurement and Construction (EPC) companies, focusing on
             delivering reliable and scalable infrastructure solutions.
           </p>
@@ -44,7 +47,7 @@ export default function Overview() {
 
           <p className="text-slate-600 dark:text-white/70 leading-relaxed">
             With a commitment to innovation, safety, and timely delivery,
-            we continue to build infrastructure that powers the nation’s growth.
+            we continue to build infrastructure that powers the nation&rsquo;s growth.
           </p>
 
         </div>
@@ -91,7 +94,7 @@ export default function Overview() {
         <div className="glass-strong border-glow rounded-2xl p-8">
 
           <h3 className="text-xl md:text-2xl font-semibold mb-4">
-            At Kuddus Ali Construction, our commitment goes beyond mere operations
+            At {c.name}, our commitment goes beyond mere operations
           </h3>
 
           <p className="text-slate-600 dark:text-slate-600 dark:text-white/70 leading-relaxed mb-4">
@@ -101,7 +104,7 @@ export default function Overview() {
           </p>
 
           <p className="text-slate-600 dark:text-slate-600 dark:text-white/70 leading-relaxed mb-4">
-            With a strong focus on quality and efficiency, Kuddus Ali Construction continues
+            With a strong focus on quality and efficiency, {c.name} continues
             to contribute to transforming India's infrastructure landscape
             and empowering communities nationwide.
           </p>

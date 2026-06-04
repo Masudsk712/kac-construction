@@ -14,6 +14,7 @@ import {
   ArrowUpRight,
   CheckCircle2,
 } from "lucide-react"
+import { useBrand } from "@/components/BrandContext"
 
 const fadeUp = {
   hidden: {
@@ -54,6 +55,7 @@ const values = [
 ]
 
 export default function MissionVision() {
+  const { config: c } = useBrand();
 
   return (
 
@@ -259,7 +261,7 @@ export default function MissionVision() {
             mx-auto
           "
           >
-            Kuddus Ali Construction is committed to delivering
+            {c.name} is committed to delivering
             reliable, innovative, and future-ready
             infrastructure solutions with unmatched
             execution standards across India.
@@ -409,7 +411,7 @@ export default function MissionVision() {
                   md:text-base
                 "
                 >
-                  To be India’s most trusted and preferred
+                  To be India{'\''}s most trusted and preferred
                   partner in electrical transmission line
                   infrastructure — setting the benchmark for
                   <span className="text-cyan-300 font-semibold">

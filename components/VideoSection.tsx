@@ -10,8 +10,10 @@ import {
 } from "lucide-react";
 
 import { ease } from "@/lib/animations";
+import { useBrand } from "@/components/BrandContext";
 
 export default function VideoSection() {
+  const { config: c } = useBrand();
 
   return (
 
@@ -271,7 +273,7 @@ export default function VideoSection() {
           "
         >
 
-          Kuddus Ali Construction delivers
+          {c.name} delivers
           high-voltage transmission
           infrastructure with reliable
           execution, safety compliance

@@ -16,11 +16,13 @@ import {
   X,
 } from "lucide-react"
 
+import { useBrand } from "@/components/BrandContext"
+
 const timelineData = [
   {
     year: "2008",
     title: "Founded",
-    desc: "Kuddus Ali Construction was founded with a vision to build strong infrastructure across India.",
+    desc: "Founded with a vision to build strong infrastructure across India.",
     image: "/about/Trans5Pic.webp",
   },
 
@@ -63,6 +65,7 @@ const timelineData = [
 export default function Timeline() {
 
   const [active, setActive] = useState<any>(null)
+  const { config: c } = useBrand();
 
   return (
 
@@ -201,7 +204,7 @@ export default function Timeline() {
             mx-auto
           "
           >
-            A timeline showcasing Kuddus Ali Construction’s
+            A timeline showcasing {c.name}&rsquo;s
             growth, achievements, and infrastructure
             excellence across India.
           </p>

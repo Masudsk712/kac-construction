@@ -10,6 +10,11 @@ interface EmailTemplateProps {
   company?: string;
   subject: string;
   message: string;
+  config?: {
+    name: string;
+    legalName: string;
+    domain: string;
+  };
 }
 
 export function ContactEmailTemplate({
@@ -19,6 +24,7 @@ export function ContactEmailTemplate({
   company,
   subject,
   message,
+  config = { name: "Kuddus Ali Construction", legalName: "Kuddus Ali Construction", domain: "kacgroups.com" },
 }: EmailTemplateProps) {
   const year = new Date().getFullYear();
 
@@ -75,7 +81,7 @@ export function ContactEmailTemplate({
                   color: "rgba(255,255,255,0.85)",
                 }}
               >
-                Kuddus Ali Construction
+                {config.name}
               </p>
             </td>
           </tr>
@@ -216,7 +222,7 @@ export function ContactEmailTemplate({
                   color: "#94a3b8",
                 }}
               >
-                &copy; {year} Kuddus Ali Construction &mdash;
+                &copy; {year} {config.name} &mdash;
                 Transmission Line & EPC Infrastructure Company
               </p>
               <p

@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 
 import { ease, spring as sp } from "@/lib/animations";
+import { useBrand } from "@/components/BrandContext";
 
 /* ================================================= */
 /* MACHINERY DATA */
@@ -69,6 +70,7 @@ const machinery = [
 /* ================================================= */
 
 export default function MachinerySection() {
+  const { config: c } = useBrand();
   return (
     <section
       className="
@@ -118,7 +120,7 @@ export default function MachinerySection() {
 
           {/* DESCRIPTION */}
           <p className="text-slate-600 dark:text-white/65 text-base md:text-lg leading-[2] max-w-3xl mx-auto">
-            Kuddus Ali Construction maintains a comprehensive fleet of modern construction machinery, tension stringing equipment and specialized tools to execute transmission infrastructure projects with precision and speed.
+            {c.name} maintains a comprehensive fleet of modern construction machinery, tension stringing equipment and specialized tools to execute transmission infrastructure projects with precision and speed.
           </p>
         </motion.div>
 

@@ -12,6 +12,7 @@ import {
   TowerControl,
   ArrowUpRight,
 } from "lucide-react";
+import { useBrand } from "@/components/BrandContext";
 
 /* ================================================= */
 /* 🔥 STATE DATA */
@@ -61,6 +62,7 @@ const ACTIVE_COLOR = "#02ebdf";
 /* ================================================= */
 
 export default function IndiaMapSection() {
+  const { config: c } = useBrand();
   const [active, setActive] = useState<string>(
     keys[0]
   );
@@ -398,7 +400,7 @@ export default function IndiaMapSection() {
             leading-[2]
           "
           >
-            Kuddus Ali Construction executes
+            {c.name} executes
             transmission infrastructure
             projects across multiple states
             with precision engineering,

@@ -11,6 +11,7 @@ import {
   Zap,
   Building2,
 } from "lucide-react";
+import { useBrand } from "@/components/BrandContext";
 
 const stats = [
   {
@@ -33,6 +34,7 @@ const stats = [
 ];
 
 export default function ServiceHero() {
+  const { config: c } = useBrand();
 
   const scrollToContent = () => {
 
@@ -71,7 +73,7 @@ export default function ServiceHero() {
 
       <Image
         src="/service/ServiceBg1.webp"
-        alt="Kuddus Ali Construction - Transmission Line Construction Services"
+        alt={`${c.name} - Transmission Line Construction Services`}
         fill
         priority
 
@@ -233,7 +235,7 @@ export default function ServiceHero() {
             text-slate-700 dark:text-white/80
           "
           >
-            KUDDUS ALI CONSTRUCTION EPC SERVICES
+            {c.name.toUpperCase()} EPC SERVICES
           </span>
 
         </motion.div>
@@ -358,7 +360,7 @@ export default function ServiceHero() {
               max-w-2xl
             "
             >
-              Kuddus Ali Construction delivers premium EPC
+              {c.name} delivers premium EPC
               infrastructure solutions across transmission,
               tower foundation, erection, and stringing
               services with engineering precision,
@@ -505,7 +507,7 @@ export default function ServiceHero() {
 
                 <Image
                   src="/service/ServiceBg2.webp"
-                  alt="Kuddus Ali Construction Services"
+                  alt={`${c.name} Services`}
                   fill
 
                   className="

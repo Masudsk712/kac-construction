@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   BadgeCheck,
 } from "lucide-react"
+import { useBrand } from "@/components/BrandContext"
 
 const fadeLeft = {
   hidden: {
@@ -56,6 +57,7 @@ const highlights = [
 ]
 
 export default function MDMessage() {
+  const { config: c } = useBrand();
 
   return (
 
@@ -357,7 +359,7 @@ export default function MDMessage() {
                   mb-4
                 "
                 >
-                  Founder • Chairman • Managing Director
+                  Founder &bull; Chairman &bull; Managing Director
                 </p>
 
                 <div
@@ -369,7 +371,7 @@ export default function MDMessage() {
                 >
 
                   <p className="text-white/50 text-sm">
-                    Kuddus Ali Construction
+                    {c.name}
                   </p>
 
                   <ArrowUpRight
@@ -443,7 +445,7 @@ export default function MDMessage() {
               text-white/70
             "
             >
-              MANAGING DIRECTOR’S MESSAGE
+              MANAGING DIRECTOR&rsquo;S MESSAGE
             </span>
 
           </motion.div>
@@ -542,7 +544,7 @@ export default function MDMessage() {
                 mb-6
               "
               >
-                At Kuddus Ali Construction, we are committed
+                At {c.name}, we are committed
                 to delivering excellence in every
                 project we undertake. Our focus remains
                 on quality, safety, innovation, and
@@ -697,7 +699,7 @@ export default function MDMessage() {
                 text-sm
               "
               >
-                Founder • Promoter • Chairman • MD
+                Founder &bull; Promoter &bull; Chairman &bull; MD
               </p>
 
             </div>

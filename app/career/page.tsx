@@ -14,6 +14,7 @@ import {
   ShieldCheck,
   RadioTower,
 } from "lucide-react";
+import { useBrand } from "@/components/BrandContext";
 
 import CTASection from "@/components/CTASection";
 
@@ -60,6 +61,8 @@ const jobs = [
 ];
 
 export default function CareerPage() {
+  const { config: c } = useBrand();
+
   return (
     <div className="relative z-10 bg-[var(--bg)] text-[var(--text)]">
       {/* BACKGROUND GLOWS */}
@@ -90,7 +93,7 @@ export default function CareerPage() {
           >
             <Sparkles size={14} className="text-cyan-300" />
             <span className="text-xs tracking-[4px] text-cyan-200">
-              JOIN KUDDUS ALI CONSTRUCTION
+              JOIN {c.name.toUpperCase()}
             </span>
           </motion.div>
 
@@ -243,7 +246,7 @@ export default function CareerPage() {
                   Current Openings
                 </h2>
                 <p className="mt-2 text-[var(--text-soft)]">
-                  Explore available vacancies at Kuddus Ali Construction
+                  Explore available vacancies at {c.name}
                 </p>
               </div>
             </div>
@@ -330,7 +333,7 @@ export default function CareerPage() {
                     </button>
 
                     <span className="text-xs text-[var(--text-soft)]">
-                      Job ID: KAC-{2026 - index}
+                      Job ID: {c.shortName}-{2026 - index}
                     </span>
                   </div>
                 </div>
@@ -382,7 +385,7 @@ export default function CareerPage() {
                 <div className="flex items-center gap-3">
                   <Mail size={18} className="text-cyan-400" />
                   <span className="text-[var(--text-soft)]">
-                    kuddusali45@gmail.com
+                    {c.contact.email}
                   </span>
                 </div>
               </div>

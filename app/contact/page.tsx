@@ -11,6 +11,7 @@ import {
   Building2,
   RadioTower,
 } from "lucide-react";
+import { useBrand } from "@/components/BrandContext";
 import ContactForm from "@/components/ContactForm";
 
 const contactCards = [
@@ -40,6 +41,8 @@ const contactCards = [
 ];
 
 export default function ContactPage() {
+  const { config: c } = useBrand();
+
   return (
     <div className="relative z-10 bg-[var(--bg)] text-[var(--text)]">
       {/* BACKGROUND GLOWS */}
@@ -70,7 +73,7 @@ export default function ContactPage() {
           >
             <Sparkles size={14} className="text-cyan-300" />
             <span className="text-xs tracking-[4px] text-cyan-200">
-              CONTACT KUDDUS ALI CONSTRUCTION
+              CONTACT {c.name.toUpperCase()}
             </span>
           </motion.div>
 
@@ -105,7 +108,7 @@ export default function ContactPage() {
                 transition={{ delay: 0.5 }}
                 className="max-w-3xl text-lg leading-[2] text-[var(--text-soft)] md:text-xl"
               >
-                Reach out to Kuddus Ali Construction for
+                Reach out to {c.name} for
                 transmission line, tower erection,
                 stringing, foundation, EPC infrastructure
                 and high-voltage power projects across India.
@@ -119,7 +122,7 @@ export default function ContactPage() {
                 className="mt-14 flex flex-wrap gap-5"
               >
                 <a
-                  href="tel:+919735067595"
+                  href={`tel:${c.contact.phone}`}
                   className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 font-semibold text-black shadow-[0_0_40px_rgba(34,211,238,0.35)] transition-all duration-500 hover:scale-105"
                 >
                   Call Now
@@ -127,7 +130,7 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="mailto:kuddusali45@gmail.com"
+                  href={`mailto:${c.contact.email}`}
                   className="inline-flex items-center gap-3 rounded-full border border-[var(--border)] bg-[var(--glass)] px-8 py-4 backdrop-blur-2xl text-[var(--text)] transition-all duration-500 hover:border-cyan-400/30 hover:bg-cyan-400/[0.08]"
                 >
                   Send Email
@@ -245,7 +248,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-2xl font-black text-[var(--text)]">
-                        Kuddus Ali Construction
+                        {c.name}
                       </h3>
                       <p className="mt-1 text-sm text-[var(--text-soft)]">
                         Powering India's Infrastructure
@@ -330,13 +333,13 @@ export default function ContactPage() {
             </h2>
 
             <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[var(--text-soft)]">
-              Kuddus Ali Construction, Mahisbathani Baluatola,
-              PO Barkol, Malda - 732128, India
+              {c.name}, {c.contact.address.street},
+              PO {c.contact.address.postalCode.split(" ")[0] || "Barkol"}, {c.contact.address.locality} - {c.contact.address.postalCode}, India
             </p>
 
             <div className="mt-10 flex flex-wrap justify-center gap-5">
               <a
-                href="tel:+919735067595"
+                href={`tel:${c.contact.phone}`}
                 className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 font-bold text-black transition-all duration-300 hover:scale-105"
               >
                 <Phone size={18} />
