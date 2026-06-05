@@ -18,54 +18,58 @@ import {
 
 import { useBrand } from "@/components/BrandContext"
 
-const timelineData = [
+const baseTimeline = [
   {
     year: "2008",
     title: "Founded",
     desc: "Founded with a vision to build strong infrastructure across India.",
-    image: "/about/Trans5Pic.webp",
+    imgStem: "Trans5Pic",
   },
-
   {
     year: "2014",
     title: "Expansion",
     desc: "Major expansion in transmission and EPC projects across multiple states.",
-    image: "/about/Trans1Pic.webp",
+    imgStem: "Trans1Pic",
   },
-
   {
     year: "2018",
     title: "Government Recognition",
     desc: "Awarded for excellence in infrastructure development.",
-    image: "/about/Trans2Pic.webp",
+    imgStem: "Trans2Pic",
   },
-
   {
     year: "2020",
     title: "Achievements",
     desc: "Handled high capacity substation projects successfully.",
-    image: "/about/Trans3Pic.webp",
+    imgStem: "Trans3Pic",
   },
-
   {
     year: "2022",
     title: "Water Segment",
     desc: "Entered water infrastructure segment with major government projects.",
-    image: "/about/Trans4Pic.webp",
+    imgStem: "Trans4Pic",
   },
-
   {
     year: "2024",
     title: "Growth & Expansion",
     desc: "Secured major funding to expand operations nationwide.",
-    image: "/about/AboutTowerGrow3.webp",
+    imgStem: "AboutTowerGrow3",
   },
 ]
+
+function getTimeline(domain: string) {
+  return baseTimeline.map((item) => ({
+    ...item,
+    image: `/${domain}/about/${item.imgStem}.webp`,
+  }))
+}
 
 export default function Timeline() {
 
   const [active, setActive] = useState<any>(null)
-  const { config: c } = useBrand();
+  const { config: c, domain } = useBrand();
+
+  const timelineData = getTimeline(domain)
 
   return (
 

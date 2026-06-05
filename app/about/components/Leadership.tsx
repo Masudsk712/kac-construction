@@ -18,97 +18,38 @@ import {
 } from "lucide-react"
 import { useBrand } from "@/components/BrandContext"
 
-const leadershipData = [
-  {
-    name: "Mr. Kuddus Ali",
-    role:
-      "Founder • Chairman • Managing Director",
-    dept: "Chairman",
-    image: "/about/Boss.webp",
-    description:
-      "Leading with long-term vision, infrastructure excellence, operational growth, and sustainable engineering innovation across India.",
-  },
+const baseImages = [
+  "Boss",
+  "SamimSir",
+  "NasirDa",
+  "AkibJaved",
+  "SafidurKaku",
+  "Probhakar",
+  "AsrafulDa",
+  "ID7",
+  "Mozidda",
+  "IsobDa",
+] as const
 
-  {
-    name: "Sk Samim Aktar",
-    role: "EHS & Engineering",
-    dept: "Engineering",
-    image: "/about/SamimSir.webp",
-    description:
-      "Responsible for engineering quality, technical supervision, project safety, and execution excellence.",
-  },
-
-  {
-    name: "Md Nasiruddin Ahmed",
-    role: "HR & Administration",
-    dept: "Administration",
-    image: "/about/NasirDa.webp",
-    description:
-      "Handles workforce coordination, administration systems, company discipline, and operational management.",
-  },
-
-  {
-    name: "Akib Javed",
-    role: "Planning & Procurement",
-    dept: "Planning",
-    image: "/about/AkibJaved.webp",
-    description:
-      "Responsible for strategic procurement planning, vendor coordination, and execution timelines.",
-  },
-
-  {
-    name: "Safidur",
-    role: "Projects Team",
-    dept: "Projects",
-    image: "/about/SafidurKaku.webp",
-    description:
-      "Coordinates field execution, manpower deployment, and site-level project management.",
-  },
-
-  {
-    name: "Prabhakar Pramanik",
-    role: "Store Management",
-    dept: "Store",
-    image: "/about/Probhakar.webp",
-    description:
-      "Handles inventory control, logistics support, and material management operations.",
-  },
-
-  {
-    name: "Asraful Hoque",
-    role: "Finance Department",
-    dept: "Finance",
-    image: "/about/AsrafulDa.webp",
-    description:
-      "Responsible for budgeting, company finance systems, and operational financial planning.",
-  },
-
-  {
-    name: "Operations Head",
-    role: "Operations Management",
-    dept: "Operations",
-    image: "/about/ID7.webp",
-    description:
-      "Ensures smooth coordination across departments and efficient project delivery systems.",
-  },
-
-  {
-    name: "Abdul Mozid",
-    role: "Payroll Executive",
-    dept: "HR",
-    image: "/about/Mozidda.webp",
-    description:
-      "Provides technical guidance, company policies, and payment advisory support.",
-  },
-  {
-    name: "Isob Ali",
-    role: "HSE Asst-Manager",
-    dept: "EHS & ENGINEERING",
-    image: "/about/IsobDa.webp",
-    description:
-      "Ensures safety compliance and effective project delivery systems.",
-  },
+const baseRoles = [
+  { name: "Mr. Kuddus Ali", role: "Founder • Chairman • Managing Director", dept: "Chairman", description: "Leading with long-term vision, infrastructure excellence, operational growth, and sustainable engineering innovation across India.", imgIdx: 0 },
+  { name: "Sk Samim Aktar", role: "EHS & Engineering", dept: "Engineering", description: "Responsible for engineering quality, technical supervision, project safety, and execution excellence.", imgIdx: 1 },
+  { name: "Md Nasiruddin Ahmed", role: "HR & Administration", dept: "Administration", description: "Handles workforce coordination, administration systems, company discipline, and operational management.", imgIdx: 2 },
+  { name: "Akib Javed", role: "Planning & Procurement", dept: "Planning", description: "Responsible for strategic procurement planning, vendor coordination, and execution timelines.", imgIdx: 3 },
+  { name: "Safidur", role: "Projects Team", dept: "Projects", description: "Coordinates field execution, manpower deployment, and site-level project management.", imgIdx: 4 },
+  { name: "Prabhakar Pramanik", role: "Store Management", dept: "Store", description: "Handles inventory control, logistics support, and material management operations.", imgIdx: 5 },
+  { name: "Asraful Hoque", role: "Finance Department", dept: "Finance", description: "Responsible for budgeting, company finance systems, and operational financial planning.", imgIdx: 6 },
+  { name: "Operations Head", role: "Operations Management", dept: "Operations", description: "Ensures smooth coordination across departments and efficient project delivery systems.", imgIdx: 7 },
+  { name: "Abdul Mozid", role: "Payroll Executive", dept: "HR", description: "Provides technical guidance, company policies, and payment advisory support.", imgIdx: 8 },
+  { name: "Isob Ali", role: "HSE Asst-Manager", dept: "EHS & ENGINEERING", description: "Ensures safety compliance and effective project delivery systems.", imgIdx: 9 },
 ]
+
+function getLeadershipData(domain: string) {
+  return baseRoles.map((item) => ({
+    ...item,
+    image: `/${domain}/leadership/${baseImages[item.imgIdx]}.webp`,
+  }))
+}
 
 export default function Leadership() {
 
@@ -117,7 +58,9 @@ export default function Leadership() {
 
   const scrollRef =
     useRef<HTMLDivElement>(null)
-  const { config: c } = useBrand();
+  const { config: c, domain } = useBrand();
+
+  const leadershipData = getLeadershipData(domain)
 
   /* ======================================== */
   /* AUTO INFINITE SCROLL */

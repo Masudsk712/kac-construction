@@ -55,7 +55,7 @@ const values = [
 ]
 
 export default function MissionVision() {
-  const { config: c } = useBrand();
+  const { config: c, domain } = useBrand();
 
   return (
 
@@ -555,7 +555,7 @@ export default function MissionVision() {
             <div className="absolute inset-0">
 
               <Image
-                src="/about/AboutTower2.webp"
+                src={`/${domain}/about/AboutTower2.webp`}
                 alt="Mission Vision"
                 fill
                 className="

@@ -34,7 +34,7 @@ const stats = [
 ];
 
 export default function ServiceHero() {
-  const { config: c } = useBrand();
+  const { config: c, domain } = useBrand();
 
   const scrollToContent = () => {
 
@@ -72,7 +72,7 @@ export default function ServiceHero() {
       {/* ======================================== */}
 
       <Image
-        src="/service/ServiceBg1.webp"
+        src={`/${domain}/services/ServiceBg1.webp`}
         alt={`${c.name} - Transmission Line Construction Services`}
         fill
         priority
@@ -506,7 +506,7 @@ export default function ServiceHero() {
               >
 
                 <Image
-                  src="/service/ServiceBg2.webp"
+                  src={`/${domain}/services/ServiceBg2.webp`}
                   alt={`${c.name} Services`}
                   fill
 

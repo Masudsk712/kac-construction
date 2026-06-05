@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { useBrand } from "@/components/BrandContext"
 
 export default function Overview() {
-  const { config: c } = useBrand();
+  const { config: c, domain } = useBrand();
 
   return (
     <section className="section-surface section-premium py-24 relative overflow-hidden text-slate-900 dark:text-white">
@@ -59,7 +59,7 @@ export default function Overview() {
           className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl cursor-pointer border-glow"
         >
           <Image
-            src="/about/AboutTower4.webp"
+            src={`/${domain}/about/AboutTower4.webp`}
             alt="Team"
             fill
             className="object-cover transition-transform duration-700 hover:scale-110"
@@ -81,7 +81,7 @@ export default function Overview() {
           className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl cursor-pointer border-glow"
         >
           <Image
-            src="/about/AboutTower5.webp"
+            src={`/${domain}/about/AboutTower5.webp`}
             alt="Leadership"
             fill
             className="object-cover transition-transform duration-700 hover:scale-110"

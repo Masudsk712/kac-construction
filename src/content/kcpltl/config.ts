@@ -1,5 +1,5 @@
 // =============================================================================
-//  KCPLTL — Brand Configuration
+//  KAC Construction Private Limited — Brand Configuration
 //  Domain: kcpltl.com | www.kcpltl.com
 // =============================================================================
 // 
@@ -29,12 +29,12 @@ export const kcpltlConfig = {
   //  abbreviation  → Abbreviation used in compact labels
   //  infrastructureGroup → Subtitle shown below company name in footer
   // ===========================================================================
-  name: "KCPLTL",
-  shortName: "KCPLTL",
-  legalName: "KCPLTL",
+  name: "KAC Construction Private Limited",
+  shortName: "KAC",
+  legalName: "KAC Construction Private Limited",
   tagline: "Powering Infrastructure",
   since: "2015",
-  abbreviation: "KCPLTL",
+  abbreviation: "KAC",
   infrastructureGroup: "Infrastructure Group",
 
   // ===========================================================================
@@ -62,11 +62,11 @@ export const kcpltlConfig = {
   //  googleVerification → Google Search Console verification code
   // ===========================================================================
   seo: {
-    title: "KCPLTL | Transmission Line & Infrastructure Solutions",
+    title: "KAC Construction Private Limited | Transmission Line & Infrastructure Solutions",
     description:
-      "KCPLTL is a professional transmission line and infrastructure solutions provider specializing in tower erection, stringing, foundation, and EPC projects across India.",
+      "KAC Construction Private Limited is a professional transmission line and infrastructure solutions provider specializing in tower erection, stringing, foundation, and EPC projects across India.",
     keywords: [
-      "KCPLTL",
+      "KAC Construction Private Limited",
       "Transmission Line Company",
       "Tower Erection Company",
       "Stringing Work Contractor",
@@ -94,16 +94,16 @@ export const kcpltlConfig = {
      * 2. Save it as: public/kcpltl/og-image.jpg
      * 3. The path below should match the file location
      */
-    ogImage: "/kcpltl/og-image.jpg",
+    ogImage: "/kcpltl/branding/og-image.jpg",
 
     /*
      * HOW TO CHANGE THE TWITTER/X HANDLE:
      * ────────────────────────────────────
      * 1. Update the string below (without the @ symbol)
      */
-    twitterHandle: "@KCPLTL",
+    twitterHandle: "@KACConstructions",
 
-    creator: "KCPLTL",
+    creator: "KAC Construction Private Limited",
 
     /*
      * HOW TO ADD GOOGLE VERIFICATION:
@@ -126,7 +126,7 @@ export const kcpltlConfig = {
   //  NOTE: Next.js automatically generates favicon.ico, apple-touch-icon, etc.
   //        from this single icon file.
   // ===========================================================================
-  favicon: "/kcpltl/icon.png",
+  favicon: "/kcpltl/branding/logo.png",
 
   // ===========================================================================
   //  CONTACT INFORMATION
@@ -218,16 +218,16 @@ export const kcpltlConfig = {
   //  • buttons    → Call-to-action buttons
   // ===========================================================================
   hero: {
-    videoUrl: "/videos/NewBackground.mp4",
-    posterUrl: "/kcpltl/hero.jpg",
+    videoUrl: "/shared/videos/NewBackground.mp4",
+    posterUrl: "/kcpltl/home/hero.jpg",
 
     /* Small label chip at top of hero */
     label: "Infrastructure Since 2015",
 
     /* Main headline — two lines, leave line2 empty string "" to use single line */
     heading: {
-      line1: "KCPLTL",
-      line2: "",
+      line1: "KAC CONSTRUCTION",
+      line2: "PRIVATE LIMITED",
     },
 
     subtitle: "Powering Infrastructure",
@@ -272,7 +272,7 @@ export const kcpltlConfig = {
       { label: "10+ Years of Excellence", icon: "Award" },
     ],
     description1:
-      "Established in 2015, KCPLTL has built a strong reputation in the electrical transmission line infrastructure sector across India.",
+      "Established in 2015, KAC Construction Private Limited has built a strong reputation in the electrical transmission line infrastructure sector across India.",
     description2:
       "Our mission: deliver reliable, high-quality construction, maintenance, and installation services for electrical transmission infrastructure — connecting communities and powering progress through innovation, safety, and execution excellence.",
     features: [
@@ -283,8 +283,8 @@ export const kcpltlConfig = {
     ],
 
     /* About image shown on the right side */
-    imageUrl: "/kcpltl/about.jpg",
-    imageAlt: "KCPLTL - Transmission Infrastructure",
+    imageUrl: "/kcpltl/about/about.jpg",
+    imageAlt: "KAC Construction Private Limited - Transmission Infrastructure",
 
     stats: [
       { value: "10+", label: "Years of Experience" },
@@ -315,39 +315,39 @@ export const kcpltlConfig = {
       part2: "Built For Reliability",
     },
     description:
-      "KCPLTL delivers advanced transmission infrastructure solutions with precision execution, experienced engineering teams and reliable project delivery across India.",
+      "KAC Construction Private Limited delivers advanced transmission infrastructure solutions with precision execution, experienced engineering teams and reliable project delivery across India.",
     items: [
       {
         title: "Survey Work",
         desc: "Preliminary, detailed and check survey services with route optimization and accurate transmission line planning.",
-        image: "/home/SurveyWork.webp",
+        image: "/kcpltl/home/SurveyWork.webp",
         link: "/service#survey",
         number: "01",
-        label: "KCPLTL Service",
+        label: "KAC Service",
       },
       {
         title: "Foundation Work",
         desc: "Precision-engineered civil foundation execution ensuring long-term tower strength and structural reliability.",
-        image: "/home/FoundationWork.webp",
+        image: "/kcpltl/home/FoundationWork.webp",
         link: "/service#foundation",
         number: "02",
-        label: "KCPLTL Service",
+        label: "KAC Service",
       },
       {
         title: "Tower Erection",
         desc: "Safe and efficient erection of transmission towers using advanced methodologies and experienced site teams.",
-        image: "/home/ErectionWork.webp",
+        image: "/kcpltl/home/ErectionWork.webp",
         link: "/service#erection",
         number: "03",
-        label: "KCPLTL Service",
+        label: "KAC Service",
       },
       {
         title: "Stringing Work",
         desc: "High-capacity conductor stringing and hotline execution with modern machinery and strict safety compliance.",
-        image: "/home/StringingWork.webp",
+        image: "/kcpltl/home/StringingWork.webp",
         link: "/service#stringing",
         number: "04",
-        label: "KCPLTL Service",
+        label: "KAC Service",
       },
     ],
     ctaLabel: "Explore All Services",
@@ -371,13 +371,13 @@ export const kcpltlConfig = {
   //  • Update the image path in each item
   // ===========================================================================
   projects: {
-    label: "KCPLTL Projects",
+    label: "KAC Projects",
     heading: {
       part1: "Successfully Delivered",
       part2: "Infrastructure Projects",
     },
     description:
-      "KCPLTL delivers transmission line, tower erection, HTLS reconductoring and hotline stringing projects with engineering precision, operational safety and execution excellence.",
+      "KAC Construction Private Limited delivers transmission line, tower erection, HTLS reconductoring and hotline stringing projects with engineering precision, operational safety and execution excellence.",
     items: [
       {
         title: "220kV / 400kV / 765kV Transmission Lines",
@@ -389,7 +389,7 @@ export const kcpltlConfig = {
           "Reliable power infrastructure delivery",
         ],
         icon: "TowerControl",
-        image: "/home/HomeTower1.webp",
+        image: "/kcpltl/home/HomeTower1.webp",
         href: "/projects#completed",
         location: "Multi-State",
       },
@@ -403,7 +403,7 @@ export const kcpltlConfig = {
           "Improved power transfer capability",
         ],
         icon: "Zap",
-        image: "/home/HomeTower2.webp",
+        image: "/kcpltl/home/HomeTower2.webp",
         href: "/projects#htls",
         location: "Pan India",
       },
@@ -417,7 +417,7 @@ export const kcpltlConfig = {
           "Long-term infrastructure stability",
         ],
         icon: "Wrench",
-        image: "/home/HomeTower3.webp",
+        image: "/kcpltl/home/HomeTower3.webp",
         href: "/projects#strengthening",
         location: "Eastern India",
       },
@@ -431,7 +431,7 @@ export const kcpltlConfig = {
           "High safety operational standards",
         ],
         icon: "Activity",
-        image: "/home/ReconductoringWork.webp",
+        image: "/kcpltl/home/ReconductoringWork.webp",
         href: "/projects#stringing",
         location: "National Grid",
       },
@@ -466,19 +466,19 @@ export const kcpltlConfig = {
   //  • OR update backgroundImage below to a different path
   // ===========================================================================
   footer: {
-    topLabel: "KCPLTL",
+    topLabel: "KAC CONSTRUCTION PRIVATE LIMITED",
     heading: {
       line1: "Building India's",
       line2: "Power Infrastructure",
     },
     description:
-      "KCPLTL specializes in transmission infrastructure, tower erection, hotline stringing, HTLS reconductoring and EPC execution projects with precision, safety and nationwide reliability.",
+      "KAC Construction Private Limited specializes in transmission infrastructure, tower erection, hotline stringing, HTLS reconductoring and EPC execution projects with precision, safety and nationwide reliability.",
     ctaButton: { label: "Start Your Project", href: "/contact" },
     credentials: [
       { label: "ISO 9001:2015 Certified", icon: "ShieldCheck" },
       { label: "10+ Years Excellence", icon: "Award" },
     ],
-    companyTitle: "KCPLTL",
+    companyTitle: "KAC",
     companySubtitle: "Infrastructure Group",
     companyDescription:
       "Delivering modern EPC and transmission infrastructure solutions with engineering excellence across India.",
@@ -499,8 +499,8 @@ export const kcpltlConfig = {
       "Hotline Stringing",
       "Survey & Planning",
     ],
-    backgroundImage: "/home/HomeTower11.webp",
-    copyright: "© 2026 KCPLTL. All Rights Reserved.",
+    backgroundImage: "/kcpltl/home/HomeTower11.webp",
+    copyright: "© 2026 KAC Construction Private Limited. All Rights Reserved.",
     developerName: "Masud Sk",
     developerUrl: "https://www.linkedin.com/in/masud-sk-254b581b9",
   },
@@ -521,7 +521,7 @@ export const kcpltlConfig = {
       part2: "India's Infrastructure?",
     },
     description:
-      "Partner with KCPLTL for reliable transmission infrastructure solutions — engineering precision, safety excellence, and trusted project delivery across India.",
+      "Partner with KAC Construction Private Limited for reliable transmission infrastructure solutions — engineering precision, safety excellence, and trusted project delivery across India.",
     phone: "+91 9735067595",
     email: "info@kcpltl.com",
     coreExpertise: "EPC Transmission Infrastructure",
@@ -541,13 +541,13 @@ export const kcpltlConfig = {
   //  3. gradient → Tailwind gradient classes (from-X to-Y)
   // ===========================================================================
   whyChooseUs: {
-    label: "Why KCPLTL",
+    label: "Why KAC Construction Private Limited",
     heading: {
       part1: "Engineering Reliability",
       part2: "With Precision & Trust",
     },
     description:
-      "KCPLTL delivers dependable transmission infrastructure solutions with technical expertise, field experience and a commitment to operational excellence across every project site.",
+      "KAC Construction Private Limited delivers dependable transmission infrastructure solutions with technical expertise, field experience and a commitment to operational excellence across every project site.",
     features: [
       {
         title: "Experienced Workforce",
@@ -569,12 +569,12 @@ export const kcpltlConfig = {
       },
       {
         title: "Trusted Infrastructure Partner",
-        desc: "KCPLTL is trusted for transmission line and power infrastructure execution with a reputation built on performance.",
+        desc: "KAC Construction Private Limited is trusted for transmission line and power infrastructure execution with a reputation built on performance.",
         icon: "FaCheckCircle",
         gradient: "from-cyan-400/20 to-sky-500/10",
       },
     ],
-    qualityLabel: "KCPLTL QUALITY",
+    qualityLabel: "KAC QUALITY",
   },
 
   // ===========================================================================
@@ -593,7 +593,7 @@ export const kcpltlConfig = {
     label: "Trusted Partnerships",
     heading: "Our Valuable Clients",
     description:
-      "KCPLTL proudly collaborates with leading infrastructure, transmission and EPC companies delivering reliable execution across India's power sector.",
+      "KAC Construction Private Limited proudly collaborates with leading infrastructure, transmission and EPC companies delivering reliable execution across India's power sector.",
     featureCards: [
       {
         title: "Trusted Execution",
@@ -614,25 +614,25 @@ export const kcpltlConfig = {
 
     /* HOW TO ADD/REMOVE CLIENT LOGOS: See instructions above */
     logos: [
-      "/clients/Adani.webp",
-      "/clients/APAR.webp",
-      "/clients/Bajel.webp",
-      "/clients/Jsk.webp",
-      "/clients/Jsw.webp",
-      "/clients/KEC.webp",
-      "/clients/KPIL.webp",
-      "/clients/L&T.webp",
-      "/clients/lumino.webp",
-      "/clients/ntpc.webp",
-      "/clients/powergrid.webp",
-      "/clients/simplex.webp",
-      "/clients/sterlight.webp",
-      "/clients/tataproject.webp",
-      "/clients/Transrail.webp",
-      "/clients/skipper.webp",
-      "/clients/Grilll.webp",
+      "/shared/clients/Adani.webp",
+      "/shared/clients/APAR.webp",
+      "/shared/clients/Bajel.webp",
+      "/shared/clients/Jsk.webp",
+      "/shared/clients/Jsw.webp",
+      "/shared/clients/KEC.webp",
+      "/shared/clients/KPIL.webp",
+      "/shared/clients/L&T.webp",
+      "/shared/clients/lumino.webp",
+      "/shared/clients/ntpc.webp",
+      "/shared/clients/powergrid.webp",
+      "/shared/clients/simplex.webp",
+      "/shared/clients/sterlight.webp",
+      "/shared/clients/tataproject.webp",
+      "/shared/clients/Transrail.webp",
+      "/shared/clients/skipper.webp",
+      "/shared/clients/Grilll.webp",
     ],
-    backgroundImage: "/home/HomeTower12.webp",
+    backgroundImage: "/kcpltl/home/HomeTower12.webp",
   },
 
   // ===========================================================================
@@ -648,32 +648,32 @@ export const kcpltlConfig = {
   // ===========================================================================
   faq: [
     {
-      question: "What types of transmission line projects does KCPLTL handle?",
+      question: "What types of transmission line projects does KAC Construction Private Limited handle?",
       answer:
-        "KCPLTL handles 220kV, 400kV, and 765kV transmission line projects including tower erection, foundation work, stringing, and HTLS reconductoring across India.",
+        "KAC Construction Private Limited handles 220kV, 400kV, and 765kV transmission line projects including tower erection, foundation work, stringing, and HTLS reconductoring across India.",
     },
     {
-      question: "Where does KCPLTL operate?",
+      question: "Where does KAC Construction Private Limited operate?",
       answer:
-        "KCPLTL operates across India with headquarters in Malda, West Bengal. We have successfully executed projects in multiple states including West Bengal, Assam, and the North East region.",
+        "KAC Construction Private Limited operates across India with headquarters in Malda, West Bengal. We have successfully executed projects in multiple states including West Bengal, Assam, and the North East region.",
     },
     {
-      question: "What services does KCPLTL offer?",
+      question: "What services does KAC Construction Private Limited offer?",
       answer:
         "We offer survey work, tower foundation, tower erection, hotline stringing, HTLS reconductoring, and complete EPC infrastructure solutions for power transmission projects.",
     },
     {
-      question: "How can I contact KCPLTL for project enquiries?",
+      question: "How can I contact KAC Construction Private Limited for project enquiries?",
       answer:
         "You can contact us at +91 9735067595 or email info@kcpltl.com. Our office is located at Mahisbathani Baluatola, PO Barkol, Malda, West Bengal - 732128, India.",
     },
     {
-      question: "What voltage levels does KCPLTL work with?",
+      question: "What voltage levels does KAC Construction Private Limited work with?",
       answer:
-        "KCPLTL has expertise in 220kV, 400kV, and 765kV Extra High Voltage (EHV) transmission line projects.",
+        "KAC Construction Private Limited has expertise in 220kV, 400kV, and 765kV Extra High Voltage (EHV) transmission line projects.",
     },
     {
-      question: "Is KCPLTL hiring for transmission line projects?",
+      question: "Is KAC Construction Private Limited hiring for transmission line projects?",
       answer:
         "Yes, we regularly hire site supervisors, tower erection engineers, stringing supervisors, and other professionals for our transmission line projects. Visit our careers page for current openings.",
     },
@@ -713,9 +713,9 @@ export const kcpltlConfig = {
   //  • logoAltMobile → Shown on mobile (abbreviated)
   // ===========================================================================
   navbar: {
-    logoUrl: "/kcpltl/icon.png",
-    logoAlt: "KCPLTL",
-    logoAltMobile: "KCPLTL",
+    logoUrl: "/kcpltl/branding/logo.png",
+    logoAlt: "KAC Construction Private Limited",
+    logoAltMobile: "KAC",
     dropdownLabel: "Project Portfolio",
     dropdownSubtext: "Transmission Infrastructure",
   },
@@ -733,45 +733,45 @@ export const kcpltlConfig = {
   // ===========================================================================
   pageMetadata: {
     home: {
-      title: "KCPLTL | Transmission Line & Infrastructure Solutions",
+      title: "KAC Construction Private Limited | Transmission Line & Infrastructure Solutions",
       description:
-        "KCPLTL is a professional transmission line and infrastructure solutions provider specializing in tower erection, stringing, foundation, and EPC projects across India.",
+        "KAC Construction Private Limited is a professional transmission line and infrastructure solutions provider specializing in tower erection, stringing, foundation, and EPC projects across India.",
       path: "/",
     },
     about: {
-      title: "About Us | KCPLTL",
+      title: "About Us | KAC Construction Private Limited",
       description:
-        "Learn about KCPLTL's journey in transmission line and EPC infrastructure. Discover our expertise in tower erection, foundation work, stringing, and power grid projects across India.",
+        "Learn about KAC Construction Private Limited's journey in transmission line and EPC infrastructure. Discover our expertise in tower erection, foundation work, stringing, and power grid projects across India.",
       path: "/about",
     },
     service: {
-      title: "Our Services | Transmission Line & EPC Infrastructure | KCPLTL",
+      title: "Our Services | Transmission Line & EPC Infrastructure | KAC Construction Private Limited",
       description:
-        "KCPLTL offers comprehensive transmission line services: survey work, tower foundation, tower erection, hotline stringing, and HTLS reconductoring. EPC infrastructure solutions for power grid projects across India.",
+        "KAC Construction Private Limited offers comprehensive transmission line services: survey work, tower foundation, tower erection, hotline stringing, and HTLS reconductoring. EPC infrastructure solutions for power grid projects across India.",
       path: "/service",
     },
     projects: {
-      title: "Our Projects | Transmission Line & Power Infrastructure | KCPLTL",
+      title: "Our Projects | Transmission Line & Power Infrastructure | KAC Construction Private Limited",
       description:
-        "Explore KCPLTL's portfolio of completed and ongoing transmission line projects across India. 220kV, 400kV, and 765kV tower erection, stringing, and foundation projects.",
+        "Explore KAC Construction Private Limited's portfolio of completed and ongoing transmission line projects across India. 220kV, 400kV, and 765kV tower erection, stringing, and foundation projects.",
       path: "/projects",
     },
     contact: {
-      title: "Contact Us | KCPLTL",
+      title: "Contact Us | KAC Construction Private Limited",
       description:
-        "Contact KCPLTL for transmission line, tower erection, foundation, and EPC infrastructure projects.",
+        "Contact KAC Construction Private Limited for transmission line, tower erection, foundation, and EPC infrastructure projects.",
       path: "/contact",
     },
     career: {
-      title: "Careers | Join KCPLTL",
+      title: "Careers | Join KAC Construction Private Limited",
       description:
-        "Explore career opportunities at KCPLTL. We're hiring site supervisors, tower erection engineers, and stringing supervisors for transmission line projects across India.",
+        "Explore career opportunities at KAC Construction Private Limited. We're hiring site supervisors, tower erection engineers, and stringing supervisors for transmission line projects across India.",
       path: "/career",
     },
     media: {
-      title: "Media & Gallery | KCPLTL",
+      title: "Media & Gallery | KAC Construction Private Limited",
       description:
-        "Browse project photos, videos, and media coverage of KCPLTL's transmission line, tower erection, and power infrastructure operations across India.",
+        "Browse project photos, videos, and media coverage of KAC Construction Private Limited's transmission line, tower erection, and power infrastructure operations across India.",
       path: "/media",
     },
   },

@@ -6,7 +6,7 @@ export const siteConfig = {
   description:
     "Kuddus Ali Construction is a professional transmission line and EPC infrastructure company in Malda, West Bengal, India. We specialize in tower erection, stringing work, foundation work, and EPC infrastructure projects.",
   url: "https://kacgroups.com",
-  ogImage: "/og-image.jpg",
+  ogImage: "/kacgroups/branding/og-image.jpg",
   ogImageWidth: 1200,
   ogImageHeight: 630,
   twitterHandle: "@KuddusAliConst",

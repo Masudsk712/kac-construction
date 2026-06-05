@@ -36,83 +36,85 @@ interface FeaturedSlide extends MediaItem {
   subtitle: string;
 }
 
-// ───────────────────────── Data ─────────────────────────
+// ───────────────────────── Brand-Aware Helpers ─────────────────────────
 
-const featuredSlides: FeaturedSlide[] = [
-  {
-    title: "765kV Transmission Line Project",
-    subtitle: "Powering India's Grid Infrastructure",
-    desc:
-      "Successfully executing high-voltage transmission line projects with advanced engineering and precision.",
-    image: "/media/Media1.webp",
-  },
+function getMediaPath(domain: string, filename: string): string {
+  const brand = domain === "kcpltl" ? "kcpltl" : "kacgroups";
+  return `/${brand}/media/${filename}`;
+}
 
-  {
-    title: "Tower Erection Operations",
-    subtitle: "Execution Excellence Across India",
-    desc:
-      "Our expert teams ensure fast-track tower erection and infrastructure deployment in challenging terrains.",
-    image: "/media/Media2.webp",
-  },
+function buildFeaturedSlides(domain: string): FeaturedSlide[] {
+  return [
+    {
+      title: "765kV Transmission Line Project",
+      subtitle: "Powering India's Grid Infrastructure",
+      desc:
+        "Successfully executing high-voltage transmission line projects with advanced engineering and precision.",
+      image: getMediaPath(domain, "Media1.webp"),
+    },
+    {
+      title: "Tower Erection Operations",
+      subtitle: "Execution Excellence Across India",
+      desc:
+        "Our expert teams ensure fast-track tower erection and infrastructure deployment in challenging terrains.",
+      image: getMediaPath(domain, "Media2.webp"),
+    },
+    {
+      title: "Foundation & EPC Works",
+      subtitle: "Reliable Infrastructure Solutions",
+      desc:
+        "Delivering durable civil foundations and EPC infrastructure for modern energy systems.",
+      image: getMediaPath(domain, "Media3.webp"),
+    },
+  ];
+}
 
-  {
-    title: "Foundation & EPC Works",
-    subtitle: "Reliable Infrastructure Solutions",
-    desc:
-      "Delivering durable civil foundations and EPC infrastructure for modern energy systems.",
-    image: "/media/Media3.webp",
-  },
-];
-
-const mediaCards: MediaItem[] = [
-  {
-    title: "Transmission Infrastructure",
-    category: "Project Execution",
-    desc:
-      "High-voltage transmission projects executed with safety, speed, and engineering precision.",
-    image: "/media/Media4.webp",
-  },
-
-  {
-    title: "Hotline Stringing Work",
-    category: "Field Operations",
-    desc:
-      "Advanced hotline stringing operations ensuring uninterrupted power supply across critical corridors.",
-    image: "/media/Media5.webp",
-  },
-
-  {
-    title: "Tower Foundation",
-    category: "Civil Engineering",
-    desc:
-      "Strong and reliable tower foundations engineered for long-term infrastructure stability.",
-    image: "/media/Media6.webp",
-  },
-
-  {
-    title: "HTLS Reconductoring",
-    category: "Grid Modernization",
-    desc:
-      "Modernizing transmission lines with high-temperature low-sag conductors.",
-    image: "/media/Media7.webp",
-  },
-
-  {
-    title: "Survey & Route Mapping",
-    category: "Planning & Survey",
-    desc:
-      "Advanced survey and route planning solutions for optimized transmission infrastructure.",
-    image: "/media/Media8.webp",
-  },
-
-  {
-    title: "Project Mobilization",
-    category: "Execution Team",
-    desc:
-      "Efficient mobilization of manpower, machinery, and engineering teams nationwide.",
-    image: "/media/Media9.webp",
-  },
-];
+function buildMediaCards(domain: string): MediaItem[] {
+  return [
+    {
+      title: "Transmission Infrastructure",
+      category: "Project Execution",
+      desc:
+        "High-voltage transmission projects executed with safety, speed, and engineering precision.",
+      image: getMediaPath(domain, "Media4.webp"),
+    },
+    {
+      title: "Hotline Stringing Work",
+      category: "Field Operations",
+      desc:
+        "Advanced hotline stringing operations ensuring uninterrupted power supply across critical corridors.",
+      image: getMediaPath(domain, "Media5.webp"),
+    },
+    {
+      title: "Tower Foundation",
+      category: "Civil Engineering",
+      desc:
+        "Strong and reliable tower foundations engineered for long-term infrastructure stability.",
+      image: getMediaPath(domain, "Media6.webp"),
+    },
+    {
+      title: "HTLS Reconductoring",
+      category: "Grid Modernization",
+      desc:
+        "Modernizing transmission lines with high-temperature low-sag conductors.",
+      image: getMediaPath(domain, "Media7.webp"),
+    },
+    {
+      title: "Survey & Route Mapping",
+      category: "Planning & Survey",
+      desc:
+        "Advanced survey and route planning solutions for optimized transmission infrastructure.",
+      image: getMediaPath(domain, "Media8.webp"),
+    },
+    {
+      title: "Project Mobilization",
+      category: "Execution Team",
+      desc:
+        "Efficient mobilization of manpower, machinery, and engineering teams nationwide.",
+      image: getMediaPath(domain, "Media9.webp"),
+    },
+  ];
+}
 
 // ───────────────────────── ───────────────────────────────
 
@@ -120,15 +122,20 @@ export default function MediaPage() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [selected, setSelected] = useState<MediaItem | null>(null);
   const modalRef = useRef<HTMLDivElement | null>(null);
-  const { config: c } = useBrand();
+  const { domain, config: c } = useBrand();
+
+  // ─── Brand-aware media data ───
+  const featuredSlides = buildFeaturedSlides(domain);
+  const mediaCards = buildMediaCards(domain);
+  const slidesLen = featuredSlides.length;
 
   // ─── Auto-advance hero slider ───
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % featuredSlides.length);
+      setActiveSlide((prev) => (prev + 1) % slidesLen);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slidesLen]);
 
   // ─── Manual slider navigation ───
   const goToSlide = useCallback((index: number) => {
@@ -137,13 +144,13 @@ export default function MediaPage() {
 
   const prevSlide = useCallback(() => {
     setActiveSlide((prev) =>
-      prev === 0 ? featuredSlides.length - 1 : prev - 1
+      prev === 0 ? slidesLen - 1 : prev - 1
     );
-  }, []);
+  }, [slidesLen]);
 
   const nextSlide = useCallback(() => {
-    setActiveSlide((prev) => (prev + 1) % featuredSlides.length);
-  }, []);
+    setActiveSlide((prev) => (prev + 1) % slidesLen);
+  }, [slidesLen]);
 
   // ─── Modal keyboard handling ───
   useEffect(() => {

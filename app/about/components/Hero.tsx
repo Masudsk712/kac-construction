@@ -29,7 +29,7 @@ const stats = [
 ];
 
 export default function Hero() {
-  const { config: c } = useBrand();
+  const { config: c, domain } = useBrand();
 
   const scrollToContent = () => {
     const el = document.getElementById("StickyTabs");
@@ -61,7 +61,7 @@ export default function Hero() {
       {/* ================================================= */}
 
       <Image
-        src="/about/AboutTower1.webp"
+        src={`/${domain}/about/AboutTower1.webp`}
         alt={`${c.name} - About Our Transmission Line Infrastructure Company`}
         fill
         priority

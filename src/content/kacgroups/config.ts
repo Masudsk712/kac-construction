@@ -46,7 +46,7 @@ export const kacgroupsConfig = {
       "High Voltage Transmission",
       "Power Infrastructure Development",
     ],
-    ogImage: "/kacgroups/og-image.jpg",
+    ogImage: "/kacgroups/branding/og-image.jpg",
     twitterHandle: "@KuddusAliConst",
     creator: "Kuddus Ali Construction",
     googleVerification: "google-site-verification-code",
@@ -55,7 +55,7 @@ export const kacgroupsConfig = {
   // ===========================================================================
   //  FAVICON — Fixed path
   // ===========================================================================
-  favicon: "/kacgroups/icon.png",
+  favicon: "/kacgroups/branding/logo.png",
 
   // ===========================================================================
   //  CONTACT
@@ -94,8 +94,8 @@ export const kacgroupsConfig = {
   //  HERO
   // ===========================================================================
   hero: {
-    videoUrl: "/videos/NewBackground.mp4",
-    posterUrl: "/kacgroups/hero.jpg",
+    videoUrl: "/shared/videos/NewBackground.mp4",
+    posterUrl: "/kacgroups/home/hero.jpg",
     label: "EPC Infrastructure Since 2010",
     heading: {
       line1: "KUDDUS ALI",
@@ -136,7 +136,7 @@ export const kacgroupsConfig = {
       "High Voltage System Installation",
       "Hotline Stringing & Maintenance",
     ],
-    imageUrl: "/kacgroups/about.jpg",
+    imageUrl: "/kacgroups/about/about.jpg",
     imageAlt: "Kuddus Ali Construction - Transmission Infrastructure",
     stats: [
       { value: "15+", label: "Years of Experience" },
@@ -160,7 +160,7 @@ export const kacgroupsConfig = {
       {
         title: "Survey Work",
         desc: "Preliminary, detailed and check survey services with route optimization and accurate transmission line planning.",
-        image: "/home/SurveyWork.webp",
+        image: "/kacgroups/home/SurveyWork.webp",
         link: "/service#survey",
         number: "01",
         label: "KAC Service",
@@ -168,7 +168,7 @@ export const kacgroupsConfig = {
       {
         title: "Foundation Work",
         desc: "Precision-engineered civil foundation execution ensuring long-term tower strength and structural reliability.",
-        image: "/home/FoundationWork.webp",
+        image: "/kacgroups/home/FoundationWork.webp",
         link: "/service#foundation",
         number: "02",
         label: "KAC Service",
@@ -176,7 +176,7 @@ export const kacgroupsConfig = {
       {
         title: "Tower Erection",
         desc: "Safe and efficient erection of transmission towers using advanced methodologies and experienced site teams.",
-        image: "/home/ErectionWork.webp",
+        image: "/kacgroups/home/ErectionWork.webp",
         link: "/service#erection",
         number: "03",
         label: "KAC Service",
@@ -184,7 +184,7 @@ export const kacgroupsConfig = {
       {
         title: "Stringing Work",
         desc: "High-capacity conductor stringing and hotline execution with modern machinery and strict safety compliance.",
-        image: "/home/StringingWork.webp",
+        image: "/kacgroups/home/StringingWork.webp",
         link: "/service#stringing",
         number: "04",
         label: "KAC Service",
@@ -216,7 +216,7 @@ export const kacgroupsConfig = {
           "Reliable power infrastructure delivery",
         ],
         icon: "TowerControl",
-        image: "/home/HomeTower1.webp",
+        image: "/kacgroups/home/HomeTower1.webp",
         href: "/projects#completed",
         location: "Multi-State",
       },
@@ -230,7 +230,7 @@ export const kacgroupsConfig = {
           "Improved power transfer capability",
         ],
         icon: "Zap",
-        image: "/home/HomeTower2.webp",
+        image: "/kacgroups/home/HomeTower2.webp",
         href: "/projects#htls",
         location: "Pan India",
       },
@@ -244,7 +244,7 @@ export const kacgroupsConfig = {
           "Long-term infrastructure stability",
         ],
         icon: "Wrench",
-        image: "/home/HomeTower3.webp",
+        image: "/kacgroups/home/HomeTower3.webp",
         href: "/projects#strengthening",
         location: "Eastern India",
       },
@@ -258,7 +258,7 @@ export const kacgroupsConfig = {
           "High safety operational standards",
         ],
         icon: "Activity",
-        image: "/home/ReconductoringWork.webp",
+        image: "/kacgroups/home/ReconductoringWork.webp",
         href: "/projects#stringing",
         location: "National Grid",
       },
@@ -304,7 +304,7 @@ export const kacgroupsConfig = {
       "Hotline Stringing",
       "Survey & Planning",
     ],
-    backgroundImage: "/home/HomeTower11.webp",
+    backgroundImage: "/kacgroups/home/HomeTower11.webp",
     copyright: "© 2026 Kuddus Ali Construction. All Rights Reserved.",
     developerName: "Masud Sk",
     developerUrl: "https://www.linkedin.com/in/masud-sk-254b581b9",
@@ -395,25 +395,25 @@ export const kacgroupsConfig = {
       },
     ],
     logos: [
-      "/clients/Adani.webp",
-      "/clients/APAR.webp",
-      "/clients/Bajel.webp",
-      "/clients/Jsk.webp",
-      "/clients/Jsw.webp",
-      "/clients/KEC.webp",
-      "/clients/KPIL.webp",
-      "/clients/L&T.webp",
-      "/clients/lumino.webp",
-      "/clients/ntpc.webp",
-      "/clients/powergrid.webp",
-      "/clients/simplex.webp",
-      "/clients/sterlight.webp",
-      "/clients/tataproject.webp",
-      "/clients/Transrail.webp",
-      "/clients/skipper.webp",
-      "/clients/Grilll.webp",
+      "/shared/clients/Adani.webp",
+      "/shared/clients/APAR.webp",
+      "/shared/clients/Bajel.webp",
+      "/shared/clients/Jsk.webp",
+      "/shared/clients/Jsw.webp",
+      "/shared/clients/KEC.webp",
+      "/shared/clients/KPIL.webp",
+      "/shared/clients/L&T.webp",
+      "/shared/clients/lumino.webp",
+      "/shared/clients/ntpc.webp",
+      "/shared/clients/powergrid.webp",
+      "/shared/clients/simplex.webp",
+      "/shared/clients/sterlight.webp",
+      "/shared/clients/tataproject.webp",
+      "/shared/clients/Transrail.webp",
+      "/shared/clients/skipper.webp",
+      "/shared/clients/Grilll.webp",
     ],
-    backgroundImage: "/home/HomeTower12.webp",
+    backgroundImage: "/kacgroups/home/HomeTower12.webp",
   },
 
   // ===========================================================================
@@ -470,7 +470,7 @@ export const kacgroupsConfig = {
   //  NAVBAR
   // ===========================================================================
   navbar: {
-    logoUrl: "/kacgroups/icon.png",
+    logoUrl: "/kacgroups/branding/logo.png",
     logoAlt: "Kuddus Ali Construction",
     logoAltMobile: "KAC",
     dropdownLabel: "Project Portfolio",

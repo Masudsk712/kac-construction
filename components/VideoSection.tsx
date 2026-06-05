@@ -13,7 +13,7 @@ import { ease } from "@/lib/animations";
 import { useBrand } from "@/components/BrandContext";
 
 export default function VideoSection() {
-  const { config: c } = useBrand();
+  const { config: c, domain } = useBrand();
 
   return (
 
@@ -42,7 +42,7 @@ export default function VideoSection() {
         loop
         playsInline
         preload="metadata"
-        poster="/home/SitePic.webp"
+        poster={`/${domain}/home/SitePic.webp`}
 
         className="
           absolute inset-0
@@ -57,7 +57,7 @@ export default function VideoSection() {
       >
 
         <source
-          src="/videos/myhero.mp4"
+          src="/shared/videos/myhero.mp4"
           type="video/mp4"
         />
 

@@ -61,7 +61,7 @@ const jobs = [
 ];
 
 export default function CareerPage() {
-  const { config: c } = useBrand();
+  const { config: c, domain } = useBrand();
 
   return (
     <div className="relative z-10 bg-[var(--bg)] text-[var(--text)]">
@@ -74,7 +74,7 @@ export default function CareerPage() {
       {/* ======================================== */}
       <section className="page-hero relative flex min-h-screen items-center overflow-hidden">
         {/* BG IMAGE */}
-        <div className="absolute inset-0 scale-105 bg-[url('/career/Career1.webp')] bg-cover bg-center" />
+        <div className="absolute inset-0 scale-105 bg-cover bg-center" style={{ backgroundImage: `url(/${domain}/career/Career1.webp)` }} />
 
         {/* OVERLAY */}
         <div className="absolute inset-0 hero-page-overlay" />

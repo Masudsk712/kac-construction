@@ -15,7 +15,7 @@ export default function Schema({ config }: SchemaProps) {
     url: config.url,
     logo: {
       "@type": "ImageObject",
-      url: `${config.url}/icon.png`,
+      url: `${config.url}${config.favicon}`,
       width: 512,
       height: 512,
     },

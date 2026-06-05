@@ -57,7 +57,7 @@ const highlights = [
 ]
 
 export default function MDMessage() {
-  const { config: c } = useBrand();
+  const { config: c, domain } = useBrand();
 
   return (
 
@@ -233,7 +233,7 @@ export default function MDMessage() {
             <div className="absolute inset-0">
 
               <Image
-                src="/about/Boss.webp"
+                src={`/${domain}/leadership/Boss.webp`}
                 alt="Managing Director"
                 fill
                 className="
