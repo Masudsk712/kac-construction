@@ -39,9 +39,9 @@ const highlights = [
 ];
 
 const gallery = [
-  "kacgroups/service/DetailSurvey/DetailSurvey1.webp",
-  "kacgroups/service/DetailSurvey/DetailSurvey2.webp",
-  "kacgroups/service/DetailSurvey/DetailSurvey3.webp",
+  "kacgroups/services/DetailSurvey/DetailSurvey1.webp",
+  "kacgroups/services/DetailSurvey/DetailSurvey2.webp",
+  "kacgroups/services/DetailSurvey/DetailSurvey3.webp",
 ];
 
 export default function DetailedSurveyPage() {
@@ -52,7 +52,7 @@ export default function DetailedSurveyPage() {
       <section className="page-hero relative min-h-[90vh] flex items-center overflow-hidden">
 
         <Image
-          src="kacgroups/service/DetailSurvey/DetailSurvey4.webp"
+          src="kacgroups/services/DetailSurvey/DetailSurvey4.webp"
           alt="Detailed Survey"
           fill
           priority
@@ -140,7 +140,7 @@ export default function DetailedSurveyPage() {
             >
 
               <Image
-                src="kacgroups/service/DetailSurvey/DetailSurvey5.webp"
+                src="kacgroups/services/DetailSurvey/DetailSurvey5.webp"
                 alt="Detailed Survey"
                 width={700}
                 height={500}
@@ -167,7 +167,7 @@ export default function DetailedSurveyPage() {
           >
 
             <Image
-              src="kacgroups/service/DetailSurvey/DetailSurvey6.webp"
+              src="kacgroups/services/DetailSurvey/DetailSurvey6.webp"
               alt="Detailed Overview"
               width={700}
               height={550}

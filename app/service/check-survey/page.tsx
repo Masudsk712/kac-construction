@@ -84,9 +84,9 @@ const highlights = [
 /* ======================================== */
 
 const gallery = [
-  "kacgroups/service/CheckSurvey/CheckSurvey1.webp",
-  "kacgroups/service/CheckSurvey/CheckSurvey2.webp",
-  "kacgroups/service/CheckSurvey/CheckSurvey3.webp",
+  "kacgroups/services/CheckSurvey/CheckSurvey1.webp",
+  "kacgroups/services/CheckSurvey/CheckSurvey2.webp",
+  "kacgroups/services/CheckSurvey/CheckSurvey3.webp",
 ];
 
 export default function PreliminarySurveyPage() {
@@ -154,7 +154,7 @@ export default function PreliminarySurveyPage() {
 
         {/* BG IMAGE */}
         <Image
-          src="kacgroups/service/CheckSurvey/CheckSurvey4.webp"
+          src="kacgroups/services/CheckSurvey/CheckSurvey4.webp"
           alt="Survey Hero"
           fill
           priority
@@ -420,7 +420,7 @@ export default function PreliminarySurveyPage() {
             >
 
               <Image
-                src="kacgroups/service/CheckSurvey/CheckSurvey5.webp"
+                src="kacgroups/services/CheckSurvey/CheckSurvey5.webp"
                 alt="Survey"
 
                 width={700}
@@ -561,7 +561,7 @@ export default function PreliminarySurveyPage() {
             >
 
               <Image
-                src="kacgroups/service/CheckSurvey/CheckSurvey6.webp"
+                src="kacgroups/services/CheckSurvey/CheckSurvey6.webp"
                 alt="Overview"
 
                 width={700}

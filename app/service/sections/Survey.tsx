@@ -23,9 +23,9 @@ import {
 /* ======================================== */
 
 const images = [
-  "kacgroups/service/ServiceSurvey1.webp",
-  "kacgroups/service/ServiceSurvey2.webp",
-  "kacgroups/service/ServiceSurvey3.webp",
+  "kacgroups/services/ServiceSurvey1.webp",
+  "kacgroups/services/ServiceSurvey2.webp",
+  "kacgroups/services/ServiceSurvey3.webp",
 ];
 
 /* ======================================== */
@@ -38,7 +38,7 @@ const surveyServices = [
     title: "Preliminary Survey",
     desc:
       "Initial route identification and terrain analysis for optimized project planning.",
-    image: "kacgroups/service/ServicePreSurvey.webp",
+    image: "kacgroups/services/ServicePreSurvey.webp",
     link: "/service/preliminary-survey",
   },
 
@@ -47,7 +47,7 @@ const surveyServices = [
     title: "Detailed Survey",
     desc:
       "Comprehensive data collection including coordinates, profiles and alignment verification.",
-    image: "kacgroups/service/ServiceDetailSurvey.webp",
+    image: "kacgroups/services/ServiceDetailSurvey.webp",
     link: "/service/detailed-survey",
   },
 
@@ -56,7 +56,7 @@ const surveyServices = [
     title: "Check Survey",
     desc:
       "Final validation survey ensuring engineering accuracy and project compliance.",
-    image: "kacgroups/service/ServiceCheckSurvey.webp",
+    image: "kacgroups/services/ServiceCheckSurvey.webp",
     link: "/service/check-survey",
   },
 ];

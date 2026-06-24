@@ -16,8 +16,8 @@ export default function HTLSPage() {
       highlight="Reconductoring Solutions"
       description="Modern HTLS reconductoring services designed to enhance transmission efficiency, increase power carrying capacity and modernize existing transmission infrastructure."
 
-      heroImage="kacgroups/service/ServiceReconductorSTR.webp"
-      overviewImage="kacgroups/service/ServiceReconductorSTR.webp"
+      heroImage="kacgroups/services/ServiceReconductorSTR.webp"
+      overviewImage="kacgroups/services/ServiceReconductorSTR.webp"
 
       floatingStat="99.9%"
       floatingText="Execution Reliability"
@@ -53,9 +53,9 @@ export default function HTLSPage() {
       ]}
 
       gallery={[
-        "kacgroups/service/ServiceReconductorSTR.webp",
-        "kacgroups/service/ServiceSTR1.webp",
-        "kacgroups/service/ServiceReconductorSTR.webp",
+        "kacgroups/services/ServiceReconductorSTR.webp",
+        "kacgroups/services/ServiceSTR1.webp",
+        "kacgroups/services/ServiceReconductorSTR.webp",
       ]}
     />
   );

@@ -16,8 +16,8 @@ export default function ConductorPage() {
       highlight="Stringing Solutions"
       description="High-performance conductor installation solutions for modern transmission infrastructure."
 
-      heroImage="kacgroups/service/ServiceSTR1.webp"
-      overviewImage="kacgroups/service/ServiceConductorSTR.webp"
+      heroImage="kacgroups/services/ServiceSTR1.webp"
+      overviewImage="kacgroups/services/ServiceConductorSTR.webp"
 
       floatingStat="5000+ KM"
       floatingText="Transmission Stringing"
@@ -48,9 +48,9 @@ export default function ConductorPage() {
       ]}
 
       gallery={[
-        "kacgroups/service/ServiceSTR1.webp",
-        "kacgroups/service/ServiceSTR1.webp",
-        "kacgroups/service/ServiceSTR1.webp",
+        "kacgroups/services/ServiceSTR1.webp",
+        "kacgroups/services/ServiceSTR1.webp",
+        "kacgroups/services/ServiceSTR1.webp",
       ]}
     />
   );

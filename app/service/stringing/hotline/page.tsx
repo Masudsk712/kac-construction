@@ -16,8 +16,8 @@ export default function HotlinePage() {
       highlight="Stringing Solutions"
       description="Advanced hot line stringing services enabling live transmission line execution without interrupting power supply, ensuring maximum operational continuity and safety."
 
-      heroImage="kacgroups/service/ServiceHotlineSTR.webp"
-      overviewImage="kacgroups/service/ServiceHotlineSTR.webp"
+      heroImage="kacgroups/services/ServiceHotlineSTR.webp"
+      overviewImage="kacgroups/services/ServiceHotlineSTR.webp"
 
       floatingStat="LIVE"
       floatingText="Power Line Execution"
@@ -53,9 +53,9 @@ export default function HotlinePage() {
       ]}
 
       gallery={[
-        "kacgroups/service/ServiceHotlineSTR.webp",
-        "kacgroups/service/ServiceSTR1.webp",
-        "kacgroups/service/ServiceHotlineSTR.webp",
+        "kacgroups/services/ServiceHotlineSTR.webp",
+        "kacgroups/services/ServiceSTR1.webp",
+        "kacgroups/services/ServiceHotlineSTR.webp",
       ]}
     />
   );
