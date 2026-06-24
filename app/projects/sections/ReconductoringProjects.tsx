@@ -297,7 +297,7 @@ export default function ReconductoringProjects() {
             >
 
               <Image
-                src="/projects/Project19.webp"
+                src="kacgroups/projects/Project19.webp"
                 alt="Reconductoring"
 
                 fill

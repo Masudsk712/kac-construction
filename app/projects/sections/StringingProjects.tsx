@@ -468,7 +468,7 @@ export default function StringingProjects() {
           >
 
             <Image
-              src="/projects/Project10.webp"
+              src="kacgroups/projects/Project10.webp"
               alt="Stringing Projects"
 
               fill

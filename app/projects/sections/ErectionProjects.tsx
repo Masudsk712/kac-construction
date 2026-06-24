@@ -467,7 +467,7 @@ export default function ErectionProjects() {
           >
 
             <Image
-              src="/projects/Project16.webp"
+              src="kacgroups/projects/Project16.webp"
               alt="Erection Project"
 
               fill

@@ -20,37 +20,37 @@ const galleryImages = [
   {
     title: "Transmission Foundation",
     category: "Foundation Work",
-    image: "/projects/Project3.webp",
+    image: "kacgroups/projects/Project3.webp",
   },
 
   {
     title: "Tower Erection",
     category: "Erection Work",
-    image: "/projects/Project4.webp",
+    image: "kacgroups/projects/Project4.webp",
   },
 
   {
     title: "Hotline Maintenance",
     category: "Hotline Project",
-    image: "/projects/Project5.webp",
+    image: "kacgroups/projects/Project5.webp",
   },
 
   {
     title: "HTLS Reconductoring",
     category: "Reconductoring",
-    image: "/projects/Project6.webp",
+    image: "kacgroups/projects/Project6.webp",
   },
 
   {
     title: "Stringing Execution",
     category: "Transmission Stringing",
-    image: "/projects/Project7.webp",
+    image: "kacgroups/projects/Project7.webp",
   },
 
   {
     title: "765kV Infrastructure",
     category: "Ultra High Voltage",
-    image: "/projects/Project8.webp",
+    image: "kacgroups/projects/Project8.webp",
   },
 ];
 

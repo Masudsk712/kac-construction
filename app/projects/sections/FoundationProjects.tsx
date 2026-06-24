@@ -163,7 +163,7 @@ export default function FoundationProjects() {
           >
 
             <Image
-              src="/projects/Project17.webp"
+              src="kacgroups/projects/Project17.webp"
               alt="Foundation Project"
 
               fill

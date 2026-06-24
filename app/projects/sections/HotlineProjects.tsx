@@ -163,7 +163,7 @@ export default function HotlineProjects() {
           >
 
             <Image
-              src="/projects/Project18.webp"
+              src="kacgroups/projects/Project18.webp"
               alt="Hotline Projects"
 
               fill
