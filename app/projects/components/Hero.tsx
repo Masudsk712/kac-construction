@@ -67,7 +67,7 @@ export default function Hero() {
       {/* ======================================== */}
 
       <Image
-        src="/projects/Project1.webp"
+        src="kacgroups/projects/Project1.webp"
         alt={`${c.name} - Transmission Line Projects Portfolio`}
 
         fill
