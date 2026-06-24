@@ -21,9 +21,9 @@ import {
 /* ======================================== */
 
 const images = [
-  "/service/ServiceFd1.webp",
-  "/service/Foundation1.webp",
-  "/service/Foundation2.webp",
+  "kacgroups/service/ServiceFd1.webp",
+  "kacgroups/service/Foundation1.webp",
+  "kacgroups/service/Foundation2.webp",
 ];
 
 /* ======================================== */
@@ -37,7 +37,7 @@ const services = [
     desc:
       "Precision excavation and ground preparation for transmission tower foundations.",
 
-    image: "/service/Foundation3.webp",
+    image: "kacgroups/service/Foundation3.webp",
   },
 
   {
@@ -46,7 +46,7 @@ const services = [
     desc:
       "Heavy-duty reinforced concrete foundations ensuring long-term structural stability.",
 
-    image: "/service/Foundation4.webp",
+    image: "kacgroups/service/Foundation4.webp",
   },
 
   {
@@ -55,7 +55,7 @@ const services = [
     desc:
       "Efficient logistics and material management using advanced construction practices.",
 
-    image: "/service/Foundation5.webp",
+    image: "kacgroups/service/Foundation5.webp",
   },
 
   {
@@ -64,7 +64,7 @@ const services = [
     desc:
       "Strict adherence to safety, quality and engineering compliance standards.",
 
-    image: "/service/Foundation6.webp",
+    image: "kacgroups/service/Foundation6.webp",
   },
 ];
 

@@ -16,8 +16,8 @@ export default function AlignmentPage() {
       highlight="Alignment Solutions"
       description="Advanced transmission alignment services ensuring precise route balancing, conductor positioning and optimized power corridor execution for ultra high voltage infrastructure projects."
 
-      heroImage="/service/ServiceAlignmentSTR.webp"
-      overviewImage="/service/ServiceAlignmentSTR.webp"
+      heroImage="kacgroups/service/ServiceAlignmentSTR.webp"
+      overviewImage="kacgroups/service/ServiceAlignmentSTR.webp"
 
       floatingStat="765kV"
       floatingText="Alignment Capability"
@@ -53,9 +53,9 @@ export default function AlignmentPage() {
       ]}
 
       gallery={[
-        "/service/ServiceAlignmentSTR.webp",
-        "/service/ServiceSTR1.webp",
-        "/service/ServiceAlignmentSTR.webp",
+        "kacgroups/service/ServiceAlignmentSTR.webp",
+        "kacgroups/service/ServiceSTR1.webp",
+        "kacgroups/service/ServiceAlignmentSTR.webp",
       ]}
     />
   );

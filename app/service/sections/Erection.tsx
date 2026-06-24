@@ -25,7 +25,7 @@ const erectionSteps = [
     desc:
       "Complete tower member assembly with precision engineering and safety compliance.",
 
-    image: "/service/Erection3.webp",
+    image: "kacgroups/service/Erection3.webp",
   },
 
   {
@@ -34,7 +34,7 @@ const erectionSteps = [
     desc:
       "Accurate erection and alignment of transmission tower structures.",
 
-    image: "/service/Erection1.webp",
+    image: "kacgroups/service/Erection1.webp",
   },
 
   {
@@ -43,7 +43,7 @@ const erectionSteps = [
     desc:
       "Advanced high-altitude execution using modern erection methodologies.",
 
-    image: "/service/Erection2.webp",
+    image: "kacgroups/service/Erection2.webp",
   },
 
   {
@@ -52,7 +52,7 @@ const erectionSteps = [
     desc:
       "Strict quality checks and zero-compromise safety implementation.",
 
-    image: "/service/ServiceERC1.webp",
+    image: "kacgroups/service/ServiceERC1.webp",
   },
 ];
 
@@ -223,7 +223,7 @@ export default function Erection() {
             >
 
               <Image
-                src="/service/ServiceERC1.webp"
+                src="kacgroups/service/ServiceERC1.webp"
                 alt="Tower Erection"
                 fill
                 className="
